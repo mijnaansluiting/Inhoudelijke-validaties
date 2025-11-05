@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<NLCSnetbeheer xmlns:keuzelijst="NLCSnetbeheer"
+               xmlns:gml="http://www.opengis.net/gml/3.2"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="NS_NLCSnetbeheer ../../../../../doc/NLCS_Netbeheer_Keuzelijst.xsd"
+               xmlns="NS_NLCSnetbeheer">
+    <AprojectReferentie>
+        <Projectnummer>1</Projectnummer>
+        <Netbeheerder>Enexis</Netbeheerder>
+        <ID>A</ID>
+        <Tekeningtype>BESTAANDE SITUATIE</Tekeningtype>
+        <Geometry></Geometry>
+    </AprojectReferentie>
+
+    <MSkabel>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
+        <FaseAanduiding>N</FaseAanduiding>
+        <ID>B</ID>
+        <Geometry>
+            <gml:LineString
+                srsDimension="3"
+                srsName="EPSG:28992">
+                <gml:posList>
+                    40.0 160.0 -1.0
+                    240.0 160.0 -1.0
+                </gml:posList>
+            </gml:LineString>
+        </Geometry>
+    </MSkabel>
+
+    <MSkabel>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
+        <FaseAanduiding>N</FaseAanduiding>
+        <ID>C</ID>
+        <Geometry>
+            <gml:LineString
+                srsDimension="3"
+                srsName="EPSG:28992">
+                <gml:posList>
+                    440.0 160.0 -1.0
+                    240.0 160.0 -1.0
+                </gml:posList>
+            </gml:LineString>
+        </Geometry>
+    </MSkabel>
+
+    <MSmof>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
+        <ID>D</ID>
+        <Geometry>
+            <gml:Point
+                srsDimension="3"
+                srsName="EPSG:7415">
+                <gml:pos>
+                    240.0 160.0 -1.0
+                </gml:pos>
+            </gml:Point>
+        </Geometry>
+    </MSmof>
+</NLCSnetbeheer>

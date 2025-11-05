@@ -1,0 +1,38 @@
+name: Rule Validation CI
+
+on:
+  pull_request:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  validate-rules:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Set up JDK
+        uses: actions/setup-java@v5
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+
+      - name: Install dependencies
+        run: scripts/install_dependencies.sh
+
+      - name: Transpile phases to XSL
+        run: scripts/transpile_phases.sh
+
+      - name: Validate rules
+        run: scripts/validate_rules.sh
+
+      - name: Upload validation reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: rule-validation-reports
+          path: rule_validation_reports
+
+      - name: Validate test reports
+        run: scripts/validate_rule_reports.sh

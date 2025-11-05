@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<NLCSnetbeheer xmlns:keuzelijst="NLCSnetbeheer"
+               xmlns:gml="http://www.opengis.net/gml/3.2"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="NS_NLCSnetbeheer ../../../../../doc/NLCS_Netbeheer_Keuzelijst.xsd"
+               xmlns="NS_NLCSnetbeheer">
+    <AprojectReferentie>
+        <Projectnummer>1</Projectnummer>
+        <Netbeheerder>Enexis</Netbeheerder>
+        <ID>A</ID>
+        <Tekeningtype>BESTAANDE SITUATIE</Tekeningtype>
+        <Geometry>
+            <gml:Polygon
+                srsDimension="2"
+                srsName="EPSG:28992">
+                <gml:exterior>
+                    <gml:LinearRing>
+                        <gml:posList>
+                            160.0 200.0
+                            320.0 200.0
+                            240.0 140.0
+                            360.0  40.0
+                            230.0  70.0
+                            180.0 120.0
+                            160.0 200.0
+                        </gml:posList>
+                    </gml:LinearRing>
+                </gml:exterior>
+            </gml:Polygon>
+        </Geometry>
+    </AprojectReferentie>
+
+    <MSoverdrachtspunt>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
+        <ID>B</ID>
+        <Geometry>
+            <gml:Point
+                srsDimension="3"
+                srsName="EPSG:28992">
+                <gml:pos>
+                    240.0 140.0 0
+                </gml:pos>
+            </gml:Point>
+        </Geometry>
+    </MSoverdrachtspunt>
+</NLCSnetbeheer>

@@ -3,7 +3,7 @@
 	        xmlns:keronic="http://example.com/my-functions"
             xmlns:keronic-geom="http://example.com/my-functions-test"
 	        xmlns:xs="http://www.w3.org/2001/XMLSchema"
-            xmlns:nlcs="NLCSnetbeheer"
+            xmlns:nlcs="NS_NLCSnetbeheer"
             xmlns:gml="http://www.opengis.net/gml/3.2"
 	        version="3.0">
 

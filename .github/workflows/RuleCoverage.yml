@@ -1,0 +1,17 @@
+name: Rule Coverage CI
+
+on:
+  pull_request:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  covered-rules:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Check rule coverage
+        run: scripts/check_rule_coverage.sh

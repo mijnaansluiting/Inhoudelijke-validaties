@@ -1,0 +1,19 @@
+body	{
+	font-family: Helvetica, sans-serif;
+	font-size: 16px;
+}
+
+.validatieDocumentatieTable	{
+	border-collapse: collapse;
+	border: 1px solid;
+	width: 75%;
+}
+
+.validatieDocumentatieRow, .validatieDocumentatieCell	{
+	padding: 5px;
+	border: 1px solid;
+}
+
+.validatieDocumentatieCell:nth-child(odd) {
+	background-color: rgb(166, 193, 214);
+}

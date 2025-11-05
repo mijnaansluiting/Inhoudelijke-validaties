@@ -1,0 +1,1468 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="NS_NLCSnetbeheer" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="NS_NLCSnetbeheer" version="12" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:redefine schemaLocation="NLCS_Netbeheer.xsd">
+		<xs:simpleType name="_Status">
+			<xs:restriction base="_Status">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="BESTAAND" />
+				<xs:enumeration value="NIEUW" />
+				<xs:enumeration value="REVISIE" />
+				<xs:enumeration value="VERWIJDERD" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_Bedrijfstoestand">
+			<xs:restriction base="_Bedrijfstoestand">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="GEEN" />
+				<xs:enumeration value="IN BEDRIJF" />
+				<xs:enumeration value="RESERVE" />
+				<xs:enumeration value="VERLATEN" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_Bewerking">
+			<xs:restriction base="_Bewerking">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="IG NEMEN" />
+				<xs:enumeration value="OPVULLEN" />
+				<xs:enumeration value="RS STELLEN" />
+				<xs:enumeration value="TE VERWIJDEREN" />
+				<xs:enumeration value="VERLATEN" />
+				<xs:enumeration value="VERPLAATSEN" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_FunctieLSkast">
+			<xs:restriction base="_FunctieLSkast">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="FLATKAST" />
+				<xs:enumeration value="NULPUNTSTRANSFORMATOR" />
+				<xs:enumeration value="OV SECTIONERING" />
+				<xs:enumeration value="OV VOEDINGPUNT" />
+				<xs:enumeration value="REGELTRANSFORMATOR" />
+				<xs:enumeration value="VERDEELKAST" />
+				<xs:enumeration value="ZELFOPWEKKER" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_EigenaarBeheerder">
+			<xs:restriction base="_EigenaarBeheerder">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Derden" />
+				<xs:enumeration value="Gemeente" />
+				<xs:enumeration value="Netbeheerder" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_TypeLSMof">
+			<xs:restriction base="_TypeLSMof">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="FiloSlim Spuit-wikkelmof P2662" />
+				<xs:enumeration value="Keuze ontbreekt in lijst" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_FabrikantLSMof">
+			<xs:restriction base="_FabrikantLSMof">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="3M" />
+				<xs:enumeration value="Cellpack" />
+				<xs:enumeration value="Filoform" />
+				<xs:enumeration value="Keuze ontbreekt in lijst" />
+				<xs:enumeration value="Lovink" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_FunctieLSmof">
+			<xs:restriction base="_FunctieLSmof">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="AANSLUIT AFTAK" />
+				<xs:enumeration value="AFTAK EINDMOF" />
+				<xs:enumeration value="AFTAK NIET SPLITSEND" />
+				<xs:enumeration value="AFTAK SPLITSEND" />
+				<xs:enumeration value="COMBI LS OV" />
+				<xs:enumeration value="EINDMOF" />
+				<xs:enumeration value="LOODKOP" />
+				<xs:enumeration value="VERBINDING" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_SubnettypeLS">
+			<xs:restriction base="_SubnettypeLS">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="AANSLUITNET" />
+				<xs:enumeration value="DISTRIBUTIE" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_JaNee">
+			<xs:restriction base="_JaNee">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Ja" />
+				<xs:enumeration value="Nee" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_FunctieElectraStation">
+			<xs:restriction base="_FunctieElectraStation">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="HOOFDSTATION LNB" />
+				<xs:enumeration value="KLANTSTATION" />
+				<xs:enumeration value="NETSTATION" />
+				<xs:enumeration value="OVERIG" />
+				<xs:enumeration value="VERDEELSTATION" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_UitvoeringLSKabel">
+			<xs:restriction base="_UitvoeringLSKabel">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="3x10Cu" />
+				<xs:enumeration value="3x2.5Cu" />
+				<xs:enumeration value="4x10Cu" />
+				<xs:enumeration value="4x150Al" />
+				<xs:enumeration value="4x150Al 4x6Cu" />
+				<xs:enumeration value="4x16Cu" />
+				<xs:enumeration value="4x16Cu 4x2.5Cu" />
+				<xs:enumeration value="4x2.5Cu" />
+				<xs:enumeration value="4x240Al" />
+				<xs:enumeration value="4x240Al 4x6Cu" />
+				<xs:enumeration value="4x50Al 4x2.5Cu" />
+				<xs:enumeration value="4x6Cu" />
+				<xs:enumeration value="4x6Cu 4x1.5Cu" />
+				<xs:enumeration value="4x6Cu 4x2.5Cu" />
+				<xs:enumeration value="4x95Al" />
+				<xs:enumeration value="4x95Al 4x6Cu" />
+				<xs:enumeration value="4x95Cu" />
+				<xs:enumeration value="KEUZE ONTBREEKT IN LIJST" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_OpbouwLSKabel">
+			<xs:restriction base="_OpbouwLSKabel">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Keuze ontbreekt in lijst" />
+				<xs:enumeration value="VO-YMvKas Dca-s2,d2,a3" />
+				<xs:enumeration value="VO-YMvKhas Dca-s2,d2,a3" />
+				<xs:enumeration value="V-VMvKh-sas" />
+				<xs:enumeration value="V-VMvKhsas Eca" />
+				<xs:enumeration value="V-VMvKsas" />
+				<xs:enumeration value="V-VMvKsas Eca" />
+				<xs:enumeration value="Z1G-YMz1Kas B2ca-s1,d1,a1" />
+				<xs:enumeration value="Z1O-YMz1Kas B2ca-s1,d1,a1" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_FabrikantKabel">
+			<xs:restriction base="_FabrikantKabel">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="AEG" />
+				<xs:enumeration value="Eupen" />
+				<xs:enumeration value="Hellenic" />
+				<xs:enumeration value="Kaiser" />
+				<xs:enumeration value="Keuze ontbreekt in lijst" />
+				<xs:enumeration value="NKF" />
+				<xs:enumeration value="NKT" />
+				<xs:enumeration value="Pirelli" />
+				<xs:enumeration value="Prysmian" />
+				<xs:enumeration value="Siemens" />
+				<xs:enumeration value="Sterling" />
+				<xs:enumeration value="TF Kable" />
+				<xs:enumeration value="TKF" />
+				<xs:enumeration value="Waskonig en Walter (WenW)" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_FunctieLSKabel">
+			<xs:restriction base="_FunctieLSKabel">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="LS" />
+				<xs:enumeration value="LSOV" />
+				<xs:enumeration value="OV" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_SpanningsniveauLSKabel">
+			<xs:restriction base="_SpanningsniveauLSKabel">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="230 V" />
+				<xs:enumeration value="400 V" />
+				<xs:enumeration value="600 V" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_Inmeetwijze">
+			<xs:restriction base="_Inmeetwijze">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="GPS" />
+				<xs:enumeration value="Laser" />
+				<xs:enumeration value="Meetlint" />
+				<xs:enumeration value="Tachymeter" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_NauwkeurigheidXYvalue">
+			<xs:restriction base="_NauwkeurigheidXYvalue">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="onbekend" />
+				<xs:enumeration value="tot 100cm" />
+				<xs:enumeration value="tot 10cm" />
+				<xs:enumeration value="tot 30cm" />
+				<xs:enumeration value="tot 3cm" />
+				<xs:enumeration value="tot 50cm" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_RedenNietVerwijdering">
+			<xs:restriction base="_RedenNietVerwijdering">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Asfalt" />
+				<xs:enumeration value="Boom/bomen" />
+				<xs:enumeration value="Geen toestemming" />
+				<xs:enumeration value="Grond Derden" />
+				<xs:enumeration value="Keuze ontbreekt in lijst" />
+				<xs:enumeration value="Ligt onder gebouw" />
+				<xs:enumeration value="Ligt te diep" />
+				<xs:enumeration value="Niet te vinden" />
+				<xs:enumeration value="Onder water" />
+				<xs:enumeration value="Ondergrondse Infra" />
+				<xs:enumeration value="Te verwijderen door derden" />
+				<xs:enumeration value="Vervuilde grond" />
+				<xs:enumeration value="Wegverharding" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_Aardingsysteem">
+			<xs:restriction base="_Aardingsysteem">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="TN" />
+				<xs:enumeration value="TT" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_Faseaanduiding">
+			<xs:restriction base="_Faseaanduiding">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="3 Fasen" />
+				<xs:enumeration value="L1" />
+				<xs:enumeration value="L2" />
+				<xs:enumeration value="L3" />
+				<xs:enumeration value="N" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_UitvoeringMSKabel">
+			<xs:restriction base="_UitvoeringMSKabel">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="1x16Cu as16" />
+				<xs:enumeration value="1x240Alrm as35" />
+				<xs:enumeration value="1x25Cu as16" />
+				<xs:enumeration value="1x400Alrm as35" />
+				<xs:enumeration value="1x630Alrm as35" />
+				<xs:enumeration value="1x630Cu as50" />
+				<xs:enumeration value="1x800Alrm as35" />
+				<xs:enumeration value="1x95Alrm as50" />
+				<xs:enumeration value="3x240Alrm as35" />
+				<xs:enumeration value="KEUZE ONTBREEKT IN LIJST" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_OpbouwMSKabel">
+			<xs:restriction base="_OpbouwMSKabel">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Keuze ontbreekt in lijst" />
+				<xs:enumeration value="YMeKrvaslqwd" />
+				<xs:enumeration value="YMvKrvas Eca" />
+				<xs:enumeration value="YMvKrvaslqwd Fca" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_SpanningsniveauMSKabel">
+			<xs:restriction base="_SpanningsniveauMSKabel">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="10 kV" />
+				<xs:enumeration value="20 kV" />
+				<xs:enumeration value="3 kV" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_Subnettype">
+			<xs:restriction base="_Subnettype">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="AANSLUITNET" />
+				<xs:enumeration value="DISTRIBUTIE" />
+				<xs:enumeration value="TRANSPORT" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_AansluitsetOvl">
+			<xs:restriction base="_AansluitsetOvl">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="AK OVL" />
+				<xs:enumeration value="Keuze ontbreekt in lijst" />
+				<xs:enumeration value="LS-94 Faget" />
+				<xs:enumeration value="LS-94 Faget +City Zenz" />
+				<xs:enumeration value="LS-94 Faget +TF" />
+				<xs:enumeration value="LS-94 Faget +Timeswitch" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_FunctieOvlOverdrachtspunt">
+			<xs:restriction base="_FunctieOvlOverdrachtspunt">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="AANSLUITKASTJE" />
+				<xs:enumeration value="LICHTMAST" />
+				<xs:enumeration value="MAST PRIMAIR" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_Doorlaatwaarde">
+			<xs:restriction base="_Doorlaatwaarde">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="16" />
+				<xs:enumeration value="25" />
+				<xs:enumeration value="35" />
+				<xs:enumeration value="4" />
+				<xs:enumeration value="6" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_AansluitwijzeOvl">
+			<xs:restriction base="_AansluitwijzeOvl">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Aftak" />
+				<xs:enumeration value="Mini-ster" />
+				<xs:enumeration value="Rijgaansluiting" />
+				<xs:enumeration value="Sectionering" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_VoedingEnSturingOvl">
+			<xs:restriction base="_VoedingEnSturingOvl">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="LS gevoed met LCU" />
+				<xs:enumeration value="LS gevoed met relais op OV-net" />
+				<xs:enumeration value="OV gevoed en geschakeld" />
+				<xs:enumeration value="OV gevoed met TF ontv in mast" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_SchakelingOvl">
+			<xs:restriction base="_SchakelingOvl">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Avond" />
+				<xs:enumeration value="Avond en nacht" />
+				<xs:enumeration value="N.v.t." />
+				<xs:enumeration value="Nacht" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_Kabelmontage">
+			<xs:restriction base="_Kabelmontage">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Geen stekker" />
+				<xs:enumeration value="Stekker handmatige montage" />
+				<xs:enumeration value="Stekker prefab af fabriek" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_UitvoeringLSoverdrachtspunt">
+			<xs:restriction base="_UitvoeringLSoverdrachtspunt">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Keuze ontbreekt in lijst" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_SoortLSAansluiting">
+			<xs:restriction base="_SoortLSAansluiting">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Keuze ontbreekt in lijst" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_FunctieLSoverdrachtspunt">
+			<xs:restriction base="_FunctieLSoverdrachtspunt">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Aansluiting via kast" />
+				<xs:enumeration value="Aansluitingbox" />
+				<xs:enumeration value="Abri" />
+				<xs:enumeration value="Bedrijf" />
+				<xs:enumeration value="Betaalautomaat" />
+				<xs:enumeration value="Bouw Aansluiting" />
+				<xs:enumeration value="Brug" />
+				<xs:enumeration value="CAI kast" />
+				<xs:enumeration value="Camping" />
+				<xs:enumeration value="Centrale Voorziening" />
+				<xs:enumeration value="Detectiekast" />
+				<xs:enumeration value="Diversen (niet gebouwen)" />
+				<xs:enumeration value="E-station" />
+				<xs:enumeration value="Feestverlichting" />
+				<xs:enumeration value="Flitspaal" />
+				<xs:enumeration value="Garage" />
+				<xs:enumeration value="Gas Signaalkast" />
+				<xs:enumeration value="Gasstation" />
+				<xs:enumeration value="Gasunie met Odorant" />
+				<xs:enumeration value="Geldautomaat" />
+				<xs:enumeration value="Gemaal" />
+				<xs:enumeration value="GK-gasregelr." />
+				<xs:enumeration value="Glasvezel verdeelkast" />
+				<xs:enumeration value="GSM mast" />
+				<xs:enumeration value="GVB huisje" />
+				<xs:enumeration value="HA-noodschool, HA-brugw." />
+				<xs:enumeration value="Havenlicht" />
+				<xs:enumeration value="Huisaansluiting" />
+				<xs:enumeration value="Huisvuilcontainer" />
+				<xs:enumeration value="IJsbaan" />
+				<xs:enumeration value="Informatiebord" />
+				<xs:enumeration value="Internetcel" />
+				<xs:enumeration value="Kermiskast" />
+				<xs:enumeration value="Keuze ontbreekt in lijst" />
+				<xs:enumeration value="Klok" />
+				<xs:enumeration value="Krib verlichting" />
+				<xs:enumeration value="KTA-verst.kast" />
+				<xs:enumeration value="Lift Aansluiting" />
+				<xs:enumeration value="Lokaal Duurzame Energie" />
+				<xs:enumeration value="Loods, stal, schuur" />
+				<xs:enumeration value="Marktkast" />
+				<xs:enumeration value="Marktverlichting" />
+				<xs:enumeration value="Matrixbord" />
+				<xs:enumeration value="NS" />
+				<xs:enumeration value="Olie druk huisje" />
+				<xs:enumeration value="Onbekend" />
+				<xs:enumeration value="Oplaadpunt E-auto" />
+				<xs:enumeration value="OV Kast" />
+				<xs:enumeration value="Parkeer verwijzing" />
+				<xs:enumeration value="Parkeerautomaat" />
+				<xs:enumeration value="Portaal Autosnelweg" />
+				<xs:enumeration value="Praatpaal" />
+				<xs:enumeration value="Putkast" />
+				<xs:enumeration value="PW Huisje" />
+				<xs:enumeration value="Reclamebord" />
+				<xs:enumeration value="Rioolgemaal" />
+				<xs:enumeration value="Rioolpomp" />
+				<xs:enumeration value="RWS-kast" />
+				<xs:enumeration value="Seizoen aansluiting" />
+				<xs:enumeration value="Signaleringskast NS" />
+				<xs:enumeration value="Sirene" />
+				<xs:enumeration value="Sportpark" />
+				<xs:enumeration value="Stadsverwarming" />
+				<xs:enumeration value="Stuw" />
+				<xs:enumeration value="Telecom stationsgebouw" />
+				<xs:enumeration value="Telefooncel" />
+				<xs:enumeration value="Telefoonkast" />
+				<xs:enumeration value="Toiletgebouw" />
+				<xs:enumeration value="Tunnel" />
+				<xs:enumeration value="TV-Camera" />
+				<xs:enumeration value="Verkeersregelinstallatie" />
+				<xs:enumeration value="Vorstmelder" />
+				<xs:enumeration value="Waarschuwingslicht" />
+				<xs:enumeration value="Walkast" />
+				<xs:enumeration value="Warmte kracht installatie" />
+				<xs:enumeration value="Weide aansluiting" />
+				<xs:enumeration value="Windturbine" />
+				<xs:enumeration value="Wissel verwarming" />
+				<xs:enumeration value="Woonboot" />
+				<xs:enumeration value="Woonwagen" />
+				<xs:enumeration value="Ziekenhuis" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_UitvoeringMSMof">
+			<xs:restriction base="_UitvoeringMSMof">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="3M QS200 93-AK 220-3/ADS1" />
+				<xs:enumeration value="3M QS200 93-AK 221-3/ADS1" />
+				<xs:enumeration value="3M QS200 93-AK 241-3/ADS1NL" />
+				<xs:enumeration value="3M QS200 93-KK 221-3 NL Eindmof" />
+				<xs:enumeration value="Keuze ontbreekt in lijst" />
+				<xs:enumeration value="Lovink vloeistofmof Lovisil M105" />
+				<xs:enumeration value="Lovink vloeistofmof Lovisil M75" />
+				<xs:enumeration value="Lovink vloeistofmof Lovisil M85" />
+				<xs:enumeration value="Lovisil MK 125" />
+				<xs:enumeration value="TE Koudkr EM 1f CSJA-24C 25-240" />
+				<xs:enumeration value="TE Koudkr EM 1f CSJA-24E 240-630+800RE" />
+				<xs:enumeration value="TE Koudkrimp 1f CSJA-24C 25-240" />
+				<xs:enumeration value="TE Koudkrimp 1f CSJA-24E 240-630+800RE" />
+				<xs:enumeration value="TE Koudkrimp 1f CSJA-24F 240-800RE+RM" />
+				<xs:enumeration value="TE Koudkrimp 1f CSJA-36E 240-800RE" />
+				<xs:enumeration value="TE Koudkrimp 1f CSJA-36F 800RE+RM" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_FunctieMSmof">
+			<xs:restriction base="_FunctieMSmof">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="3FASE 3x1FASE" />
+				<xs:enumeration value="AFTAK SPLITSEND" />
+				<xs:enumeration value="EIND GEAARD" />
+				<xs:enumeration value="EINDDOP" />
+				<xs:enumeration value="EINDMOF" />
+				<xs:enumeration value="LOODKOP" />
+				<xs:enumeration value="MANTELREPARATIE" />
+				<xs:enumeration value="VERBINDING" />
+				<xs:enumeration value="ZEGELWIJZIGING" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_MateriaalMantelbuis">
+			<xs:restriction base="_MateriaalMantelbuis">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="GIJ" />
+				<xs:enumeration value="KEUZE ONTBREEKT IN LIJST" />
+				<xs:enumeration value="PE 80" />
+				<xs:enumeration value="PVC" />
+				<xs:enumeration value="ST" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_DiameterMantelbuis">
+			<xs:restriction base="_DiameterMantelbuis">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="100" />
+				<xs:enumeration value="107" />
+				<xs:enumeration value="108" />
+				<xs:enumeration value="110" />
+				<xs:enumeration value="114" />
+				<xs:enumeration value="114.3" />
+				<xs:enumeration value="120" />
+				<xs:enumeration value="125" />
+				<xs:enumeration value="133" />
+				<xs:enumeration value="140" />
+				<xs:enumeration value="150" />
+				<xs:enumeration value="159" />
+				<xs:enumeration value="160" />
+				<xs:enumeration value="165" />
+				<xs:enumeration value="168.3" />
+				<xs:enumeration value="175" />
+				<xs:enumeration value="180" />
+				<xs:enumeration value="200" />
+				<xs:enumeration value="216" />
+				<xs:enumeration value="219.1" />
+				<xs:enumeration value="225" />
+				<xs:enumeration value="250" />
+				<xs:enumeration value="260" />
+				<xs:enumeration value="267" />
+				<xs:enumeration value="273" />
+				<xs:enumeration value="280" />
+				<xs:enumeration value="300" />
+				<xs:enumeration value="315" />
+				<xs:enumeration value="32" />
+				<xs:enumeration value="323.9" />
+				<xs:enumeration value="350" />
+				<xs:enumeration value="368" />
+				<xs:enumeration value="40" />
+				<xs:enumeration value="400" />
+				<xs:enumeration value="406.4" />
+				<xs:enumeration value="419" />
+				<xs:enumeration value="42.4" />
+				<xs:enumeration value="48.3" />
+				<xs:enumeration value="50" />
+				<xs:enumeration value="500" />
+				<xs:enumeration value="508" />
+				<xs:enumeration value="521" />
+				<xs:enumeration value="558" />
+				<xs:enumeration value="60.3" />
+				<xs:enumeration value="600" />
+				<xs:enumeration value="609" />
+				<xs:enumeration value="616" />
+				<xs:enumeration value="63" />
+				<xs:enumeration value="63.5" />
+				<xs:enumeration value="70" />
+				<xs:enumeration value="700" />
+				<xs:enumeration value="75" />
+				<xs:enumeration value="76.1" />
+				<xs:enumeration value="762" />
+				<xs:enumeration value="80" />
+				<xs:enumeration value="800" />
+				<xs:enumeration value="812.8" />
+				<xs:enumeration value="88.9" />
+				<xs:enumeration value="90" />
+				<xs:enumeration value="KEUZE ONTBREEKT IN LIJST" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_Thema">
+			<xs:restriction base="_Thema">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="BUISLEIDING GEVAARLIJKE INHOUD" />
+				<xs:enumeration value="CHEMIE" />
+				<xs:enumeration value="DATA" />
+				<xs:enumeration value="ET_HS" />
+				<xs:enumeration value="ET_LHS" />
+				<xs:enumeration value="ET_LS" />
+				<xs:enumeration value="ET_MS" />
+				<xs:enumeration value="GAS_HD" />
+				<xs:enumeration value="GAS_LD" />
+				<xs:enumeration value="OVERIG" />
+				<xs:enumeration value="PERSLEIDING" />
+				<xs:enumeration value="VRIJVERVAL" />
+				<xs:enumeration value="WARMTENET" />
+				<xs:enumeration value="WATER" />
+				<xs:enumeration value="WEESLEIDING" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_ObjectType">
+			<xs:restriction base="_ObjectType">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Amantelbuis" />
+				<xs:enumeration value="Eaarddraad" />
+				<xs:enumeration value="Eoliedrukleiding" />
+				<xs:enumeration value="Gleiding" />
+				<xs:enumeration value="HSkabel" />
+				<xs:enumeration value="KBmeetdraad" />
+				<xs:enumeration value="LSkabel" />
+				<xs:enumeration value="MSkabel" />
+				<xs:enumeration value="Tbuis" />
+				<xs:enumeration value="Tkabel" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_Netbeheerder">
+			<xs:restriction base="_Netbeheerder">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Enexis" />
+				<xs:enumeration value="Liander" />
+				<xs:enumeration value="Stedin" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_Tekeningtype">
+			<xs:restriction base="_Tekeningtype">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="BESTAANDE SITUATIE" />
+				<xs:enumeration value="DEELREVISIE" />
+				<xs:enumeration value="DEFINITIEF ONTWERP" />
+				<xs:enumeration value="EINDREVISIE" />
+				<xs:enumeration value="VOORONTWERP" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_BewerkingGas">
+			<xs:restriction base="_BewerkingGas">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="IB STELLEN" />
+				<xs:enumeration value="IG NEMEN" />
+				<xs:enumeration value="RELINEN" />
+				<xs:enumeration value="RS STELLEN" />
+				<xs:enumeration value="TE VERWIJDEREN" />
+				<xs:enumeration value="VERLATEN" />
+				<xs:enumeration value="VERPLAATSEN" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_FunctieGasStation">
+			<xs:restriction base="_FunctieGasStation">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Afleverstation" />
+				<xs:enumeration value="Afleverstation klein" />
+				<xs:enumeration value="District- en Afleverstation" />
+				<xs:enumeration value="districtstation" />
+				<xs:enumeration value="Drukbewakingsstation" />
+				<xs:enumeration value="Gas Ontvangststation" />
+				<xs:enumeration value="Huisaansluitset" />
+				<xs:enumeration value="Open eind levering" />
+				<xs:enumeration value="Overslagstation" />
+				<xs:enumeration value="Reinigings- droog station" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_BuitenDiameterGasleiding">
+			<xs:restriction base="_BuitenDiameterGasleiding">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="100" />
+				<xs:enumeration value="110" />
+				<xs:enumeration value="114.3" />
+				<xs:enumeration value="15" />
+				<xs:enumeration value="160" />
+				<xs:enumeration value="168.3" />
+				<xs:enumeration value="200" />
+				<xs:enumeration value="219.1" />
+				<xs:enumeration value="22" />
+				<xs:enumeration value="25" />
+				<xs:enumeration value="250" />
+				<xs:enumeration value="273.0" />
+				<xs:enumeration value="28" />
+				<xs:enumeration value="315" />
+				<xs:enumeration value="32" />
+				<xs:enumeration value="323.9" />
+				<xs:enumeration value="33.7" />
+				<xs:enumeration value="35" />
+				<xs:enumeration value="40" />
+				<xs:enumeration value="400" />
+				<xs:enumeration value="406.4" />
+				<xs:enumeration value="42" />
+				<xs:enumeration value="42.4" />
+				<xs:enumeration value="48.3" />
+				<xs:enumeration value="50" />
+				<xs:enumeration value="54" />
+				<xs:enumeration value="60.3" />
+				<xs:enumeration value="63" />
+				<xs:enumeration value="75" />
+				<xs:enumeration value="88.9" />
+				<xs:enumeration value="90" />
+				<xs:enumeration value="Keuze ontbreekt in lijst" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_MateriaalGasleiding">
+			<xs:restriction base="_MateriaalGasleiding">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="CU" />
+				<xs:enumeration value="KEUZE ONTBREEKT IN LIJST" />
+				<xs:enumeration value="KOUSIJZER" />
+				<xs:enumeration value="MULTILAYER" />
+				<xs:enumeration value="PE 100" />
+				<xs:enumeration value="PE 100RC" />
+				<xs:enumeration value="PE 100RCB" />
+				<xs:enumeration value="PE 100RCM" />
+				<xs:enumeration value="PE 80" />
+				<xs:enumeration value="PECu" />
+				<xs:enumeration value="PEKO" />
+				<xs:enumeration value="PVC CPE" />
+				<xs:enumeration value="ST" />
+				<xs:enumeration value="ST PE" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_SDRgas">
+			<xs:restriction base="_SDRgas">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="11" />
+				<xs:enumeration value="17.6" />
+				<xs:enumeration value="33" />
+				<xs:enumeration value="41" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_FabrikantGasLeiding">
+			<xs:restriction base="_FabrikantGasLeiding">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Ibema" />
+				<xs:enumeration value="Keuze ontbreekt in lijst" />
+				<xs:enumeration value="OCI" />
+				<xs:enumeration value="Wavin" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_Druk">
+			<xs:restriction base="_Druk">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="1 BAR" />
+				<xs:enumeration value="100 MBAR" />
+				<xs:enumeration value="200 MBAR" />
+				<xs:enumeration value="30 MBAR" />
+				<xs:enumeration value="4 BAR" />
+				<xs:enumeration value="8 BAR" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_SoortGas">
+			<xs:restriction base="_SoortGas">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Aardgas" />
+				<xs:enumeration value="Biogas" />
+				<xs:enumeration value="Hoogcalorisch gas" />
+				<xs:enumeration value="Keuze ontbreekt in lijst" />
+				<xs:enumeration value="Waterstof" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_VerbindingstechniekGas">
+			<xs:restriction base="_VerbindingstechniekGas">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Draadverbinding" />
+				<xs:enumeration value="Elektrolas" />
+				<xs:enumeration value="Elektrolasmof" />
+				<xs:enumeration value="Flensverbinding" />
+				<xs:enumeration value="HSF Peko koppeling TV" />
+				<xs:enumeration value="Koppeling" />
+				<xs:enumeration value="Las" />
+				<xs:enumeration value="Lasverbinding" />
+				<xs:enumeration value="Mof" />
+				<xs:enumeration value="Mof overschuif HPE" />
+				<xs:enumeration value="Mof overschuif PVC-SV" />
+				<xs:enumeration value="Mof PE100 El-las" />
+				<xs:enumeration value="Multi-joint" />
+				<xs:enumeration value="Pvp koppeling" />
+				<xs:enumeration value="Spie verl PE100 PVC-SV" />
+				<xs:enumeration value="Spiegellas" />
+				<xs:enumeration value="Verlengde U2 koppeling" />
+				<xs:enumeration value="Voorlasflens ST" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_NetvlakGas">
+			<xs:restriction base="_NetvlakGas">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="HD" />
+				<xs:enumeration value="LD" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_KBaanwezig">
+			<xs:restriction base="_KBaanwezig">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Ja" />
+				<xs:enumeration value="N.v.t. - geen staal" />
+				<xs:enumeration value="Nee" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_BuisbekledingGas">
+			<xs:restriction base="_BuisbekledingGas">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Keuze ontbreekt in lijst" />
+				<xs:enumeration value="Onbekleed" />
+				<xs:enumeration value="PE extrusie" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_VerbindingbekledingGas">
+			<xs:restriction base="_VerbindingbekledingGas">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Keuze ontbreekt in lijst" />
+				<xs:enumeration value="Onbekleed" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_SoortGasAfsluiter">
+			<xs:restriction base="_SoortGasAfsluiter">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Klep" />
+				<xs:enumeration value="Kogel" />
+				<xs:enumeration value="Kogelkraan/Las" />
+				<xs:enumeration value="Schuif" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_MateriaalGasAfsluiter">
+			<xs:restriction base="_MateriaalGasAfsluiter">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Keuze ontbreekt in lijst" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_DraaiwijzeGasAfsluiter">
+			<xs:restriction base="_DraaiwijzeGasAfsluiter">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Linksom" />
+				<xs:enumeration value="Rechtsom" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_DrukklasseGasAfsluiter">
+			<xs:restriction base="_DrukklasseGasAfsluiter">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="PN 10" />
+				<xs:enumeration value="PN 16" />
+				<xs:enumeration value="PN 40" />
+				<xs:enumeration value="PN 6" />
+				<xs:enumeration value="PN 8" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_FabrikantGasAfsluiter">
+			<xs:restriction base="_FabrikantGasAfsluiter">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="AVK" />
+				<xs:enumeration value="George Fisher" />
+				<xs:enumeration value="Hawle" />
+				<xs:enumeration value="Keuze ontbreekt in lijst" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_FunctieGasAfsluiter">
+			<xs:restriction base="_FunctieGasAfsluiter">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Aansluitleiding" />
+				<xs:enumeration value="Afblaas" />
+				<xs:enumeration value="Scheidingafsluiter" />
+				<xs:enumeration value="Sectie" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_VerbindingstechniekGasAfsluiter">
+			<xs:restriction base="_VerbindingstechniekGasAfsluiter">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Flens" />
+				<xs:enumeration value="Las" />
+				<xs:enumeration value="Mof" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_Voorkeurstand">
+			<xs:restriction base="_Voorkeurstand">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Dicht" />
+				<xs:enumeration value="Open" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_UitvoeringGasTstuk">
+			<xs:restriction base="_UitvoeringGasTstuk">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Aanboring" />
+				<xs:enumeration value="Bolfitting" />
+				<xs:enumeration value="Keuze ontbreekt in lijst" />
+				<xs:enumeration value="Las T-stuk" />
+				<xs:enumeration value="MMB GY" />
+				<xs:enumeration value="MMB PVCsv" />
+				<xs:enumeration value="T-Stuk" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_SoortGasAansluiting">
+			<xs:restriction base="_SoortGasAansluiting">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Aansluiting op hoofdleiding" />
+				<xs:enumeration value="Afgedopte aansluiting" />
+				<xs:enumeration value="Aftakaansluiting" />
+				<xs:enumeration value="Hoofdaansluiting Hoogbouw" />
+				<xs:enumeration value="Hoofdaansluiting met aftak" />
+				<xs:enumeration value="Hoofdaansluiting met rijg" />
+				<xs:enumeration value="Hoofdaansluiting met sec" />
+				<xs:enumeration value="Keuze ontbreekt in lijst" />
+				<xs:enumeration value="Regelinstallatie" />
+				<xs:enumeration value="Rijgaansluiting" />
+				<xs:enumeration value="Secundair" />
+				<xs:enumeration value="Secundair binnen" />
+				<xs:enumeration value="Secundair buiten" />
+				<xs:enumeration value="Via stijgleiding" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_UitvoeringAftakzadel">
+			<xs:restriction base="_UitvoeringAftakzadel">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Aanboring" />
+				<xs:enumeration value="Aanboring-eindkap" />
+				<xs:enumeration value="Keuze ontbreekt in lijst" />
+				<xs:enumeration value="T" />
+				<xs:enumeration value="Weldolet" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_UitvoeringEindstuk">
+			<xs:restriction base="_UitvoeringEindstuk">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Blindflens" />
+				<xs:enumeration value="Eindkap" />
+				<xs:enumeration value="Keuze ontbreekt in lijst" />
+				<xs:enumeration value="Lasbodem bol" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_SoortGasAppendage">
+			<xs:restriction base="_SoortGasAppendage">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Electrolasmof" />
+				<xs:enumeration value="Flens-Steekschijf" />
+				<xs:enumeration value="Flensverbinding" />
+				<xs:enumeration value="Flex / N-Flex" />
+				<xs:enumeration value="Keuze ontbreekt in lijst" />
+				<xs:enumeration value="Knevelplek" />
+				<xs:enumeration value="Komeetmof" />
+				<xs:enumeration value="Las" />
+				<xs:enumeration value="Lasmof" />
+				<xs:enumeration value="Lasnippel" />
+				<xs:enumeration value="Overschuifmof" />
+				<xs:enumeration value="Reparatie: Encapress" />
+				<xs:enumeration value="Reparatie: Klem" />
+				<xs:enumeration value="Reparatie: Klem met aftak" />
+				<xs:enumeration value="Reparatie: Lekbeugel" />
+				<xs:enumeration value="Reukpot" />
+				<xs:enumeration value="Schuifstuk" />
+				<xs:enumeration value="Shortstop" />
+				<xs:enumeration value="Sok, Stop of Nippel" />
+				<xs:enumeration value="Split Tee" />
+				<xs:enumeration value="Steekmof" />
+				<xs:enumeration value="Steekschijf" />
+				<xs:enumeration value="Stoppel" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_FabrikantGasAppendage">
+			<xs:restriction base="_FabrikantGasAppendage">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Keuze ontbreekt in lijst" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_UitvoeringGasIsolatiestuk">
+			<xs:restriction base="_UitvoeringGasIsolatiestuk">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Isolatieflens" />
+				<xs:enumeration value="Isolatiekoppeling" />
+				<xs:enumeration value="Isolatiestuk" />
+				<xs:enumeration value="Keuze ontbreekt in lijst" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_FunctieGasIsolatiestuk">
+			<xs:restriction base="_FunctieGasIsolatiestuk">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Netscheiding" />
+				<xs:enumeration value="Ringscheiding" />
+				<xs:enumeration value="Sectiescheiding" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_AppendagebekledingGas">
+			<xs:restriction base="_AppendagebekledingGas">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Epoxy" />
+				<xs:enumeration value="Keuze ontbreekt in lijst" />
+				<xs:enumeration value="Onbekleed" />
+				<xs:enumeration value="Polyurethaan coating" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_UitvoeringGasOvergangsstuk">
+			<xs:restriction base="_UitvoeringGasOvergangsstuk">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Keuze ontbreekt in lijst" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_SoortGasMeetpunt">
+			<xs:restriction base="_SoortGasMeetpunt">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Druk meting" />
+				<xs:enumeration value="Flow meting" />
+				<xs:enumeration value="Keuze ontbreekt in lijst" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_UitvoeringOntspanningselement">
+			<xs:restriction base="_UitvoeringOntspanningselement">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Keuze ontbreekt in lijst" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_KoppelingAansluitleidingOSE">
+			<xs:restriction base="_KoppelingAansluitleidingOSE">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Kniekoppeling" />
+				<xs:enumeration value="MFK" />
+				<xs:enumeration value="Spie eind" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_KoppelingGeveldoorvoerOSE">
+			<xs:restriction base="_KoppelingGeveldoorvoerOSE">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Clickmoer" />
+				<xs:enumeration value="Kniekoppeling" />
+				<xs:enumeration value="PE onder fundatie" />
+				<xs:enumeration value="Vast" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_SoortGasLeidingafblaas">
+			<xs:restriction base="_SoortGasLeidingafblaas">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Afblaas" />
+				<xs:enumeration value="Keuze ontbreekt in lijst" />
+				<xs:enumeration value="Ontluchter" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_SoortGasAfsluiterAfblaas">
+			<xs:restriction base="_SoortGasAfsluiterAfblaas">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Kogel-Flens" />
+				<xs:enumeration value="Kogel-Las" />
+				<xs:enumeration value="Schuif-Flens" />
+				<xs:enumeration value="Schuif-Las" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_UitvoeringKBgelijkrichter">
+			<xs:restriction base="_UitvoeringKBgelijkrichter">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Amstel 25V/5A" />
+				<xs:enumeration value="Amstel AM2N-50V-10A" />
+				<xs:enumeration value="Delta ES030-5" />
+				<xs:enumeration value="Eltek 802-EWB-110-33" />
+				<xs:enumeration value="Hommema 48V/10A-RVS-VAR" />
+				<xs:enumeration value="Hommema 48V/5A-RVS-VAR" />
+				<xs:enumeration value="Keuze ontbreekt in lijst" />
+				<xs:enumeration value="Van der Heide H-00-00-025-002-00" />
+				<xs:enumeration value="Van der Heide H-03-00-025-02-05-12-12" />
+				<xs:enumeration value="Van der Heide H-84-025-10" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_FabrikantKBgelijkrichter">
+			<xs:restriction base="_FabrikantKBgelijkrichter">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Amstel" />
+				<xs:enumeration value="Delta" />
+				<xs:enumeration value="Eltek" />
+				<xs:enumeration value="Hommema" />
+				<xs:enumeration value="Keuze ontbreekt in lijst" />
+				<xs:enumeration value="Merrem en la Porte" />
+				<xs:enumeration value="Van der Heide" />
+				<xs:enumeration value="Van der Velde" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_MateriaalBehuizingKBgelijkrichter">
+			<xs:restriction base="_MateriaalBehuizingKBgelijkrichter">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Keuze ontbreekt in lijst" />
+				<xs:enumeration value="Kunststof" />
+				<xs:enumeration value="RVS" />
+				<xs:enumeration value="Staal" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_TypeKBbehuizingGelijkrichter">
+			<xs:restriction base="_TypeKBbehuizingGelijkrichter">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Keuze ontbreekt in lijst" />
+				<xs:enumeration value="Kunstof Kast" />
+				<xs:enumeration value="Orlite OR-2852" />
+				<xs:enumeration value="Phisterer KVS103" />
+				<xs:enumeration value="Phisterer Polyester" />
+				<xs:enumeration value="RVS kast" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_ThemaKB">
+			<xs:restriction base="_ThemaKB">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="BUISLEIDING GEVAARLIJKE INHOUD" />
+				<xs:enumeration value="CHEMIE" />
+				<xs:enumeration value="GAS_HD" />
+				<xs:enumeration value="GAS_LD" />
+				<xs:enumeration value="OVERIG" />
+				<xs:enumeration value="PERSLEIDING" />
+				<xs:enumeration value="VRIJVERVAL" />
+				<xs:enumeration value="WARMTENET" />
+				<xs:enumeration value="WATER" />
+				<xs:enumeration value="WEESLEIDING" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_TypeKBbehuizingMeetpaal">
+			<xs:restriction base="_TypeKBbehuizingMeetpaal">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Betonnen meetpaal" />
+				<xs:enumeration value="Keuze ontbreekt in lijst" />
+				<xs:enumeration value="Kunststof meetpaal" />
+				<xs:enumeration value="RVS meetpaal" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_TypeKBmeetelectrode">
+			<xs:restriction base="_TypeKBmeetelectrode">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Combi" />
+				<xs:enumeration value="Keuze ontbreekt in lijst" />
+				<xs:enumeration value="Meetcel gel" />
+				<xs:enumeration value="Meetcel kristal" />
+				<xs:enumeration value="Zink" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_FunctieKBmeetpaal">
+			<xs:restriction base="_FunctieKBmeetpaal">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Diode in meetpaal aanwezig t.b.v. stroomrichting" />
+				<xs:enumeration value="Drainage AC" />
+				<xs:enumeration value="Drainage DC" />
+				<xs:enumeration value="Kathodische bescherming d.m.v. mg-anode(n)" />
+				<xs:enumeration value="KB lage druk gasleiding (druk≤201 mbar)" />
+				<xs:enumeration value="KB-netscheiding (elektrische scheiding tussen twee gasnetten)" />
+				<xs:enumeration value="KB-ringonderbreking (elektrische scheiding in een zelfde gasnet om ring te splitsen)" />
+				<xs:enumeration value="Keuze ontbreekt in lijst" />
+				<xs:enumeration value="Meetpaal  t.b.v. zwerfstroommetingen" />
+				<xs:enumeration value="Meetpaal heeft geen functie" />
+				<xs:enumeration value="Meetpaal heeft Remote monitoring / sensor" />
+				<xs:enumeration value="Meetpaal is een straatpot" />
+				<xs:enumeration value="Meetpaal met doorverbinding(en) naar andere meetpaal" />
+				<xs:enumeration value="Meetpaal met één of meerdere meetpunt(en) op leiding (tussen meetpaal)" />
+				<xs:enumeration value="Meetpaal met meetpunt coupon" />
+				<xs:enumeration value="Meetpaal met meetpunt op eindpunt leiding waarbij de afstand (aftakking) ≤500 meter t.o.v. vorig meetpunt nabij isolatiekoppeling c.q. -flens." />
+				<xs:enumeration value="Meetpaal met meetpunt op eindpunt leiding waarbij de afstand (aftakking) ≤500 meter t.o.v. vorig meetpunt." />
+				<xs:enumeration value="Meetpaal met meetpunt(en) damwand(en)" />
+				<xs:enumeration value="Meetpaal met meetpunt(en) derden" />
+				<xs:enumeration value="Meetpaal met meetpunt(en) derden waarbij KB door opdrachtgever gerealiseerd wordt" />
+				<xs:enumeration value="Meetpaal met meetpunt(en) mg-lint(en) elektrisch verbonden in meetpaal met de leiding" />
+				<xs:enumeration value="Meetpaal met meetpunt(en) mg-lint(en) niet elektrisch verbonden in meetpaal met de leiding" />
+				<xs:enumeration value="Meetpaal met meetpunt(en) nabij kruising van Stedin stalen leiding met stalen leiding derden." />
+				<xs:enumeration value="Meetpaal met meetpunt(en) referentie-elektrod(en)" />
+				<xs:enumeration value="Meetpaal met meetpunt(en) stalen mantelbuis" />
+				<xs:enumeration value="Meetpaal met meetpunten t.b.v. elektrische overbrugging isolatiekoppeling(en)" />
+				<xs:enumeration value="Meetpaal met meetpunten t.b.v. elektrische overbrugging parallel en/of naast liggende leiding." />
+				<xs:enumeration value="Meetpaal nabij hoogspanningskabel c.q. lijn" />
+				<xs:enumeration value="Meetpaal nabij of tussen zonnepanelen park." />
+				<xs:enumeration value="Meetpaal nabij spoor" />
+				<xs:enumeration value="Meetpaal nabij tram" />
+				<xs:enumeration value="Meetpaal op eindpunt leiding" />
+				<xs:enumeration value="Meetpaal op privé terrein / voorafgaand aan meting een afspraak maken, KB via gelijkrichter" />
+				<xs:enumeration value="OAM heeft vastgesteld dat voor meetpaal geen herstelactie of meting nodig is" />
+				<xs:enumeration value="Uitlaat lage druk (≤ 201 mbar) meebeschermd (korte leiding)" />
+				<xs:enumeration value="Uitlaat lage druk (≤ 201mbar) niet meebeschermd (korte leiding), alleen benoemen mits meetpunt in meetpaal" />
+				<xs:enumeration value="Verdeelkast tbv anode en/of kathode" />
+				<xs:enumeration value="Weerstand in meetpaal aanwezig i.v.m. potentiaalverlaging" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_UitvoeringKBdraad">
+			<xs:restriction base="_UitvoeringKBdraad">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="1 x 10 Cu, met mantel" />
+				<xs:enumeration value="1 x 6 Cu, met mantel" />
+				<xs:enumeration value="3 x 35Cu halogeenvrij klasse B2ca" />
+				<xs:enumeration value="Keuze ontbreekt in lijst" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_FunctieKBdraad">
+			<xs:restriction base="_FunctieKBdraad">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Aarding" />
+				<xs:enumeration value="Anders" />
+				<xs:enumeration value="Coupon" />
+				<xs:enumeration value="Damwand" />
+				<xs:enumeration value="Diepte-anodebed" />
+				<xs:enumeration value="Doorverbinding" />
+				<xs:enumeration value="Gelijkrichter" />
+				<xs:enumeration value="HD-leiding" />
+				<xs:enumeration value="KB-object derden" />
+				<xs:enumeration value="Keuze ontbreekt in lijst" />
+				<xs:enumeration value="Kwelscherm" />
+				<xs:enumeration value="LD-Leiding" />
+				<xs:enumeration value="Leiding" />
+				<xs:enumeration value="Leiding AC drainage" />
+				<xs:enumeration value="leiding DC drainage" />
+				<xs:enumeration value="Magnesiumanode" />
+				<xs:enumeration value="Magnesiumlint anode" />
+				<xs:enumeration value="Mantelbuis" />
+				<xs:enumeration value="Onbeschermde zijde" />
+				<xs:enumeration value="PBU" />
+				<xs:enumeration value="Permanente referentie elektrode" />
+				<xs:enumeration value="Shunt" />
+				<xs:enumeration value="Spoor" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_SubfunctieKBdraad">
+			<xs:restriction base="_SubfunctieKBdraad">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="2e meetpunt" />
+				<xs:enumeration value="2e meetpunt kathodezijde gelijkrichter" />
+				<xs:enumeration value="2e meetpunt zijde mg-anode" />
+				<xs:enumeration value="3e meetpunt" />
+				<xs:enumeration value="Anode meetpunt" />
+				<xs:enumeration value="Flexibele slang" />
+				<xs:enumeration value="Gelijkrichter 2e meetpunt" />
+				<xs:enumeration value="Gietijzer" />
+				<xs:enumeration value="Inlaat" />
+				<xs:enumeration value="Kathode meetpunt" />
+				<xs:enumeration value="Kathodezijde gelijkrichter" />
+				<xs:enumeration value="KB binnen mantelbuis" />
+				<xs:enumeration value="Keuze ontbreekt in lijst" />
+				<xs:enumeration value="Niet elektrisch doorverbonden" />
+				<xs:enumeration value="Staal" />
+				<xs:enumeration value="Staal 2e meetpunt" />
+				<xs:enumeration value="Uitlaat" />
+				<xs:enumeration value="Zijde mg-anode" />
+				<xs:enumeration value="Zinker" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_KabelkleurKBdraad">
+			<xs:restriction base="_KabelkleurKBdraad">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Blauw" />
+				<xs:enumeration value="Bruin" />
+				<xs:enumeration value="Geel" />
+				<xs:enumeration value="Geel-Groen" />
+				<xs:enumeration value="Geen" />
+				<xs:enumeration value="Grijs" />
+				<xs:enumeration value="Groen" />
+				<xs:enumeration value="Onbekend" />
+				<xs:enumeration value="Oranje" />
+				<xs:enumeration value="Paars" />
+				<xs:enumeration value="Rood" />
+				<xs:enumeration value="Rood-Zwart" />
+				<xs:enumeration value="Wit" />
+				<xs:enumeration value="Zwart" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_SoortKBanode">
+			<xs:restriction base="_SoortKBanode">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Anodebed (AN)" />
+				<xs:enumeration value="Diepte Anodebed" />
+				<xs:enumeration value="Keuze ontbreekt in lijst" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_MateriaalKBanode">
+			<xs:restriction base="_MateriaalKBanode">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Aluminium" />
+				<xs:enumeration value="Keuze ontbreekt in lijst" />
+				<xs:enumeration value="Silicium-IJzer" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_TypeKBdrainage">
+			<xs:restriction base="_TypeKBdrainage">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="DR-AC" />
+				<xs:enumeration value="DR-DC-10A" />
+				<xs:enumeration value="DR-DC-25A" />
+				<xs:enumeration value="DR-DC-50A" />
+				<xs:enumeration value="Hellas AMAC-40A" />
+				<xs:enumeration value="Hellas AMAC-80A" />
+				<xs:enumeration value="Keuze ontbreekt in lijst" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_FabrikantKBdrainage">
+			<xs:restriction base="_FabrikantKBdrainage">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Keuze ontbreekt in lijst" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_StroomsoortKBdrainage">
+			<xs:restriction base="_StroomsoortKBdrainage">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="AC" />
+				<xs:enumeration value="DC" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_SoortKBobject">
+			<xs:restriction base="_SoortKBobject">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Coupon" />
+				<xs:enumeration value="Keuze ontbreekt in lijst" />
+				<xs:enumeration value="Meetcel" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_FunctieTelecomMof">
+			<xs:restriction base="_FunctieTelecomMof">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="AFTAKMOF" />
+				<xs:enumeration value="EINDDOP" />
+				<xs:enumeration value="EINDMOF" />
+				<xs:enumeration value="OVERGANGSMOF" />
+				<xs:enumeration value="VERBINDINGSMOF" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_MateriaalTelecomBuis">
+			<xs:restriction base="_MateriaalTelecomBuis">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="KEUZE ONTBREEKT IN LIJST" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_DiameterTelecomBuis">
+			<xs:restriction base="_DiameterTelecomBuis">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="KEUZE ONTBREEKT IN LIJST" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_KleurTelecombuis">
+			<xs:restriction base="_KleurTelecombuis">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Blauw" />
+				<xs:enumeration value="Bruin" />
+				<xs:enumeration value="Geel" />
+				<xs:enumeration value="Grijs" />
+				<xs:enumeration value="Groen" />
+				<xs:enumeration value="Oranje" />
+				<xs:enumeration value="Paars" />
+				<xs:enumeration value="Rood" />
+				<xs:enumeration value="Wit" />
+				<xs:enumeration value="Zwart" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_UitvoeringHSKabel">
+			<xs:restriction base="_UitvoeringHSKabel">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="1x1200Alrm" />
+				<xs:enumeration value="1x400Alrm" />
+				<xs:enumeration value="1x630Alrm" />
+				<xs:enumeration value="KEUZE ONTBREEKT IN LIJST" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_OpbouwHSKabel">
+			<xs:restriction base="_OpbouwHSKabel">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="EYLKrvasdlwd" />
+				<xs:enumeration value="Keuze ontbreekt in lijst" />
+				<xs:enumeration value="YMeKrvasdlwd" />
+				<xs:enumeration value="YMeKrvaslqwd Fca" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_SpanningsniveauHSKabel">
+			<xs:restriction base="_SpanningsniveauHSKabel">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="30 kV" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_UitvoeringHSMof">
+			<xs:restriction base="_UitvoeringHSMof">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Eindmof/Krimpdop" />
+				<xs:enumeration value="Eindmof/Loodkap" />
+				<xs:enumeration value="Keuze ontbreekt in lijst" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_FabrikantHSMof">
+			<xs:restriction base="_FabrikantHSMof">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Felten en Guilleaume" />
+				<xs:enumeration value="Keuze ontbreekt in lijst" />
+				<xs:enumeration value="NKF" />
+				<xs:enumeration value="Pfisterer" />
+				<xs:enumeration value="Pirelli" />
+				<xs:enumeration value="Prysmian" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_FunctieHSmof">
+			<xs:restriction base="_FunctieHSmof">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="3FASE 3x1FASE" />
+				<xs:enumeration value="EINDDOP" />
+				<xs:enumeration value="EINDMOF" />
+				<xs:enumeration value="LOODKOP" />
+				<xs:enumeration value="MANTELREPARATIE" />
+				<xs:enumeration value="VERBINDING" />
+				<xs:enumeration value="ZEGELWIJZIGING" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_SoortTelecomBuisAppendage">
+			<xs:restriction base="_SoortTelecomBuisAppendage">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Keuze ontbreekt in lijst" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_NetvlakElektra">
+			<xs:restriction base="_NetvlakElektra">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="HS" />
+				<xs:enumeration value="LHS" />
+				<xs:enumeration value="LS" />
+				<xs:enumeration value="MS" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_DoorsnedeAarddraad">
+			<xs:restriction base="_DoorsnedeAarddraad">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="25" />
+				<xs:enumeration value="50" />
+				<xs:enumeration value="95" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_Geleidermateriaal">
+			<xs:restriction base="_Geleidermateriaal">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Al" />
+				<xs:enumeration value="Cu" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_IsolatiemateriaalAarddraad">
+			<xs:restriction base="_IsolatiemateriaalAarddraad">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Blank" />
+				<xs:enumeration value="Geel/Groen VD" />
+				<xs:enumeration value="PE" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_DoorsnedeAardpen">
+			<xs:restriction base="_DoorsnedeAardpen">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="12.0 mm" />
+				<xs:enumeration value="12.5 mm" />
+				<xs:enumeration value="12.7 mm" />
+				<xs:enumeration value="16.0 mm" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_MateriaalAardpen">
+			<xs:restriction base="_MateriaalAardpen">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Koper" />
+				<xs:enumeration value="Koper vertint" />
+				<xs:enumeration value="Staal gegalvaniseerd" />
+				<xs:enumeration value="Staal verkoperd" />
+				<xs:enumeration value="Staal verzinkt" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_SoortBescherming">
+			<xs:restriction base="_SoortBescherming">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="AFDEKPLAAT" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_BijlageTypeValue">
+			<xs:restriction base="_BijlageTypeValue">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Foto" />
+				<xs:enumeration value="Gestuurde boring" />
+				<xs:enumeration value="Zinkertekening" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_BestandMediaTypeValue">
+			<xs:restriction base="_BestandMediaTypeValue">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="DWG" />
+				<xs:enumeration value="JPEG" />
+				<xs:enumeration value="JSON" />
+				<xs:enumeration value="PDF" />
+				<xs:enumeration value="PNG" />
+				<xs:enumeration value="TIFF" />
+				<xs:enumeration value="XML" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_SoortKunstwerk">
+			<xs:restriction base="_SoortKunstwerk">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="BRUGBUIS" />
+				<xs:enumeration value="DOORVOERLEIDING PARKEERGARAGE" />
+				<xs:enumeration value="KEUZE ONTBREEKT IN LIJST" />
+				<xs:enumeration value="KRUISING_WATER" />
+				<xs:enumeration value="TUNNELLEIDING" />
+				<xs:enumeration value="ZINKER" />
+				<xs:enumeration value="ZINKER_BOOG" />
+				<xs:enumeration value="ZINKER_SLEEP" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_SoortAanlegTechniek">
+			<xs:restriction base="_SoortAanlegTechniek">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="GESTUURDE TECHNIEK" />
+				<xs:enumeration value="KEUZE ONTBREEKT IN LIJST" />
+				<xs:enumeration value="PIPEBURSTING" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_InUit">
+			<xs:restriction base="_InUit">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Intredepunt" />
+				<xs:enumeration value="Uittredepunt" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_SituatieVerplaatsing">
+			<xs:restriction base="_SituatieVerplaatsing">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Na verplaatsing" />
+				<xs:enumeration value="Voor verplaatsing" />
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:redefine>
+</xs:schema>

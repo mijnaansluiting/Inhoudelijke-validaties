@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="NLCSValidatieRegelsNameSpace"
+		   xmlns:xs="http://www.w3.org/2001/XMLSchema"
+		   targetNamespace="NLCSValidatieRegelsNameSpace"
+		   elementFormDefault="qualified"
+		   attributeFormDefault="unqualified">
+
+	<!--- Type Definities -->
+	<xs:simpleType name="SoortValidatieRegelType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Bestand"/>
+			<xs:enumeration value="Document"/>
+			<xs:enumeration value="Geometrie"/>
+			<xs:enumeration value="Verplichte waarde"/>
+			<xs:enumeration value="Inhoud waarde"/>
+			<xs:enumeration value="Topologie"/>
+			<xs:enumeration value="Netlogica"/>
+			<xs:enumeration value="Consistentie"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="NiveauRegelType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Fout"/>
+			<xs:enumeration value="Waarschuwing"/>
+			<xs:enumeration value="Informerend"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="NLCSObjectType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Document"/>
+			<xs:enumeration value="AlleObjecten"/>
+			<xs:enumeration value="AprojectReferentie"/>
+			<xs:enumeration value="LSkast"/>
+			<xs:enumeration value="LSmof"/>
+			<xs:enumeration value="LSkabel"/>
+			<xs:enumeration value="LSoverdrachtspunt"/>
+			<xs:enumeration value="OVLoverdrachtspunt"/>
+			<xs:enumeration value="MSstation"/>
+			<xs:enumeration value="MSoverdrachtspunt"/>
+			<xs:enumeration value="MSkabel"/>
+			<xs:enumeration value="MSmof"/>
+			<xs:enumeration value="Amantelbuis"/>
+			<xs:enumeration value="AmantelbuisInhoud"/>
+			<xs:enumeration value="Eaardmof"/>
+			<xs:enumeration value="Eaarddraad"/>
+			<xs:enumeration value="Eaardpen"/>
+			<xs:enumeration value="HSkabel"/>
+			<xs:enumeration value="HSmof"/>
+			<xs:enumeration value="HSstation"/>
+			<xs:enumeration value="Eoliedrukinstallatie"/>
+			<xs:enumeration value="Eoliedrukleiding"/>
+			<xs:enumeration value="Apmerking]"/>
+			<xs:enumeration value="Amaaiveldhoogte"/>
+			<xs:enumeration value="Abestand_bijlage"/>
+			<xs:enumeration value="Akunstwerk"/>
+			<xs:enumeration value="Aaanlegtechniek"/>
+			<xs:enumeration value="AbeschermingVlak"/>
+			<xs:enumeration value="Amarkeringsobject"/>
+			<xs:enumeration value="AinUittredepunt"/>
+			<xs:enumeration value="AbeschermingVlak"/>
+			<xs:enumeration value="Gstation"/>
+			<xs:enumeration value="Gleiding"/>
+			<xs:enumeration value="Gafsluiter"/>
+			<xs:enumeration value="GTstuk"/>
+			<xs:enumeration value="Goverdrachtspunt"/>
+			<xs:enumeration value="Gaftakzadel"/>
+			<xs:enumeration value="Geindstuk"/>
+			<xs:enumeration value="GappendageOverig"/>
+			<xs:enumeration value="Gisolatiestuk"/>
+			<xs:enumeration value="Govergangstuk"/>
+			<xs:enumeration value="Gmeetpunt"/>
+			<xs:enumeration value="Gleidingafblaas"/>
+			<xs:enumeration value="Gsifon"/>
+			<xs:enumeration value="GvertikaleBocht"/>
+			<xs:enumeration value="Gontspanningselement"/>
+			<xs:enumeration value="Gblaasgatzadel"/>
+			<xs:enumeration value="KBgelijkrichter"/>
+			<xs:enumeration value="KBmeetpaal"/>
+			<xs:enumeration value="KBmeetdraad"/>
+			<xs:enumeration value="KBanode"/>
+			<xs:enumeration value="KBdrainage"/>
+			<xs:enumeration value="KBobject"/>
+			<xs:enumeration value="Tstation"/>
+			<xs:enumeration value="Tbuis"/>
+			<xs:enumeration value="Tkabel"/>
+			<xs:enumeration value="Tmof"/>
+			<xs:enumeration value="Toverdrachtspunt"/>
+
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ObjectSoortType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="LS"/>
+			<xs:enumeration value="MS"/>
+			<xs:enumeration value="HS"/>
+			<xs:enumeration value="Station/Kast"/>
+			<xs:enumeration value="Algemeen"/>
+			<xs:enumeration value="Telecom"/>
+			<xs:enumeration value="Gas"/>
+			<xs:enumeration value="KB"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="ValidatieObjectType">
+		<xs:sequence>
+			<xs:element name="naam"        type="NLCSObjectType"  minOccurs="1" maxOccurs="1"/>
+			<!-- <xs:element name="soortObject" type="ObjectSoortType" minOccurs="1" maxOccurs="1"/>  -->
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ValidatieObjectVerzamelingType">
+		<xs:sequence>
+			<xs:element name="validatieObject" type="ValidatieObjectType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="TekeningSoortType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Bestaande Situatie"/>
+			<xs:enumeration value="Definitief Ontwerp"/>
+			<xs:enumeration value="Deelrevisie"/>
+			<xs:enumeration value="Eindrevisie"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="StatusType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="BESTAAND"/>
+			<xs:enumeration value="NIEUW"/>
+			<xs:enumeration value="REVISIE"/>
+			<xs:enumeration value="VERWIJDERD"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="StatusVerzamelingType">
+		<xs:sequence>
+			<xs:element name="status" type="StatusType" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="BedrijfsToestandType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="IN BEDRIJF"/>
+			<xs:enumeration value="RESERVE"/>
+			<xs:enumeration value="VERLATEN"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="BedrijfsToestandVerzamelingType">
+		<xs:sequence>
+			<xs:element name="bedrijfstoestand" type="BedrijfsToestandType" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ScopeType">
+		<xs:sequence>
+			<xs:element name="tekeningSoort"      type="TekeningSoortType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="statussen"          type="StatusVerzamelingType" minOccurs="1" maxOccurs="1" />
+			<xs:element name="bedrijfsToestanden" type="BedrijfsToestandVerzamelingType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="scopeValidatieRegels" type="ScopeValidatieRegelsVerzamelingType" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attribute name="naam" type="xs:string" use="required"/>
+	</xs:complexType>
+
+	<xs:complexType name="ScopeVerzamelingType">
+		<xs:sequence>
+			<xs:element name="scope" type="ScopeType" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="ValidatieRegelType">
+		<xs:sequence>
+			<xs:element name="beschrijving"     type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Een korte beschrijving van de inhoudelijke validatie</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="soort"            type="SoortValidatieRegelType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="definitie"        type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Definitie waarmee de daadwerkelijke Schematron inhoudelijke validatie ontwikkeld kan worden</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="toelichting"       type="xs:string" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Ruimte voor aanvullend toelichting wat niet past in beschrijving of definitie</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="validatieObjecten" type="ValidatieObjectVerzamelingType" minOccurs="1" maxOccurs="1" />
+		</xs:sequence>
+		<xs:attribute name="nummer" type="xs:ID" use="required"/>
+		<xs:attribute name="naam" type="xs:string" use="required"/>
+	</xs:complexType>
+
+	<xs:complexType name="ValidatieRegelVerzamelingType">
+		<xs:sequence>
+			<xs:element name="validatieRegel" type="ValidatieRegelType" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="ScopeValidatieRegelsReferentieType">
+		<xs:sequence>
+			<xs:element name="nummer" type="xs:IDREF" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="niveau" type="NiveauRegelType" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="ScopeValidatieRegelsVerzamelingType">
+		<xs:sequence>
+			<xs:element name="scopeValidatieRegel" type="ScopeValidatieRegelsReferentieType" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<!--  Root element -->
+	<xs:element name="NLCSValidatieregels">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="validatieRegels" type="ValidatieRegelVerzamelingType" minOccurs="1" maxOccurs="unbounded"/>
+				<xs:element name="scopes" type="ScopeVerzamelingType" minOccurs="1" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

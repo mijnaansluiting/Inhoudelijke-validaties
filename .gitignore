@@ -1,3 +1,21 @@
-\#*.*\#
-.\#*
-*~
+.DS_Store
+.project
+
+# Generated data
+dist/
+validation_schemas/phases_transpiled/
+validation_schemas/abstract_patterns_scope_checks/
+validation_schemas/base_scope_checks/
+validation_test_results/
+rule_validation_reports/
+scoped_objects/
+scoped_objects_reports/
+
+# Dependencies from other repos
+saxon-he.jar
+lib/
+schxslt-cli.jar
+transpile.xsl
+*.zip
+/bin/
+.classpath
