@@ -1,0 +1,48 @@
+name: Deliverables
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  upload-deliverables:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Set up JDK
+        uses: actions/setup-java@v5
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+
+      - name: Install dependencies
+        run: scripts/install_dependencies.sh
+
+      - name: Add scope checks
+        run: scripts/add_scope_checks.sh
+
+      - name: Transpile Schematron to XSL
+        run: java -jar saxon-he.jar -xsl:transpile.xsl -s:validation_schemas/base_scope_checks/v12.sch -o:validation_schemas/base_scope_checks/v12.xsl
+
+      - name: Bundle deliverables
+        run: scripts/bundle.sh
+
+      - name: Upload deliverables
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist
+
+      - name: Upload release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: nlcspp_inhoudelijke_validaties.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

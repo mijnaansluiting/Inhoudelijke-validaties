@@ -1,0 +1,625 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-stylesheet type='text/xsl' href="NLCSValidatieRegels.xsl"?>
+<NLCSValidatieregels xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		     xsi:schemaLocation="NLCSValidatieRegelsNameSpace NLCSValidatieRegels.xsd"
+		     xmlns="NLCSValidatieRegelsNameSpace">
+	<validatieRegels>
+		<validatieRegel nummer="R.1" naam="Bestand bevat NLCS Objecten">
+			<beschrijving>Het NLCS++ bestand moet één of meerdere NLCS++ objecten bevatten</beschrijving>
+			<soort>Bestand</soort>
+			<definitie>
+				Een NLCS++ bestand moet een AProjectReferentie hebben waarin tenminste 1 NLCS Object zit.
+			</definitie>
+			<toelichting>Er mag geen 'leeg' project ingeleverd worden, oftewel met alleen maar één Aprojectreferentie</toelichting>
+			<validatieObjecten>
+				<validatieObject><naam>Document</naam></validatieObject>
+			</validatieObjecten>
+		</validatieRegel>
+		<validatieRegel nummer="R.2" naam="Combinatie NLCS Status en Tekeningsoort">
+			<beschrijving>Afhankelijk van het Tekeningsoort mogen er NLCS Objecten voorkomen met bepaalde NLCS Statussen</beschrijving>
+			<soort>Bestand</soort>
+			<definitie>
+				Bestaande Situatie: BESTAAND
+				Definitief Ontwerp: BESTAAND, NIEUW, REVISIE en VERWIJDERD
+				Deelrevisie: BESTAAND, NIEUW, REVISIE en VERWIJDERD
+				Eindrevisie: BESTAAND, NIEUW, REVISIE en VERWIJDERD
+			</definitie>
+			<validatieObjecten>
+				<validatieObject><naam>Document</naam></validatieObject>
+			</validatieObjecten>
+		</validatieRegel>
+		<validatieRegel nummer="R.3" naam="Geometrie binnen Projectvlak">
+			<beschrijving>Iedere geometrie (punt, lijn en vlak) van ieder NLCS Object in het bestand moet interactie hebben met het Projectgebied van AProjectReferentie</beschrijving>
+			<soort>Geometrie</soort>
+			<definitie>
+				Het kenmerk Geometry (gml:Point, gml:Curve of gml:Surface) moet interactie hebben met de Geometry (gml:Surface) van de AprojectReferentie
+			</definitie>
+			<validatieObjecten>
+		    	<validatieObject><naam>MSmof</naam></validatieObject>
+		    	<validatieObject><naam>MSoverdrachtspunt</naam></validatieObject>
+				<validatieObject><naam>MSkabel</naam></validatieObject>
+				<validatieObject><naam>Amantelbuis</naam></validatieObject>
+				<validatieObject><naam>Akunstwerk</naam></validatieObject>
+				<validatieObject><naam>Eaarddraad</naam></validatieObject>
+				<validatieObject><naam>Aaanlegtechniek</naam></validatieObject>
+				<validatieObject><naam>MSstation</naam></validatieObject>
+				<validatieObject><naam>AbeschermingVlak</naam></validatieObject>
+		    </validatieObjecten>
+		</validatieRegel>
+		<validatieRegel nummer="R.4" naam="Lijn Geometrie">
+			<beschrijving>Een lijn en de omtrek van vlak moeten voldoen aan inmeeteisen</beschrijving>
+			<soort>Geometrie</soort>
+			<definitie>
+				Een gml:Curve moet voldoen aan de volgende inmeeteisen:
+					- minimale (10cm) en maximale (50m) afstand van (inmeet)punten
+					- mag geen knikken bevatten: hoek tussen segmenten > 45 graden.
+
+				Een gml:Surface moet voldoen aan de volgende definitie:
+					- minimale (10cm) en maximale (50m) afstand van (inmeet)punten
+			</definitie>
+			<validatieObjecten>
+			     <!-- Deze regel geldt voor alle NLCS Objecten met een gml:Curve-->
+				<validatieObject><naam>MSkabel</naam></validatieObject>
+				<validatieObject><naam>Eaarddraad</naam></validatieObject>
+				<validatieObject><naam>Aaanlegtechniek</naam></validatieObject>
+				<validatieObject><naam>Amantelbuis</naam></validatieObject>
+				<validatieObject><naam>MSstation</naam></validatieObject>
+
+				<!--
+				<validatieObject><naam>LSkabel</naam></validatieObject>
+				<validatieObject><naam>HSkabel</naam></validatieObject>
+				<validatieObject><naam>Gleiding</naam></validatieObject>
+				<validatieObject><naam>KBmeetdraad</naam></validatieObject>
+				<validatieObject><naam>Tkabel</naam></validatieObject>
+				<validatieObject><naam>Tbuis</naam></validatieObject>
+				<validatieObject><naam>Eoliedrukleiding</naam></validatieObject>
+				<validatieObject><naam>Akunstwerk</naam></validatieObject>
+				<validatieObject><naam>LSkast</naam></validatieObject>
+				<validatieObject><naam>HSstation</naam></validatieObject>
+				<validatieObject><naam>Gstation</naam></validatieObject>
+				<validatieObject><naam>Tstation</naam></validatieObject>
+				<validatieObject><naam>AbeschermingVlak</naam></validatieObject>
+				 -->
+			</validatieObjecten>
+		</validatieRegel>
+		<validatieRegel nummer="R.5" naam="GisId en AssetId">
+			<beschrijving>Ieder NLCS Object met de status BESTAAND, REVISIE en VERWIJDERD moet een GisId en AssetId hebben, dit zijn namelijk objecten die als oorsprong de assetregistratie hebben. NLCS objecten met de status NIEUW mogen juist geen GisId en AssetId hebben omdat deze objecten ontstaan in het ontwerp of de revisie.</beschrijving>
+			<soort>Verplichte waarde</soort>
+			<definitie>
+				Als Status = BESTAAND, REVISIE* of VERWIJDERD, dan moet er een waarde zijn voor zowel kenmerk GisId als AssetId,
+				Als Status = NIEUW dan moeten de kenmerken GisId en AssetId leeg zijn
+
+				*Indien Status = REVISIE en Bewerking = VERPLAATSEN hoeft deze controle niet uitgevoerd te worden. Zie R.29 voor meer details.
+			</definitie>
+			<toelichting>Een AmantelbuisInhoud heeft nooit een GisId.</toelichting>
+		    <validatieObjecten> <!-- Deze regel geldt voor alle NLCS Objecten -->
+		    	<validatieObject><naam>AlleObjecten</naam></validatieObject>
+		    </validatieObjecten>
+		</validatieRegel>
+		<validatieRegel nummer="R.6" naam="Inmeetwijze en Nauwkeurigheid Lineaire Assets Elec">
+			<beschrijving>Ieder lineair NLCS Object voor Elec moet waardes hebben voor de kenmerken Inmeetwijze en Nauwkeurigheid.</beschrijving>
+			<soort>Verplichte waarde</soort>
+			<definitie>
+				Ieder lineair NLCS Object voor Elec moet waardes hebben voor de kenmerken Inmeetwijze en Nauwkeurigheid.
+			</definitie>
+			<validatieObjecten>
+				<validatieObject><naam>MSkabel</naam></validatieObject>
+				<validatieObject><naam>Amantelbuis</naam></validatieObject>
+				<!--
+				<validatieObject><naam>LSkabel</naam></validatieObject>
+				<validatieObject><naam>HSkabel</naam></validatieObject>
+				 -->
+			</validatieObjecten>
+		</validatieRegel>
+		<validatieRegel nummer="R.7" naam="Subnettype gevuld voor LS en MS Kabel">
+			<beschrijving>MSkabel, LSkabel en LSmof moeten een waarde hebben voor Subnettype.</beschrijving>
+			<soort>Verplichte waarde</soort>
+			<definitie>
+				MSkabel, LSkabel en LSmof moeten een waarde hebben voor kenmerk Subnettype.
+			</definitie>
+			<validatieObjecten>
+				<validatieObject><naam>MSkabel</naam></validatieObject>
+				<validatieObject><naam>LSkabel</naam></validatieObject>
+				<validatieObject><naam>LSmof</naam></validatieObject>
+			</validatieObjecten>
+		</validatieRegel>
+		<validatieRegel nummer="R.8" naam="Verplichte kenmerken Kabels">
+			<beschrijving>Iedere kabel heeft kenmerken die gevuld moeten zijn.</beschrijving>
+			<soort>Verplichte waarde</soort>
+			<definitie>
+				Iedere kabel moet een waarde voor de volgende kenmerken hebben:
+					- Uitvoering
+					- Kabelopbouw
+					- Fabrikant
+					- Verbindingnummer
+					- Spanningsniveau
+					- FaseAanduiding
+					Voor LSkabel objecten zijn er nog 3 extra kenmerken die gevuld moeten zijn:
+					- Aardingsysteem
+					- Bovengronds
+					- Functie
+				N.B. Als het kenmerk Uitvoering de waarde "KEUZE ONTBREEKT IN LIJST" dan moet het kenmerk OmschrijvingUitvoering gevuld zijn!
+			</definitie>
+			<validatieObjecten>
+				<validatieObject><naam>LSkabel</naam></validatieObject>
+				<validatieObject><naam>MSkabel</naam></validatieObject>
+				<validatieObject><naam>HSkabel</naam></validatieObject>
+			</validatieObjecten>
+		</validatieRegel>
+		<validatieRegel nummer="R.9" naam="Aanlegdatum gevuld">
+			<beschrijving>De aanlegdatum moet gevuld zijn en mag niet in de toekomst liggen.</beschrijving>
+			<soort>Verplichte waarde</soort>
+			<definitie>
+				De aanlegdatum moet gevuld zijn en de gevulde datum mag niet in de toekomst liggen.
+			</definitie>
+			<validatieObjecten> <!-- Deze regel geldt voor alle NLCS Objecten van Elec -->
+				<validatieObject><naam>MSstation</naam></validatieObject>
+				<validatieObject><naam>MSkabel</naam></validatieObject>
+				<validatieObject><naam>MSmof</naam></validatieObject>
+				<validatieObject><naam>MSoverdrachtspunt</naam></validatieObject>
+				<!--
+				<validatieObject><naam>LSkast</naam></validatieObject>
+				<validatieObject><naam>LSkabel</naam></validatieObject>
+				<validatieObject><naam>LSmof</naam></validatieObject>
+				<validatieObject><naam>LSoverdrachtspunt</naam></validatieObject>
+				<validatieObject><naam>OVLoverdrachtspunt</naam></validatieObject>
+				<validatieObject><naam>HSstation</naam></validatieObject>
+				<validatieObject><naam>HSkabel</naam></validatieObject>
+				<validatieObject><naam>HSmof</naam></validatieObject>
+				 -->
+			</validatieObjecten>
+		</validatieRegel>
+		<validatieRegel nummer="R.10" naam="Verplichte kenmerken moffen">
+			<beschrijving>Iedere mof heeft kenmerken die gevuld moeten zijn.</beschrijving>
+			<soort>Verplichte waarde</soort>
+			<definitie>
+				Iedere mof moet een waarde voor de volgende kenmerken hebben:
+					- Functie
+					- Verbindingnummer
+
+				Aanvullend, iedere LSmof moet een waarde voor de volgende kenmerken hebben:
+					- Bovengronds
+
+				Aanvullend, iedere MSmof en HSmof moet een waarde voor de volgende kenmerken hebben:
+					- NaamMonteur
+					- CrossBondingAanwezig
+			</definitie>
+			<validatieObjecten>
+				<validatieObject><naam>LSmof</naam></validatieObject>
+				<validatieObject><naam>MSmof</naam></validatieObject>
+				<validatieObject><naam>HSmof</naam></validatieObject>
+			</validatieObjecten>
+		</validatieRegel>
+		<validatieRegel nummer="R.11" naam="Verplichte kenmerken LSoverdrachtspunt">
+			<beschrijving>Ieder LSoverdrachtspunt heeft kenmerken die gevuld moeten zijn.</beschrijving>
+			<soort>Verplichte waarde</soort>
+			<definitie>
+				Ieder LSoverdrachtspunt moet een waarde voor de volgende kenmerken hebben:
+				- EigenRichting
+				- Functie
+				- FaseAanduiding
+				- Aardingsysteem
+			</definitie>
+			<validatieObjecten>
+				<validatieObject><naam>LSoverdrachtspunt</naam></validatieObject>
+				</validatieObjecten>
+		</validatieRegel>
+		<validatieRegel nummer="R.12" naam="Verplichte kenmerken OVLoverdrachtspunt">
+			<beschrijving>Ieder OVLoverdrachtspunt heeft kenmerken die gevuld moeten zijn.</beschrijving>
+			<soort>Verplichte waarde</soort>
+			<definitie>
+				Ieder OVLoverdrachtspunt moet een waarde voor de volgende kenmerken hebben:
+				- Aansluitset
+				- Functie
+				- Spanningsniveau
+				- Aansluitwijze
+				- Schakeling
+				- Mastnummer <!-- Zijn masten al direct genummerd als de aannemer ze aansluit? -->
+			</definitie>
+			<validatieObjecten>
+				<validatieObject><naam>OVLoverdrachtspunt</naam></validatieObject>
+			</validatieObjecten>
+		</validatieRegel>
+		<validatieRegel nummer="R.13" naam="Verplichte kenmerken MSoverdrachtspunt">
+			<beschrijving>Ieder MSoverdrachtspunt heeft kenmerken die gevuld moeten zijn.</beschrijving>
+			<soort>Verplichte waarde</soort>
+			<definitie>
+				Ieder MSoverdrachtspunt moet een waarde voor de volgende kenmerken hebben:
+				- Identificatie (EAN Code) <!-- is dit bekend bij de Aannemer? -->
+			</definitie>
+			<validatieObjecten>
+				<validatieObject><naam>MSoverdrachtspunt</naam></validatieObject>
+			</validatieObjecten>
+		</validatieRegel>
+		<validatieRegel nummer="R.14" naam="Verplichte kenmerken Stations en Kasten">
+			<beschrijving>Ieder MSstation, HSstation en LSkast heeft kenmerken die gevuld moeten zijn.</beschrijving>
+			<soort>Verplichte waarde</soort>
+			<definitie>
+				Ieder MSstation, HSstation en LSkast moet een waarde voor de volgende kenmerken hebben:
+				- Nummer
+				- Functie
+			</definitie>
+			<validatieObjecten>
+				<validatieObject><naam>LSkast</naam></validatieObject>
+				<validatieObject><naam>MSstation</naam></validatieObject>
+				<validatieObject><naam>HSstation</naam></validatieObject>
+			</validatieObjecten>
+		</validatieRegel>
+		<validatieRegel nummer="R.15" naam="Verplichte kenmerken Mantelbuis">
+			<beschrijving>Iedere Mantelbuis heeft kenmerken die gevuld moeten zijn.</beschrijving>
+			<soort>Verplichte waarde</soort>
+			<definitie>
+				Iedere Mantelbuis moet een waarde voor de volgende kenmerken hebben:
+				- Materiaal
+				- Diameter
+				- Thema
+			</definitie>
+			<validatieObjecten>
+				<validatieObject><naam>Amantelbuis</naam></validatieObject>
+			</validatieObjecten>
+		</validatieRegel>
+		<validatieRegel nummer="R.20" naam="Topologie punt objecten Elec">
+			<beschrijving>De punt objecten van Elec moeten aan de juiste kabel zijn verbonden en mogen niet zweven.</beschrijving>
+			<soort>Topologie</soort>
+			<definitie>
+				Een Punt object (met kenmerk Geometry van het type gml:Point) mag niet zweven, maar moet verbonden zijn met de juiste kabel:
+				- MSmof en MSoverdrachtspunt moeten verbonden zijn met MSkabel
+				<!--
+				- LSmof, LSoverdrachtspunt en OVLoverdrachtspunt moeten verbonden zijn met LSkabel
+				- HSmof moet verbonden zijn met HSkabel
+				-->
+			</definitie>
+			<validatieObjecten> <!-- Deze regel geldt voor alle NLCS Objecten met een punt geometrie van Elec -->
+				<validatieObject><naam>MSmof</naam></validatieObject>
+				<validatieObject><naam>MSoverdrachtspunt</naam></validatieObject>
+				<!--
+				<validatieObject><naam>LSmof</naam></validatieObject>
+				<validatieObject><naam>LSoverdrachtspunt</naam></validatieObject>
+				<validatieObject><naam>OVLoverdrachtspunt</naam></validatieObject>
+				<validatieObject><naam>HSmof</naam></validatieObject>
+				-->
+			</validatieObjecten>
+		</validatieRegel>
+		<validatieRegel nummer="R.21" naam="Geldig eindpunt Kabel">
+			<beschrijving>Iedere kabel moet geldige eindpunten hebben aan beide kanten.</beschrijving>
+			<soort>Topologie</soort>
+			<definitie>
+				Een kabel moet aan beide kanten (begin- en eindpunt) een geldig eindpunt hebben, per kabel zijn de volgende objecten geldig:
+				- MSkabel: MSmof, MSoverdrachtspunt en MSstation
+				NB: Deze controle geld niet voor kabels met de Bedrijfsstatus "VERLATEN" en wordt alleen gerund op begin- en eindpunten binnen het projectgebied
+				<!--
+				- LSkabel: LSmof, LSoverdrachtspunt, OVLoverdrachtspunt, MSstation, LSkast
+				- HSkabel: HSmof, HSstation en MSstation
+				-->
+			</definitie>
+			<validatieObjecten> <!-- Deze regel geldt voor alle Kabel Objecten -->
+				<validatieObject><naam>MSkabel</naam></validatieObject>
+				<!--
+				<validatieObject><naam>LSkabel</naam></validatieObject>
+				<validatieObject><naam>HSkabel</naam></validatieObject>
+				 -->
+			</validatieObjecten>
+		</validatieRegel>
+		<validatieRegel nummer="R.22" naam="Kabels zelfde Netvlak">
+			<beschrijving>Kabels die d.m.v. moffen met elkaar zijn verbonden moeten van het zelfde netvlak zijn</beschrijving>
+			<soort>Netlogica</soort>
+			<definitie>
+				Kabels die d.m.v. moffen met elkaar zijn verbonden moeten van het zelfde netvlak zijn:
+					- MSKabel via MSmof met andere MSkabel
+					<!-- - LSKabel via LSmof met andere LSkabel-->
+					<!-- - HSKabel via HSmof met andere HSkabel-->
+			</definitie>
+			<validatieObjecten> <!-- Deze regel geldt voor alle Kabel Objecten -->
+				<validatieObject><naam>MSkabel</naam></validatieObject>
+				<!--
+				<validatieObject><naam>LSkabel</naam></validatieObject>
+				<validatieObject><naam>HSkabel</naam></validatieObject>
+				-->
+			</validatieObjecten>
+		</validatieRegel>
+		<validatieRegel nummer="R.23" naam="Verbonden kabels juiste kenmerken">
+			<beschrijving>Kabels die d.m.v. moffen met elkaar zijn verbonden moeten bepaalde kenmerken hetzelfde hebben</beschrijving>
+			<soort>Netlogica</soort>
+			<definitie>
+				Kabels die d.m.v. moffen met elkaar zijn verbonden moeten bepaalde kenmerken hetzelfde hebben:
+					- Bedrijfstoestand
+					- Subnettype
+					- Verbindingnummer
+					- Spanningsniveau
+			</definitie>
+			<validatieObjecten> <!-- Deze regel geldt voor alle Kabel Objecten -->
+				<validatieObject><naam>MSkabel</naam></validatieObject>
+				<!--
+				<validatieObject><naam>LSkabel</naam></validatieObject>
+				<validatieObject><naam>HSkabel</naam></validatieObject>
+				-->
+			</validatieObjecten>
+		</validatieRegel>
+		<validatieRegel nummer="R.24" naam="Fase MS Kabel">
+			<beschrijving>De Fase van de kabel moet overeenkomen met de Uitvoering van de kabel.</beschrijving>
+			<soort>Inhoud waarde</soort>
+			<definitie>
+				Vergelijk de FaseAanduiding met het eerste twee karakters van de Uitvoering:
+				- 3 Fasen: 3x
+				- L1: 1x
+				- L2: 1x
+				- L3: 1x
+				- N: maakt niet uit.
+			</definitie>
+			<toelichting>Indien de Uitvoering "KEUZE ONTBREEKT IN LIJST" is, moet de FaseAanduiding vergeleken worden met de eerste twee karakters van de OmschrijvingUitvoering.</toelichting>
+			<validatieObjecten>
+				<validatieObject><naam>MSkabel</naam></validatieObject>
+			</validatieObjecten>
+		</validatieRegel>
+		<validatieRegel nummer="R.25" naam="Verbonden kabels juiste Fase">
+			<beschrijving>De kabels die door een mof verbonden zijn moeten de juiste Fase hebben.</beschrijving>
+			<soort>Inhoud waarde</soort>
+			<definitie>
+				Als een mof meer dan 1 kabel verbind dan moet de fase van de verbonden kabels juist zijn:
+				1 kabel: geen controle
+				2 kabels: de Fase van beide kabels moet hetzelfde zijn (L1, L2, L3 of 3 Fase)
+				3 kabels: de Fase van de 3 kabels moet hetzelfde zijn (L1, L2, L3 of 3 Fase)
+				4 kabels: 1 kabel moet 3 Fase zijn de andere kabels moet L1, L2 en L3 zijn. Het is immers een overgang van 3 Fase naar 3x 1 Fase.
+				> 4 kabels: geen controle.
+			</definitie>
+			<validatieObjecten>
+				<validatieObject><naam>MSmof</naam></validatieObject>
+				<!--
+				<validatieObject><naam>LSmof</naam></validatieObject>
+				<validatieObject><naam>HSmof</naam></validatieObject>
+				-->
+			</validatieObjecten>
+		</validatieRegel>
+		<validatieRegel nummer="R.26" naam="Aantal kabels en mof functie">
+			<beschrijving>Het aantal kabels moet passen bij de Functie van de Mof.</beschrijving>
+			<soort>Inhoud waarde</soort>
+			<definitie>
+				Afhankelijk van de Functie van de Mof moet er een aantal kabels verbonden zijn met de mof:
+				- EINDMOF, EINDDOP, LOODKOP, EIND GEAARD: 1 kabel
+				- VERBINDING, ZEGELWIJZIGING, MANTELREPARATIE: 2 kabels
+				- 3FASE 3x1FASE: 4 kabels
+				- AFTAK (op bestaande kabel): 2 kabels: 1 nieuwe en moet op een bestaande liggen evt met marge.
+				- AFTAK (op nieuwe kabel): 3 kabels.
+			</definitie>
+			<validatieObjecten>
+				<validatieObject><naam>MSmof</naam></validatieObject>
+				<!--
+				<validatieObject><naam>LSmof</naam></validatieObject>
+				<validatieObject><naam>HSmof</naam></validatieObject>
+				-->
+			</validatieObjecten>
+		</validatieRegel>
+		<validatieRegel nummer="R.27" naam="Mantelbuis past in mantelbuis">
+			<beschrijving>Een mantelbuis die in een andere mantelbuis ligt moet een kleinere diameter hebben dan de mantelbuis waarin het ligt.</beschrijving>
+			<soort>Inhoud waarde</soort>
+			<definitie>
+				Een mantelbuis kan volgens de AmantelbuisInhoud in één of meerdere mantelbuizen tegelijkertijd liggen. De binnenste mantelbuis moet een kleinere diameter hebben dan elke buitenste mantelbuis.
+			</definitie>
+			<toelichting>Het kenmerk Diameter moet vergeleken worden. Let op de Diameter is een Text kenmerk</toelichting>
+			<validatieObjecten>
+				<validatieObject><naam>Amantelbuis</naam></validatieObject>
+			</validatieObjecten>
+		</validatieRegel>
+		<validatieRegel nummer="R.28" naam="Mantelbuis Inhoud aanwezig">
+			<beschrijving>Een Mantelbuis die niet Reserve is moet een Mantelbuis inhoud hebben.</beschrijving>
+			<soort>Consistentie</soort>
+			<definitie>
+				Indien de Bedrijfstoestand van een AMantelbuis de waarde "RESERVE" heeft mag het geen AmantelbuisInhoud hebben.
+				Als de BedrijfsToestand "IN BEDRIJF" is dan moet het een AmantelbuisInhoud hebben.
+			</definitie>
+			<validatieObjecten>
+				<validatieObject><naam>Amantelbuis</naam></validatieObject>
+			</validatieObjecten>
+		</validatieRegel>
+		<validatieRegel nummer="R.29" naam="Verplaatsing goed vastgelegd">
+			<beschrijving>Een verplaatsing moet zijn vastgelegd met 2 dezelfde objecten</beschrijving>
+			<soort>Consistentie</soort>
+			<definitie>
+				Een verplaatsing moet zodanig zijn vastgelegd dat het object 2 keer voorkomt in het Document
+				1. Het bestaande object dat wordt verplaatst: Status=BESTAAND
+				2. Een nieuw object waarin de verplaatsing is vastgelegd in de geometrie:
+					- Status=REVISIE
+					- Bewerking=VERPLAATSTEN
+					- GisID als bestaande
+					- AssetID moet leeg zijn
+
+				Controle: Als er een object voorkomt met de Status=REVISIE en de Bewerking=VERPLAATSEN dan moet er een tweede object zijn van het zelfde soort met dezelfde GisID en de status=BESTAAND
+			</definitie>
+			<validatieObjecten>
+				<validatieObject><naam>LSkabel</naam></validatieObject>
+				<validatieObject><naam>MSkabel</naam></validatieObject>
+			</validatieObjecten>
+		</validatieRegel>
+		<validatieRegel nummer="R.30" naam="Mantelbuis Inhoud referenties">
+			<beschrijving>Een mantelbuis inhoud moet correct refereren naar de omliggende mantelbuis en haar inhoud</beschrijving>
+			<soort>Consistentie</soort>
+			<definitie>
+				- InhoudID mag niet gelijk zijn aan MantelbuisID
+				- Het NLCS object waarvan het ID overeenkomt met MantelbuisID moet een mantelbuis zijn
+				- Het NLCS object waarvan het ID overeenkomt met InhoudID moet van type ObjectTypeInhoud zijn
+			</definitie>
+			<validatieObjecten>
+				<validatieObject><naam>AmantelbuisInhoud</naam></validatieObject>
+			</validatieObjecten>
+		</validatieRegel>
+	</validatieRegels>
+	<scopes>
+		<scope naam="Bestaande Situatie alle bedrijfstoestanden">
+			<tekeningSoort>Bestaande Situatie</tekeningSoort>
+			<statussen>
+				<status>BESTAAND</status>
+			</statussen>
+			<bedrijfsToestanden>
+				<bedrijfstoestand>IN BEDRIJF</bedrijfstoestand>
+				<bedrijfstoestand>RESERVE</bedrijfstoestand>
+				<bedrijfstoestand>VERLATEN</bedrijfstoestand>
+			</bedrijfsToestanden>
+			<scopeValidatieRegels>
+				<scopeValidatieRegel><nummer>R.1</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.2</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.3</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.5</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.6</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.7</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.8</nummer><niveau>Informerend</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.9</nummer><niveau>Informerend</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.10</nummer><niveau>Informerend</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.11</nummer><niveau>Informerend</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.12</nummer><niveau>Informerend</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.13</nummer><niveau>Informerend</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.14</nummer><niveau>Informerend</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.15</nummer><niveau>Informerend</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.20</nummer><niveau>Informerend</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.21</nummer><niveau>Informerend</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.22</nummer><niveau>Informerend</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.23</nummer><niveau>Informerend</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.24</nummer><niveau>Informerend</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.25</nummer><niveau>Informerend</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.26</nummer><niveau>Informerend</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.27</nummer><niveau>Informerend</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.28</nummer><niveau>Informerend</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.30</nummer><niveau>Informerend</niveau></scopeValidatieRegel>
+			</scopeValidatieRegels>
+		</scope>
+		<scope naam="Definitef Ontwerp alle statussen">
+			<tekeningSoort>Definitief Ontwerp</tekeningSoort>
+			<statussen>
+				<status>NIEUW</status>
+				<status>REVISIE</status>
+				<status>VERWIJDERD</status>
+			</statussen>
+			<bedrijfsToestanden>
+				<bedrijfstoestand>IN BEDRIJF</bedrijfstoestand>
+				<bedrijfstoestand>RESERVE</bedrijfstoestand>
+				<bedrijfstoestand>VERLATEN</bedrijfstoestand>
+			</bedrijfsToestanden>
+			<scopeValidatieRegels>
+				<scopeValidatieRegel><nummer>R.1</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.2</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.3</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.5</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.7</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.20</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.27</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.28</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.30</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+			</scopeValidatieRegels>
+		</scope>
+		<scope naam="Deelrevisie verwijderde objecten">
+			<tekeningSoort>Deelrevisie</tekeningSoort>
+			<statussen>
+				<status>VERWIJDERD</status>
+			</statussen>
+			<bedrijfsToestanden>
+				<bedrijfstoestand>VERLATEN</bedrijfstoestand>
+			</bedrijfsToestanden>
+			<scopeValidatieRegels>
+				<scopeValidatieRegel><nummer>R.1</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.2</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.3</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.4</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.5</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.6</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.7</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+
+			</scopeValidatieRegels>
+		</scope>
+		<scope naam="Eindrevisie verwijderde objecten">
+			<tekeningSoort>Eindrevisie</tekeningSoort>
+			<statussen>
+				<status>VERWIJDERD</status>
+			</statussen>
+			<bedrijfsToestanden>
+				<bedrijfstoestand>VERLATEN</bedrijfstoestand>
+			</bedrijfsToestanden>
+			<scopeValidatieRegels>
+				<scopeValidatieRegel><nummer>R.1</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.2</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.3</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.4</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.5</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.6</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.7</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+			</scopeValidatieRegels>
+		</scope>
+		<scope naam="Nieuwe en aangepaste objecten Deelrevisie">
+			<tekeningSoort>Deelrevisie</tekeningSoort>
+			<statussen>
+				<status>NIEUW</status>
+				<status>REVISIE</status>
+			</statussen>
+			<bedrijfsToestanden>
+				<bedrijfstoestand>IN BEDRIJF</bedrijfstoestand>
+				<bedrijfstoestand>RESERVE</bedrijfstoestand>
+			</bedrijfsToestanden>
+			<scopeValidatieRegels>
+				<scopeValidatieRegel><nummer>R.1</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.2</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.3</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.4</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.5</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.6</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.7</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.8</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.9</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.10</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.11</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.12</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.13</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.14</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.15</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.20</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.21</nummer><niveau>Informerend</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.22</nummer><niveau>Informerend</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.23</nummer><niveau>Informerend</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.24</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.25</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.26</nummer><niveau>Informerend</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.27</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.28</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.29</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.30</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+			</scopeValidatieRegels>
+		</scope>
+		<scope naam="Nieuwe en aangepaste objecten Eindrevisie">
+			<tekeningSoort>Eindrevisie</tekeningSoort>
+			<statussen>
+				<status>NIEUW</status>
+				<status>REVISIE</status>
+			</statussen>
+			<bedrijfsToestanden>
+				<bedrijfstoestand>IN BEDRIJF</bedrijfstoestand>
+				<bedrijfstoestand>RESERVE</bedrijfstoestand>
+			</bedrijfsToestanden>
+			<scopeValidatieRegels>
+				<scopeValidatieRegel><nummer>R.1</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.2</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.3</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.4</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.5</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.6</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.7</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.8</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.9</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.10</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.11</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.12</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.13</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.14</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.15</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.20</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.21</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.22</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.23</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.24</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.25</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.26</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.27</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.28</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.29</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.30</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+			</scopeValidatieRegels>
+		</scope>
+	</scopes>
+
+</NLCSValidatieregels>

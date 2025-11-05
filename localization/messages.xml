@@ -1,232 +1,239 @@
 <messages xmlns:xml="http://www.w3.org/XML/1998/namespace">
-  <message id="ls_min_measurement_distance_text">
+  <message id="aprojectreferentie-not-present">
     <message-text xml:lang="en">
-      LS cable measurement points are too close to each other.
-      Handle: {handle}
-      Measurement points must be at least {distance}m apart.
+      The NLCS++ file must contain an AprojectReferentie.
     </message-text>
     <message-text xml:lang="nl">
-      LS-kabelmeetpunten staan te dicht bij elkaar.
-      Handle: {handle}
-      Meetpunten moeten ten minste {distance}m van elkaar verwijderd zijn.
+      Het NLCS++ bestand moet een AprojectReferentie bevatten.
+    </message-text>
+  </message>
+  <message id="no-nlcs-objects-present">
+    <message-text xml:lang="en">
+      The NLCS++ file must contain at least 1 NLCS object.
+    </message-text>
+    <message-text xml:lang="nl">
+      Het NLCS++ bestand moet op zijn minst 1 NLCS object bevatten.
+    </message-text>
+  </message>
+  <message id="invalid-status-for-tekening-type">
+    <message-text xml:lang="en">
+      Invalid Status {1} for TekeningType {2}, must be one of: {3}
+    </message-text>
+    <message-text xml:lang="nl">
+      Ongeldige Status {1} voor TekeningType {2}, moet een van de volgende zijn: {3}
+    </message-text>
+  </message>
+  <message id="object-outside-project-area">
+    <message-text xml:lang="en">
+      Object is outside of project area.
+    </message-text>
+    <message-text xml:lang="nl">
+      Object ligt buiten het projectgebied.
+    </message-text>
+  </message>
+  <message id="line-segment-measurement-incorrect">
+    <message-text xml:lang="en">
+      A line segment is shorter than 10cm or longer than 50m.
+    </message-text>
+    <message-text xml:lang="nl">
+      Een lijnsegment is korter dan 10cm of langer dan 50m.
+    </message-text>
+  </message>
+  <message id="line-angle-larger-than-45">
+    <message-text xml:lang="en">
+      The object contains a too sharp angle. Angles between line segments cannot exceed 45 degrees.
+    </message-text>
+    <message-text xml:lang="nl">
+      Het object bevat een te scherpe knik. Hoeken tussen lijnsegmenten mogen niet groter dan 45 graden zijn.
+    </message-text>
+  </message>
+  <message id="property-required-for-statuses">
+    <message-text xml:lang="en">
+      The attribute {1} cannot be empty if the Status is one of: {2}.
+    </message-text>
+    <message-text xml:lang="nl">
+      Het kenmerk {1} mag niet leeg zijn indien de Status een van de volgende is: {2}.
+    </message-text>
+  </message>
+  <message id="property-not-allowed-for-statuses">
+    <message-text xml:lang="en">
+      The attribute {1} must be empty if the Status is one of: {2}.
+    </message-text>
+    <message-text xml:lang="nl">
+      Het kenmerk {1} moet leeg zijn indien de Status een van de volgende is: {2}.
+    </message-text>
+  </message>
+  <message id="attribute-not-present">
+    <message-text xml:lang="en">
+      The attribute {1} is not present on object.
+    </message-text>
+    <message-text xml:lang="nl">
+      Het kenmerk {1} is niet gevuld voor het object.
+    </message-text>
+  </message>
+  <message id="point-not-connected-to-any-line">
+    <message-text xml:lang="en">
+      Object must be connected to a cable.
+    </message-text>
+    <message-text xml:lang="nl">
+      Object moet verbonden zijn met een kabel.
+    </message-text>
+  </message>
+  <message id="date-in-the-future">
+    <message-text xml:lang="en">
+      The DatumAanleg on object is in the future.
+    </message-text>
+    <message-text xml:lang="nl">
+      De DatumAanleg op object mag niet in de toekomst liggen.
+    </message-text>
+  </message>
+  <message id="cable-not-connected-to-valid-object">
+    <message-text xml:lang="en">
+      The cable is not connected to a joint, service, or station.
+    </message-text>
+    <message-text xml:lang="nl">
+      De kabel is niet verbonden met een mof, overdrachtspunt of station.
+    </message-text>
+  </message>
+  <message id="connected-cable-does-not-match-netvlak">
+    <message-text xml:lang="en">
+      Cables connected to each other though a joint must be of the same discipline.
+      Expected only {1} elements, but found {2} {3} element(s).
+    </message-text>
+    <message-text xml:lang="nl">
+      Kabels die via een mof verbonden zijn met elkaar moeten van hetzelfde netvlak zijn.
+      Verwachtte enkel {1} elementen, maar kwam {2} {3} element(en) tegen.
+    </message-text>
+  </message>
+  <message id="connected-cable-does-not-match-property">
+    <message-text xml:lang="en">
+      One or more connected cable does not shared the same value for attribute {1}.
+      Expected: {2}
+      Found:    {3}
+    </message-text>
+    <message-text xml:lang="nl">
+      Een of meerdere verbonden kabels hebben niet dezelfde waarde voor attribuut {1}.
+      Verwacht: {2}
+      Gevonden: {3}
+    </message-text>
+  </message>
+  <message id="fase-not-the-same-as-uitvoering">
+    <message-text xml:lang="en">
+      The Fase of the object is not the same as the Uitvoering.
+    </message-text>
+    <message-text xml:lang="nl">
+      De Fase van het object is niet hetzelfde als de Uitvoering.
+    </message-text>
+  </message>
+  <message id="connected-fases-not-allowed">
+    <message-text xml:lang="en">
+      When {1} cables are connected to a joint, the following Fase values are not allowed: {2}
+    </message-text>
+    <message-text xml:lang="nl">
+      Wanneer {1} kabels verbonden zijn met een mof mogen zij niet een van de volgende Fasen hebben: {2}
+    </message-text>
+  </message>
+  <message id="connected-fases-do-not-match">
+    <message-text xml:lang="en">
+      When {1} cables are connected to a joint, they should share the same Fase.
+      Found values: {2}
+    </message-text>
+    <message-text xml:lang="nl">
+      Wanneer {1} kabels verbonden zijn met een mof moeten zij dezelfde Fase hebben.
+      Gevonden waardes: {2}
+    </message-text>
+  </message>
+  <message id="connected-fases-do-not-split">
+    <message-text xml:lang="en">
+      When 4 cables are connected to a joint, all Fase values must be unique and one of: {1}
+      Found values: {2}
+    </message-text>
+    <message-text xml:lang="nl">
+      Wanneer 4 kabels verbonden zijn met een mof moeten alle Fasen uniek en een van de volgende zijn: {1}
+      Gevonden waardes: {2}
+    </message-text>
+  </message>
+  <message id="mantelbuis-inhoud-diameter-larger-than-own">
+    <message-text xml:lang="en">
+      The protection pipe diameter ({1}) should be smaller than the diameters of the proctection pipe(s) in which it is located ({2}).
+    </message-text>
+    <message-text xml:lang="nl">
+      De diameter van de mantelbuis ({1}) moet kleiner zijn dan de diameters van de mantelbuis/mantelbuizen waar deze in ligt ({2}).
+    </message-text>
+  </message>
+  <message id="inhoud-found">
+    <message-text xml:lang="nl">
+      Als de mantelbuis bedrijfstoestand RESERVE heeft, dan mag deze geen inhoud hebben.
+    </message-text>
+    <message-text xml:lang="en">
+      If the protection pipe is RESERVE, it is not allowed to have contents.
+    </message-text>
+  </message>
+  <message id="inhoud-not-found">
+    <message-text xml:lang="nl">
+      Als de mantelbuis de bedrijfstoestand IN BEDRIJF heeft, dan moet deze een inhoud hebben.
+    </message-text>
+    <message-text xml:lang="en">
+      If the protection pipe is IN BEDRIJF, contents are required.
+    </message-text>
+  </message>
+  <message id="mantelbuis-inhoud-is-self">
+    <message-text xml:lang="en">
+      The contents of a protection pipe may not be the protection pipe itself.
+    </message-text>
+    <message-text xml:lang="nl">
+      De inhoud van een mantelbuis mag niet de mantelbuis zelf zijn.
+    </message-text>
+  </message>
+  <message id="mantelbuis-id-does-not-refer-to-mantelbuis">
+    <message-text xml:lang="en">
+      MantelbuisID {1} must refer to a protection pipe.
+    </message-text>
+    <message-text xml:lang="nl">
+      MantelbuisID {1} moet naar een mantelbuis verwijzen.
+    </message-text>
+  </message>
+  <message id="object-type-inhoud-does-not-match-inhoud">
+    <message-text xml:lang="en">
+      The content of the protection pipe should be a {1}, but is a {2}.
+    </message-text>
+    <message-text xml:lang="nl">
+      De inhoud van de mantelbuis zou een {1} moeten zijn, maar is een {2}.
+    </message-text>
+  </message>
+  <message id="cable-amount-incorrect">
+    <message-text xml:lang="en">
+      An incorrect amount of cables is connected to this joint. {1} are required, but found {2}.
+    </message-text>
+    <message-text xml:lang="nl">
+      Er is een incorrect aantal kabels verbonden met deze mof. {1} zijn nodig, maar {2} zijn verbonden.
+    </message-text>
+  </message>
+  <message id="phases-are-incorrect">
+    <message-text xml:lang="en">
+      The expected phases for the connected cables are incorrect. Expected {1}, but got {2}.
+    </message-text>
+    <message-text xml:lang="nl">
+      De verwachte faseaanduidingen voor de verbonden kabels zijn incorrect.
+      De volgende faseaanduidingen zijn verwacht: {1}
+      Maar de volgende zijn gevonden: {2}
+    </message-text>
+  </message>
+  <message id="existing-cable-not-connected-to-new-cable">
+    <message-text xml:lang="nl">
+      Een aftakmof op een bestaande kabel moet verbonden zijn aan een nieuwe kabel.
+    </message-text>
+    <message-text xml:lang="en">
+      A branch joint on an existing cable needs to be connected to a new cable.
     </message-text>
   </message>
 
-  <message id="ls_max_measurement_distance_text">
-    <message-text xml:lang="en">
-      LS cable measurement points are too far apart.
-      Handle: {handle}
-      Measurement points must be at most {distance}m apart.
-    </message-text>
+  <message id="verplaatsing-incorrectly-applied">
     <message-text xml:lang="nl">
-      LS-kabelmeetpunten staan te ver van elkaar af.
-      Handle: {handle}
-      Meetpunten mogen ten hoogste {distance}m van elkaar verwijderd zijn.
+      Verplaatsing incorrect vastgelegd. Er moet een andere {1} zijn met Status BESTAAND en beide objecten moeten hetzelfde GisId hebben.
+    </message-text>
+    <message-text xml:lang="en">
+      Movement was registered incorrectly. There should be another {1} with Status BESTAAND and both objects must share the same GisId.
     </message-text>
   </message>
-
-  <message id="ls_max_angle_text">
-    <message-text xml:lang="en">
-      The measurement points of the LS cable form too sharp an angle with each other.
-      Handle: {handle}
-      The minimum angle is {angle_degrees} degrees.
-    </message-text>
-    <message-text xml:lang="nl">
-      De meetpunten van de LS-kabel maken een te scherpe hoek met elkaar.
-      Handle: {handle}
-      De minimale hoek is {angle_degrees} graden.
-    </message-text>
-  </message>
-
-  <message id="ls_mof_cable_count_text">
-    <message-text xml:lang="en">
-      The mof has an invalid number of connections.
-      Handle: {handle}
-      Registered coordinates: {mof_coordinates}
-      Current number of connections: {curr_connections}
-      The number of connections should be between {min_connections} and {max_connections}.
-    </message-text>
-    <message-text xml:lang="nl">
-      De mof heeft een ongeldig aantal verbindingen.
-      Handle: {handle}
-      Geregistreerde coördinaten: {mof_coordinates}
-      Huidig aantal verbindingen: {curr_connections}
-      Het aantal verbindingen moet minimaal {min_connections} en maximaal {max_connections} zijn.
-    </message-text>
-  </message>
-
-  <message id="ms_kabel_end_connection_text">
-    <message-text xml:lang="en">
-      The cable has an invalid number of connections.
-      Handle: {handle}
-      Current number of connections: {curr_connections}
-      Handles of connections: {connected_handles}
-      Because of the status: {status}, the number of connections should be {required_connections}
-    </message-text>
-    <message-text xml:lang="nl">
-      De kabel heeft een ongeldig aantal verbindingen.
-      Handle: {handle}
-      Huidig aantal verbindingen: {curr_connections}
-      Handles van verbindingen: {connected_handles}
-      Met de status: {status}, zou het aantal verbindingen moeten {required_connections} zijn
-    </message-text>
-  </message>
-
-  <message id="v11_ms_kabel_end_connection_text">
-    <message-text xml:lang="en">
-      The cable has an invalid number of connections.
-      Handle: {handle}
-      Current number of connections: {curr_connections}
-      Handles of connections: {connected_handles}
-      Because of the status: {status} with bedrijfstoestand: {bedrijfstoestand}, the number of connections should be {required_connections}
-    </message-text>
-    <message-text xml:lang="nl">
-      De kabel heeft een ongeldig aantal verbindingen.
-      Handle: {handle}
-      Huidig aantal verbindingen: {curr_connections}
-      Handles van verbindingen: {connected_handles}
-      Met de status: {status} en met bedrijfstoestand: {bedrijfstoestand}, zou het aantal verbindingen {required_connections} moeten zijn
-    </message-text>
-  </message>
-  
-  <message id="ls_mof_aftak_new_cables_spanning">
-    <message-text xml:lang="en">
-      The aftak mof has new cables connected with different voltage levels
-      Handle of the Mof: {handle_mof}
-      Handle and voltage of the 1st connected cable: {handle_1}, {spanning_1}
-      Handle and voltage of the 2nd connected cable: {handle_2}, {spanning_2}
-      Handle and voltage of the 3rd connected cable: {handle_3}, {spanning_3}
-    </message-text>
-    <message-text xml:lang="nl">
-      De aftak mof heeft nieuwe verbonden kabels met verschillende spanningen.
-      Handle van de mof: {handle_mof}
-      Handle en spanning van de 1ste verbonden kabel: {handle_1}, {spanning_1}
-      Handle en spanning van de 2de verbonden kabel: {handle_2}, {spanning_2}
-      Handle en spanning van de 3de verbonden kabel: {handle_3}, {spanning_3}
-    </message-text>
-  </message>
-
-  <message id="ls_mof_aftak_new_cables_count">
-    <message-text xml:lang="en">
-      The aftak mof has an invalid number of cable connections with status NIEUW
-      Handle: {handle_mof}
-      Current number of connections: {curr_count}
-      Handles of connections: {connected_handles}
-      the number of connections should be {required_connections} or 0
-    </message-text>
-    <message-text xml:lang="nl">
-      De aftak mof heeft een ongeldig aantal verbonden kabels met status NIEUW
-      Handle: {handle_mof}
-      Huidig aantal verbindingen: {curr_count}
-      Handles van verbindingen: {connected_handles}
-      het aantal verbindingen moet {required_connections} of 0 zijn
-    </message-text>
-  </message>
-
-  <message id="ls_mof_phase_connected_cables_phase">
-    <message-text xml:lang="en">
-      The mof has an not allowed 3>1 fase configuration
-      Handle mof: {handle_mof}
-      Connected cables handles: {handle_1}, {handle_2}, {handle_3}, {handle_4}
-      Connected cables statuses: {status_1}, {status_2}, {status_3}, {status_4}
-      Allowed statuses, {checked_statuses}
-      Connected L1 cables: {l1_count}
-      Connected L2 cables: {l2_count}
-      Connected L3 cables: {l3_count}
-      Connected F3 cables: {f3_count}
-      Whilst there should've been one of each.
-    </message-text>
-    <message-text xml:lang="nl">
-      De mof heeft een niet toegestane 3>1 fase configuratie
-      Handle mof: {handle_mof}
-      Verbonden kabels handles: {handle_1}, {handle_2}, {handle_3}, {handle_4}
-      Verbonden kabels statussen: {status_1}, {status_2}, {status_3}, {status_4}
-      Toegestane statussen, {checked_statuses}
-      Verbonden L1 kabels: {l1_count}
-      Verbonden L2 kabels: {l2_count}
-      Verbonden L3 kabels: {l3_count}
-      Verbonden F3 kabels: {f3_count}
-      Terwijl er 1 van elk had moeten zijn.
-    </message-text>
-  </message>
-
-  <message id="ls_mof_phase_connected_cables_count">
-    <message-text xml:lang="en">
-      The 3>1 phase mof has an invalid number of cable connections
-      Allowed statuses of cables: {checked_statuses}
-      Handle: {handle_mof}
-      Current number of connections: {curr_count}
-      Handles of connections: {connected_handles}
-      the number of connections should be {required_connections} or 0
-    </message-text>
-    <message-text xml:lang="nl">
-      De 3>1 fase mof heeft een ongeldig aantal verbonden kabels
-      Toegestane statussen van kabels: {checked_statuses}
-      Handle: {handle_mof}
-      Huidig aantal verbindingen: {curr_count}
-      Handles van verbindingen: {connected_handles}
-      het aantal verbindingen moet {required_connections} of 0 zijn
-    </message-text>
-  </message>
-
-  <message id="e_aarddraad_connected_buildings">
-    <message-text xml:lang="en">
-      The aarddraad is not connected to a single building
-      Handle: {handle_mof}
-      Current number of connections: {curr_count}
-      Handles of connections: {connected_handles}
-      the number of connections should be {required_connections}
-    </message-text>
-    <message-text xml:lang="nl">
-      De aarddraad is niet verbonden aan een enkel gebouw
-      Handle: {handle_mof}
-      Huidig aantal verbindingen: {curr_count}
-      Handles van de verbindingen: {connected_handles}
-      het aantal verbindingen moet {required_connections} zijn.
-    </message-text>
-  </message>
-
-  <message id="complex_ls_cable_depth_within_limits">
-    <message-text xml:lang="en">
-      The cable's depth is not within the limits
-      Handle: {handle}
-      The depth should be between: {min_depth} and {max_depth}
-      The point(s) that are outside of this limit are: {wrong_points}
-    </message-text>
-    <message-text xml:lang="nl">
-      De diepte van de kabel ligt niet binnen de limieten
-      Handle: {handle}
-      De diepte zou tussen: {min_depth} and {max_depth} moeten liggen.
-      De punten buiten de limieten zijn: {wrong_points}.
-    </message-text>
-  </message>
-
-  <message id="structure_ls_cable_has_maaiveld">
-    <message-text xml:lang="en">
-      The cable's has a point without a connected maaiveld
-      Handle: {handle}
-      The points without maaiveld are: {wrong_points}.
-    </message-text>
-    <message-text xml:lang="nl">
-      De kabel heeft meetpunten zonder verbonden maaivelden
-      Handle: {handle}
-      De meetpunten zonder maaivelden zijn: {wrong_points}.
-    </message-text>
-  </message>
-
-  <message id="complex_ls_cable_bovengronds_attribute_check">
-    <message-text xml:lang="en">
-      The cables depth does not correspond with the above ground attribute
-      Handle: {handle}
-      Above ground: {Bovengronds}
-      The wrong points are: {wrong_points}.
-    </message-text>
-    <message-text xml:lang="nl">
-      De kabel diepte komt niet overeen met het bovengronds attribuut
-      Handle: {handle}
-      Bovengronds: {Bovengronds}
-      De foute punten zijn: {wrong_points}.
-    </message-text>
-  </message>
-
 </messages>

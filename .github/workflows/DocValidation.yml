@@ -1,0 +1,28 @@
+name: Doc Validation CI
+
+on:
+  pull_request:
+  push:
+    branches: [ "main" ]
+    paths: ["doc/**"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v5
+    - name: Set up JDK
+      uses: actions/setup-java@v5
+      with:
+        java-version: '21'
+        distribution: 'temurin'
+
+    - name: Run tests
+      run: java test/XMLValidation.java doc/NLCSValidatieRegels.xsd doc/NLCSValidatieRegels.xml
+
+    - name: Install dependencies
+      run: scripts/install_dependencies.sh
+
+    - name: Generate and compare HTMLs
+      run: scripts/generate_and_compare_htmls.sh

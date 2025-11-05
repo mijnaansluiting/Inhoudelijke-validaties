@@ -167,4 +167,28 @@
                           )"/>
     </function>
 
+    <function name="keronic:point-2d-to-point-2d-distance" as="xs:double">
+        <param name="x1" as="xs:double"/>
+        <param name="y1" as="xs:double"/>
+        <param name="x2" as="xs:double"/>
+        <param name="y2" as="xs:double"/>
+
+        <sequence select="keronic-geom:point-2d-to-point-2d-distance(
+                          $x1,
+                          $y1,
+                          $x2,
+                          $y2)"/>
+    </function>
+
+    <function name="keronic:area-2d-interacts-with-area-2d" as="xs:boolean">
+        <param name="area_1" as="xs:string*"/>
+        <param name="area_2" as="xs:string*"/>
+
+        <variable name="d_area_1" select="keronic:cast-string-array-to-double-array($area_1)" as="xs:double*"/>
+        <variable name="d_area_2" select="keronic:cast-string-array-to-double-array($area_2)" as="xs:double*"/>
+
+        <value-of select="keronic-geom:area-2d-interacts-with-area-2d(
+                          $d_area_1,
+                          $d_area_2)"/>
+    </function>
 </stylesheet>

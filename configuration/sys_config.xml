@@ -1,0 +1,27 @@
+<config>
+    <v12>
+        <MofFuncties>
+            <Aftak>
+                <Functie>AFTAK SPLITSEND</Functie>
+            </Aftak>
+            <Eind>
+                <Functie>EINDMOF</Functie>
+                <Functie>EINDDOP</Functie>
+                <Functie>LOODKOP</Functie>
+                <Functie>EIND GEAARD</Functie>
+            </Eind>
+            <Verbinding>
+                <Functie>VERBINDING</Functie>
+                <Functie>ZEGELWIJZIGING</Functie>
+                <Functie>MANTELREPARATIE</Functie>
+            </Verbinding>
+            <Faseovergang>
+                <Functie>3FASE 3x1FASE</Functie>
+            </Faseovergang>
+        </MofFuncties>
+        <GisIdAssetsIdExceptions>
+            <NoGisIdRequired>AmantelbuisInhoud</NoGisIdRequired>
+            <!-- <NoAssetIdRequired>SomeObjectName</NoAssetIdRequired> -->
+        </GisIdAssetsIdExceptions>
+    </v12>
+</config>
