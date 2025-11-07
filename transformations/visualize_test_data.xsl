@@ -63,6 +63,12 @@
       </xsl:for-each>
     </xsl:sequence>
   </xsl:function>
+  
+  <xsl:function name="keronic:color-for-index" as="xs:string">
+    <xsl:param name="index" as="xs:numeric"/>
+    <xsl:variable name="hue" select="($index * 137.508) mod 360"/>
+    <xsl:sequence select="concat('hsl(', format-number($hue, '0'), ',70%,50%)')"/>
+  </xsl:function>
 
   <xsl:template match="/">
     <xsl:variable name="nlcs_geometries" as="element()*" select="keronic:extract-geometries(//nlcs:NLCSnetbeheer/*)"/>
@@ -80,12 +86,14 @@
         </xsl:attribute>
         <xsl:attribute name="width" select="400"/>        
         <xsl:attribute name="height" select="400"/>        
-        <xsl:for-each select="$nlcs_geometries">
-          <xsl:element name="{Type}">
-            <xsl:attribute name="fill" select="'red'"/>
+        <xsl:for-each select="1 to count($nlcs_geometries)">
+          <xsl:variable name="i" select="."/>
+          <xsl:variable name="nlcs_geometry" select="$nlcs_geometries[$i]"/>
+          <xsl:element name="{$nlcs_geometry/Type}">
+            <xsl:attribute name="fill" select="keronic:color-for-index($i)"/>
             <xsl:attribute name="stroke" select="'black'"/>
             <xsl:attribute name="points">
-              <xsl:for-each select="Coords/Coord">
+              <xsl:for-each select="$nlcs_geometry/Coords/Coord">
                 <xsl:value-of select="concat(string-join([X, Y], ','), ' ')"/>                
               </xsl:for-each>
             </xsl:attribute>
