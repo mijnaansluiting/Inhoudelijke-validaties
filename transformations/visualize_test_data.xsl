@@ -12,53 +12,61 @@
   <xsl:function name="keronic:extract-geometries" as="element()*">
     <xsl:param name="nlcs_objects" as="element()*"/>
     <xsl:sequence>
-      <xsl:for-each select="$nlcs_objects">
-        <xsl:variable name="nlcs_object" select="."/>
-        <xsl:variable name="line"   select="nlcs:Geometry/gml:LineString"/>
-        <xsl:variable name="point"  select="nlcs:Geometry/gml:Point"/>
-        <xsl:variable name="poly"   select="nlcs:Geometry/gml:Polygon"/>
+      <xsl:for-each select="1 to count($nlcs_objects)">
+        <xsl:variable name="i" select="."/>
+        <xsl:variable name="nlcs_object" select="$nlcs_objects[$i]"/>
+        <xsl:variable name="points" select="$nlcs_object/nlcs:Geometry/gml:Point"/>
+        <xsl:variable name="lines" select="$nlcs_object/nlcs:Geometry/gml:LineString"/>
+        <xsl:variable name="polygons" select="$nlcs_object/nlcs:Geometry/gml:Polygon"/>
 
-        <!-- Lines -->
-        <xsl:for-each select="$line">
-          <xsl:variable name="dim" select="number(@srsDimension)"/>
-          <xsl:variable name="coords" select="tokenize(normalize-space(gml:posList), '\s+')"/>
-          <xsl:variable name="pairs"
-            select="
-              for $i in 1 to count($coords) idiv $dim
-              return concat($coords[($i - 1)*$dim+1], ' ', $coords[($i - 1)*$dim+2])
-            "/>
-          <xsl:value-of select="concat('LINESTRING(', string-join($pairs, ', '), ')')"/>
-        </xsl:for-each>
-
-        <!-- Points -->
-        <xsl:for-each select="$point">
-          <xsl:variable name="dim" select="number(@srsDimension)"/>
+        <xsl:for-each select="$points">
           <xsl:variable name="coords" select="tokenize(normalize-space(gml:pos), '\s+')"/>
-          <xsl:variable name="pair"
-            select="
-              if ($dim=3) then concat($coords[1], ' ', $coords[2])
-              else concat($coords[1], ' ', $coords[2])
-            "/>
-          <xsl:value-of select="concat('POINT(', $pair, ')')"/>
+          <SVGBlueprint id="{$nlcs_object/nlcs:ID}" type="circle">
+            <Attribute key="cx" value="{$coords[1]}"/>
+            <Attribute key="cy" value="{$coords[2]}"/>
+            <Attribute key="stroke" value="black"/>
+            <Attribute key="fill" value="{keronic:color-for-index($i)}"/>
+            <Attribute key="r" value="5"/>
+            <Coord x="{$coords[1]}" y="{$coords[2]}"/>
+          </SVGBlueprint>
+        </xsl:for-each>
+        
+        <xsl:for-each select="$lines">
+          <xsl:variable name="dimension" select="number(@srsDimension)"/>
+          <xsl:variable name="coords" select="tokenize(normalize-space(gml:posList), '\s+')"/>
+          
+          <SVGBlueprint id="{$nlcs_object/nlcs:ID}" type="polyline">
+            <Attribute key="stroke" value="{keronic:color-for-index($i)}"/>
+            <Attribute key="stroke-width" value="5"/>
+            <Attribute key="stroke-linecap" value="round"/>
+            <Attribute key="fill" value="none"/>
+            <xsl:for-each select="1 to count($coords) idiv $dimension">
+              <xsl:variable name="j" select="."/>
+              <xsl:variable name="x" select="$coords[($j - 1) * $dimension + 1]"/>
+              <xsl:variable name="y" select="$coords[($j - 1) * $dimension + 2]"/>
+              <Coord x="{$x}" y="{$y}"/>
+            </xsl:for-each>
+          </SVGBlueprint>   
         </xsl:for-each>
 
-        <!-- Polygons -->
-        <xsl:for-each select="$poly">
+        <xsl:for-each select="$polygons">
           <xsl:variable name="dimension" select="number(@srsDimension)"/>
           <xsl:variable name="coords" select="tokenize(normalize-space(gml:exterior/gml:LinearRing/gml:posList), '\s+')"/>
-          <Geom>
-            <ID><xsl:value-of select="$nlcs_object/nlcs:ID"/></ID>
-            <Type>polygon</Type>
-            <Coords>
-              <xsl:for-each select="1 to count($coords) idiv $dimension">
-                <xsl:variable name="i" select="."/>
-                <Coord>
-                  <X><xsl:value-of select="$coords[($i - 1) * $dimension + 1]"/></X>
-                  <Y><xsl:value-of select="$coords[($i - 1) * $dimension + 2]"/></Y>
-                </Coord>
-              </xsl:for-each>
-            </Coords>
-          </Geom>
+          
+          <SVGBlueprint id="{$nlcs_object/nlcs:ID}" type="polygon">
+            <Attribute key="stroke" value="black"/>
+            <Attribute key="fill" value="{keronic:color-for-index($i)}"/>
+            <Attribute key="fill-opacity" value="30%"/>
+            <xsl:if test="name($nlcs_object) = 'AprojectReferentie'">
+              <Attribute key="stroke-dasharray" value="10,10"/>
+            </xsl:if>
+            <xsl:for-each select="1 to count($coords) idiv $dimension">
+              <xsl:variable name="j" select="."/>
+              <xsl:variable name="x" select="$coords[($j - 1) * $dimension + 1]"/>
+              <xsl:variable name="y" select="$coords[($j - 1) * $dimension + 2]"/>
+              <Coord x="{$x}" y="{$y}"/>
+            </xsl:for-each>
+          </SVGBlueprint>
         </xsl:for-each>
       </xsl:for-each>
     </xsl:sequence>
@@ -72,12 +80,12 @@
 
   <xsl:template match="/">
     <xsl:variable name="nlcs_geometries" as="element()*" select="keronic:extract-geometries(//nlcs:NLCSnetbeheer/*)"/>
-    <xsl:variable name="x_coords" select="$nlcs_geometries/Coords/Coord/X"/>
-    <xsl:variable name="y_coords" select="$nlcs_geometries/Coords/Coord/Y"/>
-    <xsl:variable name="view_box_x" select="min($x_coords)"/>
-    <xsl:variable name="view_box_y" select="min($y_coords)"/>
-    <xsl:variable name="view_box_width" select="max($x_coords) - $view_box_x"/>
-    <xsl:variable name="view_box_height" select="max($y_coords) - $view_box_y"/>
+    <xsl:variable name="x_coords" select="$nlcs_geometries/Coord/@x"/>
+    <xsl:variable name="y_coords" select="$nlcs_geometries/Coord/@y"/>
+    <xsl:variable name="view_box_x" select="min($x_coords) - 6"/>
+    <xsl:variable name="view_box_y" select="min($y_coords) - 6"/>
+    <xsl:variable name="view_box_width" select="max($x_coords) - min($x_coords) + 12"/>
+    <xsl:variable name="view_box_height" select="max($y_coords) - min($y_coords) + 12"/>
 
     <xsl:variable name="svg">
       <svg>
@@ -89,12 +97,13 @@
         <xsl:for-each select="1 to count($nlcs_geometries)">
           <xsl:variable name="i" select="."/>
           <xsl:variable name="nlcs_geometry" select="$nlcs_geometries[$i]"/>
-          <xsl:element name="{$nlcs_geometry/Type}">
-            <xsl:attribute name="fill" select="keronic:color-for-index($i)"/>
-            <xsl:attribute name="stroke" select="'black'"/>
+          <xsl:element name="{$nlcs_geometry/@type}">
+            <xsl:for-each select="$nlcs_geometry/Attribute">
+              <xsl:attribute name="{@key}" select="@value"/>
+            </xsl:for-each>
             <xsl:attribute name="points">
-              <xsl:for-each select="$nlcs_geometry/Coords/Coord">
-                <xsl:value-of select="concat(string-join([X, Y], ','), ' ')"/>                
+              <xsl:for-each select="$nlcs_geometry/Coord">
+                <xsl:value-of select="concat(string-join([@x, @y], ','), ' ')"/>                
               </xsl:for-each>
             </xsl:attribute>
           </xsl:element>
@@ -102,13 +111,13 @@
         <xsl:for-each select="$nlcs_geometries">
           <text>
             <xsl:attribute name="x">
-              <xsl:value-of select="Coords/Coord[1]/X"/>
+              <xsl:value-of select="Coord[1]/@x"/>
             </xsl:attribute>
             <xsl:attribute name="y">
-              <xsl:value-of select="Coords/Coord[1]/Y"/>
+              <xsl:value-of select="Coord[1]/@y"/>
             </xsl:attribute>
             <xsl:attribute name="fill" select="'black'"/>
-            <xsl:value-of select="./ID"/>
+            <xsl:value-of select="@id"/>
           </text>
         </xsl:for-each>
       </svg>
