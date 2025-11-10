@@ -26,3 +26,6 @@ jobs:
 
     - name: Generate and compare HTMLs
       run: scripts/generate_and_compare_htmls.sh
+
+    - name: Generate and compare SVGs
+      run: scripts/generate_and_compare_svgs.sh
