@@ -7,7 +7,7 @@
                 xmlns:keronic="http://example.com/my-functions"
                 exclude-result-prefixes="gml keronic nlcs xs">
 
-  <xsl:output method="text" />
+  <xsl:output method="xml" />
 
   <xsl:function name="keronic:extract-geometries" as="element()*">
     <xsl:param name="nlcs_objects" as="element()*"/>
@@ -109,59 +109,55 @@
     <xsl:variable name="view_box_width" select="max($measurements/@maxX) - $view_box_x"/>
     <xsl:variable name="view_box_height" select="max($measurements/@maxY) - $view_box_y"/>
 
-    <xsl:variable name="svg">
-      <svg>
-        <xsl:attribute name="viewBox">
-          <xsl:value-of select="string-join([$view_box_x, $view_box_y, $view_box_width, $view_box_height], ' ')"/>
-        </xsl:attribute>
-        <xsl:attribute name="width" select="400"/>        
-        <xsl:attribute name="height" select="400"/>        
+    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="auto">
+      <xsl:attribute name="viewBox">
+        <xsl:value-of select="string-join([$view_box_x, $view_box_y, $view_box_width, $view_box_height], ' ')"/>
+      </xsl:attribute>
 
-        <xsl:variable name="polygon_blueprints" select="$svg_blueprints[@type = 'polygon']"/>
-        <xsl:for-each select="1 to count($polygon_blueprints)">
-          <xsl:variable name="i" select="."/>
-          <xsl:variable name="nlcs_geometry" select="$polygon_blueprints[$i]"/>
-          <xsl:element name="{$nlcs_geometry/@type}">
-            <xsl:for-each select="$nlcs_geometry/Attribute">
-              <xsl:attribute name="{@key}" select="@value"/>
-            </xsl:for-each>
-          </xsl:element>
-        </xsl:for-each>
-        
-        <xsl:variable name="line_blueprints" select="$svg_blueprints[@type = 'polyline']"/>
-        <xsl:for-each select="1 to count($line_blueprints)">
-          <xsl:variable name="i" select="."/>
-          <xsl:variable name="nlcs_geometry" select="$line_blueprints[$i]"/>
-          <xsl:element name="{$nlcs_geometry/@type}">
-            <xsl:for-each select="$nlcs_geometry/Attribute">
-              <xsl:attribute name="{@key}" select="@value"/>
-            </xsl:for-each>
-          </xsl:element>
-        </xsl:for-each>
-        
-        <xsl:variable name="point_blueprints" select="$svg_blueprints[@type = 'circle']"/>
-        <xsl:for-each select="1 to count($point_blueprints)">
-          <xsl:variable name="i" select="."/>
-          <xsl:variable name="nlcs_geometry" select="$point_blueprints[$i]"/>
-          <xsl:element name="{$nlcs_geometry/@type}">
-            <xsl:for-each select="$nlcs_geometry/Attribute">
-              <xsl:attribute name="{@key}" select="@value"/>
-            </xsl:for-each>
-          </xsl:element>
-        </xsl:for-each>
-        <xsl:for-each select="$svg_blueprints">
-          <text 
-            x="{Anchor/@x}" 
-            y="{Anchor/@y}" 
-            fill="black"
-            text-anchor="middle"
-          >
-            <xsl:value-of select="@id"/>
-          </text>
-        </xsl:for-each>
-      </svg>
-    </xsl:variable>
-    <xsl:value-of select="serialize($svg, map{'method':'xml'})"/>
+      <xsl:variable name="polygon_blueprints" select="$svg_blueprints[@type = 'polygon']"/>
+      <xsl:for-each select="1 to count($polygon_blueprints)">
+        <xsl:variable name="i" select="."/>
+        <xsl:variable name="nlcs_geometry" select="$polygon_blueprints[$i]"/>
+        <xsl:element name="{$nlcs_geometry/@type}">
+          <xsl:for-each select="$nlcs_geometry/Attribute">
+            <xsl:attribute name="{@key}" select="@value"/>
+          </xsl:for-each>
+        </xsl:element>
+      </xsl:for-each>
+      
+      <xsl:variable name="line_blueprints" select="$svg_blueprints[@type = 'polyline']"/>
+      <xsl:for-each select="1 to count($line_blueprints)">
+        <xsl:variable name="i" select="."/>
+        <xsl:variable name="nlcs_geometry" select="$line_blueprints[$i]"/>
+        <xsl:element name="{$nlcs_geometry/@type}">
+          <xsl:for-each select="$nlcs_geometry/Attribute">
+            <xsl:attribute name="{@key}" select="@value"/>
+          </xsl:for-each>
+        </xsl:element>
+      </xsl:for-each>
+      
+      <xsl:variable name="point_blueprints" select="$svg_blueprints[@type = 'circle']"/>
+      <xsl:for-each select="1 to count($point_blueprints)">
+        <xsl:variable name="i" select="."/>
+        <xsl:variable name="nlcs_geometry" select="$point_blueprints[$i]"/>
+        <xsl:element name="{$nlcs_geometry/@type}">
+          <xsl:for-each select="$nlcs_geometry/Attribute">
+            <xsl:attribute name="{@key}" select="@value"/>
+          </xsl:for-each>
+        </xsl:element>
+      </xsl:for-each>
+      
+      <xsl:for-each select="$svg_blueprints">
+        <text 
+          x="{Anchor/@x}" 
+          y="{Anchor/@y}" 
+          fill="black"
+          text-anchor="middle"
+        >
+          <xsl:value-of select="@id"/>
+        </text>
+      </xsl:for-each>
+    </svg>
   </xsl:template>
 
 </xsl:stylesheet>
