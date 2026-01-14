@@ -90,7 +90,7 @@
     <function name="keronic:split-pos-list-to-posses" as="xs:anyAtomicType*">
         <param name="pos_list" as="xs:anyAtomicType*"/>
 
-        <sequence select="for $index in 0 to (count($pos_list) div 3 - 1)
+        <sequence select="for $index in 0 to (count($pos_list) idiv 3 - 1)
                           return
                           let $act_index := ($index * 3) + 1
                           return

@@ -33,7 +33,7 @@
         <param name="dimension" as="xs:string"/>
         <param name="maaivelden" as="element()*"/>
 
-        <sequence select="for $index in 0 to ((count($pos_list) div 3) - 1)
+        <sequence select="for $index in 0 to ((count($pos_list) idiv 3) - 1)
                           return
                           let $act_index := ($index * 3) + 1
                           return
@@ -76,7 +76,7 @@
         <param name="dimension" as="xs:string"/>
         <param name="maaivelden" as="element()*"/>
 
-        <sequence select="for $index in 0 to ((count($pos_list) div 3) - 1)
+        <sequence select="for $index in 0 to ((count($pos_list) idiv 3) - 1)
                           return
                           let $act_index := ($index * 3) + 1
                           return

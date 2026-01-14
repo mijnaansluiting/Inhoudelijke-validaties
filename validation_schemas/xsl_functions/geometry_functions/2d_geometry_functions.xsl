@@ -296,8 +296,8 @@
         <param name="line" as="xs:double*"/>
         <param name="area" as="xs:double*"/>
 
-        <variable name="area_point_count" select="count($area) div 2 - 1"/>
-        <variable name="line_point_count" select="count($line) div 2 - 1"/>
+        <variable name="area_point_count" select="count($area) idiv 2 - 1"/>
+        <variable name="line_point_count" select="count($line) idiv 2 - 1"/>
 
         <variable name="anyPointInside" select="
                     some $i in 1 to $line_point_count
