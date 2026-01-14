@@ -209,6 +209,14 @@
       Er is een incorrect aantal kabels verbonden met deze mof. {1} zijn nodig, maar {2} zijn verbonden.
     </message-text>
   </message>
+  <message id="cable-amount-unknown">
+    <message-text xml:lang="en">
+      Unable to determine the required amount of connections for joint with function {1}.
+    </message-text>
+    <message-text xml:lang="nl">
+      Het aantal verplichte verbindingen voor een mof met functie {1} kan niet worden vastgesteld.
+    </message-text>
+  </message>
   <message id="phases-are-incorrect">
     <message-text xml:lang="en">
       The expected phases for the connected cables are incorrect. Expected {1}, but got {2}.

@@ -11,7 +11,7 @@
                 0)]"/>
 
         <let name="functie_type"
-            value="keronic:map-mof-functie(nlcs:Functie)"/>
+            value="if(keronic:element-exists-and-not-empty(nlcs:Functie)) then keronic:map-mof-functie(nlcs:Functie) else ''"/> 
 
         <let name="is_aftak_from_existing_cable"
             value="$functie_type = 'Aftak' and not(empty($connected_mskabels[nlcs:Status = 'BESTAAND']))"/>
@@ -24,13 +24,22 @@
                 else if($functie_type = 'Aftak') then 3
                 else -1
             "/>
+        
+        <let name="cable_amount_known"
+            value="$required_connections gt -1"/>
+        
+        <assert id="mof_required_amount_of_cables_unknown"
+            properties="scope rule-number severity object-type object-id"
+            test="$cable_amount_known">
+            <value-of select="keronic:get-translation-and-replace-placeholders('cable-amount-unknown', [nlcs:Functie])"/>
+        </assert>
 
         <let name="connections"
             value="count($connected_mskabels)"/>
 
         <assert id="mof_connected_to_right_amount_of_cables"
             properties="scope rule-number severity object-type object-id"
-            test="$connections = $required_connections">
+            test="if($cable_amount_known) then $connections = $required_connections else true()">
             <value-of select="keronic:get-translation-and-replace-placeholders('cable-amount-incorrect', [string($required_connections), string($connections)])"/>
         </assert>
 
