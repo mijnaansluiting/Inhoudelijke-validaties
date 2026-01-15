@@ -4,7 +4,8 @@
             xmlns:nlcs="NS_NLCSnetbeheer"
             xmlns:nvr="NLCSValidatieRegelsNameSpace"
             version="3.0">
-
+  
+  <variable name="rule_numbers_always_within_scope" select="(1, 2)"/>
   <variable name="validatieregels_file" select="document('../../../doc/NLCSValidatieRegels.xml')"/>
   <variable name="scopes" select="$validatieregels_file/nvr:NLCSValidatieregels/nvr:scopes/nvr:scope"/>
 
@@ -19,7 +20,7 @@
     <variable name="object_type" select="name($nlcs_object)"/>
 
     <choose>
-      <when test="$object_type = 'NLCSnetbeheer'">
+      <when test="$rule_number = $rule_numbers_always_within_scope">
         <value-of select="true()"/>
       </when>
       <otherwise>
