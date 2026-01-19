@@ -18,11 +18,11 @@
         <Geometry>
             <gml:LineString
                 srsDimension="3"
-                srsName="EPSG:28992">
+                srsName="EPSG:7415">
                 <gml:posList>
-                    21.0000 21.0000 -0.80
-                    21.0200 21.1500 -0.80
-                    21.2500 21.1700 -0.80
+                     0  0 0
+                    30  0 0
+                    40 30 0
                 </gml:posList>
             </gml:LineString>
         </Geometry>

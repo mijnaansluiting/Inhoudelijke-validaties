@@ -11,18 +11,18 @@
         <Tekeningtype>BESTAANDE SITUATIE</Tekeningtype>
         <Geometry>
             <gml:Polygon
-                srsDimension="2"
-                srsName="EPSG:28992">
+                srsDimension="3"
+                srsName="EPSG:7415">
                 <gml:exterior>
                     <gml:LinearRing>
                         <gml:posList>
-                            160.0 200.0
-                            320.0 200.0
-                            240.0 140.0
-                            360.0  40.0
-                            230.0  70.0
-                            180.0 120.0
-                            160.0 200.0
+                            160 200 0
+                            320 200 0
+                            240 140 0
+                            360  40 0
+                            230  70 0
+                            180 120 0
+                            160 200 0
                         </gml:posList>
                     </gml:LinearRing>
                 </gml:exterior>
@@ -40,7 +40,7 @@
                 srsDimension="3"
                 srsName="EPSG:7415">
                 <gml:pos>
-                    200.0 160.0 0
+                    200 160 0
                 </gml:pos>
             </gml:Point>
         </Geometry>
@@ -56,7 +56,7 @@
                 srsDimension="3"
                 srsName="EPSG:7415">
                 <gml:pos>
-                    170.0 160.0 0
+                    170 160 0
                 </gml:pos>
             </gml:Point>
         </Geometry>
@@ -70,10 +70,10 @@
         <Geometry>
             <gml:LineString
                 srsDimension="3"
-                srsName="EPSG:28992">
+                srsName="EPSG:7415">
                 <gml:posList>
-                    190.0 140.0 0
-                    210.0 110.0 0
+                    190 140 0
+                    210 110 0
                 </gml:posList>
             </gml:LineString>
         </Geometry>
@@ -87,10 +87,10 @@
         <Geometry>
             <gml:LineString
                 srsDimension="3"
-                srsName="EPSG:28992">
+                srsName="EPSG:7415">
                 <gml:posList>
-                    320.0 60.0 0
-                    420.0 110.0 0
+                    320 60 0
+                    420 110 0
                 </gml:posList>
             </gml:LineString>
         </Geometry>
@@ -104,10 +104,10 @@
         <Geometry>
             <gml:LineString
                 srsDimension="3"
-                srsName="EPSG:28992">
+                srsName="EPSG:7415">
                 <gml:posList>
-                    270.0  20.0 0
-                    350.0 120.0 0
+                    270  20 0
+                    350 120 0
                 </gml:posList>
             </gml:LineString>
         </Geometry>
@@ -121,10 +121,10 @@
         <Geometry>
             <gml:LineString
                 srsDimension="3"
-                srsName="EPSG:28992">
+                srsName="EPSG:7415">
                 <gml:posList>
-                    170.0 300.0 0
-                    190.0 200.0 0
+                    130 270 0
+                    190 200 0
                 </gml:posList>
             </gml:LineString>
         </Geometry>
@@ -138,12 +138,12 @@
         <Geometry>
             <gml:LineString
                 srsDimension="3"
-                srsName="EPSG:28992">
+                srsName="EPSG:7415">
                 <gml:posList>
-                    190.0 250.0 0
-                    200.0 200.0 0
-                    220.0 200.0 0
-                    230.0 250.0 0
+                    190 250 0
+                    200 200 0
+                    220 200 0
+                    230 250 0
                 </gml:posList>
             </gml:LineString>
         </Geometry>
@@ -156,15 +156,15 @@
         <ID>I</ID>
         <Geometry>
             <gml:Polygon
-                srsDimension="2"
-                srsName="EPSG:28992">
+                srsDimension="3"
+                srsName="EPSG:7415">
                 <gml:exterior>
                     <gml:LinearRing>
                         <gml:posList>
-                            220.0 100.0 260.0
-                            110.0 290.0  90.0
-                            280.0  70.0 240.0
-                            80.0  220.0 100.0
+                            220 100 260
+                            110 290  90
+                            280  70 240
+                            80  220 100
                         </gml:posList>
                     </gml:LinearRing>
                 </gml:exterior>
@@ -179,15 +179,15 @@
         <ID>J</ID>
         <Geometry>
             <gml:Polygon
-                srsDimension="2"
-                srsName="EPSG:28992">
+                srsDimension="3"
+                srsName="EPSG:7415">
                 <gml:exterior>
                     <gml:LinearRing>
                         <gml:posList>
-                            200.0 140.0
-                            250.0 160.0
-                            250.0 120.0
-                            200.0 140.0
+                            200 140 0
+                            250 160 0
+                            250 120 0
+                            200 140 0
                         </gml:posList>
                     </gml:LinearRing>
                 </gml:exterior>
@@ -202,16 +202,16 @@
         <ID>K</ID>
         <Geometry>
             <gml:Polygon
-                srsDimension="2"
-                srsName="EPSG:28992">
+                srsDimension="3"
+                srsName="EPSG:7415">
                 <gml:exterior>
                     <gml:LinearRing>
                         <gml:posList>
-                            240.0 240.0
-                            310.0 300.0
-                            390.0 220.0
-                            320.0 160.0
-                            240.0 240.0
+                            240 240 0
+                            310 300 0
+                            390 220 0
+                            320 160 0
+                            240 240 0
                         </gml:posList>
                     </gml:LinearRing>
                 </gml:exterior>
@@ -226,15 +226,15 @@
         <ID>L</ID>
         <Geometry>
             <gml:Polygon
-                srsDimension="2"
-                srsName="EPSG:28992">
+                srsDimension="3"
+                srsName="EPSG:7415">
                 <gml:exterior>
                     <gml:LinearRing>
                         <gml:posList>
-                            120.0 240.0
-                            400.0 240.0
-                            400.0   0.0
-                            120.0   0.0
+                            120 240 0
+                            400 240 0
+                            400   0 0
+                            120   0 0
                         </gml:posList>
                     </gml:LinearRing>
                 </gml:exterior>

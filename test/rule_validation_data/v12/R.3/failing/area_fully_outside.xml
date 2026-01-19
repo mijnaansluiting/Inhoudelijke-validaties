@@ -11,18 +11,18 @@
         <Tekeningtype>BESTAANDE SITUATIE</Tekeningtype>
         <Geometry>
             <gml:Polygon
-                srsDimension="2"
-                srsName="EPSG:28992">
+                srsDimension="3"
+                srsName="EPSG:7415">
                 <gml:exterior>
                     <gml:LinearRing>
                         <gml:posList>
-                            160.0 200.0
-                            320.0 200.0
-                            240.0 140.0
-                            360.0  40.0
-                            230.0  70.0
-                            180.0 120.0
-                            160.0 200.0
+                            160 200 0
+                            320 200 0
+                            240 140 0
+                            360  40 0
+                            230  70 0
+                            180 120 0
+                            160 200 0
                         </gml:posList>
                     </gml:LinearRing>
                 </gml:exterior>
@@ -36,15 +36,15 @@
         <ID>B</ID>
         <Geometry>
             <gml:Polygon
-                srsDimension="2"
-                srsName="EPSG:28992">
+                srsDimension="3"
+                srsName="EPSG:7415">
                 <gml:exterior>
                     <gml:LinearRing>
                         <gml:posList>
-                            170.0 120.0
-                            220.0  70.0
-                            180.0  30.0
-                            170.0 120.0
+                            170 120 0
+                            220  70 0
+                            180  30 0
+                            170 120 0
                         </gml:posList>
                     </gml:LinearRing>
                 </gml:exterior>
