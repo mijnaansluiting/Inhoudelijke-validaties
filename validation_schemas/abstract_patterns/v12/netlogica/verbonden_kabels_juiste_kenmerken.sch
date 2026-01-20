@@ -4,11 +4,11 @@
         <let name="mskabel"
             value="."/>
 
-        <let name="line"
-            value="ma:parse-line(nlcs:Geometry)"/>
-
         <let name="connected_msmoffen"
-            value="//nlcs:MSmof[ma:point-touches-line(ma:parse-point(nlcs:Geometry), $line)]"/>
+            value="//nlcs:MSmof[ma:point-touches-line(
+                ma:parse-point(nlcs:Geometry),
+                ma:parse-line($mskabel/nlcs:Geometry)
+            )]"/>
 
         <let name="connected_mskabels"
             value="//nlcs:MSkabel[
