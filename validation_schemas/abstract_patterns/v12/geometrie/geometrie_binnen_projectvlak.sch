@@ -2,8 +2,14 @@
 <pattern xmlns ="http://purl.oclc.org/dsdl/schematron" id="geometrie-binnen-projectvlak" abstract="true">
     <!-- Point geometries -->
     <rule context="//nlcs:MSmof | //nlcs:MSoverdrachtspunt">
+        <let name="point" 
+            value="ma:parse-point(nlcs:Geometry)"/>
+        
+        <let name="project_area" 
+            value="ma:parse-area(//nlcs:AprojectReferentie/nlcs:Geometry)"/>
+
         <assert id="assert-point-inside-project-area"
-            test="ma:point-interacts-with-area(nlcs:Geometry, //nlcs:AprojectReferentie/nlcs:Geometry)"
+            test="ma:point-interacts-with-area($point, $project_area)"
             properties="scope rule-number severity object-type object-id">
             <value-of select="keronic:get-translation('object-outside-project-area')"/>
         </assert>
@@ -11,8 +17,14 @@
 
     <!-- Line geometries -->
     <rule context="//nlcs:MSkabel | //nlcs:Amantelbuis | //nlcs:Akunstwerk | //nlcs:Eaarddraad | //nlcs:Aaanlegtechniek">
+        <let name="line" 
+            value="ma:parse-line(nlcs:Geometry)"/>
+
+        <let name="project_area" 
+            value="ma:parse-area(//nlcs:AprojectReferentie/nlcs:Geometry)"/>
+        
         <assert id="assert-line-inside-project-area"
-            test="ma:line-interacts-with-area(nlcs:Geometry, //nlcs:AprojectReferentie/nlcs:Geometry)"
+            test="ma:line-interacts-with-area($line, $project_area)"
             properties="scope rule-number severity object-type object-id">
             <value-of select="keronic:get-translation('object-outside-project-area')"/>
         </assert>
@@ -20,14 +32,14 @@
 
     <!-- Area geometries -->
     <rule context="//nlcs:MSstation | //nlcs:AbeschermingVlak">
-        <let name="project_area_pos_list"
-            value="tokenize(normalize-space(//nlcs:AprojectReferentie/nlcs:Geometry/gml:Polygon/gml:exterior/gml:LinearRing/gml:posList))"/>
+        <let name="area"
+            value="ma:parse-area(nlcs:Geometry)"/>
 
-        <let name="area_pos_list"
-            value="tokenize(normalize-space((nlcs:Geometry/gml:Polygon/gml:exterior/gml:LinearRing/gml:posList)))"/>
+        <let name="project_area" 
+            value="ma:parse-area(//nlcs:AprojectReferentie/nlcs:Geometry)"/>       
 
         <assert id="assert-area-interacts-with-project-area"
-            test="ma:area-interacts-with-area(nlcs:Geometry, //nlcs:AprojectReferentie/nlcs:Geometry)"
+            test="ma:area-interacts-with-area($area, $project_area)"
             properties="scope rule-number severity object-type object-id">
             <value-of select="keronic:get-translation('object-outside-project-area')"/>
         </assert>

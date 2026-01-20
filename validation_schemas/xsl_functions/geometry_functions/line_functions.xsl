@@ -1,10 +1,10 @@
 <stylesheet xmlns="http://www.w3.org/1999/XSL/Transform"
+            xmlns:xsl='http://www.w3.org/1999/XSL/Transform'
             xmlns:math="http://www.w3.org/2005/xpath-functions/math"
             xmlns:keronic="http://example.com/my-functions"
             xmlns:keronic-geom="http://example.com/my-functions-test"
             xmlns:ma="http://example.com/mijnaansluiting"
             xmlns:xs="http://www.w3.org/2001/XMLSchema"
-            xmlns:xsl='http://www.w3.org/1999/XSL/Transform'
             version="3.0">
 
     <function name="keronic-geom:line-2d-contains-smaller-angle-than-arg" as="xs:boolean">
@@ -301,29 +301,6 @@
         <value-of select="$angle_degrees lt $min_angle"/>
     </function>
     
-    <function name="ma:angle-between-two-lines" as="xs:double">
-        <param name="x1" as="xs:double"/>
-        <param name="y1" as="xs:double"/>
-        <param name="x2" as="xs:double"/>
-        <param name="y2" as="xs:double"/>
-        <param name="x3" as="xs:double"/>
-        <param name="y3" as="xs:double"/>
-        
-        <variable name="vx1" select="$x1 - $x2"/>
-        <variable name="vy1" select="$y1 - $y2"/>
-        <variable name="vx2" select="$x3 - $x2"/>
-        <variable name="vy2" select="$y3 - $y2"/>
-        
-        <variable name="dot_product" select="$vx1 * $vx2 + $vy1 * $vy2"/>
-        
-        <variable name="length_v1" select="math:sqrt($vx1 * $vx1 + $vy1 * $vy1)"/>
-        <variable name="length_v2" select="math:sqrt($vx2 * $vx2 + $vy2 * $vy2)"/>
-        
-        <variable name="radian" select="math:acos($dot_product div ($length_v1 * $length_v2))"/>
-        
-        <value-of select="$radian * 180 div math:pi()"/>
-    </function>
-
     <function name="keronic-geom:two-line-parts-3d-larger-angle-than-arg" as="xs:boolean">
         <param name="line" as="xs:double*"/>
         <param name="max_angle" as="xs:double"/>

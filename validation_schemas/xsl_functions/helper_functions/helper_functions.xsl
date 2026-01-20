@@ -141,7 +141,7 @@
         <param name="point_geometry" as="node()"/>
 
         <variable name="point_dimension" as="xs:string" select="$point_geometry/gml:Point/@srsDimension"/>        
-        <variable name="point_pos" as="xs:string*" select="ma:tokenize-point($point_geometry)"/>
+        <variable name="point_pos" as="xs:string*" select="tokenize(normalize-space($point_geometry))"/>
         <variable name="point_flattened" as="xs:string*" select="ma:flatten($point_pos, $point_dimension)"/>
         
         <sequence select="ma:string-array-to-double-array($point_flattened)"/>
@@ -151,7 +151,7 @@
         <param name="line_geometry" as="node()"/>
 
         <variable name="line_dimension" as="xs:string" select="$line_geometry/gml:LineString/@srsDimension"/>        
-        <variable name="line_pos_list" as="xs:string*" select="ma:tokenize-line($line_geometry)"/>
+        <variable name="line_pos_list" as="xs:string*" select="tokenize(normalize-space($line_geometry))"/>
         <variable name="line_flattened" as="xs:string*" select="ma:flatten($line_pos_list, $line_dimension)"/>
         
         <sequence select="ma:string-array-to-double-array($line_flattened)"/>
@@ -161,28 +161,10 @@
         <param name="area_geometry" as="node()"/>
 
         <variable name="area_dimension" as="xs:string" select="$area_geometry/gml:Polygon/@srsDimension"/> 
-        <variable name="area_pos_list" as="xs:string*" select="ma:tokenize-area($area_geometry)"/>
+        <variable name="area_pos_list" as="xs:string*" select="tokenize(normalize-space($area_geometry))"/>
         <variable name="area_flattened" as="xs:string*" select="ma:flatten($area_pos_list, $area_dimension)"/>
         
         <sequence select="ma:string-array-to-double-array($area_flattened)"/>
-    </function>
-
-    <function name="ma:tokenize-point" as="xs:string*">
-        <param name="point_geometry" as="node()"/>
-
-        <sequence select="tokenize(normalize-space($point_geometry/gml:Point/gml:pos))"/>
-    </function>
-
-    <function name="ma:tokenize-line" as="xs:string*">
-        <param name="line_geometry" as="node()"/>
-
-        <sequence select="tokenize(normalize-space($line_geometry/gml:LineString/gml:posList))"/>
-    </function>
-    
-    <function name="ma:tokenize-area" as="xs:string*">
-        <param name="area_geometry" as="node()"/>
-
-        <sequence select="tokenize(normalize-space($area_geometry/gml:Polygon/gml:exterior/gml:LinearRing/gml:posList))"/>
     </function>
 
     <function name="keronic:atan2" as="xs:double">

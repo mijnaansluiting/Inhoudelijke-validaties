@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pattern xmlns ="http://purl.oclc.org/dsdl/schematron" id="topologie-punt-objecten-elec" abstract="true">
     <rule context="//nlcs:MSmof | //nlcs:MSoverdrachtspunt">
+        <let name="point"
+            value="ma:parse-point(nlcs:Geometry)"/>
+
         <let name="point_connected"
-            value="some $mskabel_geometry in //nlcs:MSkabel/nlcs:Geometry satisfies ma:point-touches-line(nlcs:Geometry, $mskabel_geometry)"/>
+            value="
+                some $mskabel_geometry in //nlcs:MSkabel/nlcs:Geometry 
+                satisfies ma:point-touches-line($point, ma:parse-line($mskabel_geometry))"/>
 
         <assert id="point-connected-to-kabel"
             test="$point_connected"
