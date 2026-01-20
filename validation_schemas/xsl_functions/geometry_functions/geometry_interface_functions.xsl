@@ -74,6 +74,43 @@
         </for-each> 
     </function>
     
+    <function name="ma:point-touches-line" as="xs:boolean">
+        <param name="point_geometry" as="node()"/>
+        <param name="line_geometry" as="node()"/>
+        
+        <variable name="point" as="xs:double*" select="ma:parse-point($point_geometry)"/>
+        <variable name="line" as="xs:double*" select="ma:parse-line($line_geometry)"/>
+        
+        <value-of select="ma:point-on-line($point, $line)"/>
+    </function>
+    
+    <function name="ma:point-on-line" as="xs:boolean">
+        <param name="point" as="xs:double*"/>
+        <param name="line" as="xs:double*"/>
+        
+        <sequence select="
+                some $index in 1 to (count($line) idiv 2) - 1 
+                satisfies 
+                    ma:point-on-segment($point, (
+                        $line[2 * $index - 1],
+                        $line[2 * $index],
+                        $line[2 * $index + 1],
+                        $line[2 * $index + 2]
+                    ))
+                "/>
+    </function>
+    
+    <function name="ma:point-on-segment" as="xs:boolean">
+        <param name="point" as="xs:double*"/>
+        <param name="segment" as="xs:double*"/>
+        
+        <variable name="segment_length" as="xs:double" select="keronic-geom:point-2d-to-point-2d-distance($segment[1], $segment[2], $segment[3], $segment[4])"/>
+        <variable name="start_to_point_distance" as="xs:double" select="keronic-geom:point-2d-to-point-2d-distance($point[1], $point[2], $segment[1], $segment[2])"/>
+        <variable name="end_to_point_distance" as="xs:double" select="keronic-geom:point-2d-to-point-2d-distance($point[1], $point[2], $segment[3], $segment[4])"/>
+    
+        <value-of select="$segment_length = $start_to_point_distance + $end_to_point_distance"/>
+    </function>
+
     <!-- FROM POINT FUNCTIONS -->
     <function name="keronic:point-connected-to-point" as="xs:boolean">
         <param name="point_1" as="xs:string*"/>
