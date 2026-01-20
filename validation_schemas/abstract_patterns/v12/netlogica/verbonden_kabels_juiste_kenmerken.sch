@@ -4,21 +4,19 @@
         <let name="mskabel"
             value="."/>
 
+        <let name="line"
+            value="ma:parse-line(nlcs:Geometry)"/>
+
         <let name="connected_msmoffen"
-            value="//nlcs:MSmof[
-                keronic:point-3d-touches-line-3d(
-                    tokenize(normalize-space(nlcs:Geometry/gml:Point/gml:pos)),
-                    tokenize(normalize-space($mskabel/nlcs:Geometry/gml:LineString/gml:posList)),
-                    0)]"/>
+            value="//nlcs:MSmof[ma:point-touches-line(ma:parse-point(nlcs:Geometry), $line)]"/>
 
         <let name="connected_mskabels"
             value="//nlcs:MSkabel[
-                some $connected_mof in $connected_msmoffen satisfies
-                    . ne $mskabel and
-                    keronic:line-3d-touches-point-3d(
-                        tokenize(normalize-space(nlcs:Geometry/gml:LineString/gml:posList)),
-                        tokenize(normalize-space($connected_mof/nlcs:Geometry/gml:Point/gml:pos)),
-                        0)]"/>
+                some $connected_mof in $connected_msmoffen 
+                satisfies . ne $mskabel and ma:point-touches-line(
+                    ma:parse-point($connected_mof/nlcs:Geometry), 
+                    ma:parse-line(nlcs:Geometry)
+                )]"/>
 
         <!-- Compare bedrijfstoestanden against original-->
 
