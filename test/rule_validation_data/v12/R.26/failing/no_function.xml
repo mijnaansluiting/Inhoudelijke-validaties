@@ -20,7 +20,7 @@
             <gml:Point
                 srsDimension="3"
                 srsName="EPSG:7415">
-                <gml:pos>240.0 40.0 -1.0</gml:pos>
+                <gml:pos>240 40 0</gml:pos>
             </gml:Point>
         </Geometry>
     </MSmof>

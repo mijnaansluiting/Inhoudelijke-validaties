@@ -5,10 +5,10 @@
             value="."/>
 
         <let name="connected_mskabels"
-            value="//nlcs:MSkabel[keronic:line-3d-connected-to-point-3d(
-                tokenize(normalize-space(nlcs:Geometry/gml:LineString/gml:posList)),
-                tokenize(normalize-space($msmof/nlcs:Geometry/gml:Point/gml:pos)),
-                0)]"/>
+            value="//nlcs:MSkabel[ma:point-touches-line(
+                ma:parse-point($msmof/nlcs:Geometry),
+                ma:parse-line(nlcs:Geometry)
+            )]"/>
 
         <let name="functie_type"
             value="if(keronic:element-exists-and-not-empty(nlcs:Functie)) then keronic:map-mof-functie(nlcs:Functie) else ''"/> 
@@ -17,7 +17,8 @@
             value="$functie_type = 'Aftak' and not(empty($connected_mskabels[nlcs:Status = 'BESTAAND']))"/>
 
         <let name="required_connections"
-            value="if($functie_type = 'Eind') then 1
+            value="
+                if($functie_type = 'Eind') then 1
                 else if($functie_type = 'Verbinding') then 2
                 else if($functie_type = 'Faseovergang') then 4
                 else if($is_aftak_from_existing_cable) then 2
@@ -44,7 +45,7 @@
         </assert>
 
         <let name="connected_to_new_cable"
-            value="not(empty($connected_mskabels[./nlcs:Status = 'NIEUW']))"/>
+            value="not(empty($connected_mskabels[nlcs:Status = 'NIEUW']))"/>
 
         <assert id="aftak_from_existing_cable_must_be_new_cable"
             properties="scope rule-number severity object-type object-id"

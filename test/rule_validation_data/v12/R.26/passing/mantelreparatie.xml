@@ -21,7 +21,7 @@
             <gml:Point
                 srsDimension="3"
                 srsName="EPSG:7415">
-                <gml:pos>240.0 40.0 -1.0</gml:pos>
+                <gml:pos>240 40 0</gml:pos>
             </gml:Point>
         </Geometry>
     </MSmof>
@@ -32,10 +32,10 @@
         <Geometry>
             <gml:LineString
                 srsDimension="3"
-                srsName="EPSG:28992">
+                srsName="EPSG:7415">
                 <gml:posList>
-                    40.0 40.0 -1.0
-                    240.0 40.0 -1.0
+                    40 40 0
+                    240 40 0
                 </gml:posList>
             </gml:LineString>
         </Geometry>
@@ -47,10 +47,10 @@
         <Geometry>
             <gml:LineString
                 srsDimension="3"
-                srsName="EPSG:28992">
+                srsName="EPSG:7415">
                 <gml:posList>
-                    60.0 30.0 -1.0
-                    240.0 40.0 -1.0
+                    60 30 0
+                    240 40 0
                 </gml:posList>
             </gml:LineString>
         </Geometry>
