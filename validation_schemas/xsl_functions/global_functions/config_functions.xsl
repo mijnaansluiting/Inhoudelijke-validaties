@@ -8,10 +8,6 @@
   <variable name="sys_config_file" select= "document('../../../configuration/sys_config.xml')"/>
   <variable name="user_config_file" select= "document('../../../configuration/user_config.xml')"/>
 
-  <function name="keronic:get-connected-threshold">
-    <value-of select="$sys_config_file/config/V10/Topology/ConnectedThreshold"/>
-  </function>
-
   <function name="ma:map-mof-functie" as="xs:string">
     <param name="functie" as="xs:string"/>
     <sequence select="name(($sys_config_file/config/v12/MofFuncties/*[Functie = $functie]))"/>

@@ -134,20 +134,12 @@
     </phase>
 
     <!-- import functions -->
+    <xsl:include href="../xsl_functions/geometry_functions/2d_geometry_functions.xsl"/>
+    <xsl:include href="../xsl_functions/geometry_functions/geometry_interface_functions.xsl"/>
     <xsl:include href="../xsl_functions/global_functions/config_functions.xsl"/>
     <xsl:include href="../xsl_functions/global_functions/localization_functions.xsl"/>
     <xsl:include href="../xsl_functions/global_functions/rule_scope_functions.xsl"/>
     <xsl:include href="../xsl_functions/helper_functions/helper_functions.xsl"/>
-    <xsl:include href="../xsl_functions/geometry_functions/2d_geometry_functions.xsl"/>
-    <xsl:include href="../xsl_functions/geometry_functions/3d_geometry_functions.xsl"/>
-    <xsl:include href="../xsl_functions/geometry_functions/2d_geometry_interface_functions.xsl"/>
-    <xsl:include href="../xsl_functions/geometry_functions/3d_geometry_interface_functions.xsl"/>
-    <xsl:include href="../xsl_functions/geometry_functions/3d_2d_geometry_interface_functions.xsl"/>
-    <xsl:include href="../xsl_functions/geometry_functions/geometry_interface_functions.xsl"/>
-    <xsl:include href="../xsl_functions/geometry_functions/line_interface_functions.xsl"/>
-    <xsl:include href="../xsl_functions/geometry_functions/line_functions.xsl"/>
-    <xsl:include href="../xsl_functions/geometry_functions/depth_functions.xsl"/>
-    <xsl:include href="../xsl_functions/geometry_functions/depth_interface_functions.xsl"/>
 
     <!-- import patterns -->
     <include href="../patterns/v12/R.1.sch"/>
