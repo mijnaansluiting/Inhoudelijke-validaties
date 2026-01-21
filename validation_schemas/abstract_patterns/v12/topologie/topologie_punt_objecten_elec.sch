@@ -12,7 +12,7 @@
         <assert id="point-connected-to-kabel"
             test="$point_connected"
             properties="scope rule-number severity object-type object-id">
-            <value-of select="keronic:get-translation('point-not-connected-to-any-line')"/>
+            <value-of select="ma:get-translation('point-not-connected-to-any-line')"/>
         </assert>
     </rule>
 </pattern>

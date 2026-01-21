@@ -11,7 +11,7 @@
         <assert id="assert-point-inside-project-area"
             test="ma:point-interacts-with-area($point, $project_area)"
             properties="scope rule-number severity object-type object-id">
-            <value-of select="keronic:get-translation('object-outside-project-area')"/>
+            <value-of select="ma:get-translation('object-outside-project-area')"/>
         </assert>
     </rule>
 
@@ -26,7 +26,7 @@
         <assert id="assert-line-inside-project-area"
             test="ma:line-interacts-with-area($line, $project_area)"
             properties="scope rule-number severity object-type object-id">
-            <value-of select="keronic:get-translation('object-outside-project-area')"/>
+            <value-of select="ma:get-translation('object-outside-project-area')"/>
         </assert>
     </rule>
 
@@ -41,7 +41,7 @@
         <assert id="assert-area-interacts-with-project-area"
             test="ma:area-interacts-with-area($area, $project_area)"
             properties="scope rule-number severity object-type object-id">
-            <value-of select="keronic:get-translation('object-outside-project-area')"/>
+            <value-of select="ma:get-translation('object-outside-project-area')"/>
         </assert>
     </rule>
 </pattern>

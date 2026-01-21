@@ -8,7 +8,7 @@
           <assert id="line-geometry-line-segments-meet-angle-demand"
                test="empty($geometries)"
                properties="scope rule-number severity object-type object-id geometries">
-               <value-of select="keronic:get-translation('line-angle-larger-than-45')"/>
+               <value-of select="ma:get-translation('line-angle-larger-than-45')"/>
           </assert>
      </rule>
 </pattern>

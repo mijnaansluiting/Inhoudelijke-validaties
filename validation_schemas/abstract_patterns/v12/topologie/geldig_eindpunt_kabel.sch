@@ -61,13 +61,13 @@
         <assert id="start_point_connected" 
             properties="scope rule-number severity object-type object-id"
             test="if($start_point_within_project_area and not($is_deserted)) then $start_point_connected else true()">
-            <value-of select="keronic:get-translation-and-replace-placeholders('cable-not-connected-to-valid-object', [nlcs:ID])"/>
+            <value-of select="ma:get-translation-and-replace-placeholders('cable-not-connected-to-valid-object', [nlcs:ID])"/>
         </assert>
 
         <assert id="end_point_connected"
             properties="scope rule-number severity object-type object-id"
             test="if($end_point_within_project_area and not($is_deserted)) then $end_point_connected else true()">
-            <value-of select="keronic:get-translation-and-replace-placeholders('cable-not-connected-to-valid-object', [nlcs:ID])"/>
+            <value-of select="ma:get-translation-and-replace-placeholders('cable-not-connected-to-valid-object', [nlcs:ID])"/>
         </assert>
     </rule>
 </pattern>

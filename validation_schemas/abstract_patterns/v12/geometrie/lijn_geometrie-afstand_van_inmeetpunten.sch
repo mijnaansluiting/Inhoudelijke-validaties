@@ -8,7 +8,7 @@
           <assert id="line-geometry-line-segments-meet-length-demand"
                test="empty($geometries)"
                properties="scope rule-number severity object-type object-id geometries">
-               <value-of select="keronic:get-translation('line-segment-measurement-incorrect')"/>
+               <value-of select="ma:get-translation('line-segment-measurement-incorrect')"/>
           </assert>
      </rule>
 
@@ -20,7 +20,7 @@
           <assert id="area-geometry-line-segments-meet-length-demand"
                test="empty($geometries)"
                properties="scope rule-number severity object-type object-id geometries">
-               <value-of select="keronic:get-translation('line-segment-measurement-incorrect')"/>
+               <value-of select="ma:get-translation('line-segment-measurement-incorrect')"/>
           </assert>
      </rule>
 </pattern>

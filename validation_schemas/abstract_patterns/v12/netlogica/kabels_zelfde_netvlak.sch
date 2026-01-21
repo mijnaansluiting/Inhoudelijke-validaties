@@ -26,7 +26,7 @@
         <assert id="mskabel-connected-to-lskabel"
             test="empty($connected_lskabels)"
             properties="scope rule-number severity object-type object-id">
-            <value-of select="keronic:get-translation-and-replace-placeholders(
+            <value-of select="ma:get-translation-and-replace-placeholders(
                 'connected-cable-does-not-match-netvlak',
                 [$object_type, string(count($connected_lskabels)),'LSkabel'])"/>
         </assert>
@@ -34,7 +34,7 @@
         <assert id="mskabel-connected-to-hskabel"
             test="empty($connected_hskabels)"
             properties="scope rule-number severity object-type object-id">
-            <value-of select="keronic:get-translation-and-replace-placeholders(
+            <value-of select="ma:get-translation-and-replace-placeholders(
                 'connected-cable-does-not-match-netvlak',
                 [$object_type, string(count($connected_hskabels)), 'HSkabel'])"/>
         </assert>

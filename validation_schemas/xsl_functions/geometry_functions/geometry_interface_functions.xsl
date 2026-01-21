@@ -12,6 +12,7 @@
         <param name="point" as="xs:double*"/>
         <param name="area" as="xs:double*"/>
         
+        <!-- KERONIC REPLACE -->
         <value-of select="keronic-geom:point-2d-interacts-with-area-2d($point, $area)"/>
     </function>
     

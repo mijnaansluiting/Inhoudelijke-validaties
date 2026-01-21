@@ -1,5 +1,7 @@
 <stylesheet xmlns="http://www.w3.org/1999/XSL/Transform"
+            xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
             xmlns:keronic="http://example.com/my-functions"
+            xmlns:ma="http://example.com/mijnaansluiting"
             xmlns:xs="http://www.w3.org/2001/XMLSchema"
             xmlns:nlcs="NS_NLCSnetbeheer"
             xmlns:nvr="NLCSValidatieRegelsNameSpace"
@@ -33,7 +35,7 @@
     </choose>
   </function>
 
-  <function name="keronic:rule-severity-within-scope" as="xs:string">
+  <function name="ma:rule-severity-within-scope" as="xs:string">
     <param name="rule_number" as="xs:integer"/>
     <param name="nlcs_object"/>
     <variable name="object_type" select="name($nlcs_object)"/>
@@ -52,7 +54,7 @@
     </choose>
   </function>
 
-  <function name="keronic:scope-name" as="xs:string">
+  <function name="ma:scope-name" as="xs:string">
     <param name="nlcs_object"/>
 
     <variable name="matching_scope" select="keronic:matching-scope($nlcs_object)"/>

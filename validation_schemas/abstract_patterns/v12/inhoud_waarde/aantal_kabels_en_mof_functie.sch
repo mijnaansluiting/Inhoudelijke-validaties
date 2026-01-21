@@ -11,7 +11,7 @@
             )]"/>
 
         <let name="functie_type"
-            value="if(keronic:element-exists-and-not-empty(nlcs:Functie)) then keronic:map-mof-functie(nlcs:Functie) else ''"/> 
+            value="if(ma:element-exists-and-not-empty(nlcs:Functie)) then ma:map-mof-functie(nlcs:Functie) else ''"/> 
 
         <let name="is_aftak_from_existing_cable"
             value="$functie_type = 'Aftak' and not(empty($connected_mskabels[nlcs:Status = 'BESTAAND']))"/>
@@ -32,7 +32,7 @@
         <assert id="mof_required_amount_of_cables_unknown"
             properties="scope rule-number severity object-type object-id"
             test="$cable_amount_known">
-            <value-of select="keronic:get-translation-and-replace-placeholders('cable-amount-unknown', [nlcs:Functie])"/>
+            <value-of select="ma:get-translation-and-replace-placeholders('cable-amount-unknown', [nlcs:Functie])"/>
         </assert>
 
         <let name="connections"
@@ -41,7 +41,7 @@
         <assert id="mof_connected_to_right_amount_of_cables"
             properties="scope rule-number severity object-type object-id"
             test="if($cable_amount_known) then $connections = $required_connections else true()">
-            <value-of select="keronic:get-translation-and-replace-placeholders('cable-amount-incorrect', [string($required_connections), string($connections)])"/>
+            <value-of select="ma:get-translation-and-replace-placeholders('cable-amount-incorrect', [string($required_connections), string($connections)])"/>
         </assert>
 
         <let name="connected_to_new_cable"
@@ -50,7 +50,7 @@
         <assert id="aftak_from_existing_cable_must_be_new_cable"
             properties="scope rule-number severity object-type object-id"
             test="if($is_aftak_from_existing_cable) then $connected_to_new_cable else true()">
-            <value-of select="keronic:get-translation('existing-cable-not-connected-to-new-cable')"/>
+            <value-of select="ma:get-translation('existing-cable-not-connected-to-new-cable')"/>
         </assert>
     </rule>
 </pattern>

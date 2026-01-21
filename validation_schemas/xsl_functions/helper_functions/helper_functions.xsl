@@ -44,7 +44,7 @@
         </gml:Polygon>
     </function>
 
-    <function name="keronic:element-exists-and-not-empty" as="xs:boolean">
+    <function name="ma:element-exists-and-not-empty" as="xs:boolean">
         <param name="element"/>
         <sequence select="$element and normalize-space($element)"/>
     </function>
