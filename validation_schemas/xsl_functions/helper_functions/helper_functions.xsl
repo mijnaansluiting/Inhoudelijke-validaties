@@ -1,7 +1,6 @@
 <stylesheet xmlns="http://www.w3.org/1999/XSL/Transform"
             xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 	        xmlns:math="http://www.w3.org/2005/xpath-functions/math"
-	        xmlns:keronic="http://example.com/my-functions"
             xmlns:ma="http://example.com/mijnaansluiting"
 	        xmlns:xs="http://www.w3.org/2001/XMLSchema"
             xmlns:gml="http://www.opengis.net/gml/3.2"
