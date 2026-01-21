@@ -20,7 +20,7 @@
                 srsDimension="3"
                 srsName="EPSG:7415">
                 <gml:posList>
-                    21.0 21.0 0
+                    21   21   0
                     21.1 21.1 0
                     21.2 21.2 0
                 </gml:posList>
