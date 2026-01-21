@@ -39,7 +39,7 @@
             </for-each>
         </variable>
 
-        <value-of select="count($intersections) mod 2 = 1"/>
+        <sequence select="count($intersections) mod 2 = 1"/>
     </function>
 
     <function name="ma:line-2d-interacts-with-area-2d" as="xs:boolean">
@@ -58,10 +58,10 @@
 
         <choose>
             <when test="$anyPointInside">
-                <value-of select="true()"/>
+                <sequence select="true()"/>
             </when>
             <otherwise>
-                <value-of select="
+                <sequence select="
                             some $list_index in 1 to $line_point_count
                             satisfies (
                             some $area_index in 1 to $area_point_count
@@ -98,7 +98,7 @@
                                                                $segment_a_point_2,
                                                                $segment_b_point_2)"/>
 
-        <value-of select="
+        <sequence select="
                     ($orientation_segment_a_point_1 != $orientation_segment_a_point_2 and
                     $orientation_segment_b_point_1 != $orientation_segment_b_point_2)"/>
     </function>
@@ -125,10 +125,10 @@
             <when test="ma:line-2d-interacts-with-area-2d(
                           $area2,
                           $area1)">
-                <value-of select="true()"/>
+                <sequence select="true()"/>
             </when>
             <otherwise>
-                <value-of select="ma:line-2d-interacts-with-area-2d(
+                <sequence select="ma:line-2d-interacts-with-area-2d(
                           $area1,
                           $area2)"/>
             </otherwise>
@@ -143,6 +143,6 @@
         <variable name="dy" select="$point_1[2] - $point_2[2]"/>
         <variable name="distance_squared" select="($dx * $dx) + ($dy * $dy)"/>
         <variable name="distance" select="math:sqrt($distance_squared)"/>
-        <value-of select="$distance"/>
+        <sequence select="$distance"/>
     </function>
 </stylesheet>

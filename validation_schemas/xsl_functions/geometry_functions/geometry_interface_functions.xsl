@@ -10,21 +10,21 @@
         <param name="point" as="xs:double*"/>
         <param name="area" as="xs:double*"/>
         
-        <value-of select="ma:point-2d-interacts-with-area-2d($point, $area)"/>
+        <sequence select="ma:point-2d-interacts-with-area-2d($point, $area)"/>
     </function>
     
     <function name="ma:line-interacts-with-area" as="xs:boolean">
         <param name="line" as="xs:double*"/>
         <param name="area" as="xs:double*"/>
         
-        <value-of select="ma:line-2d-interacts-with-area-2d($line, $area)"/>
+        <sequence select="ma:line-2d-interacts-with-area-2d($line, $area)"/>
     </function>
     
     <function name="ma:area-interacts-with-area" as="xs:boolean">
         <param name="area_1" as="xs:double*"/>
         <param name="area_2" as="xs:double*"/>
         
-        <value-of select="ma:area-2d-interacts-with-area-2d($area_1, $area_2)"/>
+        <sequence select="ma:area-2d-interacts-with-area-2d($area_1, $area_2)"/>
     </function>
     
     <function name="ma:line-segments-not-meeting-length-demands" as="node()*">
@@ -79,28 +79,28 @@
         
         <variable name="radian" select="math:acos($dot_product div ($length_v1 * $length_v2))"/>
         
-        <value-of select="$radian * 180 div math:pi()"/>
+        <sequence select="$radian * 180 div math:pi()"/>
     </function>
     
     <function name="ma:point-connected-to-point" as="xs:boolean">
         <param name="point_1" as="xs:double*"/>
         <param name="point_2" as="xs:double*"/>
         
-        <value-of select="$point_1[1] = $point_2[1] and $point_1[2] = $point_2[2]"/>
+        <sequence select="$point_1[1] = $point_2[1] and $point_1[2] = $point_2[2]"/>
     </function>
     
     <function name="ma:point-touches-area" as="xs:boolean">
         <param name="point" as="xs:double*"/>
         <param name="area" as="xs:double*"/>
         
-        <value-of select="ma:point-touches-line($point, $area)"/>
+        <sequence select="ma:point-touches-line($point, $area)"/>
     </function>
     
     <function name="ma:point-touches-line" as="xs:boolean">
         <param name="point" as="xs:double*"/>
         <param name="line" as="xs:double*"/>
         
-        <value-of select="ma:point-on-line($point, $line)"/>
+        <sequence select="ma:point-on-line($point, $line)"/>
     </function>
     
     <function name="ma:point-on-line" as="xs:boolean">
@@ -127,6 +127,6 @@
         <variable name="start_to_point_distance" as="xs:double" select="ma:point-2d-to-point-2d-distance(($point[1], $point[2]), ($segment[1], $segment[2]))"/>
         <variable name="end_to_point_distance" as="xs:double" select="ma:point-2d-to-point-2d-distance(($point[1], $point[2]), ($segment[3], $segment[4]))"/>
         
-        <value-of select="$segment_length = $start_to_point_distance + $end_to_point_distance"/>
+        <sequence select="$segment_length = $start_to_point_distance + $end_to_point_distance"/>
     </function>
 </stylesheet>
