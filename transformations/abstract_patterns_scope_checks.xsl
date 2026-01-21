@@ -15,7 +15,7 @@
     <xsl:attribute name="context">
       <xsl:for-each select="tokenize(., '\|')">
         <!-- Append every context attribute with the scope check -->
-        <xsl:value-of select="concat(normalize-space(.), '[keronic:rule-within-scope-for-object($rule_number, .)]')" />
+        <xsl:value-of select="concat(normalize-space(.), '[ma:rule-within-scope-for-object($rule_number, .)]')" />
         <!-- Rejoin with ' | ' if not last -->
         <xsl:if test="position() != last()"> | </xsl:if>
       </xsl:for-each>

@@ -4,12 +4,12 @@
                 xmlns:gml="http://www.opengis.net/gml/3.2"
                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
                 xmlns:nlcs="NS_NLCSnetbeheer"
-                xmlns:keronic="http://example.com/my-functions"
-                exclude-result-prefixes="gml keronic">
+                xmlns:ma="http://example.com/my-functions"
+                exclude-result-prefixes="gml ma">
 
   <xsl:output method="text" />
 
-  <xsl:function name="keronic:extract-geometries" as="xs:string">
+  <xsl:function name="ma:extract-geometries" as="xs:string">
     <xsl:param name="geoms" as="element(nlcs:Geometry)*"/>
 
     <xsl:variable name="wkts" as="xs:string*">
@@ -66,7 +66,7 @@
   </xsl:function>
 
   <xsl:template match="/">
-    <xsl:value-of select="keronic:extract-geometries(//nlcs:Geometry)"/>
+    <xsl:value-of select="ma:extract-geometries(//nlcs:Geometry)"/>
   </xsl:template>
 
 </xsl:stylesheet>

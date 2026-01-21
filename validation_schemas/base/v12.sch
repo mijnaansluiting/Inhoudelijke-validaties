@@ -8,7 +8,6 @@
         queryBinding="xslt3">
 
     <!-- schematron namespace declarations -->
-    <ns prefix="keronic" uri="http://example.com/my-functions"/>
     <ns prefix="ma" uri="http://example.com/mijnaansluiting"/>
     <ns prefix="gml" uri="http://www.opengis.net/gml/3.2"/>
     <ns prefix="xs" uri="http://www.w3.org/2001/XMLSchema"/>
