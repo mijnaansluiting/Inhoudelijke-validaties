@@ -24,8 +24,8 @@
                 )]"/>
 
         <let name="geometries"
-            value="if(not(empty($connected_lskabels))) then $connected_lskabels
-                  else if(not(empty($connected_hskabels))) then $connected_hskabels
+            value="if(not(empty($connected_lskabels))) then $connected_lskabels/nlcs:Geometry
+                  else if(not(empty($connected_hskabels))) then $connected_hskabels/nlcs:Geometry
                   else ()"/>
 
         <assert id="mskabel-connected-to-lskabel"
