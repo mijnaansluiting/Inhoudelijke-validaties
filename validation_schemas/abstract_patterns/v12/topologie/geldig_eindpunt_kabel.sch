@@ -3,13 +3,13 @@
     <rule context="//nlcs:MSkabel">
         <let name="line"
             value="ma:parse-line(nlcs:Geometry)"/>
-
+        
         <let name="start_point"
             value="($line[1], $line[2])"/>
-
+        
         <let name="end_point"
             value="($line[count($line) - 1], $line[count($line)])"/>
-
+        
         <let name="start_point_connected"
             value="
                 (
@@ -27,7 +27,7 @@
                     satisfies ma:point-touches-area($start_point, ma:parse-area($msstation_geometry))
                 )
             "/>
-
+        
         <let name="end_point_connected"
             value="
                 (
@@ -45,27 +45,30 @@
                     satisfies ma:point-touches-area($end_point, ma:parse-area($msstation_geometry))
                 )
             "/>
-
+        
         <let name="project_area"
             value="ma:parse-area(//nlcs:AprojectReferentie/nlcs:Geometry)"/>
-
+        
         <let name="start_point_within_project_area"
             value="ma:point-interacts-with-area($start_point, $project_area)"/>
-
+        
         <let name="end_point_within_project_area"
             value="ma:point-interacts-with-area($end_point, $project_area)"/>
-
+        
         <let name="is_deserted"
             value="nlcs:Bedrijfstoestand = 'VERLATEN'"/>
-
+        
+        <let name="geometries"
+            value="if(not($start_point_connected)) then $start_point else if(not($end_point_connected)) then $end_point else ()"/>
+        
         <assert id="start_point_connected" 
-            properties="scope rule-number severity object-type object-id"
+                properties="scope rule-number severity object-type object-id geometries"
             test="if($start_point_within_project_area and not($is_deserted)) then $start_point_connected else true()">
             <value-of select="ma:get-translation-and-replace-placeholders('cable-not-connected-to-valid-object', [nlcs:ID])"/>
         </assert>
-
+        
         <assert id="end_point_connected"
-            properties="scope rule-number severity object-type object-id"
+                properties="scope rule-number severity object-type object-id geometries"
             test="if($end_point_within_project_area and not($is_deserted)) then $end_point_connected else true()">
             <value-of select="ma:get-translation-and-replace-placeholders('cable-not-connected-to-valid-object', [nlcs:ID])"/>
         </assert>
