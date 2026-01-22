@@ -98,11 +98,11 @@
   <message id="connected-cable-does-not-match-netvlak">
     <message-text xml:lang="en">
       Cables connected to each other though a joint must be of the same discipline.
-      Expected only {1} elements, but found {2} {3} element(s).
+      Expected only {1} elements, but found {2} {3} and {4} {5} element(s).
     </message-text>
     <message-text xml:lang="nl">
       Kabels die via een mof verbonden zijn met elkaar moeten van hetzelfde netvlak zijn.
-      Verwachtte enkel {1} elementen, maar kwam {2} {3} element(en) tegen.
+      Verwachtte enkel {1} elementen, maar kwam {2} {3} en {4} {5} element(en) tegen.
     </message-text>
   </message>
   <message id="connected-cable-does-not-match-property">

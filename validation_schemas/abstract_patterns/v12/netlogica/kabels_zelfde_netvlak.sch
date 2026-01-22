@@ -24,24 +24,15 @@
                 )]"/>
 
         <let name="geometries"
-            value="if(not(empty($connected_lskabels))) then $connected_lskabels/nlcs:Geometry
-                  else if(not(empty($connected_hskabels))) then $connected_hskabels/nlcs:Geometry
+            value="if(not(empty($connected_lskabels)) or (not(empty($connected_hskabels)))) then [$connected_hskabels/nlcs:Geometry, $connected_lskabels/nlcs:Geometry]
                   else ()"/>
 
-        <assert id="mskabel-connected-to-lskabel"
-            test="empty($connected_lskabels)"
+        <assert id="mskabel-connected-to-hskabel-or-lskabel"
+            test="empty($connected_hskabels) and empty($connected_lskabels)"
             properties="scope rule-number severity object-type object-id geometries">
             <value-of select="ma:get-translation-and-replace-placeholders(
                 'connected-cable-does-not-match-netvlak',
-                [$object_type, string(count($connected_lskabels)),'LSkabel'])"/>
-        </assert>
-
-        <assert id="mskabel-connected-to-hskabel"
-            test="empty($connected_hskabels)"
-            properties="scope rule-number severity object-type object-id geometries">
-            <value-of select="ma:get-translation-and-replace-placeholders(
-                'connected-cable-does-not-match-netvlak',
-                [$object_type, string(count($connected_hskabels)), 'HSkabel'])"/>
+                [$object_type, string(count($connected_hskabels)), 'HSkabel', string(count($connected_lskabels)), 'LSkabel'])"/>
         </assert>
     </rule>
 </pattern>
