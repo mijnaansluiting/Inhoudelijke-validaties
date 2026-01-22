@@ -4,6 +4,21 @@
     <AprojectReferentie>
         <ID>0000</ID>
         <Tekeningtype>{{TEKENING TYPE}}</Tekeningtype>
+        <Geometry>
+            <gml:Polygon
+                srsDimension="3"
+                srsName="EPSG:7415">
+                <gml:exterior>
+                    <gml:LinearRing>
+                        <gml:posList>
+                            0 0 0
+                            0 0 0
+                            0 0 0
+                        </gml:posList>
+                    </gml:LinearRing>
+                </gml:exterior>
+            </gml:Polygon>
+        </Geometry>
     </AprojectReferentie>
 
     <!-- A -->
@@ -11,11 +26,36 @@
         <ID>0000</ID>
         <Status>{{STATUS}}</Status>
         <Bedrijfstoestand>{{BEDRIJFSTOESTAND}}</Bedrijfstoestand>
+        <Geometry>
+            <gml:LineString
+                srsDimension="3"
+                srsName="EPSG:7415">
+                <gml:posList>
+                    0 0 0
+                    0 0 0
+                </gml:posList>
+            </gml:LineString>
+        </Geometry>
     </Aaanlegtechniek>
     <AbeschermingVlak>
         <ID>0000</ID>
         <Status>{{STATUS}}</Status>
         <Bedrijfstoestand>{{BEDRIJFSTOESTAND}}</Bedrijfstoestand>
+        <Geometry>
+            <gml:Polygon
+                srsDimension="3"
+                srsName="EPSG:7415">
+                <gml:exterior>
+                    <gml:LinearRing>
+                        <gml:posList>
+                            0 0 0
+                            0 0 0
+                            0 0 0
+                        </gml:posList>
+                    </gml:LinearRing>
+                </gml:exterior>
+            </gml:Polygon>
+        </Geometry>
     </AbeschermingVlak>
     <AbestandBijlage>
         <ID>0000</ID>
@@ -31,6 +71,16 @@
         <ID>0000</ID>
         <Status>{{STATUS}}</Status>
         <Bedrijfstoestand>{{BEDRIJFSTOESTAND}}</Bedrijfstoestand>
+        <Geometry>
+            <gml:LineString
+                srsDimension="3"
+                srsName="EPSG:7415">
+                <gml:posList>
+                    0 0 0
+                    0 0 0
+                </gml:posList>
+            </gml:LineString>
+        </Geometry>
     </Akunstwerk>
     <Amaaiveldhoogte>
         <ID>0000</ID>
@@ -41,6 +91,16 @@
         <ID>0000</ID>
         <Status>{{STATUS}}</Status>
         <Bedrijfstoestand>{{BEDRIJFSTOESTAND}}</Bedrijfstoestand>
+        <Geometry>
+            <gml:LineString
+                srsDimension="3"
+                srsName="EPSG:7415">
+                <gml:posList>
+                    0 0 0
+                    0 0 0
+                </gml:posList>
+            </gml:LineString>
+        </Geometry>
     </Amantelbuis>
     <AmantelbuisInhoud>
         <ID>0000</ID>
@@ -63,6 +123,16 @@
         <ID>0000</ID>
         <Status>{{STATUS}}</Status>
         <Bedrijfstoestand>{{BEDRIJFSTOESTAND}}</Bedrijfstoestand>
+        <Geometry>
+            <gml:LineString
+                srsDimension="3"
+                srsName="EPSG:7415">
+                <gml:posList>
+                    0 0 0
+                    0 0 0
+                </gml:posList>
+            </gml:LineString>
+        </Geometry>
     </Eaarddraad>
     <Eaardmof>
         <ID>0000</ID>
@@ -172,17 +242,50 @@
         <ID>0000</ID>
         <Status>{{STATUS}}</Status>
         <Bedrijfstoestand>{{BEDRIJFSTOESTAND}}</Bedrijfstoestand>
+        <Geometry>
+            <gml:LineString
+                srsDimension="3"
+                srsName="EPSG:7415">
+                <gml:posList>
+                    0 0 0
+                    0 0 0
+                </gml:posList>
+            </gml:LineString>
+        </Geometry>
     </HSkabel>
     <HSmof>
         <ID>0000</ID>
         <Status>{{STATUS}}</Status>
         <Bedrijfstoestand>{{BEDRIJFSTOESTAND}}</Bedrijfstoestand>
-        <Functie>AFTAK SPLITSEND</Functie>
+        <Geometry>
+            <gml:Point
+                srsDimension="3"
+                srsName="EPSG:7415">
+                <gml:pos>
+                    0 0 0
+                </gml:pos>
+            </gml:Point>
+        </Geometry>
     </HSmof>
     <HSstation>
         <ID>0000</ID>
         <Status>{{STATUS}}</Status>
         <Bedrijfstoestand>{{BEDRIJFSTOESTAND}}</Bedrijfstoestand>
+        <Geometry>
+            <gml:Polygon
+                srsDimension="3"
+                srsName="EPSG:7415">
+                <gml:exterior>
+                    <gml:LinearRing>
+                        <gml:posList>
+                            0 0 0
+                            0 0 0
+                            0 0 0
+                        </gml:posList>
+                    </gml:LinearRing>
+                </gml:exterior>
+            </gml:Polygon>
+        </Geometry>
     </HSstation>
 
     <!-- KB -->
@@ -222,22 +325,64 @@
         <ID>0000</ID>
         <Status>{{STATUS}}</Status>
         <Bedrijfstoestand>{{BEDRIJFSTOESTAND}}</Bedrijfstoestand>
+        <Geometry>
+            <gml:LineString
+                srsDimension="3"
+                srsName="EPSG:7415">
+                <gml:posList>
+                    0 0 0
+                    0 0 0
+                </gml:posList>
+            </gml:LineString>
+        </Geometry>
     </LSkabel>
     <LSkast>
         <ID>0000</ID>
         <Status>{{STATUS}}</Status>
         <Bedrijfstoestand>{{BEDRIJFSTOESTAND}}</Bedrijfstoestand>
+        <Geometry>
+            <gml:Polygon
+                srsDimension="3"
+                srsName="EPSG:7415">
+                <gml:exterior>
+                    <gml:LinearRing>
+                        <gml:posList>
+                            0 0 0
+                            0 0 0
+                            0 0 0
+                        </gml:posList>
+                    </gml:LinearRing>
+                </gml:exterior>
+            </gml:Polygon>
+        </Geometry>
     </LSkast>
     <LSmof>
         <ID>0000</ID>
         <Status>{{STATUS}}</Status>
         <Bedrijfstoestand>{{BEDRIJFSTOESTAND}}</Bedrijfstoestand>
-        <Functie>AFTAK SPLITSEND</Functie>
+        <Geometry>
+            <gml:Point
+                srsDimension="3"
+                srsName="EPSG:7415">
+                <gml:pos>
+                    0 0 0
+                </gml:pos>
+            </gml:Point>
+        </Geometry>
     </LSmof>
     <LSoverdrachtspunt>
         <ID>0000</ID>
         <Status>{{STATUS}}</Status>
         <Bedrijfstoestand>{{BEDRIJFSTOESTAND}}</Bedrijfstoestand>
+        <Geometry>
+            <gml:Point
+                srsDimension="3"
+                srsName="EPSG:7415">
+                <gml:pos>
+                    0 0 0
+                </gml:pos>
+            </gml:Point>
+        </Geometry>
     </LSoverdrachtspunt>
 
     <!-- MS -->
@@ -245,22 +390,64 @@
         <ID>0000</ID>
         <Status>{{STATUS}}</Status>
         <Bedrijfstoestand>{{BEDRIJFSTOESTAND}}</Bedrijfstoestand>
+        <Geometry>
+            <gml:LineString
+                srsDimension="3"
+                srsName="EPSG:7415">
+                <gml:posList>
+                    0 0 0
+                    0 0 0
+                </gml:posList>
+            </gml:LineString>
+        </Geometry>
     </MSkabel>
     <MSmof>
         <ID>0000</ID>
         <Status>{{STATUS}}</Status>
         <Bedrijfstoestand>{{BEDRIJFSTOESTAND}}</Bedrijfstoestand>
-        <Functie>AFTAK SPLITSEND</Functie>
+        <Geometry>
+            <gml:Point
+                srsDimension="3"
+                srsName="EPSG:7415">
+                <gml:pos>
+                    0 0 0
+                </gml:pos>
+            </gml:Point>
+        </Geometry>
     </MSmof>
     <MSoverdrachtspunt>
         <ID>0000</ID>
         <Status>{{STATUS}}</Status>
         <Bedrijfstoestand>{{BEDRIJFSTOESTAND}}</Bedrijfstoestand>
+        <Geometry>
+            <gml:Point
+                srsDimension="3"
+                srsName="EPSG:7415">
+                <gml:pos>
+                    0 0 0
+                </gml:pos>
+            </gml:Point>
+        </Geometry>
     </MSoverdrachtspunt>
     <MSstation>
         <ID>0000</ID>
         <Status>{{STATUS}}</Status>
         <Bedrijfstoestand>{{BEDRIJFSTOESTAND}}</Bedrijfstoestand>
+        <Geometry>
+            <gml:Polygon
+                srsDimension="3"
+                srsName="EPSG:7415">
+                <gml:exterior>
+                    <gml:LinearRing>
+                        <gml:posList>
+                            0 0 0
+                            0 0 0
+                            0 0 0
+                        </gml:posList>
+                    </gml:LinearRing>
+                </gml:exterior>
+            </gml:Polygon>
+        </Geometry>
     </MSstation>
 
     <!-- OVL -->

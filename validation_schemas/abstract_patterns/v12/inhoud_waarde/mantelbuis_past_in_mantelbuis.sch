@@ -22,7 +22,7 @@
         <assert id="mantelbuis-inside-mantelbuis-has-smaller-diameter"
             properties="scope rule-number severity object-type object-id"
             test="if($inner_diameter ne 'KEUZE ONTBREEKT IN LIJST') then $inner_diameter_fits_all_outer_diameters else true()">
-            <value-of select="keronic:get-translation-and-replace-placeholders('mantelbuis-inhoud-diameter-larger-than-own', [$inner_diameter, string-join($outer_diameters, ', ')])"/>
+            <value-of select="ma:get-translation-and-replace-placeholders('mantelbuis-inhoud-diameter-larger-than-own', [$inner_diameter, string-join($outer_diameters, ', ')])"/>
         </assert>
     </rule>
 </pattern>

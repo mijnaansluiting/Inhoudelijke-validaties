@@ -8,7 +8,7 @@
         queryBinding="xslt3">
 
     <!-- schematron namespace declarations -->
-    <ns prefix="keronic" uri="http://example.com/my-functions"/>
+    <ns prefix="ma" uri="http://example.com/mijnaansluiting"/>
     <ns prefix="gml" uri="http://www.opengis.net/gml/3.2"/>
     <ns prefix="xs" uri="http://www.w3.org/2001/XMLSchema"/>
     <ns prefix="nlcs" uri="NS_NLCSnetbeheer"/>
@@ -133,20 +133,11 @@
     </phase>
 
     <!-- import functions -->
-    <xsl:include href="../xsl_functions/global_functions/config_functions.xsl"/>
-    <xsl:include href="../xsl_functions/global_functions/localization_functions.xsl"/>
-    <xsl:include href="../xsl_functions/global_functions/rule_scope_functions.xsl"/>
-    <xsl:include href="../xsl_functions/helper_functions/helper_functions.xsl"/>
-    <xsl:include href="../xsl_functions/geometry_functions/2d_geometry_functions.xsl"/>
-    <xsl:include href="../xsl_functions/geometry_functions/3d_geometry_functions.xsl"/>
-    <xsl:include href="../xsl_functions/geometry_functions/2d_geometry_interface_functions.xsl"/>
-    <xsl:include href="../xsl_functions/geometry_functions/3d_geometry_interface_functions.xsl"/>
-    <xsl:include href="../xsl_functions/geometry_functions/3d_2d_geometry_interface_functions.xsl"/>
-    <xsl:include href="../xsl_functions/geometry_functions/geometry_interface_functions.xsl"/>
-    <xsl:include href="../xsl_functions/geometry_functions/line_interface_functions.xsl"/>
-    <xsl:include href="../xsl_functions/geometry_functions/line_functions.xsl"/>
-    <xsl:include href="../xsl_functions/geometry_functions/depth_functions.xsl"/>
-    <xsl:include href="../xsl_functions/geometry_functions/depth_interface_functions.xsl"/>
+    <xsl:include href="../xsl_functions/geometry_functions.xsl"/>
+    <xsl:include href="../xsl_functions/config_functions.xsl"/>
+    <xsl:include href="../xsl_functions/localization_functions.xsl"/>
+    <xsl:include href="../xsl_functions/rule_scope_functions.xsl"/>
+    <xsl:include href="../xsl_functions/helper_functions.xsl"/>
 
     <!-- import patterns -->
     <include href="../patterns/v12/R.1.sch"/>

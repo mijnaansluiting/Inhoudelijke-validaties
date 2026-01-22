@@ -3,8 +3,8 @@
     id="R.2"
     is-a="combinatie-nlcs-status-en-tekeningsoort">
     <param name="rule_number" value="2"/>
-    <param name="scope" value="keronic:scope-name(.)"/>
-    <param name="severity" value="keronic:rule-severity-within-scope(2, .)"/>
+    <param name="scope" value="ma:scope-name(.)"/>
+    <param name="severity" value="ma:rule-severity-within-scope(2, .)"/>
     <param name="object_type" value="name(.)"/>
     <param name="object_id" value="nlcs:ID"/>
 </pattern>

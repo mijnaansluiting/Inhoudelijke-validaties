@@ -5,11 +5,11 @@
             value="."/>
 
         <let name="connected_mskabels"
-            value="//nlcs:MSkabel[keronic:line-3d-connected-to-point-3d(
-                        tokenize(normalize-space(nlcs:Geometry/gml:LineString/gml:posList)),
-                        tokenize(normalize-space($msmof/nlcs:Geometry/gml:Point/gml:pos)),
-                        0)]"/>
-
+            value="//nlcs:MSkabel[ma:point-touches-line(
+                ma:parse-point($msmof/nlcs:Geometry),
+                ma:parse-line(nlcs:Geometry)
+            )]"/>
+        
         <let name="unique_connected_phases"
             value="distinct-values($connected_mskabels/nlcs:FaseAanduiding)"/>
 
@@ -34,25 +34,28 @@
         <assert id="msmof-2-3-4-connected-only-allowed-phases"
             properties="scope rule-number severity object-type object-id"
             test="if($connections = 2 or $connections = 3 or $connections = 4) then empty($unique_unallowed_connected_phases) else true()">
-            <value-of select="keronic:get-translation-and-replace-placeholders(
+            <value-of select="ma:get-translation-and-replace-placeholders(
                 'connected-fases-not-allowed',
-                [string($connections), string-join($unique_unallowed_connected_phases, ', ')])"/>
+                [string($connections), string-join($unique_unallowed_connected_phases, ', ')]
+            )"/>
         </assert>
 
         <assert id="msmof-2-3-connected-cables-have-same-fase"
             properties="scope rule-number severity object-type object-id"
             test="if($connections = 2 or $connections = 3) then $all_connected_cables_match_fases else true()">
-            <value-of select="keronic:get-translation-and-replace-placeholders(
+            <value-of select="ma:get-translation-and-replace-placeholders(
                 'connected-fases-do-not-match',
-                [string($connections), string-join($unique_connected_phases, ', ')])"/>
+                [string($connections), string-join($unique_connected_phases, ', ')]
+            )"/>
         </assert>
 
         <assert id="msmof-4-connected-cables-have-combined-and-split-fasen"
             properties="scope rule-number severity object-type object-id"
             test="if($connections = 4) then $all_connected_cables_have_combined_and_split_fases else true()">
-            <value-of select="keronic:get-translation-and-replace-placeholders(
+            <value-of select="ma:get-translation-and-replace-placeholders(
                 'connected-fases-do-not-split',
-                [string-join($allowed_phases, ', '), string-join($connected_mskabels/nlcs:FaseAanduiding, ', ')])"/>
+                [string-join($allowed_phases, ', '), string-join($connected_mskabels/nlcs:FaseAanduiding, ', ')]
+            )"/>
         </assert>
 
     </rule>

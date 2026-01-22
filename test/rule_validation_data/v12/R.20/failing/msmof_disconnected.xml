@@ -19,18 +19,18 @@
         <Geometry>
             <gml:LineString
                 srsDimension="3"
-                srsName="EPSG:28992">
+                srsName="EPSG:7415">
                 <gml:posList>
-                    40.0  40.0 -1.0
-                    240.0 120.0 -1.0
-                    360.0 280.0 -2.0
+                     40  40 0
+                    240 120 0
+                    360 280 0
                 </gml:posList>
             </gml:LineString>
         </Geometry>
     </MSkabel>
 
-    <!-- Point at correct position but incorrect height -->
-    <MSoverdrachtspunt>
+    <!-- Point totally disconnected from line -->
+    <MSmof>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
         <ID>C</ID>
@@ -39,10 +39,9 @@
                 srsDimension="3"
                 srsName="EPSG:7415">
                 <gml:pos>
-                    330.0 240.0 -1.5
+                    160 120 0
                 </gml:pos>
             </gml:Point>
         </Geometry>
-    </MSoverdrachtspunt>
-
+    </MSmof>
 </NLCSnetbeheer>

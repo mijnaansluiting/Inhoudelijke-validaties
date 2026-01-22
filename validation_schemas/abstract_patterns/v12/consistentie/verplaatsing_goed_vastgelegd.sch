@@ -7,7 +7,7 @@
         <assert id="verplaatsing-cannot-have-asset-id"
             properties="scope rule-number severity object-type object-id"
             test="if($is_verplaatsing) then not(nlcs:AssetId) else true()">
-            <value-of select="keronic:get-translation-and-replace-placeholders('property-not-allowed-for-statuses', ['AssetId', 'REVISIE'])"/>
+            <value-of select="ma:get-translation-and-replace-placeholders('property-not-allowed-for-statuses', ['AssetId', 'REVISIE'])"/>
         </assert>
 
         <let name="has_some_original"
@@ -19,7 +19,7 @@
         <assert id="verplaatsing-correctly-applied"
             test="if ($is_verplaatsing) then $has_some_original else true()"
             properties="scope rule-number severity object-type object-id">
-            <value-of select="keronic:get-translation-and-replace-placeholders('verplaatsing-incorrectly-applied', [name(.)])"/>
+            <value-of select="ma:get-translation-and-replace-placeholders('verplaatsing-incorrectly-applied', [name(.)])"/>
         </assert>
     </rule>
 </pattern>

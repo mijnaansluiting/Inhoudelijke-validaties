@@ -5,20 +5,18 @@
             value="."/>
 
         <let name="connected_msmoffen"
-            value="//nlcs:MSmof[
-                keronic:point-3d-touches-line-3d(
-                    tokenize(normalize-space(nlcs:Geometry/gml:Point/gml:pos)),
-                    tokenize(normalize-space($mskabel/nlcs:Geometry/gml:LineString/gml:posList)),
-                    0)]"/>
+            value="//nlcs:MSmof[ma:point-touches-line(
+                ma:parse-point(nlcs:Geometry),
+                ma:parse-line($mskabel/nlcs:Geometry)
+            )]"/>
 
         <let name="connected_mskabels"
             value="//nlcs:MSkabel[
-                some $connected_mof in $connected_msmoffen satisfies
-                    . ne $mskabel and
-                    keronic:line-3d-touches-point-3d(
-                        tokenize(normalize-space(nlcs:Geometry/gml:LineString/gml:posList)),
-                        tokenize(normalize-space($connected_mof/nlcs:Geometry/gml:Point/gml:pos)),
-                        0)]"/>
+                some $connected_mof in $connected_msmoffen 
+                satisfies . ne $mskabel and ma:point-touches-line(
+                    ma:parse-point($connected_mof/nlcs:Geometry), 
+                    ma:parse-line(nlcs:Geometry)
+                )]"/>
 
         <!-- Compare bedrijfstoestanden against original-->
 
@@ -31,7 +29,7 @@
         <assert id="connected-mskabel-does-not-match-bedrijfstoestand"
             test="empty($unexpected_bedrijfstoestanden)"
             properties="scope rule-number severity object-type object-id">
-            <value-of select="keronic:get-translation-and-replace-placeholders(
+            <value-of select="ma:get-translation-and-replace-placeholders(
                 'connected-cable-does-not-match-property',
                 ['Bedrijfstoestand', $expected_bedrijfstoestand, string-join($unexpected_bedrijfstoestanden, ', ')])"/>
         </assert>
@@ -47,7 +45,7 @@
         <assert id="connected-mskabel-does-not-match-subnettype"
             test="empty($unexpected_subnettypes)"
             properties="scope rule-number severity object-type object-id">
-            <value-of select="keronic:get-translation-and-replace-placeholders(
+            <value-of select="ma:get-translation-and-replace-placeholders(
                 'connected-cable-does-not-match-property',
                 ['Subnettype', $expected_subnettype, string-join($unexpected_subnettypes, ', ')])"/>
         </assert>
@@ -63,7 +61,7 @@
         <assert id="connected-mskabel-does-not-match-verbindingnummer"
             test="empty($unexpected_verbindingnummers)"
             properties="scope rule-number severity object-type object-id">
-            <value-of select="keronic:get-translation-and-replace-placeholders(
+            <value-of select="ma:get-translation-and-replace-placeholders(
                 'connected-cable-does-not-match-property',
                 ['Verbindingnummer', $expected_verbindingnummer, string-join($unexpected_verbindingnummers, ', ')])"/>
         </assert>
@@ -79,7 +77,7 @@
         <assert id="connected-mskabel-does-not-match-spanningsniveau"
             test="empty($unexpected_spanningsniveaus)"
             properties="scope rule-number severity object-type object-id">
-            <value-of select="keronic:get-translation-and-replace-placeholders(
+            <value-of select="ma:get-translation-and-replace-placeholders(
                 'connected-cable-does-not-match-property',
                 ['Spanningsniveau', $expected_spanningsniveau, string-join($unexpected_spanningsniveaus, ', ')])"/>
         </assert>

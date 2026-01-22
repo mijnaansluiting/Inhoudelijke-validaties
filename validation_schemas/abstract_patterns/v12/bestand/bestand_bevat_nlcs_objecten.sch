@@ -10,13 +10,13 @@
         <assert id="file-has-aprojectreferentie"
             test="count($aprojectreferenties) = 1"
             properties="rule-number severity">
-            <value-of select="keronic:get-translation('aprojectreferentie-not-present')"/>
+            <value-of select="ma:get-translation('aprojectreferentie-not-present')"/>
         </assert>
 
         <assert id="file-has-nlcs-objects"
             test="count($nlcs_objects) > 0"
             properties="rule-number severity">
-            <value-of select="keronic:get-translation('no-nlcs-objects-present')"/>
+            <value-of select="ma:get-translation('no-nlcs-objects-present')"/>
         </assert>
     </rule>
 </pattern>
