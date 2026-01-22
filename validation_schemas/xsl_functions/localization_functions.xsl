@@ -5,7 +5,7 @@
             version="3.0">
 
   <variable name="language" select= "$user_config_file/config/Language"/>
-  <variable name="translation_file" select= "document('../../../localization/messages.xml')"/>
+  <variable name="translation_file" select= "document('../../localization/messages.xml')"/>
 
   <function name= "ma:get-translation">
     <param name="message_id"/>

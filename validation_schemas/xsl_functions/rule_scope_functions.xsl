@@ -7,7 +7,7 @@
             version="3.0">
   
   <variable name="rule_numbers_always_within_scope" select="(1, 2)"/>
-  <variable name="validatieregels_file" select="document('../../../doc/NLCSValidatieRegels.xml')"/>
+  <variable name="validatieregels_file" select="document('../../doc/NLCSValidatieRegels.xml')"/>
   <variable name="scopes" select="$validatieregels_file/nvr:NLCSValidatieregels/nvr:scopes/nvr:scope"/>
 
   <function name="ma:rule-string" as="xs:string">

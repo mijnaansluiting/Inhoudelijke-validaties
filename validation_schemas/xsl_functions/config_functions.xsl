@@ -4,8 +4,8 @@
             xmlns:xs="http://www.w3.org/2001/XMLSchema"
             version="3.0">
 
-  <variable name="sys_config_file" select= "document('../../../configuration/sys_config.xml')"/>
-  <variable name="user_config_file" select= "document('../../../configuration/user_config.xml')"/>
+  <variable name="sys_config_file" select= "document('../../configuration/sys_config.xml')"/>
+  <variable name="user_config_file" select= "document('../../configuration/user_config.xml')"/>
 
   <function name="ma:map-mof-functie" as="xs:string">
     <param name="functie" as="xs:string"/>

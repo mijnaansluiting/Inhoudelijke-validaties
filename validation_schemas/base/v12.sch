@@ -133,12 +133,11 @@
     </phase>
 
     <!-- import functions -->
-    <xsl:include href="../xsl_functions/geometry_functions/2d_geometry_functions.xsl"/>
-    <xsl:include href="../xsl_functions/geometry_functions/geometry_interface_functions.xsl"/>
-    <xsl:include href="../xsl_functions/global_functions/config_functions.xsl"/>
-    <xsl:include href="../xsl_functions/global_functions/localization_functions.xsl"/>
-    <xsl:include href="../xsl_functions/global_functions/rule_scope_functions.xsl"/>
-    <xsl:include href="../xsl_functions/helper_functions/helper_functions.xsl"/>
+    <xsl:include href="../xsl_functions/geometry_functions.xsl"/>
+    <xsl:include href="../xsl_functions/config_functions.xsl"/>
+    <xsl:include href="../xsl_functions/localization_functions.xsl"/>
+    <xsl:include href="../xsl_functions/rule_scope_functions.xsl"/>
+    <xsl:include href="../xsl_functions/helper_functions.xsl"/>
 
     <!-- import patterns -->
     <include href="../patterns/v12/R.1.sch"/>

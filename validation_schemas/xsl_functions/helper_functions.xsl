@@ -12,7 +12,7 @@
         <param name="epsg" as="xs:integer"/>
         <gml:Point srsDimension="{$dimension}" srsName="EPSG:{$epsg}">
             <gml:pos>
-                <xsl:value-of select="$coords"/>
+                <value-of select="$coords"/>
             </gml:pos>
         </gml:Point>
     </function>
@@ -23,7 +23,7 @@
         <param name="epsg" as="xs:integer"/>
         <gml:LineString srsDimension="{$dimension}" srsName="EPSG:{$epsg}">
             <gml:posList>
-                <xsl:value-of select="$coords"/>
+                <value-of select="$coords"/>
             </gml:posList>
         </gml:LineString>
     </function>
@@ -36,7 +36,7 @@
             <gml:exterior>
                 <gml:LinearRing>
                     <gml:posList>
-                        <xsl:value-of select="$coords"/>
+                        <value-of select="$coords"/>
                     </gml:posList>
                 </gml:LinearRing>
             </gml:exterior>
@@ -48,11 +48,22 @@
         <sequence select="$element and normalize-space($element)"/>
     </function>
 
-    <function name="ma:array-2d-get-nth-point" as="xs:double*">
-        <param name="d_array" as="xs:double*"/>
+    <function name="ma:line-get-nth-point" as="xs:double*">
+        <param name="line" as="xs:double*"/>
         <param name="n" as="xs:integer"/>
 
-        <sequence select="[$d_array[2 * $n - 1], $d_array[2 * $n]]"/>
+        <sequence select="[$line[2 * $n - 1], $line[2 * $n]]"/>
+    </function>
+    
+    <function name="ma:line-get-slice" as="xs:double*">
+        <param name="line" as="xs:double*"/>
+        <param name="start_index" as="xs:integer"/>
+        <param name="end_index" as="xs:integer"/>
+        
+        <for-each select="$start_index to $end_index">
+            <variable name="index" select="."/>
+            <sequence select="ma:line-get-nth-point($line, $index)"/>
+        </for-each>
     </function>
 
     <function name="ma:string-array-to-double-array" as="xs:double*">
