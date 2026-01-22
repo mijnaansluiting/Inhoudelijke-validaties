@@ -23,9 +23,14 @@
                     ma:parse-line(nlcs:Geometry)
                 )]"/>
 
+        <let name="geometries"
+            value="if(not(empty($connected_lskabels))) then $connected_lskabels
+                  else if(not(empty($connected_hskabels))) then $connected_hskabels
+                  else ()"/>
+
         <assert id="mskabel-connected-to-lskabel"
             test="empty($connected_lskabels)"
-            properties="scope rule-number severity object-type object-id">
+            properties="scope rule-number severity object-type object-id geometries">
             <value-of select="ma:get-translation-and-replace-placeholders(
                 'connected-cable-does-not-match-netvlak',
                 [$object_type, string(count($connected_lskabels)),'LSkabel'])"/>
@@ -33,7 +38,7 @@
 
         <assert id="mskabel-connected-to-hskabel"
             test="empty($connected_hskabels)"
-            properties="scope rule-number severity object-type object-id">
+            properties="scope rule-number severity object-type object-id geometries">
             <value-of select="ma:get-translation-and-replace-placeholders(
                 'connected-cable-does-not-match-netvlak',
                 [$object_type, string(count($connected_hskabels)), 'HSkabel'])"/>
