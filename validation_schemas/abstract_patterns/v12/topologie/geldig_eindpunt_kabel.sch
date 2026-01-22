@@ -59,8 +59,11 @@
             value="nlcs:Bedrijfstoestand = 'VERLATEN'"/>
         
         <let name="geometries"
-            value="if(not($start_point_connected)) then $start_point else if(not($end_point_connected)) then $end_point else ()"/>
-        
+     value="
+       (if (not($start_point_connected)) then $start_point else (),
+        if (not($end_point_connected)) then $end_point else ())
+     "/>
+
         <assert id="start_point_connected" 
                 properties="scope rule-number severity object-type object-id geometries"
             test="if($start_point_within_project_area and not($is_deserted)) then $start_point_connected else true()">
