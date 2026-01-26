@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pattern xmlns ="http://purl.oclc.org/dsdl/schematron" id="aantal-kabels-en-mof-functie" abstract="true">
-    <rule context="//nlcs:MSmof">
+    <rule context="//nlcs:MSmof || //nlcs:LSmof | //nlcs:Eaarddraad">
         <let name="msmof"
             value="."/>
 
