@@ -29,4 +29,22 @@
         <ID>C</ID>
         <Geometry></Geometry>
     </Amantelbuis>
+    
+    <LSkabel>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
+        <Inmeetwijze>GPS</Inmeetwijze>
+        <Nauwkeurigheid>tot 3cm</Nauwkeurigheid>
+        <ID>D</ID>
+        <Geometry></Geometry>
+    </LSkabel>
+    
+    <Eaarddraad>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
+        <Inmeetwijze>GPS</Inmeetwijze>
+        <Nauwkeurigheid>tot 3cm</Nauwkeurigheid>
+        <ID>E</ID>
+        <Geometry></Geometry>
+    </Eaarddraad>
 </NLCSnetbeheer>
