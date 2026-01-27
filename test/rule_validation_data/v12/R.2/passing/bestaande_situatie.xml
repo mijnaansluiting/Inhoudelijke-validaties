@@ -18,4 +18,40 @@
         <ID>B</ID>
         <Geometry></Geometry>
     </MSkabel>
+    <LSkabel>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>IN BEDRIJF</Bedrijfstoestand>
+        <ID>C</ID>
+        <Geometry></Geometry>
+    </LSkabel>
+    <LSmof>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>IN BEDRIJF</Bedrijfstoestand>
+        <ID>D</ID>
+        <Geometry></Geometry>
+    </LSmof>
+    <LSoverdrachtspunt>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>IN BEDRIJF</Bedrijfstoestand>
+        <ID>E</ID>
+        <Geometry></Geometry>
+    </LSoverdrachtspunt>
+    <OVLoverdrachtspunt>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>IN BEDRIJF</Bedrijfstoestand>
+        <ID>F</ID>
+        <Geometry></Geometry>
+    </OVLoverdrachtspunt>
+    <Eaarddraad>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>IN BEDRIJF</Bedrijfstoestand>
+        <ID>G</ID>
+        <Geometry></Geometry>
+    </Eaarddraad>
+    <Eaardpen>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>IN BEDRIJF</Bedrijfstoestand>
+        <ID>H</ID>
+        <Geometry></Geometry>
+    </Eaardpen>
 </NLCSnetbeheer>
