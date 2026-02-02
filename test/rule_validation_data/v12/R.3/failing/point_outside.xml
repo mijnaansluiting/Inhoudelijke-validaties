@@ -44,4 +44,19 @@
             </gml:Point>
         </Geometry>
     </MSoverdrachtspunt>
+    
+    <LSmof>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
+        <ID>C</ID>
+        <Geometry>
+            <gml:Point
+                srsDimension="3"
+                srsName="EPSG:7415">
+                <gml:pos>
+                    150 140 0
+                </gml:pos>
+            </gml:Point>
+        </Geometry>
+    </LSmof>
 </NLCSnetbeheer>
