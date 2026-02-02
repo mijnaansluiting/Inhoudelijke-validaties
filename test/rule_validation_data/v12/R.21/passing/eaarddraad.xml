@@ -45,38 +45,6 @@
         </Geometry>
     </Eaarddraad>
 
-    <Eaarddraad>
-        <Status>BESTAAND</Status>
-        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <ID>C</ID>
-        <Geometry>
-            <gml:LineString
-                srsDimension="3"
-                srsName="EPSG:7415">
-                <gml:posList>
-                    160 120 0
-                    280 160 0
-                    360 160 0
-                </gml:posList>
-            </gml:LineString>
-        </Geometry>
-    </Eaarddraad>
-
-    <LSoverdrachtspunt>
-        <Status>BESTAAND</Status>
-        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <ID>D</ID>
-        <Geometry>
-            <gml:Point
-                srsDimension="3"
-                srsName="EPSG:7415">
-                <gml:pos>
-                    40 40 0
-                </gml:pos>
-            </gml:Point>
-        </Geometry>
-    </LSoverdrachtspunt>
-
     <LSmof>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
@@ -92,7 +60,7 @@
         </Geometry>
     </LSmof>
 
-    <OVLoverdrachtspunt>
+    <LSmof>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
         <ID>F</ID>
@@ -101,10 +69,10 @@
                 srsDimension="3"
                 srsName="EPSG:7415">
                 <gml:pos>
-                    360 160 0
+                    40 40 0
                 </gml:pos>
             </gml:Point>
         </Geometry>
-    </OVLoverdrachtspunt>
+    </LSmof>
 
 </NLCSnetbeheer>
