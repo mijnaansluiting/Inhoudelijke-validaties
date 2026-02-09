@@ -177,23 +177,23 @@
                 )
                 or
                 (
-                    some $lsoverdrachtspunt_geometry in //nlcs:Eaardmof/nlcs:Geometry
-                    satisfies ma:point-connected-to-point($start_point, ma:parse-point($lsoverdrachtspunt_geometry))
+                    some $eaardmof_geometry in //nlcs:Eaardmof/nlcs:Geometry
+                    satisfies ma:point-connected-to-point($start_point, ma:parse-point($eaardmof_geometry))
                 )
                 or
                 (
-                    some $lsoverdrachtspunt_geometry in //nlcs:Eaardpen/nlcs:Geometry
-                    satisfies ma:point-connected-to-point($start_point, ma:parse-point($lsoverdrachtspunt_geometry))
+                    some $eaardpen_geometry in //nlcs:Eaardpen/nlcs:Geometry
+                    satisfies ma:point-connected-to-point($start_point, ma:parse-point($eaardpen_geometry))
                 )
                 or
                 (
-                    some $lsoverdrachtspunt_geometry in //nlcs:MSstation/nlcs:Geometry
-                    satisfies ma:point-touches-area($start_point, ma:parse-area($lsoverdrachtspunt_geometry))
+                    some $msstation_geometry in //nlcs:MSstation/nlcs:Geometry
+                    satisfies ma:point-touches-area($start_point, ma:parse-area($msstation_geometry))
                 )
                 or
                 (
-                    some $lsoverdrachtspunt_geometry in //nlcs:LSkast/nlcs:Geometry
-                    satisfies ma:point-touches-area($start_point, ma:parse-area($lsoverdrachtspunt_geometry))
+                    some $lskast_geometry in //nlcs:LSkast/nlcs:Geometry
+                    satisfies ma:point-touches-area($start_point, ma:parse-area($lskast_geometry))
                 )
             "/>
         
@@ -210,23 +210,23 @@
                 )
                 or
                 (
-                    some $lsoverdrachtspunt_geometry in //nlcs:Eaardmof/nlcs:Geometry
-                    satisfies ma:point-connected-to-point($start_point, ma:parse-point($lsoverdrachtspunt_geometry))
+                    some $eaardmof_geometry in //nlcs:Eaardmof/nlcs:Geometry
+                    satisfies ma:point-connected-to-point($start_point, ma:parse-point($eaardmof_geometry))
                 )
                 or
                 (
-                    some $lsoverdrachtspunt_geometry in //nlcs:Eaardpen/nlcs:Geometry
-                    satisfies ma:point-connected-to-point($start_point, ma:parse-point($lsoverdrachtspunt_geometry))
+                    some $eaardpen_geometry in //nlcs:Eaardpen/nlcs:Geometry
+                    satisfies ma:point-connected-to-point($start_point, ma:parse-point($eaardpen_geometry))
                 )
                 or
                 (
-                    some $lsoverdrachtspunt_geometry in //nlcs:MSstation/nlcs:Geometry
-                    satisfies ma:point-touches-area($start_point, ma:parse-area($lsoverdrachtspunt_geometry))
+                    some $msstation_geometry in //nlcs:MSstation/nlcs:Geometry
+                    satisfies ma:point-touches-area($start_point, ma:parse-area($msstation_geometry))
                 )
                 or
                 (
-                    some $lsoverdrachtspunt_geometry in //nlcs:LSkast/nlcs:Geometry
-                    satisfies ma:point-touches-area($start_point, ma:parse-area($lsoverdrachtspunt_geometry))
+                    some $lskast_geometry in //nlcs:LSkast/nlcs:Geometry
+                    satisfies ma:point-touches-area($start_point, ma:parse-area($lskast_geometry))
                 )
             "/>
         
