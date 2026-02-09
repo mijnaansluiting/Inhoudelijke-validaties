@@ -201,32 +201,32 @@
             value="
                 (
                     some $lsmof_geometry in //nlcs:LSmof/nlcs:Geometry 
-                    satisfies ma:point-connected-to-point($start_point, ma:parse-point($lsmof_geometry))
+                    satisfies ma:point-connected-to-point($end_point, ma:parse-point($lsmof_geometry))
                 )
                 or
                 (
                     some $msmof_geometry in //nlcs:MSmof/nlcs:Geometry 
-                    satisfies ma:point-connected-to-point($start_point, ma:parse-point($msmof_geometry))
+                    satisfies ma:point-connected-to-point($end_point, ma:parse-point($msmof_geometry))
                 )
                 or
                 (
                     some $eaardmof_geometry in //nlcs:Eaardmof/nlcs:Geometry
-                    satisfies ma:point-connected-to-point($start_point, ma:parse-point($eaardmof_geometry))
+                    satisfies ma:point-connected-to-point($end_point, ma:parse-point($eaardmof_geometry))
                 )
                 or
                 (
                     some $eaardpen_geometry in //nlcs:Eaardpen/nlcs:Geometry
-                    satisfies ma:point-connected-to-point($start_point, ma:parse-point($eaardpen_geometry))
+                    satisfies ma:point-connected-to-point($end_point, ma:parse-point($eaardpen_geometry))
                 )
                 or
                 (
                     some $msstation_geometry in //nlcs:MSstation/nlcs:Geometry
-                    satisfies ma:point-touches-area($start_point, ma:parse-area($msstation_geometry))
+                    satisfies ma:point-touches-area($end_point, ma:parse-area($msstation_geometry))
                 )
                 or
                 (
                     some $lskast_geometry in //nlcs:LSkast/nlcs:Geometry
-                    satisfies ma:point-touches-area($start_point, ma:parse-area($lskast_geometry))
+                    satisfies ma:point-touches-area($end_point, ma:parse-area($lskast_geometry))
                 )
             "/>
         

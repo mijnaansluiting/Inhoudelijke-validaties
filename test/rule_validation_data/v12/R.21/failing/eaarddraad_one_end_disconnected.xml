@@ -16,18 +16,18 @@
                 <gml:exterior>
                     <gml:LinearRing>
                         <gml:posList>
-                              0   0 0
+                            0   0 0
                             480   0 0
                             480 240 0
-                              0 240 0
-                              0   0 0
+                            0 240 0
+                            0   0 0
                         </gml:posList>
                     </gml:LinearRing>
                 </gml:exterior>
             </gml:Polygon>
         </Geometry>
     </AprojectReferentie>
-
+    
     <Eaarddraad>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
@@ -37,15 +37,15 @@
                 srsDimension="3"
                 srsName="EPSG:7415">
                 <gml:posList>
-                     40  40 0
+                    40  40 0
                     100 100 0
                     160 120 0
                 </gml:posList>
             </gml:LineString>
         </Geometry>
     </Eaarddraad>
-
-    <LSmof>
+    
+    <MSmof>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
         <ID>C</ID>
@@ -58,6 +58,6 @@
                 </gml:pos>
             </gml:Point>
         </Geometry>
-    </LSmof>
-
+    </MSmof>
+    
 </NLCSnetbeheer>
