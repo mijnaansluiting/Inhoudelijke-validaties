@@ -46,7 +46,7 @@
         </Geometry>
     </MSmof>
     
-    <lSmof>
+    <LSmof>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
         <ID>C</ID>
@@ -59,7 +59,7 @@
                 </gml:pos>
             </gml:Point>
         </Geometry>
-    </lSmof>
+    </LSmof>
 
     <!-- Point exactly on edge -->
     <LSmof>
@@ -127,7 +127,7 @@
         </Geometry>
     </Akunstwerk>
     
-    <LSka   >
+    <LSkabel>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
         <ID>H</ID>
@@ -141,7 +141,7 @@
                 </gml:posList>
             </gml:LineString>
         </Geometry>
-    </LSka>
+    </LSkabel>
 
     <!-- Line all points outside but an edge inside -->
     <Eaarddraad>
