@@ -3,10 +3,10 @@
 version="v12"
 
 {
-    echo "## Dekking objecten per regel"
+    echo "## Object coverage"
     echo
-    echo "| Regel | Verwacht | Gevonden | Missend | Extra |"
-    echo "| ----- | -------- | -------- | ------- | ----- |"
+    echo "| Rule | Expected | Found | Missing | Extra |"
+    echo "| ---- | -------- | ----- | ------- | ----- |"
 } >> $GITHUB_STEP_SUMMARY
 
 all_rules_covered_correctly=true
@@ -27,7 +27,7 @@ for dir in rule_validation_reports/$version/*; do
 done
 
 if [[ $all_rules_covered_correctly == false ]]; then
+    summary_url="$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+    echo "::error title=Objects incorrectly covered::Some objects have been incorrectly covered. See the summary for more details: $summary_url"
     exit 1
 fi
-
-exit 1
