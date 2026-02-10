@@ -36,3 +36,6 @@ jobs:
 
       - name: Validate test reports
         run: scripts/validate_rule_reports.sh
+
+      - name: Check rule object coverage
+        run: scripts/check_rule_object_coverage.sh
