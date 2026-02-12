@@ -16,11 +16,11 @@
                 <gml:exterior>
                     <gml:LinearRing>
                         <gml:posList>
-                            0   0 0
-                            480   0 0
-                            480 240 0
-                            0 240 0
-                            0   0 0
+                              0   0 0
+                            780   0 0
+                            780 400 0
+                              0 400 0
+                              0   0 0
                         </gml:posList>
                     </gml:LinearRing>
                 </gml:exterior>
@@ -202,7 +202,7 @@
         </Geometry>
     </MSstation>
     
-    <MSstation>
+    <LSkast>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
         <ID>M</ID>
@@ -214,8 +214,8 @@
                     <gml:LinearRing>
                         <gml:posList>
                             360 320 0
-                            380 320 0
-                            380 340 0
+                            340 320 0
+                            340 340 0
                             360 340 0
                             360 320 0
                         </gml:posList>
@@ -223,6 +223,6 @@
                 </gml:exterior>
             </gml:Polygon>
         </Geometry>
-    </MSstation>
+    </LSkast>
     
 </NLCSnetbeheer>
