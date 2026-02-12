@@ -244,4 +244,12 @@
       Movement was registered incorrectly. There should be another {1} with Status BESTAAND and both objects must share the same GisId.
     </message-text>
   </message>
+  <message id="soort-bestand-not-correct">
+    <message-text xml:lang="nl">
+      De SoortBestand van de ABestandBijlage moet {1} zijn.
+    </message-text>
+    <message-text xml:lang="en">
+      The SoortBestand of the ABestandBijlage must be {1}.
+    </message-text>
+  </message>
 </messages>
