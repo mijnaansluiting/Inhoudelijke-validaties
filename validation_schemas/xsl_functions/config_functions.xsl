@@ -17,6 +17,10 @@
     <variable name="objects_not_requiring_gis_id" select="$sys_config_file/config/v12/GisIdAssetsIdExceptions/NoGisIdRequired"/>
     <value-of select="not(some $object in $objects_not_requiring_gis_id satisfies $object = name($nlcs_object))"/>
   </function>
+  
+  <function name="ma:get-soortkunstwerken-with-required-abestandsbijlage">
+    <sequence select="$user_config_file/config/SoortKunstwerk_Required_AbestandsBijlage/*"/>
+  </function>
 
   <function name="ma:object-requires-asset-id" as="xs:boolean">
     <param name="nlcs_object"/>
