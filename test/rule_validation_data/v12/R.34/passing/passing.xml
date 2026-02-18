@@ -15,12 +15,14 @@
     <LSkabel>
         <Status>REVISIE</Status>
         <Bedrijfstoestand>VERLATEN</Bedrijfstoestand>
+        <RedenNietVerwijdering>Asfalt</RedenNietVerwijdering>
         <ID>B</ID>
         <Geometry></Geometry>
     </LSkabel>
     <MSkabel>
         <Status>REVISIE</Status>
         <Bedrijfstoestand>VERLATEN</Bedrijfstoestand>
+        <RedenNietVerwijdering>Asfalt</RedenNietVerwijdering>
         <ID>C</ID>
         <Geometry></Geometry>
     </MSkabel>
