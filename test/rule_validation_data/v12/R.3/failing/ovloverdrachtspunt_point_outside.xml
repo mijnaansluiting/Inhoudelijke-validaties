@@ -29,23 +29,7 @@
             </gml:Polygon>
         </Geometry>
     </AprojectReferentie>
-
-    <MSoverdrachtspunt>
-        <Status>BESTAAND</Status>
-        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <ID>B</ID>
-        <Geometry>
-            <gml:Point
-                srsDimension="3"
-                srsName="EPSG:7415">
-                <gml:pos>
-                    150 140 0
-                </gml:pos>
-            </gml:Point>
-        </Geometry>
-    </MSoverdrachtspunt>
-    
-    <LSmof>
+    <OVLoverdrachtspunt>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
         <ID>C</ID>
@@ -58,5 +42,5 @@
                 </gml:pos>
             </gml:Point>
         </Geometry>
-    </LSmof>
+    </OVLoverdrachtspunt>
 </NLCSnetbeheer>

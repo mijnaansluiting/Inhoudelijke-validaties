@@ -29,24 +29,7 @@
             </gml:Polygon>
         </Geometry>
     </AprojectReferentie>
-
-    <Amantelbuis>
-        <Status>BESTAAND</Status>
-        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <ID>B</ID>
-        <Geometry>
-            <gml:LineString
-                srsDimension="3"
-                srsName="EPSG:7415">
-                <gml:posList>
-                    290 120 0
-                    400 140 0
-                </gml:posList>
-            </gml:LineString>
-        </Geometry>
-    </Amantelbuis>
-    
-    <Eaarddraad>
+    <Akunstwerk>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
         <ID>C</ID>
@@ -60,5 +43,5 @@
                 </gml:posList>
             </gml:LineString>
         </Geometry>
-    </Eaarddraad>
+    </Akunstwerk>
 </NLCSnetbeheer>

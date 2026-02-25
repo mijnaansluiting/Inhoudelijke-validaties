@@ -29,7 +29,7 @@
             </gml:Polygon>
         </Geometry>
     </AprojectReferentie>
-
+    
     <!-- Point inside -->
     <MSmof>
         <Status>BESTAAND</Status>
@@ -60,12 +60,57 @@
             </gml:Point>
         </Geometry>
     </LSmof>
-
+    
+    <LSoverdrachtspunt>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
+        <ID>D</ID>
+        <Geometry>
+            <gml:Point
+                srsDimension="3"
+                srsName="EPSG:7415">
+                <gml:pos>
+                    200 160 0
+                </gml:pos>
+            </gml:Point>
+        </Geometry>
+    </LSoverdrachtspunt>
+    
+    <OVLoverdrachtspunt>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
+        <ID>E</ID>
+        <Geometry>
+            <gml:Point
+                srsDimension="3"
+                srsName="EPSG:7415">
+                <gml:pos>
+                    200 160 0
+                </gml:pos>
+            </gml:Point>
+        </Geometry>
+    </OVLoverdrachtspunt>
+    
+    <Eaardpen>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
+        <ID>F</ID>
+        <Geometry>
+            <gml:Point
+                srsDimension="3"
+                srsName="EPSG:7415">
+                <gml:pos>
+                    200 160 0
+                </gml:pos>
+            </gml:Point>
+        </Geometry>
+    </Eaardpen>
+    
     <!-- Point exactly on edge -->
     <LSmof>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <ID>D</ID>
+        <ID>G</ID>
         <Geometry>
             <gml:Point
                 srsDimension="3"
@@ -76,12 +121,86 @@
             </gml:Point>
         </Geometry>
     </LSmof>
-
+    
+    <MSmof>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
+        <ID>H</ID>
+        <Geometry>
+            <gml:Point
+                srsDimension="3"
+                srsName="EPSG:7415">
+                <gml:pos>
+                    170 160 0
+                </gml:pos>
+            </gml:Point>
+        </Geometry>
+    </MSmof>
+    
+    <MSoverdrachtspunt>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
+        <ID>I</ID>
+        <Geometry>
+            <gml:Point
+                srsDimension="3"
+                srsName="EPSG:7415">
+                <gml:pos>
+                    170 160 0
+                </gml:pos>
+            </gml:Point>
+        </Geometry>
+    </MSoverdrachtspunt>
+    
+    <LSoverdrachtspunt>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
+        <ID>J</ID>
+        <Geometry>
+            <gml:Point
+                srsDimension="3"
+                srsName="EPSG:7415">
+                <gml:pos>
+                    170 160 0
+                </gml:pos>
+            </gml:Point>
+        </Geometry>
+    </LSoverdrachtspunt>
+    
+    <OVLoverdrachtspunt>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
+        <ID>K</ID>
+        <Geometry>
+            <gml:Point
+                srsDimension="3"
+                srsName="EPSG:7415">
+                <gml:pos>
+                    170 160 0
+                </gml:pos>
+            </gml:Point>
+        </Geometry>
+    </OVLoverdrachtspunt>
+    
+    <Eaardpen>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
+        <ID>L</ID>
+        <Geometry>
+            <gml:Point
+                srsDimension="3"
+                srsName="EPSG:7415">
+                <gml:pos>
+                    170 160 0
+                </gml:pos>
+            </gml:Point>
+        </Geometry>
+    </Eaardpen>
     <!-- Line fully inside -->
     <MSkabel>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <ID>E</ID>
+        <ID>M</ID>
         <Geometry>
             <gml:LineString
                 srsDimension="3"
@@ -97,7 +216,7 @@
     <Eaarddraad>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <ID>F</ID>
+        <ID>N</ID>
         <Geometry>
             <gml:LineString
                 srsDimension="3"
@@ -109,12 +228,12 @@
             </gml:LineString>
         </Geometry>
     </Eaarddraad>
-
+    
     <!-- Line one point inside one point outside -->
     <Akunstwerk>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <ID>G</ID>
+        <ID>O</ID>
         <Geometry>
             <gml:LineString
                 srsDimension="3"
@@ -127,27 +246,11 @@
         </Geometry>
     </Akunstwerk>
     
-    <LSkabel>
-        <Status>BESTAAND</Status>
-        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <ID>H</ID>
-        <Geometry>
-            <gml:LineString
-                srsDimension="3"
-                srsName="EPSG:7415">
-                <gml:posList>
-                    320 60 0
-                    420 110 0
-                </gml:posList>
-            </gml:LineString>
-        </Geometry>
-    </LSkabel>
-
     <!-- Line all points outside but an edge inside -->
     <Eaarddraad>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <ID>I</ID>
+        <ID>P</ID>
         <Geometry>
             <gml:LineString
                 srsDimension="3"
@@ -159,12 +262,60 @@
             </gml:LineString>
         </Geometry>
     </Eaarddraad>
-
+    
+    <MSkabel>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
+        <ID>Q</ID>
+        <Geometry>
+            <gml:LineString
+                srsDimension="3"
+                srsName="EPSG:7415">
+                <gml:posList>
+                    270  20 0
+                    350 120 0
+                </gml:posList>
+            </gml:LineString>
+        </Geometry>
+    </MSkabel>
+    
+    <Amantelbuis>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
+        <ID>R</ID>
+        <Geometry>
+            <gml:LineString
+                srsDimension="3"
+                srsName="EPSG:7415">
+                <gml:posList>
+                    270  20 0
+                    350 120 0
+                </gml:posList>
+            </gml:LineString>
+        </Geometry>
+    </Amantelbuis>
+    
+    <Akunstwerk>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
+        <ID>S</ID>
+        <Geometry>
+            <gml:LineString
+                srsDimension="3"
+                srsName="EPSG:7415">
+                <gml:posList>
+                    270  20 0
+                    350 120 0
+                </gml:posList>
+            </gml:LineString>
+        </Geometry>
+    </Akunstwerk>
+    
     <!-- Line one point exactly on edge -->
     <Aaanlegtechniek>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <ID>J</ID>
+        <ID>T</ID>
         <Geometry>
             <gml:LineString
                 srsDimension="3"
@@ -180,7 +331,7 @@
     <LSkabel>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <ID>K</ID>
+        <ID>U</ID>
         <Geometry>
             <gml:LineString
                 srsDimension="3"
@@ -192,12 +343,12 @@
             </gml:LineString>
         </Geometry>
     </LSkabel>
-
+    
     <!-- Line two points exactly on edge -->
     <MSkabel>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <ID>L</ID>
+        <ID>V</ID>
         <Geometry>
             <gml:LineString
                 srsDimension="3"
@@ -215,7 +366,7 @@
     <LSkabel>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <ID>M</ID>
+        <ID>W</ID>
         <Geometry>
             <gml:LineString
                 srsDimension="3"
@@ -229,12 +380,84 @@
             </gml:LineString>
         </Geometry>
     </LSkabel>
-
+    
+    <Amantelbuis>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
+        <ID>X</ID>
+        <Geometry>
+            <gml:LineString
+                srsDimension="3"
+                srsName="EPSG:7415">
+                <gml:posList>
+                    190 250 0
+                    200 200 0
+                    220 200 0
+                    230 250 0
+                </gml:posList>
+            </gml:LineString>
+        </Geometry>
+    </Amantelbuis>
+    
+    <Akunstwerk>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
+        <ID>Y</ID>
+        <Geometry>
+            <gml:LineString
+                srsDimension="3"
+                srsName="EPSG:7415">
+                <gml:posList>
+                    190 250 0
+                    200 200 0
+                    220 200 0
+                    230 250 0
+                </gml:posList>
+            </gml:LineString>
+        </Geometry>
+    </Akunstwerk>
+    
+    <Eaarddraad>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
+        <ID>Z</ID>
+        <Geometry>
+            <gml:LineString
+                srsDimension="3"
+                srsName="EPSG:7415">
+                <gml:posList>
+                    190 250 0
+                    200 200 0
+                    220 200 0
+                    230 250 0
+                </gml:posList>
+            </gml:LineString>
+        </Geometry>
+    </Eaarddraad>
+    
+    <Aaanlegtechniek>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
+        <ID>AA</ID>
+        <Geometry>
+            <gml:LineString
+                srsDimension="3"
+                srsName="EPSG:7415">
+                <gml:posList>
+                    190 250 0
+                    200 200 0
+                    220 200 0
+                    230 250 0
+                </gml:posList>
+            </gml:LineString>
+        </Geometry>
+    </Aaanlegtechniek>
+    
     <!-- Area fully inside -->
     <AbeschermingVlak>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <ID>N</ID>
+        <ID>AB</ID>
         <Geometry>
             <gml:Polygon
                 srsDimension="3"
@@ -252,12 +475,34 @@
             </gml:Polygon>
         </Geometry>
     </AbeschermingVlak>
-
+    
+    <MSstation>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
+        <ID>AC</ID>
+        <Geometry>
+            <gml:Polygon
+                srsDimension="3"
+                srsName="EPSG:7415">
+                <gml:exterior>
+                    <gml:LinearRing>
+                        <gml:posList>
+                            220 100 260
+                            110 290  90
+                            280  70 240
+                            80  220 100
+                        </gml:posList>
+                    </gml:LinearRing>
+                </gml:exterior>
+            </gml:Polygon>
+        </Geometry>
+    </MSstation>
+    
     <!-- Area points fully inside but an edge outside -->
     <MSstation>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <ID>O</ID>
+        <ID>AD</ID>
         <Geometry>
             <gml:Polygon
                 srsDimension="3"
@@ -275,12 +520,34 @@
             </gml:Polygon>
         </Geometry>
     </MSstation>
-
+    
+    <AbeschermingVlak>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
+        <ID>AE</ID>
+        <Geometry>
+            <gml:Polygon
+                srsDimension="3"
+                srsName="EPSG:7415">
+                <gml:exterior>
+                    <gml:LinearRing>
+                        <gml:posList>
+                            200 140 0
+                            250 160 0
+                            250 120 0
+                            200 140 0
+                        </gml:posList>
+                    </gml:LinearRing>
+                </gml:exterior>
+            </gml:Polygon>
+        </Geometry>
+    </AbeschermingVlak>
+    
     <!-- Area points fully outside but an edge inside -->
     <AbeschermingVlak>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <ID>P</ID>
+        <ID>AF</ID>
         <Geometry>
             <gml:Polygon
                 srsDimension="3"
@@ -299,12 +566,35 @@
             </gml:Polygon>
         </Geometry>
     </AbeschermingVlak>
-
+    
+    <MSstation>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
+        <ID>AG</ID>
+        <Geometry>
+            <gml:Polygon
+                srsDimension="3"
+                srsName="EPSG:7415">
+                <gml:exterior>
+                    <gml:LinearRing>
+                        <gml:posList>
+                            240 240 0
+                            310 300 0
+                            390 220 0
+                            320 160 0
+                            240 240 0
+                        </gml:posList>
+                    </gml:LinearRing>
+                </gml:exterior>
+            </gml:Polygon>
+        </Geometry>
+    </MSstation>
+    
     <!-- Area points fully outside, no edges crossing, but covers entire polygon-->
     <MSstation>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <ID>Q</ID>
+        <ID>AH</ID>
         <Geometry>
             <gml:Polygon
                 srsDimension="3"
@@ -322,4 +612,26 @@
             </gml:Polygon>
         </Geometry>
     </MSstation>
+    
+    <AbeschermingVlak>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
+        <ID>AI</ID>
+        <Geometry>
+            <gml:Polygon
+                srsDimension="3"
+                srsName="EPSG:7415">
+                <gml:exterior>
+                    <gml:LinearRing>
+                        <gml:posList>
+                            120 240 0
+                            400 240 0
+                            400   0 0
+                            120   0 0
+                        </gml:posList>
+                    </gml:LinearRing>
+                </gml:exterior>
+            </gml:Polygon>
+        </Geometry>
+    </AbeschermingVlak>
 </NLCSnetbeheer>
