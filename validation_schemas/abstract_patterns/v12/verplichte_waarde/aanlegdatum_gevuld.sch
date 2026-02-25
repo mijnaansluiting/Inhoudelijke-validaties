@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pattern xmlns ="http://purl.oclc.org/dsdl/schematron" id="aanlegdatum-gevuld" abstract="true">
-    <rule context="//nlcs:MSstation | //nlcs:MSkabel | //nlcs:MSmof | //nlcs:MSoverdrachtspunt">
+    <rule context="//nlcs:MSstation | //nlcs:MSkabel | //nlcs:MSmof | //nlcs:MSoverdrachtspunt | //nlcs:LSkabel | //nlcs:LSmof | //nlcs:LSoverdrachtspunt | //nlcs:Eaardpen | //nlcs:Eaarddraad | //nlcs:OVLoverdrachtspunt">
 
         <let name="datum-aanleg-present"
             value="ma:element-exists-and-not-empty(nlcs:DatumAanleg)"/>

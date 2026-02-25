@@ -43,5 +43,46 @@
         <ID>E</ID>
         <Geometry></Geometry>
     </MSoverdrachtspunt>
+    
+    
+    <Eaarddraad>
+        <DatumAanleg>2023-10-10</DatumAanleg>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
+        <ID>F</ID>
+        <Geometry></Geometry>
+    </Eaarddraad>
+    
+    <Eaardpen>
+        <DatumAanleg>2023-10-10</DatumAanleg>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
+        <ID>G</ID>
+        <Geometry></Geometry>
+    </Eaardpen>
+    
+    <LSkabel>
+        <DatumAanleg>2023-10-10</DatumAanleg>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
+        <ID>H</ID>
+        <Geometry></Geometry>
+    </LSkabel>
+    
+    <LSmof>
+        <DatumAanleg>2023-10-10</DatumAanleg>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
+        <ID>I</ID>
+        <Geometry></Geometry>
+    </LSmof>
+    
+    <LSoverdrachtspunt>
+        <DatumAanleg>2023-10-10</DatumAanleg>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
+        <ID>J</ID>
+        <Geometry></Geometry>
+    </LSoverdrachtspunt>
 
 </NLCSnetbeheer>
