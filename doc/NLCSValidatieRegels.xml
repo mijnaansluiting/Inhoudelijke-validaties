@@ -476,7 +476,7 @@
 			</validatieObjecten>
 		</validatieRegel>
 		<validatieRegel nummer="R.34" naam="Reden niet-verwijdering ingevuld">
-			<beschrijving>Wanneer een kabel verlaten maar wordt moet een reden voor niet-verwijdering worden meegegeven.</beschrijving>
+			<beschrijving>Wanneer een kabel verlaten wordt moet een reden voor niet-verwijdering worden meegegeven.</beschrijving>
 			<soort>Verplichte waarde</soort>
 			<definitie>
 				Lineaire NLCS objecten met Status "REVISIE" en Bedrijfstoestand "VERLATEN" moeten een waarde hebben voor het kenmerk RedenNietVerwijdering.
@@ -524,7 +524,7 @@
 			</validatieObjecten>
 		</validatieRegel>
 		<validatieRegel nummer="R.38" naam="Inmeetwijze aansluitnet toegestaande waarde">
-			<beschrijving>Inmeetwijze voor aansluitnet mag niet inmeetwijze zijn.</beschrijving>
+			<beschrijving>Inmeetwijze voor LS kabel aansluitnet mag niet meetlint zijn.</beschrijving>
 			<soort>Inhoud waarde</soort>
 			<definitie>
 				Voor LSkabel met waarde "AANSLUITNET" voor kenmerk Subnettype is de waarde "Meetlint" voor kenmerk Inmeetwijze niet toegestaan.
