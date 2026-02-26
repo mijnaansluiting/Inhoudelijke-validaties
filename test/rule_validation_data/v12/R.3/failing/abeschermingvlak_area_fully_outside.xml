@@ -33,7 +33,7 @@
     <AbeschermingVlak>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <ID>C</ID>
+        <ID>B</ID>
         <Geometry>
             <gml:Polygon
                 srsDimension="3"
