@@ -544,6 +544,16 @@
 				<validatieObject><naam>MSmof</naam></validatieObject>
 			</validatieObjecten>
 		</validatieRegel>
+		<validatieRegel nummer="R.40" naam="Volgnummer verplicht">
+			<beschrijving>Een volgnummer is verplicht voor deel- en eindrevisies.</beschrijving>
+			<soort>Bestand</soort>
+			<definitie>
+				De AprojectReferentie moet een waarde voor Volgnummer hebben indien Tekeningtype DEELREVISIE of EINDREVISIE is.
+			</definitie>
+			<validatieObjecten>
+				<validatieObject><naam>AprojectReferentie</naam></validatieObject>
+			</validatieObjecten>
+		</validatieRegel>
 	</validatieRegels>
 	<scopes>
 		<scope naam="Bestaande Situatie">
@@ -652,6 +662,7 @@
 				<scopeValidatieRegel><nummer>R.37</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.38</nummer><niveau>Waarschuwing</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.39</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.40</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 			</scopeValidatieRegels>
 		</scope>
 		<scope naam="Deelrevisie aangepaste objecten">
@@ -692,6 +703,7 @@
 				<scopeValidatieRegel><nummer>R.30</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.35</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.36</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.40</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 			</scopeValidatieRegels>
 		</scope>
 		<scope naam="Deelrevisie verlaten objecten">
@@ -712,6 +724,7 @@
 				<scopeValidatieRegel><nummer>R.6</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.7</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.34</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.40</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 			</scopeValidatieRegels>
 		</scope>
 		<scope naam="Eindrevisie nieuwe objecten">
@@ -757,6 +770,7 @@
 				<scopeValidatieRegel><nummer>R.37</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.38</nummer><niveau>Waarschuwing</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.39</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.40</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 			</scopeValidatieRegels>
 		</scope>
 		<scope naam="Eindrevisie aangepaste objecten">
@@ -797,6 +811,7 @@
 				<scopeValidatieRegel><nummer>R.30</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.35</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.36</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.40</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 			</scopeValidatieRegels>
 		</scope>
 		<scope naam="Eindrevisie verlaten objecten">
@@ -817,6 +832,7 @@
 				<scopeValidatieRegel><nummer>R.6</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.7</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.34</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.40</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 			</scopeValidatieRegels>
 		</scope>
 	</scopes>
