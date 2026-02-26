@@ -30,29 +30,6 @@
         </Geometry>
     </AprojectReferentie>
 
-    <MSstation>
-        <Status>BESTAAND</Status>
-        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <ID>B</ID>
-        <Geometry>
-            <gml:Polygon
-                srsDimension="3"
-                srsName="EPSG:7415">
-                <gml:exterior>
-                    <gml:LinearRing>
-                        <gml:posList>
-                            170 120 0
-                            220  70 0
-                            180  30 0
-                            170 120 0
-                        </gml:posList>
-                    </gml:LinearRing>
-                </gml:exterior>
-            </gml:Polygon>
-        </Geometry>
-    </MSstation>
-    
-    
     <AbeschermingVlak>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>

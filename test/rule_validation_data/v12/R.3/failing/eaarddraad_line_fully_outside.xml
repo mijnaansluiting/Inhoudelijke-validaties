@@ -32,7 +32,7 @@
     <Eaarddraad>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <ID>C</ID>
+        <ID>B</ID>
         <Geometry>
             <gml:LineString
                 srsDimension="3"
