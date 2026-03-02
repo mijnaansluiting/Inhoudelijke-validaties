@@ -6,7 +6,6 @@
             xmlns:nvr="NLCSValidatieRegelsNameSpace"
             version="3.0">
   
-  <variable name="rule_numbers_always_within_scope" select="(1, 2)"/>
   <variable name="validatieregels_file" select="document('../../doc/NLCSValidatieRegels.xml')"/>
   <variable name="scopes" select="$validatieregels_file/nvr:NLCSValidatieregels/nvr:scopes/nvr:scope"/>
 
@@ -14,18 +13,24 @@
     <param name="rule_number" as="xs:integer"/>
     <value-of select="concat('R.', $rule_number)"/>
   </function>
+  
+  <function name="ma:rule-type" as="xs:string">
+    <param name="rule_string" as="xs:string"/>
+    <value-of select="$validatieregels_file/nvr:NLCSValidatieregels/nvr:validatieRegels/nvr:validatieRegel[@nummer = $rule_string]/nvr:soort"/>
+  </function>
 
   <function name="ma:rule-within-scope-for-object" as="xs:boolean">
     <param name="rule_number" as="xs:integer"/>
     <param name="nlcs_object"/>
     <variable name="object_type" select="name($nlcs_object)"/>
+    <variable name="rule_string" select="ma:rule-string($rule_number)"/>
 
     <choose>
-      <when test="$rule_number = $rule_numbers_always_within_scope">
+      <!-- Rules of type Bestand are always within scope -->
+      <when test="ma:rule-type($rule_string) = 'Bestand'">
         <value-of select="true()"/>
       </when>
       <otherwise>
-        <variable name="rule_string" select="ma:rule-string($rule_number)"/>
         <variable name="matching_scope" select="ma:matching-scope($nlcs_object)"/>
         <variable name="scope_validation_rules" select="$matching_scope/nvr:scopeValidatieRegels/nvr:scopeValidatieRegel"/>
 
