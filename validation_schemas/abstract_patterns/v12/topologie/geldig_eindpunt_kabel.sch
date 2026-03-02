@@ -101,7 +101,17 @@
                 or
                 (
                     some $ovloverdrachtspunt_geometry in //nlcs:OVLoverdrachtspunt/nlcs:Geometry
-                    satisfies ma:point-touches-area($start_point, ma:parse-point($ovloverdrachtspunt_geometry))
+                    satisfies ma:point-connected-to-point($start_point, ma:parse-point($ovloverdrachtspunt_geometry))
+                )
+                or
+                (
+                    some $msstation_geometry in //nlcs:MSstation/nlcs:Geometry
+                    satisfies ma:point-touches-area($start_point, ma:parse-area($msstation_geometry))
+                )
+                or
+                (
+                    some $lskast_geometry in //nlcs:LSkast/nlcs:Geometry
+                    satisfies ma:point-touches-area($start_point, ma:parse-area($lskast_geometry))
                 )
             "/>
         
@@ -120,6 +130,16 @@
                 (
                     some $ovloverdrachtspunt_geometry in //nlcs:OVLoverdrachtspunt/nlcs:Geometry
                     satisfies ma:point-connected-to-point($end_point, ma:parse-point($ovloverdrachtspunt_geometry))
+                )
+                or
+                (
+                    some $msstation_geometry in //nlcs:MSstation/nlcs:Geometry
+                    satisfies ma:point-touches-area($start_point, ma:parse-area($msstation_geometry))
+                )
+                or
+                (
+                    some $lskast_geometry in //nlcs:LSkast/nlcs:Geometry
+                    satisfies ma:point-touches-area($start_point, ma:parse-area($lskast_geometry))
                 )
             "/>
         

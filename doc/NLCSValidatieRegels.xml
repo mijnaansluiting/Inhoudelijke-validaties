@@ -35,15 +35,20 @@
 				Het kenmerk Geometry (gml:Point, gml:Curve of gml:Surface) moet interactie hebben met de Geometry (gml:Surface) van de AprojectReferentie
 			</definitie>
 			<validatieObjecten>
+				<validatieObject><naam>Aaanlegtechniek</naam></validatieObject>
+				<validatieObject><naam>AbeschermingVlak</naam></validatieObject>
+				<validatieObject><naam>Akunstwerk</naam></validatieObject>
+				<validatieObject><naam>Amantelbuis</naam></validatieObject>
+				<validatieObject><naam>Eaarddraad</naam></validatieObject>
+				<validatieObject><naam>Eaardpen</naam></validatieObject>
+				<validatieObject><naam>LSkabel</naam></validatieObject>
+				<validatieObject><naam>LSmof</naam></validatieObject>
+				<validatieObject><naam>LSoverdrachtspunt</naam></validatieObject>
+				<validatieObject><naam>MSkabel</naam></validatieObject>
 		    	<validatieObject><naam>MSmof</naam></validatieObject>
 		    	<validatieObject><naam>MSoverdrachtspunt</naam></validatieObject>
-				<validatieObject><naam>MSkabel</naam></validatieObject>
-				<validatieObject><naam>Amantelbuis</naam></validatieObject>
-				<validatieObject><naam>Akunstwerk</naam></validatieObject>
-				<validatieObject><naam>Eaarddraad</naam></validatieObject>
-				<validatieObject><naam>Aaanlegtechniek</naam></validatieObject>
 				<validatieObject><naam>MSstation</naam></validatieObject>
-				<validatieObject><naam>AbeschermingVlak</naam></validatieObject>
+				<validatieObject><naam>OVLoverdrachtspunt</naam></validatieObject>
 		    </validatieObjecten>
 		</validatieRegel>
 		<validatieRegel nummer="R.4" naam="Lijn Geometrie">
@@ -59,14 +64,14 @@
 			</definitie>
 			<validatieObjecten>
 			     <!-- Deze regel geldt voor alle NLCS Objecten met een gml:Curve-->
-				<validatieObject><naam>MSkabel</naam></validatieObject>
-				<validatieObject><naam>Eaarddraad</naam></validatieObject>
 				<validatieObject><naam>Aaanlegtechniek</naam></validatieObject>
 				<validatieObject><naam>Amantelbuis</naam></validatieObject>
+				<validatieObject><naam>Eaarddraad</naam></validatieObject>
+				<validatieObject><naam>LSkabel</naam></validatieObject>
+				<validatieObject><naam>MSkabel</naam></validatieObject>
 				<validatieObject><naam>MSstation</naam></validatieObject>
 
 				<!--
-				<validatieObject><naam>LSkabel</naam></validatieObject>
 				<validatieObject><naam>HSkabel</naam></validatieObject>
 				<validatieObject><naam>Gleiding</naam></validatieObject>
 				<validatieObject><naam>KBmeetdraad</naam></validatieObject>
@@ -103,10 +108,11 @@
 				Ieder lineair NLCS Object voor Elec moet waardes hebben voor de kenmerken Inmeetwijze en Nauwkeurigheid.
 			</definitie>
 			<validatieObjecten>
-				<validatieObject><naam>MSkabel</naam></validatieObject>
 				<validatieObject><naam>Amantelbuis</naam></validatieObject>
-				<!--
+				<validatieObject><naam>Eaarddraad</naam></validatieObject>
 				<validatieObject><naam>LSkabel</naam></validatieObject>
+				<validatieObject><naam>MSkabel</naam></validatieObject>
+				<!--
 				<validatieObject><naam>HSkabel</naam></validatieObject>
 				 -->
 			</validatieObjecten>
@@ -141,9 +147,9 @@
 				N.B. Als het kenmerk Uitvoering de waarde "KEUZE ONTBREEKT IN LIJST" dan moet het kenmerk OmschrijvingUitvoering gevuld zijn!
 			</definitie>
 			<validatieObjecten>
+				<validatieObject><naam>HSkabel</naam></validatieObject>
 				<validatieObject><naam>LSkabel</naam></validatieObject>
 				<validatieObject><naam>MSkabel</naam></validatieObject>
-				<validatieObject><naam>HSkabel</naam></validatieObject>
 			</validatieObjecten>
 		</validatieRegel>
 		<validatieRegel nummer="R.9" naam="Aanlegdatum gevuld">
@@ -153,16 +159,18 @@
 				De aanlegdatum moet gevuld zijn en de gevulde datum mag niet in de toekomst liggen.
 			</definitie>
 			<validatieObjecten> <!-- Deze regel geldt voor alle NLCS Objecten van Elec -->
+				<validatieObject><naam>Eaarddraad</naam></validatieObject>
+				<validatieObject><naam>Eaardpen</naam></validatieObject>
+				<validatieObject><naam>LSkabel</naam></validatieObject>
+				<validatieObject><naam>LSmof</naam></validatieObject>
+				<validatieObject><naam>LSoverdrachtspunt</naam></validatieObject>
 				<validatieObject><naam>MSstation</naam></validatieObject>
 				<validatieObject><naam>MSkabel</naam></validatieObject>
 				<validatieObject><naam>MSmof</naam></validatieObject>
 				<validatieObject><naam>MSoverdrachtspunt</naam></validatieObject>
+				<validatieObject><naam>OVLoverdrachtspunt</naam></validatieObject>
 				<!--
 				<validatieObject><naam>LSkast</naam></validatieObject>
-				<validatieObject><naam>LSkabel</naam></validatieObject>
-				<validatieObject><naam>LSmof</naam></validatieObject>
-				<validatieObject><naam>LSoverdrachtspunt</naam></validatieObject>
-				<validatieObject><naam>OVLoverdrachtspunt</naam></validatieObject>
 				<validatieObject><naam>HSstation</naam></validatieObject>
 				<validatieObject><naam>HSkabel</naam></validatieObject>
 				<validatieObject><naam>HSmof</naam></validatieObject>
@@ -185,9 +193,9 @@
 					- CrossBondingAanwezig
 			</definitie>
 			<validatieObjecten>
+				<validatieObject><naam>HSmof</naam></validatieObject>
 				<validatieObject><naam>LSmof</naam></validatieObject>
 				<validatieObject><naam>MSmof</naam></validatieObject>
-				<validatieObject><naam>HSmof</naam></validatieObject>
 			</validatieObjecten>
 		</validatieRegel>
 		<validatieRegel nummer="R.11" naam="Verplichte kenmerken LSoverdrachtspunt">
@@ -240,9 +248,9 @@
 				- Functie
 			</definitie>
 			<validatieObjecten>
+				<validatieObject><naam>HSstation</naam></validatieObject>
 				<validatieObject><naam>LSkast</naam></validatieObject>
 				<validatieObject><naam>MSstation</naam></validatieObject>
-				<validatieObject><naam>HSstation</naam></validatieObject>
 			</validatieObjecten>
 		</validatieRegel>
 		<validatieRegel nummer="R.15" naam="Verplichte kenmerken Mantelbuis">
@@ -264,18 +272,19 @@
 			<definitie>
 				Een Punt object (met kenmerk Geometry van het type gml:Point) mag niet zweven, maar moet verbonden zijn met de juiste kabel:
 				- MSmof en MSoverdrachtspunt moeten verbonden zijn met MSkabel
+				- Eaardmof, LSmof, LSoverdrachtspunt en OVLoverdrachtspunt moeten verbonden zijn met LSkabel
 				<!--
-				- LSmof, LSoverdrachtspunt en OVLoverdrachtspunt moeten verbonden zijn met LSkabel
 				- HSmof moet verbonden zijn met HSkabel
 				-->
 			</definitie>
 			<validatieObjecten> <!-- Deze regel geldt voor alle NLCS Objecten met een punt geometrie van Elec -->
-				<validatieObject><naam>MSmof</naam></validatieObject>
-				<validatieObject><naam>MSoverdrachtspunt</naam></validatieObject>
-				<!--
+				<validatieObject><naam>Eaardmof</naam></validatieObject>
 				<validatieObject><naam>LSmof</naam></validatieObject>
 				<validatieObject><naam>LSoverdrachtspunt</naam></validatieObject>
+				<validatieObject><naam>MSmof</naam></validatieObject>
+				<validatieObject><naam>MSoverdrachtspunt</naam></validatieObject>
 				<validatieObject><naam>OVLoverdrachtspunt</naam></validatieObject>
+				<!--
 				<validatieObject><naam>HSmof</naam></validatieObject>
 				-->
 			</validatieObjecten>
@@ -285,17 +294,19 @@
 			<soort>Topologie</soort>
 			<definitie>
 				Een kabel moet aan beide kanten (begin- en eindpunt) een geldig eindpunt hebben, per kabel zijn de volgende objecten geldig:
+				- Eaarddraad: MSstation, LSkast, Eaardmof, Eaardpen, LSmof, MSmof
 				- MSkabel: MSmof, MSoverdrachtspunt en MSstation
+				- LSkabel: LSmof, LSoverdrachtspunt, OVLoverdrachtspunt, MSstation, LSkast
 				NB: Deze controle geld niet voor kabels met de Bedrijfsstatus "VERLATEN" en wordt alleen gerund op begin- en eindpunten binnen het projectgebied
 				<!--
-				- LSkabel: LSmof, LSoverdrachtspunt, OVLoverdrachtspunt, MSstation, LSkast
 				- HSkabel: HSmof, HSstation en MSstation
 				-->
 			</definitie>
 			<validatieObjecten> <!-- Deze regel geldt voor alle Kabel Objecten -->
+				<validatieObject><naam>Eaarddraad</naam></validatieObject>
+				<validatieObject><naam>LSkabel</naam></validatieObject>
 				<validatieObject><naam>MSkabel</naam></validatieObject>
 				<!--
-				<validatieObject><naam>LSkabel</naam></validatieObject>
 				<validatieObject><naam>HSkabel</naam></validatieObject>
 				 -->
 			</validatieObjecten>
@@ -305,14 +316,14 @@
 			<soort>Netlogica</soort>
 			<definitie>
 				Kabels die d.m.v. moffen met elkaar zijn verbonden moeten van het zelfde netvlak zijn:
+					- LSKabel via LSmof met andere LSkabel
 					- MSKabel via MSmof met andere MSkabel
-					<!-- - LSKabel via LSmof met andere LSkabel-->
 					<!-- - HSKabel via HSmof met andere HSkabel-->
 			</definitie>
 			<validatieObjecten> <!-- Deze regel geldt voor alle Kabel Objecten -->
+				<validatieObject><naam>LSkabel</naam></validatieObject>
 				<validatieObject><naam>MSkabel</naam></validatieObject>
 				<!--
-				<validatieObject><naam>LSkabel</naam></validatieObject>
 				<validatieObject><naam>HSkabel</naam></validatieObject>
 				-->
 			</validatieObjecten>
@@ -328,9 +339,9 @@
 					- Spanningsniveau
 			</definitie>
 			<validatieObjecten> <!-- Deze regel geldt voor alle Kabel Objecten -->
+				<validatieObject><naam>LSkabel</naam></validatieObject>
 				<validatieObject><naam>MSkabel</naam></validatieObject>
 				<!--
-				<validatieObject><naam>LSkabel</naam></validatieObject>
 				<validatieObject><naam>HSkabel</naam></validatieObject>
 				-->
 			</validatieObjecten>
@@ -363,9 +374,9 @@
 				> 4 kabels: geen controle.
 			</definitie>
 			<validatieObjecten>
+				<validatieObject><naam>LSmof</naam></validatieObject>
 				<validatieObject><naam>MSmof</naam></validatieObject>
 				<!--
-				<validatieObject><naam>LSmof</naam></validatieObject>
 				<validatieObject><naam>HSmof</naam></validatieObject>
 				-->
 			</validatieObjecten>
@@ -374,17 +385,19 @@
 			<beschrijving>Het aantal kabels moet passen bij de Functie van de Mof.</beschrijving>
 			<soort>Inhoud waarde</soort>
 			<definitie>
-				Afhankelijk van de Functie van de Mof moet er een aantal kabels verbonden zijn met de mof:
+				Afhankelijk van de Functie moet er een aantal kabels verbonden zijn met de mof:
 				- EINDMOF, EINDDOP, LOODKOP, EIND GEAARD: 1 kabel
 				- VERBINDING, ZEGELWIJZIGING, MANTELREPARATIE: 2 kabels
 				- 3FASE 3x1FASE: 4 kabels
 				- AFTAK (op bestaande kabel): 2 kabels: 1 nieuwe en moet op een bestaande liggen evt met marge.
 				- AFTAK (op nieuwe kabel): 3 kabels.
+				N.B. Een Eaardmof heeft geen functie, deze dient verbonden te zijn met minstens 1 Eaarddraad.
 			</definitie>
 			<validatieObjecten>
+				<validatieObject><naam>Eaardmof</naam></validatieObject>
+				<validatieObject><naam>LSmof</naam></validatieObject>
 				<validatieObject><naam>MSmof</naam></validatieObject>
 				<!--
-				<validatieObject><naam>LSmof</naam></validatieObject>
 				<validatieObject><naam>HSmof</naam></validatieObject>
 				-->
 			</validatieObjecten>

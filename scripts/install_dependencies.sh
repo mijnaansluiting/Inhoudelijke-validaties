@@ -12,3 +12,5 @@ rm SaxonHE${SAXON_HE_MAJOR}-${SAXON_HE_MINOR}J.zip
 curl -sSLo schxslt2-${SCHXSLT2_VERSION}.zip https://codeberg.org/SchXslt/schxslt2/releases/download/v${SCHXSLT2_VERSION}/schxslt2-${SCHXSLT2_VERSION}.zip
 unzip -qop schxslt2-${SCHXSLT2_VERSION}.zip schxslt2-${SCHXSLT2_VERSION}/transpile.xsl > transpile.xsl
 rm schxslt2-${SCHXSLT2_VERSION}.zip
+
+curl -sSLo xerces-cli.jar https://github.com/krn-sytse/xerces-j/releases/latest/download/xerces-cli.jar
