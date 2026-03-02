@@ -15,11 +15,5 @@
             properties="rule-number severity">
             <value-of select="ma:get-translation-and-replace-placeholders('revisie-no-maaiveldhoogte-present', [string-join($revisie_tekeningtypes, ', ')])"/>
         </assert>
-
-        <assert id=""
-            properties="scope rule-number severity"
-            test="">
-            
-        </assert>
     </rule>
 </pattern>
