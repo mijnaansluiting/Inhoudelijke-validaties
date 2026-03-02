@@ -11,8 +11,7 @@
 
   <xsl:variable name="config_doc" select="document('../doc/NLCSValidatieRegels.xml')"/>
   <xsl:variable name="scope" select="$config_doc/nvr:NLCSValidatieregels/nvr:scopes/nvr:scope[@naam=$scope_name]"/>
-  <xsl:variable name="scope_rule_numbers" select="$scope/nvr:scopeValidatieRegels/nvr:scopeValidatieRegel/nvr:nummer ! substring-after(., 'R.') ! xs:integer(.)"/>
-  <xsl:variable name="scopeless_rule_numbers" select="$config_doc/nvr:NLCSValidatieregels/nvr:validatieRegels/nvr:validatieRegel[nvr:soort = 'Bestand']/@nummer ! substring-after(., 'R.') ! xs:integer(.)"/>
+  <xsl:variable name="expected" select="sort($scope/nvr:scopeValidatieRegels/nvr:scopeValidatieRegel/nvr:nummer ! substring-after(., 'R.') ! xs:integer(.))"/>
 
   <!-- Extract numbers from contexts -->
   <xsl:variable name="all_found">
@@ -25,7 +24,6 @@
     </xsl:for-each>
   </xsl:variable>
   
-  <xsl:variable name="expected" select="sort(distinct-values(($scope_rule_numbers, $scopeless_rule_numbers)))"/>
   <xsl:variable name="found" select="sort(distinct-values(tokenize($all_found)) ! xs:integer(.))"/>
   <xsl:variable name="missing" select="$expected[not(. = $found)]"/>
   <xsl:variable name="unexpected" select="$found[not(. = $expected)]"/>

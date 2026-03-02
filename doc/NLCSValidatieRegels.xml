@@ -604,6 +604,7 @@
 				<scopeValidatieRegel><nummer>R.27</nummer><niveau>Informerend</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.28</nummer><niveau>Informerend</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.30</nummer><niveau>Informerend</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.35</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.36</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 			</scopeValidatieRegels>
 		</scope>
@@ -629,6 +630,7 @@
 				<scopeValidatieRegel><nummer>R.27</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.28</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.30</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.35</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.36</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 			</scopeValidatieRegels>
 		</scope>		
@@ -737,6 +739,7 @@
 				<scopeValidatieRegel><nummer>R.6</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.7</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.34</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.35</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.40</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 			</scopeValidatieRegels>
 		</scope>
@@ -845,6 +848,7 @@
 				<scopeValidatieRegel><nummer>R.6</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.7</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.34</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.35</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.40</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 			</scopeValidatieRegels>
 		</scope>
