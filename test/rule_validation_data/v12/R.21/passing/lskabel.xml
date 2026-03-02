@@ -17,9 +17,9 @@
                     <gml:LinearRing>
                         <gml:posList>
                               0   0 0
-                            480   0 0
-                            480 240 0
-                              0 240 0
+                            580   0 0
+                            580 340 0
+                              0 340 0
                               0   0 0
                         </gml:posList>
                     </gml:LinearRing>
@@ -61,11 +61,28 @@
             </gml:LineString>
         </Geometry>
     </LSkabel>
+    
+    <LSkabel>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
+        <ID>D</ID>
+        <Geometry>
+            <gml:LineString
+                srsDimension="3"
+                srsName="EPSG:7415">
+                <gml:posList>
+                    260 220 0
+                    380 260 0
+                    460 260 0
+                </gml:posList>
+            </gml:LineString>
+        </Geometry>
+    </LSkabel>
 
     <LSoverdrachtspunt>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <ID>D</ID>
+        <ID>E</ID>
         <Geometry>
             <gml:Point
                 srsDimension="3"
@@ -80,7 +97,7 @@
     <LSmof>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <ID>E</ID>
+        <ID>F</ID>
         <Geometry>
             <gml:Point
                 srsDimension="3"
@@ -95,7 +112,7 @@
     <OVLoverdrachtspunt>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <ID>F</ID>
+        <ID>G</ID>
         <Geometry>
             <gml:Point
                 srsDimension="3"
@@ -106,5 +123,51 @@
             </gml:Point>
         </Geometry>
     </OVLoverdrachtspunt>
+    
+    <MSstation>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
+        <ID>H</ID>
+        <Geometry>
+            <gml:Polygon
+                srsDimension="3"
+                srsName="EPSG:7415">
+                <gml:exterior>
+                    <gml:LinearRing>
+                        <gml:posList>
+                            260 220 0
+                            240 220 0
+                            240 240 0
+                            260 240 0
+                            260 220 0
+                        </gml:posList>
+                    </gml:LinearRing>
+                </gml:exterior>
+            </gml:Polygon>
+        </Geometry>
+    </MSstation>
+    
+    <LSkast>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
+        <ID>I</ID>
+        <Geometry>
+            <gml:Polygon
+                srsDimension="3"
+                srsName="EPSG:7415">
+                <gml:exterior>
+                    <gml:LinearRing>
+                        <gml:posList>
+                            460 260 0
+                            480 260 0
+                            480 280 0
+                            460 280 0
+                            460 260 0
+                        </gml:posList>
+                    </gml:LinearRing>
+                </gml:exterior>
+            </gml:Polygon>
+        </Geometry>
+    </LSkast>
 
 </NLCSnetbeheer>

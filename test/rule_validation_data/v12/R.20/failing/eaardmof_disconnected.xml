@@ -12,7 +12,7 @@
         <Geometry></Geometry>
     </AprojectReferentie>
 
-    <MSkabel>
+    <LSkabel>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
         <ID>B</ID>
@@ -27,7 +27,7 @@
                 </gml:posList>
             </gml:LineString>
         </Geometry>
-    </MSkabel>
+    </LSkabel>
 
     <!-- Point totally disconnected from line -->
     <Eaardmof>
