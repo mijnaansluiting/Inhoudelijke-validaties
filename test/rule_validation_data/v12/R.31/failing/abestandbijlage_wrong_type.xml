@@ -21,7 +21,7 @@
     
     <AbestandBijlage>
         <SoortBestand>Zinkertekening</SoortBestand>
-        <Status>NIEUW</Status>
+        <Status>BESTAAND</Status>
         <ID>C</ID>
         <AssetObjectID>B</AssetObjectID>
     </AbestandBijlage>

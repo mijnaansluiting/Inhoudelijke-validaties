@@ -7,7 +7,7 @@
         <let name="bestand_bijlage"
              value="//nlcs:AbestandBijlage[nlcs:AssetObjectID = $id]"/>
         
-        <let name="bestandbijlage_type"
+        <let name="bestand_bijlage_type"
              value="$bestand_bijlage/nlcs:SoortBestand"/>
           
           <let name="bestandbijlage_present"
@@ -20,9 +20,9 @@
           </assert>
           
           <assert id="check-correct-bestandsoort"
-               test="not($bestandbijlage_present) or $bestandbijlage_type = 'Aardingsrapport'"
+               test="not($bestandbijlage_present) or $bestand_bijlage_type = 'Aardingsrapport'"
                properties="scope rule-number severity object-type object-id">
-               <value-of select="ma:get-translation-and-replace-placeholders('soort-bestand-not-correct', ['Aardingsrapport', $bestandbijlage_type])"/>
+               <value-of select="ma:get-translation-and-replace-placeholders('soort-bestand-not-correct', ['Aardingsrapport', $bestand_bijlage_type])"/>
           </assert>
     </rule>
 </pattern>
