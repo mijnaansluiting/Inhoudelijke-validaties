@@ -135,6 +135,10 @@
     <phase id="R.34">
         <active pattern="R.34"/>
     </phase>
+
+    <phase id="R.35">
+        <active pattern="R.35"/>
+    </phase>
     
     <phase id="R.40">
         <active pattern="R.40"/>
@@ -177,9 +181,11 @@
     <include href="../patterns/v12/R.29.sch"/>
     <include href="../patterns/v12/R.30.sch"/>
     <include href="../patterns/v12/R.34.sch"/>
+    <include href="../patterns/v12/R.35.sch"/>
     <include href="../patterns/v12/R.40.sch"/>
 
     <!-- import abstract patterns -->
+    <include href="../abstract_patterns/v12/bestand/aanwezigheid_maaiveldhoogte.sch"/>
     <include href="../abstract_patterns/v12/bestand/bestand_bevat_nlcs_objecten.sch"/>
     <include href="../abstract_patterns/v12/bestand/combinatie_nlcs_status_en_tekeningsoort.sch"/>
     <include href="../abstract_patterns/v12/geometrie/geometrie_binnen_projectvlak.sch"/>
