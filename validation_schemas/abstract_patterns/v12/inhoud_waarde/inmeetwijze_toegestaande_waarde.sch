@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pattern xmlns ="http://purl.oclc.org/dsdl/schematron" id="inmeetwijze-toegestaande-waarde" abstract="true">
-    <rule context="//nlcs:LSkabel">
+    <rule context="//nlcs:LSkabel | //nlcs:MSkabel | //nlcs:Amantelbuis | //nlcs:Eaarddraad">
         <let name="inmeetwijze"
             value="nlcs:Inmeetwijze"/>
 
@@ -11,7 +11,7 @@
             value="ma:allowed-inmeetwijzen()"/>
 
         <let name="aansluitnet_meetlint_exception"
-            value="$subnettype = 'AANSLUITNET' and $inmeetwijze = 'Meetlint'"/>
+            value="$object_type = 'LSkabel' and $subnettype = 'AANSLUITNET' and $inmeetwijze = 'Meetlint'"/>
 
         <assert id="inmeetwijze-not-allowed"
             properties="scope rule-number severity object-type object-id"
