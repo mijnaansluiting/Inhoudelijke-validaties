@@ -22,8 +22,8 @@
         
         <let name="point_connected"
             value="
-                some $mskabel_geometry in //nlcs:LSkabel/nlcs:Geometry 
-                satisfies ma:point-touches-line($point, ma:parse-line($mskabel_geometry))"/>
+                some $lskabel_geometry in //nlcs:LSkabel/nlcs:Geometry 
+                satisfies ma:point-touches-line($point, ma:parse-line($lskabel_geometry))"/>
         
         <assert id="point-connected-to-kabel"
             test="$point_connected"

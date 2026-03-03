@@ -46,7 +46,7 @@
     </Eaardmof>
 
     <!-- Point at some point along line -->
-    <LSmof>
+    <Eaardmof>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
         <ID>D</ID>
@@ -59,10 +59,10 @@
                 </gml:pos>
             </gml:Point>
         </Geometry>
-    </LSmof>
+    </Eaardmof>
 
     <!-- Point on line segment -->
-    <LSmof>
+    <Eaardmof>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
         <ID>E</ID>
@@ -75,6 +75,6 @@
                 </gml:pos>
             </gml:Point>
         </Geometry>
-    </LSmof>
+    </Eaardmof>
 
 </NLCSnetbeheer>

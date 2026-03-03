@@ -13,9 +13,10 @@ scoped_objects_reports/
 
 # Dependencies from other repos
 saxon-he.jar
-lib/
 schxslt-cli.jar
+xerces-cli.jar
 transpile.xsl
 *.zip
-/bin/
 .classpath
+lib/
+/bin/

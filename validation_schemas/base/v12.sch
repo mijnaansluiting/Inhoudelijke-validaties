@@ -136,6 +136,10 @@
         <active pattern="R.31"/>
     </phase>
 
+    <phase id="R.35">
+        <active pattern="R.35"/>
+    </phase>
+
     <!-- import functions -->
     <xsl:include href="../xsl_functions/geometry_functions.xsl"/>
     <xsl:include href="../xsl_functions/config_functions.xsl"/>
@@ -173,8 +177,10 @@
     <include href="../patterns/v12/R.29.sch"/>
     <include href="../patterns/v12/R.30.sch"/>
     <include href="../patterns/v12/R.31.sch"/>
+    <include href="../patterns/v12/R.35.sch"/>
 
     <!-- import abstract patterns -->
+    <include href="../abstract_patterns/v12/bestand/aanwezigheid_maaiveldhoogte.sch"/>
     <include href="../abstract_patterns/v12/bestand/bestand_bevat_nlcs_objecten.sch"/>
     <include href="../abstract_patterns/v12/bestand/combinatie_nlcs_status_en_tekeningsoort.sch"/>
     <include href="../abstract_patterns/v12/geometrie/geometrie_binnen_projectvlak.sch"/>
