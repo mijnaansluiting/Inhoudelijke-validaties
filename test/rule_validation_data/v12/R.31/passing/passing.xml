@@ -16,15 +16,7 @@
         <Status>NIEUW</Status>
         <Bedrijfstoestand>IN BEDRIJF</Bedrijfstoestand>
         <ID>B</ID>
-        <Geometry>
-            <gml:Point
-                srsDimension="3"
-                srsName="EPSG:7415">
-                <gml:pos>
-                    40 40 0
-                </gml:pos>
-            </gml:Point>
-        </Geometry>
+        <Geometry></Geometry>
     </Eaardpen>
     
     <AbestandBijlage>

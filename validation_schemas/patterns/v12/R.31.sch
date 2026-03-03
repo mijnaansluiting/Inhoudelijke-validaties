@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
     id="R.31"
-    is-a="eaardpen-check-aanwezigheid-abestandbijlage">
+    is-a="aanwezigheid-bestand-bijlage-aardpen">
     <param name="rule_number" value="31"/>
     <param name="scope" value="ma:scope-name(.)"/>
     <param name="severity" value="ma:rule-severity-within-scope(31, .)"/>

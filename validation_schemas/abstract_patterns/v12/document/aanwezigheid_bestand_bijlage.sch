@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pattern xmlns ="http://purl.oclc.org/dsdl/schematron" id="eaardpen-check-aanwezigheid-abestandbijlage" abstract="true">
-    <rule context="//nlcs:Eaardpen[nlcs:Status = 'NIEUW' and nlcs:Bedrijfstoestand = 'IN BEDRIJF']">
+<pattern xmlns ="http://purl.oclc.org/dsdl/schematron" id="aanwezigheid-bestand-bijlage-aardpen" abstract="true">
+    <rule context="//nlcs:Eaardpen">
         <let name="id"
              value="nlcs:ID"/>
         
-        <let name="bestandbijlage"
+        <let name="bestand_bijlage"
              value="//nlcs:AbestandBijlage[nlcs:AssetObjectID = $id]"/>
         
         <let name="bestandbijlage_type"
