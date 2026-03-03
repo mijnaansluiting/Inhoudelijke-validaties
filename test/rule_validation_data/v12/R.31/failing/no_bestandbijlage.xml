@@ -13,8 +13,8 @@
     </AprojectReferentie>
     
     <Eaardpen>
-        <Status>NIEUW</Status>
-        <Bedrijfstoestand>IN BEDRIJF</Bedrijfstoestand>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
         <ID>B</ID>
         <Geometry></Geometry>
     </Eaardpen>
