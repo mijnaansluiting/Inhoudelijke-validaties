@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pattern xmlns ="http://purl.oclc.org/dsdl/schematron" id="aantal-kabels-en-mof-functie" abstract="true">
+<pattern xmlns ="http://purl.oclc.org/dsdl/schematron" id="aanwezigheid-bestand-bijlage-akunstwerk" abstract="true">
     <rule context="//nlcs:Akunstwerk">
         <let name="soort_kunstwerk"
              value="nlcs:SoortKunstwerk"/>
@@ -7,11 +7,11 @@
         <let name="id"
             value="nlcs:ID"/>
         
-        <let name="abestandbijlage"
-             value="//nlcs:Abestandbijlage[nlcs:AssetObjectID = $id]"/>
+        <let name="bestand_bijlage"
+             value="//nlcs:AbestandBijlage[nlcs:AssetObjectID = $id]"/>
         
         <let name="soort_bestand"
-             value="$abestandbijlage/nlcs:SoortBestand"/>
+             value="$bestand_bijlage/nlcs:SoortBestand"/>
         
         <let name="should_be_tested"
              value="some $soortkunstwerk_to_test in ma:get-soortkunstwerken-with-required-abestandsbijlage() satisfies
