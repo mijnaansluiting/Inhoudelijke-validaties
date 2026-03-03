@@ -8,10 +8,10 @@
              value="//nlcs:AbestandBijlage[nlcs:AssetObjectID = $id]"/>
         
         <let name="bestandbijlage_type"
-             value="$bestandbijlage/nlcs:SoortBestand"/>
+             value="$bestand_bijlage/nlcs:SoortBestand"/>
           
           <let name="bestandbijlage_present"
-             value="ma:element-exists-and-not-empty($bestandbijlage)"/>
+             value="ma:element-exists-and-not-empty($bestand_bijlage)"/>
           
           <assert id="check-bestandbijlage-present"
                   test="$bestandbijlage_present"
