@@ -18,10 +18,4 @@
         <ID>B</ID>
         <Geometry></Geometry>
     </LSkabel>
-    <MSkabel>
-        <Status>REVISIE</Status>
-        <Bedrijfstoestand>VERLATEN</Bedrijfstoestand>
-        <ID>C</ID>
-        <Geometry></Geometry>
-    </MSkabel>
 </NLCSnetbeheer>
