@@ -253,4 +253,13 @@
       A NLCS++ file must contain a ground level if Tekeningtype is one of: {1} 
     </message-text>
   </message>
+  
+  <message id="inmeetwijze-not-allowed">
+    <message-text xml:lang="nl">
+      Inmeetwijze {1} is hier niet toegestaan, moet een van de volgende zijn: {2} 
+    </message-text>
+    <message-text xml:lang="en">
+      Measurement method {1} is not allowed here, must be one of: {2}
+    </message-text>
+  </message>
 </messages>
