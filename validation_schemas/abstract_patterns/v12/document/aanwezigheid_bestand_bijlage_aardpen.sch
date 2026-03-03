@@ -10,17 +10,17 @@
         <let name="bestand_bijlage_type"
              value="$bestand_bijlage/nlcs:SoortBestand"/>
           
-          <let name="bestandbijlage_present"
+          <let name="bestand_bijlage_present"
              value="ma:element-exists-and-not-empty($bestand_bijlage)"/>
           
-          <assert id="check-bestandbijlage-present"
-                  test="$bestandbijlage_present"
+          <assert id="check-bestand-bijlage-present"
+                  test="$bestand_bijlage_present"
                   properties="scope rule-number severity object-type object-id">
                <value-of select="ma:get-translation-and-replace-placeholders('object-not-present', ['Abestandbijlage'])"/>
           </assert>
           
           <assert id="check-correct-bestandsoort"
-               test="not($bestandbijlage_present) or $bestand_bijlage_type = 'Aardingsrapport'"
+               test="not($bestand_bijlage_present) or $bestand_bijlage_type = 'Aardingsrapport'"
                properties="scope rule-number severity object-type object-id">
                <value-of select="ma:get-translation-and-replace-placeholders('soort-bestand-not-correct', ['Aardingsrapport', $bestand_bijlage_type])"/>
           </assert>

@@ -209,6 +209,6 @@
     <include href="../abstract_patterns/v12/consistentie/mantelbuis_inhoud_aanwezig.sch"/>
     <include href="../abstract_patterns/v12/consistentie/verplaatsing_goed_vastgelegd.sch"/>
     <include href="../abstract_patterns/v12/consistentie/mantelbuis_inhoud_referenties.sch"/>
-    <include href="../abstract_patterns/v12/document/aanwezigheid_bestand_bijlage.sch"/>
+    <include href="../abstract_patterns/v12/document/aanwezigheid_bestand_bijlage_aardpen.sch"/>
 
 </schema>
