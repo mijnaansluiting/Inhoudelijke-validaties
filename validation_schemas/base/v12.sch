@@ -135,6 +135,10 @@
     <phase id="R.34">
         <active pattern="R.34"/>
     </phase>
+    
+    <phase id="R.40">
+        <active pattern="R.40"/>
+    </phase>
 
     <!-- import functions -->
     <xsl:include href="../xsl_functions/geometry_functions.xsl"/>
@@ -173,6 +177,7 @@
     <include href="../patterns/v12/R.29.sch"/>
     <include href="../patterns/v12/R.30.sch"/>
     <include href="../patterns/v12/R.34.sch"/>
+    <include href="../patterns/v12/R.40.sch"/>
 
     <!-- import abstract patterns -->
     <include href="../abstract_patterns/v12/bestand/bestand_bevat_nlcs_objecten.sch"/>
@@ -204,4 +209,5 @@
     <include href="../abstract_patterns/v12/consistentie/verplaatsing_goed_vastgelegd.sch"/>
     <include href="../abstract_patterns/v12/consistentie/mantelbuis_inhoud_referenties.sch"/>
     <include href="../abstract_patterns/v12/verplichte_waarde/reden_niet_verwijdering_ingevuld.sch"/>
+    <include href="../abstract_patterns/v12/bestand/volgnummer_verplicht.sch"/>
 </schema>
