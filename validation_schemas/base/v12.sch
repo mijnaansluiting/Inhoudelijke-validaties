@@ -140,6 +140,10 @@
         <active pattern="R.37"/>
     </phase>
 
+    <phase id="R.38">
+        <active pattern="R.38"/>
+    </phase>
+
     <!-- import functions -->
     <xsl:include href="../xsl_functions/geometry_functions.xsl"/>
     <xsl:include href="../xsl_functions/config_functions.xsl"/>
@@ -178,6 +182,7 @@
     <include href="../patterns/v12/R.30.sch"/>
     <include href="../patterns/v12/R.35.sch"/>
     <include href="../patterns/v12/R.37.sch"/>
+    <include href="../patterns/v12/R.38.sch"/>
 
     <!-- import abstract patterns -->
     <include href="../abstract_patterns/v12/bestand/aanwezigheid_maaiveldhoogte.sch"/>
@@ -204,6 +209,7 @@
     <include href="../abstract_patterns/v12/netlogica/verbonden_kabels_juiste_kenmerken.sch"/>
     <include href="../abstract_patterns/v12/inhoud_waarde/fase_ms_kabel.sch"/>
     <include href="../abstract_patterns/v12/inhoud_waarde/inmeetwijze_toegestaande_waarde.sch"/>
+    <include href="../abstract_patterns/v12/inhoud_waarde/inmeetwijze_aansluitnet_toegestaande_waarde.sch"/>
     <include href="../abstract_patterns/v12/inhoud_waarde/verbonden_kabels_juiste_fase.sch"/>
     <include href="../abstract_patterns/v12/inhoud_waarde/aantal_kabels_en_mof_functie.sch"/>
     <include href="../abstract_patterns/v12/inhoud_waarde/mantelbuis_past_in_mantelbuis.sch"/>
