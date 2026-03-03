@@ -8,7 +8,7 @@
             value="nlcs:Subnettype"/>
 
         <let name="allowed_inmeetwijzen"
-            value="('GPS', 'Tachymeter')"/>
+            value="ma:allowed-inmeetwijzen()"/>
 
         <assert id="inmeetwijze-not-allowed"
             properties="scope rule-number severity object-type object-id"
