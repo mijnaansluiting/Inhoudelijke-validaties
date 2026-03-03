@@ -11,6 +11,10 @@
     <param name="functie" as="xs:string"/>
     <sequence select="name(($sys_config_file/config/v12/MofFuncties/*[Functie = $functie]))"/>
   </function>
+  
+  <function name="ma:allowed-inmeetwijzen" as="xs:string*">
+    <sequence select="$sys_config_file/config/v12/ToegestaandeInmeetwijzen/Inmeetwijze"/>  
+  </function>
 
   <function name="ma:object-requires-gis-id" as="xs:boolean">
     <param name="nlcs_object"/>

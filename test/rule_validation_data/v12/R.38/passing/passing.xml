@@ -32,57 +32,15 @@
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
         <Inmeetwijze>Meetlint</Inmeetwijze>
-        <Subnettype>AANSLUITNET</Subnettype>
         <ID>D</ID>
         <Geometry></Geometry>
     </LSkabel>
-
-    <MSkabel>
+    
+    <LSkabel>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <Inmeetwijze>GPS</Inmeetwijze>
+        <Inmeetwijze>Laser</Inmeetwijze>
         <ID>E</ID>
         <Geometry></Geometry>
-    </MSkabel>
-    
-    <MSkabel>
-        <Status>BESTAAND</Status>
-        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <Inmeetwijze>Tachymeter</Inmeetwijze>
-        <ID>F</ID>
-        <Geometry></Geometry>
-    </MSkabel>
-
-    <Amantelbuis>
-        <Status>BESTAAND</Status>
-        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <Inmeetwijze>GPS</Inmeetwijze>
-        <ID>G</ID>
-        <Geometry></Geometry>
-    </Amantelbuis>
-    
-    <Amantelbuis>
-        <Status>BESTAAND</Status>
-        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <Inmeetwijze>Tachymeter</Inmeetwijze>
-        <ID>H</ID>
-        <Geometry></Geometry>
-    </Amantelbuis>
-
-    <Eaarddraad>
-        <Status>BESTAAND</Status>
-        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <Inmeetwijze>GPS</Inmeetwijze>
-        <ID>I</ID>
-        <Geometry></Geometry>
-    </Eaarddraad>
-    
-    <Eaarddraad>
-        <Status>BESTAAND</Status>
-        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <Inmeetwijze>Tachymeter</Inmeetwijze>
-        <ID>J</ID>
-        <Geometry></Geometry>
-    </Eaarddraad>
-    
+    </LSkabel>
 </NLCSnetbeheer>
