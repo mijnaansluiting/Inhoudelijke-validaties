@@ -139,6 +139,14 @@
     <phase id="R.35">
         <active pattern="R.35"/>
     </phase>
+
+    <phase id="R.37">
+        <active pattern="R.37"/>
+    </phase>
+
+    <phase id="R.38">
+        <active pattern="R.38"/>
+    </phase>
     
     <phase id="R.40">
         <active pattern="R.40"/>
@@ -182,6 +190,8 @@
     <include href="../patterns/v12/R.30.sch"/>
     <include href="../patterns/v12/R.34.sch"/>
     <include href="../patterns/v12/R.35.sch"/>
+    <include href="../patterns/v12/R.37.sch"/>
+    <include href="../patterns/v12/R.38.sch"/>
     <include href="../patterns/v12/R.40.sch"/>
 
     <!-- import abstract patterns -->
@@ -208,6 +218,8 @@
     <include href="../abstract_patterns/v12/netlogica/kabels_zelfde_netvlak.sch"/>
     <include href="../abstract_patterns/v12/netlogica/verbonden_kabels_juiste_kenmerken.sch"/>
     <include href="../abstract_patterns/v12/inhoud_waarde/fase_ms_kabel.sch"/>
+    <include href="../abstract_patterns/v12/inhoud_waarde/inmeetwijze_toegestaande_waarde.sch"/>
+    <include href="../abstract_patterns/v12/inhoud_waarde/inmeetwijze_aansluitnet_toegestaande_waarde.sch"/>
     <include href="../abstract_patterns/v12/inhoud_waarde/verbonden_kabels_juiste_fase.sch"/>
     <include href="../abstract_patterns/v12/inhoud_waarde/aantal_kabels_en_mof_functie.sch"/>
     <include href="../abstract_patterns/v12/inhoud_waarde/mantelbuis_past_in_mantelbuis.sch"/>
