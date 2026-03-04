@@ -16,8 +16,8 @@
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
         <FaseAanduiding>L3</FaseAanduiding>
-        <Verbindingnummer>1234</Verbindingnummer>
         <ID>B</ID>
+        <Verbindingnummer>1234</Verbindingnummer>
         <Geometry>
             <gml:LineString
                 srsDimension="3"
