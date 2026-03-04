@@ -11,7 +11,7 @@
                     )]"/>
         
         <let name="cables_with_different_verbindingnummer"
-            value="every $cable in $connected_lskabels satisfies $cable/nlcs:Verbindingnummer ne $lsmof/nlcs:Verbindingnummer"/>
+            value="$connected_lskabels[nlcs:Verbindingnummer ne $lsmof/nlcs:Verbindingnummer]"/>
 
         <assert id="kabels-have-same-verbindingnummer"
                 properties="scope rule-number severity object-type object-id"
@@ -25,13 +25,13 @@
             value="."/>
 
         <let name="connected_mskabels"
-            value="//nlcs:LSkabel[ma:point-touches-line(
+            value="//nlcs:MSkabel[ma:point-touches-line(
                         ma:parse-point($msmof/nlcs:Geometry),
                         ma:parse-line(nlcs:Geometry)
                     )]"/>
         
         <let name="cables_with_different_verbindingnummer"
-            value="every $cable in $connected_mskabels satisfies $cable/nlcs:Verbindingnummer ne $msmof/nlcs:Verbindingnummer"/>
+            value="$connected_mskabels[nlcs:Verbindingnummer ne $msmof/nlcs:Verbindingnummer]"/>
 
         <assert id="kabels-have-same-verbindingnummer"
                 properties="scope rule-number severity object-type object-id"
