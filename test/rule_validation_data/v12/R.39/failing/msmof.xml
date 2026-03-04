@@ -15,9 +15,9 @@
     <MSkabel>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
+        <Verbindingnummer>1234</Verbindingnummer>
         <FaseAanduiding>L3</FaseAanduiding>
         <ID>B</ID>
-        <Verbindingnummer>1234</Verbindingnummer>
         <Geometry>
             <gml:LineString
                 srsDimension="3"
@@ -28,13 +28,14 @@
                 </gml:posList>
             </gml:LineString>
         </Geometry>
+        
     </MSkabel>
     
     <MSmof>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <ID>C</ID>
         <Verbindingnummer>2234</Verbindingnummer>
+        <ID>C</ID>
         <Geometry>
             <gml:Point
                 srsDimension="3"
