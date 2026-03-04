@@ -19,6 +19,10 @@
                 <Functie>3FASE 3x1FASE</Functie>
             </Faseovergang>
         </MofFuncties>
+        <ToegestaandeInmeetwijzen>
+            <Inmeetwijze>GPS</Inmeetwijze>
+            <Inmeetwijze>Tachymeter</Inmeetwijze>
+        </ToegestaandeInmeetwijzen>
         <GisIdAssetsIdExceptions>
             <NoGisIdRequired>AmantelbuisInhoud</NoGisIdRequired>
             <!-- <NoAssetIdRequired>SomeObjectName</NoAssetIdRequired> -->

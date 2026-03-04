@@ -11,32 +11,27 @@
 
   <xsl:variable name="config_doc" select="document('../doc/NLCSValidatieRegels.xml')"/>
   <xsl:variable name="scope" select="$config_doc/nvr:NLCSValidatieregels/nvr:scopes/nvr:scope[@naam=$scope_name]"/>
-  <xsl:variable name="rule_numbers" select="$scope/nvr:scopeValidatieRegels/nvr:scopeValidatieRegel/nvr:nummer"/>
+  <xsl:variable name="expected" select="sort($scope/nvr:scopeValidatieRegels/nvr:scopeValidatieRegel/nvr:nummer ! substring-after(., 'R.') ! xs:integer(.))"/>
 
   <!-- Extract numbers from contexts -->
-  <xsl:variable name="found">
+  <xsl:variable name="all_found">
     <xsl:for-each select="//svrl:fired-rule/@context">
       <xsl:analyze-string select="." regex="rule-within-scope-for-object\((\d+),">
         <xsl:matching-substring>
-          <number><xsl:value-of select="regex-group(1)"/></number>
+          <xsl:sequence select="regex-group(1)"/>
         </xsl:matching-substring>
       </xsl:analyze-string>
     </xsl:for-each>
   </xsl:variable>
+  
+  <xsl:variable name="found" select="sort(distinct-values(tokenize($all_found)) ! xs:integer(.))"/>
+  <xsl:variable name="missing" select="$expected[not(. = $found)]"/>
+  <xsl:variable name="unexpected" select="$found[not(. = $expected)]"/>
 
-  <xsl:template match="/">expected=<xsl:for-each select="$rule_numbers">
-      <xsl:sequence select="substring-after(., 'R.')"/>
-    </xsl:for-each>
-found=<xsl:value-of select="distinct-values($found/number)"/>
-missing=<xsl:value-of select="
-      for $n in distinct-values($rule_numbers ! substring-after(., 'R.'))
-        return
-          if (not($found/number = $n)) then $n else ()"/>
-unexpected=<xsl:value-of select="string-join(
-        for $n in distinct-values($found/number)
-        return
-          if (not($rule_numbers ! substring-after(., 'R.') = $n)) then $n else (),
-          ', ')"/>
+  <xsl:template match="/">expected=<xsl:value-of select="$expected"/>
+found=<xsl:value-of select="$found"/>
+missing=<xsl:value-of select="$missing"/>
+unexpected=<xsl:value-of select="$unexpected"/>
   </xsl:template>
 
 </xsl:stylesheet>
