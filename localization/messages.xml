@@ -244,4 +244,12 @@
       Movement was registered incorrectly. There should be another {1} with Status BESTAAND and both objects must share the same GisId.
     </message-text>
   </message>
+  <message id="connected-cables-have-different-verbindingnummer">
+    <message-text xml:lang="nl">
+      De volgende kabels hebben niet hetzelfde Verbindingnummer als de mof waar ze mee verbonden zijn: {1}
+    </message-text>
+    <message-text xml:lang="en">
+      The following cables do not have the same Verbindingnummer as the joint they are connected to: {1}
+    </message-text>
+  </message>
 </messages>
