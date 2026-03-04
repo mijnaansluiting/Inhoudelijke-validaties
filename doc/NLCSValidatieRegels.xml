@@ -455,9 +455,121 @@
 				<validatieObject><naam>AmantelbuisInhoud</naam></validatieObject>
 			</validatieObjecten>
 		</validatieRegel>
+		<validatieRegel nummer="R.31" naam="Aanwezigheid bestand bijlage aardpen">
+			<beschrijving>Aan een aardpen moet een bestand bijlage met een aardingsrapport gekoppeld zijn.</beschrijving>
+			<soort>Document</soort>
+			<definitie>
+				Eaardpen moet een gerelateerd AbestandBijlage object met SoortBestand "Aardingsrapport" hebben.
+			</definitie>
+			<toelichting>De objecten zijn gerelateerd via Eaardpen.ID en AbestandBijlage.AssetObjectID.</toelichting>
+			<validatieObjecten>
+				<validatieObject><naam>Eaardpen</naam></validatieObject>
+			</validatieObjecten>
+		</validatieRegel>
+		<validatieRegel nummer="R.32" naam="Aanwezigheid bestand bijlage kunstwerk">
+			<beschrijving>Aan een zinker kunstwerk moet een bestand bijlage met een zinkertekening gekoppeld zijn.</beschrijving>
+			<soort>Document</soort>
+			<definitie>
+				Akunstwerk met SoortKunstwerk "ZINKER", "ZINKER_BOOG", "ZINKER_SLEEP", "ZINKER_OMGEKEERD" of "ZINKER_SPUIT" moet een gerelateerd AbestandBijlage object met SoortBestand "Zinkertekening" hebben.
+			</definitie>
+			<toelichting>De objecten zijn gerelateerd via Akunstwerk.ID en AbestandBijlage.AssetObjectID.</toelichting>
+			<validatieObjecten>
+				<validatieObject><naam>Akunstwerk</naam></validatieObject>
+			</validatieObjecten>
+		</validatieRegel>
+		<validatieRegel nummer="R.33" naam="Aanwezigheid bestand bijlage aanlegtechniek">
+			<beschrijving>Aan een gestuurde aanlegtechniek moet een bestand bijlage met een gestuurde boring gekoppeld zijn.</beschrijving>
+			<soort>Document</soort>
+			<definitie>
+				Aaanlegtechniek met SoortAanlegTechniek "GESTUURDE TECHNIEK" moet een gerelateerd AbestandBijlage object met SoortBestand "Gestuurde boring" hebben.
+			</definitie>
+			<toelichting>De objecten zijn gerelateerd via AaanlegTechniek.ID en AbestandBijlage.AssetObjectID.</toelichting>
+			<validatieObjecten>
+				<validatieObject><naam>Aaanlegtechniek</naam></validatieObject>
+			</validatieObjecten>
+		</validatieRegel>
+		<validatieRegel nummer="R.34" naam="Reden niet-verwijdering ingevuld">
+			<beschrijving>Wanneer een kabel verlaten wordt moet een reden voor niet-verwijdering worden meegegeven.</beschrijving>
+			<soort>Verplichte waarde</soort>
+			<definitie>
+				Lineaire NLCS objecten met Status "REVISIE" en Bedrijfstoestand "VERLATEN" moeten een waarde hebben voor het kenmerk RedenNietVerwijdering.
+			</definitie>
+			<validatieObjecten>
+				<validatieObject><naam>LSkabel</naam></validatieObject>
+				<validatieObject><naam>MSkabel</naam></validatieObject>
+			</validatieObjecten>
+		</validatieRegel>
+		<validatieRegel nummer="R.35" naam="Aanwezigheid maaiveldhoogte">
+			<beschrijving>Een revisie tekening moet minimaal 1 maaiveldhoogte object bevatten.</beschrijving>
+			<soort>Bestand</soort>
+			<definitie>
+				Het NLCS++ bestand met het TekeningType "DEELREVISIE" en "EINDREVISIE" dient ten minste 1 Amaaiveldhoogte object te bevatten.
+			</definitie>
+			<validatieObjecten>
+				<validatieObject><naam>Document</naam></validatieObject>
+			</validatieObjecten>
+		</validatieRegel>
+		<validatieRegel nummer="R.36" naam="Afstand mantelbuis tot inhoud">
+			<beschrijving>De inhoud van een mantelbuis mag maximaal 1 meter van de mantelbuis afliggen.</beschrijving>
+			<soort>Geometrie</soort>
+			<definitie>
+				Gerelateerd Assets van een Amantelbuis dienen maximaal 1m van de Amantelbuis vandaan te liggen.
+				Deze afstand dient configurabel te zijn.
+			</definitie>
+			<validatieObjecten>
+				<validatieObject><naam>Amantelbuis</naam></validatieObject>
+			</validatieObjecten>
+		</validatieRegel>
+		<validatieRegel nummer="R.37" naam="Inmeetwijze toegestaande waarde">
+			<beschrijving>Inmeetwijze moet tachymeter of GPS zijn</beschrijving>
+			<soort>Inhoud waarde</soort>
+			<definitie>
+				Waarde voor kenmerk Inmeetwijze moet "GPS" of "Tachymeter" zijn. 
+				
+				*Indien het een LSkabel betreft met Subnettype = AANSLUITNET is Inmeetwijze "Meetlint" ook toegestaan. 
+				Dit scenario wordt apart gevalideerd om onderscheid te kunnen maken in het niveau (ernst) van de regel. Zie R.38 voor meer details.
+			</definitie>
+			<validatieObjecten>
+				<validatieObject><naam>LSkabel</naam></validatieObject>
+				<validatieObject><naam>MSkabel</naam></validatieObject>
+				<validatieObject><naam>Amantelbuis</naam></validatieObject>
+				<validatieObject><naam>Eaarddraad</naam></validatieObject>
+			</validatieObjecten>
+		</validatieRegel>
+		<validatieRegel nummer="R.38" naam="Inmeetwijze aansluitnet toegestaande waarde">
+			<beschrijving>Inmeetwijze voor LS kabel aansluitnet mag niet meetlint zijn.</beschrijving>
+			<soort>Inhoud waarde</soort>
+			<definitie>
+				Voor LSkabel met waarde "AANSLUITNET" voor kenmerk Subnettype is de waarde "Meetlint" voor kenmerk Inmeetwijze niet toegestaan.
+			</definitie>
+			<validatieObjecten>
+				<validatieObject><naam>LSkabel</naam></validatieObject>
+			</validatieObjecten>
+		</validatieRegel>
+		<validatieRegel nummer="R.39" naam="Mof verbonden kabels gelijk verbindingnummer">
+			<beschrijving>Kabels verbonden met een mof moeten hetzelfde verbindingnummer hebben als de mof.</beschrijving>
+			<soort>Inhoud waarde</soort>
+			<definitie>
+				De verbonden MS/LSkabel objecten aan een MS/LSmof moeten dezelfde waarde hebben voor het kenmerk Verbindingnummer.
+			</definitie>
+			<validatieObjecten>
+				<validatieObject><naam>LSmof</naam></validatieObject>
+				<validatieObject><naam>MSmof</naam></validatieObject>
+			</validatieObjecten>
+		</validatieRegel>
+		<validatieRegel nummer="R.40" naam="Volgnummer verplicht">
+			<beschrijving>Een volgnummer is verplicht voor deel- en eindrevisies.</beschrijving>
+			<soort>Bestand</soort>
+			<definitie>
+				De AprojectReferentie moet een waarde voor Volgnummer hebben indien Tekeningtype DEELREVISIE of EINDREVISIE is.
+			</definitie>
+			<validatieObjecten>
+				<validatieObject><naam>AprojectReferentie</naam></validatieObject>
+			</validatieObjecten>
+		</validatieRegel>
 	</validatieRegels>
 	<scopes>
-		<scope naam="Bestaande Situatie alle bedrijfstoestanden">
+		<scope naam="Bestaande Situatie">
 			<tekeningSoort>Bestaande Situatie</tekeningSoort>
 			<statussen>
 				<status>BESTAAND</status>
@@ -492,9 +604,11 @@
 				<scopeValidatieRegel><nummer>R.27</nummer><niveau>Informerend</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.28</nummer><niveau>Informerend</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.30</nummer><niveau>Informerend</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.35</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.36</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 			</scopeValidatieRegels>
 		</scope>
-		<scope naam="Definitef Ontwerp alle statussen">
+		<scope naam="Definitef Ontwerp">
 			<tekeningSoort>Definitief Ontwerp</tekeningSoort>
 			<statussen>
 				<status>NIEUW</status>
@@ -516,49 +630,59 @@
 				<scopeValidatieRegel><nummer>R.27</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.28</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.30</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.35</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.36</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 			</scopeValidatieRegels>
-		</scope>
-		<scope naam="Deelrevisie verwijderde objecten">
-			<tekeningSoort>Deelrevisie</tekeningSoort>
-			<statussen>
-				<status>VERWIJDERD</status>
-			</statussen>
-			<bedrijfsToestanden>
-				<bedrijfstoestand>VERLATEN</bedrijfstoestand>
-			</bedrijfsToestanden>
-			<scopeValidatieRegels>
-				<scopeValidatieRegel><nummer>R.1</nummer><niveau>Fout</niveau></scopeValidatieRegel>
-				<scopeValidatieRegel><nummer>R.2</nummer><niveau>Fout</niveau></scopeValidatieRegel>
-				<scopeValidatieRegel><nummer>R.3</nummer><niveau>Fout</niveau></scopeValidatieRegel>
-				<scopeValidatieRegel><nummer>R.4</nummer><niveau>Fout</niveau></scopeValidatieRegel>
-				<scopeValidatieRegel><nummer>R.5</nummer><niveau>Fout</niveau></scopeValidatieRegel>
-				<scopeValidatieRegel><nummer>R.6</nummer><niveau>Fout</niveau></scopeValidatieRegel>
-				<scopeValidatieRegel><nummer>R.7</nummer><niveau>Fout</niveau></scopeValidatieRegel>
-
-			</scopeValidatieRegels>
-		</scope>
-		<scope naam="Eindrevisie verwijderde objecten">
-			<tekeningSoort>Eindrevisie</tekeningSoort>
-			<statussen>
-				<status>VERWIJDERD</status>
-			</statussen>
-			<bedrijfsToestanden>
-				<bedrijfstoestand>VERLATEN</bedrijfstoestand>
-			</bedrijfsToestanden>
-			<scopeValidatieRegels>
-				<scopeValidatieRegel><nummer>R.1</nummer><niveau>Fout</niveau></scopeValidatieRegel>
-				<scopeValidatieRegel><nummer>R.2</nummer><niveau>Fout</niveau></scopeValidatieRegel>
-				<scopeValidatieRegel><nummer>R.3</nummer><niveau>Fout</niveau></scopeValidatieRegel>
-				<scopeValidatieRegel><nummer>R.4</nummer><niveau>Fout</niveau></scopeValidatieRegel>
-				<scopeValidatieRegel><nummer>R.5</nummer><niveau>Fout</niveau></scopeValidatieRegel>
-				<scopeValidatieRegel><nummer>R.6</nummer><niveau>Fout</niveau></scopeValidatieRegel>
-				<scopeValidatieRegel><nummer>R.7</nummer><niveau>Fout</niveau></scopeValidatieRegel>
-			</scopeValidatieRegels>
-		</scope>
-		<scope naam="Nieuwe en aangepaste objecten Deelrevisie">
+		</scope>		
+		<scope naam="Deelrevisie nieuwe objecten">
 			<tekeningSoort>Deelrevisie</tekeningSoort>
 			<statussen>
 				<status>NIEUW</status>
+			</statussen>
+			<bedrijfsToestanden>
+				<bedrijfstoestand>IN BEDRIJF</bedrijfstoestand>
+			</bedrijfsToestanden>
+			<scopeValidatieRegels>
+				<scopeValidatieRegel><nummer>R.1</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.2</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.3</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.4</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.5</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.6</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.7</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.8</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.9</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.10</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.11</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.12</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.13</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.14</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.15</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.20</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.21</nummer><niveau>Informerend</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.22</nummer><niveau>Informerend</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.23</nummer><niveau>Informerend</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.24</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.25</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.26</nummer><niveau>Informerend</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.27</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.28</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.29</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.30</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.31</nummer><niveau>Waarschuwing</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.32</nummer><niveau>Waarschuwing</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.33</nummer><niveau>Waarschuwing</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.35</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.36</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.37</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.38</nummer><niveau>Waarschuwing</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.39</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.40</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+			</scopeValidatieRegels>
+		</scope>
+		<scope naam="Deelrevisie aangepaste objecten">
+			<tekeningSoort>Deelrevisie</tekeningSoort>
+			<statussen>
 				<status>REVISIE</status>
 			</statussen>
 			<bedrijfsToestanden>
@@ -592,12 +716,82 @@
 				<scopeValidatieRegel><nummer>R.28</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.29</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.30</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.35</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.36</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.40</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 			</scopeValidatieRegels>
 		</scope>
-		<scope naam="Nieuwe en aangepaste objecten Eindrevisie">
+		<scope naam="Deelrevisie verlaten objecten">
+			<tekeningSoort>Deelrevisie</tekeningSoort>
+			<statussen>
+				<status>REVISIE</status>
+				<status>VERWIJDERD</status>
+			</statussen>
+			<bedrijfsToestanden>
+				<bedrijfstoestand>VERLATEN</bedrijfstoestand>
+			</bedrijfsToestanden>
+			<scopeValidatieRegels>
+				<scopeValidatieRegel><nummer>R.1</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.2</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.3</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.4</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.5</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.6</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.7</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.34</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.35</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.40</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+			</scopeValidatieRegels>
+		</scope>
+		<scope naam="Eindrevisie nieuwe objecten">
 			<tekeningSoort>Eindrevisie</tekeningSoort>
 			<statussen>
 				<status>NIEUW</status>
+			</statussen>
+			<bedrijfsToestanden>
+				<bedrijfstoestand>IN BEDRIJF</bedrijfstoestand>
+			</bedrijfsToestanden>
+			<scopeValidatieRegels>
+				<scopeValidatieRegel><nummer>R.1</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.2</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.3</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.4</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.5</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.6</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.7</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.8</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.9</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.10</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.11</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.12</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.13</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.14</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.15</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.20</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.21</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.22</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.23</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.24</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.25</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.26</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.27</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.28</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.29</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.30</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.31</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.32</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.33</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.35</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.36</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.37</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.38</nummer><niveau>Waarschuwing</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.39</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.40</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+			</scopeValidatieRegels>
+		</scope>
+		<scope naam="Eindrevisie aangepaste objecten">
+			<tekeningSoort>Eindrevisie</tekeningSoort>
+			<statussen>
 				<status>REVISIE</status>
 			</statussen>
 			<bedrijfsToestanden>
@@ -631,8 +825,32 @@
 				<scopeValidatieRegel><nummer>R.28</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.29</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.30</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.35</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.36</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.40</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+			</scopeValidatieRegels>
+		</scope>
+		<scope naam="Eindrevisie verlaten objecten">
+			<tekeningSoort>Eindrevisie</tekeningSoort>
+			<statussen>
+				<status>REVISIE</status>
+				<status>VERWIJDERD</status>
+			</statussen>
+			<bedrijfsToestanden>
+				<bedrijfstoestand>VERLATEN</bedrijfstoestand>
+			</bedrijfsToestanden>
+			<scopeValidatieRegels>
+				<scopeValidatieRegel><nummer>R.1</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.2</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.3</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.4</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.5</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.6</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.7</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.34</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.35</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.40</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 			</scopeValidatieRegels>
 		</scope>
 	</scopes>
-
 </NLCSValidatieregels>

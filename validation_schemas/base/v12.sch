@@ -131,9 +131,25 @@
     <phase id="R.30">
         <active pattern="R.30"/>
     </phase>
+  
+    <phase id="R.31">
+        <active pattern="R.31"/>
+    </phase>
 
+    <phase id="R.35">
+        <active pattern="R.35"/>
+    </phase>
+
+    <phase id="R.37">
+        <active pattern="R.37"/>
+    </phase>
+
+    <phase id="R.38">
+        <active pattern="R.38"/>
+    </phase>
+  
     <phase id="R.39">
-        <active pattern="R.39"/>
+       <active pattern="R.39"/>
     </phase>
 
     <!-- import functions -->
@@ -172,9 +188,14 @@
     <include href="../patterns/v12/R.28.sch"/>
     <include href="../patterns/v12/R.29.sch"/>
     <include href="../patterns/v12/R.30.sch"/>
+    <include href="../patterns/v12/R.31.sch"/>
+    <include href="../patterns/v12/R.35.sch"/>
+    <include href="../patterns/v12/R.37.sch"/>
+    <include href="../patterns/v12/R.38.sch"/>
     <include href="../patterns/v12/R.39.sch"/>
 
     <!-- import abstract patterns -->
+    <include href="../abstract_patterns/v12/bestand/aanwezigheid_maaiveldhoogte.sch"/>
     <include href="../abstract_patterns/v12/bestand/bestand_bevat_nlcs_objecten.sch"/>
     <include href="../abstract_patterns/v12/bestand/combinatie_nlcs_status_en_tekeningsoort.sch"/>
     <include href="../abstract_patterns/v12/geometrie/geometrie_binnen_projectvlak.sch"/>
@@ -197,12 +218,15 @@
     <include href="../abstract_patterns/v12/netlogica/kabels_zelfde_netvlak.sch"/>
     <include href="../abstract_patterns/v12/netlogica/verbonden_kabels_juiste_kenmerken.sch"/>
     <include href="../abstract_patterns/v12/inhoud_waarde/fase_ms_kabel.sch"/>
+    <include href="../abstract_patterns/v12/inhoud_waarde/inmeetwijze_toegestaande_waarde.sch"/>
+    <include href="../abstract_patterns/v12/inhoud_waarde/inmeetwijze_aansluitnet_toegestaande_waarde.sch"/>
     <include href="../abstract_patterns/v12/inhoud_waarde/verbonden_kabels_juiste_fase.sch"/>
     <include href="../abstract_patterns/v12/inhoud_waarde/aantal_kabels_en_mof_functie.sch"/>
     <include href="../abstract_patterns/v12/inhoud_waarde/mantelbuis_past_in_mantelbuis.sch"/>
     <include href="../abstract_patterns/v12/consistentie/mantelbuis_inhoud_aanwezig.sch"/>
     <include href="../abstract_patterns/v12/consistentie/verplaatsing_goed_vastgelegd.sch"/>
     <include href="../abstract_patterns/v12/consistentie/mantelbuis_inhoud_referenties.sch"/>
-    <include href="../abstract_patterns/v12/inhoud_waarde/mof_verbonden_kabels_gelijk_verbindingnummer.sch"
+    <include href="../abstract_patterns/v12/inhoud_waarde/mof_verbonden_kabels_gelijk_verbindingnummer.sch"/>
+    <include href="../abstract_patterns/v12/document/aanwezigheid_bestand_bijlage_aardpen.sch"/>
 
 </schema>
