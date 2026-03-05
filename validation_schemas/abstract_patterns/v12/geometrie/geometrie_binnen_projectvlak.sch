@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pattern xmlns ="http://purl.oclc.org/dsdl/schematron" id="geometrie-binnen-projectvlak" abstract="true">
     <!-- Point geometries -->
-    <rule context="//nlcs:MSmof | //nlcs:MSoverdrachtspunt">
+    <rule context="//nlcs:MSmof | //nlcs:MSoverdrachtspunt | //nlcs:LSmof | //nlcs:LSoverdrachtspunt | //nlcs:OVLoverdrachtspunt | //nlcs:Eaardpen">
         <let name="point" 
             value="ma:parse-point(nlcs:Geometry)"/>
         
@@ -16,7 +16,7 @@
     </rule>
 
     <!-- Line geometries -->
-    <rule context="//nlcs:MSkabel | //nlcs:Amantelbuis | //nlcs:Akunstwerk | //nlcs:Eaarddraad | //nlcs:Aaanlegtechniek">
+    <rule context="//nlcs:MSkabel | //nlcs:Amantelbuis | //nlcs:Akunstwerk | //nlcs:Eaarddraad | //nlcs:Aaanlegtechniek | //nlcs:LSkabel">
         <let name="line" 
             value="ma:parse-line(nlcs:Geometry)"/>
 

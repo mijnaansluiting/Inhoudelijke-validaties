@@ -32,13 +32,7 @@
 												</xs:simpleType>
 											</xs:element>
 											<xs:element minOccurs="1" maxOccurs="1" name="Netbeheerder" type="_Netbeheerder" />
-											<xs:element minOccurs="0" maxOccurs="1" name="Volgnummer">
-												<xs:simpleType>
-													<xs:restriction base="xs:string">
-														<xs:maxLength value="50" />
-													</xs:restriction>
-												</xs:simpleType>
-											</xs:element>
+											<xs:element minOccurs="0" maxOccurs="1" name="Volgnummer" type="xs:integer"/>
 											<xs:element minOccurs="1" maxOccurs="1" name="ID" type="xs:ID" />
 											<xs:element minOccurs="1" maxOccurs="1" name="Tekeningtype" type="_Tekeningtype" />
 											<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:SurfacePropertyType" />

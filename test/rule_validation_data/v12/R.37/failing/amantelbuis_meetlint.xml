@@ -4,10 +4,19 @@
                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                xsi:schemaLocation="NS_NLCSnetbeheer ../../../../../doc/NLCS_Netbeheer_Keuzelijst.xsd"
                xmlns="NS_NLCSnetbeheer">
-    <MSkabel>
+    <AprojectReferentie>
+        <Projectnummer>1</Projectnummer>
+        <Netbeheerder>Enexis</Netbeheerder>
+        <ID>A</ID>
+        <Tekeningtype>DEELREVISIE</Tekeningtype>
+        <Geometry></Geometry>
+    </AprojectReferentie>
+    
+    <Amantelbuis>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
+        <Inmeetwijze>Meetlint</Inmeetwijze>
         <ID>B</ID>
         <Geometry></Geometry>
-    </MSkabel>
+    </Amantelbuis>
 </NLCSnetbeheer>
