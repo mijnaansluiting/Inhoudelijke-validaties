@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<NLCSnetbeheer xmlns:keuzelijst="NLCSnetbeheer"
+               xmlns:gml="http://www.opengis.net/gml/3.2"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="NS_NLCSnetbeheer ../../../../../doc/NLCS_Netbeheer_Keuzelijst.xsd"
+               xmlns="NS_NLCSnetbeheer">
+    <AprojectReferentie>
+        <Projectnummer>1</Projectnummer>
+        <Netbeheerder>Enexis</Netbeheerder>
+        <ID>A</ID>
+        <Tekeningtype>BESTAANDE SITUATIE</Tekeningtype>
+        <Geometry></Geometry>
+    </AprojectReferentie>
+    
+    <MSstation>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
+        <ID>Mantelbuis-Bounds-1</ID>
+        <Geometry>
+            <gml:Polygon
+                srsDimension="3"
+                srsName="EPSG:7415">
+                <gml:exterior>
+                    <gml:LinearRing>
+                        <gml:posList>
+                            275.1471862576143 484.8528137423857 0
+                            444.8528137423857 315.1471862576143 0
+                            604.8528137423857 475.1471862576143 0
+                            435.1471862576143 644.8528137423857 0
+                            275.1471862576143 484.8528137423857 0
+                        </gml:posList>
+                    </gml:LinearRing>
+                </gml:exterior>
+            </gml:Polygon>
+        </Geometry>
+    </MSstation>
+    
+    <MSstation>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
+        <ID>Mantelbuis-Bounds-2</ID>
+        <Geometry>
+            <gml:Polygon
+                srsDimension="3"
+                srsName="EPSG:7415">
+                <gml:exterior>
+                    <gml:LinearRing>
+                        <gml:posList>
+                            520 680 0
+                            520 440 0 
+                            760 440 0
+                            760 680 0
+                            520 680 0
+                        </gml:posList>
+                    </gml:LinearRing>
+                </gml:exterior>
+            </gml:Polygon>
+        </Geometry>
+    </MSstation>
+    
+    <MSstation>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
+        <ID>Mantelbuis-Node-Bounds</ID>
+        <Geometry>
+            <gml:Polygon
+                srsDimension="3"
+                srsName="EPSG:7415">
+                <gml:exterior>
+                    <gml:LinearRing>
+                        <gml:posList>
+                            640 560 0 637.6942336483877 583.4108386419354 0 630.8655439013544 605.9220118838108 0 619.7763534763054 626.6684279623523 0 604.8528137423857 644.8528137423857 0 586.6684279623523 659.7763534763054 0 565.9220118838108 670.8655439013544 0 543.4108386419354 677.6942336483877 0 520 680 0 496.58916135806464 677.6942336483877 0 474.0779881161892 670.8655439013544 0 453.3315720376478 659.7763534763054 0 435.1471862576143 644.8528137423857 0 420.2236465236946 626.6684279623523 0 409.1344560986456 605.9220118838108 0 402.30576635161236 583.4108386419355 0 400 560 0 402.30576635161236 536.5891613580646 0 409.13445609864556 514.0779881161892 0 420.2236465236945 493.3315720376478 0 435.1471862576143 475.1471862576143 0 453.33157203764773 460.2236465236946 0 474.07798811618915 449.1344560986456 0 496.5891613580646 442.30576635161236 0 520 440 0 543.4108386419354 442.30576635161236 0 565.9220118838108 449.1344560986456 0 586.6684279623522 460.2236465236945 0 604.8528137423857 475.1471862576143 0 619.7763534763054 493.33157203764773 0 630.8655439013544 514.0779881161892 0 637.6942336483876 536.5891613580645 0 640 560 0
+                        </gml:posList>
+                    </gml:LinearRing>
+                </gml:exterior>
+            </gml:Polygon>
+        </Geometry>
+    </MSstation>
+    
+    <Amantelbuis>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
+        <ID>Mantelbuis</ID>
+        <Geometry>
+            <gml:LineString
+                srsDimension="3"
+                srsName="EPSG:7415">
+                <gml:posList>
+                    360 400 0
+                    520 560 0
+                    760 560 0
+                </gml:posList>
+            </gml:LineString>
+        </Geometry>
+    </Amantelbuis>
+    
+    <MSkabel>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
+        <ID>Passing</ID>
+        <Geometry>
+            <gml:LineString
+                srsDimension="3"
+                srsName="EPSG:7415">
+                <gml:posList>
+                     320 240 0
+                     510 600 0
+                     820 520 0
+                    1120 240 0 
+                </gml:posList>
+            </gml:LineString>
+        </Geometry>
+    </MSkabel>
+    
+    <MSkabel>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
+        <ID>Failing</ID>
+        <Geometry>
+            <gml:LineString
+                srsDimension="3"
+                srsName="EPSG:7415">
+                <gml:posList>
+                    280 320 0
+                    470 680 0
+                    780 600 0
+                    1080 320 0
+                </gml:posList>
+            </gml:LineString>
+        </Geometry>
+    </MSkabel>
+    
+    <AmantelbuisInhoud>
+        <Status>BESTAAND</Status>
+        <MantelbuisID>Mantelbuis</MantelbuisID>
+        <InhoudID>Passing</InhoudID>
+        <ID>Passing-Inhoud</ID>
+    </AmantelbuisInhoud>
+
+    <AmantelbuisInhoud>
+        <Status>BESTAAND</Status>
+        <MantelbuisID>Mantelbuis</MantelbuisID>
+        <InhoudID>Failing</InhoudID>
+        <ID>Failing-Inhoud</ID>
+    </AmantelbuisInhoud>
+    
+</NLCSnetbeheer>

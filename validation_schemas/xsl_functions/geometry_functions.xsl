@@ -242,4 +242,76 @@
                     and
                     $relative_orientation_segment_2_start != $relative_orientation_segment_2_end"/>
     </function>
+    
+    <function name="ma:line-within-range-of-line">
+        <param name="line" as="xs:double*"/>
+        <param name="other_line" as="xs:double*"/>
+        <param name="range" as="xs:double"/>
+        
+        <variable name="distance_between_rays" select="50"/>
+        
+        <!-- <variable name="passed" as="xs:boolean*"> -->
+        <for-each select="1 to (count($line) idiv 2) - 1">
+            <variable name="segment_index" as="xs:integer" select="."/>
+            <variable name="start_point" as="xs:double*" select="ma:line-get-nth-point($line, $segment_index)"/>
+            <variable name="end_point" as="xs:double*" select="ma:line-get-nth-point($line, $segment_index + 1)"/>
+            
+            <variable name="segment_length" as="xs:double" select="ma:point-distance-to-point($start_point, $end_point)"/>
+            
+            <variable name="dx" select="$end_point[1] - $start_point[1]"/>
+            <variable name="dy" select="$end_point[2] - $start_point[2]"/>
+            
+            <variable name="scaling_factor" select="$distance_between_rays div $segment_length"/>
+            
+            <variable name="rays_in_segment" select="xs:integer(ceiling($segment_length div $distance_between_rays) + 1)"/>
+            
+            <variable name="ux" select="-$dy div $segment_length"/>
+            <variable name="uy" select="$dx div $segment_length"/>
+            
+            <for-each select="1 to $rays_in_segment">
+                <variable name="ray_index" as="xs:integer" select="."/>
+                <variable name="is_last_ray" select="$ray_index = last()"/>
+                
+                <variable name="ray_center_x" select="
+                            if ($is_last_ray) then $end_point[1]
+                            else $start_point[1] + $scaling_factor * ($ray_index - 1) * $dx"/>
+                <variable name="ray_center_y" select="
+                            if ($is_last_ray) then $end_point[2]
+                            else $start_point[2] + $scaling_factor * ($ray_index - 1) * $dy"/>
+                
+                <variable name="ray_start_point" select="($ray_center_x + $range * $ux), ($ray_center_y + $range * $uy)"/>
+                <variable name="ray_end_point" select="($ray_center_x - $range * $ux), ($ray_center_y - $range * $uy)"/>
+                
+                <variable name="ray" select="($ray_start_point, $ray_end_point)"/>
+                
+                <variable name="ray_intersects_other_line" 
+                          select="
+                            some $other_segment_index in (1 to (count($other_line) idiv 2) - 1) 
+                            satisfies ma:segment-intersects-segment($ray, ma:line-get-slice($other_line, $other_segment_index, $other_segment_index + 1)) "/>
+                
+                <if test="not($ray_intersects_other_line)">
+                    RAY<sequence select="$ray"/>
+                    LINE<sequence select="$other_line"/>
+                    <sequence select="false()"/>
+                </if>
+            </for-each>
+        </for-each>
+        <!-- </variable> -->
+        <!-- <sequence select="not($passed = false())"/> -->
+    </function>
+    
+    <function name="ma:approximate-circle">
+        <param name="center_point" as="xs:double*"/>    
+        <param name="radius" as="xs:double"/>    
+        <param name="steps" as="xs:integer"/>
+        
+        <variable name="step_angle" select="2 * math:pi() div $steps"/>
+        
+        <for-each select="0 to $steps">
+            <variable name="theta" select=". * $step_angle"/>
+            <variable name="x" select="$center_point[1] + $radius * math:cos($theta)"/>
+            <variable name="y" select="$center_point[2] + $radius * math:sin($theta)"/>
+            <sequence select="($x, $y, 0)"/>
+        </for-each>
+    </function>
 </stylesheet>
