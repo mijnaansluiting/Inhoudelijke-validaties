@@ -254,10 +254,12 @@
   </message>
   <message id="connected-cables-have-different-verbindingnummer">
     <message-text xml:lang="nl">
-      De volgende kabels hebben niet hetzelfde Verbindingnummer als de mof waar ze mee verbonden zijn: {1}
+      Een of meer kabels hebben een fout Verbindingnummer in vergelijking met de mof waaraan ze verbonden zijn.
+      Het volgende Verbindingnummer is verwacht: {1}
     </message-text>
     <message-text xml:lang="en">
-      The following cables do not have the same Verbindingnummer as the joint they are connected to: {1}
+      One or more cables have an incorrect Verbindingnummer compared to the joint they are connected to.
+      The following Verbindingnummer is expected: {1}
      </message-text>
   </message>
   <message id="soort-bestand-not-correct">

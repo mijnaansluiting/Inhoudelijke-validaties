@@ -16,7 +16,7 @@
         <assert id="kabels-have-same-verbindingnummer"
                 properties="scope rule-number severity object-type object-id"
             test="empty($cables_with_different_verbindingnummer)">
-            <value-of select="ma:get-translation-and-replace-placeholders('connected-cables-have-different-verbindingnummer', [string-join($cables_with_different_verbindingnummer, ', ')])"/>
+            <value-of select="ma:get-translation-and-replace-placeholders('connected-cables-have-different-verbindingnummer', [$lsmof/nlcs:Verbindingnummer])"/>
         </assert>
     </rule>
 
@@ -36,7 +36,7 @@
         <assert id="kabels-have-same-verbindingnummer"
                 properties="scope rule-number severity object-type object-id"
             test="empty($cables_with_different_verbindingnummer)">
-            <value-of select="ma:get-translation-and-replace-placeholders('connected-cables-have-different-verbindingnummer', [string-join($cables_with_different_verbindingnummer, ', ')])"/>
+            <value-of select="ma:get-translation-and-replace-placeholders('connected-cables-have-different-verbindingnummer', [$msmof/nlcs:Verbindingnummer])"/>
         </assert>
     </rule>
 </pattern>
