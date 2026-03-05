@@ -1415,6 +1415,7 @@
 				<xs:enumeration value="Foto" />
 				<xs:enumeration value="Gestuurde boring" />
 				<xs:enumeration value="Zinkertekening" />
+				<xs:enumeration value="Aardingsrapport" />
 			</xs:restriction>
 		</xs:simpleType>
 		<xs:simpleType name="_BestandMediaTypeValue">

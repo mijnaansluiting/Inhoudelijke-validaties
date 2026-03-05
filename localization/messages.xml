@@ -71,6 +71,14 @@
       Het kenmerk {1} is niet gevuld voor het object.
     </message-text>
   </message>
+  <message id="object-not-present">
+    <message-text xml:lang="en">
+      The object {1} is not present.
+    </message-text>
+    <message-text xml:lang="nl">
+      Het object {1} is niet aanwezig.
+    </message-text>
+  </message>
   <message id="point-not-connected-to-any-line">
     <message-text xml:lang="en">
       Object must be connected to a cable.
@@ -244,13 +252,29 @@
       Movement was registered incorrectly. There should be another {1} with Status BESTAAND and both objects must share the same GisId.
     </message-text>
   </message>
-  
+  <message id="soort-bestand-not-correct">
+    <message-text xml:lang="nl">
+      De SoortBestand van de ABestandBijlage moet {1} zijn. Nu is deze {2}.
+    </message-text>
+    <message-text xml:lang="en">
+      The SoortBestand of the ABestandBijlage must be {1}. Currently it is {2}.
+    </message-text>
+  </message>
   <message id="revisie-no-maaiveldhoogte-present">
     <message-text xml:lang="nl">
       Een NLCS++ bestand moet een maaiveldhoogte bevatten indien Tekeningtype een van de volgende is: {1}
     </message-text>
     <message-text xml:lang="en">
       A NLCS++ file must contain a ground level if Tekeningtype is one of: {1} 
+    </message-text>
+  </message>
+  
+  <message id="inmeetwijze-not-allowed">
+    <message-text xml:lang="nl">
+      Inmeetwijze {1} is hier niet toegestaan, moet een van de volgende zijn: {2} 
+    </message-text>
+    <message-text xml:lang="en">
+      Measurement method {1} is not allowed here, must be one of: {2}
     </message-text>
   </message>
 </messages>
