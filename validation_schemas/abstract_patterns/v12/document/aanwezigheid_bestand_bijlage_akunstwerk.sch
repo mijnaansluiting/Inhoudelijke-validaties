@@ -14,14 +14,13 @@
                value="$bestand_bijlage/nlcs:SoortBestand"/>
           
           <let name="should_be_tested"
-               value="some $soortkunstwerk_to_test in ma:get-soortkunstwerken-with-required-abestandsbijlage() satisfies
-                      $soortkunstwerk_to_test = $soort_kunstwerk"/>
+               value="$soort_kunstwerk = ma:get-soortkunstwerken-with-required-abestandsbijlage()"/>
           
           <let name="bestand_bijlage_present"
                value="ma:element-exists-and-not-empty($bestand_bijlage)"/>
           
           <assert id="check-bestand-bijlage-present"
-                  test="$bestand_bijlage_present"
+                  test="if($should_be_tested) then $bestand_bijlage_present else true()"
                   properties="scope rule-number severity object-type object-id">
                <value-of select="ma:get-translation-and-replace-placeholders('object-not-present', ['Abestandbijlage'])"/>
           </assert>
