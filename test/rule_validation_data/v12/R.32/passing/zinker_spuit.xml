@@ -13,9 +13,9 @@
     </AprojectReferentie>
     
     <Akunstwerk>
-        <SoortKunstwerk>ZINKER_BOOG</SoortKunstwerk>
-        <Status>NIEUW</Status>
-        <Bedrijfstoestand>IN BEDRIJF</Bedrijfstoestand>
+        <SoortKunstwerk>ZINKER_SPUIT</SoortKunstwerk>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
         <ID>B</ID>
         <Geometry>
         </Geometry>
