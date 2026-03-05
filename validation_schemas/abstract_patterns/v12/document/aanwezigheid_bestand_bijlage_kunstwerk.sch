@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pattern xmlns ="http://purl.oclc.org/dsdl/schematron" id="aanwezigheid-bestand-bijlage-akunstwerk" abstract="true">
+<pattern xmlns ="http://purl.oclc.org/dsdl/schematron" id="aanwezigheid-bestand-bijlage-kunstwerk" abstract="true">
      <rule context="//nlcs:Akunstwerk">
           <let name="soort_kunstwerk"
                value="nlcs:SoortKunstwerk"/>

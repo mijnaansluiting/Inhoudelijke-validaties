@@ -27,5 +27,12 @@
             <NoGisIdRequired>AmantelbuisInhoud</NoGisIdRequired>
             <!-- <NoAssetIdRequired>SomeObjectName</NoAssetIdRequired> -->
         </GisIdAssetsIdExceptions>
+        <SoortKunstwerkRequiredBestandsBijlage>
+            <SoortKunstwerk>ZINKER</SoortKunstwerk>
+            <SoortKunstwerk>ZINKER_BOOG</SoortKunstwerk>
+            <SoortKunstwerk>ZINKER_SLEEP</SoortKunstwerk>
+            <SoortKunstwerk>ZINKER_OMGEKEERD</SoortKunstwerk>
+            <SoortKunstwerk>ZINKER_SPUIT</SoortKunstwerk>
+        </SoortKunstwerkRequiredBestandsBijlage>
     </v12>
 </config>

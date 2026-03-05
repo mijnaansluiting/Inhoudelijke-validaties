@@ -23,7 +23,7 @@
   </function>
   
   <function name="ma:get-soortkunstwerken-with-required-abestandsbijlage">
-    <sequence select="$user_config_file/config/SoortKunstwerk_Required_AbestandsBijlage/*"/>
+    <sequence select="$sys_config_file/config/v12/SoortKunstwerkRequiredBestandsBijlage/*"/>
   </function>
 
   <function name="ma:object-requires-asset-id" as="xs:boolean">
