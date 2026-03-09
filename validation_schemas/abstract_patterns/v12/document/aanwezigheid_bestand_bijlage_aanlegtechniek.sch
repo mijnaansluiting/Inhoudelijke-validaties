@@ -20,7 +20,7 @@
                <value-of select="ma:get-translation-and-replace-placeholders('object-not-present', ['Abestandbijlage'])"/>
           </assert>
           
-          <assert id="abeestandbijlage_must_be_gestuurdeboring"
+          <assert id="bestandbijlage-must-be-gestuurde-boring"
                   properties="scope rule-number severity object-type object-id"
                   test="$bestand_bijlage_type = 'Gestuurde boring'">
                <value-of select="ma:get-translation-and-replace-placeholders('soort-bestand-not-correct', ['Gestuurde boring', $bestand_bijlage_type])"/>
