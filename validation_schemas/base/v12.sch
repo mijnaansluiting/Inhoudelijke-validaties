@@ -130,8 +130,12 @@
 
     <phase id="R.30">
         <active pattern="R.30"/>
+  </phase>
+    
+    <phase id="R.34">
+        <active pattern="R.34"/>
     </phase>
-  
+
     <phase id="R.31">
         <active pattern="R.31"/>
     </phase>
@@ -150,6 +154,9 @@
   
     <phase id="R.39">
        <active pattern="R.39"/>
+    
+    <phase id="R.40">
+        <active pattern="R.40"/>
     </phase>
 
     <!-- import functions -->
@@ -189,10 +196,12 @@
     <include href="../patterns/v12/R.29.sch"/>
     <include href="../patterns/v12/R.30.sch"/>
     <include href="../patterns/v12/R.31.sch"/>
+    <include href="../patterns/v12/R.34.sch"/>
     <include href="../patterns/v12/R.35.sch"/>
     <include href="../patterns/v12/R.37.sch"/>
     <include href="../patterns/v12/R.38.sch"/>
     <include href="../patterns/v12/R.39.sch"/>
+    <include href="../patterns/v12/R.40.sch"/>
 
     <!-- import abstract patterns -->
     <include href="../abstract_patterns/v12/bestand/aanwezigheid_maaiveldhoogte.sch"/>
@@ -227,6 +236,8 @@
     <include href="../abstract_patterns/v12/consistentie/verplaatsing_goed_vastgelegd.sch"/>
     <include href="../abstract_patterns/v12/consistentie/mantelbuis_inhoud_referenties.sch"/>
     <include href="../abstract_patterns/v12/inhoud_waarde/mof_verbonden_kabels_gelijk_verbindingnummer.sch"/>
+    <include href="../abstract_patterns/v12/bestand/volgnummer_verplicht.sch"/>
+    <include href="../abstract_patterns/v12/verplichte_waarde/reden_niet_verwijdering_ingevuld.sch"/>
     <include href="../abstract_patterns/v12/document/aanwezigheid_bestand_bijlage_aardpen.sch"/>
 
 </schema>
