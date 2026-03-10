@@ -26,6 +26,7 @@
         <ID>0000</ID>
         <Status>{{STATUS}}</Status>
         <Bedrijfstoestand>{{BEDRIJFSTOESTAND}}</Bedrijfstoestand>
+        <SoortAanlegTechniek>GESTUURDE TECHNIEK</SoortAanlegTechniek>
         <Geometry>
             <gml:LineString
                 srsDimension="3"
