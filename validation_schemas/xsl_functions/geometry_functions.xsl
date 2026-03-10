@@ -300,6 +300,30 @@
         <!-- <sequence select="not($passed = false())"/> -->
     </function>
     
+    <function name="ma:intersection-of-segments" as="xs:double*">
+        <param name="segment_1" as="xs:double*"/>
+        <param name="segment_2" as="xs:double*"/>
+        
+        <variable name="den" select="
+                    ($segment_1[1] - $segment_1[3]) * ($segment_2[2] - $segment_2[4]) -
+                    ($segment_1[2] - $segment_1[4]) * ($segment_2[1] - $segment_2[3])"/>
+        
+        <if test="$den ne 0">
+            <variable name="t" select="
+                        (($segment_1[1] - $segment_2[1]) * ($segment_2[2] - $segment_2[4]) - 
+                        ($segment_1[2] - $segment_2[2]) * ($segment_2[1] - $segment_2[3])) div $den"/>
+            <variable name="u" select="
+                        (($segment_1[1] - $segment_2[1]) * ($segment_1[2] - $segment_1[4]) - 
+                        ($segment_1[2] - $segment_2[2]) * ($segment_1[1] - $segment_1[3])) div $den"/>
+            
+            <!-- <if test="$t ge 0 and $t le 1 and $u ge 0 and $u le 1"> -->
+                <variable name="intersect_x" select="$segment_1[1] + $t * ($segment_1[3] - $segment_1[1])"/>
+                <variable name="intersect_y" select="$segment_1[2] + $t * ($segment_1[4] - $segment_1[2])"/>
+                <sequence select="($intersect_x, $intersect_y)"/>
+            <!-- </if> -->
+        </if>
+    </function>
+    
     <function name="ma:approximate-circle">
         <param name="center_point" as="xs:double*"/>    
         <param name="radius" as="xs:double"/>    

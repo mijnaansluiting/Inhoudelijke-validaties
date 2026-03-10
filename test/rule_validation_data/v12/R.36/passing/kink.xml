@@ -15,7 +15,6 @@
     <MSstation>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <ID>Mantelbuis-Bounds-1</ID>
         <Geometry>
             <gml:Polygon
                 srsDimension="3"
@@ -38,7 +37,6 @@
     <MSstation>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <ID>Mantelbuis-Bounds-2</ID>
         <Geometry>
             <gml:Polygon
                 srsDimension="3"
@@ -57,11 +55,98 @@
             </gml:Polygon>
         </Geometry>
     </MSstation>
+
+    <MSkabel>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
+        <ID>B-RIGHT</ID>
+        <Geometry>
+            <gml:LineString
+                srsDimension="3"
+                srsName="EPSG:7415">
+                <gml:posList>
+                    520 440 0 
+                    760 440 0
+                </gml:posList>
+            </gml:LineString>
+        </Geometry>
+    </MSkabel>
+    
+    <MSkabel>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
+        <ID>B-LEFT</ID>
+        <Geometry>
+            <gml:LineString
+                srsDimension="3"
+                srsName="EPSG:7415">
+                <gml:posList>
+                    760 680 0
+                    520 680 0
+                </gml:posList>
+            </gml:LineString>
+        </Geometry>
+    </MSkabel>
+    
+    <MSkabel>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
+        <ID>A-RIGHT</ID>
+        <Geometry>
+            <gml:LineString
+                srsDimension="3"
+                srsName="EPSG:7415">
+                <gml:posList>
+                    444.8528137423857 315.1471862576143 0
+                    604.8528137423857 475.1471862576143 0
+                </gml:posList>
+            </gml:LineString>
+        </Geometry>
+    </MSkabel>
+
+    <MSkabel>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
+        <ID>A-LEFT</ID>
+        <Geometry>
+            <gml:LineString
+                srsDimension="3"
+                srsName="EPSG:7415">
+                <gml:posList>
+                    435.1471862576143 644.8528137423857 0
+                    275.1471862576143 484.8528137423857 0
+                </gml:posList>
+            </gml:LineString>
+        </Geometry>
+    </MSkabel>
+    
+    <MSmof>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
+        <Geometry>
+            <gml:Point
+                srsDimension="3"
+                srsName="EPSG:7415">
+                <gml:pos>569.7056274847714 440 0</gml:pos>
+            </gml:Point>
+        </Geometry>
+    </MSmof>
+    
+    <MSmof>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
+        <Geometry>
+            <gml:Point
+                srsDimension="3"
+                srsName="EPSG:7415">
+                <gml:pos>470.2943725152286 680 0</gml:pos>
+            </gml:Point>
+        </Geometry>
+    </MSmof>
     
     <MSstation>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <ID>Mantelbuis-Node-Bounds</ID>
         <Geometry>
             <gml:Polygon
                 srsDimension="3"
@@ -70,6 +155,24 @@
                     <gml:LinearRing>
                         <gml:posList>
                             640 560 0 637.6942336483877 583.4108386419354 0 630.8655439013544 605.9220118838108 0 619.7763534763054 626.6684279623523 0 604.8528137423857 644.8528137423857 0 586.6684279623523 659.7763534763054 0 565.9220118838108 670.8655439013544 0 543.4108386419354 677.6942336483877 0 520 680 0 496.58916135806464 677.6942336483877 0 474.0779881161892 670.8655439013544 0 453.3315720376478 659.7763534763054 0 435.1471862576143 644.8528137423857 0 420.2236465236946 626.6684279623523 0 409.1344560986456 605.9220118838108 0 402.30576635161236 583.4108386419355 0 400 560 0 402.30576635161236 536.5891613580646 0 409.13445609864556 514.0779881161892 0 420.2236465236945 493.3315720376478 0 435.1471862576143 475.1471862576143 0 453.33157203764773 460.2236465236946 0 474.07798811618915 449.1344560986456 0 496.5891613580646 442.30576635161236 0 520 440 0 543.4108386419354 442.30576635161236 0 565.9220118838108 449.1344560986456 0 586.6684279623522 460.2236465236945 0 604.8528137423857 475.1471862576143 0 619.7763534763054 493.33157203764773 0 630.8655439013544 514.0779881161892 0 637.6942336483876 536.5891613580645 0 640 560 0
+                        </gml:posList>
+                    </gml:LinearRing>
+                </gml:exterior>
+            </gml:Polygon>
+        </Geometry>
+    </MSstation>
+    
+    <MSstation>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
+        <Geometry>
+            <gml:Polygon
+                srsDimension="3"
+                srsName="EPSG:7415">
+                <gml:exterior>
+                    <gml:LinearRing>
+                        <gml:posList>
+                            829.7056274847714 440 0 827.6554498265357 472.5866407267191 0 821.5372493782155 504.6593706628622 0 811.4475138157168 535.7123836980163 0 797.5453642961759 565.255955266446 0 780.0500460222578 592.824165596043 0 759.2374706143385 617.9822475414591 0 735.4358648194307 640.3334431217052 0 709.0205941793105 659.5252606305239 0 680.4082432916903 675.255033641165 0 650.0500460222578 687.27469423674 0 618.4247692770598 695.3946851894591 0 586.0311625623929 699.4869493913507 0 553.38009240715 699.4869493913507 0 520.9864856924829 695.3946851894591 0 489.36120894728504 687.27469423674 0 459.0030116778525 675.255033641165 0 430.39066079023223 659.5252606305239 0 403.97539015011205 640.3334431217052 0 380.17378435520436 617.982247541459 0 359.3612089472851 592.824165596043 0 341.8658906733669 565.255955266446 0 327.96374115382605 535.7123836980162 0 317.8740055913273 504.6593706628623 0 311.75580514300714 472.58664072671905 0 309.7056274847714 439.99999999999994 0 311.75580514300714 407.4133592732809 0 317.8740055913273 375.34062933713767 0 327.96374115382605 344.28761630198363 0 341.8658906733669 314.744044733554 0 359.36120894728515 287.1758344039569 0 380.1737843552044 262.01775245854094 0 403.97539015011216 239.66655687829476 0 430.39066079023235 220.47473936947603 0 459.00301167785267 204.74496635883486 0 489.36120894728504 192.72530576326008 0 520.986485692483 184.60531481054093 0 553.38009240715 180.5130506086494 0 586.031162562393 180.5130506086494 0 618.4247692770599 184.60531481054096 0 650.0500460222577 192.72530576326005 0 680.4082432916903 204.74496635883492 0 709.0205941793106 220.4747393694761 0 735.4358648194308 239.66655687829484 0 759.2374706143385 262.01775245854105 0 780.0500460222579 287.17583440395714 0 797.5453642961759 314.744044733554 0 811.4475138157168 344.28761630198375 0 821.5372493782155 375.34062933713784 0 827.6554498265357 407.413359273281 0 829.7056274847714 440.00000000000017 0
                         </gml:posList>
                     </gml:LinearRing>
                 </gml:exterior>
@@ -130,6 +233,23 @@
         </Geometry>
     </MSkabel>
     
+    <MSkabel>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
+        <ID>Passing-Edge-Case</ID>
+        <Geometry>
+            <gml:LineString
+                srsDimension="3"
+                srsName="EPSG:7415">
+                <gml:posList>
+                    400 320 0
+                    570 445 0
+                    780 470 0
+                </gml:posList>
+            </gml:LineString>
+        </Geometry>
+    </MSkabel>
+    
     <AmantelbuisInhoud>
         <Status>BESTAAND</Status>
         <MantelbuisID>Mantelbuis</MantelbuisID>
@@ -142,6 +262,13 @@
         <MantelbuisID>Mantelbuis</MantelbuisID>
         <InhoudID>Failing</InhoudID>
         <ID>Failing-Inhoud</ID>
+    </AmantelbuisInhoud>
+
+    <AmantelbuisInhoud>
+        <Status>BESTAAND</Status>
+        <MantelbuisID>Mantelbuis</MantelbuisID>
+        <InhoudID>Passing-Edge-Case</InhoudID>
+        <ID>Passing-Edge-Case-Inhoud</ID>
     </AmantelbuisInhoud>
     
 </NLCSnetbeheer>
