@@ -252,6 +252,16 @@
       Movement was registered incorrectly. There should be another {1} with Status BESTAAND and both objects must share the same GisId.
     </message-text>
   </message>
+  <message id="connected-cables-have-different-verbindingnummer">
+    <message-text xml:lang="nl">
+      Een of meer kabels hebben een fout Verbindingnummer in vergelijking met de mof waaraan ze verbonden zijn.
+      Het volgende Verbindingnummer is verwacht: {1}
+    </message-text>
+    <message-text xml:lang="en">
+      One or more cables have an incorrect Verbindingnummer compared to the joint they are connected to.
+      The following Verbindingnummer is expected: {1}
+     </message-text>
+  </message>
   <message id="soort-bestand-not-correct">
     <message-text xml:lang="nl">
       De SoortBestand van de ABestandBijlage moet {1} zijn. Nu is deze {2}.
