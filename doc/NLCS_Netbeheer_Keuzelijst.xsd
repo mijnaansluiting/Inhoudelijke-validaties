@@ -1441,6 +1441,8 @@
 				<xs:enumeration value="ZINKER" />
 				<xs:enumeration value="ZINKER_BOOG" />
 				<xs:enumeration value="ZINKER_SLEEP" />
+				<xs:enumeration value="ZINKER_OMGEKEERD" />
+				<xs:enumeration value="ZINKER_SPUIT" />
 			</xs:restriction>
 		</xs:simpleType>
 		<xs:simpleType name="_SoortAanlegTechniek">

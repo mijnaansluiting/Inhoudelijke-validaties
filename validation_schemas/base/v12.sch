@@ -143,6 +143,10 @@
     <phase id="R.31">
         <active pattern="R.31"/>
     </phase>
+    
+    <phase id="R.32">
+        <active pattern="R.32"/>
+    </phase>
 
     <phase id="R.35">
         <active pattern="R.35"/>
@@ -197,6 +201,7 @@
     <include href="../patterns/v12/R.29.sch"/>
     <include href="../patterns/v12/R.30.sch"/>
     <include href="../patterns/v12/R.31.sch"/>
+    <include href="../patterns/v12/R.32.sch"/>
     <include href="../patterns/v12/R.33.sch"/>
     <include href="../patterns/v12/R.34.sch"/>
     <include href="../patterns/v12/R.35.sch"/>
@@ -236,6 +241,7 @@
     <include href="../abstract_patterns/v12/consistentie/mantelbuis_inhoud_aanwezig.sch"/>
     <include href="../abstract_patterns/v12/consistentie/verplaatsing_goed_vastgelegd.sch"/>
     <include href="../abstract_patterns/v12/consistentie/mantelbuis_inhoud_referenties.sch"/>
+    <include href="../abstract_patterns/v12/document/aanwezigheid_bestand_bijlage_kunstwerk.sch"/>
     <include href="../abstract_patterns/v12/document/aanwezigheid_bestand_bijlage_aanlegtechniek.sch"/>
     <include href="../abstract_patterns/v12/bestand/volgnummer_verplicht.sch"/>
     <include href="../abstract_patterns/v12/verplichte_waarde/reden_niet_verwijdering_ingevuld.sch"/>
