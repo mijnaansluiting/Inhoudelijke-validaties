@@ -5,14 +5,14 @@
           <let name="id"
                value="nlcs:ID"/>
           
-          <let name="abestandbijlage"
+          <let name="bestand_bijlage"
                value="//nlcs:AbestandBijlage[nlcs:AssetObjectID = $id]"/>
           
           <let name="bestand_bijlage_present"
-               value="ma:element-exists-and-not-empty($abestandbijlage)"/>
+               value="ma:element-exists-and-not-empty($bestand_bijlage)"/>
           
           <let name="bestand_bijlage_type"
-               value="$abestandbijlage/nlcs:SoortBestand"/>
+               value="$bestand_bijlage/nlcs:SoortBestand"/>
           
           <assert id="check-bestand-bijlage-present"
                   test="$bestand_bijlage_present"
@@ -20,7 +20,7 @@
                <value-of select="ma:get-translation-and-replace-placeholders('object-not-present', ['Abestandbijlage'])"/>
           </assert>
           
-          <assert id="abeestandbijlage_must_be_gestuurdeboring"
+          <assert id="bestandbijlage-must-be-gestuurde-boring"
                   properties="scope rule-number severity object-type object-id"
                   test="$bestand_bijlage_type = 'Gestuurde boring'">
                <value-of select="ma:get-translation-and-replace-placeholders('soort-bestand-not-correct', ['Gestuurde boring', $bestand_bijlage_type])"/>
