@@ -71,6 +71,14 @@
       Het kenmerk {1} is niet gevuld voor het object.
     </message-text>
   </message>
+  <message id="object-not-present">
+    <message-text xml:lang="en">
+      The object {1} is not present.
+    </message-text>
+    <message-text xml:lang="nl">
+      Het object {1} is niet aanwezig.
+    </message-text>
+  </message>
   <message id="point-not-connected-to-any-line">
     <message-text xml:lang="en">
       Object must be connected to a cable.
@@ -244,7 +252,24 @@
       Movement was registered incorrectly. There should be another {1} with Status BESTAAND and both objects must share the same GisId.
     </message-text>
   </message>
-  
+  <message id="connected-cables-have-different-verbindingnummer">
+    <message-text xml:lang="nl">
+      Een of meer kabels hebben een fout Verbindingnummer in vergelijking met de mof waaraan ze verbonden zijn.
+      Het volgende Verbindingnummer is verwacht: {1}
+    </message-text>
+    <message-text xml:lang="en">
+      One or more cables have an incorrect Verbindingnummer compared to the joint they are connected to.
+      The following Verbindingnummer is expected: {1}
+     </message-text>
+  </message>
+  <message id="soort-bestand-not-correct">
+    <message-text xml:lang="nl">
+      De SoortBestand van de ABestandBijlage moet {1} zijn. Nu is deze {2}.
+    </message-text>
+    <message-text xml:lang="en">
+      The SoortBestand of the ABestandBijlage must be {1}. Currently it is {2}.
+    </message-text>
+  </message>
   <message id="revisie-no-maaiveldhoogte-present">
     <message-text xml:lang="nl">
       Een NLCS++ bestand moet een maaiveldhoogte bevatten indien Tekeningtype een van de volgende is: {1}
