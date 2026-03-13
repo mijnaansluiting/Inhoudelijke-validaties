@@ -243,6 +243,48 @@
                     $relative_orientation_segment_2_start != $relative_orientation_segment_2_end"/>
     </function>
     
+    <function name="ma:mantelbuis-entry-check" as="xs:boolean">
+        <param name="mantelbuis_line" as="xs:double*"/>
+        <param name="inhoud_line" as="xs:double*"/>
+        <param name="buffer" as="xs:double"/>
+        
+        <variable name="mantelbuis_point_count" select="count($mantelbuis_line) idiv 2"/>
+        <variable name="mantelbuis_start_point" select="ma:line-get-nth-point($mantelbuis_line, 1)"/>
+        <variable name="mantelbuis_after_start_point" select="ma:line-get-nth-point($mantelbuis_line, 2)"/>
+        <variable name="mantelbuis_before_end_point" select="ma:line-get-nth-point($mantelbuis_line, $mantelbuis_point_count - 1)"/>
+        <variable name="mantelbuis_end_point" select="ma:line-get-nth-point($mantelbuis_line, $mantelbuis_point_count)"/>
+        
+        <variable name="entry_segment" select="ma:point-get-orthogonal-segment($mantelbuis_start_point, $mantelbuis_after_start_point, $buffer)"/>
+        <variable name="exit_segment" select="ma:point-get-orthogonal-segment($mantelbuis_end_point, $mantelbuis_before_end_point, $buffer)"/>
+        
+        <variable name="inhoud_point_count" select="count($inhoud_line) idiv 2"/>
+        <variable name="inhoud_enters_mantelbuis" select="
+                    some $point_index in 1 to $inhoud_point_count - 1
+                    satisfies ma:segment-intersects-segment($entry_segment, ma:line-get-slice($inhoud_line, $point_index, $point_index + 1))"/>
+        <variable name="inhoud_exits_mantelbuis" select="
+                    some $point_index in 1 to $inhoud_point_count - 1
+                    satisfies ma:segment-intersects-segment($exit_segment, ma:line-get-slice($inhoud_line, $point_index, $point_index + 1))"/>
+        <sequence select="$inhoud_enters_mantelbuis and $inhoud_exits_mantelbuis"/>
+    </function>
+    
+    <function name="ma:point-get-orthogonal-segment">
+        <param name="point" as="xs:double*"/>
+        <param name="direction_point" as="xs:double*"/>
+        <param name="buffer" as="xs:double"/>
+        
+        <variable name="segment_length" as="xs:double" select="ma:point-distance-to-point($point, $direction_point)"/>
+        
+        <variable name="dx" select="$direction_point[1] - $point[1]"/>
+        <variable name="dy" select="$direction_point[2] - $point[2]"/>
+        
+        <variable name="ux" select="-$dy div $segment_length"/>
+        <variable name="uy" select="$dx div $segment_length"/>
+        
+        <sequence select="($point[1] + $buffer * $ux, $point[2] + $buffer * $uy, $point[1] - $buffer * $ux, $point[2] - $buffer * $uy)"/>
+        
+    </function>
+        
+    
     <function name="ma:line-within-range-of-line">
         <param name="line" as="xs:double*"/>
         <param name="other_line" as="xs:double*"/>

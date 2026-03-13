@@ -13,18 +13,38 @@
         <let name="line"
             value="ma:parse-line(nlcs:Geometry)"/>
 
-        <let name="all_inhoud_objects_within_range"
-            value="
-                every $line_geometry in $inhoud_objects/nlcs:Geometry
-                satisfies ma:line-within-range-of-line($line, ma:parse-line($line_geometry), 100)
-            "/>
+        <let name="geometries"
+            value="$inhoud_objects/nlcs:Geometry[not(ma:mantelbuis-entry-check($line, ma:parse-line(.), 20))]"/>
 
+        <assert id="inhoud-enters-and-leaves-mantelbuis"
+            properties="scope rule-number severity object-type object-id geometries"
+            test="empty($geometries)">
+            1 of meer inhoudobjecten gaan de mantelbuis niet in of uit.
+        </assert>
+
+        <assert id="inhoud-not-too-far-from-mantelbuis"
+            properties="scope rule-number severity object-type object-id geometries"
+            test="false()">
+            WAAAh
+        </assert>
+        
+
+
+        <!-- 
+            (Snijdt de kabellijn de orthogonaal van het start- of eindpunt van de mantelbuis *niet*, faal dan direct)
+            Bereken voor elk inhoudsegment de inhoud bounding box (IBB), verleng/verkort deze om aan te sluiten op het volgende inhoudsegment.
+            Filter de IBBs op interactie met de mantelbuislijn.
+            Voor elke overgebleven IBB:
+                Filter de mantelbuissegmenten die interactie hebben met de IBB.
+                Minimaal 1 van de overgebleven mantelbuissegmenten mag de linker en rechterzijde van de IBB *niet* raken.
+        -->
+
+        <!-- 
         <assert id="mantelbuis-inhoud-within-range"
             properties="scope rule-number severity object-type object-id"
             test="$all_inhoud_objects_within_range">
             Mantelbuisinhoud ligt te ver van mantelbuis vandaan.
         </assert>
-        <!-- 
         <let name="a_left"
             value="ma:parse-line(//nlcs:MSkabel[nlcs:ID = 'A-LEFT']/nlcs:Geometry)"/>
 
