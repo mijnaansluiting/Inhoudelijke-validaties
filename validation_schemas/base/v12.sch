@@ -168,6 +168,10 @@
         <active pattern="R.40"/>
     </phase>
 
+    <phase id="R.41">
+        <active pattern="R.41"/>
+    </phase>
+
     <!-- import functions -->
     <xsl:include href="../xsl_functions/geometry_functions.xsl"/>
     <xsl:include href="../xsl_functions/config_functions.xsl"/>
@@ -213,6 +217,7 @@
     <include href="../patterns/v12/R.38.sch"/>
     <include href="../patterns/v12/R.39.sch"/>
     <include href="../patterns/v12/R.40.sch"/>
+    <include href="../patterns/v12/R.41.sch"/>
 
     <!-- import abstract patterns -->
     <include href="../abstract_patterns/v12/bestand/aanwezigheid_maaiveldhoogte.sch"/>
@@ -252,5 +257,6 @@
     <include href="../abstract_patterns/v12/bestand/volgnummer_verplicht.sch"/>
     <include href="../abstract_patterns/v12/verplichte_waarde/reden_niet_verwijdering_ingevuld.sch"/>
     <include href="../abstract_patterns/v12/document/aanwezigheid_bestand_bijlage_aardpen.sch"/>
+    <include href="../abstract_patterns/v12/verplichte_waarde/datumtijdmutatie_gevuld.sch"/>
 
 </schema>
