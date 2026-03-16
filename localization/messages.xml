@@ -71,6 +71,14 @@
       Het kenmerk {1} is niet gevuld voor het object.
     </message-text>
   </message>
+  <message id="attribute-present">
+    <message-text xml:lang="en">
+      The attribute {1} is present on object when not allowed.
+    </message-text>
+    <message-text xml:lang="nl">
+      Het kenmerk {1} is gevuld voor het object terwijl dit niet is toegestaan.
+    </message-text>
+  </message>
   <message id="object-not-present">
     <message-text xml:lang="en">
       The object {1} is not present.
