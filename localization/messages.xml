@@ -89,7 +89,7 @@
   </message>
   <message id="date-in-the-future">
     <message-text xml:lang="en">
-      The DatumAanleg on object is in the future.
+      The #1 on object is in the future.
     </message-text>
     <message-text xml:lang="nl">
       De DatumAanleg op object mag niet in de toekomst liggen.
