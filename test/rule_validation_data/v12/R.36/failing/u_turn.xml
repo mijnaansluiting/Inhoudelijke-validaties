@@ -12,53 +12,53 @@
         <Geometry></Geometry>
     </AprojectReferentie>
     
-    <Amantelbuis>
-        <Status>BESTAAND</Status>
-        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <ID>Mantelbuis</ID>
-        <Geometry>
-            <gml:LineString
-                srsDimension="3"
-                srsName="EPSG:7415">
-                <gml:posList>
-                    2180 270 0
-                    2180 110 0
-                    2220  70 0
-                    2260  70 0
-                    2300 110 0
-                    2300 270 0
-                </gml:posList>
-            </gml:LineString>
-        </Geometry>
-    </Amantelbuis>
-    
     <MSkabel>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <ID>Failing</ID>
+        <ID>B</ID>
         <Geometry>
             <gml:LineString
                 srsDimension="3"
                 srsName="EPSG:7415">
                 <gml:posList>
-                    2100 400 0
-                    2190 310 0
-                    2190 110 0
-                    2240  60 0
-                    2290  60 0
-                    2310  80 0
-                    2310 310 0
-                    2400 400 0
+                    104 22 0
+                    109 15 0
+                    109  5 0
+                    111  3 0
+                    113  3 0
+                    115  5 0
+                    115 15 0
+                    120 22 0
                 </gml:posList>
             </gml:LineString>
         </Geometry>
     </MSkabel>
     
+    <Amantelbuis>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
+        <ID>C</ID>
+        <Geometry>
+            <gml:LineString
+                srsDimension="3"
+                srsName="EPSG:7415">
+                <gml:posList>
+                    110 13 0
+                    110  5 0
+                    112  3 0
+                    114  3 0
+                    116  5 0
+                    116 13 0
+                </gml:posList>
+            </gml:LineString>
+        </Geometry>
+    </Amantelbuis>
+    
     <AmantelbuisInhoud>
         <Status>BESTAAND</Status>
-        <MantelbuisID>Mantelbuis</MantelbuisID>
-        <InhoudID>Failing</InhoudID>
-        <ID>Failing-Inhoud</ID>
+        <MantelbuisID>C</MantelbuisID>
+        <InhoudID>B</InhoudID>
+        <ID>D</ID>
     </AmantelbuisInhoud>
-    
+   
 </NLCSnetbeheer>
