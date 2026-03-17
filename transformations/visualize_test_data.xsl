@@ -25,7 +25,7 @@
           <xsl:variable name="coords" select="tokenize(normalize-space(gml:pos), '\s+')"/>
           <xsl:variable name="x" select="number($coords[1])"/>
           <xsl:variable name="y" select="number($coords[2])"/>
-          <xsl:variable name="radius" select="5"/>
+          <xsl:variable name="radius" select="2"/>
           <xsl:variable name="color" select="ma:color-for-index($i)"/>
           <SVGBlueprint id="{$nlcs_object/nlcs:ID}" type="circle" color="{$color}">
             <Measurements 
@@ -55,21 +55,21 @@
 
           <SVGBlueprint type="polyline">
             <Attribute key="stroke" value="black"/>
-            <Attribute key="stroke-width" value="5"/>
+            <Attribute key="stroke-width" value="2"/>
             <Attribute key="stroke-linecap" value="round"/>
             <Attribute key="fill" value="none"/>
             <Attribute key="points" value="{string-join($coord_pairs, ' ')}"/>
           </SVGBlueprint>   
           <SVGBlueprint id="{$nlcs_object/nlcs:ID}" type="polyline" color="{$color}">
             <Measurements
-              minX="{min($x_coords) - 5}"  
-              minY="{min($y_coords) - 5}"  
-              maxX="{max($x_coords) + 5}"  
-              maxY="{max($y_coords) + 5}"  
+              minX="{min($x_coords)}"  
+              minY="{min($y_coords)}"  
+              maxX="{max($x_coords)}"  
+              maxY="{max($y_coords)}"  
             />
             <Anchor x="{avg($x_coords)}" y="{avg($y_coords) - $anchor_offset}"/>
             <Attribute key="stroke" value="{$color}"/>
-            <Attribute key="stroke-width" value="3"/>
+            <Attribute key="stroke-width" value="1"/>
             <Attribute key="stroke-linecap" value="round"/>
             <Attribute key="fill" value="none"/>
             <Attribute key="points" value="{string-join($coord_pairs, ' ')}"/>

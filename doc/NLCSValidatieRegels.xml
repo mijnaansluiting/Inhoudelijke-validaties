@@ -514,7 +514,6 @@
 			<soort>Geometrie</soort>
 			<definitie>
 				Gerelateerde Assets van een Amantelbuis dienen maximaal 1m van de Amantelbuis vandaan te liggen. Deze afstand dient configurabel te zijn.
-				Tevens moeten de gerelateerde Assets de Amantelbuis volledig in- en uitgaan. 
 			</definitie>
 			<validatieObjecten>
 				<validatieObject><naam>Amantelbuis</naam></validatieObject>
