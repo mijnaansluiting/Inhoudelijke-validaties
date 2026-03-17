@@ -243,30 +243,6 @@
                     $relative_orientation_segment_2_start != $relative_orientation_segment_2_end"/>
     </function>
     
-    <function name="ma:mantelbuis-entry-check" as="xs:boolean">
-        <param name="mantelbuis_line" as="xs:double*"/>
-        <param name="inhoud_line" as="xs:double*"/>
-        <param name="buffer" as="xs:double"/>
-        
-        <variable name="mantelbuis_point_count" select="count($mantelbuis_line) idiv 2"/>
-        <variable name="mantelbuis_start_point" select="ma:line-get-nth-point($mantelbuis_line, 1)"/>
-        <variable name="mantelbuis_after_start_point" select="ma:line-get-nth-point($mantelbuis_line, 2)"/>
-        <variable name="mantelbuis_before_end_point" select="ma:line-get-nth-point($mantelbuis_line, $mantelbuis_point_count - 1)"/>
-        <variable name="mantelbuis_end_point" select="ma:line-get-nth-point($mantelbuis_line, $mantelbuis_point_count)"/>
-        
-        <variable name="entry_segment" select="ma:point-get-orthogonal-segment($mantelbuis_start_point, $mantelbuis_after_start_point, $buffer)"/>
-        <variable name="exit_segment" select="ma:point-get-orthogonal-segment($mantelbuis_end_point, $mantelbuis_before_end_point, $buffer)"/>
-        
-        <variable name="inhoud_point_count" select="count($inhoud_line) idiv 2"/>
-        <variable name="inhoud_enters_mantelbuis" select="
-                    some $point_index in 1 to $inhoud_point_count - 1
-                    satisfies ma:segment-intersects-segment($entry_segment, ma:line-get-slice($inhoud_line, $point_index, $point_index + 1))"/>
-        <variable name="inhoud_exits_mantelbuis" select="
-                    some $point_index in 1 to $inhoud_point_count - 1
-                    satisfies ma:segment-intersects-segment($exit_segment, ma:line-get-slice($inhoud_line, $point_index, $point_index + 1))"/>
-        <sequence select="$inhoud_enters_mantelbuis and $inhoud_exits_mantelbuis"/>
-    </function>
-    
     <function name="ma:point-get-orthogonal-segment">
         <param name="point" as="xs:double*"/>
         <param name="direction_point" as="xs:double*"/>
@@ -281,7 +257,150 @@
         <variable name="uy" select="$dx div $segment_length"/>
         
         <sequence select="($point[1] + $buffer * $ux, $point[2] + $buffer * $uy, $point[1] - $buffer * $ux, $point[2] - $buffer * $uy)"/>
+    </function>
+    
+    <function name="ma:line-within-range-of-mantelbuis" as="xs:boolean">
+        <param name="line" as="xs:double*"/>
+        <param name="mantelbuis_line" as="xs:double*"/>
+        <param name="range" as="xs:double"/>
         
+        <variable name="line_segment_count" select="(count($line) idiv 2) - 1"/>
+        <variable name="mantelbuis_segment_count" select="(count($mantelbuis_line) idiv 2) - 1"/>
+        
+        <variable name="left_bounds_segments" as="xs:double*">
+            <for-each select="1 to $line_segment_count">
+                <variable name="segment_index" select="."/>
+                <variable name="segment_start" select="ma:line-get-nth-point($line, $segment_index)"/>
+                <variable name="segment_end" select="ma:line-get-nth-point($line, $segment_index + 1)"/>
+                <variable name="segment_length" select="ma:point-distance-to-point($segment_start, $segment_end)"/>
+                <variable name="start_segment" select="ma:point-get-orthogonal-segment($segment_start, $segment_end, $range)"/>
+                <variable name="end_segment" select="ma:point-get-orthogonal-segment($segment_end, $segment_start, $range)"/>
+                
+                <sequence select="$start_segment[3], $start_segment[4], $end_segment[1], $end_segment[2]"/>
+            </for-each>
+        </variable>
+        
+        <variable name="right_bounds_segments" as="xs:double*">
+            <for-each select="1 to $line_segment_count">
+                <variable name="segment_index" select="."/>
+                <variable name="segment_start" select="ma:line-get-nth-point($line, $segment_index)"/>
+                <variable name="segment_end" select="ma:line-get-nth-point($line, $segment_index + 1)"/>
+                <variable name="segment_length" select="ma:point-distance-to-point($segment_start, $segment_end)"/>
+                <variable name="start_segment" select="ma:point-get-orthogonal-segment($segment_start, $segment_end, $range)"/>
+                <variable name="end_segment" select="ma:point-get-orthogonal-segment($segment_end, $segment_start, $range)"/>
+                
+                <sequence select="$start_segment[1], $start_segment[2], $end_segment[3], $end_segment[4]"/>
+            </for-each>
+        </variable>
+        
+        <variable name="left_bounds" as="xs:double*">
+            <for-each select="1 to $line_segment_count">
+                <variable name="segment_index" select=". * 2 - 1"/>
+                <variable name="left_bound_segment" select="ma:line-get-slice($left_bounds_segments, $segment_index, $segment_index + 1)"/>
+                <variable name="left_bound_next_segment" select="ma:line-get-slice($left_bounds_segments, $segment_index + 2, $segment_index + 3)"/>
+                
+                <if test=". = 1">
+                    <sequence select="$left_bound_segment[1], $left_bound_segment[2]"/>                
+                </if>
+                <sequence select="ma:intersection-of-segments($left_bound_segment, $left_bound_next_segment)"/>
+                <if test=". = last()">
+                    <sequence select="$left_bound_segment[3], $left_bound_segment[4]"/>                
+                </if>
+            </for-each>
+        </variable>
+
+        <variable name="right_bounds" as="xs:double*">    
+            <for-each select="1 to $line_segment_count">
+                <variable name="segment_index" select=". * 2 - 1"/>
+                <variable name="right_bound_segment" select="ma:line-get-slice($right_bounds_segments, $segment_index, $segment_index + 1)"/>
+                <variable name="right_bound_next_segment" select="ma:line-get-slice($right_bounds_segments, $segment_index + 2, $segment_index + 3)"/>
+                
+                <if test=". = 1">
+                    <sequence select="$right_bound_segment[1], $right_bound_segment[2]"/>                
+                </if>
+                <sequence select="ma:intersection-of-segments($right_bound_segment, $right_bound_next_segment)"/>
+                <if test=". = last()">
+                    <sequence select="$right_bound_segment[3], $right_bound_segment[4]"/>                
+                </if>
+            </for-each>
+        </variable>
+        
+        <variable name="bounds_area" as="xs:double*">
+            <for-each select="1 to $line_segment_count + 1">
+                <sequence select="ma:line-get-nth-point($left_bounds, .)"/>    
+            </for-each>
+            <for-each select="0 to $line_segment_count + 1">
+                <variable name="reverse_index" select="$line_segment_count + 1 - ."/>
+                <sequence select="ma:line-get-nth-point($right_bounds, $reverse_index)"/>    
+            </for-each>
+            <sequence select="ma:line-get-nth-point($left_bounds, 1)"/>
+        </variable>
+        
+        <!-- <message terminate="yes">
+            <value-of select="$bounds_area"/>
+        </message> -->
+        
+        <variable name="min_distance_between_points_to_check" select="0.5"/>
+        
+        <variable name="mantelbuis_within_bounds" as="xs:boolean*">
+            <for-each select="1 to $mantelbuis_segment_count">
+                <variable name="mantelbuis_segment_index" select="."/>
+                <variable name="mantelbuis_segment_start" select="ma:line-get-nth-point($mantelbuis_line, $mantelbuis_segment_index)"/>   
+                <variable name="mantelbuis_segment_end" select="ma:line-get-nth-point($mantelbuis_line, $mantelbuis_segment_index + 1)"/>   
+
+                <variable name="mantelbuis_segment_length" as="xs:double" select="ma:point-distance-to-point($mantelbuis_segment_start, $mantelbuis_segment_end)"/>
+                
+                <variable name="dx" select="$mantelbuis_segment_end[1] - $mantelbuis_segment_start[1]"/>
+                <variable name="dy" select="$mantelbuis_segment_end[2] - $mantelbuis_segment_start[2]"/>
+                
+                <variable name="points_in_segment" select="xs:integer(ceiling($mantelbuis_segment_length div $min_distance_between_points_to_check))"/>
+                <variable name="distance_between_points" select="$mantelbuis_segment_length div $points_in_segment"/>
+                <variable name="scaling_factor" select="$distance_between_points div $mantelbuis_segment_length"/>
+                
+                <variable name="points_to_check">
+                    <choose>
+                        <when test="$mantelbuis_segment_index = last()">
+                            <sequence select="$points_in_segment + 1"/>    
+                        </when>
+                        <otherwise>
+                            <sequence select="$points_in_segment"/>
+                        </otherwise>
+                    </choose>
+                </variable>
+
+                <for-each select="1 to $points_to_check">
+                    <variable name="point_index" select="."/>
+                    <variable name="point" as="xs:double*">
+                        <choose>
+                            <when test="$point_index = 1">
+                                <sequence select="$mantelbuis_segment_start"/>    
+                            </when>
+                            <when test="$point_index = last() and $mantelbuis_segment_index = last()">
+                                <sequence select="$mantelbuis_segment_end"/>    
+                            </when>
+                            <otherwise>
+                                <variable name="point_x" select="$mantelbuis_segment_start[1] + $scaling_factor * ($point_index - 1) * $dx"/>
+                                <variable name="point_y" select="$mantelbuis_segment_start[2] + $scaling_factor * ($point_index - 1) * $dy"/>
+                                <sequence select="$point_x, $point_y"/>
+                            </otherwise>
+                        </choose>    
+                    </variable>
+                    
+                    <sequence select="ma:point-interacts-with-area($point, $bounds_area)"/>
+                    
+                    <if test="not(ma:point-interacts-with-area($point, $bounds_area))">
+                        <message>
+                            <sequence select="$point"/>
+                        </message>    
+                    </if>
+                </for-each>
+            </for-each>
+        </variable>
+        
+        <!-- <message terminate="yes">
+            <sequence select="$mantelbuis_within_bounds"/>
+        </message>     -->
+        <sequence select="not($mantelbuis_within_bounds = false())"/>
     </function>
         
     

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<NLCSnetbeheer xmlns:keuzelijst="NLCSnetbeheer"
+               xmlns:gml="http://www.opengis.net/gml/3.2"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="NS_NLCSnetbeheer ../../../../../doc/NLCS_Netbeheer_Keuzelijst.xsd"
+               xmlns="NS_NLCSnetbeheer">
+    <AprojectReferentie>
+        <Projectnummer>1</Projectnummer>
+        <Netbeheerder>Enexis</Netbeheerder>
+        <ID>A</ID>
+        <Tekeningtype>BESTAANDE SITUATIE</Tekeningtype>
+        <Geometry></Geometry>
+    </AprojectReferentie>
+    
+    <MSkabel>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
+        <ID>C</ID>
+        <Geometry>
+            <gml:LineString
+                srsDimension="3"
+                srsName="EPSG:7415">
+                <gml:posList>
+                     0  0 0
+                    30 30 0
+                </gml:posList>
+            </gml:LineString>
+        </Geometry>
+    </MSkabel>
+    
+    <Amantelbuis>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
+        <ID>B</ID>
+        <Geometry>
+            <gml:LineString
+                srsDimension="3"
+                srsName="EPSG:7415">
+                <gml:posList>
+                    11 10 0
+                    21 20 0
+                </gml:posList>
+            </gml:LineString>
+        </Geometry>
+    </Amantelbuis>
+    
+    <AmantelbuisInhoud>
+        <Status>BESTAAND</Status>
+        <MantelbuisID>B</MantelbuisID>
+        <InhoudID>C</InhoudID>
+        <ID>D</ID>
+    </AmantelbuisInhoud>
+
+</NLCSnetbeheer>
