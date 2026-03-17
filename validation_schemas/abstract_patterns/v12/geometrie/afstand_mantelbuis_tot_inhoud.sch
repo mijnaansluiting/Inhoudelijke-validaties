@@ -17,7 +17,7 @@
             value="ma:mantelbuis-inhoud-asset-max-distance()"/>
 
         <let name="inhoud_objects_too_far_removed"
-            value="$inhoud_objects[not(ma:line-within-range-of-mantelbuis(ma:parse-line(nlcs:Geometry), $mantelbuis_geometry, $max_distance))]"/>
+            value="$inhoud_objects[not(ma:line-within-range-of-line(ma:parse-line(nlcs:Geometry), $mantelbuis_geometry, $max_distance))]"/>
 
         <let name="geometries"
             value="$inhoud_objects_too_far_removed/nlcs:Geometry"/>
