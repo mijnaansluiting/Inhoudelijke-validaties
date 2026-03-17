@@ -22,10 +22,10 @@
         <let name="geometries"
             value="$inhoud_objects_too_far_removed/nlcs:Geometry"/>
 
-        <assert id="inhoud-not-too-far-from-mantelbuis"
+        <assert id="inhoud-in-range-of-mantelbuis"
             properties="scope rule-number severity object-type object-id geometries"
             test="empty($inhoud_objects_too_far_removed)">
-            <value-of select="count($inhoud_objects_too_far_removed)"/> inhoudsassets liggen te ver van de mantelbuis vandaan.
+            <value-of select="ma:get-translation-and-replace-placeholders('inhoud-assets-not-in-range-of-mantelbuis', [string(count($inhoud_objects_too_far_removed)), string($max_distance)])"/>
         </assert>
     </rule>
 </pattern>

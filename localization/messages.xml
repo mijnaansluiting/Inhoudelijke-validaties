@@ -287,4 +287,13 @@
       Measurement method {1} is not allowed here, must be one of: {2}
     </message-text>
   </message>
+  
+  <message id="inhoud-assets-not-in-range-of-mantelbuis">
+    <message-text xml:lang="nl">
+      {1} gerelateerde assets liggen meer dan {2} meter van de mantelbuis vandaan.
+    </message-text>
+    <message-text xml:lang="en">
+      {1} related assets are located more than {2} meter from the protection pipe.
+    </message-text>
+  </message>
 </messages>
