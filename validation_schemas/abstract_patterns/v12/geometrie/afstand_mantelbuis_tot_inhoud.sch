@@ -13,8 +13,11 @@
         <let name="mantelbuis_geometry"
             value="ma:parse-line(nlcs:Geometry)"/>
 
+        <let name="max_distance"
+            value="ma:mantelbuis-inhoud-asset-max-distance()"/>
+
         <let name="inhoud_objects_too_far_removed"
-            value="$inhoud_objects[not(ma:line-within-range-of-mantelbuis(ma:parse-line(nlcs:Geometry), $mantelbuis_geometry, 1))]"/>
+            value="$inhoud_objects[not(ma:line-within-range-of-mantelbuis(ma:parse-line(nlcs:Geometry), $mantelbuis_geometry, $max_distance))]"/>
 
         <let name="geometries"
             value="$inhoud_objects_too_far_removed/nlcs:Geometry"/>
