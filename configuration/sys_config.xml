@@ -19,9 +19,21 @@
                 <Functie>3FASE 3x1FASE</Functie>
             </Faseovergang>
         </MofFuncties>
+        <ToegestaandeInmeetwijzen>
+            <Inmeetwijze>GPS</Inmeetwijze>
+            <Inmeetwijze>Tachymeter</Inmeetwijze>
+        </ToegestaandeInmeetwijzen>
         <GisIdAssetsIdExceptions>
             <NoGisIdRequired>AmantelbuisInhoud</NoGisIdRequired>
             <!-- <NoAssetIdRequired>SomeObjectName</NoAssetIdRequired> -->
         </GisIdAssetsIdExceptions>
+        <SoortKunstwerkRequiredBestandsBijlage>
+            <SoortKunstwerk>ZINKER</SoortKunstwerk>
+            <SoortKunstwerk>ZINKER_BOOG</SoortKunstwerk>
+            <SoortKunstwerk>ZINKER_SLEEP</SoortKunstwerk>
+            <SoortKunstwerk>ZINKER_OMGEKEERD</SoortKunstwerk>
+            <SoortKunstwerk>ZINKER_SPUIT</SoortKunstwerk>
+        </SoortKunstwerkRequiredBestandsBijlage>
+        <MantelbuisInhoudMaxAfstand>1</MantelbuisInhoudMaxAfstand>
     </v12>
 </config>

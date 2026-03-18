@@ -26,6 +26,7 @@
         <ID>0000</ID>
         <Status>{{STATUS}}</Status>
         <Bedrijfstoestand>{{BEDRIJFSTOESTAND}}</Bedrijfstoestand>
+        <SoortAanlegTechniek>GESTUURDE TECHNIEK</SoortAanlegTechniek>
         <Geometry>
             <gml:LineString
                 srsDimension="3"
@@ -138,21 +139,63 @@
         <ID>0000</ID>
         <Status>{{STATUS}}</Status>
         <Bedrijfstoestand>{{BEDRIJFSTOESTAND}}</Bedrijfstoestand>
+        <Geometry>
+            <gml:Point
+                srsDimension="3"
+                srsName="EPSG:7415">
+                <gml:pos>
+                    0 0 0
+                </gml:pos>
+            </gml:Point>
+        </Geometry>
     </Eaardmof>
     <Eaardpen>
         <ID>0000</ID>
         <Status>{{STATUS}}</Status>
         <Bedrijfstoestand>{{BEDRIJFSTOESTAND}}</Bedrijfstoestand>
+        <Geometry>
+            <gml:Point
+                srsDimension="3"
+                srsName="EPSG:7415">
+                <gml:pos>
+                    0 0 0
+                </gml:pos>
+            </gml:Point>
+        </Geometry>
     </Eaardpen>
     <Eoliedrukinstallatie>
         <ID>0000</ID>
         <Status>{{STATUS}}</Status>
         <Bedrijfstoestand>{{BEDRIJFSTOESTAND}}</Bedrijfstoestand>
+        <Geometry>
+            <gml:Point
+                srsDimension="3"
+                srsName="EPSG:7415">
+                <gml:pos>
+                    0 0 0
+                </gml:pos>
+            </gml:Point>
+        </Geometry>
     </Eoliedrukinstallatie>
     <Eoliedrukleiding>
         <ID>0000</ID>
         <Status>{{STATUS}}</Status>
         <Bedrijfstoestand>{{BEDRIJFSTOESTAND}}</Bedrijfstoestand>
+        <Geometry>
+            <gml:Polygon
+                srsDimension="3"
+                srsName="EPSG:7415">
+                <gml:exterior>
+                    <gml:LinearRing>
+                        <gml:posList>
+                            0 0 0
+                            0 0 0
+                            0 0 0
+                        </gml:posList>
+                    </gml:LinearRing>
+                </gml:exterior>
+            </gml:Polygon>
+        </Geometry>
     </Eoliedrukleiding>
 
     <!-- G -->
@@ -455,6 +498,15 @@
         <ID>0000</ID>
         <Status>{{STATUS}}</Status>
         <Bedrijfstoestand>{{BEDRIJFSTOESTAND}}</Bedrijfstoestand>
+        <Geometry>
+            <gml:Point
+                srsDimension="3"
+                srsName="EPSG:7415">
+                <gml:pos>
+                    0 0 0
+                </gml:pos>
+            </gml:Point>
+        </Geometry>
     </OVLoverdrachtspunt>
 
     <!-- T -->

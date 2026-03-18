@@ -242,4 +242,177 @@
                     and
                     $relative_orientation_segment_2_start != $relative_orientation_segment_2_end"/>
     </function>
+    
+    <function name="ma:point-get-orthogonal-segment">
+        <param name="point" as="xs:double*"/>
+        <param name="direction_point" as="xs:double*"/>
+        <param name="buffer_distance" as="xs:double"/>
+        
+        <variable name="segment_length" as="xs:double" select="ma:point-distance-to-point($point, $direction_point)"/>
+        
+        <variable name="dx" select="$direction_point[1] - $point[1]"/>
+        <variable name="dy" select="$direction_point[2] - $point[2]"/>
+        
+        <variable name="ux" select="-$dy div $segment_length"/>
+        <variable name="uy" select="$dx div $segment_length"/>
+        
+        <sequence select="($point[1] + $buffer_distance * $ux, $point[2] + $buffer_distance * $uy, $point[1] - $buffer_distance * $ux, $point[2] - $buffer_distance * $uy)"/>
+    </function>
+    
+    <function name="ma:line-within-range-of-line" as="xs:boolean">
+        <param name="line" as="xs:double*"/>
+        <param name="control_line" as="xs:double*"/>
+        <param name="range" as="xs:double"/>
+        
+        <variable name="line_buffer" select="ma:buffer-line($line, $range)"/>
+        
+        <variable name="check_step" select="0.5"/>
+        
+        <variable name="control_line_within_bounds" as="xs:boolean*">
+            <for-each select="1 to (count($control_line) idiv 2) - 1">
+                <variable name="control_line_segment_index" select="."/>
+                <variable name="control_line_segment_start" select="ma:line-get-nth-point($control_line, $control_line_segment_index)"/>   
+                <variable name="control_line_segment_end" select="ma:line-get-nth-point($control_line, $control_line_segment_index + 1)"/>   
+
+                <variable name="control_line_segment_length" as="xs:double" select="ma:point-distance-to-point($control_line_segment_start, $control_line_segment_end)"/>
+                
+                <variable name="dx" select="$control_line_segment_end[1] - $control_line_segment_start[1]"/>
+                <variable name="dy" select="$control_line_segment_end[2] - $control_line_segment_start[2]"/>
+                
+                <variable name="points_in_segment" select="xs:integer(ceiling($control_line_segment_length div $check_step))"/>
+                <variable name="distance_between_points" select="$control_line_segment_length div $points_in_segment"/>
+                <variable name="scaling_factor" select="$distance_between_points div $control_line_segment_length"/>
+                
+                <variable name="points_to_check">
+                    <choose>
+                        <when test="$control_line_segment_index = last()">
+                            <sequence select="$points_in_segment + 1"/>    
+                        </when>
+                        <otherwise>
+                            <sequence select="$points_in_segment"/>
+                        </otherwise>
+                    </choose>
+                </variable>
+
+                <for-each select="1 to $points_to_check">
+                    <variable name="point_index" select="."/>
+                    <variable name="point" as="xs:double*">
+                        <choose>
+                            <when test="$point_index = 1">
+                                <sequence select="$control_line_segment_start"/>    
+                            </when>
+                            <when test="$point_index = last() and $control_line_segment_index = last()">
+                                <sequence select="$control_line_segment_end"/>    
+                            </when>
+                            <otherwise>
+                                <variable name="point_x" select="$control_line_segment_start[1] + $scaling_factor * ($point_index - 1) * $dx"/>
+                                <variable name="point_y" select="$control_line_segment_start[2] + $scaling_factor * ($point_index - 1) * $dy"/>
+                                <sequence select="$point_x, $point_y"/>
+                            </otherwise>
+                        </choose>    
+                    </variable>
+                    
+                    <sequence select="ma:point-interacts-with-area($point, $line_buffer)"/>
+                </for-each>
+            </for-each>
+        </variable>
+        
+        <sequence select="not($control_line_within_bounds = false())"/>
+    </function>
+        
+    <function name="ma:intersection-of-segments" as="xs:double*">
+        <param name="segment_1" as="xs:double*"/>
+        <param name="segment_2" as="xs:double*"/>
+        
+        <variable name="den" select="
+                    ($segment_1[1] - $segment_1[3]) * ($segment_2[2] - $segment_2[4]) -
+                    ($segment_1[2] - $segment_1[4]) * ($segment_2[1] - $segment_2[3])"/>
+        
+        <if test="$den ne 0">
+            <variable name="t" select="
+                        (($segment_1[1] - $segment_2[1]) * ($segment_2[2] - $segment_2[4]) - 
+                        ($segment_1[2] - $segment_2[2]) * ($segment_2[1] - $segment_2[3])) div $den"/>
+            <variable name="u" select="
+                        (($segment_1[1] - $segment_2[1]) * ($segment_1[2] - $segment_1[4]) - 
+                        ($segment_1[2] - $segment_2[2]) * ($segment_1[1] - $segment_1[3])) div $den"/>
+            
+            <variable name="intersect_x" select="$segment_1[1] + $t * ($segment_1[3] - $segment_1[1])"/>
+            <variable name="intersect_y" select="$segment_1[2] + $t * ($segment_1[4] - $segment_1[2])"/>
+            <sequence select="($intersect_x, $intersect_y)"/>
+        </if>
+    </function>
+    
+    <function name="ma:buffer-line" as="xs:double*">
+        <param name="line" as="xs:double*"/>
+        <param name="buffer_distance" as="xs:double"/>
+        
+        <variable name="segment_count" select="(count($line) idiv 2) - 1"/>
+        
+        <variable name="left_bounds_segments" as="xs:double*">
+            <for-each select="1 to $segment_count">
+                <variable name="segment_index" select="."/>
+                <variable name="segment_start" select="ma:line-get-nth-point($line, $segment_index)"/>
+                <variable name="segment_end" select="ma:line-get-nth-point($line, $segment_index + 1)"/>
+                <variable name="segment_length" select="ma:point-distance-to-point($segment_start, $segment_end)"/>
+                <variable name="start_segment" select="ma:point-get-orthogonal-segment($segment_start, $segment_end, $buffer_distance)"/>
+                <variable name="end_segment" select="ma:point-get-orthogonal-segment($segment_end, $segment_start, $buffer_distance)"/>
+                
+                <sequence select="$start_segment[3], $start_segment[4], $end_segment[1], $end_segment[2]"/>
+            </for-each>
+        </variable>
+        
+        <variable name="right_bounds_segments" as="xs:double*">
+            <for-each select="1 to $segment_count">
+                <variable name="segment_index" select="."/>
+                <variable name="segment_start" select="ma:line-get-nth-point($line, $segment_index)"/>
+                <variable name="segment_end" select="ma:line-get-nth-point($line, $segment_index + 1)"/>
+                <variable name="segment_length" select="ma:point-distance-to-point($segment_start, $segment_end)"/>
+                <variable name="start_segment" select="ma:point-get-orthogonal-segment($segment_start, $segment_end, $buffer_distance)"/>
+                <variable name="end_segment" select="ma:point-get-orthogonal-segment($segment_end, $segment_start, $buffer_distance)"/>
+                
+                <sequence select="$start_segment[1], $start_segment[2], $end_segment[3], $end_segment[4]"/>
+            </for-each>
+        </variable>
+        
+        <variable name="left_bounds" as="xs:double*">
+            <for-each select="1 to $segment_count">
+                <variable name="segment_index" select=". * 2 - 1"/>
+                <variable name="left_bound_segment" select="ma:line-get-slice($left_bounds_segments, $segment_index, $segment_index + 1)"/>
+                <variable name="left_bound_next_segment" select="ma:line-get-slice($left_bounds_segments, $segment_index + 2, $segment_index + 3)"/>
+                
+                <if test=". = 1">
+                    <sequence select="$left_bound_segment[1], $left_bound_segment[2]"/>                
+                </if>
+                <sequence select="ma:intersection-of-segments($left_bound_segment, $left_bound_next_segment)"/>
+                <if test=". = last()">
+                    <sequence select="$left_bound_segment[3], $left_bound_segment[4]"/>                
+                </if>
+            </for-each>
+        </variable>
+        
+        <variable name="right_bounds" as="xs:double*">    
+            <for-each select="1 to $segment_count">
+                <variable name="segment_index" select=". * 2 - 1"/>
+                <variable name="right_bound_segment" select="ma:line-get-slice($right_bounds_segments, $segment_index, $segment_index + 1)"/>
+                <variable name="right_bound_next_segment" select="ma:line-get-slice($right_bounds_segments, $segment_index + 2, $segment_index + 3)"/>
+                
+                <if test=". = 1">
+                    <sequence select="$right_bound_segment[1], $right_bound_segment[2]"/>                
+                </if>
+                <sequence select="ma:intersection-of-segments($right_bound_segment, $right_bound_next_segment)"/>
+                <if test=". = last()">
+                    <sequence select="$right_bound_segment[3], $right_bound_segment[4]"/>                
+                </if>
+            </for-each>
+        </variable>
+        
+        <for-each select="1 to $segment_count + 1">
+            <sequence select="ma:line-get-nth-point($left_bounds, .)"/>    
+        </for-each>
+        <for-each select="0 to $segment_count + 1">
+            <variable name="reverse_index" select="$segment_count + 1 - ."/>
+            <sequence select="ma:line-get-nth-point($right_bounds, $reverse_index)"/>    
+        </for-each>
+        <sequence select="ma:line-get-nth-point($left_bounds, 1)"/>
+    </function>
 </stylesheet>
