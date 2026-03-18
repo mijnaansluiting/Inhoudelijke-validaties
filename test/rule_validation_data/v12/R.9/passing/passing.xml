@@ -22,18 +22,18 @@
     </MSstation>
 
     <MSkabel>
+        <ID>C</ID>
         <DatumAanleg>2023-10-10</DatumAanleg>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <ID>C</ID>
         <Geometry></Geometry>
     </MSkabel>
 
     <MSmof>
+        <ID>D</ID>
         <DatumAanleg>1971-06-14</DatumAanleg>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <ID>D</ID>
         <Geometry></Geometry>
     </MSmof>
 
