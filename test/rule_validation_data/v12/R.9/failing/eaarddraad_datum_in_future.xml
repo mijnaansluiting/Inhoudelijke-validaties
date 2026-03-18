@@ -15,7 +15,7 @@
 
     <Eaarddraad>
         <ID>B</ID>
-        <DatumAanleg>2000-12-31</DatumAanleg>
+        <DatumAanleg>2999-12-31</DatumAanleg>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
         <Geometry></Geometry>
