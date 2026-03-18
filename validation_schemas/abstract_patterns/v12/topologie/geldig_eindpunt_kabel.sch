@@ -60,8 +60,8 @@
         
         <let name="geometries"
             value="
-                (if (not($start_point_connected)) then $start_point else (),
-                    if (not($end_point_connected)) then $end_point else ())
+                (if (not($start_point_connected)) then ma:create-gml-point(($start_point, 0), 3, 7415) else (),
+                    if (not($end_point_connected)) then ma:create-gml-point(($end_point, 0), 3, 7415) else ())
             "/>
         
         <assert id="start_point_connected" 
@@ -157,8 +157,8 @@
         
         <let name="geometries"
             value="
-                (if (not($start_point_connected)) then $start_point else (),
-                    if (not($end_point_connected)) then $end_point else ())
+                (if (not($start_point_connected)) then ma:create-gml-point(($start_point, 0), 3, 7415) else (),
+                    if (not($end_point_connected)) then ma:create-gml-point(($end_point, 0), 3, 7415) else ())
             "/>
         
         <assert id="start_point_connected" 
@@ -264,8 +264,8 @@
         
         <let name="geometries"
             value="
-                (if (not($start_point_connected)) then $start_point else (),
-                    if (not($end_point_connected)) then $end_point else ())
+                (if (not($start_point_connected)) then ma:create-gml-point(($start_point, 0), 3, 7415) else (),
+                    if (not($end_point_connected)) then ma:create-gml-point(($end_point, 0), 3, 7415) else ())
             "/>
         
         <assert id="start_point_connected" 
