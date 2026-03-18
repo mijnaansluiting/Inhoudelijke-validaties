@@ -62,10 +62,10 @@
           </SVGBlueprint>   
           <SVGBlueprint id="{$nlcs_object/nlcs:ID}" type="polyline" color="{$color}">
             <Measurements
-              minX="{min($x_coords)}"  
-              minY="{min($y_coords)}"  
-              maxX="{max($x_coords)}"  
-              maxY="{max($y_coords)}"  
+              minX="{min($x_coords) - 5}"  
+              minY="{min($y_coords) - 5}"  
+              maxX="{max($x_coords) + 5}"  
+              maxY="{max($y_coords) + 5}"  
             />
             <Anchor x="{avg($x_coords)}" y="{avg($y_coords) - $anchor_offset}"/>
             <Attribute key="stroke" value="{$color}"/>
