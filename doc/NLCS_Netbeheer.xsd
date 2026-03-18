@@ -36,7 +36,7 @@
 												</xs:simpleType>
 											</xs:element>
 											<xs:element minOccurs="0" maxOccurs="1" name="Volgnummer" type="xs:integer" />
-											<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:date" />
+											<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
 											<xs:element minOccurs="1" maxOccurs="1" name="Tekeningtype" type="_Tekeningtype" />
 											<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:SurfacePropertyType" />
 										</xs:sequence>
@@ -66,13 +66,7 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg">
-													<xs:simpleType>
-														<xs:restriction base="xs:string">
-															<xs:maxLength value="8" />
-														</xs:restriction>
-													</xs:simpleType>
-												</xs:element>
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg" type="xs:date" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Toelichting">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -149,7 +143,7 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:date" />
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:SurfacePropertyType" />
 											</xs:sequence>
 										</xs:extension>
@@ -165,13 +159,7 @@
 												<xs:element minOccurs="1" maxOccurs="1" name="ID" type="xs:ID" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Type" type="_TypeLSMof" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Fabrikant" type="_FabrikantLSMof" />
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg">
-													<xs:simpleType>
-														<xs:restriction base="xs:string">
-															<xs:maxLength value="8" />
-														</xs:restriction>
-													</xs:simpleType>
-												</xs:element>
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg" type="xs:date" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Toelichting">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -222,7 +210,7 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:date" />
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:PointPropertyType" />
 											</xs:sequence>
 										</xs:extension>
@@ -257,13 +245,7 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg">
-													<xs:simpleType>
-														<xs:restriction base="xs:string">
-															<xs:maxLength value="8" />
-														</xs:restriction>
-													</xs:simpleType>
-												</xs:element>
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg" type="xs:date" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="_Status" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="_Bedrijfstoestand" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="_Bewerking" />
@@ -333,7 +315,7 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:date" />
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:SurfacePropertyType" />
 											</xs:sequence>
 										</xs:extension>
@@ -347,13 +329,7 @@
 											<xs:sequence>
 												<xs:element minOccurs="0" maxOccurs="1" name="Handle" type="xs:string" />
 												<xs:element minOccurs="1" maxOccurs="1" name="ID" type="xs:ID" />
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg">
-													<xs:simpleType>
-														<xs:restriction base="xs:string">
-															<xs:maxLength value="8" />
-														</xs:restriction>
-													</xs:simpleType>
-												</xs:element>
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg" type="xs:date" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Toelichting">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -394,7 +370,7 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:date" />
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:double" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:PointPropertyType" />
 											</xs:sequence>
@@ -419,20 +395,8 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg">
-													<xs:simpleType>
-														<xs:restriction base="xs:string">
-															<xs:maxLength value="8" />
-														</xs:restriction>
-													</xs:simpleType>
-												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumFabricage">
-													<xs:simpleType>
-														<xs:restriction base="xs:string">
-															<xs:maxLength value="8" />
-														</xs:restriction>
-													</xs:simpleType>
-												</xs:element>
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg" type="xs:date" />
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumFabricage" type="xs:date" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Toelichting">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -489,7 +453,7 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:date" />
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:CurvePropertyType" />
 											</xs:sequence>
 										</xs:extension>
@@ -513,20 +477,8 @@
 													</xs:simpleType>
 												</xs:element>
 												<xs:element minOccurs="0" maxOccurs="1" name="Fabrikant" type="_FabrikantKabel" />
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg">
-													<xs:simpleType>
-														<xs:restriction base="xs:string">
-															<xs:maxLength value="8" />
-														</xs:restriction>
-													</xs:simpleType>
-												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumFabricage">
-													<xs:simpleType>
-														<xs:restriction base="xs:string">
-															<xs:maxLength value="8" />
-														</xs:restriction>
-													</xs:simpleType>
-												</xs:element>
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg" type="xs:date" />
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumFabricage" type="xs:date" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Toelichting">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -580,7 +532,7 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:date" />
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:CurvePropertyType" />
 											</xs:sequence>
 										</xs:extension>
@@ -602,13 +554,7 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg">
-													<xs:simpleType>
-														<xs:restriction base="xs:string">
-															<xs:maxLength value="8" />
-														</xs:restriction>
-													</xs:simpleType>
-												</xs:element>
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg" type="xs:date" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Toelichting">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -650,7 +596,7 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:date" />
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:PointPropertyType" />
 											</xs:sequence>
 										</xs:extension>
@@ -666,13 +612,7 @@
 												<xs:element minOccurs="1" maxOccurs="1" name="ID" type="xs:ID" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Uitvoering" type="_UitvoeringLSoverdrachtspunt" />
 												<xs:element minOccurs="0" maxOccurs="1" name="EigenRichting" type="_JaNee" />
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg">
-													<xs:simpleType>
-														<xs:restriction base="xs:string">
-															<xs:maxLength value="8" />
-														</xs:restriction>
-													</xs:simpleType>
-												</xs:element>
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg" type="xs:date" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Toelichting">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -727,7 +667,7 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:date" />
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:double" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:PointPropertyType" />
 											</xs:sequence>
@@ -743,13 +683,7 @@
 												<xs:element minOccurs="0" maxOccurs="1" name="Handle" type="xs:string" />
 												<xs:element minOccurs="1" maxOccurs="1" name="ID" type="xs:ID" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Uitvoering" type="_UitvoeringMSMof" />
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg">
-													<xs:simpleType>
-														<xs:restriction base="xs:string">
-															<xs:maxLength value="8" />
-														</xs:restriction>
-													</xs:simpleType>
-												</xs:element>
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg" type="xs:date" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Toelichting">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -807,7 +741,7 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:date" />
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:PointPropertyType" />
 											</xs:sequence>
 										</xs:extension>
@@ -823,13 +757,7 @@
 												<xs:element minOccurs="1" maxOccurs="1" name="ID" type="xs:ID" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Materiaal" type="_MateriaalMantelbuis" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Diameter" type="_DiameterMantelbuis" />
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg">
-													<xs:simpleType>
-														<xs:restriction base="xs:string">
-															<xs:maxLength value="8" />
-														</xs:restriction>
-													</xs:simpleType>
-												</xs:element>
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg" type="xs:date" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Toelichting">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -868,7 +796,7 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:date" />
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:CurvePropertyType" />
 											</xs:sequence>
 										</xs:extension>
@@ -890,7 +818,7 @@
 													</xs:simpleType>
 												</xs:element>
 												<xs:element minOccurs="0" maxOccurs="1" name="ObjectTypeInhoud" type="_ObjectType" />
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:date" />
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="_Status" />
 												<xs:element minOccurs="0" maxOccurs="1" name="MantelbuisID" type="xs:IDREF" />
 												<xs:element minOccurs="0" maxOccurs="1" name="InhoudID" type="xs:IDREF" />
@@ -961,7 +889,7 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:date" />
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:double" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:PointPropertyType" />
 											</xs:sequence>
@@ -978,13 +906,7 @@
 												<xs:element minOccurs="1" maxOccurs="1" name="ID" type="xs:ID" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Uitvoering" type="_UitvoeringKBgelijkrichter" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Fabrikant" type="_FabrikantKBgelijkrichter" />
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg">
-													<xs:simpleType>
-														<xs:restriction base="xs:string">
-															<xs:maxLength value="8" />
-														</xs:restriction>
-													</xs:simpleType>
-												</xs:element>
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg" type="xs:date" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Toelichting">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -1062,7 +984,7 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:date" />
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:double" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:PointPropertyType" />
 											</xs:sequence>
@@ -1079,13 +1001,7 @@
 												<xs:element minOccurs="1" maxOccurs="1" name="ID" type="xs:ID" />
 												<xs:element minOccurs="0" maxOccurs="1" name="TypeBehuizing" type="_TypeKBbehuizingMeetpaal" />
 												<xs:element minOccurs="0" maxOccurs="1" name="TypeMeetelectrode" type="_TypeKBmeetelectrode" />
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg">
-													<xs:simpleType>
-														<xs:restriction base="xs:string">
-															<xs:maxLength value="8" />
-														</xs:restriction>
-													</xs:simpleType>
-												</xs:element>
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg" type="xs:date" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Toelichting">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -1157,7 +1073,7 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:date" />
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:double" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:PointPropertyType" />
 											</xs:sequence>
@@ -1173,13 +1089,7 @@
 												<xs:element minOccurs="0" maxOccurs="1" name="Handle" type="xs:string" />
 												<xs:element minOccurs="1" maxOccurs="1" name="ID" type="xs:ID" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Uitvoering" type="_UitvoeringKBdraad" />
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg">
-													<xs:simpleType>
-														<xs:restriction base="xs:string">
-															<xs:maxLength value="8" />
-														</xs:restriction>
-													</xs:simpleType>
-												</xs:element>
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg" type="xs:date" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Toelichting">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -1256,7 +1166,7 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:date" />
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:CurvePropertyType" />
 											</xs:sequence>
 										</xs:extension>
@@ -1273,13 +1183,7 @@
 												<xs:element minOccurs="0" maxOccurs="1" name="SoortAnode" type="_SoortKBanode" />
 												<xs:element minOccurs="0" maxOccurs="1" name="AantalAnodes" type="xs:integer" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Materiaal" type="_MateriaalKBanode" />
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg">
-													<xs:simpleType>
-														<xs:restriction base="xs:string">
-															<xs:maxLength value="8" />
-														</xs:restriction>
-													</xs:simpleType>
-												</xs:element>
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg" type="xs:date" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Toelichting">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -1356,7 +1260,7 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:date" />
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:double" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:PointPropertyType" />
 											</xs:sequence>
@@ -1373,13 +1277,7 @@
 												<xs:element minOccurs="1" maxOccurs="1" name="ID" type="xs:ID" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Type" type="_TypeKBdrainage" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Fabrikant" type="_FabrikantKBdrainage" />
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg">
-													<xs:simpleType>
-														<xs:restriction base="xs:string">
-															<xs:maxLength value="8" />
-														</xs:restriction>
-													</xs:simpleType>
-												</xs:element>
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg" type="xs:date" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Toelichting">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -1447,7 +1345,7 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:date" />
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:double" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:PointPropertyType" />
 											</xs:sequence>
@@ -1463,13 +1361,7 @@
 												<xs:element minOccurs="0" maxOccurs="1" name="Handle" type="xs:string" />
 												<xs:element minOccurs="1" maxOccurs="1" name="ID" type="xs:ID" />
 												<xs:element minOccurs="0" maxOccurs="1" name="SoortObject" type="_SoortKBobject" />
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg">
-													<xs:simpleType>
-														<xs:restriction base="xs:string">
-															<xs:maxLength value="8" />
-														</xs:restriction>
-													</xs:simpleType>
-												</xs:element>
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg" type="xs:date" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Toelichting">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -1525,7 +1417,7 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:date" />
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:double" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:PointPropertyType" />
 											</xs:sequence>
@@ -1548,20 +1440,8 @@
 													</xs:simpleType>
 												</xs:element>
 												<xs:element minOccurs="0" maxOccurs="1" name="Fabrikant" type="_FabrikantKabel" />
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg">
-													<xs:simpleType>
-														<xs:restriction base="xs:string">
-															<xs:maxLength value="8" />
-														</xs:restriction>
-													</xs:simpleType>
-												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumFabricage">
-													<xs:simpleType>
-														<xs:restriction base="xs:string">
-															<xs:maxLength value="8" />
-														</xs:restriction>
-													</xs:simpleType>
-												</xs:element>
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg" type="xs:date" />
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumFabricage" type="xs:date" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Toelichting">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -1613,7 +1493,7 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:date" />
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:CurvePropertyType" />
 											</xs:sequence>
 										</xs:extension>
@@ -1634,13 +1514,7 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg">
-													<xs:simpleType>
-														<xs:restriction base="xs:string">
-															<xs:maxLength value="8" />
-														</xs:restriction>
-													</xs:simpleType>
-												</xs:element>
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg" type="xs:date" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Toelichting">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -1676,7 +1550,7 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:date" />
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:double" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:PointPropertyType" />
 											</xs:sequence>
@@ -1739,7 +1613,7 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:date" />
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:double" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:PointPropertyType" />
 											</xs:sequence>
@@ -1768,13 +1642,7 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg">
-													<xs:simpleType>
-														<xs:restriction base="xs:string">
-															<xs:maxLength value="8" />
-														</xs:restriction>
-													</xs:simpleType>
-												</xs:element>
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg" type="xs:date" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Toelichting">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -1850,7 +1718,7 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:date" />
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:SurfacePropertyType" />
 											</xs:sequence>
 										</xs:extension>
@@ -1874,20 +1742,8 @@
 													</xs:simpleType>
 												</xs:element>
 												<xs:element minOccurs="0" maxOccurs="1" name="Fabrikant" type="_FabrikantKabel" />
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg">
-													<xs:simpleType>
-														<xs:restriction base="xs:string">
-															<xs:maxLength value="8" />
-														</xs:restriction>
-													</xs:simpleType>
-												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumFabricage">
-													<xs:simpleType>
-														<xs:restriction base="xs:string">
-															<xs:maxLength value="8" />
-														</xs:restriction>
-													</xs:simpleType>
-												</xs:element>
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg" type="xs:date" />
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumFabricage" type="xs:date" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Toelichting">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -1933,7 +1789,7 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:date" />
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:CurvePropertyType" />
 											</xs:sequence>
 										</xs:extension>
@@ -1957,20 +1813,8 @@
 													</xs:simpleType>
 												</xs:element>
 												<xs:element minOccurs="0" maxOccurs="1" name="Fabrikant" type="_FabrikantKabel" />
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg">
-													<xs:simpleType>
-														<xs:restriction base="xs:string">
-															<xs:maxLength value="8" />
-														</xs:restriction>
-													</xs:simpleType>
-												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumFabricage">
-													<xs:simpleType>
-														<xs:restriction base="xs:string">
-															<xs:maxLength value="8" />
-														</xs:restriction>
-													</xs:simpleType>
-												</xs:element>
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg" type="xs:date" />
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumFabricage" type="xs:date" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Toelichting">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -2023,7 +1867,7 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:date" />
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:CurvePropertyType" />
 											</xs:sequence>
 										</xs:extension>
@@ -2039,13 +1883,7 @@
 												<xs:element minOccurs="1" maxOccurs="1" name="ID" type="xs:ID" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Uitvoering" type="_UitvoeringHSMof" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Fabrikant" type="_FabrikantHSMof" />
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg">
-													<xs:simpleType>
-														<xs:restriction base="xs:string">
-															<xs:maxLength value="8" />
-														</xs:restriction>
-													</xs:simpleType>
-												</xs:element>
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg" type="xs:date" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Toelichting">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -2103,7 +1941,7 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:date" />
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:double" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:PointPropertyType" />
 											</xs:sequence>
@@ -2132,13 +1970,7 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg">
-													<xs:simpleType>
-														<xs:restriction base="xs:string">
-															<xs:maxLength value="8" />
-														</xs:restriction>
-													</xs:simpleType>
-												</xs:element>
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg" type="xs:date" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Toelichting">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -2215,7 +2047,7 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:date" />
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:SurfacePropertyType" />
 											</xs:sequence>
 										</xs:extension>
@@ -2236,20 +2068,8 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg">
-													<xs:simpleType>
-														<xs:restriction base="xs:string">
-															<xs:maxLength value="8" />
-														</xs:restriction>
-													</xs:simpleType>
-												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumFabricage">
-													<xs:simpleType>
-														<xs:restriction base="xs:string">
-															<xs:maxLength value="8" />
-														</xs:restriction>
-													</xs:simpleType>
-												</xs:element>
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg" type="xs:date" />
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumFabricage" type="xs:date" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Toelichting">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -2285,7 +2105,7 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:date" />
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:CurvePropertyType" />
 											</xs:sequence>
 										</xs:extension>
@@ -2306,20 +2126,8 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg">
-													<xs:simpleType>
-														<xs:restriction base="xs:string">
-															<xs:maxLength value="8" />
-														</xs:restriction>
-													</xs:simpleType>
-												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumFabricage">
-													<xs:simpleType>
-														<xs:restriction base="xs:string">
-															<xs:maxLength value="8" />
-														</xs:restriction>
-													</xs:simpleType>
-												</xs:element>
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg" type="xs:date" />
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumFabricage" type="xs:date" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Toelichting">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -2360,7 +2168,7 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:date" />
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:double" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:PointPropertyType" />
 											</xs:sequence>
@@ -2376,13 +2184,7 @@
 												<xs:element minOccurs="0" maxOccurs="1" name="Handle" type="xs:string" />
 												<xs:element minOccurs="1" maxOccurs="1" name="ID" type="xs:ID" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Soort" type="_SoortTelecomBuisAppendage" />
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg">
-													<xs:simpleType>
-														<xs:restriction base="xs:string">
-															<xs:maxLength value="8" />
-														</xs:restriction>
-													</xs:simpleType>
-												</xs:element>
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg" type="xs:date" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Toelichting">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -2424,7 +2226,7 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:date" />
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:double" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:PointPropertyType" />
 											</xs:sequence>
@@ -2439,13 +2241,7 @@
 											<xs:sequence>
 												<xs:element minOccurs="0" maxOccurs="1" name="Handle" type="xs:string" />
 												<xs:element minOccurs="1" maxOccurs="1" name="ID" type="xs:ID" />
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg">
-													<xs:simpleType>
-														<xs:restriction base="xs:string">
-															<xs:maxLength value="8" />
-														</xs:restriction>
-													</xs:simpleType>
-												</xs:element>
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg" type="xs:date" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Toelichting">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -2480,7 +2276,7 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:date" />
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:PointPropertyType" />
 											</xs:sequence>
 										</xs:extension>
@@ -2497,13 +2293,7 @@
 												<xs:element minOccurs="0" maxOccurs="1" name="Doorsnede" type="_DoorsnedeAarddraad" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Geleidermateriaal" type="_Geleidermateriaal" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Isolatiemateriaal" type="_IsolatiemateriaalAarddraad" />
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg">
-													<xs:simpleType>
-														<xs:restriction base="xs:string">
-															<xs:maxLength value="8" />
-														</xs:restriction>
-													</xs:simpleType>
-												</xs:element>
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg" type="xs:date" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Toelichting">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -2540,7 +2330,7 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:date" />
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:CurvePropertyType" />
 											</xs:sequence>
 										</xs:extension>
@@ -2557,13 +2347,7 @@
 												<xs:element minOccurs="0" maxOccurs="1" name="Doorsnede" type="_DoorsnedeAardpen" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="_EigenaarBeheerder" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Materiaal" type="_MateriaalAardpen" />
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg">
-													<xs:simpleType>
-														<xs:restriction base="xs:string">
-															<xs:maxLength value="8" />
-														</xs:restriction>
-													</xs:simpleType>
-												</xs:element>
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg" type="xs:date" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Toelichting">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -2597,7 +2381,7 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:date" />
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:double" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:PointPropertyType" />
 											</xs:sequence>
@@ -2613,13 +2397,7 @@
 												<xs:element minOccurs="0" maxOccurs="1" name="Handle" type="xs:string" />
 												<xs:element minOccurs="1" maxOccurs="1" name="ID" type="xs:ID" />
 												<xs:element minOccurs="0" maxOccurs="1" name="SoortBescherming" type="_SoortBescherming" />
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg">
-													<xs:simpleType>
-														<xs:restriction base="xs:string">
-															<xs:maxLength value="8" />
-														</xs:restriction>
-													</xs:simpleType>
-												</xs:element>
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg" type="xs:date" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Toelichting">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -2654,7 +2432,7 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:date" />
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:SurfacePropertyType" />
 											</xs:sequence>
 										</xs:extension>
@@ -2684,7 +2462,7 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:date" />
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:PointPropertyType" />
 											</xs:sequence>
 										</xs:extension>
@@ -2716,7 +2494,7 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:date" />
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Kijkhoek" type="xs:double" />
 												<xs:element minOccurs="0" maxOccurs="1" name="AssetObjectID" type="xs:IDREF" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Geometry" type="gml:PointPropertyType" />
@@ -2748,7 +2526,7 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:date" />
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:PointPropertyType" />
 											</xs:sequence>
 										</xs:extension>
@@ -2763,13 +2541,7 @@
 												<xs:element minOccurs="0" maxOccurs="1" name="Handle" type="xs:string" />
 												<xs:element minOccurs="1" maxOccurs="1" name="ID" type="xs:ID" />
 												<xs:element minOccurs="0" maxOccurs="1" name="SoortKunstwerk" type="_SoortKunstwerk" />
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg">
-													<xs:simpleType>
-														<xs:restriction base="xs:string">
-															<xs:maxLength value="8" />
-														</xs:restriction>
-													</xs:simpleType>
-												</xs:element>
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg" type="xs:date" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Toelichting">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -2812,7 +2584,7 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:date" />
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:CurvePropertyType" />
 											</xs:sequence>
 										</xs:extension>
@@ -2827,13 +2599,7 @@
 												<xs:element minOccurs="0" maxOccurs="1" name="Handle" type="xs:string" />
 												<xs:element minOccurs="1" maxOccurs="1" name="ID" type="xs:ID" />
 												<xs:element minOccurs="0" maxOccurs="1" name="SoortAanlegTechniek" type="_SoortAanlegTechniek" />
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg">
-													<xs:simpleType>
-														<xs:restriction base="xs:string">
-															<xs:maxLength value="8" />
-														</xs:restriction>
-													</xs:simpleType>
-												</xs:element>
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg" type="xs:date" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Toelichting">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -2868,7 +2634,7 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:date" />
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:CurvePropertyType" />
 											</xs:sequence>
 										</xs:extension>
@@ -2906,7 +2672,7 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:date" />
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:double" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:PointPropertyType" />
 											</xs:sequence>
@@ -2924,7 +2690,7 @@
 												<xs:element minOccurs="0" maxOccurs="1" name="Situatie" type="_SituatieVerplaatsing" />
 												<xs:element minOccurs="0" maxOccurs="1" name="ObjectType" type="_ObjectType" />
 												<xs:element minOccurs="0" maxOccurs="1" name="AssetObjectID" type="xs:IDREF" />
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:date" />
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:CurvePropertyType" />
 											</xs:sequence>
 										</xs:extension>
@@ -2959,13 +2725,7 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg">
-													<xs:simpleType>
-														<xs:restriction base="xs:string">
-															<xs:maxLength value="8" />
-														</xs:restriction>
-													</xs:simpleType>
-												</xs:element>
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg" type="xs:date" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="_Status" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="_Bedrijfstoestand" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="_BewerkingGas" />
@@ -3042,7 +2802,7 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:date" />
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:SurfacePropertyType" />
 											</xs:sequence>
 										</xs:extension>
@@ -3067,13 +2827,7 @@
 													</xs:simpleType>
 												</xs:element>
 												<xs:element minOccurs="0" maxOccurs="1" name="Fabrikant" type="_FabrikantGasLeiding" />
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg">
-													<xs:simpleType>
-														<xs:restriction base="xs:string">
-															<xs:maxLength value="8" />
-														</xs:restriction>
-													</xs:simpleType>
-												</xs:element>
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg" type="xs:date" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Toelichting">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -3126,7 +2880,7 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:date" />
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:CurvePropertyType" />
 											</xs:sequence>
 										</xs:extension>
@@ -3146,13 +2900,7 @@
 												<xs:element minOccurs="0" maxOccurs="1" name="Draaiwijze" type="_DraaiwijzeGasAfsluiter" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Drukklasse" type="_DrukklasseGasAfsluiter" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Fabrikant" type="_FabrikantGasAfsluiter" />
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg">
-													<xs:simpleType>
-														<xs:restriction base="xs:string">
-															<xs:maxLength value="8" />
-														</xs:restriction>
-													</xs:simpleType>
-												</xs:element>
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg" type="xs:date" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Toelichting">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -3208,7 +2956,7 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:date" />
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:double" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:PointPropertyType" />
 											</xs:sequence>
@@ -3230,13 +2978,7 @@
 													</xs:simpleType>
 												</xs:element>
 												<xs:element minOccurs="0" maxOccurs="1" name="Uitvoering" type="_UitvoeringGasTstuk" />
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg">
-													<xs:simpleType>
-														<xs:restriction base="xs:string">
-															<xs:maxLength value="8" />
-														</xs:restriction>
-													</xs:simpleType>
-												</xs:element>
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg" type="xs:date" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Toelichting">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -3272,7 +3014,7 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:date" />
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:double" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:PointPropertyType" />
 											</xs:sequence>
@@ -3288,13 +3030,7 @@
 												<xs:element minOccurs="0" maxOccurs="1" name="Handle" type="xs:string" />
 												<xs:element minOccurs="1" maxOccurs="1" name="ID" type="xs:ID" />
 												<xs:element minOccurs="0" maxOccurs="1" name="SoortAansluiting" type="_SoortGasAansluiting" />
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg">
-													<xs:simpleType>
-														<xs:restriction base="xs:string">
-															<xs:maxLength value="8" />
-														</xs:restriction>
-													</xs:simpleType>
-												</xs:element>
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg" type="xs:date" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Toelichting">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -3338,7 +3074,7 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:date" />
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:double" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:PointPropertyType" />
 											</xs:sequence>
@@ -3354,13 +3090,7 @@
 												<xs:element minOccurs="0" maxOccurs="1" name="Handle" type="xs:string" />
 												<xs:element minOccurs="1" maxOccurs="1" name="ID" type="xs:ID" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Uitvoering" type="_UitvoeringAftakzadel" />
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg">
-													<xs:simpleType>
-														<xs:restriction base="xs:string">
-															<xs:maxLength value="8" />
-														</xs:restriction>
-													</xs:simpleType>
-												</xs:element>
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg" type="xs:date" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Toelichting">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -3396,7 +3126,7 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:date" />
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:double" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:PointPropertyType" />
 											</xs:sequence>
@@ -3412,13 +3142,7 @@
 												<xs:element minOccurs="0" maxOccurs="1" name="Handle" type="xs:string" />
 												<xs:element minOccurs="1" maxOccurs="1" name="ID" type="xs:ID" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Uitvoering" type="_UitvoeringEindstuk" />
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg">
-													<xs:simpleType>
-														<xs:restriction base="xs:string">
-															<xs:maxLength value="8" />
-														</xs:restriction>
-													</xs:simpleType>
-												</xs:element>
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg" type="xs:date" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Toelichting">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -3454,7 +3178,7 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:date" />
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:double" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:PointPropertyType" />
 											</xs:sequence>
@@ -3471,13 +3195,7 @@
 												<xs:element minOccurs="1" maxOccurs="1" name="ID" type="xs:ID" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Soort" type="_SoortGasAppendage" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Fabrikant" type="_FabrikantGasAppendage" />
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg">
-													<xs:simpleType>
-														<xs:restriction base="xs:string">
-															<xs:maxLength value="8" />
-														</xs:restriction>
-													</xs:simpleType>
-												</xs:element>
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg" type="xs:date" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Toelichting">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -3513,7 +3231,7 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:date" />
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:double" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:PointPropertyType" />
 											</xs:sequence>
@@ -3529,13 +3247,7 @@
 												<xs:element minOccurs="0" maxOccurs="1" name="Handle" type="xs:string" />
 												<xs:element minOccurs="1" maxOccurs="1" name="ID" type="xs:ID" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Uitvoering" type="_UitvoeringGasIsolatiestuk" />
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg">
-													<xs:simpleType>
-														<xs:restriction base="xs:string">
-															<xs:maxLength value="8" />
-														</xs:restriction>
-													</xs:simpleType>
-												</xs:element>
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg" type="xs:date" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Toelichting">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -3573,7 +3285,7 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:date" />
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:double" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:PointPropertyType" />
 											</xs:sequence>
@@ -3596,13 +3308,7 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg">
-													<xs:simpleType>
-														<xs:restriction base="xs:string">
-															<xs:maxLength value="8" />
-														</xs:restriction>
-													</xs:simpleType>
-												</xs:element>
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg" type="xs:date" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Toelichting">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -3639,7 +3345,7 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:date" />
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:double" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:PointPropertyType" />
 											</xs:sequence>
@@ -3655,13 +3361,7 @@
 												<xs:element minOccurs="0" maxOccurs="1" name="Handle" type="xs:string" />
 												<xs:element minOccurs="1" maxOccurs="1" name="ID" type="xs:ID" />
 												<xs:element minOccurs="0" maxOccurs="1" name="SoortMeetpunt" type="_SoortGasMeetpunt" />
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg">
-													<xs:simpleType>
-														<xs:restriction base="xs:string">
-															<xs:maxLength value="8" />
-														</xs:restriction>
-													</xs:simpleType>
-												</xs:element>
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg" type="xs:date" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Toelichting">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -3697,7 +3397,7 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:date" />
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:double" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:PointPropertyType" />
 											</xs:sequence>
@@ -3712,13 +3412,7 @@
 											<xs:sequence>
 												<xs:element minOccurs="0" maxOccurs="1" name="Handle" type="xs:string" />
 												<xs:element minOccurs="1" maxOccurs="1" name="ID" type="xs:ID" />
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg">
-													<xs:simpleType>
-														<xs:restriction base="xs:string">
-															<xs:maxLength value="8" />
-														</xs:restriction>
-													</xs:simpleType>
-												</xs:element>
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg" type="xs:date" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Toelichting">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -3755,7 +3449,7 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:date" />
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:double" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:PointPropertyType" />
 											</xs:sequence>
@@ -3770,13 +3464,7 @@
 											<xs:sequence>
 												<xs:element minOccurs="0" maxOccurs="1" name="Handle" type="xs:string" />
 												<xs:element minOccurs="1" maxOccurs="1" name="ID" type="xs:ID" />
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg">
-													<xs:simpleType>
-														<xs:restriction base="xs:string">
-															<xs:maxLength value="8" />
-														</xs:restriction>
-													</xs:simpleType>
-												</xs:element>
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg" type="xs:date" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Toelichting">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -3812,7 +3500,7 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:date" />
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:double" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:PointPropertyType" />
 											</xs:sequence>
@@ -3830,13 +3518,7 @@
 												<xs:element minOccurs="0" maxOccurs="1" name="Uitvoering" type="_UitvoeringOntspanningselement" />
 												<xs:element minOccurs="0" maxOccurs="1" name="KoppelingAansluitleiding" type="_KoppelingAansluitleidingOSE" />
 												<xs:element minOccurs="0" maxOccurs="1" name="KoppelingGeveldoorvoer" type="_KoppelingGeveldoorvoerOSE" />
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg">
-													<xs:simpleType>
-														<xs:restriction base="xs:string">
-															<xs:maxLength value="8" />
-														</xs:restriction>
-													</xs:simpleType>
-												</xs:element>
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg" type="xs:date" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Toelichting">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -3871,7 +3553,7 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:date" />
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:double" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:PointPropertyType" />
 											</xs:sequence>
@@ -3886,13 +3568,7 @@
 											<xs:sequence>
 												<xs:element minOccurs="0" maxOccurs="1" name="Handle" type="xs:string" />
 												<xs:element minOccurs="1" maxOccurs="1" name="ID" type="xs:ID" />
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg">
-													<xs:simpleType>
-														<xs:restriction base="xs:string">
-															<xs:maxLength value="8" />
-														</xs:restriction>
-													</xs:simpleType>
-												</xs:element>
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg" type="xs:date" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Toelichting">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -3928,7 +3604,7 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:date" />
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:double" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:PointPropertyType" />
 											</xs:sequence>
@@ -3946,13 +3622,7 @@
 												<xs:element minOccurs="0" maxOccurs="1" name="Soort" type="_SoortGasLeidingafblaas" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Diameter" type="_BuitenDiameterGasleiding" />
 												<xs:element minOccurs="0" maxOccurs="1" name="SoortAfsluiter" type="_SoortGasAfsluiterAfblaas" />
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg">
-													<xs:simpleType>
-														<xs:restriction base="xs:string">
-															<xs:maxLength value="8" />
-														</xs:restriction>
-													</xs:simpleType>
-												</xs:element>
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg" type="xs:date" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Toelichting">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -3989,7 +3659,7 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:date" />
+												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:double" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:PointPropertyType" />
 											</xs:sequence>
