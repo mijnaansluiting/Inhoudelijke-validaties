@@ -513,8 +513,7 @@
 			<beschrijving>De inhoud van een mantelbuis mag maximaal 1 meter van de mantelbuis afliggen.</beschrijving>
 			<soort>Geometrie</soort>
 			<definitie>
-				Gerelateerd Assets van een Amantelbuis dienen maximaal 1m van de Amantelbuis vandaan te liggen.
-				Deze afstand dient configurabel te zijn.
+				Gerelateerde Assets van een Amantelbuis dienen maximaal 1m van de Amantelbuis vandaan te liggen. Deze afstand dient configurabel te zijn.
 			</definitie>
 			<validatieObjecten>
 				<validatieObject><naam>Amantelbuis</naam></validatieObject>

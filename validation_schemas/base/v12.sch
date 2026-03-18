@@ -152,6 +152,10 @@
         <active pattern="R.35"/>
     </phase>
 
+    <phase id="R.36">
+        <active pattern="R.36"/>
+    </phase>
+
     <phase id="R.37">
         <active pattern="R.37"/>
     </phase>
@@ -209,6 +213,7 @@
     <include href="../patterns/v12/R.33.sch"/>
     <include href="../patterns/v12/R.34.sch"/>
     <include href="../patterns/v12/R.35.sch"/>
+    <include href="../patterns/v12/R.36.sch"/>
     <include href="../patterns/v12/R.37.sch"/>
     <include href="../patterns/v12/R.38.sch"/>
     <include href="../patterns/v12/R.39.sch"/>
@@ -221,6 +226,7 @@
     <include href="../abstract_patterns/v12/geometrie/geometrie_binnen_projectvlak.sch"/>
     <include href="../abstract_patterns/v12/geometrie/lijn_geometrie-afstand_van_inmeetpunten.sch"/>
     <include href="../abstract_patterns/v12/geometrie/lijn_geometrie-hoek_van_segmenten.sch"/>
+    <include href="../abstract_patterns/v12/geometrie/afstand_mantelbuis_tot_inhoud.sch"/>
     <include href="../abstract_patterns/v12/verplichte_waarde/gisid_en_assetid.sch"/>
     <include href="../abstract_patterns/v12/verplichte_waarde/inmeetwijze_en_nauwkeurigheid_assets_elec.sch"/>
     <include href="../abstract_patterns/v12/verplichte_waarde/subnettype_ingevuld_voor_ls_en_ms_kabel.sch"/>

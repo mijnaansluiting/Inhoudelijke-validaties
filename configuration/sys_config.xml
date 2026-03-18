@@ -34,5 +34,6 @@
             <SoortKunstwerk>ZINKER_OMGEKEERD</SoortKunstwerk>
             <SoortKunstwerk>ZINKER_SPUIT</SoortKunstwerk>
         </SoortKunstwerkRequiredBestandsBijlage>
+        <MantelbuisInhoudMaxAfstand>1</MantelbuisInhoudMaxAfstand>
     </v12>
 </config>
