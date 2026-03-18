@@ -5,42 +5,43 @@
                xsi:schemaLocation="NS_NLCSnetbeheer ../../../../../doc/NLCS_Netbeheer_Keuzelijst.xsd"
                xmlns="NS_NLCSnetbeheer">
     <AprojectReferentie>
+        <ID>A</ID>
         <Projectnummer>1</Projectnummer>
         <Netbeheerder>Enexis</Netbeheerder>
-        <ID>A</ID>
+        <NaamAannemer></NaamAannemer>
         <Tekeningtype>BESTAANDE SITUATIE</Tekeningtype>
         <Geometry></Geometry>
     </AprojectReferentie>
 
     <LSmof>
+        <ID>B</ID>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
         <Functie>AANSLUIT AFTAK</Functie>
         <Verbindingnummer>1</Verbindingnummer>
         <Bovengronds>Nee</Bovengronds>
-        <ID>B</ID>
         <Geometry></Geometry>
     </LSmof>
 
     <MSmof>
+        <ID>C</ID>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
         <Functie>3FASE 3x1FASE</Functie>
         <Verbindingnummer>1</Verbindingnummer>
         <NaamMonteur>John Doe</NaamMonteur>
         <CrossBondingAanwezig>Ja</CrossBondingAanwezig>
-        <ID>C</ID>
         <Geometry></Geometry>
     </MSmof>
 
     <HSmof>
+        <ID>D</ID>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
         <Functie>3FASE 3x1FASE</Functie>
         <Verbindingnummer>1</Verbindingnummer>
         <NaamMonteur>John Doe</NaamMonteur>
         <CrossBondingAanwezig>Ja</CrossBondingAanwezig>
-        <ID>D</ID>
         <Geometry></Geometry>
     </HSmof>
 </NLCSnetbeheer>

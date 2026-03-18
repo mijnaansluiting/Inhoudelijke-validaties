@@ -5,14 +5,16 @@
                xsi:schemaLocation="NS_NLCSnetbeheer ../../../../../doc/NLCS_Netbeheer_Keuzelijst.xsd"
                xmlns="NS_NLCSnetbeheer">
     <AprojectReferentie>
+        <ID>A</ID>
         <Projectnummer>1</Projectnummer>
         <Netbeheerder>Enexis</Netbeheerder>
-        <ID>A</ID>
+        <NaamAannemer></NaamAannemer>
         <Tekeningtype>BESTAANDE SITUATIE</Tekeningtype>
         <Geometry></Geometry>
     </AprojectReferentie>
 
     <OVLoverdrachtspunt>
+        <ID>B</ID>
         <Aansluitset>AK OVL</Aansluitset>
         <Mastnummer>1</Mastnummer>
         <Status>BESTAAND</Status>
@@ -20,7 +22,6 @@
         <Functie>AANSLUITKASTJE</Functie>
         <Aansluitwijze>Aftak</Aansluitwijze>
         <Schakeling>Avond</Schakeling>
-        <ID>B</ID>
         <Geometry></Geometry>
     </OVLoverdrachtspunt>
 </NLCSnetbeheer>

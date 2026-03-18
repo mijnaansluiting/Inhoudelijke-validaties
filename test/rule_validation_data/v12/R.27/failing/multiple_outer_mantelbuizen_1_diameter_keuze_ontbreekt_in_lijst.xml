@@ -5,45 +5,46 @@
                xsi:schemaLocation="NS_NLCSnetbeheer ../../../../../doc/NLCS_Netbeheer_Keuzelijst.xsd"
                xmlns="NS_NLCSnetbeheer">
     <AprojectReferentie>
+        <ID>A</ID>
         <Projectnummer>1</Projectnummer>
         <Netbeheerder>Enexis</Netbeheerder>
-        <ID>A</ID>
+        <NaamAannemer></NaamAannemer>
         <Tekeningtype>BESTAANDE SITUATIE</Tekeningtype>
         <Geometry></Geometry>
     </AprojectReferentie>
 
     <Amantelbuis>
+        <ID>OUTER-1</ID>
         <Diameter>110</Diameter>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <ID>OUTER-1</ID>
         <Geometry></Geometry>
     </Amantelbuis>
     <Amantelbuis>
+        <ID>OUTER-2</ID>
         <Diameter>KEUZE ONTBREEKT IN LIJST</Diameter>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <ID>OUTER-2</ID>
         <Geometry></Geometry>
     </Amantelbuis>
     <Amantelbuis>
+        <ID>INNER</ID>
         <Diameter>120</Diameter>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <ID>INNER</ID>
         <Geometry></Geometry>
     </Amantelbuis>
 
     <AmantelbuisInhoud>
+        <ID>B</ID>
         <Status>BESTAAND</Status>
         <MantelbuisID>OUTER-1</MantelbuisID>
         <InhoudID>INNER</InhoudID>
-        <ID>B</ID>
     </AmantelbuisInhoud>
     <AmantelbuisInhoud>
+        <ID>C</ID>
         <Status>BESTAAND</Status>
         <MantelbuisID>OUTER-2</MantelbuisID>
         <InhoudID>INNER</InhoudID>
-        <ID>C</ID>
     </AmantelbuisInhoud>
 </NLCSnetbeheer>

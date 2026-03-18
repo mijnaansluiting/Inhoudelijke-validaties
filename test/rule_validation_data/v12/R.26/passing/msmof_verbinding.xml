@@ -5,18 +5,19 @@
                xsi:schemaLocation="NS_NLCSnetbeheer ../../../../../doc/NLCS_Netbeheer_Keuzelijst.xsd"
                xmlns="NS_NLCSnetbeheer">
     <AprojectReferentie>
+        <ID>A</ID>
         <Projectnummer>1</Projectnummer>
         <Netbeheerder>Enexis</Netbeheerder>
-        <ID>A</ID>
+        <NaamAannemer></NaamAannemer>
         <Tekeningtype>BESTAANDE SITUATIE</Tekeningtype>
         <Geometry></Geometry>
     </AprojectReferentie>
 
-    <LSmof>
+    <MSmof>
+        <ID>B</ID>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <Functie>LOODKOP</Functie>
-        <ID>B</ID>
+        <Functie>VERBINDING</Functie>
         <Geometry>
             <gml:Point
                 srsDimension="3"
@@ -24,20 +25,36 @@
                 <gml:pos>240 40 0</gml:pos>
             </gml:Point>
         </Geometry>
-    </LSmof>
-    <LSkabel>
+    </MSmof>
+    <MSkabel>
+        <ID>C</ID>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <ID>C</ID>
         <Geometry>
             <gml:LineString
                 srsDimension="3"
                 srsName="EPSG:7415">
                 <gml:posList>
-                     40 40 0
+                    40 40 0
                     240 40 0
                 </gml:posList>
             </gml:LineString>
         </Geometry>
-    </LSkabel>
+    </MSkabel>
+    <MSkabel>
+        <ID>D</ID>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
+        <Geometry>
+            <gml:LineString
+                srsDimension="3"
+                srsName="EPSG:7415">
+                <gml:posList>
+                    60 30 0
+                    240 40 0
+                </gml:posList>
+            </gml:LineString>
+        </Geometry>
+    </MSkabel>
+
 </NLCSnetbeheer>

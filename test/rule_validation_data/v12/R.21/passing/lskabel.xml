@@ -5,9 +5,10 @@
                xsi:schemaLocation="NS_NLCSnetbeheer ../../../../../doc/NLCS_Netbeheer_Keuzelijst.xsd"
                xmlns="NS_NLCSnetbeheer">
     <AprojectReferentie>
+        <ID>A</ID>
         <Projectnummer>1</Projectnummer>
         <Netbeheerder>Enexis</Netbeheerder>
-        <ID>A</ID>
+        <NaamAannemer></NaamAannemer>
         <Tekeningtype>BESTAANDE SITUATIE</Tekeningtype>
         <Geometry>
             <gml:Polygon
@@ -29,9 +30,9 @@
     </AprojectReferentie>
 
     <LSkabel>
+        <ID>B</ID>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <ID>B</ID>
         <Geometry>
             <gml:LineString
                 srsDimension="3"
@@ -46,9 +47,9 @@
     </LSkabel>
 
     <LSkabel>
+        <ID>C</ID>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <ID>C</ID>
         <Geometry>
             <gml:LineString
                 srsDimension="3"
@@ -63,9 +64,9 @@
     </LSkabel>
     
     <LSkabel>
+        <ID>D</ID>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <ID>D</ID>
         <Geometry>
             <gml:LineString
                 srsDimension="3"
@@ -80,9 +81,9 @@
     </LSkabel>
 
     <LSoverdrachtspunt>
+        <ID>E</ID>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <ID>E</ID>
         <Geometry>
             <gml:Point
                 srsDimension="3"
@@ -95,9 +96,9 @@
     </LSoverdrachtspunt>
 
     <LSmof>
+        <ID>F</ID>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <ID>F</ID>
         <Geometry>
             <gml:Point
                 srsDimension="3"
@@ -110,9 +111,9 @@
     </LSmof>
 
     <OVLoverdrachtspunt>
+        <ID>G</ID>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <ID>G</ID>
         <Geometry>
             <gml:Point
                 srsDimension="3"
@@ -125,9 +126,9 @@
     </OVLoverdrachtspunt>
     
     <MSstation>
+        <ID>H</ID>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <ID>H</ID>
         <Geometry>
             <gml:Polygon
                 srsDimension="3"
@@ -148,9 +149,9 @@
     </MSstation>
     
     <LSkast>
+        <ID>I</ID>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <ID>I</ID>
         <Geometry>
             <gml:Polygon
                 srsDimension="3"

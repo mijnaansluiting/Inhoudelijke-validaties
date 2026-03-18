@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns="NS_NLCSnetbeheer" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="NS_NLCSnetbeheer" version="12" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:schema xmlns="NS_NLCSnetbeheer" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="NS_NLCSnetbeheer" version="12.1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
 	<xs:redefine schemaLocation="NLCS_Netbeheer.xsd">
 		<xs:simpleType name="_Status">
 			<xs:restriction base="_Status">
@@ -78,6 +78,16 @@
 				<xs:enumeration value="EINDMOF" />
 				<xs:enumeration value="LOODKOP" />
 				<xs:enumeration value="VERBINDING" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_Faseaanduiding">
+			<xs:restriction base="_Faseaanduiding">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="3 Fasen" />
+				<xs:enumeration value="L1" />
+				<xs:enumeration value="L2" />
+				<xs:enumeration value="L3" />
+				<xs:enumeration value="N" />
 			</xs:restriction>
 		</xs:simpleType>
 		<xs:simpleType name="_SubnettypeLS">
@@ -217,18 +227,9 @@
 		<xs:simpleType name="_Aardingsysteem">
 			<xs:restriction base="_Aardingsysteem">
 				<xs:maxLength value="255" />
+				<xs:enumeration value="Keuze ontbreekt in lijst" />
 				<xs:enumeration value="TN" />
 				<xs:enumeration value="TT" />
-			</xs:restriction>
-		</xs:simpleType>
-		<xs:simpleType name="_Faseaanduiding">
-			<xs:restriction base="_Faseaanduiding">
-				<xs:maxLength value="255" />
-				<xs:enumeration value="3 Fasen" />
-				<xs:enumeration value="L1" />
-				<xs:enumeration value="L2" />
-				<xs:enumeration value="L3" />
-				<xs:enumeration value="N" />
 			</xs:restriction>
 		</xs:simpleType>
 		<xs:simpleType name="_UitvoeringMSKabel">
@@ -251,8 +252,8 @@
 				<xs:maxLength value="255" />
 				<xs:enumeration value="Keuze ontbreekt in lijst" />
 				<xs:enumeration value="YMeKrvaslqwd" />
+				<xs:enumeration value="YMeKrvaslqwd Fca" />
 				<xs:enumeration value="YMvKrvas Eca" />
-				<xs:enumeration value="YMvKrvaslqwd Fca" />
 			</xs:restriction>
 		</xs:simpleType>
 		<xs:simpleType name="_SpanningsniveauMSKabel">
@@ -293,11 +294,21 @@
 		<xs:simpleType name="_Doorlaatwaarde">
 			<xs:restriction base="_Doorlaatwaarde">
 				<xs:maxLength value="255" />
+				<xs:enumeration value="100" />
+				<xs:enumeration value="125" />
 				<xs:enumeration value="16" />
+				<xs:enumeration value="160" />
+				<xs:enumeration value="200" />
 				<xs:enumeration value="25" />
+				<xs:enumeration value="250" />
 				<xs:enumeration value="35" />
 				<xs:enumeration value="4" />
+				<xs:enumeration value="40" />
+				<xs:enumeration value="50" />
 				<xs:enumeration value="6" />
+				<xs:enumeration value="63" />
+				<xs:enumeration value="80" />
+				<xs:enumeration value="Keuze ontbreekt in lijst" />
 			</xs:restriction>
 		</xs:simpleType>
 		<xs:simpleType name="_AansluitwijzeOvl">
@@ -473,6 +484,7 @@
 				<xs:maxLength value="255" />
 				<xs:enumeration value="GIJ" />
 				<xs:enumeration value="KEUZE ONTBREEKT IN LIJST" />
+				<xs:enumeration value="PE 100 SDR 11" />
 				<xs:enumeration value="PE 80" />
 				<xs:enumeration value="PVC" />
 				<xs:enumeration value="ST" />
@@ -606,398 +618,6 @@
 				<xs:enumeration value="TE VERWIJDEREN" />
 				<xs:enumeration value="VERLATEN" />
 				<xs:enumeration value="VERPLAATSEN" />
-			</xs:restriction>
-		</xs:simpleType>
-		<xs:simpleType name="_FunctieGasStation">
-			<xs:restriction base="_FunctieGasStation">
-				<xs:maxLength value="255" />
-				<xs:enumeration value="Afleverstation" />
-				<xs:enumeration value="Afleverstation klein" />
-				<xs:enumeration value="District- en Afleverstation" />
-				<xs:enumeration value="districtstation" />
-				<xs:enumeration value="Drukbewakingsstation" />
-				<xs:enumeration value="Gas Ontvangststation" />
-				<xs:enumeration value="Huisaansluitset" />
-				<xs:enumeration value="Open eind levering" />
-				<xs:enumeration value="Overslagstation" />
-				<xs:enumeration value="Reinigings- droog station" />
-			</xs:restriction>
-		</xs:simpleType>
-		<xs:simpleType name="_BuitenDiameterGasleiding">
-			<xs:restriction base="_BuitenDiameterGasleiding">
-				<xs:maxLength value="255" />
-				<xs:enumeration value="100" />
-				<xs:enumeration value="110" />
-				<xs:enumeration value="114.3" />
-				<xs:enumeration value="15" />
-				<xs:enumeration value="160" />
-				<xs:enumeration value="168.3" />
-				<xs:enumeration value="200" />
-				<xs:enumeration value="219.1" />
-				<xs:enumeration value="22" />
-				<xs:enumeration value="25" />
-				<xs:enumeration value="250" />
-				<xs:enumeration value="273.0" />
-				<xs:enumeration value="28" />
-				<xs:enumeration value="315" />
-				<xs:enumeration value="32" />
-				<xs:enumeration value="323.9" />
-				<xs:enumeration value="33.7" />
-				<xs:enumeration value="35" />
-				<xs:enumeration value="40" />
-				<xs:enumeration value="400" />
-				<xs:enumeration value="406.4" />
-				<xs:enumeration value="42" />
-				<xs:enumeration value="42.4" />
-				<xs:enumeration value="48.3" />
-				<xs:enumeration value="50" />
-				<xs:enumeration value="54" />
-				<xs:enumeration value="60.3" />
-				<xs:enumeration value="63" />
-				<xs:enumeration value="75" />
-				<xs:enumeration value="88.9" />
-				<xs:enumeration value="90" />
-				<xs:enumeration value="Keuze ontbreekt in lijst" />
-			</xs:restriction>
-		</xs:simpleType>
-		<xs:simpleType name="_MateriaalGasleiding">
-			<xs:restriction base="_MateriaalGasleiding">
-				<xs:maxLength value="255" />
-				<xs:enumeration value="CU" />
-				<xs:enumeration value="KEUZE ONTBREEKT IN LIJST" />
-				<xs:enumeration value="KOUSIJZER" />
-				<xs:enumeration value="MULTILAYER" />
-				<xs:enumeration value="PE 100" />
-				<xs:enumeration value="PE 100RC" />
-				<xs:enumeration value="PE 100RCB" />
-				<xs:enumeration value="PE 100RCM" />
-				<xs:enumeration value="PE 80" />
-				<xs:enumeration value="PECu" />
-				<xs:enumeration value="PEKO" />
-				<xs:enumeration value="PVC CPE" />
-				<xs:enumeration value="ST" />
-				<xs:enumeration value="ST PE" />
-			</xs:restriction>
-		</xs:simpleType>
-		<xs:simpleType name="_SDRgas">
-			<xs:restriction base="_SDRgas">
-				<xs:maxLength value="255" />
-				<xs:enumeration value="11" />
-				<xs:enumeration value="17.6" />
-				<xs:enumeration value="33" />
-				<xs:enumeration value="41" />
-			</xs:restriction>
-		</xs:simpleType>
-		<xs:simpleType name="_FabrikantGasLeiding">
-			<xs:restriction base="_FabrikantGasLeiding">
-				<xs:maxLength value="255" />
-				<xs:enumeration value="Ibema" />
-				<xs:enumeration value="Keuze ontbreekt in lijst" />
-				<xs:enumeration value="OCI" />
-				<xs:enumeration value="Wavin" />
-			</xs:restriction>
-		</xs:simpleType>
-		<xs:simpleType name="_Druk">
-			<xs:restriction base="_Druk">
-				<xs:maxLength value="255" />
-				<xs:enumeration value="1 BAR" />
-				<xs:enumeration value="100 MBAR" />
-				<xs:enumeration value="200 MBAR" />
-				<xs:enumeration value="30 MBAR" />
-				<xs:enumeration value="4 BAR" />
-				<xs:enumeration value="8 BAR" />
-			</xs:restriction>
-		</xs:simpleType>
-		<xs:simpleType name="_SoortGas">
-			<xs:restriction base="_SoortGas">
-				<xs:maxLength value="255" />
-				<xs:enumeration value="Aardgas" />
-				<xs:enumeration value="Biogas" />
-				<xs:enumeration value="Hoogcalorisch gas" />
-				<xs:enumeration value="Keuze ontbreekt in lijst" />
-				<xs:enumeration value="Waterstof" />
-			</xs:restriction>
-		</xs:simpleType>
-		<xs:simpleType name="_VerbindingstechniekGas">
-			<xs:restriction base="_VerbindingstechniekGas">
-				<xs:maxLength value="255" />
-				<xs:enumeration value="Draadverbinding" />
-				<xs:enumeration value="Elektrolas" />
-				<xs:enumeration value="Elektrolasmof" />
-				<xs:enumeration value="Flensverbinding" />
-				<xs:enumeration value="HSF Peko koppeling TV" />
-				<xs:enumeration value="Koppeling" />
-				<xs:enumeration value="Las" />
-				<xs:enumeration value="Lasverbinding" />
-				<xs:enumeration value="Mof" />
-				<xs:enumeration value="Mof overschuif HPE" />
-				<xs:enumeration value="Mof overschuif PVC-SV" />
-				<xs:enumeration value="Mof PE100 El-las" />
-				<xs:enumeration value="Multi-joint" />
-				<xs:enumeration value="Pvp koppeling" />
-				<xs:enumeration value="Spie verl PE100 PVC-SV" />
-				<xs:enumeration value="Spiegellas" />
-				<xs:enumeration value="Verlengde U2 koppeling" />
-				<xs:enumeration value="Voorlasflens ST" />
-			</xs:restriction>
-		</xs:simpleType>
-		<xs:simpleType name="_NetvlakGas">
-			<xs:restriction base="_NetvlakGas">
-				<xs:maxLength value="255" />
-				<xs:enumeration value="HD" />
-				<xs:enumeration value="LD" />
-			</xs:restriction>
-		</xs:simpleType>
-		<xs:simpleType name="_KBaanwezig">
-			<xs:restriction base="_KBaanwezig">
-				<xs:maxLength value="255" />
-				<xs:enumeration value="Ja" />
-				<xs:enumeration value="N.v.t. - geen staal" />
-				<xs:enumeration value="Nee" />
-			</xs:restriction>
-		</xs:simpleType>
-		<xs:simpleType name="_BuisbekledingGas">
-			<xs:restriction base="_BuisbekledingGas">
-				<xs:maxLength value="255" />
-				<xs:enumeration value="Keuze ontbreekt in lijst" />
-				<xs:enumeration value="Onbekleed" />
-				<xs:enumeration value="PE extrusie" />
-			</xs:restriction>
-		</xs:simpleType>
-		<xs:simpleType name="_VerbindingbekledingGas">
-			<xs:restriction base="_VerbindingbekledingGas">
-				<xs:maxLength value="255" />
-				<xs:enumeration value="Keuze ontbreekt in lijst" />
-				<xs:enumeration value="Onbekleed" />
-			</xs:restriction>
-		</xs:simpleType>
-		<xs:simpleType name="_SoortGasAfsluiter">
-			<xs:restriction base="_SoortGasAfsluiter">
-				<xs:maxLength value="255" />
-				<xs:enumeration value="Klep" />
-				<xs:enumeration value="Kogel" />
-				<xs:enumeration value="Kogelkraan/Las" />
-				<xs:enumeration value="Schuif" />
-			</xs:restriction>
-		</xs:simpleType>
-		<xs:simpleType name="_MateriaalGasAfsluiter">
-			<xs:restriction base="_MateriaalGasAfsluiter">
-				<xs:maxLength value="255" />
-				<xs:enumeration value="Keuze ontbreekt in lijst" />
-			</xs:restriction>
-		</xs:simpleType>
-		<xs:simpleType name="_DraaiwijzeGasAfsluiter">
-			<xs:restriction base="_DraaiwijzeGasAfsluiter">
-				<xs:maxLength value="255" />
-				<xs:enumeration value="Linksom" />
-				<xs:enumeration value="Rechtsom" />
-			</xs:restriction>
-		</xs:simpleType>
-		<xs:simpleType name="_DrukklasseGasAfsluiter">
-			<xs:restriction base="_DrukklasseGasAfsluiter">
-				<xs:maxLength value="255" />
-				<xs:enumeration value="PN 10" />
-				<xs:enumeration value="PN 16" />
-				<xs:enumeration value="PN 40" />
-				<xs:enumeration value="PN 6" />
-				<xs:enumeration value="PN 8" />
-			</xs:restriction>
-		</xs:simpleType>
-		<xs:simpleType name="_FabrikantGasAfsluiter">
-			<xs:restriction base="_FabrikantGasAfsluiter">
-				<xs:maxLength value="255" />
-				<xs:enumeration value="AVK" />
-				<xs:enumeration value="George Fisher" />
-				<xs:enumeration value="Hawle" />
-				<xs:enumeration value="Keuze ontbreekt in lijst" />
-			</xs:restriction>
-		</xs:simpleType>
-		<xs:simpleType name="_FunctieGasAfsluiter">
-			<xs:restriction base="_FunctieGasAfsluiter">
-				<xs:maxLength value="255" />
-				<xs:enumeration value="Aansluitleiding" />
-				<xs:enumeration value="Afblaas" />
-				<xs:enumeration value="Scheidingafsluiter" />
-				<xs:enumeration value="Sectie" />
-			</xs:restriction>
-		</xs:simpleType>
-		<xs:simpleType name="_VerbindingstechniekGasAfsluiter">
-			<xs:restriction base="_VerbindingstechniekGasAfsluiter">
-				<xs:maxLength value="255" />
-				<xs:enumeration value="Flens" />
-				<xs:enumeration value="Las" />
-				<xs:enumeration value="Mof" />
-			</xs:restriction>
-		</xs:simpleType>
-		<xs:simpleType name="_Voorkeurstand">
-			<xs:restriction base="_Voorkeurstand">
-				<xs:maxLength value="255" />
-				<xs:enumeration value="Dicht" />
-				<xs:enumeration value="Open" />
-			</xs:restriction>
-		</xs:simpleType>
-		<xs:simpleType name="_UitvoeringGasTstuk">
-			<xs:restriction base="_UitvoeringGasTstuk">
-				<xs:maxLength value="255" />
-				<xs:enumeration value="Aanboring" />
-				<xs:enumeration value="Bolfitting" />
-				<xs:enumeration value="Keuze ontbreekt in lijst" />
-				<xs:enumeration value="Las T-stuk" />
-				<xs:enumeration value="MMB GY" />
-				<xs:enumeration value="MMB PVCsv" />
-				<xs:enumeration value="T-Stuk" />
-			</xs:restriction>
-		</xs:simpleType>
-		<xs:simpleType name="_SoortGasAansluiting">
-			<xs:restriction base="_SoortGasAansluiting">
-				<xs:maxLength value="255" />
-				<xs:enumeration value="Aansluiting op hoofdleiding" />
-				<xs:enumeration value="Afgedopte aansluiting" />
-				<xs:enumeration value="Aftakaansluiting" />
-				<xs:enumeration value="Hoofdaansluiting Hoogbouw" />
-				<xs:enumeration value="Hoofdaansluiting met aftak" />
-				<xs:enumeration value="Hoofdaansluiting met rijg" />
-				<xs:enumeration value="Hoofdaansluiting met sec" />
-				<xs:enumeration value="Keuze ontbreekt in lijst" />
-				<xs:enumeration value="Regelinstallatie" />
-				<xs:enumeration value="Rijgaansluiting" />
-				<xs:enumeration value="Secundair" />
-				<xs:enumeration value="Secundair binnen" />
-				<xs:enumeration value="Secundair buiten" />
-				<xs:enumeration value="Via stijgleiding" />
-			</xs:restriction>
-		</xs:simpleType>
-		<xs:simpleType name="_UitvoeringAftakzadel">
-			<xs:restriction base="_UitvoeringAftakzadel">
-				<xs:maxLength value="255" />
-				<xs:enumeration value="Aanboring" />
-				<xs:enumeration value="Aanboring-eindkap" />
-				<xs:enumeration value="Keuze ontbreekt in lijst" />
-				<xs:enumeration value="T" />
-				<xs:enumeration value="Weldolet" />
-			</xs:restriction>
-		</xs:simpleType>
-		<xs:simpleType name="_UitvoeringEindstuk">
-			<xs:restriction base="_UitvoeringEindstuk">
-				<xs:maxLength value="255" />
-				<xs:enumeration value="Blindflens" />
-				<xs:enumeration value="Eindkap" />
-				<xs:enumeration value="Keuze ontbreekt in lijst" />
-				<xs:enumeration value="Lasbodem bol" />
-			</xs:restriction>
-		</xs:simpleType>
-		<xs:simpleType name="_SoortGasAppendage">
-			<xs:restriction base="_SoortGasAppendage">
-				<xs:maxLength value="255" />
-				<xs:enumeration value="Electrolasmof" />
-				<xs:enumeration value="Flens-Steekschijf" />
-				<xs:enumeration value="Flensverbinding" />
-				<xs:enumeration value="Flex / N-Flex" />
-				<xs:enumeration value="Keuze ontbreekt in lijst" />
-				<xs:enumeration value="Knevelplek" />
-				<xs:enumeration value="Komeetmof" />
-				<xs:enumeration value="Las" />
-				<xs:enumeration value="Lasmof" />
-				<xs:enumeration value="Lasnippel" />
-				<xs:enumeration value="Overschuifmof" />
-				<xs:enumeration value="Reparatie: Encapress" />
-				<xs:enumeration value="Reparatie: Klem" />
-				<xs:enumeration value="Reparatie: Klem met aftak" />
-				<xs:enumeration value="Reparatie: Lekbeugel" />
-				<xs:enumeration value="Reukpot" />
-				<xs:enumeration value="Schuifstuk" />
-				<xs:enumeration value="Shortstop" />
-				<xs:enumeration value="Sok, Stop of Nippel" />
-				<xs:enumeration value="Split Tee" />
-				<xs:enumeration value="Steekmof" />
-				<xs:enumeration value="Steekschijf" />
-				<xs:enumeration value="Stoppel" />
-			</xs:restriction>
-		</xs:simpleType>
-		<xs:simpleType name="_FabrikantGasAppendage">
-			<xs:restriction base="_FabrikantGasAppendage">
-				<xs:maxLength value="255" />
-				<xs:enumeration value="Keuze ontbreekt in lijst" />
-			</xs:restriction>
-		</xs:simpleType>
-		<xs:simpleType name="_UitvoeringGasIsolatiestuk">
-			<xs:restriction base="_UitvoeringGasIsolatiestuk">
-				<xs:maxLength value="255" />
-				<xs:enumeration value="Isolatieflens" />
-				<xs:enumeration value="Isolatiekoppeling" />
-				<xs:enumeration value="Isolatiestuk" />
-				<xs:enumeration value="Keuze ontbreekt in lijst" />
-			</xs:restriction>
-		</xs:simpleType>
-		<xs:simpleType name="_FunctieGasIsolatiestuk">
-			<xs:restriction base="_FunctieGasIsolatiestuk">
-				<xs:maxLength value="255" />
-				<xs:enumeration value="Netscheiding" />
-				<xs:enumeration value="Ringscheiding" />
-				<xs:enumeration value="Sectiescheiding" />
-			</xs:restriction>
-		</xs:simpleType>
-		<xs:simpleType name="_AppendagebekledingGas">
-			<xs:restriction base="_AppendagebekledingGas">
-				<xs:maxLength value="255" />
-				<xs:enumeration value="Epoxy" />
-				<xs:enumeration value="Keuze ontbreekt in lijst" />
-				<xs:enumeration value="Onbekleed" />
-				<xs:enumeration value="Polyurethaan coating" />
-			</xs:restriction>
-		</xs:simpleType>
-		<xs:simpleType name="_UitvoeringGasOvergangsstuk">
-			<xs:restriction base="_UitvoeringGasOvergangsstuk">
-				<xs:maxLength value="255" />
-				<xs:enumeration value="Keuze ontbreekt in lijst" />
-			</xs:restriction>
-		</xs:simpleType>
-		<xs:simpleType name="_SoortGasMeetpunt">
-			<xs:restriction base="_SoortGasMeetpunt">
-				<xs:maxLength value="255" />
-				<xs:enumeration value="Druk meting" />
-				<xs:enumeration value="Flow meting" />
-				<xs:enumeration value="Keuze ontbreekt in lijst" />
-			</xs:restriction>
-		</xs:simpleType>
-		<xs:simpleType name="_UitvoeringOntspanningselement">
-			<xs:restriction base="_UitvoeringOntspanningselement">
-				<xs:maxLength value="255" />
-				<xs:enumeration value="Keuze ontbreekt in lijst" />
-			</xs:restriction>
-		</xs:simpleType>
-		<xs:simpleType name="_KoppelingAansluitleidingOSE">
-			<xs:restriction base="_KoppelingAansluitleidingOSE">
-				<xs:maxLength value="255" />
-				<xs:enumeration value="Kniekoppeling" />
-				<xs:enumeration value="MFK" />
-				<xs:enumeration value="Spie eind" />
-			</xs:restriction>
-		</xs:simpleType>
-		<xs:simpleType name="_KoppelingGeveldoorvoerOSE">
-			<xs:restriction base="_KoppelingGeveldoorvoerOSE">
-				<xs:maxLength value="255" />
-				<xs:enumeration value="Clickmoer" />
-				<xs:enumeration value="Kniekoppeling" />
-				<xs:enumeration value="PE onder fundatie" />
-				<xs:enumeration value="Vast" />
-			</xs:restriction>
-		</xs:simpleType>
-		<xs:simpleType name="_SoortGasLeidingafblaas">
-			<xs:restriction base="_SoortGasLeidingafblaas">
-				<xs:maxLength value="255" />
-				<xs:enumeration value="Afblaas" />
-				<xs:enumeration value="Keuze ontbreekt in lijst" />
-				<xs:enumeration value="Ontluchter" />
-			</xs:restriction>
-		</xs:simpleType>
-		<xs:simpleType name="_SoortGasAfsluiterAfblaas">
-			<xs:restriction base="_SoortGasAfsluiterAfblaas">
-				<xs:maxLength value="255" />
-				<xs:enumeration value="Kogel-Flens" />
-				<xs:enumeration value="Kogel-Las" />
-				<xs:enumeration value="Schuif-Flens" />
-				<xs:enumeration value="Schuif-Las" />
 			</xs:restriction>
 		</xs:simpleType>
 		<xs:simpleType name="_UitvoeringKBgelijkrichter">
@@ -1407,11 +1027,13 @@
 			<xs:restriction base="_SoortBescherming">
 				<xs:maxLength value="255" />
 				<xs:enumeration value="AFDEKPLAAT" />
+				<xs:enumeration value="KEUZE ONTBREEKT IN LIJST" />
 			</xs:restriction>
 		</xs:simpleType>
 		<xs:simpleType name="_BijlageTypeValue">
 			<xs:restriction base="_BijlageTypeValue">
 				<xs:maxLength value="255" />
+				<xs:enumeration value="Aardingsrapport" />
 				<xs:enumeration value="Foto" />
 				<xs:enumeration value="Gestuurde boring" />
 				<xs:enumeration value="Zinkertekening" />
@@ -1462,6 +1084,398 @@
 				<xs:maxLength value="255" />
 				<xs:enumeration value="Na verplaatsing" />
 				<xs:enumeration value="Voor verplaatsing" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_FunctieGasStation">
+			<xs:restriction base="_FunctieGasStation">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Afleverstation" />
+				<xs:enumeration value="Afleverstation klein" />
+				<xs:enumeration value="District- en Afleverstation" />
+				<xs:enumeration value="districtstation" />
+				<xs:enumeration value="Drukbewakingsstation" />
+				<xs:enumeration value="Gas Ontvangststation" />
+				<xs:enumeration value="Huisaansluitset" />
+				<xs:enumeration value="Open eind levering" />
+				<xs:enumeration value="Overslagstation" />
+				<xs:enumeration value="Reinigings- droog station" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_BuitenDiameterGasleiding">
+			<xs:restriction base="_BuitenDiameterGasleiding">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="100" />
+				<xs:enumeration value="110" />
+				<xs:enumeration value="114.3" />
+				<xs:enumeration value="15" />
+				<xs:enumeration value="160" />
+				<xs:enumeration value="168.3" />
+				<xs:enumeration value="200" />
+				<xs:enumeration value="219.1" />
+				<xs:enumeration value="22" />
+				<xs:enumeration value="25" />
+				<xs:enumeration value="250" />
+				<xs:enumeration value="273.0" />
+				<xs:enumeration value="28" />
+				<xs:enumeration value="315" />
+				<xs:enumeration value="32" />
+				<xs:enumeration value="323.9" />
+				<xs:enumeration value="33.7" />
+				<xs:enumeration value="35" />
+				<xs:enumeration value="40" />
+				<xs:enumeration value="400" />
+				<xs:enumeration value="406.4" />
+				<xs:enumeration value="42" />
+				<xs:enumeration value="42.4" />
+				<xs:enumeration value="48.3" />
+				<xs:enumeration value="50" />
+				<xs:enumeration value="54" />
+				<xs:enumeration value="60.3" />
+				<xs:enumeration value="63" />
+				<xs:enumeration value="75" />
+				<xs:enumeration value="88.9" />
+				<xs:enumeration value="90" />
+				<xs:enumeration value="Keuze ontbreekt in lijst" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_MateriaalGasleiding">
+			<xs:restriction base="_MateriaalGasleiding">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="CU" />
+				<xs:enumeration value="KEUZE ONTBREEKT IN LIJST" />
+				<xs:enumeration value="KOUSIJZER" />
+				<xs:enumeration value="MULTILAYER" />
+				<xs:enumeration value="PE 100" />
+				<xs:enumeration value="PE 100RC" />
+				<xs:enumeration value="PE 100RCB" />
+				<xs:enumeration value="PE 100RCM" />
+				<xs:enumeration value="PE 80" />
+				<xs:enumeration value="PECu" />
+				<xs:enumeration value="PEKO" />
+				<xs:enumeration value="PVC CPE" />
+				<xs:enumeration value="ST" />
+				<xs:enumeration value="ST PE" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_SDRgas">
+			<xs:restriction base="_SDRgas">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="11" />
+				<xs:enumeration value="17.6" />
+				<xs:enumeration value="33" />
+				<xs:enumeration value="41" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_FabrikantGasLeiding">
+			<xs:restriction base="_FabrikantGasLeiding">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Imbema" />
+				<xs:enumeration value="Keuze ontbreekt in lijst" />
+				<xs:enumeration value="OCI" />
+				<xs:enumeration value="Wavin" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_Druk">
+			<xs:restriction base="_Druk">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="1 BAR" />
+				<xs:enumeration value="100 MBAR" />
+				<xs:enumeration value="200 MBAR" />
+				<xs:enumeration value="30 MBAR" />
+				<xs:enumeration value="4 BAR" />
+				<xs:enumeration value="8 BAR" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_SoortGas">
+			<xs:restriction base="_SoortGas">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Aardgas" />
+				<xs:enumeration value="Biogas" />
+				<xs:enumeration value="Hoogcalorisch gas" />
+				<xs:enumeration value="Keuze ontbreekt in lijst" />
+				<xs:enumeration value="Waterstof" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_VerbindingstechniekGas">
+			<xs:restriction base="_VerbindingstechniekGas">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Draadverbinding" />
+				<xs:enumeration value="Elektrolas" />
+				<xs:enumeration value="Elektrolasmof" />
+				<xs:enumeration value="Flensverbinding" />
+				<xs:enumeration value="HSF Peko koppeling TV" />
+				<xs:enumeration value="Koppeling" />
+				<xs:enumeration value="Las" />
+				<xs:enumeration value="Lasverbinding" />
+				<xs:enumeration value="Mof" />
+				<xs:enumeration value="Mof overschuif HPE" />
+				<xs:enumeration value="Mof overschuif PVC-SV" />
+				<xs:enumeration value="Mof PE100 El-las" />
+				<xs:enumeration value="Multi-joint" />
+				<xs:enumeration value="Pvp koppeling" />
+				<xs:enumeration value="Spie verl PE100 PVC-SV" />
+				<xs:enumeration value="Spiegellas" />
+				<xs:enumeration value="Verlengde U2 koppeling" />
+				<xs:enumeration value="Voorlasflens ST" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_NetvlakGas">
+			<xs:restriction base="_NetvlakGas">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="HD" />
+				<xs:enumeration value="LD" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_KBaanwezig">
+			<xs:restriction base="_KBaanwezig">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Ja" />
+				<xs:enumeration value="N.v.t. - geen staal" />
+				<xs:enumeration value="Nee" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_BuisbekledingGas">
+			<xs:restriction base="_BuisbekledingGas">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Keuze ontbreekt in lijst" />
+				<xs:enumeration value="Onbekleed" />
+				<xs:enumeration value="PE extrusie" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_VerbindingbekledingGas">
+			<xs:restriction base="_VerbindingbekledingGas">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Keuze ontbreekt in lijst" />
+				<xs:enumeration value="Onbekleed" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_SoortGasAfsluiter">
+			<xs:restriction base="_SoortGasAfsluiter">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Klep" />
+				<xs:enumeration value="Kogel" />
+				<xs:enumeration value="Kogelkraan/Las" />
+				<xs:enumeration value="Schuif" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_MateriaalGasAfsluiter">
+			<xs:restriction base="_MateriaalGasAfsluiter">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Keuze ontbreekt in lijst" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_DraaiwijzeGasAfsluiter">
+			<xs:restriction base="_DraaiwijzeGasAfsluiter">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Linksom" />
+				<xs:enumeration value="Rechtsom" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_DrukklasseGasAfsluiter">
+			<xs:restriction base="_DrukklasseGasAfsluiter">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="PN 10" />
+				<xs:enumeration value="PN 16" />
+				<xs:enumeration value="PN 40" />
+				<xs:enumeration value="PN 6" />
+				<xs:enumeration value="PN 8" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_FabrikantGasAfsluiter">
+			<xs:restriction base="_FabrikantGasAfsluiter">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="AVK" />
+				<xs:enumeration value="George Fisher" />
+				<xs:enumeration value="Hawle" />
+				<xs:enumeration value="Keuze ontbreekt in lijst" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_FunctieGasAfsluiter">
+			<xs:restriction base="_FunctieGasAfsluiter">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Aansluitleiding" />
+				<xs:enumeration value="Afblaas" />
+				<xs:enumeration value="Scheidingafsluiter" />
+				<xs:enumeration value="Sectie" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_VerbindingstechniekGasAfsluiter">
+			<xs:restriction base="_VerbindingstechniekGasAfsluiter">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Flens" />
+				<xs:enumeration value="Las" />
+				<xs:enumeration value="Mof" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_Voorkeurstand">
+			<xs:restriction base="_Voorkeurstand">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Dicht" />
+				<xs:enumeration value="Open" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_UitvoeringGasTstuk">
+			<xs:restriction base="_UitvoeringGasTstuk">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Aanboring" />
+				<xs:enumeration value="Bolfitting" />
+				<xs:enumeration value="Keuze ontbreekt in lijst" />
+				<xs:enumeration value="Las T-stuk" />
+				<xs:enumeration value="MMB GY" />
+				<xs:enumeration value="MMB PVCsv" />
+				<xs:enumeration value="T-Stuk" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_SoortGasAansluiting">
+			<xs:restriction base="_SoortGasAansluiting">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Aansluiting op hoofdleiding" />
+				<xs:enumeration value="Afgedopte aansluiting" />
+				<xs:enumeration value="Aftakaansluiting" />
+				<xs:enumeration value="Hoofdaansluiting Hoogbouw" />
+				<xs:enumeration value="Hoofdaansluiting met aftak" />
+				<xs:enumeration value="Hoofdaansluiting met rijg" />
+				<xs:enumeration value="Hoofdaansluiting met sec" />
+				<xs:enumeration value="Keuze ontbreekt in lijst" />
+				<xs:enumeration value="Regelinstallatie" />
+				<xs:enumeration value="Rijgaansluiting" />
+				<xs:enumeration value="Secundair" />
+				<xs:enumeration value="Secundair binnen" />
+				<xs:enumeration value="Secundair buiten" />
+				<xs:enumeration value="Via stijgleiding" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_UitvoeringAftakzadel">
+			<xs:restriction base="_UitvoeringAftakzadel">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Aanboring" />
+				<xs:enumeration value="Aanboring-eindkap" />
+				<xs:enumeration value="Keuze ontbreekt in lijst" />
+				<xs:enumeration value="T" />
+				<xs:enumeration value="Weldolet" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_UitvoeringEindstuk">
+			<xs:restriction base="_UitvoeringEindstuk">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Blindflens" />
+				<xs:enumeration value="Eindkap" />
+				<xs:enumeration value="Keuze ontbreekt in lijst" />
+				<xs:enumeration value="Lasbodem bol" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_SoortGasAppendage">
+			<xs:restriction base="_SoortGasAppendage">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Electrolasmof" />
+				<xs:enumeration value="Flens-Steekschijf" />
+				<xs:enumeration value="Flensverbinding" />
+				<xs:enumeration value="Flex / N-Flex" />
+				<xs:enumeration value="Keuze ontbreekt in lijst" />
+				<xs:enumeration value="Knevelplek" />
+				<xs:enumeration value="Komeetmof" />
+				<xs:enumeration value="Las" />
+				<xs:enumeration value="Lasmof" />
+				<xs:enumeration value="Lasnippel" />
+				<xs:enumeration value="Overschuifmof" />
+				<xs:enumeration value="Reparatie: Encapress" />
+				<xs:enumeration value="Reparatie: Klem" />
+				<xs:enumeration value="Reparatie: Klem met aftak" />
+				<xs:enumeration value="Reparatie: Lekbeugel" />
+				<xs:enumeration value="Reukpot" />
+				<xs:enumeration value="Schuifstuk" />
+				<xs:enumeration value="Shortstop" />
+				<xs:enumeration value="Sok, Stop of Nippel" />
+				<xs:enumeration value="Split Tee" />
+				<xs:enumeration value="Steekmof" />
+				<xs:enumeration value="Steekschijf" />
+				<xs:enumeration value="Stoppel" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_FabrikantGasAppendage">
+			<xs:restriction base="_FabrikantGasAppendage">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Keuze ontbreekt in lijst" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_UitvoeringGasIsolatiestuk">
+			<xs:restriction base="_UitvoeringGasIsolatiestuk">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Isolatieflens" />
+				<xs:enumeration value="Isolatiekoppeling" />
+				<xs:enumeration value="Isolatiestuk" />
+				<xs:enumeration value="Keuze ontbreekt in lijst" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_FunctieGasIsolatiestuk">
+			<xs:restriction base="_FunctieGasIsolatiestuk">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Netscheiding" />
+				<xs:enumeration value="Ringscheiding" />
+				<xs:enumeration value="Sectiescheiding" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_AppendagebekledingGas">
+			<xs:restriction base="_AppendagebekledingGas">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Epoxy" />
+				<xs:enumeration value="Keuze ontbreekt in lijst" />
+				<xs:enumeration value="Onbekleed" />
+				<xs:enumeration value="Polyurethaan coating" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_UitvoeringGasOvergangsstuk">
+			<xs:restriction base="_UitvoeringGasOvergangsstuk">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Keuze ontbreekt in lijst" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_SoortGasMeetpunt">
+			<xs:restriction base="_SoortGasMeetpunt">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Druk meting" />
+				<xs:enumeration value="Flow meting" />
+				<xs:enumeration value="Keuze ontbreekt in lijst" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_UitvoeringOntspanningselement">
+			<xs:restriction base="_UitvoeringOntspanningselement">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Keuze ontbreekt in lijst" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_KoppelingAansluitleidingOSE">
+			<xs:restriction base="_KoppelingAansluitleidingOSE">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Kniekoppeling" />
+				<xs:enumeration value="MFK" />
+				<xs:enumeration value="Spie eind" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_KoppelingGeveldoorvoerOSE">
+			<xs:restriction base="_KoppelingGeveldoorvoerOSE">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Clickmoer" />
+				<xs:enumeration value="Kniekoppeling" />
+				<xs:enumeration value="PE onder fundatie" />
+				<xs:enumeration value="Vast" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_SoortGasLeidingafblaas">
+			<xs:restriction base="_SoortGasLeidingafblaas">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Afblaas" />
+				<xs:enumeration value="Keuze ontbreekt in lijst" />
+				<xs:enumeration value="Ontluchter" />
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="_SoortGasAfsluiterAfblaas">
+			<xs:restriction base="_SoortGasAfsluiterAfblaas">
+				<xs:maxLength value="255" />
+				<xs:enumeration value="Kogel-Flens" />
+				<xs:enumeration value="Kogel-Las" />
+				<xs:enumeration value="Schuif-Flens" />
+				<xs:enumeration value="Schuif-Las" />
 			</xs:restriction>
 		</xs:simpleType>
 	</xs:redefine>
