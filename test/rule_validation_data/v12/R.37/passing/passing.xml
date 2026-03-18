@@ -5,83 +5,84 @@
                xsi:schemaLocation="NS_NLCSnetbeheer ../../../../../doc/NLCS_Netbeheer_Keuzelijst.xsd"
                xmlns="NS_NLCSnetbeheer">
     <AprojectReferentie>
+        <ID>A</ID>
         <Projectnummer>1</Projectnummer>
         <Netbeheerder>Enexis</Netbeheerder>
-        <ID>A</ID>
+        <NaamAannemer></NaamAannemer>
         <Tekeningtype>DEELREVISIE</Tekeningtype>
         <Geometry></Geometry>
     </AprojectReferentie>
     
     <LSkabel>
+        <ID>B</ID>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
         <Inmeetwijze>GPS</Inmeetwijze>
-        <ID>B</ID>
         <Geometry></Geometry>
     </LSkabel>
     
     <LSkabel>
+        <ID>C</ID>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
         <Inmeetwijze>Tachymeter</Inmeetwijze>
-        <ID>C</ID>
         <Geometry></Geometry>
     </LSkabel>
     
     <LSkabel>
+        <ID>D</ID>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
         <Inmeetwijze>Meetlint</Inmeetwijze>
         <Subnettype>AANSLUITNET</Subnettype>
-        <ID>D</ID>
         <Geometry></Geometry>
     </LSkabel>
 
     <MSkabel>
+        <ID>E</ID>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
         <Inmeetwijze>GPS</Inmeetwijze>
-        <ID>E</ID>
         <Geometry></Geometry>
     </MSkabel>
     
     <MSkabel>
+        <ID>F</ID>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
         <Inmeetwijze>Tachymeter</Inmeetwijze>
-        <ID>F</ID>
         <Geometry></Geometry>
     </MSkabel>
 
     <Amantelbuis>
+        <ID>G</ID>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
         <Inmeetwijze>GPS</Inmeetwijze>
-        <ID>G</ID>
         <Geometry></Geometry>
     </Amantelbuis>
     
     <Amantelbuis>
+        <ID>H</ID>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
         <Inmeetwijze>Tachymeter</Inmeetwijze>
-        <ID>H</ID>
         <Geometry></Geometry>
     </Amantelbuis>
 
     <Eaarddraad>
+        <ID>I</ID>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
         <Inmeetwijze>GPS</Inmeetwijze>
-        <ID>I</ID>
         <Geometry></Geometry>
     </Eaarddraad>
     
     <Eaarddraad>
+        <ID>J</ID>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
         <Inmeetwijze>Tachymeter</Inmeetwijze>
-        <ID>J</ID>
         <Geometry></Geometry>
     </Eaarddraad>
     

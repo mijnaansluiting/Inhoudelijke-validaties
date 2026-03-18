@@ -5,19 +5,20 @@
                xsi:schemaLocation="NS_NLCSnetbeheer ../../../../../doc/NLCS_Netbeheer_Keuzelijst.xsd"
                xmlns="NS_NLCSnetbeheer">
     <AprojectReferentie>
+        <ID>A</ID>
         <Projectnummer>1</Projectnummer>
         <Netbeheerder>Enexis</Netbeheerder>
-        <ID>A</ID>
+        <NaamAannemer></NaamAannemer>
         <Tekeningtype>BESTAANDE SITUATIE</Tekeningtype>
         <Geometry></Geometry>
     </AprojectReferentie>
     
     <LSkabel>
+        <ID>B</ID>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
         <Verbindingnummer>1234</Verbindingnummer>
         <FaseAanduiding>L3</FaseAanduiding>
-        <ID>B</ID>
         <Geometry>
             <gml:LineString
                 srsDimension="3"
@@ -31,10 +32,10 @@
     </LSkabel>
     
     <LSmof>
+        <ID>C</ID>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
         <Verbindingnummer>1234</Verbindingnummer>
-        <ID>C</ID>
         <Geometry>
             <gml:Point
                 srsDimension="3"
