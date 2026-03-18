@@ -5,79 +5,80 @@
                xsi:schemaLocation="NS_NLCSnetbeheer ../../../../../doc/NLCS_Netbeheer_Keuzelijst.xsd"
                xmlns="NS_NLCSnetbeheer">
     <AprojectReferentie>
+        <ID>A</ID>
         <Projectnummer>1</Projectnummer>
         <Netbeheerder>Enexis</Netbeheerder>
-        <ID>A</ID>
+        <NaamAannemer></NaamAannemer>
         <Tekeningtype>EINDREVISIE</Tekeningtype>
         <Geometry></Geometry>
     </AprojectReferentie>
 
     <MSkabel>
+        <ID>B</ID>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>IN BEDRIJF</Bedrijfstoestand>
-        <ID>B</ID>
         <Geometry></Geometry>
     </MSkabel>
 
     <MSstation>
+        <ID>C</ID>
         <Status>REVISIE</Status>
         <Bedrijfstoestand>IN BEDRIJF</Bedrijfstoestand>
-        <ID>C</ID>
         <Geometry></Geometry>
     </MSstation>
 
     <Amantelbuis>
+        <ID>D</ID>
         <Status>NIEUW</Status>
         <Bedrijfstoestand>IN BEDRIJF</Bedrijfstoestand>
-        <ID>D</ID>
         <Geometry></Geometry>
     </Amantelbuis>
 
     <MSmof>
+        <ID>E</ID>
         <Status>VERWIJDERD</Status>
         <Bedrijfstoestand>IN BEDRIJF</Bedrijfstoestand>
-        <ID>E</ID>
         <Geometry></Geometry>
     </MSmof>
     
     <OVLoverdrachtspunt>
+        <ID>F</ID>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>IN BEDRIJF</Bedrijfstoestand>
-        <ID>F</ID>
         <Geometry></Geometry>
     </OVLoverdrachtspunt>
     
     <Eaarddraad>
+        <ID>G</ID>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>IN BEDRIJF</Bedrijfstoestand>
-        <ID>G</ID>
         <Geometry></Geometry>
     </Eaarddraad>
     
     <Eaardpen>
+        <ID>H</ID>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>IN BEDRIJF</Bedrijfstoestand>
-        <ID>H</ID>
         <Geometry></Geometry>
     </Eaardpen>
     
     <LSkabel>
+        <ID>I</ID>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>IN BEDRIJF</Bedrijfstoestand>
-        <ID>I</ID>
         <Geometry></Geometry>
     </LSkabel>
     <LSmof>
+        <ID>J</ID>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>IN BEDRIJF</Bedrijfstoestand>
-        <ID>J</ID>
         <Geometry></Geometry>
     </LSmof>
     
     <LSoverdrachtspunt>
+        <ID>K</ID>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>IN BEDRIJF</Bedrijfstoestand>
-        <ID>K</ID>
         <Geometry></Geometry>
     </LSoverdrachtspunt>
 </NLCSnetbeheer>

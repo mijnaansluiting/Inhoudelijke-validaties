@@ -5,9 +5,10 @@
                xsi:schemaLocation="NS_NLCSnetbeheer ../../../../../doc/NLCS_Netbeheer_Keuzelijst.xsd"
                xmlns="NS_NLCSnetbeheer">
     <AprojectReferentie>
+        <ID>A</ID>
         <Projectnummer>1</Projectnummer>
         <Netbeheerder>Enexis</Netbeheerder>
-        <ID>A</ID>
+        <NaamAannemer></NaamAannemer>
         <Tekeningtype>BESTAANDE SITUATIE</Tekeningtype>
         <Geometry>
             <gml:Polygon
@@ -29,9 +30,9 @@
     </AprojectReferentie>
     
     <Eaarddraad>
+        <ID>B</ID>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <ID>B</ID>
         <Geometry>
             <gml:LineString
                 srsDimension="3"
@@ -46,9 +47,9 @@
     </Eaarddraad>
     
     <Eaarddraad>
+        <ID>C</ID>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <ID>C</ID>
         <Geometry>
             <gml:LineString
                 srsDimension="3"
@@ -63,9 +64,9 @@
     </Eaarddraad>
     
     <Eaarddraad>
+        <ID>D</ID>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <ID>D</ID>
         <Geometry>
             <gml:LineString
                 srsDimension="3"
@@ -80,9 +81,9 @@
     </Eaarddraad>
     
     <Eaarddraad>
+        <ID>E</ID>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <ID>E</ID>
         <Geometry>
             <gml:LineString
                 srsDimension="3"
@@ -97,9 +98,9 @@
     </Eaarddraad>
     
     <MSmof>
+        <ID>F</ID>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <ID>F</ID>
         <Geometry>
             <gml:Point
                 srsDimension="3"
@@ -112,9 +113,9 @@
     </MSmof>
     
     <LSmof>
+        <ID>G</ID>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <ID>G</ID>
         <Geometry>
             <gml:Point
                 srsDimension="3"
@@ -127,9 +128,9 @@
     </LSmof>
     
     <Eaardmof>
+        <ID>H</ID>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <ID>H</ID>
         <Geometry>
             <gml:Point
                 srsDimension="3"
@@ -142,9 +143,9 @@
     </Eaardmof>
     
     <Eaardpen>
+        <ID>I</ID>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <ID>I</ID>
         <Geometry>
             <gml:Point
                 srsDimension="3"
@@ -157,9 +158,9 @@
     </Eaardpen>
     
     <MSstation>
+        <ID>J</ID>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <ID>J</ID>
         <Geometry>
             <gml:Polygon
                 srsDimension="3"
@@ -180,9 +181,9 @@
     </MSstation>
     
     <LSkast>
+        <ID>K</ID>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <ID>K</ID>
         <Geometry>
             <gml:Polygon
                 srsDimension="3"
@@ -203,9 +204,9 @@
     </LSkast>
     
     <MSstation>
+        <ID>L</ID>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <ID>L</ID>
         <Geometry>
             <gml:Polygon
                 srsDimension="3"

@@ -5,10 +5,11 @@
                xsi:schemaLocation="NS_NLCSnetbeheer ../../../../../doc/NLCS_Netbeheer_Keuzelijst.xsd"
                xmlns="NS_NLCSnetbeheer">
     <AprojectReferentie>
+        <ID>A</ID>
         <Projectnummer>1</Projectnummer>
         <Netbeheerder>Enexis</Netbeheerder>
+        <NaamAannemer></NaamAannemer>
         <Volgnummer>1</Volgnummer>
-        <ID>A</ID>
         <Tekeningtype>EINDREVISIE</Tekeningtype>
         <Geometry></Geometry>
     </AprojectReferentie>

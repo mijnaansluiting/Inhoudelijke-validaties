@@ -5,53 +5,54 @@
                xsi:schemaLocation="NS_NLCSnetbeheer ../../../../../doc/NLCS_Netbeheer_Keuzelijst.xsd"
                xmlns="NS_NLCSnetbeheer">
     <AprojectReferentie>
+        <ID>A</ID>
         <Projectnummer>1</Projectnummer>
         <Netbeheerder>Enexis</Netbeheerder>
-        <ID>A</ID>
+        <NaamAannemer></NaamAannemer>
         <Tekeningtype>BESTAANDE SITUATIE</Tekeningtype>
         <Geometry></Geometry>
     </AprojectReferentie>
 
     <MSkabel>
+        <ID>B</ID>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>IN BEDRIJF</Bedrijfstoestand>
-        <ID>B</ID>
         <Geometry></Geometry>
     </MSkabel>
     <LSkabel>
+        <ID>C</ID>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>IN BEDRIJF</Bedrijfstoestand>
-        <ID>C</ID>
         <Geometry></Geometry>
     </LSkabel>
     <LSmof>
+        <ID>D</ID>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>IN BEDRIJF</Bedrijfstoestand>
-        <ID>D</ID>
         <Geometry></Geometry>
     </LSmof>
     <LSoverdrachtspunt>
+        <ID>E</ID>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>IN BEDRIJF</Bedrijfstoestand>
-        <ID>E</ID>
         <Geometry></Geometry>
     </LSoverdrachtspunt>
     <OVLoverdrachtspunt>
+        <ID>F</ID>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>IN BEDRIJF</Bedrijfstoestand>
-        <ID>F</ID>
         <Geometry></Geometry>
     </OVLoverdrachtspunt>
     <Eaarddraad>
+        <ID>G</ID>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>IN BEDRIJF</Bedrijfstoestand>
-        <ID>G</ID>
         <Geometry></Geometry>
     </Eaarddraad>
     <Eaardpen>
+        <ID>H</ID>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>IN BEDRIJF</Bedrijfstoestand>
-        <ID>H</ID>
         <Geometry></Geometry>
     </Eaardpen>
 </NLCSnetbeheer>

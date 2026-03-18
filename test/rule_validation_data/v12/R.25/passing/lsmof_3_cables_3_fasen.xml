@@ -5,18 +5,19 @@
                xsi:schemaLocation="NS_NLCSnetbeheer ../../../../../doc/NLCS_Netbeheer_Keuzelijst.xsd"
                xmlns="NS_NLCSnetbeheer">
     <AprojectReferentie>
+        <ID>A</ID>
         <Projectnummer>1</Projectnummer>
         <Netbeheerder>Enexis</Netbeheerder>
-        <ID>A</ID>
+        <NaamAannemer></NaamAannemer>
         <Tekeningtype>BESTAANDE SITUATIE</Tekeningtype>
         <Geometry></Geometry>
     </AprojectReferentie>
 
     <LSkabel>
+        <ID>B</ID>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
         <FaseAanduiding>3 Fasen</FaseAanduiding>
-        <ID>B</ID>
         <Geometry>
             <gml:LineString
                 srsDimension="3"
@@ -30,10 +31,10 @@
     </LSkabel>
 
     <LSkabel>
+        <ID>C</ID>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
         <FaseAanduiding>3 Fasen</FaseAanduiding>
-        <ID>C</ID>
         <Geometry>
             <gml:LineString
                 srsDimension="3"
@@ -47,10 +48,10 @@
     </LSkabel>
 
     <LSkabel>
+        <ID>D</ID>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
         <FaseAanduiding>3 Fasen</FaseAanduiding>
-        <ID>D</ID>
         <Geometry>
             <gml:LineString
                 srsDimension="3"
@@ -64,9 +65,9 @@
     </LSkabel>
 
     <LSmof>
+        <ID>E</ID>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <ID>E</ID>
         <Geometry>
             <gml:Point
                 srsDimension="3"
