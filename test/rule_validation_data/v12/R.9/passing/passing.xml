@@ -38,51 +38,51 @@
     </MSmof>
 
     <MSoverdrachtspunt>
+        <ID>E</ID>
         <DatumAanleg>2024-01-10</DatumAanleg>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <ID>E</ID>
         <Geometry></Geometry>
     </MSoverdrachtspunt>
     
     
     <Eaarddraad>
+        <ID>F</ID>
         <DatumAanleg>2023-10-10</DatumAanleg>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <ID>F</ID>
         <Geometry></Geometry>
     </Eaarddraad>
     
     <Eaardpen>
+        <ID>G</ID>
         <DatumAanleg>2023-10-10</DatumAanleg>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <ID>G</ID>
         <Geometry></Geometry>
     </Eaardpen>
     
     <LSkabel>
+        <ID>H</ID>
         <DatumAanleg>2023-10-10</DatumAanleg>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <ID>H</ID>
         <Geometry></Geometry>
     </LSkabel>
     
     <LSmof>
+        <ID>I</ID>
         <DatumAanleg>2023-10-10</DatumAanleg>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <ID>I</ID>
         <Geometry></Geometry>
     </LSmof>
     
     <LSoverdrachtspunt>
+        <ID>J</ID>
         <DatumAanleg>2023-10-10</DatumAanleg>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <ID>J</ID>
         <Geometry></Geometry>
     </LSoverdrachtspunt>
 
