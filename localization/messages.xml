@@ -65,10 +65,18 @@
   </message>
   <message id="attribute-not-present">
     <message-text xml:lang="en">
-      The attribute {1} is not present on object.
+      The attribute {1} is not present.
     </message-text>
     <message-text xml:lang="nl">
-      Het kenmerk {1} is niet gevuld voor het object.
+      Het kenmerk {1} is niet aanwezig.
+    </message-text>
+  </message>
+  <message id="attribute-present">
+    <message-text xml:lang="en">
+      The attribute {1} is present, but it is not allowed.
+    </message-text>
+    <message-text xml:lang="nl">
+      Het kenmerk {1} is aanwezig, maar dit niet is toegestaan.
     </message-text>
   </message>
   <message id="object-not-present">
@@ -89,10 +97,10 @@
   </message>
   <message id="date-in-the-future">
     <message-text xml:lang="en">
-      The DatumAanleg on object is in the future.
+      {1} cannot be in the future.
     </message-text>
     <message-text xml:lang="nl">
-      De DatumAanleg op object mag niet in de toekomst liggen.
+      {1} mag niet in de toekomst liggen.
     </message-text>
   </message>
   <message id="cable-not-connected-to-valid-object">

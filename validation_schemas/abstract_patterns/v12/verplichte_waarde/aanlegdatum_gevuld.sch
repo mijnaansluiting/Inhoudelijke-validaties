@@ -14,7 +14,7 @@
         <assert id="date-not-in-future"
             test="not($datum-aanleg-present) or (xs:date(nlcs:DatumAanleg) le current-date())"
             properties="scope rule-number severity object-type object-id">
-            <value-of select="ma:get-translation('date-in-the-future')"/>
+            <value-of select="ma:get-translation-and-replace-placeholders('date-in-the-future', ['DatumAanleg'])"/>
         </assert>
     </rule>
 </pattern>

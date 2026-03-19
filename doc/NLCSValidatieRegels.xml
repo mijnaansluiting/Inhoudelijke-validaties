@@ -568,11 +568,11 @@
 				<validatieObject><naam>AprojectReferentie</naam></validatieObject>
 			</validatieObjecten>
 		</validatieRegel>
-		<validatieRegel nummer="R.41" naam="DatumTijMutatie gevuld">
+		<validatieRegel nummer="R.41" naam="DatumTijdMutatie gevuld">
 			<beschrijving>Een DatumTijdMutatie is verplicht voor revisieobjecten.</beschrijving>
 			<soort>Verplichte waarde</soort>
 			<definitie>
-				Een DatumTijMutatie is verplicht voor alle objecten met een andere status dan BESTAAND of met een ingevulde Bewerking.
+				Een DatumTijdMutatie is verplicht voor alle objecten met een andere status dan BESTAAND of met een ingevulde Bewerking.
 			</definitie>
 			<validatieObjecten>
 				<validatieObject><naam>AlleObjecten</naam></validatieObject>
