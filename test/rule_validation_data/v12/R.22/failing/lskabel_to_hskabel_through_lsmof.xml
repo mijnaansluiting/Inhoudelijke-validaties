@@ -13,7 +13,7 @@
         <Geometry></Geometry>
     </AprojectReferentie>
 
-    <HSkabel>
+    <LSkabel>
         <ID>B</ID>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
@@ -22,16 +22,16 @@
                 srsDimension="3"
                 srsName="EPSG:7415">
                 <gml:posList>
-                    40  40 0
-                    80 120 0
-                    320 200 0
-                    400 280 0
+                    40  40 -1
+                    80 120 -1
+                    320 200 -1
+                    400 280 -1
                 </gml:posList>
             </gml:LineString>
         </Geometry>
-    </HSkabel>
+    </LSkabel>
 
-    <MSkabel>
+    <HSkabel>
         <ID>C</ID>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
@@ -40,15 +40,15 @@
                 srsDimension="3"
                 srsName="EPSG:7415">
                 <gml:posList>
-                    200 160 0
-                    280 120 0
-                    400 120 0
+                    200 160 -1
+                    280 120 -1
+                    400 120 -1
                 </gml:posList>
             </gml:LineString>
         </Geometry>
-    </MSkabel>
+    </HSkabel>
 
-    <MSmof>
+    <LSmof>
         <ID>D</ID>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
@@ -57,26 +57,9 @@
                 srsDimension="3"
                 srsName="EPSG:7415">
                 <gml:pos>
-                    200 160 0
+                    200 160 -1
                 </gml:pos>
             </gml:Point>
         </Geometry>
-    </MSmof>
-    <LSkabel>
-        <ID>E</ID>
-        <Status>BESTAAND</Status>
-        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <Geometry>
-            <gml:LineString
-                srsDimension="3"
-                srsName="EPSG:7415">
-                <gml:posList>
-                    40  40 0
-                    80 120 0
-                    320 200 0
-                    400 280 0
-                </gml:posList>
-            </gml:LineString>
-        </Geometry>
-    </LSkabel>
+    </LSmof>
 </NLCSnetbeheer>

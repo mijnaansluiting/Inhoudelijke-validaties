@@ -5,8 +5,8 @@ version="v12"
 {
     echo "## Object coverage"
     echo
-    echo "| Rule | Expected | Found | Missing |"
-    echo "| ---- | -------- | ----- | ------- |"
+    echo "| Rule | Expected | Found | Missing | Extra |"
+    echo "| ---- | -------- | ----- | ------- | ----- |"
 } >> $GITHUB_STEP_SUMMARY
 
 all_rules_covered_correctly=true

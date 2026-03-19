@@ -48,7 +48,7 @@
         </Geometry>
     </MSkabel>
 
-    <MSmof>
+    <LSmof>
         <ID>D</ID>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
@@ -61,5 +61,5 @@
                 </gml:pos>
             </gml:Point>
         </Geometry>
-    </MSmof>
+    </LSmof>
 </NLCSnetbeheer>
