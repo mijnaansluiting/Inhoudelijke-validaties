@@ -5,24 +5,25 @@
                xsi:schemaLocation="NS_NLCSnetbeheer ../../../../../doc/NLCS_Netbeheer_Keuzelijst.xsd"
                xmlns="NS_NLCSnetbeheer">
     <AprojectReferentie>
+        <ID>A</ID>
         <Projectnummer>1</Projectnummer>
         <Netbeheerder>Enexis</Netbeheerder>
-        <ID>A</ID>
+        <NaamAannemer></NaamAannemer>
         <Tekeningtype>BESTAANDE SITUATIE</Tekeningtype>
         <Geometry></Geometry>
     </AprojectReferentie>
     <MSkabel>
+        <ID>B</ID>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <ID>B</ID>
         <Geometry>
             <gml:LineString
                 srsDimension="3"
-                srsName="EPSG:28992">
+                srsName="EPSG:7415">
                 <gml:posList>
-                    21.00 21.0 -0.80
-                    21.01 21.0 -0.80
-                    21.11 21.0 -0.80
+                     0    0 0
+                    30    0 0
+                    30.05 0 0
                 </gml:posList>
             </gml:LineString>
         </Geometry>

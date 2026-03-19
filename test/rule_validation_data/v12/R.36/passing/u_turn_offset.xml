@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<NLCSnetbeheer xmlns:keuzelijst="NLCSnetbeheer"
+               xmlns:gml="http://www.opengis.net/gml/3.2"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="NS_NLCSnetbeheer ../../../../../doc/NLCS_Netbeheer_Keuzelijst.xsd"
+               xmlns="NS_NLCSnetbeheer">
+    <AprojectReferentie>
+        <ID>A</ID>
+        <Projectnummer>1</Projectnummer>
+        <Netbeheerder>Enexis</Netbeheerder>
+        <NaamAannemer></NaamAannemer>
+        <Tekeningtype>BESTAANDE SITUATIE</Tekeningtype>
+        <Geometry></Geometry>
+    </AprojectReferentie>
+    
+    <MSkabel>
+        <ID>B</ID>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
+        <Geometry>
+            <gml:LineString
+                srsDimension="3"
+                srsName="EPSG:7415">
+                <gml:posList>
+                    105.5 22.5 0
+                    110.5 15.5 0
+                    110.5  5.5 0
+                    112.5  3.5 0
+                    114.5  3.5 0
+                    116.5  5.5 0
+                    116.5 15.5 0
+                    121.5 22.5 0
+                </gml:posList>
+            </gml:LineString>
+        </Geometry>
+    </MSkabel>
+    
+    <Amantelbuis>
+        <ID>C</ID>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
+        <Geometry>
+            <gml:LineString
+                srsDimension="3"
+                srsName="EPSG:7415">
+                <gml:posList>
+                    110 13 0
+                    110  5 0
+                    112  3 0
+                    114  3 0
+                    116  5 0
+                    116 13 0
+                </gml:posList>
+            </gml:LineString>
+        </Geometry>
+    </Amantelbuis>
+    
+    <AmantelbuisInhoud>
+        <ID>D</ID>
+        <Status>BESTAAND</Status>
+        <MantelbuisID>C</MantelbuisID>
+        <InhoudID>B</InhoudID>
+    </AmantelbuisInhoud>
+   
+</NLCSnetbeheer>

@@ -10,7 +10,7 @@
         <assert id="mantelbuis-inhoud-is-not-self"
             properties="scope rule-number severity object-type object-id"
             test="$mantelbuis_id ne $inhoud_id">
-            <value-of select="keronic:get-translation('mantelbuis-inhoud-is-self')"/>
+            <value-of select="ma:get-translation('mantelbuis-inhoud-is-self')"/>
         </assert>
 
         <let name="mantelbuis"
@@ -19,7 +19,7 @@
         <assert id="mantelbuis-id-refers-to-mantelbuis"
             properties="scope rule-number severity object-type object-id"
             test="$mantelbuis">
-            <value-of select="keronic:get-translation-and-replace-placeholders('mantelbuis-id-does-not-refer-to-mantelbuis', [$mantelbuis_id])"/>
+            <value-of select="ma:get-translation-and-replace-placeholders('mantelbuis-id-does-not-refer-to-mantelbuis', [$mantelbuis_id])"/>
         </assert>
 
         <let name="inhoud"
@@ -34,7 +34,7 @@
         <assert id="object-type-inhoud-matches-inhoud"
             properties="scope rule-number severity object-type object-id"
             test="$expected_inhoud_type = $inhoud_type">
-            <value-of select="keronic:get-translation-and-replace-placeholders('object-type-inhoud-does-not-match-inhoud', [$expected_inhoud_type, $inhoud_type])"/>
+            <value-of select="ma:get-translation-and-replace-placeholders('object-type-inhoud-does-not-match-inhoud', [$expected_inhoud_type, $inhoud_type])"/>
         </assert>
     </rule>
 </pattern>

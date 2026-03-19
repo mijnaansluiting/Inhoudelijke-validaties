@@ -18,7 +18,7 @@
         <assert id="fase-and-uitvoering-same"
                 properties="scope rule-number severity object-type object-id"
             test="starts-with(if($uitvoering != 'KEUZE ONTBREEKT IN LIJST') then $uitvoering else $uitvoering_omschrijving, $expected_uitvoering_prefix)">
-            <value-of select="keronic:get-translation('fase-not-the-same-as-uitvoering')"/>
+            <value-of select="ma:get-translation('fase-not-the-same-as-uitvoering')"/>
         </assert>
     </rule>
 </pattern>

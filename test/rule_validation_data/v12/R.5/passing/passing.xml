@@ -5,44 +5,45 @@
                xsi:schemaLocation="NS_NLCSnetbeheer ../../../../../doc/NLCS_Netbeheer_Keuzelijst.xsd"
                xmlns="NS_NLCSnetbeheer">
     <AprojectReferentie>
+        <ID>A</ID>
         <Projectnummer>1</Projectnummer>
         <Netbeheerder>Enexis</Netbeheerder>
-        <ID>A</ID>
+        <NaamAannemer></NaamAannemer>
         <Tekeningtype>BESTAANDE SITUATIE</Tekeningtype>
         <Geometry></Geometry>
     </AprojectReferentie>
 
     <MSkabel>
+        <ID>B</ID>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
         <GisId>83412</GisId>
         <AssetId>{38518CAF-0F42-448D-8CD6-1E655152A0AD}</AssetId>
-        <ID>B</ID>
         <Geometry></Geometry>
     </MSkabel>
 
     <MSkabel>
+        <ID>C</ID>
         <Status>REVISIE</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
         <GisId>83413</GisId>
         <AssetId>{38518CAF-0F42-448D-8CD6-1E655152A0AE}</AssetId>
-        <ID>C</ID>
         <Geometry></Geometry>
     </MSkabel>
 
     <MSkabel>
+        <ID>D</ID>
         <Status>VERWIJDERD</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
         <GisId>83414</GisId>
         <AssetId>{6D43A69E-C176-401A-8517-E2605079A344}</AssetId>
-        <ID>D</ID>
         <Geometry></Geometry>
     </MSkabel>
-
+    
     <MSkabel>
+        <ID>E</ID>
         <Status>NIEUW</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <ID>E</ID>
         <Geometry></Geometry>
     </MSkabel>
 </NLCSnetbeheer>

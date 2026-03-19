@@ -17,10 +17,10 @@
   </message>
   <message id="invalid-status-for-tekening-type">
     <message-text xml:lang="en">
-      Invalid Status {1} for TekeningType {2}, must be one of: {3}
+      Invalid Status {1} for Tekeningtype {2}, must be one of: {3}
     </message-text>
     <message-text xml:lang="nl">
-      Ongeldige Status {1} voor TekeningType {2}, moet een van de volgende zijn: {3}
+      Ongeldige Status {1} voor Tekeningtype {2}, moet een van de volgende zijn: {3}
     </message-text>
   </message>
   <message id="object-outside-project-area">
@@ -65,10 +65,26 @@
   </message>
   <message id="attribute-not-present">
     <message-text xml:lang="en">
-      The attribute {1} is not present on object.
+      The attribute {1} is not present.
     </message-text>
     <message-text xml:lang="nl">
-      Het kenmerk {1} is niet gevuld voor het object.
+      Het kenmerk {1} is niet aanwezig.
+    </message-text>
+  </message>
+  <message id="attribute-present">
+    <message-text xml:lang="en">
+      The attribute {1} is present, but it is not allowed.
+    </message-text>
+    <message-text xml:lang="nl">
+      Het kenmerk {1} is aanwezig, maar dit niet is toegestaan.
+    </message-text>
+  </message>
+  <message id="object-not-present">
+    <message-text xml:lang="en">
+      The object {1} is not present.
+    </message-text>
+    <message-text xml:lang="nl">
+      Het object {1} is niet aanwezig.
     </message-text>
   </message>
   <message id="point-not-connected-to-any-line">
@@ -81,10 +97,10 @@
   </message>
   <message id="date-in-the-future">
     <message-text xml:lang="en">
-      The DatumAanleg on object is in the future.
+      {1} cannot be in the future.
     </message-text>
     <message-text xml:lang="nl">
-      De DatumAanleg op object mag niet in de toekomst liggen.
+      {1} mag niet in de toekomst liggen.
     </message-text>
   </message>
   <message id="cable-not-connected-to-valid-object">
@@ -98,11 +114,11 @@
   <message id="connected-cable-does-not-match-netvlak">
     <message-text xml:lang="en">
       Cables connected to each other though a joint must be of the same discipline.
-      Expected only {1} elements, but found {2} {3} element(s).
+      Expected only {1} elements, but found {2} {3} and {4} {5} element(s).
     </message-text>
     <message-text xml:lang="nl">
       Kabels die via een mof verbonden zijn met elkaar moeten van hetzelfde netvlak zijn.
-      Verwachtte enkel {1} elementen, maar kwam {2} {3} element(en) tegen.
+      Verwachtte enkel {1} elementen, maar kwam {2} {3} en {4} {5} element(en) tegen.
     </message-text>
   </message>
   <message id="connected-cable-does-not-match-property">
@@ -242,6 +258,50 @@
     </message-text>
     <message-text xml:lang="en">
       Movement was registered incorrectly. There should be another {1} with Status BESTAAND and both objects must share the same GisId.
+    </message-text>
+  </message>
+  <message id="connected-cables-have-different-verbindingnummer">
+    <message-text xml:lang="nl">
+      Een of meer kabels hebben een fout Verbindingnummer in vergelijking met de mof waaraan ze verbonden zijn.
+      Het volgende Verbindingnummer is verwacht: {1}
+    </message-text>
+    <message-text xml:lang="en">
+      One or more cables have an incorrect Verbindingnummer compared to the joint they are connected to.
+      The following Verbindingnummer is expected: {1}
+     </message-text>
+  </message>
+  <message id="soort-bestand-not-correct">
+    <message-text xml:lang="nl">
+      De SoortBestand van de ABestandBijlage moet {1} zijn. Nu is deze {2}.
+    </message-text>
+    <message-text xml:lang="en">
+      The SoortBestand of the ABestandBijlage must be {1}. Currently it is {2}.
+    </message-text>
+  </message>
+  <message id="revisie-no-maaiveldhoogte-present">
+    <message-text xml:lang="nl">
+      Een NLCS++ bestand moet een maaiveldhoogte bevatten indien Tekeningtype een van de volgende is: {1}
+    </message-text>
+    <message-text xml:lang="en">
+      A NLCS++ file must contain a ground level if Tekeningtype is one of: {1} 
+    </message-text>
+  </message>
+  
+  <message id="inmeetwijze-not-allowed">
+    <message-text xml:lang="nl">
+      Inmeetwijze {1} is hier niet toegestaan, moet een van de volgende zijn: {2} 
+    </message-text>
+    <message-text xml:lang="en">
+      Measurement method {1} is not allowed here, must be one of: {2}
+    </message-text>
+  </message>
+  
+  <message id="inhoud-assets-not-in-range-of-mantelbuis">
+    <message-text xml:lang="nl">
+      {1} gerelateerde assets liggen meer dan {2} meter van de mantelbuis vandaan.
+    </message-text>
+    <message-text xml:lang="en">
+      {1} related assets are located more than {2} meter from the protection pipe.
     </message-text>
   </message>
 </messages>

@@ -5,25 +5,26 @@
                xsi:schemaLocation="NS_NLCSnetbeheer ../../../../../doc/NLCS_Netbeheer_Keuzelijst.xsd"
                xmlns="NS_NLCSnetbeheer">
     <AprojectReferentie>
+        <ID>A</ID>
         <Projectnummer>1</Projectnummer>
         <Netbeheerder>Enexis</Netbeheerder>
-        <ID>A</ID>
+        <NaamAannemer></NaamAannemer>
         <Tekeningtype>BESTAANDE SITUATIE</Tekeningtype>
         <Geometry></Geometry>
     </AprojectReferentie>
 
     <LSkabel>
+        <ID>B</ID>
         <Status>VERWIJDERD</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <ID>B</ID>
         <GisId>83412</GisId>
         <Geometry></Geometry>
     </LSkabel>
     <LSkabel>
+        <ID>C</ID>
         <Status>REVISIE</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
         <Bewerking>VERPLAATSEN</Bewerking>
-        <ID>C</ID>
         <GisId>83413</GisId>
         <Geometry></Geometry>
     </LSkabel>

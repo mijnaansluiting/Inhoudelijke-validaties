@@ -5,45 +5,45 @@
             value="nlcs:Uitvoering"/>
 
         <assert id="kabel-has-uitvoering"
-            test="keronic:element-exists-and-not-empty($uitvoering)"
+            test="ma:element-exists-and-not-empty($uitvoering)"
             properties="scope rule-number severity object-type object-id">
-            <value-of select="keronic:get-translation-and-replace-placeholders('attribute-not-present', ['Uitvoering'])"/>
+            <value-of select="ma:get-translation-and-replace-placeholders('attribute-not-present', ['Uitvoering'])"/>
         </assert>
 
         <assert id="kabel-uitvoering-keuze-ontbreekt-uit-lijst-has-omschrijving-uitvoering"
-            test="not($uitvoering = 'KEUZE ONTBREEKT IN LIJST') or keronic:element-exists-and-not-empty(nlcs:OmschrijvingUitvoering)"
+            test="not($uitvoering = 'KEUZE ONTBREEKT IN LIJST') or ma:element-exists-and-not-empty(nlcs:OmschrijvingUitvoering)"
             properties="scope rule-number severity object-type object-id">
-            <value-of select="keronic:get-translation-and-replace-placeholders('attribute-not-present', ['OmschrijvingUitvoering'])"/>
+            <value-of select="ma:get-translation-and-replace-placeholders('attribute-not-present', ['OmschrijvingUitvoering'])"/>
         </assert>
 
         <assert id="kabel-has-kabelopbouw"
-            test="keronic:element-exists-and-not-empty(nlcs:Kabelopbouw)"
+            test="ma:element-exists-and-not-empty(nlcs:Kabelopbouw)"
             properties="scope rule-number severity object-type object-id">
-            <value-of select="keronic:get-translation-and-replace-placeholders('attribute-not-present', ['Kabelopbouw'])"/>
+            <value-of select="ma:get-translation-and-replace-placeholders('attribute-not-present', ['Kabelopbouw'])"/>
         </assert>
 
         <assert id="kabel-has-fabrikant"
-            test="keronic:element-exists-and-not-empty(nlcs:Fabrikant)"
+            test="ma:element-exists-and-not-empty(nlcs:Fabrikant)"
             properties="scope rule-number severity object-type object-id">
-            <value-of select="keronic:get-translation-and-replace-placeholders('attribute-not-present', ['Fabrikant'])"/>
+            <value-of select="ma:get-translation-and-replace-placeholders('attribute-not-present', ['Fabrikant'])"/>
         </assert>
 
         <assert id="kabel-has-verbindingnummer"
-            test="keronic:element-exists-and-not-empty(nlcs:Verbindingnummer)"
+            test="ma:element-exists-and-not-empty(nlcs:Verbindingnummer)"
             properties="scope rule-number severity object-type object-id">
-            <value-of select="keronic:get-translation-and-replace-placeholders('attribute-not-present', ['Verbindingnummer'])"/>
+            <value-of select="ma:get-translation-and-replace-placeholders('attribute-not-present', ['Verbindingnummer'])"/>
         </assert>
 
         <assert id="kabel-has-spanningsniveau"
-            test="keronic:element-exists-and-not-empty(nlcs:Spanningsniveau)"
+            test="ma:element-exists-and-not-empty(nlcs:Spanningsniveau)"
             properties="scope rule-number severity object-type object-id">
-            <value-of select="keronic:get-translation-and-replace-placeholders('attribute-not-present', ['Spanningsniveau'])"/>
+            <value-of select="ma:get-translation-and-replace-placeholders('attribute-not-present', ['Spanningsniveau'])"/>
         </assert>
 
         <assert id="kabel-has-fase-aanduiding"
-            test="keronic:element-exists-and-not-empty(nlcs:FaseAanduiding)"
+            test="ma:element-exists-and-not-empty(nlcs:FaseAanduiding)"
             properties="scope rule-number severity object-type object-id">
-            <value-of select="keronic:get-translation-and-replace-placeholders('attribute-not-present', ['FaseAanduiding'])"/>
+            <value-of select="ma:get-translation-and-replace-placeholders('attribute-not-present', ['FaseAanduiding'])"/>
         </assert>
     </rule>
 </pattern>

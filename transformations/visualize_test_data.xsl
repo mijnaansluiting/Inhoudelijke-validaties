@@ -4,14 +4,14 @@
                 xmlns:gml="http://www.opengis.net/gml/3.2"
                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
                 xmlns:nlcs="NS_NLCSnetbeheer"
-                xmlns:keronic="http://example.com/my-functions"
-                exclude-result-prefixes="gml keronic nlcs xs">
+                xmlns:ma="http://example.com/my-functions"
+                exclude-result-prefixes="gml ma nlcs xs">
 
   <xsl:output method="xml" />
   
   <xsl:variable name="anchor_offset" select="7"/>
 
-  <xsl:function name="keronic:extract-geometries" as="element()*">
+  <xsl:function name="ma:extract-geometries" as="element()*">
     <xsl:param name="nlcs_objects" as="element()*"/>
     <xsl:sequence>
       <xsl:for-each select="1 to count($nlcs_objects)">
@@ -25,8 +25,8 @@
           <xsl:variable name="coords" select="tokenize(normalize-space(gml:pos), '\s+')"/>
           <xsl:variable name="x" select="number($coords[1])"/>
           <xsl:variable name="y" select="number($coords[2])"/>
-          <xsl:variable name="radius" select="5"/>
-          <xsl:variable name="color" select="keronic:color-for-index($i)"/>
+          <xsl:variable name="radius" select="2"/>
+          <xsl:variable name="color" select="ma:color-for-index($i)"/>
           <SVGBlueprint id="{$nlcs_object/nlcs:ID}" type="circle" color="{$color}">
             <Measurements 
               minX="{$x - $radius}" 
@@ -51,11 +51,11 @@
           <xsl:variable name="coord_pairs" select="
             for $j in 1 to count($x_coords)
             return concat($x_coords[$j], ',', $y_coords[$j])"/>
-          <xsl:variable name="color" select="keronic:color-for-index($i)"/>
+          <xsl:variable name="color" select="ma:color-for-index($i)"/>
 
           <SVGBlueprint type="polyline">
             <Attribute key="stroke" value="black"/>
-            <Attribute key="stroke-width" value="5"/>
+            <Attribute key="stroke-width" value="2"/>
             <Attribute key="stroke-linecap" value="round"/>
             <Attribute key="fill" value="none"/>
             <Attribute key="points" value="{string-join($coord_pairs, ' ')}"/>
@@ -69,7 +69,7 @@
             />
             <Anchor x="{avg($x_coords)}" y="{avg($y_coords) - $anchor_offset}"/>
             <Attribute key="stroke" value="{$color}"/>
-            <Attribute key="stroke-width" value="3"/>
+            <Attribute key="stroke-width" value="1"/>
             <Attribute key="stroke-linecap" value="round"/>
             <Attribute key="fill" value="none"/>
             <Attribute key="points" value="{string-join($coord_pairs, ' ')}"/>
@@ -84,7 +84,7 @@
           <xsl:variable name="coord_pairs" select="
             for $j in 1 to count($x_coords)
             return concat($x_coords[$j], ',', $y_coords[$j])"/>
-          <xsl:variable name="color" select="keronic:color-for-index($i)"/>
+          <xsl:variable name="color" select="ma:color-for-index($i)"/>
 
           <SVGBlueprint id="{$nlcs_object/nlcs:ID}" type="polygon" color="{$color}">
             <Measurements
@@ -107,7 +107,7 @@
     </xsl:sequence>
   </xsl:function>
   
-  <xsl:function name="keronic:generate-svg" as="element()*">
+  <xsl:function name="ma:generate-svg" as="element()*">
     <xsl:param name="svg_blueprints" as="element()*"/>
     <xsl:sequence>
       <xsl:for-each select="1 to count($svg_blueprints)">
@@ -122,14 +122,14 @@
     </xsl:sequence>
   </xsl:function>
   
-  <xsl:function name="keronic:color-for-index" as="xs:string">
+  <xsl:function name="ma:color-for-index" as="xs:string">
     <xsl:param name="index" as="xs:numeric"/>
     <xsl:variable name="hue" select="($index * 137.508) mod 360"/>
     <xsl:sequence select="concat('hsl(', format-number($hue, '0'), ',70%,50%)')"/>
   </xsl:function>
 
   <xsl:template match="/">
-    <xsl:variable name="svg_blueprints" as="element()*" select="keronic:extract-geometries(//nlcs:NLCSnetbeheer/*)"/>
+    <xsl:variable name="svg_blueprints" as="element()*" select="ma:extract-geometries(//nlcs:NLCSnetbeheer/*)"/>
     <xsl:variable name="measurements" select="$svg_blueprints/Measurements"/>
     <xsl:variable name="view_box_padding" select="2 * $anchor_offset"/>
     <xsl:variable name="view_box_x" select="min($measurements/@minX) - $view_box_padding"/>
