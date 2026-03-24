@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pattern xmlns ="http://purl.oclc.org/dsdl/schematron" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" id="lijn-geometrie-hoek-van-segmenten" abstract="true">
      <rule context="//nlcs:MSkabel | //nlcs:Eaarddraad | //nlcs:LSkabel | //nlcs:Aaanlegtechniek | //nlcs:Amantelbuis">
-          <let name="coords" value="ma:parse-line(nlcs:Geometry)"/>
+          <let name="coords" value="ma:parse-line-alt(nlcs:Geometry)"/>
           
-          <let name="geometries" value="ma:line-segments-not-meeting-angle-demands($coords)"/>
+          <let name="geometries" value="ma:line-segments-not-meeting-angle-demands-alt($coords)"/>
 
           <assert id="line-geometry-line-segments-meet-angle-demand"
                test="empty($geometries)"

@@ -2,12 +2,12 @@
 <pattern xmlns ="http://purl.oclc.org/dsdl/schematron" id="topologie-punt-objecten-elec" abstract="true">
     <rule context="//nlcs:MSmof | //nlcs:MSoverdrachtspunt">
         <let name="point"
-            value="ma:parse-point(nlcs:Geometry)"/>
+            value="ma:parse-point-alt(nlcs:Geometry)"/>
         
         <let name="point_connected"
             value="
                 some $mskabel_geometry in //nlcs:MSkabel/nlcs:Geometry 
-                satisfies ma:point-touches-line($point, ma:parse-line($mskabel_geometry))"/>
+                satisfies ma:point-touches-line-alt($point, ma:parse-line-alt($mskabel_geometry))"/>
         
         <assert id="point-connected-to-kabel"
             test="$point_connected"
@@ -18,12 +18,12 @@
     
     <rule context="//nlcs:LSmof | //nlcs:LSoverdrachtspunt | //nlcs:Eaardmof | //nlcs:OVLoverdrachtspunt">
         <let name="point"
-            value="ma:parse-point(nlcs:Geometry)"/>
+            value="ma:parse-point-alt(nlcs:Geometry)"/>
         
         <let name="point_connected"
             value="
                 some $lskabel_geometry in //nlcs:LSkabel/nlcs:Geometry 
-                satisfies ma:point-touches-line($point, ma:parse-line($lskabel_geometry))"/>
+                satisfies ma:point-touches-line-alt($point, ma:parse-line-alt($lskabel_geometry))"/>
         
         <assert id="point-connected-to-kabel"
             test="$point_connected"
