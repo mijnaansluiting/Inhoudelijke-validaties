@@ -2,20 +2,20 @@
 <pattern xmlns ="http://purl.oclc.org/dsdl/schematron" id="kabels-zelfde-netvlak" abstract="true">
     <rule context="//nlcs:MSkabel">
         <let name="line"
-            value="ma:parse-line-alt(nlcs:Geometry)"/>
+            value="ma:parse-line(nlcs:Geometry)"/>
         
         <let name="connected_msmoffen"
-            value="//nlcs:MSmof[ma:point-touches-line-alt(ma:parse-point-alt(nlcs:Geometry), $line)]"/>
+            value="//nlcs:MSmof[ma:point-touches-line(ma:parse-point(nlcs:Geometry), $line)]"/>
         
         <let name="connected_lskabels"
             value="//nlcs:LSkabel[
                     some $connected_mof in $connected_msmoffen 
-                    satisfies ma:point-touches-line-alt(ma:parse-point-alt($connected_mof/nlcs:Geometry), ma:parse-line-alt(nlcs:Geometry))]"/>
+                    satisfies ma:point-touches-line(ma:parse-point($connected_mof/nlcs:Geometry), ma:parse-line(nlcs:Geometry))]"/>
         
         <let name="connected_hskabels"
             value="//nlcs:HSkabel[
                     some $connected_mof in $connected_msmoffen 
-                    satisfies ma:point-touches-line-alt(ma:parse-point-alt($connected_mof/nlcs:Geometry), ma:parse-line-alt(nlcs:Geometry))]"/>
+                    satisfies ma:point-touches-line(ma:parse-point($connected_mof/nlcs:Geometry), ma:parse-line(nlcs:Geometry))]"/>
         
         <let name="all_connections_are_valid"
             value="empty($connected_hskabels) and empty($connected_lskabels)"/>
@@ -34,25 +34,25 @@
     
     <rule context="//nlcs:LSkabel">
         <let name="line"
-            value="ma:parse-line-alt(nlcs:Geometry)"/>
+            value="ma:parse-line(nlcs:Geometry)"/>
         
         <let name="connected_lsmoffen"
-            value="//nlcs:LSmof[ma:point-touches-line-alt(ma:parse-point-alt(nlcs:Geometry), $line)]"/>
+            value="//nlcs:LSmof[ma:point-touches-line(ma:parse-point(nlcs:Geometry), $line)]"/>
         
         <let name="connected_mskabels"
             value="//nlcs:MSkabel[
                     some $connected_mof in $connected_lsmoffen 
-                    satisfies ma:point-touches-line-alt(
-                            ma:parse-point-alt($connected_mof/nlcs:Geometry),
-                            ma:parse-line-alt(nlcs:Geometry)
+                    satisfies ma:point-touches-line(
+                            ma:parse-point($connected_mof/nlcs:Geometry),
+                            ma:parse-line(nlcs:Geometry)
                         )]"/>
         
         <let name="connected_hskabels"
             value="//nlcs:HSkabel[
                     some $connected_mof in $connected_lsmoffen 
-                    satisfies ma:point-touches-line-alt(
-                            ma:parse-point-alt($connected_mof/nlcs:Geometry),
-                            ma:parse-line-alt(nlcs:Geometry)
+                    satisfies ma:point-touches-line(
+                            ma:parse-point($connected_mof/nlcs:Geometry),
+                            ma:parse-line(nlcs:Geometry)
                         )]"/>
         
         <let name="all_connections_are_valid"

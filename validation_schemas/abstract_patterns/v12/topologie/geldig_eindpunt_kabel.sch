@@ -2,7 +2,7 @@
 <pattern xmlns ="http://purl.oclc.org/dsdl/schematron" id="geldig-eindpunt-kabel" abstract="true">
     <rule context="//nlcs:MSkabel">
         <let name="line"
-            value="ma:parse-line-alt(nlcs:Geometry)"/>
+            value="ma:parse-line(nlcs:Geometry)"/>
         
         <let name="start_point"
             value="$line[1]"/>
@@ -14,17 +14,17 @@
             value="
                 (
                     some $msmof_geometry in //nlcs:MSmof/nlcs:Geometry 
-                    satisfies ma:point-connected-to-point-alt($start_point, ma:parse-point-alt($msmof_geometry))
+                    satisfies ma:point-connected-to-point($start_point, ma:parse-point($msmof_geometry))
                 )
                 or
                 (
                     some $msoverdrachtspunt_geometry in //nlcs:MSoverdrachtspunt/nlcs:Geometry
-                    satisfies ma:point-connected-to-point-alt($start_point, ma:parse-point-alt($msoverdrachtspunt_geometry))
+                    satisfies ma:point-connected-to-point($start_point, ma:parse-point($msoverdrachtspunt_geometry))
                 )
                 or
                 (
                     some $msstation_geometry in //nlcs:MSstation/nlcs:Geometry
-                    satisfies ma:point-touches-area-alt($start_point, ma:parse-area-alt($msstation_geometry))
+                    satisfies ma:point-touches-area($start_point, ma:parse-area($msstation_geometry))
                 )
             "/>
         
@@ -32,36 +32,36 @@
             value="
                 (
                     some $msmof_geometry in //nlcs:MSmof/nlcs:Geometry 
-                    satisfies ma:point-connected-to-point-alt($end_point, ma:parse-point-alt($msmof_geometry))
+                    satisfies ma:point-connected-to-point($end_point, ma:parse-point($msmof_geometry))
                 )
                 or
                 (
                     some $msoverdrachtspunt_geometry in //nlcs:MSoverdrachtspunt/nlcs:Geometry
-                    satisfies ma:point-connected-to-point-alt($end_point, ma:parse-point-alt($msoverdrachtspunt_geometry))
+                    satisfies ma:point-connected-to-point($end_point, ma:parse-point($msoverdrachtspunt_geometry))
                 )
                 or
                 (
                     some $msstation_geometry in //nlcs:MSstation/nlcs:Geometry
-                    satisfies ma:point-touches-area-alt($end_point, ma:parse-area-alt($msstation_geometry))
+                    satisfies ma:point-touches-area($end_point, ma:parse-area($msstation_geometry))
                 )
             "/>
         
         <let name="project_area"
-            value="ma:parse-area-alt(//nlcs:AprojectReferentie/nlcs:Geometry)"/>
+            value="ma:parse-area(//nlcs:AprojectReferentie/nlcs:Geometry)"/>
         
         <let name="start_point_within_project_area"
-            value="ma:point-interacts-with-area-alt($start_point, $project_area)"/>
+            value="ma:point-interacts-with-area($start_point, $project_area)"/>
         
         <let name="end_point_within_project_area"
-            value="ma:point-interacts-with-area-alt($end_point, $project_area)"/>
+            value="ma:point-interacts-with-area($end_point, $project_area)"/>
         
         <let name="is_deserted"
             value="nlcs:Bedrijfstoestand = 'VERLATEN'"/>
         
         <let name="geometries"
             value="
-                (if (not($start_point_connected)) then ma:create-gml-point-alt($start_point) else (),
-                    if (not($end_point_connected)) then ma:create-gml-point-alt($end_point) else ())
+                (if (not($start_point_connected)) then ma:create-gml-point($start_point) else (),
+                    if (not($end_point_connected)) then ma:create-gml-point($end_point) else ())
             "/>
         
         <assert id="start_point_connected" 
@@ -79,7 +79,7 @@
     
     <rule context="//nlcs:LSkabel">
         <let name="line"
-            value="ma:parse-line-alt(nlcs:Geometry)"/>
+            value="ma:parse-line(nlcs:Geometry)"/>
         
         <let name="start_point"
             value="$line[1]"/>
@@ -91,27 +91,27 @@
             value="
                 (
                     some $lsmof_geometry in //nlcs:LSmof/nlcs:Geometry 
-                    satisfies ma:point-connected-to-point-alt($start_point, ma:parse-point-alt($lsmof_geometry))
+                    satisfies ma:point-connected-to-point($start_point, ma:parse-point($lsmof_geometry))
                 )
                 or
                 (
                     some $lsoverdrachtspunt_geometry in //nlcs:LSoverdrachtspunt/nlcs:Geometry
-                    satisfies ma:point-connected-to-point-alt($start_point, ma:parse-point-alt($lsoverdrachtspunt_geometry))
+                    satisfies ma:point-connected-to-point($start_point, ma:parse-point($lsoverdrachtspunt_geometry))
                 )
                 or
                 (
                     some $ovloverdrachtspunt_geometry in //nlcs:OVLoverdrachtspunt/nlcs:Geometry
-                    satisfies ma:point-connected-to-point-alt($start_point, ma:parse-point-alt($ovloverdrachtspunt_geometry))
+                    satisfies ma:point-connected-to-point($start_point, ma:parse-point($ovloverdrachtspunt_geometry))
                 )
                 or
                 (
                     some $msstation_geometry in //nlcs:MSstation/nlcs:Geometry
-                    satisfies ma:point-touches-area-alt($start_point, ma:parse-area-alt($msstation_geometry))
+                    satisfies ma:point-touches-area($start_point, ma:parse-area($msstation_geometry))
                 )
                 or
                 (
                     some $lskast_geometry in //nlcs:LSkast/nlcs:Geometry
-                    satisfies ma:point-touches-area-alt($start_point, ma:parse-area-alt($lskast_geometry))
+                    satisfies ma:point-touches-area($start_point, ma:parse-area($lskast_geometry))
                 )
             "/>
         
@@ -119,46 +119,46 @@
             value="
                 (
                     some $lsmof_geometry in //nlcs:LSmof/nlcs:Geometry 
-                    satisfies ma:point-connected-to-point-alt($end_point, ma:parse-point-alt($lsmof_geometry))
+                    satisfies ma:point-connected-to-point($end_point, ma:parse-point($lsmof_geometry))
                 )
                 or
                 (
                     some $lsoverdrachtspunt_geometry in //nlcs:LSoverdrachtspunt/nlcs:Geometry
-                    satisfies ma:point-connected-to-point-alt($end_point, ma:parse-point-alt($lsoverdrachtspunt_geometry))
+                    satisfies ma:point-connected-to-point($end_point, ma:parse-point($lsoverdrachtspunt_geometry))
                 )
                 or
                 (
                     some $ovloverdrachtspunt_geometry in //nlcs:OVLoverdrachtspunt/nlcs:Geometry
-                    satisfies ma:point-connected-to-point-alt($end_point, ma:parse-point-alt($ovloverdrachtspunt_geometry))
+                    satisfies ma:point-connected-to-point($end_point, ma:parse-point($ovloverdrachtspunt_geometry))
                 )
                 or
                 (
                     some $msstation_geometry in //nlcs:MSstation/nlcs:Geometry
-                    satisfies ma:point-touches-area-alt($start_point, ma:parse-area-alt($msstation_geometry))
+                    satisfies ma:point-touches-area($start_point, ma:parse-area($msstation_geometry))
                 )
                 or
                 (
                     some $lskast_geometry in //nlcs:LSkast/nlcs:Geometry
-                    satisfies ma:point-touches-area-alt($start_point, ma:parse-area-alt($lskast_geometry))
+                    satisfies ma:point-touches-area($start_point, ma:parse-area($lskast_geometry))
                 )
             "/>
         
         <let name="project_area"
-            value="ma:parse-area-alt(//nlcs:AprojectReferentie/nlcs:Geometry)"/>
+            value="ma:parse-area(//nlcs:AprojectReferentie/nlcs:Geometry)"/>
         
         <let name="start_point_within_project_area"
-            value="ma:point-interacts-with-area-alt($start_point, $project_area)"/>
+            value="ma:point-interacts-with-area($start_point, $project_area)"/>
         
         <let name="end_point_within_project_area"
-            value="ma:point-interacts-with-area-alt($end_point, $project_area)"/>
+            value="ma:point-interacts-with-area($end_point, $project_area)"/>
         
         <let name="is_deserted"
             value="nlcs:Bedrijfstoestand = 'VERLATEN'"/>
         
         <let name="geometries"
             value="
-                (if (not($start_point_connected)) then ma:create-gml-point-alt($start_point) else (),
-                    if (not($end_point_connected)) then ma:create-gml-point-alt($end_point) else ())
+                (if (not($start_point_connected)) then ma:create-gml-point($start_point) else (),
+                    if (not($end_point_connected)) then ma:create-gml-point($end_point) else ())
             "/>
         
         <assert id="start_point_connected" 
@@ -176,7 +176,7 @@
     
     <rule context="//nlcs:Eaarddraad">
         <let name="line"
-            value="ma:parse-line-alt(nlcs:Geometry)"/>
+            value="ma:parse-line(nlcs:Geometry)"/>
         
         <let name="start_point"
             value="$line[1]"/>
@@ -188,32 +188,32 @@
             value="
                 (
                     some $lsmof_geometry in //nlcs:LSmof/nlcs:Geometry 
-                    satisfies ma:point-connected-to-point-alt($start_point, ma:parse-point-alt($lsmof_geometry))
+                    satisfies ma:point-connected-to-point($start_point, ma:parse-point($lsmof_geometry))
                 )
                 or
                 (
                     some $msmof_geometry in //nlcs:MSmof/nlcs:Geometry 
-                    satisfies ma:point-connected-to-point-alt($start_point, ma:parse-point-alt($msmof_geometry))
+                    satisfies ma:point-connected-to-point($start_point, ma:parse-point($msmof_geometry))
                 )
                 or
                 (
                     some $eaardmof_geometry in //nlcs:Eaardmof/nlcs:Geometry
-                    satisfies ma:point-connected-to-point-alt($start_point, ma:parse-point-alt($eaardmof_geometry))
+                    satisfies ma:point-connected-to-point($start_point, ma:parse-point($eaardmof_geometry))
                 )
                 or
                 (
                     some $eaardpen_geometry in //nlcs:Eaardpen/nlcs:Geometry
-                    satisfies ma:point-connected-to-point-alt($start_point, ma:parse-point-alt($eaardpen_geometry))
+                    satisfies ma:point-connected-to-point($start_point, ma:parse-point($eaardpen_geometry))
                 )
                 or
                 (
                     some $msstation_geometry in //nlcs:MSstation/nlcs:Geometry
-                    satisfies ma:point-touches-area-alt($start_point, ma:parse-area-alt($msstation_geometry))
+                    satisfies ma:point-touches-area($start_point, ma:parse-area($msstation_geometry))
                 )
                 or
                 (
                     some $lskast_geometry in //nlcs:LSkast/nlcs:Geometry
-                    satisfies ma:point-touches-area-alt($start_point, ma:parse-area-alt($lskast_geometry))
+                    satisfies ma:point-touches-area($start_point, ma:parse-area($lskast_geometry))
                 )
             "/>
         
@@ -221,51 +221,51 @@
             value="
                 (
                     some $lsmof_geometry in //nlcs:LSmof/nlcs:Geometry 
-                    satisfies ma:point-connected-to-point-alt($end_point, ma:parse-point-alt($lsmof_geometry))
+                    satisfies ma:point-connected-to-point($end_point, ma:parse-point($lsmof_geometry))
                 )
                 or
                 (
                     some $msmof_geometry in //nlcs:MSmof/nlcs:Geometry 
-                    satisfies ma:point-connected-to-point-alt($end_point, ma:parse-point-alt($msmof_geometry))
+                    satisfies ma:point-connected-to-point($end_point, ma:parse-point($msmof_geometry))
                 )
                 or
                 (
                     some $eaardmof_geometry in //nlcs:Eaardmof/nlcs:Geometry
-                    satisfies ma:point-connected-to-point-alt($end_point, ma:parse-point-alt($eaardmof_geometry))
+                    satisfies ma:point-connected-to-point($end_point, ma:parse-point($eaardmof_geometry))
                 )
                 or
                 (
                     some $eaardpen_geometry in //nlcs:Eaardpen/nlcs:Geometry
-                    satisfies ma:point-connected-to-point-alt($end_point, ma:parse-point-alt($eaardpen_geometry))
+                    satisfies ma:point-connected-to-point($end_point, ma:parse-point($eaardpen_geometry))
                 )
                 or
                 (
                     some $msstation_geometry in //nlcs:MSstation/nlcs:Geometry
-                    satisfies ma:point-touches-area-alt($end_point, ma:parse-area-alt($msstation_geometry))
+                    satisfies ma:point-touches-area($end_point, ma:parse-area($msstation_geometry))
                 )
                 or
                 (
                     some $lskast_geometry in //nlcs:LSkast/nlcs:Geometry
-                    satisfies ma:point-touches-area-alt($end_point, ma:parse-area-alt($lskast_geometry))
+                    satisfies ma:point-touches-area($end_point, ma:parse-area($lskast_geometry))
                 )
             "/>
         
         <let name="project_area"
-            value="ma:parse-area-alt(//nlcs:AprojectReferentie/nlcs:Geometry)"/>
+            value="ma:parse-area(//nlcs:AprojectReferentie/nlcs:Geometry)"/>
         
         <let name="start_point_within_project_area"
-            value="ma:point-interacts-with-area-alt($start_point, $project_area)"/>
+            value="ma:point-interacts-with-area($start_point, $project_area)"/>
         
         <let name="end_point_within_project_area"
-            value="ma:point-interacts-with-area-alt($end_point, $project_area)"/>
+            value="ma:point-interacts-with-area($end_point, $project_area)"/>
         
         <let name="is_deserted"
             value="nlcs:Bedrijfstoestand = 'VERLATEN'"/>
         
         <let name="geometries"
             value="
-                (if (not($start_point_connected)) then ma:create-gml-point-alt($start_point) else (),
-                    if (not($end_point_connected)) then ma:create-gml-point-alt($end_point) else ())
+                (if (not($start_point_connected)) then ma:create-gml-point($start_point) else (),
+                    if (not($end_point_connected)) then ma:create-gml-point($end_point) else ())
             "/>
         
         <assert id="start_point_connected" 

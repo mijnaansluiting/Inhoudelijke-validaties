@@ -5,17 +5,17 @@
             value="."/>
 
         <let name="connected_msmoffen"
-            value="//nlcs:MSmof[ma:point-touches-line-alt(
-                ma:parse-point-alt(nlcs:Geometry),
-                ma:parse-line-alt($mskabel/nlcs:Geometry)
+            value="//nlcs:MSmof[ma:point-touches-line(
+                ma:parse-point(nlcs:Geometry),
+                ma:parse-line($mskabel/nlcs:Geometry)
             )]"/>
 
         <let name="connected_mskabels"
             value="//nlcs:MSkabel[
                 some $connected_mof in $connected_msmoffen 
-                satisfies . ne $mskabel and ma:point-touches-line-alt(
-                    ma:parse-point-alt($connected_mof/nlcs:Geometry), 
-                    ma:parse-line-alt(nlcs:Geometry)
+                satisfies . ne $mskabel and ma:point-touches-line(
+                    ma:parse-point($connected_mof/nlcs:Geometry), 
+                    ma:parse-line(nlcs:Geometry)
                 )]"/>
 
         <!-- Compare bedrijfstoestanden against original-->
@@ -88,17 +88,17 @@
             value="."/>
 
         <let name="connected_lsmoffen"
-            value="//nlcs:LSmof[ma:point-touches-line-alt(
-                ma:parse-point-alt(nlcs:Geometry),
-                ma:parse-line-alt($lskabel/nlcs:Geometry)
+            value="//nlcs:LSmof[ma:point-touches-line(
+                ma:parse-point(nlcs:Geometry),
+                ma:parse-line($lskabel/nlcs:Geometry)
             )]"/>
 
         <let name="connected_lskabels"
             value="//nlcs:LSkabel[
                 some $connected_mof in $connected_lsmoffen 
-                satisfies . ne $lskabel and ma:point-touches-line-alt(
-                    ma:parse-point-alt($connected_mof/nlcs:Geometry), 
-                    ma:parse-line-alt(nlcs:Geometry)
+                satisfies . ne $lskabel and ma:point-touches-line(
+                    ma:parse-point($connected_mof/nlcs:Geometry), 
+                    ma:parse-line(nlcs:Geometry)
                 )]"/>
 
         <!-- Compare bedrijfstoestanden against original-->
