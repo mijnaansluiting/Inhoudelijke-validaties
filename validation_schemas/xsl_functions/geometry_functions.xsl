@@ -53,9 +53,9 @@
                 <variable name="index" select="."/>
                 <variable name="segment" select="subsequence($area, $index, 2)"/>
                 
-                <if test="(xs:double($segment[1]/ma:Y) gt xs:double($point/ma:Y)) != (xs:double($segment[2]/ma:Y) gt xs:double($point/ma:Y))">
-                    <variable name="x_intersect" select="($segment[2]/ma:X - $segment[1]/ma:X) * ($point/ma:Y - $segment[1]/ma:Y) div ($segment[2]/ma:Y - $segment[1]/ma:Y) + $segment[1]/ma:X"/>
-                    <if test="xs:double($point/ma:X) lt $x_intersect">
+                <if test="(xs:double($segment[1]/Y) gt xs:double($point/Y)) != (xs:double($segment[2]/Y) gt xs:double($point/Y))">
+                    <variable name="x_intersect" select="($segment[2]/X - $segment[1]/X) * ($point/Y - $segment[1]/Y) div ($segment[2]/Y - $segment[1]/Y) + $segment[1]/X"/>
+                    <if test="xs:double($point/X) lt $x_intersect">
                         <sequence select="1"/>
                     </if>
                 </if>
@@ -70,8 +70,8 @@
         <param name="segment" as="node()*"/>
         
         <variable name="cross_product" select="
-                    ($segment[2]/ma:Y - $segment[1]/ma:Y) * ($point/ma:X - $segment[2]/ma:X) -
-                    ($segment[2]/ma:X - $segment[1]/ma:X) * ($point/ma:Y - $segment[2]/ma:Y)"/>
+                    ($segment[2]/Y - $segment[1]/Y) * ($point/X - $segment[2]/X) -
+                    ($segment[2]/X - $segment[1]/X) * ($point/Y - $segment[2]/Y)"/>
         
         <sequence select="
                     if ($cross_product = 0) then 0
@@ -83,8 +83,8 @@
         <param name="point_1" as="node()"/>
         <param name="point_2" as="node()"/>
         
-        <variable name="dx" select="$point_1/ma:X - $point_2/ma:X"/>
-        <variable name="dy" select="$point_1/ma:Y - $point_2/ma:Y"/>
+        <variable name="dx" select="$point_1/X - $point_2/X"/>
+        <variable name="dy" select="$point_1/Y - $point_2/Y"/>
         <variable name="distance_squared" select="($dx * $dx) + ($dy * $dy)"/>
         <variable name="distance" select="math:sqrt($distance_squared)"/>
         <sequence select="$distance"/>
@@ -159,10 +159,10 @@
         <param name="segment_1" as="node()*"/>
         <param name="segment_2" as="node()*"/>
         
-        <variable name="vx1" select="$segment_1[1]/ma:X - $segment_1[2]/ma:X"/>
-        <variable name="vy1" select="$segment_1[1]/ma:Y - $segment_1[2]/ma:Y"/>
-        <variable name="vx2" select="$segment_2[2]/ma:X - $segment_2[1]/ma:X"/>
-        <variable name="vy2" select="$segment_2[2]/ma:Y - $segment_2[1]/ma:Y"/>
+        <variable name="vx1" select="$segment_1[1]/X - $segment_1[2]/X"/>
+        <variable name="vy1" select="$segment_1[1]/Y - $segment_1[2]/Y"/>
+        <variable name="vx2" select="$segment_2[2]/X - $segment_2[1]/X"/>
+        <variable name="vy2" select="$segment_2[2]/Y - $segment_2[1]/Y"/>
         
         <variable name="dot_product" select="$vx1 * $vx2 + $vy1 * $vy2"/>
         
@@ -196,22 +196,18 @@
         
         <variable name="segment_length" select="ma:segment-length($segment)"/>
         
-        <variable name="dx" select="$segment[2]/ma:X - $segment[1]/ma:X"/>
-        <variable name="dy" select="$segment[2]/ma:Y - $segment[1]/ma:Y"/>
+        <variable name="dx" select="$segment[2]/X - $segment[1]/X"/>
+        <variable name="dy" select="$segment[2]/Y - $segment[1]/Y"/>
         
         <variable name="ux" select="-$dy div $segment_length"/>
         <variable name="uy" select="$dx div $segment_length"/>
         
-        <sequence>
-            <ma:Coord>
-                <ma:X><value-of select="$segment[1]/ma:X + $buffer_distance * $ux"/></ma:X>
-                <ma:Y><value-of select="$segment[1]/ma:Y + $buffer_distance * $uy"/></ma:Y>
-            </ma:Coord>
-            <ma:Coord>
-                <ma:X><value-of select="$segment[1]/ma:X - $buffer_distance * $ux"/></ma:X>
-                <ma:Y><value-of select="$segment[1]/ma:Y - $buffer_distance * $uy"/></ma:Y>
-            </ma:Coord>
-        </sequence>
+        <variable name="x_left" select="$segment[1]/X + $buffer_distance * $ux"/>
+        <variable name="y_left" select="$segment[1]/Y + $buffer_distance * $uy"/>
+        <variable name="x_right" select="$segment[1]/X - $buffer_distance * $ux"/>
+        <variable name="y_right" select="$segment[1]/Y - $buffer_distance * $uy"/>
+        
+        <sequence select="ma:coord($x_left, $y_left), ma:coord($x_right, $y_right)"/>
     </function>
     
     <function name="ma:line-within-range-of-line" as="xs:boolean">
@@ -230,8 +226,8 @@
 
                 <variable name="segment_length" select="ma:segment-length($segment)"/>
                 
-                <variable name="dx" select="$segment[2]/ma:X - $segment[1]/ma:X"/>
-                <variable name="dy" select="$segment[2]/ma:Y - $segment[1]/ma:Y"/>
+                <variable name="dx" select="$segment[2]/X - $segment[1]/X"/>
+                <variable name="dy" select="$segment[2]/Y - $segment[1]/Y"/>
                 
                 <variable name="points_in_segment" select="xs:integer(ceiling($segment_length div $check_step))"/>
                 <variable name="distance_between_points" select="$segment_length div $points_in_segment"/>
@@ -251,14 +247,9 @@
                                 <sequence select="$segment[2]"/>
                             </when>
                             <otherwise>
-                                <variable name="point_x" select="$segment[1]/ma:X + $scaling_factor * ($point_index - 1) * $dx"/>
-                                <variable name="point_y" select="$segment[1]/ma:Y + $scaling_factor * ($point_index - 1) * $dy"/>
-                                <sequence>
-                                    <ma:Coord>
-                                        <ma:X><value-of select="$point_x"/></ma:X>
-                                        <ma:Y><value-of select="$point_y"/></ma:Y>
-                                    </ma:Coord>
-                                </sequence>
+                                <variable name="point_x" select="$segment[1]/X + $scaling_factor * ($point_index - 1) * $dx"/>
+                                <variable name="point_y" select="$segment[1]/Y + $scaling_factor * ($point_index - 1) * $dy"/>
+                                <sequence select="ma:coord($point_x, $point_y)"/>
                             </otherwise>
                         </choose>    
                     </variable>
@@ -276,22 +267,17 @@
         <param name="segment_2" as="node()*"/>
         
         <variable name="den" select="
-                    ($segment_1[1]/ma:X - $segment_1[2]/ma:X) * ($segment_2[1]/ma:Y - $segment_2[2]/ma:Y) -
-                    ($segment_1[1]/ma:Y - $segment_1[2]/ma:Y) * ($segment_2[1]/ma:X - $segment_2[2]/ma:X)"/>
+                    ($segment_1[1]/X - $segment_1[2]/X) * ($segment_2[1]/Y - $segment_2[2]/Y) -
+                    ($segment_1[1]/Y - $segment_1[2]/Y) * ($segment_2[1]/X - $segment_2[2]/X)"/>
         
         <if test="$den ne 0">
             <variable name="scaling_factor" select="
-                        (($segment_1[1]/ma:X - $segment_2[1]/ma:X) * ($segment_2[1]/ma:Y - $segment_2[2]/ma:Y) - 
-                        ($segment_1[1]/ma:Y - $segment_2[1]/ma:Y) * ($segment_2[1]/ma:X - $segment_2[2]/ma:X)) div $den"/>
+                        (($segment_1[1]/X - $segment_2[1]/X) * ($segment_2[1]/Y - $segment_2[2]/Y) - 
+                        ($segment_1[1]/Y - $segment_2[1]/Y) * ($segment_2[1]/X - $segment_2[2]/X)) div $den"/>
             
-            <variable name="intersect_x" select="$segment_1[1]/ma:X + $scaling_factor * ($segment_1[2]/ma:X - $segment_1[1]/ma:X)"/>
-            <variable name="intersect_y" select="$segment_1[1]/ma:Y + $scaling_factor * ($segment_1[2]/ma:Y - $segment_1[1]/ma:Y)"/>
-            <sequence>
-                <ma:Coord>
-                    <ma:X><value-of select="$intersect_x"/></ma:X>
-                    <ma:Y><value-of select="$intersect_y"/></ma:Y>
-                </ma:Coord>
-            </sequence>
+            <variable name="intersect_x" select="$segment_1[1]/X + $scaling_factor * ($segment_1[2]/X - $segment_1[1]/X)"/>
+            <variable name="intersect_y" select="$segment_1[1]/Y + $scaling_factor * ($segment_1[2]/Y - $segment_1[1]/Y)"/>
+            <sequence select="ma:coord($intersect_x, $intersect_y)"/>
         </if>
     </function>
     
