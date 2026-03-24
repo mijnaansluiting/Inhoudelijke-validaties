@@ -8,12 +8,14 @@
         </assert>
 
         <assert id="lskabel-has-bovengronds"
-            test="ma:element-exists-and-not-empty(nlcs:Bovengronds)">
+            test="ma:element-exists-and-not-empty(nlcs:Bovengronds)"
+            properties="scope rule-number severity object-type object-id">
             <value-of select="ma:get-translation-and-replace-placeholders('attribute-not-present', ['Bovengronds'])"/>
         </assert>
 
         <assert id="lskabel-has-functie"
-            test="ma:element-exists-and-not-empty(nlcs:Functie)">
+            test="ma:element-exists-and-not-empty(nlcs:Functie)"
+            properties="scope rule-number severity object-type object-id">
             <value-of select="ma:get-translation-and-replace-placeholders('attribute-not-present', ['Functie'])"/>
         </assert>
     </rule>
