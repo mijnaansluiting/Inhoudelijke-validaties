@@ -10,25 +10,21 @@
         <let name="connected_lskabels"
             value="//nlcs:LSkabel[
                     some $connected_mof in $connected_msmoffen 
-                    satisfies ma:point-touches-line(
-                            ma:parse-point($connected_mof/nlcs:Geometry),
-                            ma:parse-line(nlcs:Geometry)
-                        )]"/>
+                    satisfies ma:point-touches-line(ma:parse-point($connected_mof/nlcs:Geometry), ma:parse-line(nlcs:Geometry))]"/>
         
         <let name="connected_hskabels"
             value="//nlcs:HSkabel[
                     some $connected_mof in $connected_msmoffen 
-                    satisfies ma:point-touches-line(
-                            ma:parse-point($connected_mof/nlcs:Geometry),
-                            ma:parse-line(nlcs:Geometry)
-                        )]"/>
+                    satisfies ma:point-touches-line(ma:parse-point($connected_mof/nlcs:Geometry), ma:parse-line(nlcs:Geometry))]"/>
         
+        <let name="all_connections_are_valid"
+            value="empty($connected_hskabels) and empty($connected_lskabels)"/>
+
         <let name="geometries"
-            value="if(not(empty($connected_lskabels)) or (not(empty($connected_hskabels)))) then [$connected_hskabels/nlcs:Geometry, $connected_lskabels/nlcs:Geometry]
-                else ()"/>
+            value="if(not($all_connections_are_valid)) then ($connected_hskabels/nlcs:Geometry, $connected_lskabels/nlcs:Geometry) else ()"/>
         
         <assert id="mskabel-connected-to-hskabel-or-lskabel"
-            test="empty($connected_hskabels) and empty($connected_lskabels)"
+            test="$all_connections_are_valid"
             properties="scope rule-number severity object-type object-id geometries">
             <value-of select="ma:get-translation-and-replace-placeholders(
                     'connected-cable-does-not-match-netvlak',
@@ -59,12 +55,14 @@
                             ma:parse-line(nlcs:Geometry)
                         )]"/>
         
+        <let name="all_connections_are_valid"
+            value="empty($connected_hskabels) and empty($connected_mskabels)"/>
+
         <let name="geometries"
-            value="if(not(empty($connected_mskabels)) or (not(empty($connected_hskabels)))) then [$connected_hskabels/nlcs:Geometry, $connected_mskabels/nlcs:Geometry]
-                else ()"/>
+            value="if(not($all_connections_are_valid)) then ($connected_hskabels/nlcs:Geometry, $connected_mskabels/nlcs:Geometry) else ()"/>
         
         <assert id="mskabel-connected-to-hskabel-or-lskabel"
-            test="empty($connected_hskabels) and empty($connected_mskabels)"
+            test="$all_connections_are_valid"
             properties="scope rule-number severity object-type object-id geometries">
             <value-of select="ma:get-translation-and-replace-placeholders(
                     'connected-cable-does-not-match-netvlak',

@@ -5,10 +5,10 @@
             value="ma:parse-line(nlcs:Geometry)"/>
         
         <let name="start_point"
-            value="($line[1], $line[2])"/>
+            value="$line[1]"/>
         
         <let name="end_point"
-            value="($line[count($line) - 1], $line[count($line)])"/>
+            value="$line[last()]"/>
         
         <let name="start_point_connected"
             value="
@@ -60,18 +60,18 @@
         
         <let name="geometries"
             value="
-                (if (not($start_point_connected)) then ma:create-gml-point(($start_point, 0), 3, 7415) else (),
-                    if (not($end_point_connected)) then ma:create-gml-point(($end_point, 0), 3, 7415) else ())
+                (if (not($start_point_connected)) then ma:create-gml-point($start_point) else (),
+                    if (not($end_point_connected)) then ma:create-gml-point($end_point) else ())
             "/>
         
         <assert id="start_point_connected" 
-                properties="scope rule-number severity object-type object-id geometries"
+            properties="scope rule-number severity object-type object-id geometries"
             test="if($start_point_within_project_area and not($is_deserted)) then $start_point_connected else true()">
             <value-of select="ma:get-translation-and-replace-placeholders('cable-not-connected-to-valid-object', [nlcs:ID])"/>
         </assert>
         
         <assert id="end_point_connected"
-                properties="scope rule-number severity object-type object-id geometries"
+            properties="scope rule-number severity object-type object-id geometries"
             test="if($end_point_within_project_area and not($is_deserted)) then $end_point_connected else true()">
             <value-of select="ma:get-translation-and-replace-placeholders('cable-not-connected-to-valid-object', [nlcs:ID])"/>
         </assert>
@@ -82,10 +82,10 @@
             value="ma:parse-line(nlcs:Geometry)"/>
         
         <let name="start_point"
-            value="($line[1], $line[2])"/>
+            value="$line[1]"/>
         
         <let name="end_point"
-            value="($line[count($line) - 1], $line[count($line)])"/>
+            value="$line[last()]"/>
         
         <let name="start_point_connected"
             value="
@@ -157,18 +157,18 @@
         
         <let name="geometries"
             value="
-                (if (not($start_point_connected)) then ma:create-gml-point(($start_point, 0), 3, 7415) else (),
-                    if (not($end_point_connected)) then ma:create-gml-point(($end_point, 0), 3, 7415) else ())
+                (if (not($start_point_connected)) then ma:create-gml-point($start_point) else (),
+                    if (not($end_point_connected)) then ma:create-gml-point($end_point) else ())
             "/>
         
         <assert id="start_point_connected" 
-                properties="scope rule-number severity object-type object-id geometries"
+            properties="scope rule-number severity object-type object-id geometries"
             test="if($start_point_within_project_area and not($is_deserted)) then $start_point_connected else true()">
             <value-of select="ma:get-translation-and-replace-placeholders('cable-not-connected-to-valid-object', [nlcs:ID])"/>
         </assert>
         
         <assert id="end_point_connected"
-                properties="scope rule-number severity object-type object-id geometries"
+            properties="scope rule-number severity object-type object-id geometries"
             test="if($end_point_within_project_area and not($is_deserted)) then $end_point_connected else true()">
             <value-of select="ma:get-translation-and-replace-placeholders('cable-not-connected-to-valid-object', [nlcs:ID])"/>
         </assert>
@@ -179,10 +179,10 @@
             value="ma:parse-line(nlcs:Geometry)"/>
         
         <let name="start_point"
-            value="($line[1], $line[2])"/>
+            value="$line[1]"/>
         
         <let name="end_point"
-            value="($line[count($line) - 1], $line[count($line)])"/>
+            value="$line[last()]"/>
         
         <let name="start_point_connected"
             value="
@@ -264,18 +264,18 @@
         
         <let name="geometries"
             value="
-                (if (not($start_point_connected)) then ma:create-gml-point(($start_point, 0), 3, 7415) else (),
-                    if (not($end_point_connected)) then ma:create-gml-point(($end_point, 0), 3, 7415) else ())
+                (if (not($start_point_connected)) then ma:create-gml-point($start_point) else (),
+                    if (not($end_point_connected)) then ma:create-gml-point($end_point) else ())
             "/>
         
         <assert id="start_point_connected" 
-                properties="scope rule-number severity object-type object-id geometries"
+            properties="scope rule-number severity object-type object-id geometries"
             test="if($start_point_within_project_area and not($is_deserted)) then $start_point_connected else true()">
             <value-of select="ma:get-translation-and-replace-placeholders('cable-not-connected-to-valid-object', [nlcs:ID])"/>
         </assert>
         
         <assert id="end_point_connected"
-                properties="scope rule-number severity object-type object-id geometries"
+            properties="scope rule-number severity object-type object-id geometries"
             test="if($end_point_within_project_area and not($is_deserted)) then $end_point_connected else true()">
             <value-of select="ma:get-translation-and-replace-placeholders('cable-not-connected-to-valid-object', [nlcs:ID])"/>
         </assert>

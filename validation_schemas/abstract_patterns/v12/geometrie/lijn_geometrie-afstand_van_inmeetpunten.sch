@@ -2,7 +2,7 @@
 <pattern xmlns ="http://purl.oclc.org/dsdl/schematron" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" id="lijn-geometrie-afstand-van-inmeetpunten" abstract="true">
      <rule context="//nlcs:MSkabel | //nlcs:LSkabel | //nlcs:Eaarddraad | //nlcs:Aaanlegtechniek | //nlcs:Amantelbuis">
           <let name="coords" value="ma:parse-line(nlcs:Geometry)"/>
-          
+
           <let name="geometries" value="ma:line-segments-not-meeting-length-demands($coords)"/>
 
           <assert id="line-geometry-line-segments-meet-length-demand"
@@ -14,7 +14,7 @@
 
      <rule context="//nlcs:MSstation">
           <let name="coords" value="ma:parse-area(nlcs:Geometry)"/>
-          
+
           <let name="geometries" value="ma:line-segments-not-meeting-length-demands($coords)"/>
 
           <assert id="area-geometry-line-segments-meet-length-demand"
