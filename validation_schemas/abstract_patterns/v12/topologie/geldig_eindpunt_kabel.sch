@@ -8,7 +8,7 @@
             value="$line[1]"/>
         
         <let name="end_point"
-            value="$line[count($line)]"/>
+            value="$line[last()]"/>
         
         <let name="start_point_connected"
             value="
@@ -85,7 +85,7 @@
             value="$line[1]"/>
         
         <let name="end_point"
-            value="$line[count($line)]"/>
+            value="$line[last()]"/>
         
         <let name="start_point_connected"
             value="
@@ -182,7 +182,7 @@
             value="$line[1]"/>
         
         <let name="end_point"
-            value="$line[count($line)]"/>
+            value="$line[last()]"/>
         
         <let name="start_point_connected"
             value="
