@@ -470,7 +470,7 @@
 			<beschrijving>Aan een zinker kunstwerk moet een bestand bijlage met een zinkertekening gekoppeld zijn.</beschrijving>
 			<soort>Document</soort>
 			<definitie>
-				Akunstwerk met SoortKunstwerk "ZINKER", "ZINKER_BOOG", "ZINKER_SLEEP", "ZINKER_OMGEKEERD" of "ZINKER_SPUIT" moet een gerelateerd AbestandBijlage object met SoortBestand "Zinkertekening" hebben.
+				Akunstwerk waarvan SoortKunstwerk met "ZINKER" begint (bijvoorbeeld "ZINKER", "ZINKER_BOOG", "ZINKER_SLEEP", "ZINKER_OMGEKEERD" of "ZINKER_SPUIT") moet een gerelateerd AbestandBijlage object met SoortBestand "Zinkertekening" hebben.
 			</definitie>
 			<toelichting>De objecten zijn gerelateerd via Akunstwerk.ID en AbestandBijlage.AssetObjectID.</toelichting>
 			<validatieObjecten>
