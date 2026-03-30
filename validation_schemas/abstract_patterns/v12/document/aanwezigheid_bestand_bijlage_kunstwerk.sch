@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pattern xmlns ="http://purl.oclc.org/dsdl/schematron" id="aanwezigheid-bestand-bijlage-kunstwerk" abstract="true">
      <rule context="//nlcs:Akunstwerk">
-          <let name="soort_kunstwerk"
-               value="nlcs:SoortKunstwerk"/>
-          
           <let name="id"
                value="nlcs:ID"/>
           
@@ -14,7 +11,7 @@
                value="$bestand_bijlage/nlcs:SoortBestand"/>
           
           <let name="is_zinker"
-               value="starts-with($soort_kunstwerk, 'ZINKER')"/>
+               value="starts-with(nlcs:SoortKunstwerk, 'ZINKER')"/>
           
           <let name="bestand_bijlage_present"
                value="ma:element-exists-and-not-empty($bestand_bijlage)"/>
