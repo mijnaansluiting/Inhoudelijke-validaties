@@ -22,10 +22,6 @@
     <value-of select="not(some $object in $objects_not_requiring_gis_id satisfies $object = name($nlcs_object))"/>
   </function>
   
-  <function name="ma:get-soortkunstwerken-with-required-abestandsbijlage">
-    <sequence select="$sys_config_file/config/v12/SoortKunstwerkRequiredBestandsBijlage/*"/>
-  </function>
-
   <function name="ma:object-requires-asset-id" as="xs:boolean">
     <param name="nlcs_object"/>
     <variable name="objects_not_requiring_asset_id" select="$sys_config_file/config/v12/GisIdAssetsIdExceptions/NoAssetIdRequired"/>
