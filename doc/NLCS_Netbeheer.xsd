@@ -27,7 +27,7 @@
 													</xs:restriction>
 												</xs:simpleType>
 											</xs:element>
-											<xs:element minOccurs="1" maxOccurs="1" name="Netbeheerder" type="_Netbeheerder" />
+											<xs:element minOccurs="1" maxOccurs="1" name="Netbeheerder" type="Netbeheerder" />
 											<xs:element minOccurs="1" maxOccurs="1" name="NaamAannemer">
 												<xs:simpleType>
 													<xs:restriction base="xs:string">
@@ -37,7 +37,7 @@
 											</xs:element>
 											<xs:element minOccurs="0" maxOccurs="1" name="Volgnummer" type="xs:integer" />
 											<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
-											<xs:element minOccurs="1" maxOccurs="1" name="Tekeningtype" type="_Tekeningtype" />
+											<xs:element minOccurs="1" maxOccurs="1" name="Tekeningtype" type="Tekeningtype" />
 											<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:SurfacePropertyType" />
 										</xs:sequence>
 									</xs:extension>
@@ -74,10 +74,10 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="_Status" />
-												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="_Bedrijfstoestand" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="_Bewerking" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Functie" type="_FunctieLSkast" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="Status" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="Bedrijfstoestand" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="Bewerking" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Functie" type="FunctieLSkast" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Straatnaam">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -113,8 +113,8 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="_EigenaarBeheerder" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="_EigenaarBeheerder" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="EigenaarBeheerder" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="EigenaarBeheerder" />
 												<xs:element minOccurs="0" maxOccurs="1" name="BAGid">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -157,8 +157,8 @@
 											<xs:sequence>
 												<xs:element minOccurs="0" maxOccurs="1" name="Handle" type="xs:string" />
 												<xs:element minOccurs="1" maxOccurs="1" name="ID" type="xs:ID" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Type" type="_TypeLSMof" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Fabrikant" type="_FabrikantLSMof" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Type" type="TypeLSMof" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Fabrikant" type="FabrikantLSMof" />
 												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg" type="xs:date" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Toelichting">
 													<xs:simpleType>
@@ -167,11 +167,11 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="_Status" />
-												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="_Bedrijfstoestand" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="_Bewerking" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Functie" type="_FunctieLSmof" />
-												<xs:element minOccurs="0" maxOccurs="1" name="FaseAanduiding" type="_Faseaanduiding" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="Status" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="Bedrijfstoestand" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="Bewerking" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Functie" type="FunctieLSmof" />
+												<xs:element minOccurs="0" maxOccurs="1" name="FaseAanduiding" type="Faseaanduiding" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Verbindingnummer">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -179,16 +179,16 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="Subnettype" type="_SubnettypeLS" />
-												<xs:element minOccurs="0" maxOccurs="1" name="DoorverbindingAardeNul" type="_JaNee" />
-												<xs:element minOccurs="0" maxOccurs="1" name="AardeGekoppeld" type="_JaNee" />
-												<xs:element minOccurs="0" maxOccurs="1" name="NetGekoppeld" type="_JaNee" />
-												<xs:element minOccurs="0" maxOccurs="1" name="OvlGekoppeld" type="_JaNee" />
-												<xs:element minOccurs="0" maxOccurs="1" name="TariefGekoppeld" type="_JaNee" />
-												<xs:element minOccurs="0" maxOccurs="1" name="NulGekoppeld" type="_JaNee" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Bovengronds" type="_JaNee" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="_EigenaarBeheerder" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="_EigenaarBeheerder" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Subnettype" type="SubnettypeLS" />
+												<xs:element minOccurs="0" maxOccurs="1" name="DoorverbindingAardeNul" type="JaNee" />
+												<xs:element minOccurs="0" maxOccurs="1" name="AardeGekoppeld" type="JaNee" />
+												<xs:element minOccurs="0" maxOccurs="1" name="NetGekoppeld" type="JaNee" />
+												<xs:element minOccurs="0" maxOccurs="1" name="OvlGekoppeld" type="JaNee" />
+												<xs:element minOccurs="0" maxOccurs="1" name="TariefGekoppeld" type="JaNee" />
+												<xs:element minOccurs="0" maxOccurs="1" name="NulGekoppeld" type="JaNee" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Bovengronds" type="JaNee" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="EigenaarBeheerder" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="EigenaarBeheerder" />
 												<xs:element minOccurs="0" maxOccurs="1" name="GisId">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -246,10 +246,10 @@
 													</xs:simpleType>
 												</xs:element>
 												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg" type="xs:date" />
-												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="_Status" />
-												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="_Bedrijfstoestand" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="_Bewerking" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Functie" type="_FunctieElectraStation" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="Status" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="Bedrijfstoestand" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="Bewerking" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Functie" type="FunctieElectraStation" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Straatnaam">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -292,8 +292,8 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="_EigenaarBeheerder" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="_EigenaarBeheerder" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="EigenaarBeheerder" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="EigenaarBeheerder" />
 												<xs:element minOccurs="0" maxOccurs="1" name="AssetId">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -337,9 +337,9 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="_Status" />
-												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="_Bedrijfstoestand" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="_Bewerking" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="Status" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="Bedrijfstoestand" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="Bewerking" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Identificatie">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -347,8 +347,8 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="_EigenaarBeheerder" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="_EigenaarBeheerder" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="EigenaarBeheerder" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="EigenaarBeheerder" />
 												<xs:element minOccurs="0" maxOccurs="1" name="GisId">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -371,7 +371,7 @@
 													</xs:simpleType>
 												</xs:element>
 												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:double" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:decimal" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:PointPropertyType" />
 											</xs:sequence>
 										</xs:extension>
@@ -385,9 +385,9 @@
 											<xs:sequence>
 												<xs:element minOccurs="0" maxOccurs="1" name="Handle" type="xs:string" />
 												<xs:element minOccurs="1" maxOccurs="1" name="ID" type="xs:ID" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Uitvoering" type="_UitvoeringLSKabel" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Kabelopbouw" type="_OpbouwLSKabel" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Fabrikant" type="_FabrikantKabel" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Uitvoering" type="UitvoeringLSKabel" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Kabelopbouw" type="OpbouwLSKabel" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Fabrikant" type="FabrikantKabel" />
 												<xs:element minOccurs="0" maxOccurs="1" name="OmschrijvingUitvoering">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -404,14 +404,14 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="_Status" />
-												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="_Bedrijfstoestand" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="_Bewerking" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Functie" type="_FunctieLSKabel" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Spanningsniveau" type="_SpanningsniveauLSKabel" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Inmeetwijze" type="_Inmeetwijze" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Nauwkeurigheid" type="_NauwkeurigheidXYvalue" />
-												<xs:element minOccurs="0" maxOccurs="1" name="RedenNietVerwijdering" type="_RedenNietVerwijdering" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="Status" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="Bedrijfstoestand" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="Bewerking" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Functie" type="FunctieLSKabel" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Spanningsniveau" type="SpanningsniveauLSKabel" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Inmeetwijze" type="Inmeetwijze" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Nauwkeurigheid" type="NauwkeurigheidXYvalue" />
+												<xs:element minOccurs="0" maxOccurs="1" name="RedenNietVerwijdering" type="RedenNietVerwijdering" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Verbindingnummer">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -419,10 +419,10 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="Subnettype" type="_SubnettypeLS" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Aardingsysteem" type="_Aardingsysteem" />
-												<xs:element minOccurs="0" maxOccurs="1" name="FaseAanduiding" type="_Faseaanduiding" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Bovengronds" type="_JaNee" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Subnettype" type="SubnettypeLS" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Aardingsysteem" type="Aardingsysteem" />
+												<xs:element minOccurs="0" maxOccurs="1" name="FaseAanduiding" type="Faseaanduiding" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Bovengronds" type="JaNee" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Zegeltekst">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -430,8 +430,8 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="_EigenaarBeheerder" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="_EigenaarBeheerder" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="EigenaarBeheerder" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="EigenaarBeheerder" />
 												<xs:element minOccurs="0" maxOccurs="1" name="AssetId">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -467,8 +467,8 @@
 											<xs:sequence>
 												<xs:element minOccurs="0" maxOccurs="1" name="Handle" type="xs:string" />
 												<xs:element minOccurs="1" maxOccurs="1" name="ID" type="xs:ID" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Uitvoering" type="_UitvoeringMSKabel" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Kabelopbouw" type="_OpbouwMSKabel" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Uitvoering" type="UitvoeringMSKabel" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Kabelopbouw" type="OpbouwMSKabel" />
 												<xs:element minOccurs="0" maxOccurs="1" name="OmschrijvingUitvoering">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -476,7 +476,7 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="Fabrikant" type="_FabrikantKabel" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Fabrikant" type="FabrikantKabel" />
 												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg" type="xs:date" />
 												<xs:element minOccurs="0" maxOccurs="1" name="DatumFabricage" type="xs:date" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Toelichting">
@@ -486,13 +486,13 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="_Status" />
-												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="_Bedrijfstoestand" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="_Bewerking" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Spanningsniveau" type="_SpanningsniveauMSKabel" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Inmeetwijze" type="_Inmeetwijze" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Nauwkeurigheid" type="_NauwkeurigheidXYvalue" />
-												<xs:element minOccurs="0" maxOccurs="1" name="RedenNietVerwijdering" type="_RedenNietVerwijdering" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="Status" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="Bedrijfstoestand" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="Bewerking" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Spanningsniveau" type="SpanningsniveauMSKabel" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Inmeetwijze" type="Inmeetwijze" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Nauwkeurigheid" type="NauwkeurigheidXYvalue" />
+												<xs:element minOccurs="0" maxOccurs="1" name="RedenNietVerwijdering" type="RedenNietVerwijdering" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Verbindingnummer">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -500,8 +500,8 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="Subnettype" type="_Subnettype" />
-												<xs:element minOccurs="0" maxOccurs="1" name="FaseAanduiding" type="_Faseaanduiding" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Subnettype" type="Subnettype" />
+												<xs:element minOccurs="0" maxOccurs="1" name="FaseAanduiding" type="Faseaanduiding" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Zegeltekst">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -509,8 +509,8 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="_EigenaarBeheerder" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="_EigenaarBeheerder" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="EigenaarBeheerder" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="EigenaarBeheerder" />
 												<xs:element minOccurs="0" maxOccurs="1" name="GisId">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -546,7 +546,7 @@
 											<xs:sequence>
 												<xs:element minOccurs="0" maxOccurs="1" name="Handle" type="xs:string" />
 												<xs:element minOccurs="1" maxOccurs="1" name="ID" type="xs:ID" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Aansluitset" type="_AansluitsetOvl" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Aansluitset" type="AansluitsetOvl" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Mastnummer">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -562,19 +562,19 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="_Status" />
-												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="_Bedrijfstoestand" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="_Bewerking" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Functie" type="_FunctieOvlOverdrachtspunt" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Spanningsniveau" type="_SpanningsniveauLSKabel" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Doorlaatwaarde" type="_Doorlaatwaarde" />
-												<xs:element minOccurs="0" maxOccurs="1" name="DoorverbindingAardeNul" type="_JaNee" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Aansluitwijze" type="_AansluitwijzeOvl" />
-												<xs:element minOccurs="0" maxOccurs="1" name="VoedingEnSturing" type="_VoedingEnSturingOvl" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Schakeling" type="_SchakelingOvl" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Kabelmontage" type="_Kabelmontage" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="_EigenaarBeheerder" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="_EigenaarBeheerder" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="Status" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="Bedrijfstoestand" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="Bewerking" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Functie" type="FunctieOvlOverdrachtspunt" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Spanningsniveau" type="SpanningsniveauLSKabel" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Doorlaatwaarde" type="Doorlaatwaarde" />
+												<xs:element minOccurs="0" maxOccurs="1" name="DoorverbindingAardeNul" type="JaNee" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Aansluitwijze" type="AansluitwijzeOvl" />
+												<xs:element minOccurs="0" maxOccurs="1" name="VoedingEnSturing" type="VoedingEnSturingOvl" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Schakeling" type="SchakelingOvl" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Kabelmontage" type="Kabelmontage" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="EigenaarBeheerder" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="EigenaarBeheerder" />
 												<xs:element minOccurs="0" maxOccurs="1" name="GisId">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -610,8 +610,8 @@
 											<xs:sequence>
 												<xs:element minOccurs="0" maxOccurs="1" name="Handle" type="xs:string" />
 												<xs:element minOccurs="1" maxOccurs="1" name="ID" type="xs:ID" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Uitvoering" type="_UitvoeringLSoverdrachtspunt" />
-												<xs:element minOccurs="0" maxOccurs="1" name="EigenRichting" type="_JaNee" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Uitvoering" type="UitvoeringLSoverdrachtspunt" />
+												<xs:element minOccurs="0" maxOccurs="1" name="EigenRichting" type="JaNee" />
 												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg" type="xs:date" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Toelichting">
 													<xs:simpleType>
@@ -620,18 +620,18 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="SoortAansluiting" type="_SoortLSAansluiting" />
-												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="_Status" />
-												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="_Bedrijfstoestand" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="_Bewerking" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Functie" type="_FunctieLSoverdrachtspunt" />
-												<xs:element minOccurs="0" maxOccurs="1" name="FaseAanduiding" type="_Faseaanduiding" />
-												<xs:element minOccurs="0" maxOccurs="1" name="InpandigeKabellengte" type="xs:double" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Aardingsysteem" type="_Aardingsysteem" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Doorlaatwaarde" type="_Doorlaatwaarde" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Kabelmontage" type="_Kabelmontage" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="_EigenaarBeheerder" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="_EigenaarBeheerder" />
+												<xs:element minOccurs="0" maxOccurs="1" name="SoortAansluiting" type="SoortLSAansluiting" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="Status" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="Bedrijfstoestand" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="Bewerking" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Functie" type="FunctieLSoverdrachtspunt" />
+												<xs:element minOccurs="0" maxOccurs="1" name="FaseAanduiding" type="Faseaanduiding" />
+												<xs:element minOccurs="0" maxOccurs="1" name="InpandigeKabellengte" type="xs:decimal" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Aardingsysteem" type="Aardingsysteem" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Doorlaatwaarde" type="Doorlaatwaarde" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Kabelmontage" type="Kabelmontage" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="EigenaarBeheerder" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="EigenaarBeheerder" />
 												<xs:element minOccurs="0" maxOccurs="1" name="BAGid">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -668,7 +668,7 @@
 													</xs:simpleType>
 												</xs:element>
 												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:double" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:decimal" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:PointPropertyType" />
 											</xs:sequence>
 										</xs:extension>
@@ -682,7 +682,7 @@
 											<xs:sequence>
 												<xs:element minOccurs="0" maxOccurs="1" name="Handle" type="xs:string" />
 												<xs:element minOccurs="1" maxOccurs="1" name="ID" type="xs:ID" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Uitvoering" type="_UitvoeringMSMof" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Uitvoering" type="UitvoeringMSMof" />
 												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg" type="xs:date" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Toelichting">
 													<xs:simpleType>
@@ -691,11 +691,11 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="_Status" />
-												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="_Bedrijfstoestand" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="_Bewerking" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Functie" type="_FunctieMSmof" />
-												<xs:element minOccurs="0" maxOccurs="1" name="FaseAanduiding" type="_Faseaanduiding" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="Status" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="Bedrijfstoestand" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="Bewerking" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Functie" type="FunctieMSmof" />
+												<xs:element minOccurs="0" maxOccurs="1" name="FaseAanduiding" type="Faseaanduiding" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Verbindingnummer">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -717,9 +717,9 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="CrossBondingAanwezig" type="_JaNee" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="_EigenaarBeheerder" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="_EigenaarBeheerder" />
+												<xs:element minOccurs="0" maxOccurs="1" name="CrossBondingAanwezig" type="JaNee" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="EigenaarBeheerder" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="EigenaarBeheerder" />
 												<xs:element minOccurs="0" maxOccurs="1" name="GisId">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -755,8 +755,8 @@
 											<xs:sequence>
 												<xs:element minOccurs="0" maxOccurs="1" name="Handle" type="xs:string" />
 												<xs:element minOccurs="1" maxOccurs="1" name="ID" type="xs:ID" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Materiaal" type="_MateriaalMantelbuis" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Diameter" type="_DiameterMantelbuis" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Materiaal" type="MateriaalMantelbuis" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Diameter" type="DiameterMantelbuis" />
 												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg" type="xs:date" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Toelichting">
 													<xs:simpleType>
@@ -765,16 +765,16 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="_Status" />
-												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="_Bedrijfstoestand" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="_Bewerking" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Inmeetwijze" type="_Inmeetwijze" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Nauwkeurigheid" type="_NauwkeurigheidXYvalue" />
-												<xs:element minOccurs="0" maxOccurs="1" name="KathodischBeschermd" type="_JaNee" />
-												<xs:element minOccurs="0" maxOccurs="1" name="BovengrondsGemarkeerd" type="_JaNee" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Thema" type="_Thema" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="_EigenaarBeheerder" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="_EigenaarBeheerder" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="Status" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="Bedrijfstoestand" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="Bewerking" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Inmeetwijze" type="Inmeetwijze" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Nauwkeurigheid" type="NauwkeurigheidXYvalue" />
+												<xs:element minOccurs="0" maxOccurs="1" name="KathodischBeschermd" type="JaNee" />
+												<xs:element minOccurs="0" maxOccurs="1" name="BovengrondsGemarkeerd" type="JaNee" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Thema" type="Thema" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="EigenaarBeheerder" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="EigenaarBeheerder" />
 												<xs:element minOccurs="0" maxOccurs="1" name="GisId">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -817,9 +817,9 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="ObjectTypeInhoud" type="_ObjectType" />
+												<xs:element minOccurs="0" maxOccurs="1" name="ObjectTypeInhoud" type="ObjectType" />
 												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
-												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="_Status" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="Status" />
 												<xs:element minOccurs="0" maxOccurs="1" name="MantelbuisID" type="xs:IDREF" />
 												<xs:element minOccurs="0" maxOccurs="1" name="InhoudID" type="xs:IDREF" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Labeltekst">
@@ -842,8 +842,8 @@
 											<xs:sequence>
 												<xs:element minOccurs="0" maxOccurs="1" name="Handle" type="xs:string" />
 												<xs:element minOccurs="1" maxOccurs="1" name="ID" type="xs:ID" />
-												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="_Status" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="_BewerkingGas" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="Status" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="BewerkingGas" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Toelichting">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -858,7 +858,7 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="Thema" type="_Thema" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Thema" type="Thema" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Opmerking">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -866,8 +866,8 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="_EigenaarBeheerder" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="_EigenaarBeheerder" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="EigenaarBeheerder" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="EigenaarBeheerder" />
 												<xs:element minOccurs="0" maxOccurs="1" name="GisId">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -890,7 +890,7 @@
 													</xs:simpleType>
 												</xs:element>
 												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:double" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:decimal" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:PointPropertyType" />
 											</xs:sequence>
 										</xs:extension>
@@ -904,8 +904,8 @@
 											<xs:sequence>
 												<xs:element minOccurs="0" maxOccurs="1" name="Handle" type="xs:string" />
 												<xs:element minOccurs="1" maxOccurs="1" name="ID" type="xs:ID" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Uitvoering" type="_UitvoeringKBgelijkrichter" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Fabrikant" type="_FabrikantKBgelijkrichter" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Uitvoering" type="UitvoeringKBgelijkrichter" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Fabrikant" type="FabrikantKBgelijkrichter" />
 												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg" type="xs:date" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Toelichting">
 													<xs:simpleType>
@@ -914,9 +914,9 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="_Status" />
-												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="_Bedrijfstoestand" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="_BewerkingGas" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="Status" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="Bedrijfstoestand" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="BewerkingGas" />
 												<xs:element minOccurs="0" maxOccurs="1" name="AantalAnodes" type="xs:integer" />
 												<xs:element minOccurs="0" maxOccurs="1" name="OvergangsweerstandAnodebed" type="xs:integer" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Naam">
@@ -947,8 +947,8 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="Signalering" type="_JaNee" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Onderbreker" type="_JaNee" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Signalering" type="JaNee" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Onderbreker" type="JaNee" />
 												<xs:element minOccurs="0" maxOccurs="1" name="CapaciteitSpanning" type="xs:integer" />
 												<xs:element minOccurs="0" maxOccurs="1" name="CapaciteitStroom" type="xs:integer" />
 												<xs:element minOccurs="0" maxOccurs="1" name="SerienummerVoeding">
@@ -958,11 +958,11 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="MateriaalBehuizing" type="_MateriaalBehuizingKBgelijkrichter" />
-												<xs:element minOccurs="0" maxOccurs="1" name="TypeBehuizing" type="_TypeKBbehuizingGelijkrichter" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Thema" type="_ThemaKB" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="_EigenaarBeheerder" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="_EigenaarBeheerder" />
+												<xs:element minOccurs="0" maxOccurs="1" name="MateriaalBehuizing" type="MateriaalBehuizingKBgelijkrichter" />
+												<xs:element minOccurs="0" maxOccurs="1" name="TypeBehuizing" type="TypeKBbehuizingGelijkrichter" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Thema" type="ThemaKB" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="EigenaarBeheerder" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="EigenaarBeheerder" />
 												<xs:element minOccurs="0" maxOccurs="1" name="GisId">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -985,7 +985,7 @@
 													</xs:simpleType>
 												</xs:element>
 												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:double" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:decimal" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:PointPropertyType" />
 											</xs:sequence>
 										</xs:extension>
@@ -999,8 +999,8 @@
 											<xs:sequence>
 												<xs:element minOccurs="0" maxOccurs="1" name="Handle" type="xs:string" />
 												<xs:element minOccurs="1" maxOccurs="1" name="ID" type="xs:ID" />
-												<xs:element minOccurs="0" maxOccurs="1" name="TypeBehuizing" type="_TypeKBbehuizingMeetpaal" />
-												<xs:element minOccurs="0" maxOccurs="1" name="TypeMeetelectrode" type="_TypeKBmeetelectrode" />
+												<xs:element minOccurs="0" maxOccurs="1" name="TypeBehuizing" type="TypeKBbehuizingMeetpaal" />
+												<xs:element minOccurs="0" maxOccurs="1" name="TypeMeetelectrode" type="TypeKBmeetelectrode" />
 												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg" type="xs:date" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Toelichting">
 													<xs:simpleType>
@@ -1009,12 +1009,12 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="_Status" />
-												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="_Bedrijfstoestand" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="_BewerkingGas" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Functie" type="_FunctieKBmeetpaal" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Inmeetwijze" type="_Inmeetwijze" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Nauwkeurigheid" type="_NauwkeurigheidXYvalue" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="Status" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="Bedrijfstoestand" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="BewerkingGas" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Functie" type="FunctieKBmeetpaal" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Inmeetwijze" type="Inmeetwijze" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Nauwkeurigheid" type="NauwkeurigheidXYvalue" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Meetpuntnummer">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -1043,15 +1043,15 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="WeerstandAanwezig" type="_JaNee" />
-												<xs:element minOccurs="0" maxOccurs="1" name="DiodeAanwezig" type="_JaNee" />
-												<xs:element minOccurs="0" maxOccurs="1" name="BeschermbeugelAanwezig" type="_JaNee" />
-												<xs:element minOccurs="0" maxOccurs="1" name="NadereToegangsaanduiding" type="_JaNee" />
+												<xs:element minOccurs="0" maxOccurs="1" name="WeerstandAanwezig" type="JaNee" />
+												<xs:element minOccurs="0" maxOccurs="1" name="DiodeAanwezig" type="JaNee" />
+												<xs:element minOccurs="0" maxOccurs="1" name="BeschermbeugelAanwezig" type="JaNee" />
+												<xs:element minOccurs="0" maxOccurs="1" name="NadereToegangsaanduiding" type="JaNee" />
 												<xs:element minOccurs="0" maxOccurs="1" name="AantalStiften" type="xs:integer" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Telemeting" type="_JaNee" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Thema" type="_ThemaKB" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="_EigenaarBeheerder" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="_EigenaarBeheerder" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Telemeting" type="JaNee" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Thema" type="ThemaKB" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="EigenaarBeheerder" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="EigenaarBeheerder" />
 												<xs:element minOccurs="0" maxOccurs="1" name="GisId">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -1074,7 +1074,7 @@
 													</xs:simpleType>
 												</xs:element>
 												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:double" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:decimal" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:PointPropertyType" />
 											</xs:sequence>
 										</xs:extension>
@@ -1088,7 +1088,7 @@
 											<xs:sequence>
 												<xs:element minOccurs="0" maxOccurs="1" name="Handle" type="xs:string" />
 												<xs:element minOccurs="1" maxOccurs="1" name="ID" type="xs:ID" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Uitvoering" type="_UitvoeringKBdraad" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Uitvoering" type="UitvoeringKBdraad" />
 												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg" type="xs:date" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Toelichting">
 													<xs:simpleType>
@@ -1097,14 +1097,14 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="_Status" />
-												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="_Bedrijfstoestand" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="_BewerkingGas" />
-												<xs:element minOccurs="0" maxOccurs="1" name="FunctieVerbondenObject" type="_FunctieKBdraad" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Subfunctie" type="_SubfunctieKBdraad" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Inmeetwijze" type="_Inmeetwijze" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Nauwkeurigheid" type="_NauwkeurigheidXYvalue" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Kabelkleur" type="_KabelkleurKBdraad" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="Status" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="Bedrijfstoestand" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="BewerkingGas" />
+												<xs:element minOccurs="0" maxOccurs="1" name="FunctieVerbondenObject" type="FunctieKBdraad" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Subfunctie" type="SubfunctieKBdraad" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Inmeetwijze" type="Inmeetwijze" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Nauwkeurigheid" type="NauwkeurigheidXYvalue" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Kabelkleur" type="KabelkleurKBdraad" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Omschrijving">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -1126,7 +1126,7 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="Doorverbonden" type="_JaNee" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Doorverbonden" type="JaNee" />
 												<xs:element minOccurs="0" maxOccurs="1" name="KBnet">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -1141,10 +1141,10 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="Thema" type="_ThemaKB" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Thema" type="ThemaKB" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Lengte" type="xs:integer" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="_EigenaarBeheerder" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="_EigenaarBeheerder" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="EigenaarBeheerder" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="EigenaarBeheerder" />
 												<xs:element minOccurs="0" maxOccurs="1" name="GisId">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -1180,9 +1180,9 @@
 											<xs:sequence>
 												<xs:element minOccurs="0" maxOccurs="1" name="Handle" type="xs:string" />
 												<xs:element minOccurs="1" maxOccurs="1" name="ID" type="xs:ID" />
-												<xs:element minOccurs="0" maxOccurs="1" name="SoortAnode" type="_SoortKBanode" />
+												<xs:element minOccurs="0" maxOccurs="1" name="SoortAnode" type="SoortKBanode" />
 												<xs:element minOccurs="0" maxOccurs="1" name="AantalAnodes" type="xs:integer" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Materiaal" type="_MateriaalKBanode" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Materiaal" type="MateriaalKBanode" />
 												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg" type="xs:date" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Toelichting">
 													<xs:simpleType>
@@ -1191,9 +1191,9 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="_Status" />
-												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="_Bedrijfstoestand" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="_BewerkingGas" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="Status" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="Bedrijfstoestand" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="BewerkingGas" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Nummer">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -1236,9 +1236,9 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="Thema" type="_ThemaKB" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="_EigenaarBeheerder" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="_EigenaarBeheerder" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Thema" type="ThemaKB" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="EigenaarBeheerder" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="EigenaarBeheerder" />
 												<xs:element minOccurs="0" maxOccurs="1" name="GisId">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -1261,7 +1261,7 @@
 													</xs:simpleType>
 												</xs:element>
 												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:double" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:decimal" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:PointPropertyType" />
 											</xs:sequence>
 										</xs:extension>
@@ -1275,8 +1275,8 @@
 											<xs:sequence>
 												<xs:element minOccurs="0" maxOccurs="1" name="Handle" type="xs:string" />
 												<xs:element minOccurs="1" maxOccurs="1" name="ID" type="xs:ID" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Type" type="_TypeKBdrainage" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Fabrikant" type="_FabrikantKBdrainage" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Type" type="TypeKBdrainage" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Fabrikant" type="FabrikantKBdrainage" />
 												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg" type="xs:date" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Toelichting">
 													<xs:simpleType>
@@ -1285,9 +1285,9 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="_Status" />
-												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="_Bedrijfstoestand" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="_BewerkingGas" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="Status" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="Bedrijfstoestand" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="BewerkingGas" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Nummer">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -1309,7 +1309,7 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="DrainageStroomsoort" type="_StroomsoortKBdrainage" />
+												<xs:element minOccurs="0" maxOccurs="1" name="DrainageStroomsoort" type="StroomsoortKBdrainage" />
 												<xs:element minOccurs="0" maxOccurs="1" name="InstelwaardeGedraineerdeStroom" type="xs:integer" />
 												<xs:element minOccurs="0" maxOccurs="1" name="VeroorzakerZwerfstroom">
 													<xs:simpleType>
@@ -1319,11 +1319,11 @@
 													</xs:simpleType>
 												</xs:element>
 												<xs:element minOccurs="0" maxOccurs="1" name="Zekeringswaarde" type="xs:integer" />
-												<xs:element minOccurs="0" maxOccurs="1" name="ReservekabelAanwezig" type="_JaNee" />
-												<xs:element minOccurs="0" maxOccurs="1" name="ReservekabelInGebruik" type="_JaNee" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Thema" type="_ThemaKB" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="_EigenaarBeheerder" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="_EigenaarBeheerder" />
+												<xs:element minOccurs="0" maxOccurs="1" name="ReservekabelAanwezig" type="JaNee" />
+												<xs:element minOccurs="0" maxOccurs="1" name="ReservekabelInGebruik" type="JaNee" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Thema" type="ThemaKB" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="EigenaarBeheerder" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="EigenaarBeheerder" />
 												<xs:element minOccurs="0" maxOccurs="1" name="AssetId">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -1346,7 +1346,7 @@
 													</xs:simpleType>
 												</xs:element>
 												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:double" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:decimal" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:PointPropertyType" />
 											</xs:sequence>
 										</xs:extension>
@@ -1360,7 +1360,7 @@
 											<xs:sequence>
 												<xs:element minOccurs="0" maxOccurs="1" name="Handle" type="xs:string" />
 												<xs:element minOccurs="1" maxOccurs="1" name="ID" type="xs:ID" />
-												<xs:element minOccurs="0" maxOccurs="1" name="SoortObject" type="_SoortKBobject" />
+												<xs:element minOccurs="0" maxOccurs="1" name="SoortObject" type="SoortKBobject" />
 												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg" type="xs:date" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Toelichting">
 													<xs:simpleType>
@@ -1369,9 +1369,9 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="_Status" />
-												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="_Bedrijfstoestand" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="_BewerkingGas" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="Status" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="Bedrijfstoestand" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="BewerkingGas" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Objectnummer">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -1393,9 +1393,9 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="Thema" type="_ThemaKB" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="_EigenaarBeheerder" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="_EigenaarBeheerder" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Thema" type="ThemaKB" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="EigenaarBeheerder" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="EigenaarBeheerder" />
 												<xs:element minOccurs="0" maxOccurs="1" name="GisId">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -1418,7 +1418,7 @@
 													</xs:simpleType>
 												</xs:element>
 												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:double" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:decimal" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:PointPropertyType" />
 											</xs:sequence>
 										</xs:extension>
@@ -1439,7 +1439,7 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="Fabrikant" type="_FabrikantKabel" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Fabrikant" type="FabrikantKabel" />
 												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg" type="xs:date" />
 												<xs:element minOccurs="0" maxOccurs="1" name="DatumFabricage" type="xs:date" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Toelichting">
@@ -1449,12 +1449,12 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="_Status" />
-												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="_Bedrijfstoestand" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="_Bewerking" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Inmeetwijze" type="_Inmeetwijze" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Nauwkeurigheid" type="_NauwkeurigheidXYvalue" />
-												<xs:element minOccurs="0" maxOccurs="1" name="RedenNietVerwijdering" type="_RedenNietVerwijdering" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="Status" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="Bedrijfstoestand" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="Bewerking" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Inmeetwijze" type="Inmeetwijze" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Nauwkeurigheid" type="NauwkeurigheidXYvalue" />
+												<xs:element minOccurs="0" maxOccurs="1" name="RedenNietVerwijdering" type="RedenNietVerwijdering" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Verbindingnummer">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -1469,9 +1469,9 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="_EigenaarBeheerder" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Subnettype" type="_Subnettype" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="_EigenaarBeheerder" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="EigenaarBeheerder" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Subnettype" type="Subnettype" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="EigenaarBeheerder" />
 												<xs:element minOccurs="0" maxOccurs="1" name="GisId">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -1522,13 +1522,13 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="_Status" />
-												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="_Bedrijfstoestand" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="_Bewerking" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Functie" type="_FunctieTelecomMof" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Subnettype" type="_Subnettype" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="_EigenaarBeheerder" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="_EigenaarBeheerder" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="Status" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="Bedrijfstoestand" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="Bewerking" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Functie" type="FunctieTelecomMof" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Subnettype" type="Subnettype" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="EigenaarBeheerder" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="EigenaarBeheerder" />
 												<xs:element minOccurs="0" maxOccurs="1" name="GisId">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -1551,7 +1551,7 @@
 													</xs:simpleType>
 												</xs:element>
 												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:double" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:decimal" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:PointPropertyType" />
 											</xs:sequence>
 										</xs:extension>
@@ -1565,9 +1565,9 @@
 											<xs:sequence>
 												<xs:element minOccurs="0" maxOccurs="1" name="Handle" type="xs:string" />
 												<xs:element minOccurs="1" maxOccurs="1" name="ID" type="xs:ID" />
-												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="_Status" />
-												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="_Bedrijfstoestand" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="_Bewerking" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="Status" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="Bedrijfstoestand" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="Bewerking" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Toelichting">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -1582,7 +1582,7 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="InpandigeKabellengte" type="xs:double" />
+												<xs:element minOccurs="0" maxOccurs="1" name="InpandigeKabellengte" type="xs:decimal" />
 												<xs:element minOccurs="0" maxOccurs="1" name="BGTid">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -1590,8 +1590,8 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="_EigenaarBeheerder" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="_EigenaarBeheerder" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="EigenaarBeheerder" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="EigenaarBeheerder" />
 												<xs:element minOccurs="0" maxOccurs="1" name="GisId">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -1614,7 +1614,7 @@
 													</xs:simpleType>
 												</xs:element>
 												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:double" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:decimal" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:PointPropertyType" />
 											</xs:sequence>
 										</xs:extension>
@@ -1650,9 +1650,9 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="_Status" />
-												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="_Bedrijfstoestand" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="_Bewerking" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="Status" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="Bedrijfstoestand" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="Bewerking" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Straatnaam">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -1695,8 +1695,8 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="_EigenaarBeheerder" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="_EigenaarBeheerder" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="EigenaarBeheerder" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="EigenaarBeheerder" />
 												<xs:element minOccurs="0" maxOccurs="1" name="GisId">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -1732,8 +1732,8 @@
 											<xs:sequence>
 												<xs:element minOccurs="0" maxOccurs="1" name="Handle" type="xs:string" />
 												<xs:element minOccurs="1" maxOccurs="1" name="ID" type="xs:ID" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Materiaal" type="_MateriaalTelecomBuis" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Diameter" type="_DiameterTelecomBuis" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Materiaal" type="MateriaalTelecomBuis" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Diameter" type="DiameterTelecomBuis" />
 												<xs:element minOccurs="0" maxOccurs="1" name="OmschrijvingUitvoering">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -1741,7 +1741,7 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="Fabrikant" type="_FabrikantKabel" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Fabrikant" type="FabrikantKabel" />
 												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg" type="xs:date" />
 												<xs:element minOccurs="0" maxOccurs="1" name="DatumFabricage" type="xs:date" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Toelichting">
@@ -1751,12 +1751,12 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="_Status" />
-												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="_Bedrijfstoestand" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="_Bewerking" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Inmeetwijze" type="_Inmeetwijze" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Nauwkeurigheid" type="_NauwkeurigheidXYvalue" />
-												<xs:element minOccurs="0" maxOccurs="1" name="RedenNietVerwijdering" type="_RedenNietVerwijdering" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="Status" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="Bedrijfstoestand" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="Bewerking" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Inmeetwijze" type="Inmeetwijze" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Nauwkeurigheid" type="NauwkeurigheidXYvalue" />
+												<xs:element minOccurs="0" maxOccurs="1" name="RedenNietVerwijdering" type="RedenNietVerwijdering" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Buisnummer">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -1764,10 +1764,10 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="Kleur" type="_KleurTelecombuis" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Subnettype" type="_Subnettype" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="_EigenaarBeheerder" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="_EigenaarBeheerder" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Kleur" type="KleurTelecombuis" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Subnettype" type="Subnettype" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="EigenaarBeheerder" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="EigenaarBeheerder" />
 												<xs:element minOccurs="0" maxOccurs="1" name="GisId">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -1803,8 +1803,8 @@
 											<xs:sequence>
 												<xs:element minOccurs="0" maxOccurs="1" name="Handle" type="xs:string" />
 												<xs:element minOccurs="1" maxOccurs="1" name="ID" type="xs:ID" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Uitvoering" type="_UitvoeringHSKabel" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Kabelopbouw" type="_OpbouwHSKabel" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Uitvoering" type="UitvoeringHSKabel" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Kabelopbouw" type="OpbouwHSKabel" />
 												<xs:element minOccurs="0" maxOccurs="1" name="OmschrijvingUitvoering">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -1812,7 +1812,7 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="Fabrikant" type="_FabrikantKabel" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Fabrikant" type="FabrikantKabel" />
 												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg" type="xs:date" />
 												<xs:element minOccurs="0" maxOccurs="1" name="DatumFabricage" type="xs:date" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Toelichting">
@@ -1822,13 +1822,13 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="_Status" />
-												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="_Bedrijfstoestand" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="_Bewerking" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Spanningsniveau" type="_SpanningsniveauHSKabel" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Inmeetwijze" type="_Inmeetwijze" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Nauwkeurigheid" type="_NauwkeurigheidXYvalue" />
-												<xs:element minOccurs="0" maxOccurs="1" name="RedenNietVerwijdering" type="_RedenNietVerwijdering" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="Status" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="Bedrijfstoestand" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="Bewerking" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Spanningsniveau" type="SpanningsniveauHSKabel" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Inmeetwijze" type="Inmeetwijze" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Nauwkeurigheid" type="NauwkeurigheidXYvalue" />
+												<xs:element minOccurs="0" maxOccurs="1" name="RedenNietVerwijdering" type="RedenNietVerwijdering" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Verbindingnummer">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -1836,7 +1836,7 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="FaseAanduiding" type="_Faseaanduiding" />
+												<xs:element minOccurs="0" maxOccurs="1" name="FaseAanduiding" type="Faseaanduiding" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Zegeltekst">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -1844,8 +1844,8 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="_EigenaarBeheerder" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="_EigenaarBeheerder" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="EigenaarBeheerder" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="EigenaarBeheerder" />
 												<xs:element minOccurs="0" maxOccurs="1" name="GisId">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -1881,8 +1881,8 @@
 											<xs:sequence>
 												<xs:element minOccurs="0" maxOccurs="1" name="Handle" type="xs:string" />
 												<xs:element minOccurs="1" maxOccurs="1" name="ID" type="xs:ID" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Uitvoering" type="_UitvoeringHSMof" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Fabrikant" type="_FabrikantHSMof" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Uitvoering" type="UitvoeringHSMof" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Fabrikant" type="FabrikantHSMof" />
 												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg" type="xs:date" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Toelichting">
 													<xs:simpleType>
@@ -1891,11 +1891,11 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="_Status" />
-												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="_Bedrijfstoestand" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="_Bewerking" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Functie" type="_FunctieHSmof" />
-												<xs:element minOccurs="0" maxOccurs="1" name="FaseAanduiding" type="_Faseaanduiding" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="Status" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="Bedrijfstoestand" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="Bewerking" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Functie" type="FunctieHSmof" />
+												<xs:element minOccurs="0" maxOccurs="1" name="FaseAanduiding" type="Faseaanduiding" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Mofnummer">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -1917,9 +1917,9 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="CrossBondingAanwezig" type="_JaNee" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="_EigenaarBeheerder" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="_EigenaarBeheerder" />
+												<xs:element minOccurs="0" maxOccurs="1" name="CrossBondingAanwezig" type="JaNee" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="EigenaarBeheerder" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="EigenaarBeheerder" />
 												<xs:element minOccurs="0" maxOccurs="1" name="GisId">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -1942,7 +1942,7 @@
 													</xs:simpleType>
 												</xs:element>
 												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:double" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:decimal" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:PointPropertyType" />
 											</xs:sequence>
 										</xs:extension>
@@ -1978,10 +1978,10 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="_Status" />
-												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="_Bedrijfstoestand" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="_Bewerking" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Functie" type="_FunctieElectraStation" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="Status" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="Bedrijfstoestand" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="Bewerking" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Functie" type="FunctieElectraStation" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Straatnaam">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -2024,8 +2024,8 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="_EigenaarBeheerder" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="_EigenaarBeheerder" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="EigenaarBeheerder" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="EigenaarBeheerder" />
 												<xs:element minOccurs="0" maxOccurs="1" name="GisId">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -2077,11 +2077,11 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="_Status" />
-												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="_Bedrijfstoestand" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="_Bewerking" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Nauwkeurigheid" type="_NauwkeurigheidXYvalue" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Inmeetwijze" type="_Inmeetwijze" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="Status" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="Bedrijfstoestand" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="Bewerking" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Nauwkeurigheid" type="NauwkeurigheidXYvalue" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Inmeetwijze" type="Inmeetwijze" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Sectienummer">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -2089,8 +2089,8 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="_EigenaarBeheerder" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="_EigenaarBeheerder" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="EigenaarBeheerder" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="EigenaarBeheerder" />
 												<xs:element minOccurs="0" maxOccurs="1" name="GisId">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -2135,9 +2135,9 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="_Status" />
-												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="_Bedrijfstoestand" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="_Bewerking" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="Status" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="Bedrijfstoestand" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="Bewerking" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Volgnummer">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -2152,8 +2152,8 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="_EigenaarBeheerder" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="_EigenaarBeheerder" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="EigenaarBeheerder" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="EigenaarBeheerder" />
 												<xs:element minOccurs="0" maxOccurs="1" name="GisId">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -2169,7 +2169,7 @@
 													</xs:simpleType>
 												</xs:element>
 												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:double" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:decimal" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:PointPropertyType" />
 											</xs:sequence>
 										</xs:extension>
@@ -2183,7 +2183,7 @@
 											<xs:sequence>
 												<xs:element minOccurs="0" maxOccurs="1" name="Handle" type="xs:string" />
 												<xs:element minOccurs="1" maxOccurs="1" name="ID" type="xs:ID" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Soort" type="_SoortTelecomBuisAppendage" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Soort" type="SoortTelecomBuisAppendage" />
 												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg" type="xs:date" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Toelichting">
 													<xs:simpleType>
@@ -2192,10 +2192,10 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="_Status" />
-												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="_Bedrijfstoestand" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="_Bewerking" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Subnettype" type="_Subnettype" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="Status" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="Bedrijfstoestand" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="Bewerking" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Subnettype" type="Subnettype" />
 												<xs:element minOccurs="0" maxOccurs="1" name="TypeOmschrijving">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -2203,8 +2203,8 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="_EigenaarBeheerder" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="_EigenaarBeheerder" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="EigenaarBeheerder" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="EigenaarBeheerder" />
 												<xs:element minOccurs="0" maxOccurs="1" name="GisId">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -2227,7 +2227,7 @@
 													</xs:simpleType>
 												</xs:element>
 												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:double" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:decimal" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:PointPropertyType" />
 											</xs:sequence>
 										</xs:extension>
@@ -2249,12 +2249,12 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="_Status" />
-												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="_Bedrijfstoestand" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="_Bewerking" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Netvlak" type="_NetvlakElektra" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="_EigenaarBeheerder" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="_EigenaarBeheerder" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="Status" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="Bedrijfstoestand" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="Bewerking" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Netvlak" type="NetvlakElektra" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="EigenaarBeheerder" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="EigenaarBeheerder" />
 												<xs:element minOccurs="0" maxOccurs="1" name="GisId">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -2290,9 +2290,9 @@
 											<xs:sequence>
 												<xs:element minOccurs="0" maxOccurs="1" name="Handle" type="xs:string" />
 												<xs:element minOccurs="1" maxOccurs="1" name="ID" type="xs:ID" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Doorsnede" type="_DoorsnedeAarddraad" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Geleidermateriaal" type="_Geleidermateriaal" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Isolatiemateriaal" type="_IsolatiemateriaalAarddraad" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Doorsnede" type="DoorsnedeAarddraad" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Geleidermateriaal" type="Geleidermateriaal" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Isolatiemateriaal" type="IsolatiemateriaalAarddraad" />
 												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg" type="xs:date" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Toelichting">
 													<xs:simpleType>
@@ -2301,14 +2301,14 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="_Status" />
-												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="_Bedrijfstoestand" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="_Bewerking" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Inmeetwijze" type="_Inmeetwijze" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Nauwkeurigheid" type="_NauwkeurigheidXYvalue" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Netvlak" type="_NetvlakElektra" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="_EigenaarBeheerder" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="_EigenaarBeheerder" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="Status" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="Bedrijfstoestand" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="Bewerking" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Inmeetwijze" type="Inmeetwijze" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Nauwkeurigheid" type="NauwkeurigheidXYvalue" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Netvlak" type="NetvlakElektra" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="EigenaarBeheerder" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="EigenaarBeheerder" />
 												<xs:element minOccurs="0" maxOccurs="1" name="GisId">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -2344,9 +2344,9 @@
 											<xs:sequence>
 												<xs:element minOccurs="0" maxOccurs="1" name="Handle" type="xs:string" />
 												<xs:element minOccurs="1" maxOccurs="1" name="ID" type="xs:ID" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Doorsnede" type="_DoorsnedeAardpen" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="_EigenaarBeheerder" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Materiaal" type="_MateriaalAardpen" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Doorsnede" type="DoorsnedeAardpen" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="EigenaarBeheerder" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Materiaal" type="MateriaalAardpen" />
 												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg" type="xs:date" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Toelichting">
 													<xs:simpleType>
@@ -2355,11 +2355,11 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="_Status" />
-												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="_Bedrijfstoestand" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="_Bewerking" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Netvlak" type="_NetvlakElektra" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="_EigenaarBeheerder" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="Status" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="Bedrijfstoestand" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="Bewerking" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Netvlak" type="NetvlakElektra" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="EigenaarBeheerder" />
 												<xs:element minOccurs="0" maxOccurs="1" name="GisId">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -2382,7 +2382,7 @@
 													</xs:simpleType>
 												</xs:element>
 												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:double" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:decimal" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:PointPropertyType" />
 											</xs:sequence>
 										</xs:extension>
@@ -2396,7 +2396,7 @@
 											<xs:sequence>
 												<xs:element minOccurs="0" maxOccurs="1" name="Handle" type="xs:string" />
 												<xs:element minOccurs="1" maxOccurs="1" name="ID" type="xs:ID" />
-												<xs:element minOccurs="0" maxOccurs="1" name="SoortBescherming" type="_SoortBescherming" />
+												<xs:element minOccurs="0" maxOccurs="1" name="SoortBescherming" type="SoortBescherming" />
 												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg" type="xs:date" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Toelichting">
 													<xs:simpleType>
@@ -2405,12 +2405,12 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="_Status" />
-												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="_Bedrijfstoestand" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="_Bewerking" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Thema" type="_Thema" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="_EigenaarBeheerder" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="_EigenaarBeheerder" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="Status" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="Bedrijfstoestand" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="Bewerking" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Thema" type="Thema" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="EigenaarBeheerder" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="EigenaarBeheerder" />
 												<xs:element minOccurs="0" maxOccurs="1" name="GisId">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -2453,8 +2453,8 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="_Status" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Thema" type="_Thema" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="Status" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Thema" type="Thema" />
 												<xs:element minOccurs="0" maxOccurs="1" name="GisId">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -2476,7 +2476,7 @@
 											<xs:sequence>
 												<xs:element minOccurs="0" maxOccurs="1" name="Handle" type="xs:string" />
 												<xs:element minOccurs="1" maxOccurs="1" name="ID" type="xs:ID" />
-												<xs:element minOccurs="0" maxOccurs="1" name="SoortBestand" type="_BijlageTypeValue" />
+												<xs:element minOccurs="0" maxOccurs="1" name="SoortBestand" type="BijlageTypeValue" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Bestandsnaam">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -2484,9 +2484,9 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="TypeBestand" type="_BestandMediaTypeValue" />
-												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="_Status" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Thema" type="_Thema" />
+												<xs:element minOccurs="0" maxOccurs="1" name="TypeBestand" type="BestandMediaTypeValue" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="Status" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Thema" type="Thema" />
 												<xs:element minOccurs="0" maxOccurs="1" name="GisId">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -2495,7 +2495,7 @@
 													</xs:simpleType>
 												</xs:element>
 												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Kijkhoek" type="xs:double" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Kijkhoek" type="xs:decimal" />
 												<xs:element minOccurs="0" maxOccurs="1" name="AssetObjectID" type="xs:IDREF" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Geometry" type="gml:PointPropertyType" />
 											</xs:sequence>
@@ -2510,7 +2510,7 @@
 											<xs:sequence>
 												<xs:element minOccurs="0" maxOccurs="1" name="Handle" type="xs:string" />
 												<xs:element minOccurs="1" maxOccurs="1" name="ID" type="xs:ID" />
-												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="_Status" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="Status" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Toelichting">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -2518,7 +2518,7 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="Thema" type="_Thema" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Thema" type="Thema" />
 												<xs:element minOccurs="0" maxOccurs="1" name="GisId">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -2540,7 +2540,7 @@
 											<xs:sequence>
 												<xs:element minOccurs="0" maxOccurs="1" name="Handle" type="xs:string" />
 												<xs:element minOccurs="1" maxOccurs="1" name="ID" type="xs:ID" />
-												<xs:element minOccurs="0" maxOccurs="1" name="SoortKunstwerk" type="_SoortKunstwerk" />
+												<xs:element minOccurs="0" maxOccurs="1" name="SoortKunstwerk" type="SoortKunstwerk" />
 												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg" type="xs:date" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Toelichting">
 													<xs:simpleType>
@@ -2549,9 +2549,9 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="_Status" />
-												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="_Bedrijfstoestand" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="_Bewerking" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="Status" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="Bedrijfstoestand" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="Bewerking" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Kunstwerknummer">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -2559,10 +2559,10 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="Thema" type="_Thema" />
-												<xs:element minOccurs="0" maxOccurs="1" name="StraalBoogzinker" type="xs:double" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="_EigenaarBeheerder" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="_EigenaarBeheerder" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Thema" type="Thema" />
+												<xs:element minOccurs="0" maxOccurs="1" name="StraalBoogzinker" type="xs:decimal" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="EigenaarBeheerder" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="EigenaarBeheerder" />
 												<xs:element minOccurs="0" maxOccurs="1" name="GisId">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -2598,7 +2598,7 @@
 											<xs:sequence>
 												<xs:element minOccurs="0" maxOccurs="1" name="Handle" type="xs:string" />
 												<xs:element minOccurs="1" maxOccurs="1" name="ID" type="xs:ID" />
-												<xs:element minOccurs="0" maxOccurs="1" name="SoortAanlegTechniek" type="_SoortAanlegTechniek" />
+												<xs:element minOccurs="0" maxOccurs="1" name="SoortAanlegTechniek" type="SoortAanlegTechniek" />
 												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg" type="xs:date" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Toelichting">
 													<xs:simpleType>
@@ -2607,12 +2607,12 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="_Status" />
-												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="_Bedrijfstoestand" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="_Bewerking" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Thema" type="_Thema" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="_EigenaarBeheerder" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="_EigenaarBeheerder" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="Status" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="Bedrijfstoestand" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="Bewerking" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Thema" type="Thema" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="EigenaarBeheerder" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="EigenaarBeheerder" />
 												<xs:element minOccurs="0" maxOccurs="1" name="GisId">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -2648,9 +2648,9 @@
 											<xs:sequence>
 												<xs:element minOccurs="0" maxOccurs="1" name="Handle" type="xs:string" />
 												<xs:element minOccurs="1" maxOccurs="1" name="ID" type="xs:ID" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Richting" type="_InUit" />
-												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="_Status" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="_Bewerking" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Richting" type="InUit" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="Status" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="Bewerking" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Kunstwerknummer">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -2673,7 +2673,7 @@
 													</xs:simpleType>
 												</xs:element>
 												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:double" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:decimal" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:PointPropertyType" />
 											</xs:sequence>
 										</xs:extension>
@@ -2687,8 +2687,8 @@
 											<xs:sequence>
 												<xs:element minOccurs="0" maxOccurs="1" name="Handle" type="xs:string" />
 												<xs:element minOccurs="1" maxOccurs="1" name="ID" type="xs:ID" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Situatie" type="_SituatieVerplaatsing" />
-												<xs:element minOccurs="0" maxOccurs="1" name="ObjectType" type="_ObjectType" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Situatie" type="SituatieVerplaatsing" />
+												<xs:element minOccurs="0" maxOccurs="1" name="ObjectType" type="ObjectType" />
 												<xs:element minOccurs="0" maxOccurs="1" name="AssetObjectID" type="xs:IDREF" />
 												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:CurvePropertyType" />
@@ -2726,10 +2726,10 @@
 													</xs:simpleType>
 												</xs:element>
 												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg" type="xs:date" />
-												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="_Status" />
-												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="_Bedrijfstoestand" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="_BewerkingGas" />
-												<xs:element minOccurs="0" maxOccurs="1" name="StationFunctie" type="_FunctieGasStation" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="Status" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="Bedrijfstoestand" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="BewerkingGas" />
+												<xs:element minOccurs="0" maxOccurs="1" name="StationFunctie" type="FunctieGasStation" />
 												<xs:element minOccurs="0" maxOccurs="1" name="GasunieCode">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -2772,8 +2772,8 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="_EigenaarBeheerder" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="_EigenaarBeheerder" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="EigenaarBeheerder" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="EigenaarBeheerder" />
 												<xs:element minOccurs="0" maxOccurs="1" name="BAGid">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -2816,9 +2816,9 @@
 											<xs:sequence>
 												<xs:element minOccurs="0" maxOccurs="1" name="Handle" type="xs:string" />
 												<xs:element minOccurs="1" maxOccurs="1" name="ID" type="xs:ID" />
-												<xs:element minOccurs="0" maxOccurs="1" name="BuitenDiameter" type="_BuitenDiameterGasleiding" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Materiaal" type="_MateriaalGasleiding" />
-												<xs:element minOccurs="0" maxOccurs="1" name="SDR" type="_SDRgas" />
+												<xs:element minOccurs="0" maxOccurs="1" name="BuitenDiameter" type="BuitenDiameterGasleiding" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Materiaal" type="MateriaalGasleiding" />
+												<xs:element minOccurs="0" maxOccurs="1" name="SDR" type="SDRgas" />
 												<xs:element minOccurs="0" maxOccurs="1" name="OmschrijvingUitvoering">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -2826,7 +2826,7 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="Fabrikant" type="_FabrikantGasLeiding" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Fabrikant" type="FabrikantGasLeiding" />
 												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg" type="xs:date" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Toelichting">
 													<xs:simpleType>
@@ -2835,19 +2835,19 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="_Status" />
-												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="_Bedrijfstoestand" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="_BewerkingGas" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Druk" type="_Druk" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Inmeetwijze" type="_Inmeetwijze" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Nauwkeurigheid" type="_NauwkeurigheidXYvalue" />
-												<xs:element minOccurs="0" maxOccurs="1" name="RedenNietVerwijdering" type="_RedenNietVerwijdering" />
-												<xs:element minOccurs="0" maxOccurs="1" name="SoortGas" type="_SoortGas" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Verbindingstechniek" type="_VerbindingstechniekGas" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Netvlak" type="_NetvlakGas" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Subnettype" type="_Subnettype" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Trekvast" type="_JaNee" />
-												<xs:element minOccurs="0" maxOccurs="1" name="KBaanwezig" type="_KBaanwezig" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="Status" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="Bedrijfstoestand" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="BewerkingGas" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Druk" type="Druk" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Inmeetwijze" type="Inmeetwijze" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Nauwkeurigheid" type="NauwkeurigheidXYvalue" />
+												<xs:element minOccurs="0" maxOccurs="1" name="RedenNietVerwijdering" type="RedenNietVerwijdering" />
+												<xs:element minOccurs="0" maxOccurs="1" name="SoortGas" type="SoortGas" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Verbindingstechniek" type="VerbindingstechniekGas" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Netvlak" type="NetvlakGas" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Subnettype" type="Subnettype" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Trekvast" type="JaNee" />
+												<xs:element minOccurs="0" maxOccurs="1" name="KBaanwezig" type="KBaanwezig" />
 												<xs:element minOccurs="0" maxOccurs="1" name="KBsectie">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -2855,10 +2855,10 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="BuisbekledingAchteraf" type="_BuisbekledingGas" />
-												<xs:element minOccurs="0" maxOccurs="1" name="BuisverbindingBekleding" type="_VerbindingbekledingGas" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="_EigenaarBeheerder" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="_EigenaarBeheerder" />
+												<xs:element minOccurs="0" maxOccurs="1" name="BuisbekledingAchteraf" type="BuisbekledingGas" />
+												<xs:element minOccurs="0" maxOccurs="1" name="BuisverbindingBekleding" type="VerbindingbekledingGas" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="EigenaarBeheerder" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="EigenaarBeheerder" />
 												<xs:element minOccurs="0" maxOccurs="1" name="AssetId">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -2894,12 +2894,12 @@
 											<xs:sequence>
 												<xs:element minOccurs="0" maxOccurs="1" name="Handle" type="xs:string" />
 												<xs:element minOccurs="1" maxOccurs="1" name="ID" type="xs:ID" />
-												<xs:element minOccurs="0" maxOccurs="1" name="SoortAfsluiter" type="_SoortGasAfsluiter" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Diameter" type="_BuitenDiameterGasleiding" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Materiaal" type="_MateriaalGasAfsluiter" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Draaiwijze" type="_DraaiwijzeGasAfsluiter" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Drukklasse" type="_DrukklasseGasAfsluiter" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Fabrikant" type="_FabrikantGasAfsluiter" />
+												<xs:element minOccurs="0" maxOccurs="1" name="SoortAfsluiter" type="SoortGasAfsluiter" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Diameter" type="BuitenDiameterGasleiding" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Materiaal" type="MateriaalGasAfsluiter" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Draaiwijze" type="DraaiwijzeGasAfsluiter" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Drukklasse" type="DrukklasseGasAfsluiter" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Fabrikant" type="FabrikantGasAfsluiter" />
 												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg" type="xs:date" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Toelichting">
 													<xs:simpleType>
@@ -2908,12 +2908,12 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="_Status" />
-												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="_Bedrijfstoestand" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="_BewerkingGas" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Functie" type="_FunctieGasAfsluiter" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Druk" type="_Druk" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Steekflens" type="_JaNee" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="Status" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="Bedrijfstoestand" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="BewerkingGas" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Functie" type="FunctieGasAfsluiter" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Druk" type="Druk" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Steekflens" type="JaNee" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Nummer">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -2921,9 +2921,9 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="Verbindingstechniek" type="_VerbindingstechniekGasAfsluiter" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Voorkeurstand" type="_Voorkeurstand" />
-												<xs:element minOccurs="0" maxOccurs="1" name="AfblaasOpgebouwd" type="_JaNee" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Verbindingstechniek" type="VerbindingstechniekGasAfsluiter" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Voorkeurstand" type="Voorkeurstand" />
+												<xs:element minOccurs="0" maxOccurs="1" name="AfblaasOpgebouwd" type="JaNee" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Serienummer">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -2931,10 +2931,10 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="Subnettype" type="_Subnettype" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Netvlak" type="_NetvlakGas" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="_EigenaarBeheerder" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="_EigenaarBeheerder" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Subnettype" type="Subnettype" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Netvlak" type="NetvlakGas" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="EigenaarBeheerder" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="EigenaarBeheerder" />
 												<xs:element minOccurs="0" maxOccurs="1" name="AssetId">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -2957,7 +2957,7 @@
 													</xs:simpleType>
 												</xs:element>
 												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:double" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:decimal" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:PointPropertyType" />
 											</xs:sequence>
 										</xs:extension>
@@ -2977,7 +2977,7 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="Uitvoering" type="_UitvoeringGasTstuk" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Uitvoering" type="UitvoeringGasTstuk" />
 												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg" type="xs:date" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Toelichting">
 													<xs:simpleType>
@@ -2986,13 +2986,13 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="_Status" />
-												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="_Bedrijfstoestand" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="_BewerkingGas" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Druk" type="_Druk" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Netvlak" type="_NetvlakGas" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="_EigenaarBeheerder" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="_EigenaarBeheerder" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="Status" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="Bedrijfstoestand" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="BewerkingGas" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Druk" type="Druk" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Netvlak" type="NetvlakGas" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="EigenaarBeheerder" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="EigenaarBeheerder" />
 												<xs:element minOccurs="0" maxOccurs="1" name="AssetId">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -3015,7 +3015,7 @@
 													</xs:simpleType>
 												</xs:element>
 												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:double" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:decimal" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:PointPropertyType" />
 											</xs:sequence>
 										</xs:extension>
@@ -3029,7 +3029,7 @@
 											<xs:sequence>
 												<xs:element minOccurs="0" maxOccurs="1" name="Handle" type="xs:string" />
 												<xs:element minOccurs="1" maxOccurs="1" name="ID" type="xs:ID" />
-												<xs:element minOccurs="0" maxOccurs="1" name="SoortAansluiting" type="_SoortGasAansluiting" />
+												<xs:element minOccurs="0" maxOccurs="1" name="SoortAansluiting" type="SoortGasAansluiting" />
 												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg" type="xs:date" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Toelichting">
 													<xs:simpleType>
@@ -3038,10 +3038,10 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="_Status" />
-												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="_Bedrijfstoestand" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="_BewerkingGas" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Druk" type="_Druk" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="Status" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="Bedrijfstoestand" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="BewerkingGas" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Druk" type="Druk" />
 												<xs:element minOccurs="0" maxOccurs="1" name="BAGid">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -3049,10 +3049,10 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1" name="Netvlak" type="_NetvlakGas" />
-												<xs:element minOccurs="0" maxOccurs="1" name="InpandigeLeidinglengte" type="xs:double" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="_EigenaarBeheerder" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="_EigenaarBeheerder" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Netvlak" type="NetvlakGas" />
+												<xs:element minOccurs="0" maxOccurs="1" name="InpandigeLeidinglengte" type="xs:decimal" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="EigenaarBeheerder" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="EigenaarBeheerder" />
 												<xs:element minOccurs="0" maxOccurs="1" name="GisId">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -3075,7 +3075,7 @@
 													</xs:simpleType>
 												</xs:element>
 												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:double" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:decimal" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:PointPropertyType" />
 											</xs:sequence>
 										</xs:extension>
@@ -3089,7 +3089,7 @@
 											<xs:sequence>
 												<xs:element minOccurs="0" maxOccurs="1" name="Handle" type="xs:string" />
 												<xs:element minOccurs="1" maxOccurs="1" name="ID" type="xs:ID" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Uitvoering" type="_UitvoeringAftakzadel" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Uitvoering" type="UitvoeringAftakzadel" />
 												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg" type="xs:date" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Toelichting">
 													<xs:simpleType>
@@ -3098,13 +3098,13 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="_Status" />
-												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="_Bedrijfstoestand" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="_BewerkingGas" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Druk" type="_Druk" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Netvlak" type="_NetvlakGas" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="_EigenaarBeheerder" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="_EigenaarBeheerder" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="Status" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="Bedrijfstoestand" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="BewerkingGas" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Druk" type="Druk" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Netvlak" type="NetvlakGas" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="EigenaarBeheerder" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="EigenaarBeheerder" />
 												<xs:element minOccurs="0" maxOccurs="1" name="GisId">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -3127,7 +3127,7 @@
 													</xs:simpleType>
 												</xs:element>
 												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:double" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:decimal" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:PointPropertyType" />
 											</xs:sequence>
 										</xs:extension>
@@ -3141,7 +3141,7 @@
 											<xs:sequence>
 												<xs:element minOccurs="0" maxOccurs="1" name="Handle" type="xs:string" />
 												<xs:element minOccurs="1" maxOccurs="1" name="ID" type="xs:ID" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Uitvoering" type="_UitvoeringEindstuk" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Uitvoering" type="UitvoeringEindstuk" />
 												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg" type="xs:date" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Toelichting">
 													<xs:simpleType>
@@ -3150,13 +3150,13 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="_Status" />
-												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="_Bedrijfstoestand" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="_BewerkingGas" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Druk" type="_Druk" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Netvlak" type="_NetvlakGas" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="_EigenaarBeheerder" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="_EigenaarBeheerder" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="Status" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="Bedrijfstoestand" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="BewerkingGas" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Druk" type="Druk" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Netvlak" type="NetvlakGas" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="EigenaarBeheerder" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="EigenaarBeheerder" />
 												<xs:element minOccurs="0" maxOccurs="1" name="GisId">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -3179,7 +3179,7 @@
 													</xs:simpleType>
 												</xs:element>
 												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:double" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:decimal" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:PointPropertyType" />
 											</xs:sequence>
 										</xs:extension>
@@ -3193,8 +3193,8 @@
 											<xs:sequence>
 												<xs:element minOccurs="0" maxOccurs="1" name="Handle" type="xs:string" />
 												<xs:element minOccurs="1" maxOccurs="1" name="ID" type="xs:ID" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Soort" type="_SoortGasAppendage" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Fabrikant" type="_FabrikantGasAppendage" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Soort" type="SoortGasAppendage" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Fabrikant" type="FabrikantGasAppendage" />
 												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg" type="xs:date" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Toelichting">
 													<xs:simpleType>
@@ -3203,13 +3203,13 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="_Status" />
-												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="_Bedrijfstoestand" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="_BewerkingGas" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Druk" type="_Druk" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Netvlak" type="_NetvlakGas" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="_EigenaarBeheerder" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="_EigenaarBeheerder" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="Status" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="Bedrijfstoestand" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="BewerkingGas" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Druk" type="Druk" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Netvlak" type="NetvlakGas" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="EigenaarBeheerder" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="EigenaarBeheerder" />
 												<xs:element minOccurs="0" maxOccurs="1" name="GisId">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -3232,7 +3232,7 @@
 													</xs:simpleType>
 												</xs:element>
 												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:double" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:decimal" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:PointPropertyType" />
 											</xs:sequence>
 										</xs:extension>
@@ -3246,7 +3246,7 @@
 											<xs:sequence>
 												<xs:element minOccurs="0" maxOccurs="1" name="Handle" type="xs:string" />
 												<xs:element minOccurs="1" maxOccurs="1" name="ID" type="xs:ID" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Uitvoering" type="_UitvoeringGasIsolatiestuk" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Uitvoering" type="UitvoeringGasIsolatiestuk" />
 												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg" type="xs:date" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Toelichting">
 													<xs:simpleType>
@@ -3255,15 +3255,15 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="_Status" />
-												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="_Bedrijfstoestand" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="_BewerkingGas" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Functie" type="_FunctieGasIsolatiestuk" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Druk" type="_Druk" />
-												<xs:element minOccurs="0" maxOccurs="1" name="BekledingAchteraf" type="_AppendagebekledingGas" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Netvlak" type="_NetvlakGas" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="_EigenaarBeheerder" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="_EigenaarBeheerder" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="Status" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="Bedrijfstoestand" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="BewerkingGas" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Functie" type="FunctieGasIsolatiestuk" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Druk" type="Druk" />
+												<xs:element minOccurs="0" maxOccurs="1" name="BekledingAchteraf" type="AppendagebekledingGas" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Netvlak" type="NetvlakGas" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="EigenaarBeheerder" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="EigenaarBeheerder" />
 												<xs:element minOccurs="0" maxOccurs="1" name="AssetId">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -3286,7 +3286,7 @@
 													</xs:simpleType>
 												</xs:element>
 												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:double" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:decimal" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:PointPropertyType" />
 											</xs:sequence>
 										</xs:extension>
@@ -3300,7 +3300,7 @@
 											<xs:sequence>
 												<xs:element minOccurs="0" maxOccurs="1" name="Handle" type="xs:string" />
 												<xs:element minOccurs="1" maxOccurs="1" name="ID" type="xs:ID" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Uitvoering" type="_UitvoeringGasOvergangsstuk" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Uitvoering" type="UitvoeringGasOvergangsstuk" />
 												<xs:element minOccurs="0" maxOccurs="1" name="OmschrijvingUitvoering">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -3316,14 +3316,14 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="_Status" />
-												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="_Bedrijfstoestand" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="_BewerkingGas" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Druk" type="_Druk" />
-												<xs:element minOccurs="0" maxOccurs="1" name="BekledingAchteraf" type="_AppendagebekledingGas" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Netvlak" type="_NetvlakGas" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="_EigenaarBeheerder" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="_EigenaarBeheerder" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="Status" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="Bedrijfstoestand" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="BewerkingGas" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Druk" type="Druk" />
+												<xs:element minOccurs="0" maxOccurs="1" name="BekledingAchteraf" type="AppendagebekledingGas" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Netvlak" type="NetvlakGas" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="EigenaarBeheerder" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="EigenaarBeheerder" />
 												<xs:element minOccurs="0" maxOccurs="1" name="GisId">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -3346,7 +3346,7 @@
 													</xs:simpleType>
 												</xs:element>
 												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:double" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:decimal" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:PointPropertyType" />
 											</xs:sequence>
 										</xs:extension>
@@ -3360,7 +3360,7 @@
 											<xs:sequence>
 												<xs:element minOccurs="0" maxOccurs="1" name="Handle" type="xs:string" />
 												<xs:element minOccurs="1" maxOccurs="1" name="ID" type="xs:ID" />
-												<xs:element minOccurs="0" maxOccurs="1" name="SoortMeetpunt" type="_SoortGasMeetpunt" />
+												<xs:element minOccurs="0" maxOccurs="1" name="SoortMeetpunt" type="SoortGasMeetpunt" />
 												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg" type="xs:date" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Toelichting">
 													<xs:simpleType>
@@ -3369,13 +3369,13 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="_Status" />
-												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="_Bedrijfstoestand" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="_BewerkingGas" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Druk" type="_Druk" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Netvlak" type="_NetvlakGas" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="_EigenaarBeheerder" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="_EigenaarBeheerder" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="Status" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="Bedrijfstoestand" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="BewerkingGas" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Druk" type="Druk" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Netvlak" type="NetvlakGas" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="EigenaarBeheerder" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="EigenaarBeheerder" />
 												<xs:element minOccurs="0" maxOccurs="1" name="GisId">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -3398,7 +3398,7 @@
 													</xs:simpleType>
 												</xs:element>
 												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:double" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:decimal" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:PointPropertyType" />
 											</xs:sequence>
 										</xs:extension>
@@ -3420,14 +3420,14 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="_Status" />
-												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="_Bedrijfstoestand" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="_BewerkingGas" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Druk" type="_Druk" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Standpijp" type="_JaNee" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Netvlak" type="_NetvlakGas" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="_EigenaarBeheerder" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="_EigenaarBeheerder" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="Status" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="Bedrijfstoestand" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="BewerkingGas" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Druk" type="Druk" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Standpijp" type="JaNee" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Netvlak" type="NetvlakGas" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="EigenaarBeheerder" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="EigenaarBeheerder" />
 												<xs:element minOccurs="0" maxOccurs="1" name="GisId">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -3450,7 +3450,7 @@
 													</xs:simpleType>
 												</xs:element>
 												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:double" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:decimal" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:PointPropertyType" />
 											</xs:sequence>
 										</xs:extension>
@@ -3472,13 +3472,13 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="_Status" />
-												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="_Bedrijfstoestand" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="_BewerkingGas" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Druk" type="_Druk" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Netvlak" type="_NetvlakGas" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="_EigenaarBeheerder" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="_EigenaarBeheerder" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="Status" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="Bedrijfstoestand" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="BewerkingGas" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Druk" type="Druk" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Netvlak" type="NetvlakGas" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="EigenaarBeheerder" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="EigenaarBeheerder" />
 												<xs:element minOccurs="0" maxOccurs="1" name="GisId">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -3501,7 +3501,7 @@
 													</xs:simpleType>
 												</xs:element>
 												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:double" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:decimal" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:PointPropertyType" />
 											</xs:sequence>
 										</xs:extension>
@@ -3515,9 +3515,9 @@
 											<xs:sequence>
 												<xs:element minOccurs="0" maxOccurs="1" name="Handle" type="xs:string" />
 												<xs:element minOccurs="1" maxOccurs="1" name="ID" type="xs:ID" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Uitvoering" type="_UitvoeringOntspanningselement" />
-												<xs:element minOccurs="0" maxOccurs="1" name="KoppelingAansluitleiding" type="_KoppelingAansluitleidingOSE" />
-												<xs:element minOccurs="0" maxOccurs="1" name="KoppelingGeveldoorvoer" type="_KoppelingGeveldoorvoerOSE" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Uitvoering" type="UitvoeringOntspanningselement" />
+												<xs:element minOccurs="0" maxOccurs="1" name="KoppelingAansluitleiding" type="KoppelingAansluitleidingOSE" />
+												<xs:element minOccurs="0" maxOccurs="1" name="KoppelingGeveldoorvoer" type="KoppelingGeveldoorvoerOSE" />
 												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg" type="xs:date" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Toelichting">
 													<xs:simpleType>
@@ -3526,12 +3526,12 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="_Status" />
-												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="_Bedrijfstoestand" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="_BewerkingGas" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Druk" type="_Druk" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="_EigenaarBeheerder" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="_EigenaarBeheerder" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="Status" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="Bedrijfstoestand" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="BewerkingGas" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Druk" type="Druk" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="EigenaarBeheerder" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="EigenaarBeheerder" />
 												<xs:element minOccurs="0" maxOccurs="1" name="GisId">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -3554,7 +3554,7 @@
 													</xs:simpleType>
 												</xs:element>
 												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:double" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:decimal" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:PointPropertyType" />
 											</xs:sequence>
 										</xs:extension>
@@ -3576,13 +3576,13 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="_Status" />
-												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="_Bedrijfstoestand" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="_BewerkingGas" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Druk" type="_Druk" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Netvlak" type="_NetvlakGas" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="_EigenaarBeheerder" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="_EigenaarBeheerder" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="Status" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="Bedrijfstoestand" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="BewerkingGas" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Druk" type="Druk" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Netvlak" type="NetvlakGas" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="EigenaarBeheerder" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="EigenaarBeheerder" />
 												<xs:element minOccurs="0" maxOccurs="1" name="GisId">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -3605,7 +3605,7 @@
 													</xs:simpleType>
 												</xs:element>
 												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:double" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:decimal" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:PointPropertyType" />
 											</xs:sequence>
 										</xs:extension>
@@ -3619,9 +3619,9 @@
 											<xs:sequence>
 												<xs:element minOccurs="0" maxOccurs="1" name="Handle" type="xs:string" />
 												<xs:element minOccurs="1" maxOccurs="1" name="ID" type="xs:ID" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Soort" type="_SoortGasLeidingafblaas" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Diameter" type="_BuitenDiameterGasleiding" />
-												<xs:element minOccurs="0" maxOccurs="1" name="SoortAfsluiter" type="_SoortGasAfsluiterAfblaas" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Soort" type="SoortGasLeidingafblaas" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Diameter" type="BuitenDiameterGasleiding" />
+												<xs:element minOccurs="0" maxOccurs="1" name="SoortAfsluiter" type="SoortGasAfsluiterAfblaas" />
 												<xs:element minOccurs="0" maxOccurs="1" name="DatumAanleg" type="xs:date" />
 												<xs:element minOccurs="0" maxOccurs="1" name="Toelichting">
 													<xs:simpleType>
@@ -3630,14 +3630,14 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:element>
-												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="_Status" />
-												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="_Bedrijfstoestand" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="_BewerkingGas" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Druk" type="_Druk" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Verbindingstechniek" type="_VerbindingstechniekGasAfsluiter" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Netvlak" type="_NetvlakGas" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="_EigenaarBeheerder" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="_EigenaarBeheerder" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Status" type="Status" />
+												<xs:element minOccurs="1" maxOccurs="1" name="Bedrijfstoestand" type="Bedrijfstoestand" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Bewerking" type="BewerkingGas" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Druk" type="Druk" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Verbindingstechniek" type="VerbindingstechniekGasAfsluiter" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Netvlak" type="NetvlakGas" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Eigenaar" type="EigenaarBeheerder" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Beheerder" type="EigenaarBeheerder" />
 												<xs:element minOccurs="0" maxOccurs="1" name="GisId">
 													<xs:simpleType>
 														<xs:restriction base="xs:string">
@@ -3660,7 +3660,7 @@
 													</xs:simpleType>
 												</xs:element>
 												<xs:element minOccurs="0" maxOccurs="1" name="DatumTijdMutatie" type="xs:dateTime" />
-												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:double" />
+												<xs:element minOccurs="0" maxOccurs="1" name="Hoek" type="xs:decimal" />
 												<xs:element minOccurs="1" maxOccurs="1" name="Geometry" type="gml:PointPropertyType" />
 											</xs:sequence>
 										</xs:extension>
@@ -3674,612 +3674,744 @@
 			</xs:complexContent>
 		</xs:complexType>
 	</xs:element>
-	<xs:simpleType name="_Status">
+	<xs:simpleType name="Status">
 		<xs:restriction base="xs:string">
-			<xs:maxLength value="255" />
+			<xs:enumeration value="BESTAAND" />
+			<xs:enumeration value="NIEUW" />
+			<xs:enumeration value="REVISIE" />
+			<xs:enumeration value="VERWIJDERD" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_Bedrijfstoestand">
+	<xs:simpleType name="Bedrijfstoestand">
 		<xs:restriction base="xs:string">
-			<xs:maxLength value="255" />
+			<xs:enumeration value="GEEN" />
+			<xs:enumeration value="IN BEDRIJF" />
+			<xs:enumeration value="RESERVE" />
+			<xs:enumeration value="VERLATEN" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_Bewerking">
+	<xs:simpleType name="Bewerking">
 		<xs:restriction base="xs:string">
-			<xs:maxLength value="255" />
+			<xs:enumeration value="IG NEMEN" />
+			<xs:enumeration value="OPVULLEN" />
+			<xs:enumeration value="RS STELLEN" />
+			<xs:enumeration value="TE VERWIJDEREN" />
+			<xs:enumeration value="VERLATEN" />
+			<xs:enumeration value="VERPLAATSEN" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_FunctieLSkast">
+	<xs:simpleType name="FunctieLSkast">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_EigenaarBeheerder">
+	<xs:simpleType name="EigenaarBeheerder">
 		<xs:restriction base="xs:string">
-			<xs:maxLength value="255" />
+			<xs:enumeration value="Derden" />
+			<xs:enumeration value="Gemeente" />
+			<xs:enumeration value="Netbeheerder" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_TypeLSMof">
+	<xs:simpleType name="TypeLSMof">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_FabrikantLSMof">
+	<xs:simpleType name="FabrikantLSMof">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_FunctieLSmof">
+	<xs:simpleType name="FunctieLSmof">
 		<xs:restriction base="xs:string">
-			<xs:maxLength value="255" />
+			<xs:enumeration value="AANSLUIT AFTAK" />
+			<xs:enumeration value="AFTAK EINDMOF" />
+			<xs:enumeration value="AFTAK NIET SPLITSEND" />
+			<xs:enumeration value="AFTAK SPLITSEND" />
+			<xs:enumeration value="COMBI LS OV" />
+			<xs:enumeration value="EINDMOF" />
+			<xs:enumeration value="LOODKOP" />
+			<xs:enumeration value="VERBINDING" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_Faseaanduiding">
+	<xs:simpleType name="Faseaanduiding">
 		<xs:restriction base="xs:string">
-			<xs:maxLength value="255" />
+			<xs:enumeration value="3 Fasen" />
+			<xs:enumeration value="L1" />
+			<xs:enumeration value="L2" />
+			<xs:enumeration value="L3" />
+			<xs:enumeration value="N" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_SubnettypeLS">
+	<xs:simpleType name="SubnettypeLS">
 		<xs:restriction base="xs:string">
-			<xs:maxLength value="255" />
+			<xs:enumeration value="AANSLUITNET" />
+			<xs:enumeration value="DISTRIBUTIE" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_JaNee">
+	<xs:simpleType name="JaNee">
 		<xs:restriction base="xs:string">
-			<xs:maxLength value="255" />
+			<xs:enumeration value="Ja" />
+			<xs:enumeration value="Nee" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_FunctieElectraStation">
+	<xs:simpleType name="FunctieElectraStation">
 		<xs:restriction base="xs:string">
-			<xs:maxLength value="255" />
+			<xs:enumeration value="HOOFDSTATION LNB" />
+			<xs:enumeration value="KLANTSTATION" />
+			<xs:enumeration value="NETSTATION" />
+			<xs:enumeration value="OVERIG" />
+			<xs:enumeration value="VERDEELSTATION" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_UitvoeringLSKabel">
+	<xs:simpleType name="UitvoeringLSKabel">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_OpbouwLSKabel">
+	<xs:simpleType name="OpbouwLSKabel">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_FabrikantKabel">
+	<xs:simpleType name="FabrikantKabel">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_FunctieLSKabel">
+	<xs:simpleType name="FunctieLSKabel">
 		<xs:restriction base="xs:string">
-			<xs:maxLength value="255" />
+			<xs:enumeration value="LS" />
+			<xs:enumeration value="LSOV" />
+			<xs:enumeration value="OV" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_SpanningsniveauLSKabel">
+	<xs:simpleType name="SpanningsniveauLSKabel">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_Inmeetwijze">
+	<xs:simpleType name="Inmeetwijze">
 		<xs:restriction base="xs:string">
-			<xs:maxLength value="255" />
+			<xs:enumeration value="GPS" />
+			<xs:enumeration value="Laser" />
+			<xs:enumeration value="Meetlint" />
+			<xs:enumeration value="Tachymeter" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_NauwkeurigheidXYvalue">
+	<xs:simpleType name="NauwkeurigheidXYvalue">
 		<xs:restriction base="xs:string">
-			<xs:maxLength value="255" />
+			<xs:enumeration value="onbekend" />
+			<xs:enumeration value="tot 100cm" />
+			<xs:enumeration value="tot 10cm" />
+			<xs:enumeration value="tot 30cm" />
+			<xs:enumeration value="tot 3cm" />
+			<xs:enumeration value="tot 50cm" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_RedenNietVerwijdering">
+	<xs:simpleType name="RedenNietVerwijdering">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_Aardingsysteem">
+	<xs:simpleType name="Aardingsysteem">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_UitvoeringMSKabel">
+	<xs:simpleType name="UitvoeringMSKabel">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_OpbouwMSKabel">
+	<xs:simpleType name="OpbouwMSKabel">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_SpanningsniveauMSKabel">
+	<xs:simpleType name="SpanningsniveauMSKabel">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_Subnettype">
+	<xs:simpleType name="Subnettype">
 		<xs:restriction base="xs:string">
-			<xs:maxLength value="255" />
+			<xs:enumeration value="AANSLUITNET" />
+			<xs:enumeration value="DISTRIBUTIE" />
+			<xs:enumeration value="TRANSPORT" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_AansluitsetOvl">
+	<xs:simpleType name="AansluitsetOvl">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_FunctieOvlOverdrachtspunt">
+	<xs:simpleType name="FunctieOvlOverdrachtspunt">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_Doorlaatwaarde">
+	<xs:simpleType name="Doorlaatwaarde">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_AansluitwijzeOvl">
+	<xs:simpleType name="AansluitwijzeOvl">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_VoedingEnSturingOvl">
+	<xs:simpleType name="VoedingEnSturingOvl">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_SchakelingOvl">
+	<xs:simpleType name="SchakelingOvl">
 		<xs:restriction base="xs:string">
-			<xs:maxLength value="255" />
+			<xs:enumeration value="Avond" />
+			<xs:enumeration value="Avond en nacht" />
+			<xs:enumeration value="N.v.t." />
+			<xs:enumeration value="Nacht" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_Kabelmontage">
+	<xs:simpleType name="Kabelmontage">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_UitvoeringLSoverdrachtspunt">
+	<xs:simpleType name="UitvoeringLSoverdrachtspunt">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_SoortLSAansluiting">
+	<xs:simpleType name="SoortLSAansluiting">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_FunctieLSoverdrachtspunt">
+	<xs:simpleType name="FunctieLSoverdrachtspunt">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_UitvoeringMSMof">
+	<xs:simpleType name="UitvoeringMSMof">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_FunctieMSmof">
+	<xs:simpleType name="FunctieMSmof">
 		<xs:restriction base="xs:string">
-			<xs:maxLength value="255" />
+			<xs:enumeration value="3FASE 3x1FASE" />
+			<xs:enumeration value="AFTAK SPLITSEND" />
+			<xs:enumeration value="EIND GEAARD" />
+			<xs:enumeration value="EINDDOP" />
+			<xs:enumeration value="EINDMOF" />
+			<xs:enumeration value="LOODKOP" />
+			<xs:enumeration value="MANTELREPARATIE" />
+			<xs:enumeration value="VERBINDING" />
+			<xs:enumeration value="ZEGELWIJZIGING" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_MateriaalMantelbuis">
+	<xs:simpleType name="MateriaalMantelbuis">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_DiameterMantelbuis">
+	<xs:simpleType name="DiameterMantelbuis">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_Thema">
+	<xs:simpleType name="Thema">
 		<xs:restriction base="xs:string">
-			<xs:maxLength value="255" />
+			<xs:enumeration value="BUISLEIDING GEVAARLIJKE INHOUD" />
+			<xs:enumeration value="CHEMIE" />
+			<xs:enumeration value="DATA" />
+			<xs:enumeration value="ET_HS" />
+			<xs:enumeration value="ET_LHS" />
+			<xs:enumeration value="ET_LS" />
+			<xs:enumeration value="ET_MS" />
+			<xs:enumeration value="GAS_HD" />
+			<xs:enumeration value="GAS_LD" />
+			<xs:enumeration value="OVERIG" />
+			<xs:enumeration value="PERSLEIDING" />
+			<xs:enumeration value="VRIJVERVAL" />
+			<xs:enumeration value="WARMTENET" />
+			<xs:enumeration value="WATER" />
+			<xs:enumeration value="WEESLEIDING" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_ObjectType">
+	<xs:simpleType name="ObjectType">
 		<xs:restriction base="xs:string">
-			<xs:maxLength value="255" />
+			<xs:enumeration value="Amantelbuis" />
+			<xs:enumeration value="Eaarddraad" />
+			<xs:enumeration value="Eoliedrukleiding" />
+			<xs:enumeration value="Gleiding" />
+			<xs:enumeration value="HSkabel" />
+			<xs:enumeration value="KBmeetdraad" />
+			<xs:enumeration value="LSkabel" />
+			<xs:enumeration value="MSkabel" />
+			<xs:enumeration value="Tbuis" />
+			<xs:enumeration value="Tkabel" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_Netbeheerder">
+	<xs:simpleType name="Netbeheerder">
 		<xs:restriction base="xs:string">
-			<xs:maxLength value="255" />
+			<xs:enumeration value="Enexis" />
+			<xs:enumeration value="Liander" />
+			<xs:enumeration value="Stedin" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_Tekeningtype">
+	<xs:simpleType name="Tekeningtype">
 		<xs:restriction base="xs:string">
-			<xs:maxLength value="255" />
+			<xs:enumeration value="BESTAANDE SITUATIE" />
+			<xs:enumeration value="DEELREVISIE" />
+			<xs:enumeration value="DEFINITIEF ONTWERP" />
+			<xs:enumeration value="EINDREVISIE" />
+			<xs:enumeration value="VOORONTWERP" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_BewerkingGas">
+	<xs:simpleType name="BewerkingGas">
 		<xs:restriction base="xs:string">
-			<xs:maxLength value="255" />
+			<xs:enumeration value="IB STELLEN" />
+			<xs:enumeration value="IG NEMEN" />
+			<xs:enumeration value="RELINEN" />
+			<xs:enumeration value="RS STELLEN" />
+			<xs:enumeration value="TE VERWIJDEREN" />
+			<xs:enumeration value="VERLATEN" />
+			<xs:enumeration value="VERPLAATSEN" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_UitvoeringKBgelijkrichter">
+	<xs:simpleType name="UitvoeringKBgelijkrichter">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_FabrikantKBgelijkrichter">
+	<xs:simpleType name="FabrikantKBgelijkrichter">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_MateriaalBehuizingKBgelijkrichter">
+	<xs:simpleType name="MateriaalBehuizingKBgelijkrichter">
 		<xs:restriction base="xs:string">
-			<xs:maxLength value="255" />
+			<xs:enumeration value="Keuze ontbreekt in lijst" />
+			<xs:enumeration value="Kunststof" />
+			<xs:enumeration value="RVS" />
+			<xs:enumeration value="Staal" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_TypeKBbehuizingGelijkrichter">
+	<xs:simpleType name="TypeKBbehuizingGelijkrichter">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_ThemaKB">
+	<xs:simpleType name="ThemaKB">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_TypeKBbehuizingMeetpaal">
+	<xs:simpleType name="TypeKBbehuizingMeetpaal">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_TypeKBmeetelectrode">
+	<xs:simpleType name="TypeKBmeetelectrode">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_FunctieKBmeetpaal">
+	<xs:simpleType name="FunctieKBmeetpaal">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_UitvoeringKBdraad">
+	<xs:simpleType name="UitvoeringKBdraad">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_FunctieKBdraad">
+	<xs:simpleType name="FunctieKBdraad">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_SubfunctieKBdraad">
+	<xs:simpleType name="SubfunctieKBdraad">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_KabelkleurKBdraad">
+	<xs:simpleType name="KabelkleurKBdraad">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_SoortKBanode">
+	<xs:simpleType name="SoortKBanode">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_MateriaalKBanode">
+	<xs:simpleType name="MateriaalKBanode">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_TypeKBdrainage">
+	<xs:simpleType name="TypeKBdrainage">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_FabrikantKBdrainage">
+	<xs:simpleType name="FabrikantKBdrainage">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_StroomsoortKBdrainage">
+	<xs:simpleType name="StroomsoortKBdrainage">
 		<xs:restriction base="xs:string">
-			<xs:maxLength value="255" />
+			<xs:enumeration value="AC" />
+			<xs:enumeration value="DC" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_SoortKBobject">
+	<xs:simpleType name="SoortKBobject">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_FunctieTelecomMof">
+	<xs:simpleType name="FunctieTelecomMof">
 		<xs:restriction base="xs:string">
-			<xs:maxLength value="255" />
+			<xs:enumeration value="AFTAKMOF" />
+			<xs:enumeration value="EINDDOP" />
+			<xs:enumeration value="EINDMOF" />
+			<xs:enumeration value="OVERGANGSMOF" />
+			<xs:enumeration value="VERBINDINGSMOF" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_MateriaalTelecomBuis">
+	<xs:simpleType name="MateriaalTelecomBuis">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_DiameterTelecomBuis">
+	<xs:simpleType name="DiameterTelecomBuis">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_KleurTelecombuis">
+	<xs:simpleType name="KleurTelecombuis">
 		<xs:restriction base="xs:string">
-			<xs:maxLength value="255" />
+			<xs:enumeration value="Blauw" />
+			<xs:enumeration value="Bruin" />
+			<xs:enumeration value="Geel" />
+			<xs:enumeration value="Grijs" />
+			<xs:enumeration value="Groen" />
+			<xs:enumeration value="Oranje" />
+			<xs:enumeration value="Paars" />
+			<xs:enumeration value="Rood" />
+			<xs:enumeration value="Wit" />
+			<xs:enumeration value="Zwart" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_UitvoeringHSKabel">
+	<xs:simpleType name="UitvoeringHSKabel">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_OpbouwHSKabel">
+	<xs:simpleType name="OpbouwHSKabel">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_SpanningsniveauHSKabel">
+	<xs:simpleType name="SpanningsniveauHSKabel">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_UitvoeringHSMof">
+	<xs:simpleType name="UitvoeringHSMof">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_FabrikantHSMof">
+	<xs:simpleType name="FabrikantHSMof">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_FunctieHSmof">
+	<xs:simpleType name="FunctieHSmof">
 		<xs:restriction base="xs:string">
-			<xs:maxLength value="255" />
+			<xs:enumeration value="3FASE 3x1FASE" />
+			<xs:enumeration value="EINDDOP" />
+			<xs:enumeration value="EINDMOF" />
+			<xs:enumeration value="LOODKOP" />
+			<xs:enumeration value="MANTELREPARATIE" />
+			<xs:enumeration value="VERBINDING" />
+			<xs:enumeration value="ZEGELWIJZIGING" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_SoortTelecomBuisAppendage">
+	<xs:simpleType name="SoortTelecomBuisAppendage">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_NetvlakElektra">
+	<xs:simpleType name="NetvlakElektra">
 		<xs:restriction base="xs:string">
-			<xs:maxLength value="255" />
+			<xs:enumeration value="HS" />
+			<xs:enumeration value="LHS" />
+			<xs:enumeration value="LS" />
+			<xs:enumeration value="MS" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_DoorsnedeAarddraad">
+	<xs:simpleType name="DoorsnedeAarddraad">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_Geleidermateriaal">
+	<xs:simpleType name="Geleidermateriaal">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_IsolatiemateriaalAarddraad">
+	<xs:simpleType name="IsolatiemateriaalAarddraad">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_DoorsnedeAardpen">
+	<xs:simpleType name="DoorsnedeAardpen">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_MateriaalAardpen">
+	<xs:simpleType name="MateriaalAardpen">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_SoortBescherming">
+	<xs:simpleType name="SoortBescherming">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_BijlageTypeValue">
+	<xs:simpleType name="BijlageTypeValue">
 		<xs:restriction base="xs:string">
-			<xs:maxLength value="255" />
+			<xs:enumeration value="Aardingsrapport" />
+			<xs:enumeration value="Foto" />
+			<xs:enumeration value="Gestuurde boring" />
+			<xs:enumeration value="Zinkertekening" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_BestandMediaTypeValue">
+	<xs:simpleType name="BestandMediaTypeValue">
 		<xs:restriction base="xs:string">
-			<xs:maxLength value="255" />
+			<xs:enumeration value="DWG" />
+			<xs:enumeration value="JPEG" />
+			<xs:enumeration value="JSON" />
+			<xs:enumeration value="PDF" />
+			<xs:enumeration value="PNG" />
+			<xs:enumeration value="TIFF" />
+			<xs:enumeration value="XML" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_SoortKunstwerk">
+	<xs:simpleType name="SoortKunstwerk">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_SoortAanlegTechniek">
+	<xs:simpleType name="SoortAanlegTechniek">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_InUit">
+	<xs:simpleType name="InUit">
 		<xs:restriction base="xs:string">
-			<xs:maxLength value="255" />
+			<xs:enumeration value="Intredepunt" />
+			<xs:enumeration value="Uittredepunt" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_SituatieVerplaatsing">
+	<xs:simpleType name="SituatieVerplaatsing">
 		<xs:restriction base="xs:string">
-			<xs:maxLength value="255" />
+			<xs:enumeration value="Na verplaatsing" />
+			<xs:enumeration value="Voor verplaatsing" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_FunctieGasStation">
+	<xs:simpleType name="FunctieGasStation">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_BuitenDiameterGasleiding">
+	<xs:simpleType name="BuitenDiameterGasleiding">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_MateriaalGasleiding">
+	<xs:simpleType name="MateriaalGasleiding">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_SDRgas">
+	<xs:simpleType name="SDRgas">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_FabrikantGasLeiding">
+	<xs:simpleType name="FabrikantGasLeiding">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_Druk">
+	<xs:simpleType name="Druk">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_SoortGas">
+	<xs:simpleType name="SoortGas">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_VerbindingstechniekGas">
+	<xs:simpleType name="VerbindingstechniekGas">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_NetvlakGas">
+	<xs:simpleType name="NetvlakGas">
 		<xs:restriction base="xs:string">
-			<xs:maxLength value="255" />
+			<xs:enumeration value="HD" />
+			<xs:enumeration value="LD" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_KBaanwezig">
+	<xs:simpleType name="KBaanwezig">
 		<xs:restriction base="xs:string">
-			<xs:maxLength value="255" />
+			<xs:enumeration value="Ja" />
+			<xs:enumeration value="N.v.t. - geen staal" />
+			<xs:enumeration value="Nee" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_BuisbekledingGas">
+	<xs:simpleType name="BuisbekledingGas">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_VerbindingbekledingGas">
+	<xs:simpleType name="VerbindingbekledingGas">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_SoortGasAfsluiter">
+	<xs:simpleType name="SoortGasAfsluiter">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_MateriaalGasAfsluiter">
+	<xs:simpleType name="MateriaalGasAfsluiter">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_DraaiwijzeGasAfsluiter">
+	<xs:simpleType name="DraaiwijzeGasAfsluiter">
 		<xs:restriction base="xs:string">
-			<xs:maxLength value="255" />
+			<xs:enumeration value="Linksom" />
+			<xs:enumeration value="Rechtsom" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_DrukklasseGasAfsluiter">
+	<xs:simpleType name="DrukklasseGasAfsluiter">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_FabrikantGasAfsluiter">
+	<xs:simpleType name="FabrikantGasAfsluiter">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_FunctieGasAfsluiter">
+	<xs:simpleType name="FunctieGasAfsluiter">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_VerbindingstechniekGasAfsluiter">
+	<xs:simpleType name="VerbindingstechniekGasAfsluiter">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_Voorkeurstand">
+	<xs:simpleType name="Voorkeurstand">
 		<xs:restriction base="xs:string">
-			<xs:maxLength value="255" />
+			<xs:enumeration value="Dicht" />
+			<xs:enumeration value="Open" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_UitvoeringGasTstuk">
+	<xs:simpleType name="UitvoeringGasTstuk">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_SoortGasAansluiting">
+	<xs:simpleType name="SoortGasAansluiting">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_UitvoeringAftakzadel">
+	<xs:simpleType name="UitvoeringAftakzadel">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_UitvoeringEindstuk">
+	<xs:simpleType name="UitvoeringEindstuk">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_SoortGasAppendage">
+	<xs:simpleType name="SoortGasAppendage">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_FabrikantGasAppendage">
+	<xs:simpleType name="FabrikantGasAppendage">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_UitvoeringGasIsolatiestuk">
+	<xs:simpleType name="UitvoeringGasIsolatiestuk">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_FunctieGasIsolatiestuk">
+	<xs:simpleType name="FunctieGasIsolatiestuk">
 		<xs:restriction base="xs:string">
-			<xs:maxLength value="255" />
+			<xs:enumeration value="Netscheiding" />
+			<xs:enumeration value="Ringscheiding" />
+			<xs:enumeration value="Sectiescheiding" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_AppendagebekledingGas">
+	<xs:simpleType name="AppendagebekledingGas">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_UitvoeringGasOvergangsstuk">
+	<xs:simpleType name="UitvoeringGasOvergangsstuk">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_SoortGasMeetpunt">
+	<xs:simpleType name="SoortGasMeetpunt">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_UitvoeringOntspanningselement">
+	<xs:simpleType name="UitvoeringOntspanningselement">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_KoppelingAansluitleidingOSE">
+	<xs:simpleType name="KoppelingAansluitleidingOSE">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_KoppelingGeveldoorvoerOSE">
+	<xs:simpleType name="KoppelingGeveldoorvoerOSE">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_SoortGasLeidingafblaas">
+	<xs:simpleType name="SoortGasLeidingafblaas">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="_SoortGasAfsluiterAfblaas">
+	<xs:simpleType name="SoortGasAfsluiterAfblaas">
 		<xs:restriction base="xs:string">
 			<xs:maxLength value="255" />
 		</xs:restriction>
