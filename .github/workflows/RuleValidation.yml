@@ -23,7 +23,7 @@ jobs:
         run: scripts/install_dependencies.sh
 
       - name: Validate rule test data XSD compliance
-        run: java -jar xerces-cli.jar doc/NLCS_Netbeheer_Keuzelijst.xsd test/rule_validation_data
+        run: java -jar xerces-cli.jar NLCS_Netbeheer_Keuzelijst.xsd test/rule_validation_data
 
       - name: Transpile phases to XSL
         run: scripts/transpile_phases.sh

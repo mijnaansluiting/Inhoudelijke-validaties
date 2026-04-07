@@ -20,3 +20,5 @@ transpile.xsl
 .classpath
 lib/
 /bin/
+NLCS_Netbeheer.xsd
+NLCS_Netbeheer_Keuzelijst.xsd
