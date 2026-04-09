@@ -3,8 +3,8 @@
     id="R.8-B"
     is-a="verplichte-kenmerken-kabels-ls-extra">
     <param name="rule_number" value="8"/>
-    <param name="scope" value="keronic:scope-name(.)"/>
-    <param name="severity" value="keronic:rule-severity-within-scope(8, .)"/>
+    <param name="scope" value="ma:scope-name(.)"/>
+    <param name="severity" value="ma:rule-severity-within-scope(8, .)"/>
     <param name="object_type" value="name(.)"/>
     <param name="object_id" value="nlcs:ID"/>
 </pattern>

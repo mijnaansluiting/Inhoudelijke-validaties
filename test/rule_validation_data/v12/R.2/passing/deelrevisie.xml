@@ -2,41 +2,84 @@
 <NLCSnetbeheer xmlns:keuzelijst="NLCSnetbeheer"
                xmlns:gml="http://www.opengis.net/gml/3.2"
                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-               xsi:schemaLocation="NS_NLCSnetbeheer ../../../../../doc/NLCS_Netbeheer_Keuzelijst.xsd"
+               xsi:schemaLocation="NS_NLCSnetbeheer https://schemas.mijnaansluiting.nl/V12.1/NLCS_NetbeheerEnexisV12.1Import_Keuzelijst.xsd"
                xmlns="NS_NLCSnetbeheer">
     <AprojectReferentie>
+        <ID>A</ID>
         <Projectnummer>1</Projectnummer>
         <Netbeheerder>Enexis</Netbeheerder>
-        <ID>A</ID>
+        <NaamAannemer></NaamAannemer>
         <Tekeningtype>DEELREVISIE</Tekeningtype>
         <Geometry></Geometry>
     </AprojectReferentie>
 
     <MSkabel>
+        <ID>B</ID>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>IN BEDRIJF</Bedrijfstoestand>
-        <ID>B</ID>
         <Geometry></Geometry>
     </MSkabel>
 
     <MSstation>
+        <ID>C</ID>
         <Status>REVISIE</Status>
         <Bedrijfstoestand>IN BEDRIJF</Bedrijfstoestand>
-        <ID>C</ID>
         <Geometry></Geometry>
     </MSstation>
 
     <Amantelbuis>
-        <Status>NIEUW</Status>
-        <Bedrijfstoestand>IN BEDRIJF</Bedrijfstoestand>
         <ID>D</ID>
+        <Status>REVISIE</Status>
+        <Bedrijfstoestand>IN BEDRIJF</Bedrijfstoestand>
         <Geometry></Geometry>
     </Amantelbuis>
 
     <MSmof>
+        <ID>E</ID>
         <Status>VERWIJDERD</Status>
         <Bedrijfstoestand>IN BEDRIJF</Bedrijfstoestand>
-        <ID>E</ID>
         <Geometry></Geometry>
     </MSmof>
+
+    <LSkabel>
+        <ID>F</ID>
+        <Status>REVISIE</Status>
+        <Bedrijfstoestand>IN BEDRIJF</Bedrijfstoestand>
+        <Geometry></Geometry>
+    </LSkabel>
+
+    <LSmof>
+        <ID>G</ID>
+        <Status>REVISIE</Status>
+        <Bedrijfstoestand>IN BEDRIJF</Bedrijfstoestand>
+        <Geometry></Geometry>
+    </LSmof>
+
+    <LSoverdrachtspunt>
+        <ID>H</ID>
+        <Status>REVISIE</Status>
+        <Bedrijfstoestand>IN BEDRIJF</Bedrijfstoestand>
+        <Geometry></Geometry>
+    </LSoverdrachtspunt>
+
+    <OVLoverdrachtspunt>
+        <ID>I</ID>
+        <Status>REVISIE</Status>
+        <Bedrijfstoestand>IN BEDRIJF</Bedrijfstoestand>
+        <Geometry></Geometry>
+    </OVLoverdrachtspunt>
+
+    <Eaarddraad>
+        <ID>J</ID>
+        <Status>REVISIE</Status>
+        <Bedrijfstoestand>IN BEDRIJF</Bedrijfstoestand>
+        <Geometry></Geometry>
+    </Eaarddraad>
+    
+    <Eaardpen>
+        <ID>K</ID>
+        <Status>REVISIE</Status>
+        <Bedrijfstoestand>IN BEDRIJF</Bedrijfstoestand>
+        <Geometry></Geometry>
+    </Eaardpen>
 </NLCSnetbeheer>

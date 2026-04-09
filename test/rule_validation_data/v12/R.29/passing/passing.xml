@@ -2,44 +2,45 @@
 <NLCSnetbeheer xmlns:keuzelijst="NLCSnetbeheer"
                xmlns:gml="http://www.opengis.net/gml/3.2"
                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-               xsi:schemaLocation="NS_NLCSnetbeheer ../../../../../doc/NLCS_Netbeheer_Keuzelijst.xsd"
+               xsi:schemaLocation="NS_NLCSnetbeheer https://schemas.mijnaansluiting.nl/V12.1/NLCS_NetbeheerEnexisV12.1Import_Keuzelijst.xsd"
                xmlns="NS_NLCSnetbeheer">
     <AprojectReferentie>
+        <ID>A</ID>
         <Projectnummer>1</Projectnummer>
         <Netbeheerder>Enexis</Netbeheerder>
-        <ID>A</ID>
+        <NaamAannemer></NaamAannemer>
         <Tekeningtype>BESTAANDE SITUATIE</Tekeningtype>
         <Geometry></Geometry>
     </AprojectReferentie>
 
     <MSkabel>
+        <ID>B</ID>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
         <GisId>83412</GisId>
-        <ID>B</ID>
         <Geometry></Geometry>
     </MSkabel>
     <MSkabel>
+        <ID>C</ID>
         <Status>REVISIE</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
         <Bewerking>VERPLAATSEN</Bewerking>
         <GisId>83412</GisId>
-        <ID>C</ID>
         <Geometry></Geometry>
     </MSkabel>
 
     <LSkabel>
+        <ID>D</ID>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <ID>D</ID>
         <GisId>83413</GisId>
         <Geometry></Geometry>
     </LSkabel>
     <LSkabel>
+        <ID>E</ID>
         <Status>REVISIE</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
         <Bewerking>VERPLAATSEN</Bewerking>
-        <ID>E</ID>
         <GisId>83413</GisId>
         <Geometry></Geometry>
     </LSkabel>

@@ -3,7 +3,7 @@ name: Rule Validation CI
 on:
   pull_request:
   push:
-    branches: [ "main" ]
+    branches: [ "main", "develop" ]
 
 jobs:
   validate-rules:
@@ -22,6 +22,9 @@ jobs:
       - name: Install dependencies
         run: scripts/install_dependencies.sh
 
+      - name: Validate rule test data XSD compliance
+        run: java -jar xerces-cli.jar NLCS_Netbeheer_Keuzelijst.xsd test/rule_validation_data
+
       - name: Transpile phases to XSL
         run: scripts/transpile_phases.sh
 
@@ -36,3 +39,6 @@ jobs:
 
       - name: Validate test reports
         run: scripts/validate_rule_reports.sh
+
+      - name: Check rule object coverage
+        run: scripts/check_rule_object_coverage.sh

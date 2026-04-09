@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pattern xmlns ="http://purl.oclc.org/dsdl/schematron" id="inmeetwijze-en-nauwkeurigheid-assets-elec" abstract="true">
-    <rule context="//nlcs:MSkabel | //nlcs:Amantelbuis">
+    <rule context="//nlcs:MSkabel | //nlcs:Amantelbuis | //nlcs:LSkabel | //nlcs:Eaarddraad">
         <assert id="elec-object-has-inmeetwijze"
-            test="keronic:element-exists-and-not-empty(nlcs:Inmeetwijze)"
+            test="ma:element-exists-and-not-empty(nlcs:Inmeetwijze)"
             properties="scope rule-number severity object-type object-id">
-            <value-of select="keronic:get-translation-and-replace-placeholders('attribute-not-present', ['Inmeetwijze'])"/>
+            <value-of select="ma:get-translation-and-replace-placeholders('attribute-not-present', ['Inmeetwijze'])"/>
         </assert>
 
         <assert id="elec-object-has-nauwkeurigheid"
-            test="keronic:element-exists-and-not-empty(nlcs:Nauwkeurigheid)"
+            test="ma:element-exists-and-not-empty(nlcs:Nauwkeurigheid)"
             properties="scope rule-number severity object-type object-id">
-            <value-of select="keronic:get-translation-and-replace-placeholders('attribute-not-present', ['Nauwkeurigheid'])"/>
+            <value-of select="ma:get-translation-and-replace-placeholders('attribute-not-present', ['Nauwkeurigheid'])"/>
         </assert>
     </rule>
 </pattern>

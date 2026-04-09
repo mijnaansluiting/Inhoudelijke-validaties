@@ -5,6 +5,8 @@ version="v12"
 test_data_dir=test/rule_validation_data/$version
 out_dir=assets
 
+rm -rf $out_dir/*
+
 for rule_dir in $test_data_dir/*; do
     rule=$(basename "$rule_dir")
     for test_dir in $rule_dir/*; do

@@ -8,7 +8,7 @@
         queryBinding="xslt3">
 
     <!-- schematron namespace declarations -->
-    <ns prefix="keronic" uri="http://example.com/my-functions"/>
+    <ns prefix="ma" uri="http://example.com/mijnaansluiting"/>
     <ns prefix="gml" uri="http://www.opengis.net/gml/3.2"/>
     <ns prefix="xs" uri="http://www.w3.org/2001/XMLSchema"/>
     <ns prefix="nlcs" uri="NS_NLCSnetbeheer"/>
@@ -130,23 +130,58 @@
 
     <phase id="R.30">
         <active pattern="R.30"/>
+  </phase>
+    
+    <phase id="R.33">
+        <active pattern="R.33"/>
+    </phase>
+    
+    <phase id="R.34">
+        <active pattern="R.34"/>
+    </phase>
+
+    <phase id="R.31">
+        <active pattern="R.31"/>
+    </phase>
+    
+    <phase id="R.32">
+        <active pattern="R.32"/>
+    </phase>
+
+    <phase id="R.35">
+        <active pattern="R.35"/>
+    </phase>
+
+    <phase id="R.36">
+        <active pattern="R.36"/>
+    </phase>
+
+    <phase id="R.37">
+        <active pattern="R.37"/>
+    </phase>
+
+    <phase id="R.38">
+        <active pattern="R.38"/>
+    </phase>
+  
+    <phase id="R.39">
+       <active pattern="R.39"/>
+    </phase>
+    
+    <phase id="R.40">
+        <active pattern="R.40"/>
+    </phase>
+    
+    <phase id="R.41">
+        <active pattern="R.41"/>
     </phase>
 
     <!-- import functions -->
-    <xsl:include href="../xsl_functions/global_functions/config_functions.xsl"/>
-    <xsl:include href="../xsl_functions/global_functions/localization_functions.xsl"/>
-    <xsl:include href="../xsl_functions/global_functions/rule_scope_functions.xsl"/>
-    <xsl:include href="../xsl_functions/helper_functions/helper_functions.xsl"/>
-    <xsl:include href="../xsl_functions/geometry_functions/2d_geometry_functions.xsl"/>
-    <xsl:include href="../xsl_functions/geometry_functions/3d_geometry_functions.xsl"/>
-    <xsl:include href="../xsl_functions/geometry_functions/2d_geometry_interface_functions.xsl"/>
-    <xsl:include href="../xsl_functions/geometry_functions/3d_geometry_interface_functions.xsl"/>
-    <xsl:include href="../xsl_functions/geometry_functions/3d_2d_geometry_interface_functions.xsl"/>
-    <xsl:include href="../xsl_functions/geometry_functions/geometry_interface_functions.xsl"/>
-    <xsl:include href="../xsl_functions/geometry_functions/line_interface_functions.xsl"/>
-    <xsl:include href="../xsl_functions/geometry_functions/line_functions.xsl"/>
-    <xsl:include href="../xsl_functions/geometry_functions/depth_functions.xsl"/>
-    <xsl:include href="../xsl_functions/geometry_functions/depth_interface_functions.xsl"/>
+    <xsl:include href="../xsl_functions/geometry_functions.xsl"/>
+    <xsl:include href="../xsl_functions/config_functions.xsl"/>
+    <xsl:include href="../xsl_functions/localization_functions.xsl"/>
+    <xsl:include href="../xsl_functions/rule_scope_functions.xsl"/>
+    <xsl:include href="../xsl_functions/helper_functions.xsl"/>
 
     <!-- import patterns -->
     <include href="../patterns/v12/R.1.sch"/>
@@ -177,13 +212,26 @@
     <include href="../patterns/v12/R.28.sch"/>
     <include href="../patterns/v12/R.29.sch"/>
     <include href="../patterns/v12/R.30.sch"/>
+    <include href="../patterns/v12/R.31.sch"/>
+    <include href="../patterns/v12/R.32.sch"/>
+    <include href="../patterns/v12/R.33.sch"/>
+    <include href="../patterns/v12/R.34.sch"/>
+    <include href="../patterns/v12/R.35.sch"/>
+    <include href="../patterns/v12/R.36.sch"/>
+    <include href="../patterns/v12/R.37.sch"/>
+    <include href="../patterns/v12/R.38.sch"/>
+    <include href="../patterns/v12/R.39.sch"/>
+    <include href="../patterns/v12/R.40.sch"/>
+    <include href="../patterns/v12/R.41.sch"/>
 
     <!-- import abstract patterns -->
+    <include href="../abstract_patterns/v12/bestand/aanwezigheid_maaiveldhoogte.sch"/>
     <include href="../abstract_patterns/v12/bestand/bestand_bevat_nlcs_objecten.sch"/>
     <include href="../abstract_patterns/v12/bestand/combinatie_nlcs_status_en_tekeningsoort.sch"/>
     <include href="../abstract_patterns/v12/geometrie/geometrie_binnen_projectvlak.sch"/>
     <include href="../abstract_patterns/v12/geometrie/lijn_geometrie-afstand_van_inmeetpunten.sch"/>
     <include href="../abstract_patterns/v12/geometrie/lijn_geometrie-hoek_van_segmenten.sch"/>
+    <include href="../abstract_patterns/v12/geometrie/afstand_mantelbuis_tot_inhoud.sch"/>
     <include href="../abstract_patterns/v12/verplichte_waarde/gisid_en_assetid.sch"/>
     <include href="../abstract_patterns/v12/verplichte_waarde/inmeetwijze_en_nauwkeurigheid_assets_elec.sch"/>
     <include href="../abstract_patterns/v12/verplichte_waarde/subnettype_ingevuld_voor_ls_en_ms_kabel.sch"/>
@@ -201,11 +249,20 @@
     <include href="../abstract_patterns/v12/netlogica/kabels_zelfde_netvlak.sch"/>
     <include href="../abstract_patterns/v12/netlogica/verbonden_kabels_juiste_kenmerken.sch"/>
     <include href="../abstract_patterns/v12/inhoud_waarde/fase_ms_kabel.sch"/>
+    <include href="../abstract_patterns/v12/inhoud_waarde/inmeetwijze_toegestaande_waarde.sch"/>
+    <include href="../abstract_patterns/v12/inhoud_waarde/inmeetwijze_aansluitnet_toegestaande_waarde.sch"/>
     <include href="../abstract_patterns/v12/inhoud_waarde/verbonden_kabels_juiste_fase.sch"/>
     <include href="../abstract_patterns/v12/inhoud_waarde/aantal_kabels_en_mof_functie.sch"/>
     <include href="../abstract_patterns/v12/inhoud_waarde/mantelbuis_past_in_mantelbuis.sch"/>
     <include href="../abstract_patterns/v12/consistentie/mantelbuis_inhoud_aanwezig.sch"/>
     <include href="../abstract_patterns/v12/consistentie/verplaatsing_goed_vastgelegd.sch"/>
     <include href="../abstract_patterns/v12/consistentie/mantelbuis_inhoud_referenties.sch"/>
+    <include href="../abstract_patterns/v12/inhoud_waarde/mof_verbonden_kabels_gelijk_verbindingnummer.sch"/>
+    <include href="../abstract_patterns/v12/document/aanwezigheid_bestand_bijlage_kunstwerk.sch"/>
+    <include href="../abstract_patterns/v12/document/aanwezigheid_bestand_bijlage_aanlegtechniek.sch"/>
+    <include href="../abstract_patterns/v12/bestand/volgnummer_verplicht.sch"/>
+    <include href="../abstract_patterns/v12/verplichte_waarde/reden_niet_verwijdering_ingevuld.sch"/>
+    <include href="../abstract_patterns/v12/document/aanwezigheid_bestand_bijlage_aardpen.sch"/>
+    <include href="../abstract_patterns/v12/verplichte_waarde/datumtijdmutatie_gevuld.sch"/>
 
 </schema>

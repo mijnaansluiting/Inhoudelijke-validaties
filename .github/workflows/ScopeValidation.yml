@@ -3,7 +3,7 @@ name: Scope Validation CI
 on:
   pull_request:
   push:
-    branches: [ "main" ]
+    branches: [ "main", "develop" ]
 
 jobs:
   validate-scopes:

@@ -2,17 +2,19 @@
 <NLCSnetbeheer xmlns:keuzelijst="NLCSnetbeheer"
                xmlns:gml="http://www.opengis.net/gml/3.2"
                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-               xsi:schemaLocation="NS_NLCSnetbeheer ../../../../../doc/NLCS_Netbeheer_Keuzelijst.xsd"
+               xsi:schemaLocation="NS_NLCSnetbeheer https://schemas.mijnaansluiting.nl/V12.1/NLCS_NetbeheerEnexisV12.1Import_Keuzelijst.xsd"
                xmlns="NS_NLCSnetbeheer">
     <AprojectReferentie>
+        <ID>A</ID>
         <Projectnummer>1</Projectnummer>
         <Netbeheerder>Enexis</Netbeheerder>
-        <ID>A</ID>
+        <NaamAannemer></NaamAannemer>
         <Tekeningtype>BESTAANDE SITUATIE</Tekeningtype>
         <Geometry></Geometry>
     </AprojectReferentie>
 
     <OVLoverdrachtspunt>
+        <ID>B</ID>
         <Aansluitset>AK OVL</Aansluitset>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
@@ -20,7 +22,6 @@
         <Spanningsniveau>230 V</Spanningsniveau>
         <Aansluitwijze>Aftak</Aansluitwijze>
         <Schakeling>Avond</Schakeling>
-        <ID>B</ID>
         <Geometry></Geometry>
     </OVLoverdrachtspunt>
 </NLCSnetbeheer>

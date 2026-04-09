@@ -2,46 +2,88 @@
 <NLCSnetbeheer xmlns:keuzelijst="NLCSnetbeheer"
                xmlns:gml="http://www.opengis.net/gml/3.2"
                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-               xsi:schemaLocation="NS_NLCSnetbeheer ../../../../../doc/NLCS_Netbeheer_Keuzelijst.xsd"
+               xsi:schemaLocation="NS_NLCSnetbeheer https://schemas.mijnaansluiting.nl/V12.1/NLCS_NetbeheerEnexisV12.1Import_Keuzelijst.xsd"
                xmlns="NS_NLCSnetbeheer">
     <AprojectReferentie>
+        <ID>A</ID>
         <Projectnummer>1</Projectnummer>
         <Netbeheerder>Enexis</Netbeheerder>
-        <ID>A</ID>
+        <NaamAannemer></NaamAannemer>
         <Tekeningtype>BESTAANDE SITUATIE</Tekeningtype>
         <Geometry></Geometry>
     </AprojectReferentie>
 
     <MSstation>
+        <ID>B</ID>
         <DatumAanleg>2023-10-10</DatumAanleg>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <ID>B</ID>
         <Geometry></Geometry>
     </MSstation>
 
     <MSkabel>
+        <ID>C</ID>
         <DatumAanleg>2023-10-10</DatumAanleg>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <ID>C</ID>
         <Geometry></Geometry>
     </MSkabel>
 
     <MSmof>
+        <ID>D</ID>
         <DatumAanleg>1971-06-14</DatumAanleg>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <ID>D</ID>
         <Geometry></Geometry>
     </MSmof>
 
     <MSoverdrachtspunt>
+        <ID>E</ID>
         <DatumAanleg>2024-01-10</DatumAanleg>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <ID>E</ID>
         <Geometry></Geometry>
     </MSoverdrachtspunt>
+    
+    
+    <Eaarddraad>
+        <ID>F</ID>
+        <DatumAanleg>2023-10-10</DatumAanleg>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
+        <Geometry></Geometry>
+    </Eaarddraad>
+    
+    <Eaardpen>
+        <ID>G</ID>
+        <DatumAanleg>2023-10-10</DatumAanleg>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
+        <Geometry></Geometry>
+    </Eaardpen>
+    
+    <LSkabel>
+        <ID>H</ID>
+        <DatumAanleg>2023-10-10</DatumAanleg>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
+        <Geometry></Geometry>
+    </LSkabel>
+    
+    <LSmof>
+        <ID>I</ID>
+        <DatumAanleg>2023-10-10</DatumAanleg>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
+        <Geometry></Geometry>
+    </LSmof>
+    
+    <LSoverdrachtspunt>
+        <ID>J</ID>
+        <DatumAanleg>2023-10-10</DatumAanleg>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
+        <Geometry></Geometry>
+    </LSoverdrachtspunt>
 
 </NLCSnetbeheer>

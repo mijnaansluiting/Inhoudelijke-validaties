@@ -3,7 +3,7 @@ name: Doc Validation CI
 on:
   pull_request:
   push:
-    branches: [ "main" ]
+    branches: [ "main", "develop" ]
     paths: ["doc/**"]
 
 jobs:

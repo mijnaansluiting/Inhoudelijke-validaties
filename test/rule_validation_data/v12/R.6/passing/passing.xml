@@ -2,31 +2,50 @@
 <NLCSnetbeheer xmlns:keuzelijst="NLCSnetbeheer"
                xmlns:gml="http://www.opengis.net/gml/3.2"
                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-               xsi:schemaLocation="NS_NLCSnetbeheer ../../../../../doc/NLCS_Netbeheer_Keuzelijst.xsd"
+               xsi:schemaLocation="NS_NLCSnetbeheer https://schemas.mijnaansluiting.nl/V12.1/NLCS_NetbeheerEnexisV12.1Import_Keuzelijst.xsd"
                xmlns="NS_NLCSnetbeheer">
     <AprojectReferentie>
+        <ID>A</ID>
         <Projectnummer>1</Projectnummer>
         <Netbeheerder>Enexis</Netbeheerder>
-        <ID>A</ID>
+        <NaamAannemer></NaamAannemer>
         <Tekeningtype>BESTAANDE SITUATIE</Tekeningtype>
         <Geometry></Geometry>
     </AprojectReferentie>
 
     <MSkabel>
+        <ID>B</ID>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
         <Inmeetwijze>GPS</Inmeetwijze>
         <Nauwkeurigheid>tot 3cm</Nauwkeurigheid>
-        <ID>B</ID>
         <Geometry></Geometry>
     </MSkabel>
 
     <Amantelbuis>
+        <ID>C</ID>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
         <Inmeetwijze>GPS</Inmeetwijze>
         <Nauwkeurigheid>tot 3cm</Nauwkeurigheid>
-        <ID>C</ID>
         <Geometry></Geometry>
     </Amantelbuis>
+    
+    <LSkabel>
+        <ID>D</ID>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
+        <Inmeetwijze>GPS</Inmeetwijze>
+        <Nauwkeurigheid>tot 3cm</Nauwkeurigheid>
+        <Geometry></Geometry>
+    </LSkabel>
+    
+    <Eaarddraad>
+        <ID>E</ID>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
+        <Inmeetwijze>GPS</Inmeetwijze>
+        <Nauwkeurigheid>tot 3cm</Nauwkeurigheid>
+        <Geometry></Geometry>
+    </Eaarddraad>
 </NLCSnetbeheer>
