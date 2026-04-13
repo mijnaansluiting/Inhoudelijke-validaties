@@ -17,10 +17,10 @@
   </message>
   <message id="invalid-status-for-tekening-type">
     <message-text xml:lang="en">
-      Invalid Status {1} for Tekeningtype {2}, must be one of: {3}
+      A NLCS++ file with Tekeningtype {1} may only contain objects with Status {2}, but found {3}.
     </message-text>
     <message-text xml:lang="nl">
-      Ongeldige Status {1} voor Tekeningtype {2}, moet een van de volgende zijn: {3}
+      Een NLCS++ bestand met Tekeningtype {1} mag enkel objecten bevatten met Status {2}, maar kwam {3} tegen.
     </message-text>
   </message>
   <message id="object-outside-project-area">

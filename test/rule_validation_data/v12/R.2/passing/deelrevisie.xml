@@ -16,70 +16,29 @@
     <MSkabel>
         <ID>B</ID>
         <Status>BESTAAND</Status>
-        <Bedrijfstoestand>IN BEDRIJF</Bedrijfstoestand>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
         <Geometry></Geometry>
     </MSkabel>
 
-    <MSstation>
+    <MSkabel>
         <ID>C</ID>
-        <Status>REVISIE</Status>
-        <Bedrijfstoestand>IN BEDRIJF</Bedrijfstoestand>
+        <Status>NIEUW</Status>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
         <Geometry></Geometry>
-    </MSstation>
+    </MSkabel>
 
-    <Amantelbuis>
+    <MSkabel>
         <ID>D</ID>
         <Status>REVISIE</Status>
-        <Bedrijfstoestand>IN BEDRIJF</Bedrijfstoestand>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
         <Geometry></Geometry>
-    </Amantelbuis>
+    </MSkabel>
 
-    <MSmof>
+    <MSkabel>
         <ID>E</ID>
         <Status>VERWIJDERD</Status>
-        <Bedrijfstoestand>IN BEDRIJF</Bedrijfstoestand>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
         <Geometry></Geometry>
-    </MSmof>
+    </MSkabel>
 
-    <LSkabel>
-        <ID>F</ID>
-        <Status>REVISIE</Status>
-        <Bedrijfstoestand>IN BEDRIJF</Bedrijfstoestand>
-        <Geometry></Geometry>
-    </LSkabel>
-
-    <LSmof>
-        <ID>G</ID>
-        <Status>REVISIE</Status>
-        <Bedrijfstoestand>IN BEDRIJF</Bedrijfstoestand>
-        <Geometry></Geometry>
-    </LSmof>
-
-    <LSoverdrachtspunt>
-        <ID>H</ID>
-        <Status>REVISIE</Status>
-        <Bedrijfstoestand>IN BEDRIJF</Bedrijfstoestand>
-        <Geometry></Geometry>
-    </LSoverdrachtspunt>
-
-    <OVLoverdrachtspunt>
-        <ID>I</ID>
-        <Status>REVISIE</Status>
-        <Bedrijfstoestand>IN BEDRIJF</Bedrijfstoestand>
-        <Geometry></Geometry>
-    </OVLoverdrachtspunt>
-
-    <Eaarddraad>
-        <ID>J</ID>
-        <Status>REVISIE</Status>
-        <Bedrijfstoestand>IN BEDRIJF</Bedrijfstoestand>
-        <Geometry></Geometry>
-    </Eaarddraad>
-    
-    <Eaardpen>
-        <ID>K</ID>
-        <Status>REVISIE</Status>
-        <Bedrijfstoestand>IN BEDRIJF</Bedrijfstoestand>
-        <Geometry></Geometry>
-    </Eaardpen>
 </NLCSnetbeheer>
