@@ -12,73 +12,33 @@
         <Tekeningtype>DEFINITIEF ONTWERP</Tekeningtype>
         <Geometry></Geometry>
     </AprojectReferentie>
-
+    
     <MSkabel>
         <ID>B</ID>
         <Status>BESTAAND</Status>
-        <Bedrijfstoestand>IN BEDRIJF</Bedrijfstoestand>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
         <Geometry></Geometry>
     </MSkabel>
-
-    <MSstation>
+    
+    <MSkabel>
         <ID>C</ID>
-        <Status>REVISIE</Status>
-        <Bedrijfstoestand>IN BEDRIJF</Bedrijfstoestand>
+        <Status>NIEUW</Status>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
         <Geometry></Geometry>
-    </MSstation>
-
-    <Amantelbuis>
+    </MSkabel>
+    
+    <MSkabel>
         <ID>D</ID>
-        <Status>BESTAAND</Status>
-        <Bedrijfstoestand>IN BEDRIJF</Bedrijfstoestand>
+        <Status>REVISIE</Status>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
         <Geometry></Geometry>
-    </Amantelbuis>
-
-    <MSmof>
+    </MSkabel>
+    
+    <MSkabel>
         <ID>E</ID>
         <Status>VERWIJDERD</Status>
-        <Bedrijfstoestand>IN BEDRIJF</Bedrijfstoestand>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
         <Geometry></Geometry>
-    </MSmof>
+    </MSkabel>
     
-    <OVLoverdrachtspunt>
-        <ID>F</ID>
-        <Status>BESTAAND</Status>
-        <Bedrijfstoestand>IN BEDRIJF</Bedrijfstoestand>
-        <Geometry></Geometry>
-    </OVLoverdrachtspunt>
-
-    <Eaarddraad>
-        <ID>G</ID>
-        <Status>BESTAAND</Status>
-        <Bedrijfstoestand>IN BEDRIJF</Bedrijfstoestand>
-        <Geometry></Geometry>
-    </Eaarddraad>
-    
-    <Eaardpen>
-        <ID>H</ID>
-        <Status>BESTAAND</Status>
-        <Bedrijfstoestand>IN BEDRIJF</Bedrijfstoestand>
-        <Geometry></Geometry>
-    </Eaardpen>
-    
-    <LSkabel>
-        <ID>I</ID>
-        <Status>BESTAAND</Status>
-        <Bedrijfstoestand>IN BEDRIJF</Bedrijfstoestand>
-        <Geometry></Geometry>
-    </LSkabel>
-    <LSmof>
-        <ID>J</ID>
-        <Status>BESTAAND</Status>
-        <Bedrijfstoestand>IN BEDRIJF</Bedrijfstoestand>
-        <Geometry></Geometry>
-    </LSmof>
-
-    <LSoverdrachtspunt>
-        <ID>K</ID>
-        <Status>BESTAAND</Status>
-        <Bedrijfstoestand>IN BEDRIJF</Bedrijfstoestand>
-        <Geometry></Geometry>
-    </LSoverdrachtspunt>
 </NLCSnetbeheer>

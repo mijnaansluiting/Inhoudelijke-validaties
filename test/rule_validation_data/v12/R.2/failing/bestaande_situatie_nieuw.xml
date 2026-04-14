@@ -12,10 +12,11 @@
         <Tekeningtype>BESTAANDE SITUATIE</Tekeningtype>
         <Geometry></Geometry>
     </AprojectReferentie>
-    <Eaardpen>
+    
+    <MSkabel>
         <ID>B</ID>
         <Status>NIEUW</Status>
-        <Bedrijfstoestand>IN BEDRIJF</Bedrijfstoestand>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
         <Geometry></Geometry>
-    </Eaardpen>
+    </MSkabel>
 </NLCSnetbeheer>
