@@ -42,14 +42,15 @@
   <function name="ma:rule-severity-within-scope" as="xs:string">
     <param name="rule_number" as="xs:integer"/>
     <param name="nlcs_object"/>
-    <variable name="object_type" select="name($nlcs_object)"/>
+    <variable name="rule_string" select="ma:rule-string($rule_number)"/>
+    <variable name="rule_type" select="ma:rule-type($rule_string)"/>
 
     <choose>
-      <when test="$object_type = 'NS_NLCSnetbeheer'">
+      <!-- Rules of type Bestand are scopeless, so their severity can't be determined. Instead, default to 'Fout' -->
+      <when test="$rule_type = 'Bestand'">
         <value-of select="'Fout'"/>
       </when>
       <otherwise>
-        <variable name="rule_string" select="ma:rule-string($rule_number)"/>
         <variable name="matching_scope" select="ma:matching-scope($nlcs_object)"/>
         <variable name="scope_validation_rules" select="$matching_scope/nvr:scopeValidatieRegels/nvr:scopeValidatieRegel"/>
 
