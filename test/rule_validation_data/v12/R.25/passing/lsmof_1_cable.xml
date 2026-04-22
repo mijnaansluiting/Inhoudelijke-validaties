@@ -13,11 +13,10 @@
         <Geometry></Geometry>
     </AprojectReferentie>
     
-    <MSmof>
+    <LSmof>
         <ID>B</ID>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <Functie>EINDDOP</Functie>
         <Geometry>
             <gml:Point
                 srsDimension="3"
@@ -27,20 +26,23 @@
                 </gml:pos>
             </gml:Point>
         </Geometry>
-    </MSmof>
-    <MSkabel>
+    </LSmof>
+
+    <LSkabel>
         <ID>C</ID>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
+        <FaseAanduiding>N</FaseAanduiding>
         <Geometry>
             <gml:LineString
                 srsDimension="3"
                 srsName="EPSG:7415">
                 <gml:posList>
-                    40 160 0
+                     40 160 0
                     240 160 0
                 </gml:posList>
             </gml:LineString>
         </Geometry>
-    </MSkabel>
+    </LSkabel>
+
 </NLCSnetbeheer>

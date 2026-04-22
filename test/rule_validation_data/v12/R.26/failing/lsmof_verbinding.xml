@@ -12,7 +12,7 @@
         <Tekeningtype>BESTAANDE SITUATIE</Tekeningtype>
         <Geometry></Geometry>
     </AprojectReferentie>
-
+    
     <LSmof>
         <ID>B</ID>
         <Status>BESTAAND</Status>
@@ -22,10 +22,13 @@
             <gml:Point
                 srsDimension="3"
                 srsName="EPSG:7415">
-                <gml:pos>240 40 0</gml:pos>
+                <gml:pos>
+                    240 160 0
+                </gml:pos>
             </gml:Point>
         </Geometry>
     </LSmof>
+    
     <LSkabel>
         <ID>C</ID>
         <Status>BESTAAND</Status>
@@ -35,10 +38,11 @@
                 srsDimension="3"
                 srsName="EPSG:7415">
                 <gml:posList>
-                    40 40 0
-                    240 40 0
+                    40 160 0
+                    240 160 0
                 </gml:posList>
             </gml:LineString>
         </Geometry>
     </LSkabel>
+    
 </NLCSnetbeheer>

@@ -30,7 +30,7 @@
           <SVGBlueprint id="{$nlcs_object/nlcs:ID}" type="circle" color="{$color}">
             <Measurements 
               minX="{$x - $radius}" 
-              minY="{$y - $radius}"
+              minY="{$y - $radius * 3}"
               maxX="{$x + $radius}"
               maxY="{$y + $radius}"
             />
@@ -39,6 +39,7 @@
             <Attribute key="cy" value="{$y}"/>
             <Attribute key="r" value="{$radius}"/>
             <Attribute key="stroke" value="black"/>
+            <Attribute key="stroke-width" value="0.5"/>
             <Attribute key="fill" value="{$color}"/>
           </SVGBlueprint>
         </xsl:for-each>
@@ -95,11 +96,13 @@
             />
             <Anchor x="{avg($x_coords[position() ne last()])}" y="{avg($y_coords[position() ne last()])}"/>
             <Attribute key="stroke" value="black"/>
+            <Attribute key="stroke-width" value="0.5"/>
             <Attribute key="fill" value="{$color}"/>
             <Attribute key="fill-opacity" value="30%"/>
             <Attribute key="points" value="{string-join($coord_pairs, ' ')}"/>
             <xsl:if test="name($nlcs_object) = 'AprojectReferentie'">
               <Attribute key="stroke-dasharray" value="10,10"/>
+              <Attribute key="stroke-width" value="1.5"/>
             </xsl:if>            
           </SVGBlueprint>
         </xsl:for-each>
@@ -184,6 +187,8 @@
           text-anchor="middle"
           font-family="monospace"
           font-weight="bold"
+          stroke="black"
+          stroke-width="0.5"
         >
           <xsl:value-of select="@id"/>
         </text>

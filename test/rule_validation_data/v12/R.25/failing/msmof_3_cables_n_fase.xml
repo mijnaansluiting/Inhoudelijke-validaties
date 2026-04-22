@@ -12,60 +12,9 @@
         <Tekeningtype>BESTAANDE SITUATIE</Tekeningtype>
         <Geometry></Geometry>
     </AprojectReferentie>
-
-    <MSkabel>
-        <ID>B</ID>
-        <Status>BESTAAND</Status>
-        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <FaseAanduiding>N</FaseAanduiding>
-        <Geometry>
-            <gml:LineString
-                srsDimension="3"
-                srsName="EPSG:7415">
-                <gml:posList>
-                     40 160 0
-                    240 160 0
-                </gml:posList>
-            </gml:LineString>
-        </Geometry>
-    </MSkabel>
-
-    <MSkabel>
-        <ID>C</ID>
-        <Status>BESTAAND</Status>
-        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <FaseAanduiding>N</FaseAanduiding>
-        <Geometry>
-            <gml:LineString
-                srsDimension="3"
-                srsName="EPSG:7415">
-                <gml:posList>
-                    400  40 0
-                    240 160 0
-                </gml:posList>
-            </gml:LineString>
-        </Geometry>
-    </MSkabel>
-
-    <MSkabel>
-        <ID>D</ID>
-        <Status>BESTAAND</Status>
-        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <FaseAanduiding>N</FaseAanduiding>
-        <Geometry>
-            <gml:LineString
-                srsDimension="3"
-                srsName="EPSG:7415">
-                <gml:posList>
-                     40 160 0
-                    240 160 0
-                </gml:posList>
-            </gml:LineString>
-        </Geometry>
-    </MSkabel>
-
+    
     <MSmof>
-        <ID>E</ID>
+        <ID>B</ID>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
         <Geometry>
@@ -78,4 +27,56 @@
             </gml:Point>
         </Geometry>
     </MSmof>
+    
+    <MSkabel>
+        <ID>C</ID>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
+        <FaseAanduiding>N</FaseAanduiding>
+        <Geometry>
+            <gml:LineString
+                srsDimension="3"
+                srsName="EPSG:7415">
+                <gml:posList>
+                    40 160 0
+                    240 160 0
+                </gml:posList>
+            </gml:LineString>
+        </Geometry>
+    </MSkabel>
+    
+    <MSkabel>
+        <ID>D</ID>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
+        <FaseAanduiding>N</FaseAanduiding>
+        <Geometry>
+            <gml:LineString
+                srsDimension="3"
+                srsName="EPSG:7415">
+                <gml:posList>
+                    440 160 0
+                    240 160 0
+                </gml:posList>
+            </gml:LineString>
+        </Geometry>
+    </MSkabel>
+    
+    <MSkabel>
+        <ID>E</ID>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
+        <FaseAanduiding>N</FaseAanduiding>
+        <Geometry>
+            <gml:LineString
+                srsDimension="3"
+                srsName="EPSG:7415">
+                <gml:posList>
+                    80 40 0
+                    240 160 0
+                </gml:posList>
+            </gml:LineString>
+        </Geometry>
+    </MSkabel>
+    
 </NLCSnetbeheer>
