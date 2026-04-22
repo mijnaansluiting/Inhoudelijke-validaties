@@ -12,77 +12,9 @@
         <Tekeningtype>BESTAANDE SITUATIE</Tekeningtype>
         <Geometry></Geometry>
     </AprojectReferentie>
-
-    <LSkabel>
+    
+    <MSmof>
         <ID>B</ID>
-        <Status>BESTAAND</Status>
-        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <FaseAanduiding>3 Fasen</FaseAanduiding>
-        <Geometry>
-            <gml:LineString
-                srsDimension="3"
-                srsName="EPSG:7415">
-                <gml:posList>
-                     40 160 0
-                    240 160 0
-                </gml:posList>
-            </gml:LineString>
-        </Geometry>
-    </LSkabel>
-
-    <LSkabel>
-        <ID>C</ID>
-        <Status>BESTAAND</Status>
-        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <FaseAanduiding>L1</FaseAanduiding>
-        <Geometry>
-            <gml:LineString
-                srsDimension="3"
-                srsName="EPSG:7415">
-                <gml:posList>
-                    400  40 0
-                    240 160 0
-                </gml:posList>
-            </gml:LineString>
-        </Geometry>
-    </LSkabel>
-
-    <LSkabel>
-        <ID>D</ID>
-        <Status>BESTAAND</Status>
-        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <FaseAanduiding>L2</FaseAanduiding>
-        <Geometry>
-            <gml:LineString
-                srsDimension="3"
-                srsName="EPSG:7415">
-                <gml:posList>
-                    440 160 0
-                    240 160 0
-                </gml:posList>
-            </gml:LineString>
-        </Geometry>
-    </LSkabel>
-
-    <LSkabel>
-        <ID>E</ID>
-        <Status>BESTAAND</Status>
-        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <FaseAanduiding>L3</FaseAanduiding>
-        <Geometry>
-            <gml:LineString
-                srsDimension="3"
-                srsName="EPSG:7415">
-                <gml:posList>
-                     40 160 0
-                    240 160 0
-                </gml:posList>
-            </gml:LineString>
-        </Geometry>
-    </LSkabel>
-
-    <LSmof>
-        <ID>F</ID>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
         <Geometry>
@@ -94,5 +26,74 @@
                 </gml:pos>
             </gml:Point>
         </Geometry>
-    </LSmof>
+    </MSmof>
+    
+    <MSkabel>
+        <ID>C</ID>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
+        <FaseAanduiding>3 Fasen</FaseAanduiding>
+        <Geometry>
+            <gml:LineString
+                srsDimension="3"
+                srsName="EPSG:7415">
+                <gml:posList>
+                    40 160 0
+                    240 160 0
+                </gml:posList>
+            </gml:LineString>
+        </Geometry>
+    </MSkabel>
+    
+    <MSkabel>
+        <ID>D</ID>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
+        <FaseAanduiding>L1</FaseAanduiding>
+        <Geometry>
+            <gml:LineString
+                srsDimension="3"
+                srsName="EPSG:7415">
+                <gml:posList>
+                    440 160 0
+                    240 160 0
+                </gml:posList>
+            </gml:LineString>
+        </Geometry>
+    </MSkabel>
+    
+    <MSkabel>
+        <ID>E</ID>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
+        <FaseAanduiding>L2</FaseAanduiding>
+        <Geometry>
+            <gml:LineString
+                srsDimension="3"
+                srsName="EPSG:7415">
+                <gml:posList>
+                    80 40 0
+                    240 160 0
+                </gml:posList>
+            </gml:LineString>
+        </Geometry>
+    </MSkabel>
+    
+    <MSkabel>
+        <ID>F</ID>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
+        <FaseAanduiding>L3</FaseAanduiding>
+        <Geometry>
+            <gml:LineString
+                srsDimension="3"
+                srsName="EPSG:7415">
+                <gml:posList>
+                    400 40 0
+                    240 160 0
+                </gml:posList>
+            </gml:LineString>
+        </Geometry>
+    </MSkabel>
+    
 </NLCSnetbeheer>

@@ -13,12 +13,27 @@
         <Geometry></Geometry>
     </AprojectReferentie>
     
-    <LSkabel>
+    <LSmof>
         <ID>B</ID>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
         <Verbindingnummer>1234</Verbindingnummer>
-        <FaseAanduiding>L3</FaseAanduiding>
+        <Geometry>
+            <gml:Point
+                srsDimension="3"
+                srsName="EPSG:7415">
+                <gml:pos>
+                    240 160 0
+                </gml:pos>
+            </gml:Point>
+        </Geometry>
+    </LSmof>
+    
+    <LSkabel>
+        <ID>C</ID>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
+        <Verbindingnummer>2234</Verbindingnummer>
         <Geometry>
             <gml:LineString
                 srsDimension="3"
@@ -31,19 +46,4 @@
         </Geometry>
     </LSkabel>
     
-    <LSmof>
-        <ID>C</ID>
-        <Status>BESTAAND</Status>
-        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <Verbindingnummer>2234</Verbindingnummer>
-        <Geometry>
-            <gml:Point
-                srsDimension="3"
-                srsName="EPSG:7415">
-                <gml:pos>
-                    240 160 0
-                </gml:pos>
-            </gml:Point>
-        </Geometry>
-    </LSmof>
 </NLCSnetbeheer>

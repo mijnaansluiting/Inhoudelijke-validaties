@@ -12,9 +12,24 @@
         <Tekeningtype>BESTAANDE SITUATIE</Tekeningtype>
         <Geometry></Geometry>
     </AprojectReferentie>
+    
+    <MSmof>
+        <ID>B</ID>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
+        <Geometry>
+            <gml:Point
+                srsDimension="3"
+                srsName="EPSG:7415">
+                <gml:pos>
+                    240 160 0
+                </gml:pos>
+            </gml:Point>
+        </Geometry>
+    </MSmof>
 
     <MSkabel>
-        <ID>B</ID>
+        <ID>C</ID>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
         <FaseAanduiding>3 Fasen</FaseAanduiding>
@@ -31,7 +46,7 @@
     </MSkabel>
 
     <MSkabel>
-        <ID>C</ID>
+        <ID>D</ID>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
         <FaseAanduiding>3 Fasen</FaseAanduiding>
@@ -47,18 +62,4 @@
         </Geometry>
     </MSkabel>
 
-    <MSmof>
-        <ID>D</ID>
-        <Status>BESTAAND</Status>
-        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <Geometry>
-            <gml:Point
-                srsDimension="3"
-                srsName="EPSG:7415">
-                <gml:pos>
-                    240 160 0
-                </gml:pos>
-            </gml:Point>
-        </Geometry>
-    </MSmof>
 </NLCSnetbeheer>

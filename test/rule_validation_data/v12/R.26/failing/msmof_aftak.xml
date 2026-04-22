@@ -13,11 +13,11 @@
         <Geometry></Geometry>
     </AprojectReferentie>
     
-    <MSmof>
+    <LSmof>
         <ID>B</ID>
-        <Status>BESTAAND</Status>
+        <Status>NIEUW</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <Functie>3FASE 3x1FASE</Functie>
+        <Functie>AFTAK SPLITSEND</Functie>
         <Geometry>
             <gml:Point
                 srsDimension="3"
@@ -27,11 +27,11 @@
                 </gml:pos>
             </gml:Point>
         </Geometry>
-    </MSmof>
+    </LSmof>
     
-    <MSkabel>
+    <LSkabel>
         <ID>C</ID>
-        <Status>BESTAAND</Status>
+        <Status>NIEUW</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
         <Geometry>
             <gml:LineString
@@ -43,11 +43,11 @@
                 </gml:posList>
             </gml:LineString>
         </Geometry>
-    </MSkabel>
+    </LSkabel>
     
-    <MSkabel>
+    <LSkabel>
         <ID>D</ID>
-        <Status>BESTAAND</Status>
+        <Status>NIEUW</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
         <Geometry>
             <gml:LineString
@@ -59,38 +59,6 @@
                 </gml:posList>
             </gml:LineString>
         </Geometry>
-    </MSkabel>
-    
-    <MSkabel>
-        <ID>E</ID>
-        <Status>BESTAAND</Status>
-        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <Geometry>
-            <gml:LineString
-                srsDimension="3"
-                srsName="EPSG:7415">
-                <gml:posList>
-                    80 40 0
-                    240 160 0
-                </gml:posList>
-            </gml:LineString>
-        </Geometry>
-    </MSkabel>
-    
-    <MSkabel>
-        <ID>F</ID>
-        <Status>BESTAAND</Status>
-        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <Geometry>
-            <gml:LineString
-                srsDimension="3"
-                srsName="EPSG:7415">
-                <gml:posList>
-                    400 40 0
-                    240 160 0
-                </gml:posList>
-            </gml:LineString>
-        </Geometry>
-    </MSkabel>
+    </LSkabel>
     
 </NLCSnetbeheer>
