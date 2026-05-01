@@ -216,7 +216,7 @@
         <param name="range" as="xs:double"/>
         
         <variable name="line_buffer" select="ma:buffer-line($line, $range)"/>
-               
+
         <variable name="check_step" select="0.5"/>
         
         <variable name="control_line_within_bounds" as="xs:boolean*">
@@ -270,7 +270,7 @@
                     ($segment_1[1]/X - $segment_1[2]/X) * ($segment_2[1]/Y - $segment_2[2]/Y) -
                     ($segment_1[1]/Y - $segment_1[2]/Y) * ($segment_2[1]/X - $segment_2[2]/X)"/>
         
-        <if test="$den ne 0">
+        <if test="$den != 0">
             <variable name="scaling_factor" select="
                         (($segment_1[1]/X - $segment_2[1]/X) * ($segment_2[1]/Y - $segment_2[2]/Y) - 
                         ($segment_1[1]/Y - $segment_2[1]/Y) * ($segment_2[1]/X - $segment_2[2]/X)) div $den"/>
@@ -290,22 +290,30 @@
         <variable name="left_bounds_segments" as="node()*">
             <for-each select="1 to $segment_count">
                 <variable name="index" select="."/>
-                <variable name="segment" select="subsequence($line, $index, 2)"/>             
-                <variable name="orthogonal_start_segment" select="ma:point-get-orthogonal-segment($segment, $buffer_distance)"/>
-                <variable name="orthogonal_end_segment" select="ma:point-get-orthogonal-segment(reverse($segment), $buffer_distance)"/>
+                <variable name="segment" select="subsequence($line, $index, 2)"/>
                 
-                <sequence select="$orthogonal_start_segment[2], $orthogonal_end_segment[1]"/>
+                <!-- Skip segments with length 0 (e.g. same coords) -->
+                <if test="ma:segment-length($segment) != 0">
+                    <variable name="orthogonal_start_segment" select="ma:point-get-orthogonal-segment($segment, $buffer_distance)"/>
+                    <variable name="orthogonal_end_segment" select="ma:point-get-orthogonal-segment(reverse($segment), $buffer_distance)"/>
+                    
+                    <sequence select="$orthogonal_start_segment[2], $orthogonal_end_segment[1]"/>
+                </if>
             </for-each>
         </variable>
         
         <variable name="right_bounds_segments" as="node()*">
             <for-each select="1 to $segment_count">
                 <variable name="index" select="."/>
-                <variable name="segment" select="subsequence($line, $index, 2)"/>             
-                <variable name="orthogonal_start_segment" select="ma:point-get-orthogonal-segment($segment, $buffer_distance)"/>
-                <variable name="orthogonal_end_segment" select="ma:point-get-orthogonal-segment(reverse($segment), $buffer_distance)"/>
+                <variable name="segment" select="subsequence($line, $index, 2)"/>
                 
-                <sequence select="$orthogonal_start_segment[1], $orthogonal_end_segment[2]"/>
+                <!-- Skip segments with length 0 (e.g. same coords) -->
+                <if test="ma:segment-length($segment) != 0">
+                    <variable name="orthogonal_start_segment" select="ma:point-get-orthogonal-segment($segment, $buffer_distance)"/>
+                    <variable name="orthogonal_end_segment" select="ma:point-get-orthogonal-segment(reverse($segment), $buffer_distance)"/>
+                    
+                    <sequence select="$orthogonal_start_segment[1], $orthogonal_end_segment[2]"/>
+                </if>
             </for-each>
         </variable>
         
@@ -319,10 +327,15 @@
                 <if test="$index = 1">
                     <sequence select="$bound_segment[1]"/>                
                 </if>
-                <sequence select="ma:intersection-of-segments($bound_segment, $bound_next_segment)"/>
-                <if test="$index = last()">
-                    <sequence select="$bound_segment[2]"/>                
-                </if>
+
+                <choose>
+                    <when test="$index = last()">
+                        <sequence select="$bound_segment[2]"/>                
+                    </when>
+                    <otherwise>
+                        <sequence select="ma:intersection-of-segments($bound_segment, $bound_next_segment)"/>
+                    </otherwise>
+                </choose>
             </for-each>
         </variable>
         
@@ -336,10 +349,15 @@
                 <if test="$index = 1">
                     <sequence select="$bound_segment[1]"/>                
                 </if>
-                <sequence select="ma:intersection-of-segments($bound_segment, $bound_next_segment)"/>
-                <if test="$index = last()">
-                    <sequence select="$bound_segment[2]"/>                
-                </if>
+
+                <choose>
+                    <when test="$index = last()">
+                        <sequence select="$bound_segment[2]"/>                
+                    </when>
+                    <otherwise>
+                        <sequence select="ma:intersection-of-segments($bound_segment, $bound_next_segment)"/>
+                    </otherwise>
+                </choose>
             </for-each>
         </variable>
         
