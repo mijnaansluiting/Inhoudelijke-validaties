@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<NLCSnetbeheer xmlns:keuzelijst="NLCSnetbeheer"
-               xmlns:gml="http://www.opengis.net/gml/3.2"
-               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-               xsi:schemaLocation="NS_NLCSnetbeheer https://schemas.mijnaansluiting.nl/V12.1/NLCS_NetbeheerEnexisV12.1Import_Keuzelijst.xsd"
-               xmlns="NS_NLCSnetbeheer">
+<NLCSnetbeheer
+    xmlns:keuzelijst="NS_NLCSnetbeheer"
+    xmlns:gml="http://www.opengis.net/gml/3.2"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="NS_NLCSnetbeheer https://schemas.mijnaansluiting.nl/V12.1/NLCS_NetbeheerEnexisV12.1Import_Keuzelijst.xsd"
+    VersieNummer="12.1"
+    xmlns="NS_NLCSnetbeheer">
     <AprojectReferentie>
         <ID>A</ID>
         <Projectnummer>1</Projectnummer>
@@ -12,7 +14,7 @@
         <Tekeningtype>BESTAANDE SITUATIE</Tekeningtype>
         <Geometry></Geometry>
     </AprojectReferentie>
-    
+
     <MSkabel>
         <ID>B</ID>
         <Status>BESTAAND</Status>
@@ -22,19 +24,17 @@
                 srsDimension="3"
                 srsName="EPSG:7415">
                 <gml:posList>
-                    103.5 22 0
-                    108.5 15 0
-                    108.5  5 0
-                    110.5  3 0
-                    112.5  3 0
-                    114.5  5 0
-                    114.5 15 0
-                    119.5 22 0
+                    258634.876 482833.253 0 
+                    258636.119 482834.245 0
+                    258636.363 482834.408 0
+                    258647.585 482843.4   0
+                    258647.757 482843.538 0
+                    258650.331 482845.602 0
                 </gml:posList>
             </gml:LineString>
         </Geometry>
     </MSkabel>
-    
+
     <Amantelbuis>
         <ID>C</ID>
         <Status>BESTAAND</Status>
@@ -44,12 +44,14 @@
                 srsDimension="3"
                 srsName="EPSG:7415">
                 <gml:posList>
-                    110 13 0
-                    110  5 0
-                    112  3 0
-                    114  3 0
-                    116  5 0
-                    116 13 0
+                    258647.757 482843.538 0 
+                    258648.578 482844.196 0
+                    258648.578 482844.196 0
+                    258648.737 482844.324 0
+                    258648.737 482844.324 0
+                    258649.044 482844.57  0
+                    258649.044 482844.57  0
+                    258650.331 482845.602 0
                 </gml:posList>
             </gml:LineString>
         </Geometry>
@@ -61,5 +63,5 @@
         <MantelbuisID>C</MantelbuisID>
         <InhoudID>B</InhoudID>
     </AmantelbuisInhoud>
-   
+
 </NLCSnetbeheer>
