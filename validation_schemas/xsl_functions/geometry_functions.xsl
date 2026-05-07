@@ -48,30 +48,14 @@
         <param name="point" as="node()"/>
         <param name="area" as="node()*"/>
         
-        <variable name="intersections" as="xs:integer*">
-            <for-each select="1 to count($area) - 1">
-                <variable name="index" select="."/>
-                <variable name="segment" select="subsequence($area, $index, 2)"/>
-                
-                <if test="(xs:double($segment[1]/Y) gt xs:double($point/Y)) != (xs:double($segment[2]/Y) gt xs:double($point/Y))">
-                    <variable name="x_intersect" select="($segment[2]/X - $segment[1]/X) * ($point/Y - $segment[1]/Y) div ($segment[2]/Y - $segment[1]/Y) + $segment[1]/X"/>
-                    <if test="xs:double($point/X) lt $x_intersect">
-                        <sequence select="1"/>
-                    </if>
-                </if>
-            </for-each>
-        </variable>
-
-        <sequence select="count($intersections) mod 2 = 1"/>
+        <sequence select="ma:point-on-line($point, $area) or ma:winding-number($point, $area) != 0"/>    
     </function>
     
     <function name="ma:point-relative-orientation-to-segment" as="xs:integer">
         <param name="point" as="node()"/>
         <param name="segment" as="node()*"/>
         
-        <variable name="cross_product" select="
-                    ($segment[2]/Y - $segment[1]/Y) * ($point/X - $segment[2]/X) -
-                    ($segment[2]/X - $segment[1]/X) * ($point/Y - $segment[2]/Y)"/>
+        <variable name="cross_product" select="ma:cross-product($point, $segment)"/>
         
         <sequence select="
                     if ($cross_product = 0) then 0
@@ -189,6 +173,50 @@
                     $relative_orientation_segment_2_start != $relative_orientation_segment_2_end"/>
     </function>
     
+    <function name="ma:cross-product" as="xs:double">
+        <param name="point" as="node()"/>
+        <param name="segment" as="node()*"/>
+
+        <sequence select="
+                    ($segment[2]/X - $segment[1]/X) * ($point/Y - $segment[1]/Y) -
+                    ($segment[2]/Y - $segment[1]/Y) * ($point/X - $segment[1]/X)"/>
+    </function>
+    
+    <function name="ma:edge-winding" as="xs:integer">
+        <param name="point" as="node()"/>    
+        <param name="segment" as="node()*"/>
+        
+        <variable name="cross_product" select="ma:cross-product($point, $segment)"/>
+        
+        <choose>
+            <when test="xs:double($segment[1]/Y) le xs:double($point/Y) and xs:double($segment[2]/Y) gt xs:double($point/Y)">
+                <sequence select="if($cross_product gt 0) then 1 else 0"/>
+            </when>
+            <when test="xs:double($segment[2]/Y) le xs:double($point/Y) and xs:double($segment[1]/Y) gt xs:double($point/Y)">
+                <sequence select="if($cross_product lt 0) then -1 else 0"/>
+            </when>
+            <otherwise>
+                <sequence select="0"/>    
+            </otherwise>
+        </choose>
+    </function>
+    
+    <function name="ma:winding-number" as="xs:integer">
+        <param name="point" as="node()"/>    
+        <param name="area" as="node()*"/>
+        
+        <variable name="segment_count" select="count($area) - 1"/>
+        
+        <variable name="edge_windings" as="xs:integer*">
+            <for-each select="1 to $segment_count">
+                <variable name="segment" select="subsequence($area, ., 2)"/>
+                <sequence select="ma:edge-winding($point, $segment)"/>
+            </for-each>    
+        </variable>
+        
+        <sequence select="xs:integer(sum($edge_windings))"/>
+    </function>
+    
     <!-- Returns an orthogonal segment from the first point of the segment with a given buffer distance from the first point -->
     <function name="ma:point-get-orthogonal-segment" as="node()*">
         <param name="segment" as="node()*"/>
@@ -302,7 +330,7 @@
             </for-each>
         </variable>
         
-        <variable name="right_bounds_segments" as="node()*">
+        <variable name="right_bounds_in_segments" as="node()*">
             <for-each select="1 to $segment_count">
                 <variable name="index" select="."/>
                 <variable name="segment" select="subsequence($line, $index, 2)"/>
@@ -318,11 +346,10 @@
         </variable>
         
         <variable name="left_bounds" as="node()*">
-            <for-each select="1 to $segment_count">
+            <for-each select="1 to count($left_bounds_segments) div 2">
                 <variable name="index" select="."/>
-                <variable name="compensated_index" select="$index * 2 - 1"/>
-                <variable name="bound_segment" select="subsequence($left_bounds_segments, $compensated_index, 2)"/>
-                <variable name="bound_next_segment" select="subsequence($left_bounds_segments, $compensated_index + 2, 2)"/>
+                <variable name="segment_index" select="$index * 2 - 1"/>
+                <variable name="bound_segment" select="subsequence($left_bounds_segments, $segment_index, 2)"/>
                 
                 <if test="$index = 1">
                     <sequence select="$bound_segment[1]"/>                
@@ -333,6 +360,7 @@
                         <sequence select="$bound_segment[2]"/>                
                     </when>
                     <otherwise>
+                        <variable name="bound_next_segment" select="subsequence($left_bounds_segments, $segment_index + 2, 2)"/>
                         <sequence select="ma:intersection-of-segments($bound_segment, $bound_next_segment)"/>
                     </otherwise>
                 </choose>
@@ -340,11 +368,10 @@
         </variable>
         
         <variable name="right_bounds" as="node()*">    
-            <for-each select="1 to $segment_count">
+            <for-each select="1 to count($right_bounds_in_segments) div 2">
                 <variable name="index" select="."/>
-                <variable name="compensated_index" select="$index * 2 - 1"/>
-                <variable name="bound_segment" select="subsequence($right_bounds_segments, $compensated_index, 2)"/>
-                <variable name="bound_next_segment" select="subsequence($right_bounds_segments, $compensated_index + 2, 2)"/>
+                <variable name="segment_index" select="$index * 2 - 1"/>
+                <variable name="bound_segment" select="subsequence($right_bounds_in_segments, $segment_index, 2)"/>
                 
                 <if test="$index = 1">
                     <sequence select="$bound_segment[1]"/>                
@@ -355,6 +382,7 @@
                         <sequence select="$bound_segment[2]"/>                
                     </when>
                     <otherwise>
+                        <variable name="bound_next_segment" select="subsequence($right_bounds_in_segments, $segment_index + 2, 2)"/>
                         <sequence select="ma:intersection-of-segments($bound_segment, $bound_next_segment)"/>
                     </otherwise>
                 </choose>
