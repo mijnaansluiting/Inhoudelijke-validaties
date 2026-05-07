@@ -31,4 +31,8 @@
   <function name="ma:mantelbuis-inhoud-asset-max-distance" as="xs:double">
     <sequence select="$sys_config_file/config/v12/MantelbuisInhoudMaxAfstand"/>  
   </function>
+  
+  <function name="ma:decimal-precision" as="xs:integer">
+    <sequence select="$sys_config_file/config/v12/DecimalPrecision"/>  
+  </function>
 </stylesheet>
