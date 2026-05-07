@@ -10,7 +10,7 @@
         <param name="point_1" as="node()"/>
         <param name="point_2" as="node()"/>
         
-        <sequence select="ma:point-distance-to-point($point_1, $point_2) = 0"/>
+        <sequence select="ma:trim-decimals(ma:point-distance-to-point($point_1, $point_2)) = 0"/>
     </function>
     
     <function name="ma:point-touches-line" as="xs:boolean">
@@ -34,7 +34,7 @@
         <variable name="start_to_point_distance" select="ma:point-distance-to-point($segment[1], $point)"/>
         <variable name="end_to_point_distance" select="ma:point-distance-to-point($segment[2], $point)"/>
         
-        <sequence select="$start_to_point_distance + $end_to_point_distance = ma:segment-length($segment)"/>
+        <sequence select="ma:trim-decimals($start_to_point_distance + $end_to_point_distance) = ma:trim-decimals(ma:segment-length($segment))"/>
     </function>
     
     <function name="ma:point-touches-area" as="xs:boolean">
@@ -117,6 +117,9 @@
         
         <choose>
             <when test="some $point in $line satisfies ma:point-interacts-with-area($point, $area)">
+                <sequence select="true()"/>
+            </when>
+            <when test="some $point in $area satisfies ma:point-touches-line($point, $line)">
                 <sequence select="true()"/>
             </when>
             <otherwise>

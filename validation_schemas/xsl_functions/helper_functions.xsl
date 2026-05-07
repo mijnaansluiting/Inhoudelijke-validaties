@@ -160,4 +160,11 @@
         
         <sequence select="ma:parse-coords($coords_raw, $dimension)"/>
     </function>
+    
+    <variable name="precision_factor" select="math:pow(10, ma:decimal-precision())"/>
+    <function name="ma:trim-decimals" as="xs:double">
+        <param name="number" as="xs:double"/>
+        
+        <sequence select="round($number * $precision_factor) div $precision_factor"/>
+    </function>
 </stylesheet>
