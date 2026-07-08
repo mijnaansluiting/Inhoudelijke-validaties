@@ -19,6 +19,8 @@ A mof (cable joint) and the cables that connect to it should belong to the same 
 
 The abstract pattern emits the `connected-cables-have-different-verbindingnummer` message from the message catalog; see [localization-messages](/config/localization-messages.md). This rule complements [R.23](/rules/R.23.md), which also checks Verbindingnummer consistency across connected cables.
 
+The mof-to-kabel touch check is served by a shared connectivity index rather than a per-rule scan; see [connectivity-index-and-geometry-caching](/decisions/connectivity-index-and-geometry-caching.md).
+
 Severity for this rule varies by scope; see [scope × severity matrix](/domain/scope-severity-model.md) for the exact values.
 
 # Citations

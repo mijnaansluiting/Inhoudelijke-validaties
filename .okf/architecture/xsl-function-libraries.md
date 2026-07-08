@@ -21,6 +21,7 @@ abstract pattern:
 | `localization_functions.xsl` | Looks up a message by id and language in [`localization/messages.xml`](/config/localization-messages.md) (per the `Language` setting in `configuration/user_config.xml`), substituting `{n}` placeholders with rule-specific values before attaching the text to an `assert`. |
 | `rule_scope_functions.xsl` | The scope/severity engine — reads the `<scopes>` section of `doc/NLCSValidatieRegels.xml` to compute `ma:scope-name`, `ma:rule-severity-within-scope`, and `ma:rule-within-scope-for-object`, matching an object's Tekeningtype/Status/Bedrijfstoestand to one of the 8 scopes. See [scope-severity-model](/domain/scope-severity-model.md). |
 | `helper_functions.xsl` | Misc utilities shared across abstract patterns (e.g. object-existence and attribute-presence helpers used by many "verplichte kenmerken" rules). |
+| `connectivity_functions.xsl` | A shared mof/overdrachtspunt ↔ kabel/eaarddraad touch index (`ma:touching-kabels`, `ma:touching-moffen`, `ma:touching-kabels-via-moffen`), computed once per run and reused by [R.20](/rules/R.20.md), [R.22](/rules/R.22.md), [R.23](/rules/R.23.md), [R.25](/rules/R.25.md), [R.26](/rules/R.26.md), and [R.39](/rules/R.39.md) instead of each doing its own brute-force scan. See [connectivity-index-and-geometry-caching](/decisions/connectivity-index-and-geometry-caching.md) for why. |
 
 # Citations
 

@@ -30,6 +30,8 @@ A joint's Functie (function) implies how many cables should physically meet ther
 
 Config dependency: the mapping from Functie strings to the Aftak/Eind/Verbinding/Faseovergang categories is defined by the `MofFuncties` group in `configuration/sys_config.xml` and read via the `ma:map-mof-functie` function — see [/config/sys-config.md](/config/sys-config.md).
 
+The mof-to-kabel/Eaarddraad touch check is served by a shared connectivity index rather than a per-rule scan; see [connectivity-index-and-geometry-caching](/decisions/connectivity-index-and-geometry-caching.md).
+
 Severity for this rule varies by scope; see [/domain/scope-severity-model.md](/domain/scope-severity-model.md) for the full scope×severity matrix.
 
 # Citations

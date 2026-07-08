@@ -23,6 +23,8 @@ Severity for this rule varies by scope; see [scope-severity-model](../domain/sco
 
 The abstract pattern emits the `point-not-connected-to-any-line` message from the message catalog when a point object is not touching any line of the expected cable type; see [localization-messages](../config/localization-messages.md).
 
+The point-to-cable touch check itself is served by a shared connectivity index rather than a per-rule scan; see [connectivity-index-and-geometry-caching](/decisions/connectivity-index-and-geometry-caching.md).
+
 # Citations
 [1] [NLCS Validatieregels catalog](../../doc/NLCSValidatieRegels.xml)
 [2] [topologie_punt_objecten_elec.sch](../../validation_schemas/abstract_patterns/v12/topologie/topologie_punt_objecten_elec.sch)

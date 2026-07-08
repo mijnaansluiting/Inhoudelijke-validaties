@@ -24,17 +24,45 @@
         <param name="point" as="node()"/>
         <param name="line" as="node()*"/>
         
-        <sequence select="some $index in 1 to count($line) - 1 satisfies ma:point-on-segment($point, subsequence($line, $index, 2))"/>
+        <choose>
+            <when test="ma:point-within-bounding-box-of-line($point, $line)">
+                <sequence select="some $index in 1 to count($line) - 1 satisfies ma:point-on-segment($point, subsequence($line, $index, 2))"/>
+            </when>
+            <otherwise>
+                <sequence select="false()"/>    
+            </otherwise>
+        </choose>
+    </function>
+    
+    <function name="ma:point-within-bounding-box-of-line" as="xs:boolean">
+        <param name="point" as="node()"/>
+        <param name="line" as="node()*"/>
+        
+        <variable name="x" select="$point/X" as="xs:decimal"/>
+        <variable name="y" select="$point/Y" as="xs:decimal"/>
+        <variable name="min_x" select="min($line/X)"/>
+        <variable name="max_x" select="max($line/X)"/>
+        <variable name="min_y" select="min($line/Y)"/>
+        <variable name="max_y" select="max($line/Y)"/>
+        
+        <sequence select="$x ge $min_x and $x le $max_x and $y ge $min_y and $y le $max_y"/>
     </function>
     
     <function name="ma:point-on-segment" as="xs:boolean">
         <param name="point" as="node()"/>
         <param name="segment" as="node()*"/>
         
-        <variable name="start_to_point_distance" select="ma:point-distance-to-point($segment[1], $point)"/>
-        <variable name="end_to_point_distance" select="ma:point-distance-to-point($segment[2], $point)"/>
+        <variable name="cross_product" select="ma:cross-product($point, $segment)"/>
+        <variable name="collinear" select="ma:trim-decimals(abs($cross_product)) = 0"/>
         
-        <sequence select="ma:trim-decimals($start_to_point_distance + $end_to_point_distance) = ma:trim-decimals(ma:segment-length($segment))"/>
+        <choose>
+            <when test="$collinear">
+                <sequence select="ma:point-within-bounding-box-of-line($point, $segment)"/>
+            </when>
+            <otherwise>
+                <sequence select="false()"/>    
+            </otherwise>
+        </choose>        
     </function>
     
     <function name="ma:point-touches-area" as="xs:boolean">

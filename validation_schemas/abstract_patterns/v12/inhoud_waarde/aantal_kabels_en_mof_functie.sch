@@ -5,10 +5,7 @@
             value="."/>
         
         <let name="connected_mskabels"
-            value="//nlcs:MSkabel[ma:point-touches-line(
-                        ma:parse-point($msmof/nlcs:Geometry),
-                        ma:parse-line(nlcs:Geometry)
-                    )]"/>
+            value="ma:touching-kabels($msmof)[self::nlcs:MSkabel]"/>
         
         <let name="functie_type"
             value="if(ma:element-exists-and-not-empty(nlcs:Functie)) then ma:map-mof-functie(nlcs:Functie) else ''"/> 
@@ -59,10 +56,7 @@
             value="."/>
         
         <let name="connected_lskabels"
-            value="//nlcs:LSkabel[ma:point-touches-line(
-                        ma:parse-point($lsmof/nlcs:Geometry),
-                        ma:parse-line(nlcs:Geometry)
-                    )]"/>
+            value="ma:touching-kabels($lsmof)[self::nlcs:LSkabel]"/>
         
         <let name="functie_type"
             value="if(ma:element-exists-and-not-empty(nlcs:Functie)) then ma:map-mof-functie(nlcs:Functie) else ''"/> 
@@ -113,10 +107,7 @@
             value="."/>
         
         <let name="connected_eaarddraden"
-            value="//nlcs:Eaarddraad[ma:point-touches-line(
-                        ma:parse-point($eaardmof/nlcs:Geometry),
-                        ma:parse-line(nlcs:Geometry)
-                    )]"/>
+            value="ma:touching-kabels($eaardmof)[self::nlcs:Eaarddraad]"/>
         
         <let name="connections"
             value="count($connected_eaarddraden)"/>

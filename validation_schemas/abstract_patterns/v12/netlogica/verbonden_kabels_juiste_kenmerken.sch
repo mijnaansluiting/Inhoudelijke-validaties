@@ -5,18 +5,10 @@
             value="."/>
 
         <let name="connected_msmoffen"
-            value="//nlcs:MSmof[ma:point-touches-line(
-                ma:parse-point(nlcs:Geometry),
-                ma:parse-line($mskabel/nlcs:Geometry)
-            )]"/>
+            value="ma:touching-moffen($mskabel)[self::nlcs:MSmof]"/>
 
         <let name="connected_mskabels"
-            value="//nlcs:MSkabel[
-                some $connected_mof in $connected_msmoffen 
-                satisfies . ne $mskabel and ma:point-touches-line(
-                    ma:parse-point($connected_mof/nlcs:Geometry), 
-                    ma:parse-line(nlcs:Geometry)
-                )]"/>
+            value="ma:touching-kabels-via-moffen($connected_msmoffen, 'MSkabel')[. ne $mskabel]"/>
 
         <!-- Compare bedrijfstoestanden against original-->
 
@@ -88,18 +80,10 @@
             value="."/>
 
         <let name="connected_lsmoffen"
-            value="//nlcs:LSmof[ma:point-touches-line(
-                ma:parse-point(nlcs:Geometry),
-                ma:parse-line($lskabel/nlcs:Geometry)
-            )]"/>
+            value="ma:touching-moffen($lskabel)[self::nlcs:LSmof]"/>
 
         <let name="connected_lskabels"
-            value="//nlcs:LSkabel[
-                some $connected_mof in $connected_lsmoffen 
-                satisfies . ne $lskabel and ma:point-touches-line(
-                    ma:parse-point($connected_mof/nlcs:Geometry), 
-                    ma:parse-line(nlcs:Geometry)
-                )]"/>
+            value="ma:touching-kabels-via-moffen($connected_lsmoffen, 'LSkabel')[. ne $lskabel]"/>
 
         <!-- Compare bedrijfstoestanden against original-->
 
