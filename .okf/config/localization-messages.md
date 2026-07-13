@@ -3,8 +3,12 @@ type: Configuration
 title: Localization messages (messages.xml)
 description: The nl/en message catalog that validation rules use to produce human-readable failure text.
 resource: localization/messages.xml
-tags: [configuration, localization]
+tags: configuration, localization
 timestamp: 2026-07-08T00:00:00Z
+published: true
+editor: markdown
+date: 2026-07-08T00:00:00Z
+dateCreated: 2026-07-08T00:00:00Z
 ---
 
 # Overview

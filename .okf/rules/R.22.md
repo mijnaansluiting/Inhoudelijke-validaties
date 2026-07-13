@@ -3,8 +3,12 @@ type: Validation Rule
 title: R.22 — Kabels zelfde Netvlak
 description: Checks that cables connected to each other through a joint belong to the same network layer (discipline).
 resource: validation_schemas/patterns/v12/R.22.sch
-tags: [netlogica]
+tags: netlogica
 timestamp: 2026-07-08T00:00:00Z
+published: true
+editor: markdown
+date: 2026-07-08T00:00:00Z
+dateCreated: 2026-07-08T00:00:00Z
 ---
 
 # Overview

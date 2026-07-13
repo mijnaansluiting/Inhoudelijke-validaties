@@ -3,8 +3,12 @@ type: Validation Rule
 title: R.35 — Aanwezigheid maaiveldhoogte
 description: Checks that a revision drawing file (Tekeningtype DEELREVISIE or EINDREVISIE) contains at least one Amaaiveldhoogte (ground level) object.
 resource: validation_schemas/patterns/v12/R.35.sch
-tags: [bestand]
+tags: bestand
 timestamp: 2026-07-08T00:00:00Z
+published: true
+editor: markdown
+date: 2026-07-08T00:00:00Z
+dateCreated: 2026-07-08T00:00:00Z
 ---
 
 # Overview

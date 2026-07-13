@@ -3,8 +3,12 @@ type: Domain Concept
 title: Scope and severity model
 description: How the same rule can be an error in one drawing context and merely informational in another.
 resource: doc/NLCSValidatieRegels.xml
-tags: [domain, scope, severity]
+tags: domain, scope, severity
 timestamp: 2026-07-08T00:00:00Z
+published: true
+editor: markdown
+date: 2026-07-08T00:00:00Z
+dateCreated: 2026-07-08T00:00:00Z
 ---
 
 # Overview

@@ -3,8 +3,12 @@ type: Configuration
 title: System configuration (sys_config.xml)
 description: Version-scoped thresholds, allowed-value lists, and exceptions consumed by several validation rules.
 resource: configuration/sys_config.xml
-tags: [configuration]
+tags: configuration
 timestamp: 2026-07-08T00:00:00Z
+published: true
+editor: markdown
+date: 2026-07-08T00:00:00Z
+dateCreated: 2026-07-08T00:00:00Z
 ---
 
 # Overview

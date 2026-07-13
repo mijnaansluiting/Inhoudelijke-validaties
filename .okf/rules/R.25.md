@@ -3,8 +3,12 @@ type: Validation Rule
 title: R.25 — Verbonden kabels juiste Fase
 description: Checks that cables joined at a mof have a Fase combination that is valid for the number of cables connected.
 resource: validation_schemas/patterns/v12/R.25.sch
-tags: [inhoud-waarde]
+tags: inhoud-waarde
 timestamp: 2026-07-08T00:00:00Z
+published: true
+editor: markdown
+date: 2026-07-08T00:00:00Z
+dateCreated: 2026-07-08T00:00:00Z
 ---
 
 # Overview

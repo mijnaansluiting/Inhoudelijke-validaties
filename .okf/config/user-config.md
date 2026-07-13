@@ -3,8 +3,12 @@ type: Configuration
 title: User configuration (user_config.xml)
 description: The single language setting that selects which localized message text validation reports use.
 resource: configuration/user_config.xml
-tags: [configuration, localization]
+tags: configuration, localization
 timestamp: 2026-07-08T00:00:00Z
+published: true
+editor: markdown
+date: 2026-07-08T00:00:00Z
+dateCreated: 2026-07-08T00:00:00Z
 ---
 
 # Overview

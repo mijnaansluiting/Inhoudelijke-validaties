@@ -3,8 +3,12 @@ type: Validation Rule
 title: R.28 — Mantelbuis Inhoud aanwezig
 description: Checks that a protection pipe (mantelbuis) in use has a registered content and a reserve one does not.
 resource: validation_schemas/patterns/v12/R.28.sch
-tags: [consistentie]
+tags: consistentie
 timestamp: 2026-07-08T00:00:00Z
+published: true
+editor: markdown
+date: 2026-07-08T00:00:00Z
+dateCreated: 2026-07-08T00:00:00Z
 ---
 
 # Overview

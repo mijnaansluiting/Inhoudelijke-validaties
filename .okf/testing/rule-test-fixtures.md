@@ -3,8 +3,12 @@ type: Test Subsystem
 title: Rule test fixtures
 description: Hand-authored passing/failing NLCS++ XML fixtures per rule, run through the compiled rule XSLT in CI.
 resource: test/rule_validation_data/v12/
-tags: [testing]
+tags: testing
 timestamp: 2026-07-08T00:00:00Z
+published: true
+editor: markdown
+date: 2026-07-08T00:00:00Z
+dateCreated: 2026-07-08T00:00:00Z
 ---
 
 # Overview

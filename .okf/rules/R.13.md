@@ -3,8 +3,12 @@ type: Validation Rule
 title: R.13 — Verplichte kenmerken MSoverdrachtspunt
 description: Checks that every medium-voltage transfer point (MSoverdrachtspunt) has its Identificatie (EAN code) attribute populated.
 resource: validation_schemas/patterns/v12/R.13.sch
-tags: [verplichte-waarde]
+tags: verplichte-waarde
 timestamp: 2026-07-08T00:00:00Z
+published: true
+editor: markdown
+date: 2026-07-08T00:00:00Z
+dateCreated: 2026-07-08T00:00:00Z
 ---
 
 # Overview

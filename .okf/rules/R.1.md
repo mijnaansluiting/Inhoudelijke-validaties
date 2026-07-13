@@ -3,8 +3,12 @@ type: Validation Rule
 title: R.1 — Bestand bevat NLCS Objecten
 description: Checks that an NLCS++ file contains exactly one AprojectReferentie plus at least one actual NLCS object, so no "empty" project can be submitted.
 resource: validation_schemas/patterns/v12/R.1.sch
-tags: [bestand]
+tags: bestand
 timestamp: 2026-07-08T00:00:00Z
+published: true
+editor: markdown
+date: 2026-07-08T00:00:00Z
+dateCreated: 2026-07-08T00:00:00Z
 ---
 
 # Overview

@@ -3,8 +3,12 @@ type: Validation Rule
 title: R.12 — Verplichte kenmerken OVLoverdrachtspunt
 description: Checks that every overhead-line transfer point (OVLoverdrachtspunt) has its required attributes populated.
 resource: validation_schemas/patterns/v12/R.12.sch
-tags: [verplichte-waarde]
+tags: verplichte-waarde
 timestamp: 2026-07-08T00:00:00Z
+published: true
+editor: markdown
+date: 2026-07-08T00:00:00Z
+dateCreated: 2026-07-08T00:00:00Z
 ---
 
 # Overview

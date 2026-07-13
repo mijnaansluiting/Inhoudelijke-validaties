@@ -2,8 +2,12 @@
 type: Domain Concept
 title: NLCS++ and content validation
 description: What NLCS++ is and why structural XSD validation isn't enough to guarantee usable grid-asset data.
-tags: [domain, nlcs]
+tags: domain, nlcs
 timestamp: 2026-07-08T00:00:00Z
+published: true
+editor: markdown
+date: 2026-07-08T00:00:00Z
+dateCreated: 2026-07-08T00:00:00Z
 ---
 
 # Overview

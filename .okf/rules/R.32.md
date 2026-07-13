@@ -3,8 +3,12 @@ type: Validation Rule
 title: R.32 — Aanwezigheid bestand bijlage kunstwerk
 description: Checks that every zinker-type Akunstwerk has a linked AbestandBijlage attachment of SoortBestand "Zinkertekening".
 resource: validation_schemas/patterns/v12/R.32.sch
-tags: [document]
+tags: document
 timestamp: 2026-07-08T00:00:00Z
+published: true
+editor: markdown
+date: 2026-07-08T00:00:00Z
+dateCreated: 2026-07-08T00:00:00Z
 ---
 
 # Overview

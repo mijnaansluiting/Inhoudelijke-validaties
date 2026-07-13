@@ -3,8 +3,12 @@ type: Validation Rule
 title: R.3 — Geometrie binnen Projectvlak
 description: Checks that every point, line, and area geometry of every NLCS object in the file interacts with the project area of the AprojectReferentie.
 resource: validation_schemas/patterns/v12/R.3.sch
-tags: [geometrie]
+tags: geometrie
 timestamp: 2026-07-08T00:00:00Z
+published: true
+editor: markdown
+date: 2026-07-08T00:00:00Z
+dateCreated: 2026-07-08T00:00:00Z
 ---
 
 # Overview

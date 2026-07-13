@@ -2,8 +2,12 @@
 type: Decision
 title: Bestand-category rules are severity-scopeless
 description: Why file-level rules like R.1/R.2/R.35/R.40 always report severity "Fout" instead of being matched against a scope.
-tags: [decision, scope]
+tags: decision, scope
 timestamp: 2026-07-08T00:00:00Z
+published: true
+editor: markdown
+date: 2026-07-08T00:00:00Z
+dateCreated: 2026-07-08T00:00:00Z
 ---
 
 # Context

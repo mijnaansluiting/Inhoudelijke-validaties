@@ -3,8 +3,12 @@ type: Validation Rule
 title: R.20 — Topologie punt objecten Elec
 description: Checks that Elec point objects are geometrically connected to the correct cable type and do not float unconnected.
 resource: validation_schemas/patterns/v12/R.20.sch
-tags: [topologie]
+tags: topologie
 timestamp: 2026-07-08T00:00:00Z
+published: true
+editor: markdown
+date: 2026-07-08T00:00:00Z
+dateCreated: 2026-07-08T00:00:00Z
 ---
 
 # Overview

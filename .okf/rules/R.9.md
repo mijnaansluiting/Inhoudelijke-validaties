@@ -3,8 +3,12 @@ type: Validation Rule
 title: R.9 — Aanlegdatum gevuld
 description: Checks that the DatumAanleg (installation date) is populated and does not lie in the future for a broad set of electrical network assets.
 resource: validation_schemas/patterns/v12/R.9.sch
-tags: [verplichte-waarde]
+tags: verplichte-waarde
 timestamp: 2026-07-08T00:00:00Z
+published: true
+editor: markdown
+date: 2026-07-08T00:00:00Z
+dateCreated: 2026-07-08T00:00:00Z
 ---
 
 # Overview

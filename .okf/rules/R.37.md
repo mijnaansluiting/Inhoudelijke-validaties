@@ -3,8 +3,12 @@ type: Validation Rule
 title: R.37 — Inmeetwijze toegestaande waarde
 description: Checks that Inmeetwijze on linear electrical assets is either GPS or Tachymeter, except for a separately-validated LSkabel AANSLUITNET/Meetlint combination.
 resource: validation_schemas/patterns/v12/R.37.sch
-tags: [inhoud-waarde]
+tags: inhoud-waarde
 timestamp: 2026-07-08T00:00:00Z
+published: true
+editor: markdown
+date: 2026-07-08T00:00:00Z
+dateCreated: 2026-07-08T00:00:00Z
 ---
 
 # Overview

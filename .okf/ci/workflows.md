@@ -3,8 +3,12 @@ type: CI/CD Pipeline
 title: GitHub Actions workflows
 description: The 6 workflows that validate rules/scopes/docs on every PR, check coverage, and publish releases and docs.
 resource: .github/workflows/
-tags: [ci-cd]
+tags: ci-cd
 timestamp: 2026-07-08T00:00:00Z
+published: true
+editor: markdown
+date: 2026-07-08T00:00:00Z
+dateCreated: 2026-07-08T00:00:00Z
 ---
 
 # Overview

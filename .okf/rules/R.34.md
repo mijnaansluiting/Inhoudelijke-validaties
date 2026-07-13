@@ -3,8 +3,12 @@ type: Validation Rule
 title: R.34 — Reden niet-verwijdering ingevuld
 description: Checks that an abandoned cable (Status REVISIE, Bedrijfstoestand VERLATEN) has a value for RedenNietVerwijdering explaining why it was not removed.
 resource: validation_schemas/patterns/v12/R.34.sch
-tags: [verplichte-waarde]
+tags: verplichte-waarde
 timestamp: 2026-07-08T00:00:00Z
+published: true
+editor: markdown
+date: 2026-07-08T00:00:00Z
+dateCreated: 2026-07-08T00:00:00Z
 ---
 
 # Overview

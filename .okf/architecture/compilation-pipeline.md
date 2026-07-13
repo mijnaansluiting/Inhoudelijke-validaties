@@ -3,8 +3,12 @@ type: Architecture Component
 title: Compilation and execution pipeline
 description: How a Schematron rule becomes runnable XSLT and produces an SVRL validation report.
 resource: scripts/transpile_phases.sh
-tags: [architecture, build]
+tags: architecture, build
 timestamp: 2026-07-08T00:00:00Z
+published: true
+editor: markdown
+date: 2026-07-08T00:00:00Z
+dateCreated: 2026-07-08T00:00:00Z
 ---
 
 # Overview

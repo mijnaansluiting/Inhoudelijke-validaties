@@ -3,8 +3,12 @@ type: Validation Rule
 title: R.8 — Verplichte kenmerken Kabels
 description: Checks that every cable has values for a core set of mandatory attributes, with three additional mandatory attributes for LSkabel.
 resource: validation_schemas/patterns/v12/R.8_A.sch
-tags: [verplichte-waarde]
+tags: verplichte-waarde
 timestamp: 2026-07-08T00:00:00Z
+published: true
+editor: markdown
+date: 2026-07-08T00:00:00Z
+dateCreated: 2026-07-08T00:00:00Z
 ---
 
 # Overview

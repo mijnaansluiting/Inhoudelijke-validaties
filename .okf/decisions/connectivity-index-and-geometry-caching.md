@@ -2,8 +2,12 @@
 type: Decision
 title: Shared connectivity index and geometry caching for mof/kabel touch checks
 description: Why R.20, R.22, R.23, R.25, R.26, and R.39 now share one precomputed touch index instead of each doing its own brute-force geometry scan.
-tags: [decision, performance, geometry]
-timestamp: 2026-07-08T00:00:00Z
+tags: decision, performance, geometry
+timestamp: 2026-07-10T00:00:00Z
+published: true
+editor: markdown
+date: 2026-07-10T00:00:00Z
+dateCreated: 2026-07-08T00:00:00Z
 ---
 
 # Context
@@ -111,7 +115,12 @@ meant to be traversed as a document.
   against every candidate line at least once. A grid/bucket pre-filter
   (only comparing objects whose bounding boxes fall in the same or
   neighboring cell) would cut this further but is a separate, larger piece
-  of work not undertaken here.
+  of work not undertaken here. **Update:** before pursuing this, see
+  [geometry-parse-caching](/decisions/geometry-parse-caching.md) — a cheaper
+  fix (memoizing the geometry parse itself, not the spatial comparison) cut
+  `benchmark.sh` further from ~27s to 10s, and R.21's uncached endpoint scan
+  (see next bullet) turned out to be a bigger contributor than this
+  decision's own remaining points×lines cost.
 - **R.21** (`geldig_eindpunt_kabel.sch`) calls `ma:parse-point` on the same
   object populations but checks point-to-point coincidence, not
   point-to-line touching — a structurally different relationship the
@@ -119,7 +128,11 @@ meant to be traversed as a document.
   untouched to keep this change's blast radius limited to the 6 rules that
   actually share the rewritten relationship, rather than also modifying
   `ma:parse-point`/`ma:parse-line` themselves (which are called by all 41
-  rules, not just these 6).
+  rules, not just these 6). **Update:** [geometry-parse-caching](/decisions/geometry-parse-caching.md)
+  did modify those two functions (adding memoization only, signatures
+  unchanged) and found R.21's O(kabels × moffen) reparsing — not the
+  points×lines cost above — to be the dominant remaining cost at benchmark
+  scale.
 
 # Verification
 

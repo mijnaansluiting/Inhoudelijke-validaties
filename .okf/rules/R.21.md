@@ -3,8 +3,12 @@ type: Validation Rule
 title: R.21 — Geldig eindpunt Kabel
 description: Checks that every cable has a valid connected object at both its start and end point.
 resource: validation_schemas/patterns/v12/R.21.sch
-tags: [topologie]
-timestamp: 2026-07-08T00:00:00Z
+tags: topologie
+timestamp: 2026-07-10T00:00:00Z
+published: true
+editor: markdown
+date: 2026-07-10T00:00:00Z
+dateCreated: 2026-07-08T00:00:00Z
 ---
 
 # Overview
@@ -29,6 +33,11 @@ Every cable must be properly connected at both ends: a dangling start or end poi
 - Failing endpoints are reported with their geometry (via `ma:create-gml-point`) so the offending point can be located on the map.
 
 See [R.20](/rules/R.20.md) for the related point-topology rule.
+
+This rule's endpoint scan (every cable against every candidate endpoint
+object) was the dominant remaining cost in the geometry-parsing pipeline —
+see [geometry-parse-caching](/decisions/geometry-parse-caching.md) for why
+`ma:parse-point`/`ma:parse-area` are now memoized per geometry node.
 
 Severity for this rule varies by scope; see [/domain/scope-severity-model.md](/domain/scope-severity-model.md) for the full scope×severity matrix.
 

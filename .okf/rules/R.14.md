@@ -3,8 +3,12 @@ type: Validation Rule
 title: R.14 — Verplichte kenmerken Stations en Kasten
 description: Checks that every station or low-voltage cabinet has its Nummer and Functie attributes populated.
 resource: validation_schemas/patterns/v12/R.14.sch
-tags: [verplichte-waarde]
+tags: verplichte-waarde
 timestamp: 2026-07-08T00:00:00Z
+published: true
+editor: markdown
+date: 2026-07-08T00:00:00Z
+dateCreated: 2026-07-08T00:00:00Z
 ---
 
 # Overview

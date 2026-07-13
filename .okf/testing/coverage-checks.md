@@ -3,8 +3,12 @@ type: Test Subsystem
 title: Rule and object coverage checks
 description: Lightweight cross-checks that every documented rule is implemented, and that a rule's asserts touch the object types it claims to.
 resource: scripts/check_rule_coverage.sh
-tags: [testing]
+tags: testing
 timestamp: 2026-07-08T00:00:00Z
+published: true
+editor: markdown
+date: 2026-07-08T00:00:00Z
+dateCreated: 2026-07-08T00:00:00Z
 ---
 
 # Overview

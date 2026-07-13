@@ -4,6 +4,8 @@
             xmlns:ma="http://example.com/mijnaansluiting"
 	        xmlns:xs="http://www.w3.org/2001/XMLSchema"
             xmlns:gml="http://www.opengis.net/gml/3.2"
+            xmlns:nlcs="NS_NLCSnetbeheer"
+            xmlns:map="http://www.w3.org/2005/xpath-functions/map"
 	        version="3.0">
 
     <function name="ma:create-gml-point" as="node()">
@@ -134,31 +136,68 @@
         </Coord>  
     </function>
     
+    <!-- ==========================================================
+         Memoized geometry parsing. ma:parse-coords/ma:coord rebuild a
+         fresh <Coord> element per vertex on every call; without caching,
+         re-parsing the same nlcs:Geometry node (e.g. once per candidate
+         in an O(n*m) rule such as R.21's kabel<->mof endpoint scan, or
+         once per point in connectivity_functions.xsl's touch-index build)
+         redoes that work from scratch every time. Each cache is a
+         lazily-evaluated global map keyed by generate-id() of the
+         nlcs:Geometry node, built once per validation run by scanning
+         every geometry of the relevant shape - same pure map/map-entry
+         style as connectivity_functions.xsl's touch index (no constructed
+         element tree indexed via xsl:key for the cache itself; see
+         connectivity_functions.xsl's header comment for why that
+         combination is unsafe at this codebase's scale). Only the cache
+         wrapper is new - the tokenize/dimension/parse-coords logic below
+         is unchanged from before. -->
+    <variable name="parsed_point_cache" as="map(xs:string, node())">
+        <map>
+            <for-each select="//nlcs:Geometry[gml:Point]">
+                <variable name="dimension" as="xs:integer" select="gml:Point/@srsDimension"/>
+                <variable name="coords_raw" as="xs:string*" select="tokenize(normalize-space(gml:Point/gml:pos))"/>
+                <map-entry key="generate-id(.)" select="ma:parse-coords($coords_raw, $dimension)"/>
+            </for-each>
+        </map>
+    </variable>
+
+    <variable name="parsed_line_cache" as="map(xs:string, node()*)">
+        <map>
+            <for-each select="//nlcs:Geometry[gml:LineString]">
+                <variable name="dimension" as="xs:integer" select="gml:LineString/@srsDimension"/>
+                <variable name="coords_raw" as="xs:string*" select="tokenize(normalize-space(gml:LineString/gml:posList))"/>
+                <map-entry key="generate-id(.)" select="ma:parse-coords($coords_raw, $dimension)"/>
+            </for-each>
+        </map>
+    </variable>
+
+    <variable name="parsed_area_cache" as="map(xs:string, node()*)">
+        <map>
+            <for-each select="//nlcs:Geometry[gml:Polygon]">
+                <variable name="dimension" as="xs:integer" select="gml:Polygon/@srsDimension"/>
+                <variable name="coords_raw" as="xs:string*" select="tokenize(normalize-space(gml:Polygon/gml:exterior/gml:LinearRing/gml:posList))"/>
+                <map-entry key="generate-id(.)" select="ma:parse-coords($coords_raw, $dimension)"/>
+            </for-each>
+        </map>
+    </variable>
+
     <function name="ma:parse-point" as="node()">
         <param name="point_geometry" as="node()"/>
 
-        <variable name="dimension" as="xs:integer" select="$point_geometry/gml:Point/@srsDimension"/>        
-        <variable name="coords_raw" as="xs:string*" select="tokenize(normalize-space($point_geometry/gml:Point/gml:pos))"/>
-        
-        <sequence select="ma:parse-coords($coords_raw, $dimension)"/>
+        <sequence select="map:get($parsed_point_cache, generate-id($point_geometry))"/>
     </function>
-    
+
     <function name="ma:parse-line" as="node()*">
         <param name="line_geometry" as="node()"/>
 
-        <variable name="dimension" as="xs:integer" select="$line_geometry/gml:LineString/@srsDimension"/>        
-        <variable name="coords_raw" as="xs:string*" select="tokenize(normalize-space($line_geometry/gml:LineString/gml:posList))"/>
-        
-        <sequence select="ma:parse-coords($coords_raw, $dimension)"/>
+        <sequence select="map:get($parsed_line_cache, generate-id($line_geometry))"/>
     </function>
 
     <function name="ma:parse-area" as="node()*">
         <param name="area_geometry" as="node()"/>
 
-        <variable name="dimension" as="xs:integer" select="$area_geometry/gml:Polygon/@srsDimension"/> 
-        <variable name="coords_raw" as="xs:string*" select="tokenize(normalize-space($area_geometry/gml:Polygon/gml:exterior/gml:LinearRing/gml:posList))"/>
-        
-        <sequence select="ma:parse-coords($coords_raw, $dimension)"/>
+        <sequence select="map:get($parsed_area_cache, generate-id($area_geometry))"/>
     </function>
     
     <variable name="precision_factor" select="math:pow(10, ma:decimal-precision())"/>

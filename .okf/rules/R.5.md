@@ -3,8 +3,12 @@ type: Validation Rule
 title: R.5 — GisId en AssetId
 description: Checks that objects originating from asset registration (Status BESTAAND, REVISIE, or VERWIJDERD) carry a GisId and AssetId, while newly designed objects (Status NIEUW) do not.
 resource: validation_schemas/patterns/v12/R.5.sch
-tags: [verplichte-waarde]
+tags: verplichte-waarde
 timestamp: 2026-07-08T00:00:00Z
+published: true
+editor: markdown
+date: 2026-07-08T00:00:00Z
+dateCreated: 2026-07-08T00:00:00Z
 ---
 
 # Overview

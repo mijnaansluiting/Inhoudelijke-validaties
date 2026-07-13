@@ -3,8 +3,12 @@ type: Test Subsystem
 title: Scope coverage tests
 description: A meta-test verifying the scope/severity engine itself assigns exactly the right rules to every scope, with no gaps or overlaps.
 resource: test/scope_validation_data/v12/scope_template.xml
-tags: [testing]
+tags: testing
 timestamp: 2026-07-08T00:00:00Z
+published: true
+editor: markdown
+date: 2026-07-08T00:00:00Z
+dateCreated: 2026-07-08T00:00:00Z
 ---
 
 # Overview

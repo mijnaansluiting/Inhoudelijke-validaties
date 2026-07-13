@@ -3,8 +3,12 @@ type: Validation Rule
 title: R.2 — Combinatie NLCS Status en Tekeningsoort
 description: Checks that the NLCS Status values used by objects in the file are consistent with the Tekeningtype declared on the AprojectReferentie.
 resource: validation_schemas/patterns/v12/R.2.sch
-tags: [bestand]
+tags: bestand
 timestamp: 2026-07-08T00:00:00Z
+published: true
+editor: markdown
+date: 2026-07-08T00:00:00Z
+dateCreated: 2026-07-08T00:00:00Z
 ---
 
 # Overview

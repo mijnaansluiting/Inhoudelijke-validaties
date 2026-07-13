@@ -3,8 +3,12 @@ type: Test Subsystem
 title: Test data visualization
 description: Auto-generated SVG renderings of every rule fixture's geometry, committed to assets/ for the wiki.
 resource: transformations/visualize_test_data.xsl
-tags: [testing, documentation]
+tags: testing, documentation
 timestamp: 2026-07-08T00:00:00Z
+published: true
+editor: markdown
+date: 2026-07-08T00:00:00Z
+dateCreated: 2026-07-08T00:00:00Z
 ---
 
 # Overview

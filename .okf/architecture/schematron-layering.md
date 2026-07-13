@@ -3,8 +3,12 @@ type: Architecture Component
 title: Schematron rule layering
 description: The three-layer design that separates rule metadata from rule logic — base schema, concrete pattern, abstract pattern.
 resource: validation_schemas/base/v12.sch
-tags: [architecture, schematron]
+tags: architecture, schematron
 timestamp: 2026-07-08T00:00:00Z
+published: true
+editor: markdown
+date: 2026-07-08T00:00:00Z
+dateCreated: 2026-07-08T00:00:00Z
 ---
 
 # Overview

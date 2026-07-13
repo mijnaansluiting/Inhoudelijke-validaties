@@ -3,8 +3,12 @@ type: Validation Rule
 title: R.39 — Mof verbonden kabels gelijk verbindingnummer
 description: Checks that MS/LSkabel objects physically connected to a MS/LSmof share that mof's Verbindingnummer value.
 resource: validation_schemas/patterns/v12/R.39.sch
-tags: [inhoud-waarde]
+tags: inhoud-waarde
 timestamp: 2026-07-08T00:00:00Z
+published: true
+editor: markdown
+date: 2026-07-08T00:00:00Z
+dateCreated: 2026-07-08T00:00:00Z
 ---
 
 # Overview
