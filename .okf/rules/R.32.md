@@ -24,7 +24,7 @@ A subaqueous crossing structure (a "zinker") must be documented with a drawing. 
   - `check-bestand-bijlage-present`: for zinker kunstwerken, at least one related AbestandBijlage must exist (message `object-not-present`, placeholder `Abestandbijlage`).
   - `soort_bestand_correct`: for zinker kunstwerken, the related AbestandBijlage's SoortBestand must equal "Zinkertekening" (message `soort-bestand-not-correct`).
 
-Severity for this rule varies by scope; see [scope × severity matrix](/domain/scope-severity-model.md) for the exact values.
+Severity for this rule varies by scope; see [scope × severity matrix](../domain/scope-severity-model) for the exact values.
 
 # Citations
 

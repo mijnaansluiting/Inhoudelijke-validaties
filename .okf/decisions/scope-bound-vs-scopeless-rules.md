@@ -12,14 +12,14 @@ dateCreated: 2026-07-08T00:00:00Z
 
 # Context
 
-[Rule severity](/domain/scope-severity-model.md) is normally computed by
+[Rule severity](../domain/scope-severity-model) is normally computed by
 matching the object under validation (its Tekeningsoort/Status/
 Bedrijfstoestand) against one of the 8 scopes, then looking up that rule's
 `niveau` within the matched scope. That matching only works when the rule's
 Schematron `<rule context>` fires on a per-object basis.
 
-Rules of `soort` **Bestand** ([R.1](/rules/R.1.md), [R.2](/rules/R.2.md),
-[R.35](/rules/R.35.md), [R.40](/rules/R.40.md)) don't fit that model — they
+Rules of `soort` **Bestand** ([R.1](../rules/R.1), [R.2](../rules/R.2),
+[R.35](../rules/R.35), [R.40](../rules/R.40)) don't fit that model — they
 assert something about the *file as a whole* (context `//nlcs:NLCSnetbeheer`
 or `AprojectReferentie`), not about an individual NLCS object with its own
 Status/Bedrijfstoestand. There is no single "object" to compute a scope from.
@@ -27,10 +27,10 @@ Status/Bedrijfstoestand. There is no single "object" to compute a scope from.
 # Decision
 
 `ma:rule-severity-within-scope` (in
-[rule_scope_functions.xsl](/architecture/xsl-function-libraries.md))
+[rule_scope_functions.xsl](../architecture/xsl-function-libraries))
 special-cases rules whose `ma:rule-type` is `Bestand`: rather than attempting
 scope matching, it unconditionally returns `Fout`. This is why
-[scope-severity-model](/domain/scope-severity-model.md)'s matrix shows
+[scope-severity-model](../domain/scope-severity-model)'s matrix shows
 `R.1`, `R.2`, and `R.35` as `Fout` in literally every scope — the rule
 simply isn't scope-dependent at all. (`R.40` is the same mechanism, but its
 *own* check logic only applies when Tekeningtype is `DEELREVISIE`/
@@ -52,18 +52,18 @@ This wasn't the original design. Two fixes got here incrementally:
    category-based check (`$rule_type = 'Bestand'`), which generalizes to
    *any* Bestand rule (including `R.35`/`R.40`) instead of needing every new
    file-level rule added to a hardcoded list. This PR also reworked
-   [R.2](/rules/R.2.md)'s own abstract pattern
+   [R.2](../rules/R.2)'s own abstract pattern
    (`combinatie_nlcs_status_en_tekeningsoort.sch`) to evaluate all objects'
    statuses in one file-level assert (`distinct-values(*/nlcs:Status)`)
    instead of one assert per object, and consolidated the corresponding
-   [test fixtures](/testing/rule-test-fixtures.md) (many near-duplicate
+   [test fixtures](../testing/rule-test-fixtures) (many near-duplicate
    per-object-type failing fixtures collapsed into one per Tekeningsoort).
 
 # Why this matters
 
 If a future rule is added with `soort` Bestand, it will automatically be
 `Fout`-severity everywhere via the category check — no scope-table entry is
-needed, and none should be added, since [scope-coverage-tests](/testing/scope-coverage-tests.md)
+needed, and none should be added, since [scope-coverage-tests](../testing/scope-coverage-tests)
 tests object-level scope matching, not file-level rules.
 
 # Citations

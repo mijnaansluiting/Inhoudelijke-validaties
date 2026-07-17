@@ -23,9 +23,9 @@ A line (gml:Curve), or the outline of an area (gml:Surface), must meet survey-me
   - **R.4-A** (segment length): each segment between consecutive (inmeet)points of a line or area outline must be at least 10 cm and at most 50 m long. Implemented via `ma:line-segments-not-meeting-length-demands`.
   - **R.4-B** (segment angle): the angle between consecutive segments of a line must not exceed 45 degrees (no sharp kinks). Applies only to line objects (Aaanlegtechniek, Eaarddraad, LSkabel, MSkabel), not to MSstation areas. Implemented via `ma:line-segments-not-meeting-angle-demands`.
 
-Severity for this rule varies by scope; see [scope × severity matrix](/domain/scope-severity-model.md) for the exact values.
+Severity for this rule varies by scope; see [scope × severity matrix](../domain/scope-severity-model) for the exact values.
 
-Line-buffer and distance calculations underlying this rule's segment-length and angle checks were the subject of recent precision/rounding fixes; see [distance & precision rounding](/decisions/distance-precision-rounding.md) for details.
+Line-buffer and distance calculations underlying this rule's segment-length and angle checks were the subject of recent precision/rounding fixes; see [distance & precision rounding](../decisions/distance-precision-rounding) for details.
 
 # Citations
 

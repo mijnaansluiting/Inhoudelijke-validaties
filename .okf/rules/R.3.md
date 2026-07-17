@@ -24,7 +24,7 @@ Every NLCS object's geometry must spatially interact with the project area (the 
   - Line objects (MSkabel, Amantelbuis, Akunstwerk, Eaarddraad, Aaanlegtechniek, LSkabel): the object's gml:Curve must interact with the project area (`ma:line-interacts-with-area`).
   - Area objects (MSstation, AbeschermingVlak): the object's gml:Surface must interact with the project area (`ma:area-interacts-with-area`).
 
-Severity for this rule varies by scope; see [scope × severity matrix](/domain/scope-severity-model.md) for the exact values.
+Severity for this rule varies by scope; see [scope × severity matrix](../domain/scope-severity-model) for the exact values.
 
 # Citations
 

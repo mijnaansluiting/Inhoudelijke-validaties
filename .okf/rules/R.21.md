@@ -32,14 +32,14 @@ Every cable must be properly connected at both ends: a dangling start or end poi
 - Each endpoint check is only performed when that endpoint lies within the project area (`AprojectReferentie`); endpoints outside the project area are not evaluated.
 - Failing endpoints are reported with their geometry (via `ma:create-gml-point`) so the offending point can be located on the map.
 
-See [R.20](/rules/R.20.md) for the related point-topology rule.
+See [R.20](./R.20) for the related point-topology rule.
 
 This rule's endpoint scan (every cable against every candidate endpoint
 object) was the dominant remaining cost in the geometry-parsing pipeline —
-see [geometry-parse-caching](/decisions/geometry-parse-caching.md) for why
+see [geometry-parse-caching](../decisions/geometry-parse-caching) for why
 `ma:parse-point`/`ma:parse-area` are now memoized per geometry node.
 
-Severity for this rule varies by scope; see [/domain/scope-severity-model.md](/domain/scope-severity-model.md) for the full scope×severity matrix.
+Severity for this rule varies by scope; see [/domain/scope-severity-model.md](../domain/scope-severity-model) for the full scope×severity matrix.
 
 # Citations
 

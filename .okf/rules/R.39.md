@@ -21,11 +21,11 @@ A mof (cable joint) and the cables that connect to it should belong to the same 
 - validatieObjecten: LSmof, MSmof
 - Condition: for an LSmof, the set of LSkabel objects whose line geometry touches the mof's point geometry (`ma:point-touches-line`) must all have `Verbindingnummer` equal to the mof's `Verbindingnummer`; the same check is applied for MSmof against connected MSkabel objects.
 
-The abstract pattern emits the `connected-cables-have-different-verbindingnummer` message from the message catalog; see [localization-messages](/config/localization-messages.md). This rule complements [R.23](/rules/R.23.md), which also checks Verbindingnummer consistency across connected cables.
+The abstract pattern emits the `connected-cables-have-different-verbindingnummer` message from the message catalog; see [localization-messages](../config/localization-messages). This rule complements [R.23](./R.23), which also checks Verbindingnummer consistency across connected cables.
 
-The mof-to-kabel touch check is served by a shared connectivity index rather than a per-rule scan; see [connectivity-index-and-geometry-caching](/decisions/connectivity-index-and-geometry-caching.md).
+The mof-to-kabel touch check is served by a shared connectivity index rather than a per-rule scan; see [connectivity-index-and-geometry-caching](../decisions/connectivity-index-and-geometry-caching).
 
-Severity for this rule varies by scope; see [scope × severity matrix](/domain/scope-severity-model.md) for the exact values.
+Severity for this rule varies by scope; see [scope × severity matrix](../domain/scope-severity-model) for the exact values.
 
 # Citations
 

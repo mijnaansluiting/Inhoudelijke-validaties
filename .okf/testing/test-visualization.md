@@ -14,7 +14,7 @@ dateCreated: 2026-07-08T00:00:00Z
 # Overview
 
 `transformations/visualize_test_data.xsl` renders each
-[rule test fixture](/testing/rule-test-fixtures.md)'s geometry (points,
+[rule test fixture](./rule-test-fixtures)'s geometry (points,
 lines, polygons — layered polygon→line→point→text, each object given a random
 color) as an SVG. `scripts/generate_and_compare_svgs.sh` regenerates these
 into `assets/R.<n>/<passing|failing>/*.svg`, removing files with no geometry
@@ -27,7 +27,7 @@ they're checked in, `generate_and_compare_svgs.sh` fails CI
 (`git diff --quiet assets/`) if regenerating them produces a diff, forcing
 contributors to regenerate and commit SVGs whenever fixture geometry changes.
 This runs as part of the `DocValidation` workflow — see
-[ci/workflows](/ci/workflows.md) — since it's triggered by `doc/**` changes
+[ci/workflows](../ci/workflows) — since it's triggered by `doc/**` changes
 alongside the HTML doc regeneration.
 
 The equivalent script for the rendered rule-catalog HTML

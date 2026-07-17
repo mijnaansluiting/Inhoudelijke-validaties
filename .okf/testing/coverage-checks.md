@@ -15,7 +15,7 @@ dateCreated: 2026-07-08T00:00:00Z
 
 Two small, fast (no external dependencies) consistency checks guard against
 the rule catalog (`doc/NLCSValidatieRegels.xml`) and the Schematron
-implementation ([schematron-layering](/architecture/schematron-layering.md))
+implementation ([schematron-layering](../architecture/schematron-layering))
 drifting apart:
 
 - **`scripts/check_rule_coverage.sh`** — greps rule numbers out of
@@ -24,10 +24,10 @@ drifting apart:
   emits GitHub Actions annotations for any rule documented but not
   implemented, or implemented but not documented. Runs standalone as the
   `RuleCoverage` workflow (no build step needed) — see
-  [ci/workflows](/ci/workflows.md).
+  [ci/workflows](../ci/workflows).
 
 - **`scripts/check_rule_object_coverage.sh`** — for each rule's
-  [test fixture](/testing/rule-test-fixtures.md) SVRL reports, runs
+  [test fixture](./rule-test-fixtures) SVRL reports, runs
   `transformations/check_object_coverage.xsl` against
   `doc/NLCSValidatieRegels.xml` to confirm the NLCS object types a rule's
   asserts actually reported on match the `<validatieObjecten>` list declared

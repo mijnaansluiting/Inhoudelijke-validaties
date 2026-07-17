@@ -19,9 +19,9 @@ This rule verifies that every LSoverdrachtspunt (low-voltage transfer/connection
 - Applies to (`validatieObjecten`): LSoverdrachtspunt.
 - Condition: every `LSoverdrachtspunt` must have a value for `EigenRichting`, `Functie`, `FaseAanduiding`, and `Aardingsysteem` (asserts `eigen-richting-present`, `functie-present`, `fase-aanduiding-present`, `aardingsysteem-present`).
 
-Severity for this rule varies by scope; see [scope-severity-model](../domain/scope-severity-model.md) for the full scope×severity matrix.
+Severity for this rule varies by scope; see [scope-severity-model](../domain/scope-severity-model) for the full scope×severity matrix.
 
-The abstract pattern emits the `attribute-not-present` message from the message catalog for each missing attribute; see [localization-messages](../config/localization-messages.md).
+The abstract pattern emits the `attribute-not-present` message from the message catalog for each missing attribute; see [localization-messages](../config/localization-messages).
 
 # Citations
 [1] [NLCS Validatieregels catalog](../../doc/NLCSValidatieRegels.xml)

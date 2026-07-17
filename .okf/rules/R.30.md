@@ -24,9 +24,9 @@ An AmantelbuisInhoud object links a duct (mantelbuis) to the asset it contains. 
   - `mantelbuis-id-refers-to-mantelbuis`: the NLCS object with ID = MantelbuisID must exist and be an Amantelbuis (message `mantelbuis-id-does-not-refer-to-mantelbuis`).
   - `object-type-inhoud-matches-inhoud`: the NLCS object with ID = InhoudID must have a type name matching the AmantelbuisInhoud's own ObjectTypeInhoud value (message `object-type-inhoud-does-not-match-inhoud`).
 
-This rule is closely related to [R.27](/rules/R.27.md) and [R.36](/rules/R.36.md), which impose further consistency and geometric constraints on the same mantelbuis/inhoud relationship.
+This rule is closely related to [R.27](./R.27) and [R.36](./R.36), which impose further consistency and geometric constraints on the same mantelbuis/inhoud relationship.
 
-Severity for this rule varies by scope; see [scope × severity matrix](/domain/scope-severity-model.md) for the exact values.
+Severity for this rule varies by scope; see [scope × severity matrix](../domain/scope-severity-model) for the exact values.
 
 # Citations
 

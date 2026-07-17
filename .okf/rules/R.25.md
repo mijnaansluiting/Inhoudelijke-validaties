@@ -32,9 +32,9 @@ The set of Fase values on the cables meeting at a joint must be electrically con
 - Only Fase values within the allowed set ("3 Fasen", "L1", "L2", "L3") are permitted at joints with 2, 3 or 4 connections; any other Fase value present triggers a separate assertion.
 - For 4 connections, the rule additionally requires that the four distinct allowed phase values are all represented (i.e., the combined value plus all three split values).
 
-See [R.26](/rules/R.26.md), which also keys its check off the number of cables connected to a joint. The mof-to-kabel touch check is served by a shared connectivity index rather than a per-rule scan; see [connectivity-index-and-geometry-caching](/decisions/connectivity-index-and-geometry-caching.md).
+See [R.26](./R.26), which also keys its check off the number of cables connected to a joint. The mof-to-kabel touch check is served by a shared connectivity index rather than a per-rule scan; see [connectivity-index-and-geometry-caching](../decisions/connectivity-index-and-geometry-caching).
 
-Severity for this rule varies by scope; see [/domain/scope-severity-model.md](/domain/scope-severity-model.md) for the full scope×severity matrix.
+Severity for this rule varies by scope; see [/domain/scope-severity-model.md](../domain/scope-severity-model) for the full scope×severity matrix.
 
 # Citations
 

@@ -23,7 +23,7 @@ A directional-drilling installation technique must be documented with a drilling
   - `check-bestand-bijlage-present`: at least one related AbestandBijlage must exist (message `object-not-present`, placeholder `Abestandbijlage`).
   - `bestandbijlage-must-be-gestuurde-boring`: the related AbestandBijlage's SoortBestand must equal "Gestuurde boring" (message `soort-bestand-not-correct`).
 
-Severity for this rule varies by scope; see [scope × severity matrix](/domain/scope-severity-model.md) for the exact values.
+Severity for this rule varies by scope; see [scope × severity matrix](../domain/scope-severity-model) for the exact values.
 
 # Citations
 

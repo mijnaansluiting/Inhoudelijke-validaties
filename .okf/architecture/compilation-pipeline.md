@@ -14,7 +14,7 @@ dateCreated: 2026-07-08T00:00:00Z
 # Overview
 
 There is no persistent validation service — this repo is a toolchain that
-compiles [Schematron rules](/architecture/schematron-layering.md) into
+compiles [Schematron rules](./schematron-layering) into
 standalone XSLT, which is then run directly against an NLCS++ XML instance.
 The pipeline, driven by bash scripts and **Saxon-HE** (Java, XSLT/XPath 3.0)
 plus **SchXSLT2** (a Schematron→XSLT transpiler):
@@ -43,9 +43,9 @@ plus **SchXSLT2** (a Schematron→XSLT transpiler):
    XML instance produces an **SVRL** report (Schematron Validation Report
    Language) listing `<successful-report>`/`<assert-failed>` elements
    annotated with the `scope`/`severity`/`object-type` properties from
-   [schematron-layering](/architecture/schematron-layering.md).
+   [schematron-layering](./schematron-layering).
    `scripts/validate_rules.sh` does this for every rule against its
-   [test fixtures](/testing/rule-test-fixtures.md), and
+   [test fixtures](../testing/rule-test-fixtures), and
    `transformations/check_validation_reports.xsl` reduces a report to a
    PASS/FAIL verdict by counting `<assert-failed>` elements.
 
@@ -55,13 +55,13 @@ plus **SchXSLT2** (a Schematron→XSLT transpiler):
    (`validation_schemas/abstract_patterns_scope_checks/`,
    `validation_schemas/base_scope_checks/v12.sch`) whose abstract patterns
    additionally assert that each object falls within its expected scope —
-   this variant is what [scope-coverage-tests](/testing/scope-coverage-tests.md)
-   and the release bundle ([build-and-release](/architecture/build-and-release.md))
+   this variant is what [scope-coverage-tests](../testing/scope-coverage-tests)
+   and the release bundle ([build-and-release](./build-and-release))
    use, not the plain rule logic.
 
 This whole pipeline exists so that a "phase" (= one rule) can be compiled and
 run in isolation, which is what makes per-rule pass/fail testing in CI
-tractable — see [rule-test-fixtures](/testing/rule-test-fixtures.md).
+tractable — see [rule-test-fixtures](../testing/rule-test-fixtures).
 
 # Citations
 

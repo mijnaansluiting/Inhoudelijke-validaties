@@ -23,7 +23,7 @@ Whether a mantelbuis is expected to have an AmantelbuisInhoud (its recorded cont
 - If Bedrijfstoestand is "RESERVE", no AmantelbuisInhoud referencing the mantelbuis may exist.
 - Both conditions are checked as separate assertions on the same rule context.
 
-Severity for this rule varies by scope; see [/domain/scope-severity-model.md](/domain/scope-severity-model.md) for the full scope×severity matrix.
+Severity for this rule varies by scope; see [/domain/scope-severity-model.md](../domain/scope-severity-model) for the full scope×severity matrix.
 
 # Citations
 

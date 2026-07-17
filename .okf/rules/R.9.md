@@ -19,9 +19,9 @@ This rule verifies that every applicable electrical asset carries a populated `D
 - Applies to (`validatieObjecten`): Eaarddraad, Eaardpen, LSkabel, LSmof, LSoverdrachtspunt, MSstation, MSkabel, MSmof, MSoverdrachtspunt, OVLoverdrachtspunt.
 - Condition: `DatumAanleg` must exist and be non-empty (assert `date-exists`); if present, `DatumAanleg` must be less than or equal to the current date (assert `date-not-in-future`) — i.e. it may not be a future date.
 
-Severity for this rule varies by scope; see [scope-severity-model](../domain/scope-severity-model.md) for the full scope×severity matrix.
+Severity for this rule varies by scope; see [scope-severity-model](../domain/scope-severity-model) for the full scope×severity matrix.
 
-The abstract pattern emits the `attribute-not-present` and `date-in-the-future` messages from the message catalog; see [localization-messages](../config/localization-messages.md).
+The abstract pattern emits the `attribute-not-present` and `date-in-the-future` messages from the message catalog; see [localization-messages](../config/localization-messages).
 
 # Citations
 [1] [NLCS Validatieregels catalog](../../doc/NLCSValidatieRegels.xml)

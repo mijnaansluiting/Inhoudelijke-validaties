@@ -16,14 +16,14 @@ dateCreated: 2026-07-08T00:00:00Z
 The artifact netbeheerders/contractors actually consume isn't this source
 repo directly — it's a packaged zip produced by `scripts/bundle.sh` and
 published as a GitHub Release asset by the `Deliverables` workflow (see
-[ci/workflows](/ci/workflows.md)) whenever a `v*` tag is pushed.
+[ci/workflows](../ci/workflows)) whenever a `v*` tag is pushed.
 
 `bundle.sh` assembles a `dist/` directory containing:
 - the **scope-checked** base schema, transpiled to XSLT
   (`validation_schemas/base_scope_checks/v12.xsl` — see
-  [compilation-pipeline](/architecture/compilation-pipeline.md) for how the
+  [compilation-pipeline](./compilation-pipeline) for how the
   scope-checked variant is produced) under `dist/src/base/`
-- the [xsl-function-libraries](/architecture/xsl-function-libraries.md) under
+- the [xsl-function-libraries](./xsl-function-libraries) under
   `dist/src/xsl_functions/`
 - `configuration/` (both `sys_config.xml` and `user_config.xml`) under
   `dist/configuration/`
@@ -33,7 +33,7 @@ published as a GitHub Release asset by the `Deliverables` workflow (see
 
 ...then zips `dist/` as `nlcspp_inhoudelijke_validaties.zip`. This is the
 "run the same validations on every device" deliverable the
-[project's stated goal](/domain/nlcs-plus-plus.md) refers to: a
+[project's stated goal](../domain/nlcs-plus-plus) refers to: a
 self-contained bundle a consumer can run against their own NLCS++ files with
 just Saxon, no dependency on this build toolchain.
 

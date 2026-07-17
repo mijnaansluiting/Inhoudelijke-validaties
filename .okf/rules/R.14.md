@@ -19,9 +19,9 @@ This rule verifies that every station or cabinet object records both an identify
 - Applies to (`validatieObjecten`): HSstation, LSkast, MSstation.
 - Condition: every `LSkast`, `MSstation`, and `HSstation` must have a value for `Nummer` and `Functie` (asserts `object-has-number`, `object-has-functie`).
 
-Severity for this rule varies by scope; see [scope-severity-model](../domain/scope-severity-model.md) for the full scope×severity matrix.
+Severity for this rule varies by scope; see [scope-severity-model](../domain/scope-severity-model) for the full scope×severity matrix.
 
-The abstract pattern emits the `attribute-not-present` message from the message catalog for each missing attribute; see [localization-messages](../config/localization-messages.md).
+The abstract pattern emits the `attribute-not-present` message from the message catalog for each missing attribute; see [localization-messages](../config/localization-messages).
 
 # Citations
 [1] [NLCS Validatieregels catalog](../../doc/NLCSValidatieRegels.xml)

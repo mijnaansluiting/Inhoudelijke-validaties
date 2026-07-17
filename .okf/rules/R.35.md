@@ -24,7 +24,7 @@ A revision drawing must include at least one ground-level measurement. This rule
   - `revisie-has-maaiveldhoogte`: if `is_revisie`, the count of Amaaiveldhoogte children must be greater than 0 (message `revisie-no-maaiveldhoogte-present`); otherwise the assertion passes vacuously.
   - Note this assertion's `properties` list is `rule-number severity` only (no `scope`/`object-type`/`object-id`), consistent with it being a file-level rather than object-level check.
 
-Severity for this rule varies by scope; see [scope × severity matrix](/domain/scope-severity-model.md) for the exact values.
+Severity for this rule varies by scope; see [scope × severity matrix](../domain/scope-severity-model) for the exact values.
 
 # Citations
 

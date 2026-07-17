@@ -16,14 +16,14 @@ A stress-test file (`benchmark.xml`: 286 LSkabel, 251 LSmof, 136
 LSoverdrachtspunt, 99 OVLoverdrachtspunt, 7 MSkabel; geometries averaging ~32
 vertices, one line with ~593) took **132 seconds** to validate under
 "Bestaande Situatie" — far too slow for a single file. An earlier, separate
-fix to [xsl-function-libraries](/architecture/xsl-function-libraries.md)'s
+fix to [xsl-function-libraries](../architecture/xsl-function-libraries)'s
 `geometry_functions.xsl` (rounding/line-buffer precision work, unrelated to
 this decision) had already cut that from an even higher baseline; this
 decision covers a second, structural fix.
 
-Profiling pointed at [R.20](/rules/R.20.md), [R.22](/rules/R.22.md),
-[R.23](/rules/R.23.md), [R.25](/rules/R.25.md), and [R.26](/rules/R.26.md) —
-plus [R.39](/rules/R.39.md), found to share the identical pattern during
+Profiling pointed at [R.20](../rules/R.20), [R.22](../rules/R.22),
+[R.23](../rules/R.23), [R.25](../rules/R.25), and [R.26](../rules/R.26) —
+plus [R.39](../rules/R.39), found to share the identical pattern during
 this investigation — as the dominant cost, all built on `ma:point-touches-line`.
 
 # Root causes
@@ -41,7 +41,7 @@ Reading every abstract pattern that calls `ma:point-touches-line`/
    R.25, R.26, and R.39 each independently brute-force scanned
    `//nlcs:MSkabel`/`//nlcs:LSkabel` for every mof/overdrachtspunt. Since
    `benchmark.sh` runs the full combined schema (all phases in one
-   stylesheet — see [compilation-pipeline](/architecture/compilation-pipeline.md)),
+   stylesheet — see [compilation-pipeline](../architecture/compilation-pipeline)),
    this identical relationship was recomputed 6 separate times per run.
    R.22 and R.23 additionally **nested** the scan: for every kabel, find
    connected moffen, then re-scan *all* cables again per connected mof —
@@ -50,7 +50,7 @@ Reading every abstract pattern that calls `ma:point-touches-line`/
 # Decision
 
 Added `validation_schemas/xsl_functions/connectivity_functions.xsl`
-(see [xsl-function-libraries](/architecture/xsl-function-libraries.md)),
+(see [xsl-function-libraries](../architecture/xsl-function-libraries)),
 computed lazily once per validation run and reused by all 6 rules:
 
 - Each covered object's geometry (`MSmof`/`LSmof`/`Eaardmof`/
@@ -80,7 +80,7 @@ O(1)-ish composed lookups, without changing what any rule actually checks.
 The first implementation represented the touch table as constructed
 `<Touch mof_id="..." kabel_id="..." kabel_type="..."/>` elements, indexed via
 `xsl:key` — the more "obvious" XSLT idiom, and consistent with how
-[rule_scope_functions.xsl](/architecture/xsl-function-libraries.md) already
+[rule_scope_functions.xsl](../architecture/xsl-function-libraries) already
 uses a top-level `document()`-backed variable. It worked correctly in
 isolated tests (a minimal stylesheet including just the geometry/config/
 helper/connectivity libraries) but **intermittently failed once compiled
@@ -116,7 +116,7 @@ meant to be traversed as a document.
   (only comparing objects whose bounding boxes fall in the same or
   neighboring cell) would cut this further but is a separate, larger piece
   of work not undertaken here. **Update:** before pursuing this, see
-  [geometry-parse-caching](/decisions/geometry-parse-caching.md) — a cheaper
+  [geometry-parse-caching](./geometry-parse-caching) — a cheaper
   fix (memoizing the geometry parse itself, not the spatial comparison) cut
   `benchmark.sh` further from ~27s to 10s, and R.21's uncached endpoint scan
   (see next bullet) turned out to be a bigger contributor than this
@@ -128,7 +128,7 @@ meant to be traversed as a document.
   untouched to keep this change's blast radius limited to the 6 rules that
   actually share the rewritten relationship, rather than also modifying
   `ma:parse-point`/`ma:parse-line` themselves (which are called by all 41
-  rules, not just these 6). **Update:** [geometry-parse-caching](/decisions/geometry-parse-caching.md)
+  rules, not just these 6). **Update:** [geometry-parse-caching](./geometry-parse-caching)
   did modify those two functions (adding memoization only, signatures
   unchanged) and found R.21's O(kabels × moffen) reparsing — not the
   points×lines cost above — to be the dominant remaining cost at benchmark
@@ -137,10 +137,10 @@ meant to be traversed as a document.
 # Verification
 
 - All 41 rules' `passing`/`failing` fixtures under
-  [rule-test-fixtures](/testing/rule-test-fixtures.md) produced identical
+  [rule-test-fixtures](../testing/rule-test-fixtures) produced identical
   PASS/FAIL verdicts before and after (`scripts/validate_rules.sh` +
   `scripts/validate_rule_reports.sh`), including R.20/22/23/25/26/39.
-- [coverage-checks](/testing/coverage-checks.md)
+- [coverage-checks](../testing/coverage-checks)
   (`check_rule_coverage.sh`, `check_rule_object_coverage.sh`): zero
   mismatches.
 - `benchmark.sh` against `benchmark.xml`: **132s → ~27s** in this

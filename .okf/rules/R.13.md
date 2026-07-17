@@ -19,9 +19,9 @@ This rule verifies that every MSoverdrachtspunt (medium-voltage transfer point) 
 - Applies to (`validatieObjecten`): MSoverdrachtspunt.
 - Condition: every `MSoverdrachtspunt` must have a value for `Identificatie` (EAN code), enforced by assert `v12-msoverdrachtspunt-has-identification`.
 
-Severity for this rule varies by scope; see [scope-severity-model](../domain/scope-severity-model.md) for the full scope×severity matrix.
+Severity for this rule varies by scope; see [scope-severity-model](../domain/scope-severity-model) for the full scope×severity matrix.
 
-The abstract pattern emits the `attribute-not-present` message from the message catalog when `Identificatie` is missing; see [localization-messages](../config/localization-messages.md).
+The abstract pattern emits the `attribute-not-present` message from the message catalog when `Identificatie` is missing; see [localization-messages](../config/localization-messages).
 
 # Citations
 [1] [NLCS Validatieregels catalog](../../doc/NLCSValidatieRegels.xml)

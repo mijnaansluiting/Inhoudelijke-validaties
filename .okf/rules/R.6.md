@@ -20,9 +20,9 @@ Linear Elec objects must record how they were surveyed (Inmeetwijze) and with wh
 - soort: Verplichte waarde
 - validatieObjecten: Amantelbuis, Eaarddraad, LSkabel, MSkabel
 - Condition: for each object of these types, `nlcs:Inmeetwijze` must be present and non-empty, and `nlcs:Nauwkeurigheid` must be present and non-empty.
-- This rule only checks *presence* of a value for Inmeetwijze; which specific Inmeetwijze values are actually permitted is constrained separately by [R.37](/rules/R.37.md) and [R.38](/rules/R.38.md).
+- This rule only checks *presence* of a value for Inmeetwijze; which specific Inmeetwijze values are actually permitted is constrained separately by [R.37](./R.37) and [R.38](./R.38).
 
-Severity for this rule varies by scope; see [scope × severity matrix](/domain/scope-severity-model.md) for the exact values.
+Severity for this rule varies by scope; see [scope × severity matrix](../domain/scope-severity-model) for the exact values.
 
 # Citations
 

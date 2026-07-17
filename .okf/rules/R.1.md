@@ -21,7 +21,7 @@ An NLCS++ file must contain at least one NLCS object in addition to its project 
 - validatieObjecten: Document
 - Condition: the file's NLCSnetbeheer element must contain exactly one AprojectReferentie (`count($aprojectreferenties) = 1`), and it must contain at least one other child element that is not an AprojectReferentie (`count($nlcs_objects) > 0`).
 
-Severity for this rule varies by scope; see [scope × severity matrix](/domain/scope-severity-model.md) for the exact values.
+Severity for this rule varies by scope; see [scope × severity matrix](../domain/scope-severity-model) for the exact values.
 
 # Citations
 

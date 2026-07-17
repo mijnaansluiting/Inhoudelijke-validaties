@@ -25,7 +25,7 @@ Depending on the Tekeningsoort (drawing type) of the project, only certain NLCS 
   - VOORONTWERP (and any other/unrecognized Tekeningtype) → no statuses allowed
   - The rule fails if any distinct Status value found among the file's objects falls outside the allowed set for the declared Tekeningtype.
 
-Severity for this rule varies by scope; see [scope × severity matrix](/domain/scope-severity-model.md) for the exact values.
+Severity for this rule varies by scope; see [scope × severity matrix](../domain/scope-severity-model) for the exact values.
 
 # Citations
 

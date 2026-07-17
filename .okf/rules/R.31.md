@@ -23,7 +23,7 @@ An earth pin (Eaardpen) must be documented with a grounding report. This rule ch
   - `check-bestand-bijlage-present`: at least one related AbestandBijlage must exist (message `object-not-present`, placeholder `Abestandbijlage`).
   - `check-correct-bestandsoort`: if present, its SoortBestand must equal "Aardingsrapport" (message `soort-bestand-not-correct`).
 
-Severity for this rule varies by scope; see [scope × severity matrix](/domain/scope-severity-model.md) for the exact values.
+Severity for this rule varies by scope; see [scope × severity matrix](../domain/scope-severity-model) for the exact values.
 
 # Citations
 

@@ -24,13 +24,13 @@ The assets running through a duct (mantelbuis) should physically lie along that 
   - Both the duct and each content object's `Geometry` are parsed into lines (`ma:parse-line`).
   - `inhoud-in-range-of-mantelbuis`: every content object's line must be within `ma:mantelbuis-inhoud-asset-max-distance()` of the duct's line (`ma:line-within-range-of-line`); any that are not are reported together (message `inhoud-assets-not-in-range-of-mantelbuis`, with the offending count and the max distance as placeholders).
 
-The maximum distance is read from `configuration/sys_config.xml`'s `MantelbuisInhoudMaxAfstand` (currently `1`, in meters) via `ma:mantelbuis-inhoud-asset-max-distance()` — this is the "configurable" threshold called for in the rule's definition. See [sys_config reference](/config/sys-config.md).
+The maximum distance is read from `configuration/sys_config.xml`'s `MantelbuisInhoudMaxAfstand` (currently `1`, in meters) via `ma:mantelbuis-inhoud-asset-max-distance()` — this is the "configurable" threshold called for in the rule's definition. See [sys_config reference](../config/sys-config).
 
-The distance/line-buffer calculation behind this rule has been the subject of recent bugfixes (handling sequential coordinates at the same position, and rounding the computed distance to millimeters before comparing against the threshold to avoid floating-point false positives). See [distance precision rounding decision](/decisions/distance-precision-rounding.md) for the rationale behind those choices.
+The distance/line-buffer calculation behind this rule has been the subject of recent bugfixes (handling sequential coordinates at the same position, and rounding the computed distance to millimeters before comparing against the threshold to avoid floating-point false positives). See [distance precision rounding decision](../decisions/distance-precision-rounding) for the rationale behind those choices.
 
-This rule is closely related to [R.27](/rules/R.27.md) and [R.30](/rules/R.30.md), which impose further consistency constraints on the same mantelbuis/inhoud relationship.
+This rule is closely related to [R.27](./R.27) and [R.30](./R.30), which impose further consistency constraints on the same mantelbuis/inhoud relationship.
 
-Severity for this rule varies by scope; see [scope × severity matrix](/domain/scope-severity-model.md) for the exact values.
+Severity for this rule varies by scope; see [scope × severity matrix](../domain/scope-severity-model) for the exact values.
 
 # Citations
 

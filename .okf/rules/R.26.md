@@ -32,11 +32,11 @@ A joint's Functie (function) implies how many cables should physically meet ther
 - If Functie cannot be mapped to a known category, a separate assertion flags that the required cable amount is unknown.
 - Eaardmof has no Functie; instead it must simply be connected to at least one Eaarddraad (a dedicated rule branch, not driven by the table above).
 
-Config dependency: the mapping from Functie strings to the Aftak/Eind/Verbinding/Faseovergang categories is defined by the `MofFuncties` group in `configuration/sys_config.xml` and read via the `ma:map-mof-functie` function — see [/config/sys-config.md](/config/sys-config.md).
+Config dependency: the mapping from Functie strings to the Aftak/Eind/Verbinding/Faseovergang categories is defined by the `MofFuncties` group in `configuration/sys_config.xml` and read via the `ma:map-mof-functie` function — see [/config/sys-config.md](../config/sys-config).
 
-The mof-to-kabel/Eaarddraad touch check is served by a shared connectivity index rather than a per-rule scan; see [connectivity-index-and-geometry-caching](/decisions/connectivity-index-and-geometry-caching.md).
+The mof-to-kabel/Eaarddraad touch check is served by a shared connectivity index rather than a per-rule scan; see [connectivity-index-and-geometry-caching](../decisions/connectivity-index-and-geometry-caching).
 
-Severity for this rule varies by scope; see [/domain/scope-severity-model.md](/domain/scope-severity-model.md) for the full scope×severity matrix.
+Severity for this rule varies by scope; see [/domain/scope-severity-model.md](../domain/scope-severity-model) for the full scope×severity matrix.
 
 # Citations
 

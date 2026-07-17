@@ -23,9 +23,9 @@ A mantelbuis can be laid inside one or more other, larger mantelbuizen, as recor
 - The assertion requires that the inner pipe's Diameter is strictly smaller than the Diameter of every one of those outer pipes.
 - Diameter is a Text-typed attribute in the data model, so the abstract pattern coerces it to `number()` before comparing; outer pipes whose Diameter is "KEUZE ONTBREEKT IN LIJST" (no choice made) are excluded from the comparison, and the check is skipped entirely if the inner pipe's own Diameter is "KEUZE ONTBREEKT IN LIJST". Note: an earlier version of this pattern had a bug around this numeric coercion (missing xs:decimal/xs:integer conversion), later fixed.
 
-See [R.30](/rules/R.30.md), which also concerns mantelbuis/inhoud nesting relationships.
+See [R.30](./R.30), which also concerns mantelbuis/inhoud nesting relationships.
 
-Severity for this rule varies by scope; see [/domain/scope-severity-model.md](/domain/scope-severity-model.md) for the full scope×severity matrix.
+Severity for this rule varies by scope; see [/domain/scope-severity-model.md](../domain/scope-severity-model) for the full scope×severity matrix.
 
 # Citations
 

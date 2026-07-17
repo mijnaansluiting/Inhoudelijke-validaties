@@ -23,7 +23,7 @@ Every cable object must carry a baseline set of descriptive attributes (executio
   - **R.8-A** (general, HSkabel/LSkabel/MSkabel): `nlcs:Uitvoering`, `nlcs:Kabelopbouw`, `nlcs:Fabrikant`, `nlcs:Verbindingnummer`, `nlcs:Spanningsniveau`, and `nlcs:FaseAanduiding` must all be present and non-empty. In addition, if `nlcs:Uitvoering` equals `KEUZE ONTBREEKT IN LIJST`, then `nlcs:OmschrijvingUitvoering` must also be present and non-empty.
   - **R.8-B** (LSkabel only): `nlcs:Aardingsysteem`, `nlcs:Bovengronds`, and `nlcs:Functie` must all be present and non-empty, in addition to the R.8-A attributes.
 
-Severity for this rule varies by scope; see [scope × severity matrix](/domain/scope-severity-model.md) for the exact values.
+Severity for this rule varies by scope; see [scope × severity matrix](../domain/scope-severity-model) for the exact values.
 
 # Citations
 

@@ -25,9 +25,9 @@ A relocation ("verplaatsing") of a cable must be recorded as two objects of the 
     - there must exist a second object of the same NLCS type elsewhere in the file with Status=BESTAAND and the same GisId (`verplaatsing-correctly-applied`, message `verplaatsing-incorrectly-applied`).
   - Objects that are not a relocation (`is_verplaatsing` false) are not constrained by either assertion.
 
-This relocation pattern is the explicit exception referenced by [R.5](/rules/R.5.md), whose GisId/AssetId presence check otherwise excludes REVISIE+VERPLAATSEN objects from its normal "must carry GisId and AssetId" requirement.
+This relocation pattern is the explicit exception referenced by [R.5](./R.5), whose GisId/AssetId presence check otherwise excludes REVISIE+VERPLAATSEN objects from its normal "must carry GisId and AssetId" requirement.
 
-Severity for this rule varies by scope; see [scope × severity matrix](/domain/scope-severity-model.md) for the exact values.
+Severity for this rule varies by scope; see [scope × severity matrix](../domain/scope-severity-model) for the exact values.
 
 # Citations
 

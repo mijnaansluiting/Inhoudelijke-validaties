@@ -21,7 +21,7 @@ MSkabel, LSkabel, and LSmof objects must specify their Subnettype so that the su
 - validatieObjecten: MSkabel, LSkabel, LSmof
 - Condition: for each object of these types, `nlcs:Subnettype` must be present and non-empty.
 
-Severity for this rule varies by scope; see [scope × severity matrix](/domain/scope-severity-model.md) for the exact values.
+Severity for this rule varies by scope; see [scope × severity matrix](../domain/scope-severity-model) for the exact values.
 
 # Citations
 

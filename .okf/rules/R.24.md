@@ -30,7 +30,7 @@ A cable's declared Fase (phase) must match how the cable is actually constructed
 - The assertion checks that Uitvoering starts with the expected prefix.
 - If Uitvoering equals "KEUZE ONTBREEKT IN LIJST" (no choice made in the list), OmschrijvingUitvoering is compared against the expected prefix instead.
 
-Severity for this rule varies by scope; see [/domain/scope-severity-model.md](/domain/scope-severity-model.md) for the full scope×severity matrix.
+Severity for this rule varies by scope; see [/domain/scope-severity-model.md](../domain/scope-severity-model) for the full scope×severity matrix.
 
 # Citations
 

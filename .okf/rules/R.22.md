@@ -23,9 +23,9 @@ Cables that are physically joined via a mof must belong to the same netvlak (net
 - For an LSkabel, the joints (LSmof) touching its line are found, and then any MSkabel or HSkabel touching one of those joints is collected; the assertion fails if any such cross-netvlak cable is found.
 - In both cases the failure message reports the counts and types of the mismatching connected cables.
 
-The mof/kabel touch relationship (both the direct touch and the "kabel via a shared mof" second hop) is served by a shared connectivity index rather than a per-rule, per-kabel rescan; see [connectivity-index-and-geometry-caching](/decisions/connectivity-index-and-geometry-caching.md).
+The mof/kabel touch relationship (both the direct touch and the "kabel via a shared mof" second hop) is served by a shared connectivity index rather than a per-rule, per-kabel rescan; see [connectivity-index-and-geometry-caching](../decisions/connectivity-index-and-geometry-caching).
 
-Severity for this rule varies by scope; see [/domain/scope-severity-model.md](/domain/scope-severity-model.md) for the full scope×severity matrix.
+Severity for this rule varies by scope; see [/domain/scope-severity-model.md](../domain/scope-severity-model) for the full scope×severity matrix.
 
 # Citations
 

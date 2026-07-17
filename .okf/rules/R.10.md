@@ -23,9 +23,9 @@ This rule verifies that every mof (cable joint) has a minimal set of attributes 
   - Additionally, every `MSmof` and `HSmof` must have a value for `NaamMonteur` and `CrossBondingAanwezig`.
 - The abstract pattern implements this with two separate rule contexts: one for `MSmof | HSmof` (Functie, Verbindingnummer, NaamMonteur, CrossBondingAanwezig) and one for `LSmof` (Functie, Verbindingnummer, Bovengronds).
 
-Severity for this rule varies by scope; see [scope-severity-model](../domain/scope-severity-model.md) for the full scope×severity matrix.
+Severity for this rule varies by scope; see [scope-severity-model](../domain/scope-severity-model) for the full scope×severity matrix.
 
-The abstract pattern emits the `attribute-not-present` message from the message catalog for each missing attribute; see [localization-messages](../config/localization-messages.md).
+The abstract pattern emits the `attribute-not-present` message from the message catalog for each missing attribute; see [localization-messages](../config/localization-messages).
 
 # Citations
 [1] [NLCS Validatieregels catalog](../../doc/NLCSValidatieRegels.xml)

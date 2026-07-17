@@ -12,18 +12,18 @@ dateCreated: 2026-07-10T00:00:00Z
 
 # Context
 
-Follow-on to [connectivity-index-and-geometry-caching](/decisions/connectivity-index-and-geometry-caching.md),
+Follow-on to [connectivity-index-and-geometry-caching](./connectivity-index-and-geometry-caching),
 which cut `benchmark.xml` (the stress-test fixture) from 132s to ~27s by
 building one shared mof/kabel touch index instead of 6 duplicated
 brute-force scans. That decision explicitly left `ma:parse-point`/
 `ma:parse-line`/`ma:parse-area` (in
-[helper_functions.xsl](/architecture/xsl-function-libraries.md)) unmodified,
+[helper_functions.xsl](../architecture/xsl-function-libraries)) unmodified,
 noting they're "called by all 41 rules, not just these 6" — too broad a
 blast radius for that pass.
 
 Investigating a proposal to add a quad tree for the remaining
-[R.20](/rules/R.20.md)/[R.22](/rules/R.22.md)/[R.23](/rules/R.23.md)/
-[R.25](/rules/R.25.md)/[R.26](/rules/R.26.md)/[R.39](/rules/R.39.md)
+[R.20](../rules/R.20)/[R.22](../rules/R.22)/[R.23](../rules/R.23)/
+[R.25](../rules/R.25)/[R.26](../rules/R.26)/[R.39](../rules/R.39)
 points×lines cost surfaced a bigger, cheaper, unrelated problem first:
 `ma:parse-point`/`ma:parse-line`/`ma:parse-area` re-tokenize the raw GML
 coordinate string and rebuild a fresh `<Coord>` element per vertex on
@@ -37,7 +37,7 @@ Auditing every call site (only 5 abstract patterns plus
 functions all take already-parsed nodes, so the blast radius is smaller than
 the "all 41 rules" concern above suggested):
 
-- [R.21](/rules/R.21.md) (`geldig_eindpunt_kabel.sch`) — **the dominant cost**.
+- [R.21](../rules/R.21) (`geldig_eindpunt_kabel.sch`) — **the dominant cost**.
   For every `MSkabel`/`LSkabel`/`Eaarddraad`, it re-parses every candidate
   `MSmof`/`MSoverdrachtspunt`/`MSstation`/etc. geometry twice (once for the
   start point check, once for the end point) via `some $x_geometry in
@@ -50,14 +50,14 @@ the "all 41 rules" concern above suggested):
   geometry for every point while building its touch index — O(points ×
   lines) reparses, on top of the O(points × lines) bbox/segment comparisons
   already accounted for.
-- [R.3](/rules/R.3.md), [R.4](/rules/R.4.md), [R.36](/rules/R.36.md)
+- [R.3](../rules/R.3), [R.4](../rules/R.4), [R.36](../rules/R.36)
   re-parse a geometry once per rule instance/candidate — smaller
   contributors but the same underlying gap.
 
 # Decision
 
 Wrapped `ma:parse-point`/`ma:parse-line`/`ma:parse-area` in
-[helper_functions.xsl](/architecture/xsl-function-libraries.md) with three
+[helper_functions.xsl](../architecture/xsl-function-libraries) with three
 lazily-evaluated global XPath 3.1 maps (`parsed_point_cache`,
 `parsed_line_cache`, `parsed_area_cache`), each keyed by `generate-id()` of
 the `nlcs:Geometry` node and built once per validation run by scanning all
@@ -83,11 +83,11 @@ site) to always be a real, stable source-document node, never synthetic, so
 # Verification
 
 - All 41 rules' `passing`/`failing` fixtures under
-  [rule-test-fixtures](/testing/rule-test-fixtures.md)
+  [rule-test-fixtures](../testing/rule-test-fixtures)
   (`scripts/transpile_phases.sh` + `scripts/validate_rules.sh` +
   `scripts/validate_rule_reports.sh`) produced identical PASS/FAIL before
   and after.
-- [coverage-checks](/testing/coverage-checks.md)
+- [coverage-checks](../testing/coverage-checks)
   (`check_rule_coverage.sh`, `check_rule_object_coverage.sh`): zero
   mismatches.
 - `benchmark.sh` against `benchmark.xml`: **~27s → 10s** (consistent across
@@ -110,5 +110,5 @@ be re-assessed against the new 10s baseline rather than the old 27s one.
 
 [1] [helper_functions.xsl](../../validation_schemas/xsl_functions/helper_functions.xsl)
 [2] [geldig_eindpunt_kabel.sch](../../validation_schemas/abstract_patterns/v12/topologie/geldig_eindpunt_kabel.sch)
-[3] [connectivity-index-and-geometry-caching](connectivity-index-and-geometry-caching.md)
+[3] [connectivity-index-and-geometry-caching](./connectivity-index-and-geometry-caching)
 [4] [benchmark.xml / benchmark.sh / report.svrl.xml (stress-test fixture, harness, and resulting SVRL report — not part of the committed rule test suite)](../../benchmark.sh)

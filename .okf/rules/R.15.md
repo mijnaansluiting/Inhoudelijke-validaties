@@ -19,11 +19,11 @@ This rule verifies that every Mantelbuis (conduit/duct) records its material, di
 - Applies to (`validatieObjecten`): Amantelbuis.
 - Condition: every `Amantelbuis` must have a value for `Materiaal`, `Diameter`, and `Thema` (asserts `mantelbuis-has-materiaal`, `mantelbuis-has-diameter`, `mantelbuis-has-thema`).
 
-This rule only checks that `Diameter` is *populated*; the value's geometric consistency and unit correctness are checked separately — see [R.27](R.27.md) and [R.36](R.36.md), which apply additional geometric/value checks specific to Amantelbuis and its `Diameter`.
+This rule only checks that `Diameter` is *populated*; the value's geometric consistency and unit correctness are checked separately — see [R.27](./R.27) and [R.36](./R.36), which apply additional geometric/value checks specific to Amantelbuis and its `Diameter`.
 
-Severity for this rule varies by scope; see [scope-severity-model](../domain/scope-severity-model.md) for the full scope×severity matrix.
+Severity for this rule varies by scope; see [scope-severity-model](../domain/scope-severity-model) for the full scope×severity matrix.
 
-The abstract pattern emits the `attribute-not-present` message from the message catalog for each missing attribute; see [localization-messages](../config/localization-messages.md).
+The abstract pattern emits the `attribute-not-present` message from the message catalog for each missing attribute; see [localization-messages](../config/localization-messages).
 
 # Citations
 [1] [NLCS Validatieregels catalog](../../doc/NLCSValidatieRegels.xml)

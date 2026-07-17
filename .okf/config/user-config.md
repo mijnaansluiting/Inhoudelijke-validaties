@@ -25,7 +25,7 @@ single field:
 `Language` (`nl` or `en`) selects which `xml:lang` variant
 `validation_schemas/xsl_functions/localization_functions.xsl` picks when
 resolving a message id from
-[localization-messages](/config/localization-messages.md) for an SVRL assert
+[localization-messages](./localization-messages) for an SVRL assert
 report.
 
 # Citations
