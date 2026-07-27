@@ -61,7 +61,7 @@
     <variable name="connectivity_kabel_ids_by_mof_id" as="map(xs:string, xs:string*)">
         <map>
             <for-each select="$connectivity_points">
-                <variable name="parsed_point" as="node()">
+                <variable name="parsed_point" as="array(xs:double)">
                     <sequence select="ma:parse-point(nlcs:Geometry)"/>
                 </variable>
                 <map-entry key="string(nlcs:ID)"

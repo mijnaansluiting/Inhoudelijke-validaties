@@ -1,5 +1,33 @@
 # Update Log
 
+## 2026-07-27
+* **Update**: Adopted the `array(xs:double)` coordinate representation
+  investigated earlier the same day — see
+  [coord-representation-array-vs-node](./decisions/coord-representation-array-vs-node)
+  (now updated with an adoption record) and
+  [COORD_PARSING_BENCHMARK.md](../COORD_PARSING_BENCHMARK.md). Re-applied the
+  same already-verified 3-file change (`helper_functions.xsl`,
+  `geometry_functions.xsl`, `connectivity_functions.xsl`) to the committed
+  source, re-confirmed identical fixture PASS/FAIL and the identical
+  7388-assert `benchmark.xml` SVRL count, then rebuilt the real `dist/` and
+  reconfirmed the ~7.3s figure (5 runs, ~7.6s mean) on the actual shipped
+  artifact rather than just the investigation's snapshot copy. Cross-linked
+  from [xsl-function-libraries](./architecture/xsl-function-libraries).
+
+## 2026-07-27
+* **Update**: Investigated whether `Coord`-element-node coordinate parsing
+  costs performance vs. a flat `array(xs:double)` representation, independent
+  of the memoized-cache/connectivity-index architecture — see
+  [coord-representation-array-vs-node](./decisions/coord-representation-array-vs-node)
+  and [COORD_PARSING_BENCHMARK.md](../COORD_PARSING_BENCHMARK.md) at the repo
+  root. Controlled `benchmark.xml` comparison (same 41 rules, same caching,
+  only representation differs): 11.00s → 7.30s, a 33.6% reduction — a real,
+  not-yet-acted-on cost. The experimental array-based code was reverted after
+  benchmarking; `dist_current`/`dist_old_parsing` snapshots kept on disk
+  alongside `dist_v12.0.0` for reference. Cross-linked from
+  [xsl-function-libraries](./architecture/xsl-function-libraries) and
+  [decisions/index](./decisions/index).
+
 ## 2026-07-10
 * **Update**: Memoized `ma:parse-point`/`ma:parse-line`/`ma:parse-area` in
   `helper_functions.xsl` via lazily-built per-node caches — see
