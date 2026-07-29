@@ -251,13 +251,20 @@
       A branch joint on an existing cable needs to be connected to a new cable.
     </message-text>
   </message>
-
-  <message id="verplaatsing-incorrectly-applied">
+  <message id="verplaatsing-has-no-original">
     <message-text xml:lang="nl">
-      Verplaatsing incorrect vastgelegd. Er moet een andere {1} zijn met Status BESTAAND en beide objecten moeten hetzelfde GisId hebben.
+      Verplaatsing incorrect vastgelegd voor Tekeningtype {1}. Er moet een andere {2} zijn met Status BESTAAND en beide objecten moeten hetzelfde GisId hebben.
     </message-text>
     <message-text xml:lang="en">
-      Movement was registered incorrectly. There should be another {1} with Status BESTAAND and both objects must share the same GisId.
+      Movement was registered incorrectly for Tekeningtype {1}. There should be another {2} with Status BESTAAND and both objects must share the same GisId.
+    </message-text>
+  </message>
+  <message id="verplaatsing-has-original">
+    <message-text xml:lang="nl">
+      Verplaatsing incorrect vastgelegd voor Tekeningtype {1}. Er mag geen andere {2} zijn met hetzelfde GisId.
+    </message-text>
+    <message-text xml:lang="en">
+      Movement was registered incorrectly for Tekeningtype {1}. There should not be another {2} with the same GisId.
     </message-text>
   </message>
   <message id="connected-cables-have-different-verbindingnummer">
