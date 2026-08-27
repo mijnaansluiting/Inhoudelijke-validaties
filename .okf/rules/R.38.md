@@ -4,11 +4,14 @@ title: R.38 — Inmeetwijze aansluitnet toegestaande waarde
 description: Checks that a LSkabel with Subnettype AANSLUITNET does not use Meetlint as its Inmeetwijze.
 resource: validation_schemas/patterns/v12/R.38.sch
 tags: inhoud-waarde
-timestamp: 2026-07-08T00:00:00Z
-published: true
-editor: markdown
-date: 2026-07-08T00:00:00Z
-dateCreated: 2026-07-08T00:00:00Z
+generated:
+  by: human:sytse.walraven
+  at: 2026-08-26T00:00:00Z
+sources:
+  - resource: "../../doc/NLCSValidatieRegels.xml"
+    title: "NLCS Validatieregels catalog"
+  - resource: "../../validation_schemas/abstract_patterns/v12/inhoud_waarde/inmeetwijze_aansluitnet_toegestaande_waarde.sch"
+    title: "inmeetwijze_aansluitnet_toegestaande_waarde.sch"
 ---
 
 # Overview
@@ -25,8 +28,3 @@ For an LSkabel whose Subnettype is "AANSLUITNET", this rule forbids the value "M
 The abstract pattern also reads `ma:allowed-inmeetwijzen()` (the `ToegestaandeInmeetwijzen` list in `configuration/sys_config.xml`, i.e. GPS/Tachymeter) purely to include it in the violation message text; see [sys-config](../config/sys-config). On violation it emits the `inmeetwijze-not-allowed` message from the message catalog; see [localization-messages](../config/localization-messages).
 
 Severity for this rule varies by scope; see [scope × severity matrix](../domain/scope-severity-model) for the exact values.
-
-# Citations
-
-[1] [NLCS Validatieregels catalog](../../doc/NLCSValidatieRegels.xml)
-[2] [inmeetwijze_aansluitnet_toegestaande_waarde.sch](../../validation_schemas/abstract_patterns/v12/inhoud_waarde/inmeetwijze_aansluitnet_toegestaande_waarde.sch)

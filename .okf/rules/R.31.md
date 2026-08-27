@@ -4,11 +4,14 @@ title: R.31 — Aanwezigheid bestand bijlage aardpen
 description: Checks that every Eaardpen (earth pin) has a linked AbestandBijlage attachment of SoortBestand "Aardingsrapport".
 resource: validation_schemas/patterns/v12/R.31.sch
 tags: document
-timestamp: 2026-07-08T00:00:00Z
-published: true
-editor: markdown
-date: 2026-07-08T00:00:00Z
-dateCreated: 2026-07-08T00:00:00Z
+generated:
+  by: human:sytse.walraven
+  at: 2026-08-26T00:00:00Z
+sources:
+  - resource: "../../doc/NLCSValidatieRegels.xml"
+    title: "NLCS Validatieregels catalog"
+  - resource: "../../validation_schemas/abstract_patterns/v12/document/aanwezigheid_bestand_bijlage_aardpen.sch"
+    title: "aanwezigheid_bestand_bijlage_aardpen.sch"
 ---
 
 # Overview
@@ -24,8 +27,3 @@ An earth pin (Eaardpen) must be documented with a grounding report. This rule ch
   - `check-correct-bestandsoort`: if present, its SoortBestand must equal "Aardingsrapport" (message `soort-bestand-not-correct`).
 
 Severity for this rule varies by scope; see [scope × severity matrix](../domain/scope-severity-model) for the exact values.
-
-# Citations
-
-[1] [NLCS Validatieregels catalog](../../doc/NLCSValidatieRegels.xml)
-[2] [aanwezigheid_bestand_bijlage_aardpen.sch](../../validation_schemas/abstract_patterns/v12/document/aanwezigheid_bestand_bijlage_aardpen.sch)

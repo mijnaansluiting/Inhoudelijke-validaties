@@ -4,11 +4,14 @@ title: Localization messages (messages.xml)
 description: The nl/en message catalog that validation rules use to produce human-readable failure text.
 resource: localization/messages.xml
 tags: configuration, localization
-timestamp: 2026-07-08T00:00:00Z
-published: true
-editor: markdown
-date: 2026-07-08T00:00:00Z
-dateCreated: 2026-07-08T00:00:00Z
+generated:
+  by: human:sytse.walraven
+  at: 2026-08-26T00:00:00Z
+sources:
+  - resource: "../../localization/messages.xml"
+    title: "messages.xml"
+  - resource: "../../validation_schemas/xsl_functions/localization_functions.xsl"
+    title: "localization_functions.xsl"
 ---
 
 # Overview
@@ -62,8 +65,3 @@ others are specific to a single rule (e.g.
 
 This table lists the ids confirmed while authoring the rule concepts; it is
 not necessarily exhaustive of every id in the file.
-
-# Citations
-
-[1] [messages.xml](../../localization/messages.xml)
-[2] [localization_functions.xsl](../../validation_schemas/xsl_functions/localization_functions.xsl)

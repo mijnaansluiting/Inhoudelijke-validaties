@@ -4,11 +4,14 @@ title: R.9 — Aanlegdatum gevuld
 description: Checks that the DatumAanleg (installation date) is populated and does not lie in the future for a broad set of electrical network assets.
 resource: validation_schemas/patterns/v12/R.9.sch
 tags: verplichte-waarde
-timestamp: 2026-07-08T00:00:00Z
-published: true
-editor: markdown
-date: 2026-07-08T00:00:00Z
-dateCreated: 2026-07-08T00:00:00Z
+generated:
+  by: human:sytse.walraven
+  at: 2026-08-26T00:00:00Z
+sources:
+  - resource: "../../doc/NLCSValidatieRegels.xml"
+    title: "NLCS Validatieregels catalog"
+  - resource: "../../validation_schemas/abstract_patterns/v12/verplichte_waarde/aanlegdatum_gevuld.sch"
+    title: "aanlegdatum_gevuld.sch"
 ---
 
 # Overview
@@ -22,7 +25,3 @@ This rule verifies that every applicable electrical asset carries a populated `D
 Severity for this rule varies by scope; see [scope-severity-model](../domain/scope-severity-model) for the full scope×severity matrix.
 
 The abstract pattern emits the `attribute-not-present` and `date-in-the-future` messages from the message catalog; see [localization-messages](../config/localization-messages).
-
-# Citations
-[1] [NLCS Validatieregels catalog](../../doc/NLCSValidatieRegels.xml)
-[2] [aanlegdatum_gevuld.sch](../../validation_schemas/abstract_patterns/v12/verplichte_waarde/aanlegdatum_gevuld.sch)

@@ -4,11 +4,14 @@ title: Scope and severity model
 description: How the same rule can be an error in one drawing context and merely informational in another.
 resource: doc/NLCSValidatieRegels.xml
 tags: domain, scope, severity
-timestamp: 2026-07-08T00:00:00Z
-published: true
-editor: markdown
-date: 2026-07-08T00:00:00Z
-dateCreated: 2026-07-08T00:00:00Z
+generated:
+  by: human:sytse.walraven
+  at: 2026-08-26T00:00:00Z
+sources:
+  - resource: "../../doc/NLCSValidatieRegels.xml"
+    title: "NLCS Validatieregels catalog \u2014 `<scopes>` section"
+  - resource: "../../validation_schemas/xsl_functions/rule_scope_functions.xsl"
+    title: "rule_scope_functions.xsl"
 ---
 
 # Overview
@@ -100,8 +103,3 @@ that are `Fout` in literally every scope — regardless of drawing type,
 status, or operational state. See
 [scope-bound-vs-scopeless-rules](../decisions/scope-bound-vs-scopeless-rules)
 for why `R.1`/`R.2` specifically were made unconditionally in-scope.
-
-# Citations
-
-[1] [NLCS Validatieregels catalog — `<scopes>` section](../../doc/NLCSValidatieRegels.xml)
-[2] [rule_scope_functions.xsl](../../validation_schemas/xsl_functions/rule_scope_functions.xsl)

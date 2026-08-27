@@ -4,11 +4,14 @@ title: R.12 — Verplichte kenmerken OVLoverdrachtspunt
 description: Checks that every overhead-line transfer point (OVLoverdrachtspunt) has its required attributes populated.
 resource: validation_schemas/patterns/v12/R.12.sch
 tags: verplichte-waarde
-timestamp: 2026-07-08T00:00:00Z
-published: true
-editor: markdown
-date: 2026-07-08T00:00:00Z
-dateCreated: 2026-07-08T00:00:00Z
+generated:
+  by: human:sytse.walraven
+  at: 2026-08-26T00:00:00Z
+sources:
+  - resource: "../../doc/NLCSValidatieRegels.xml"
+    title: "NLCS Validatieregels catalog"
+  - resource: "../../validation_schemas/abstract_patterns/v12/verplichte_waarde/verplichte_kenmerken_ovloverdrachtspunt.sch"
+    title: "verplichte_kenmerken_ovloverdrachtspunt.sch"
 ---
 
 # Overview
@@ -22,7 +25,3 @@ This rule verifies that every OVLoverdrachtspunt (overhead-line transfer point) 
 Severity for this rule varies by scope; see [scope-severity-model](../domain/scope-severity-model) for the full scope×severity matrix.
 
 The abstract pattern emits the `attribute-not-present` message from the message catalog for each missing attribute; see [localization-messages](../config/localization-messages).
-
-# Citations
-[1] [NLCS Validatieregels catalog](../../doc/NLCSValidatieRegels.xml)
-[2] [verplichte_kenmerken_ovloverdrachtspunt.sch](../../validation_schemas/abstract_patterns/v12/verplichte_waarde/verplichte_kenmerken_ovloverdrachtspunt.sch)

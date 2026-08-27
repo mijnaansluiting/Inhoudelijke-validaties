@@ -3,11 +3,20 @@ type: Decision
 title: Adopted array(xs:double) coordinate representation (~34% faster than Coord nodes)
 description: Benchmark finding that representing parsed coordinates as Coord XML element nodes was measurably slower than a flat array(xs:double) representation, independent of the caching/connectivity-index wins; subsequently adopted.
 tags: decision, performance, geometry
-timestamp: 2026-07-27T00:00:00Z
-published: true
-editor: markdown
-date: 2026-07-27T00:00:00Z
-dateCreated: 2026-07-27T00:00:00Z
+generated:
+  by: human:sytse.walraven
+  at: 2026-08-26T00:00:00Z
+sources:
+  - resource: "../../COORD_PARSING_BENCHMARK.md"
+    title: "COORD_PARSING_BENCHMARK.md"
+  - resource: "../../validation_schemas/xsl_functions/helper_functions.xsl"
+    title: "helper_functions.xsl"
+  - resource: "../../validation_schemas/xsl_functions/geometry_functions.xsl"
+    title: "geometry_functions.xsl"
+  - resource: "./geometry-parse-caching"
+    title: "geometry-parse-caching"
+  - resource: "./connectivity-index-and-geometry-caching"
+    title: "connectivity-index-and-geometry-caching"
 ---
 
 # Context
@@ -102,11 +111,3 @@ snapshot) and re-verified before landing: fixture PASS/FAIL and the
 `dist/` benchmarked at ~7.6s mean (5 runs), consistent with the original
 `array(xs:double)` measurement. The committed codebase now uses
 `array(xs:double)`, not `Coord` element nodes.
-
-# Citations
-
-[1] [COORD_PARSING_BENCHMARK.md](../../COORD_PARSING_BENCHMARK.md)
-[2] [helper_functions.xsl](../../validation_schemas/xsl_functions/helper_functions.xsl)
-[3] [geometry_functions.xsl](../../validation_schemas/xsl_functions/geometry_functions.xsl)
-[4] [geometry-parse-caching](./geometry-parse-caching)
-[5] [connectivity-index-and-geometry-caching](./connectivity-index-and-geometry-caching)

@@ -3,11 +3,16 @@ type: Decision
 title: Bestand-category rules are severity-scopeless
 description: Why file-level rules like R.1/R.2/R.35/R.40 always report severity "Fout" instead of being matched against a scope.
 tags: decision, scope
-timestamp: 2026-07-08T00:00:00Z
-published: true
-editor: markdown
-date: 2026-07-08T00:00:00Z
-dateCreated: 2026-07-08T00:00:00Z
+generated:
+  by: human:sytse.walraven
+  at: 2026-08-26T00:00:00Z
+sources:
+  - resource: "https://github.com/mijnaansluiting/Inhoudelijke-validaties/commit/e365bcb213b4cc0e05f4c5efcda50974e9e489ec"
+    title: "e365bcb \u2014 R.1 and R.2 always explicitly within scope"
+  - resource: "https://github.com/mijnaansluiting/Inhoudelijke-validaties/commit/f519af4517d2a4c181b90ede1096bf24d841ddd4"
+    title: "f519af4 \u2014 Scopeless rules consistency (#88)"
+  - resource: "../../validation_schemas/xsl_functions/rule_scope_functions.xsl"
+    title: "rule_scope_functions.xsl"
 ---
 
 # Context
@@ -65,9 +70,3 @@ If a future rule is added with `soort` Bestand, it will automatically be
 `Fout`-severity everywhere via the category check — no scope-table entry is
 needed, and none should be added, since [scope-coverage-tests](../testing/scope-coverage-tests)
 tests object-level scope matching, not file-level rules.
-
-# Citations
-
-[1] [e365bcb — R.1 and R.2 always explicitly within scope](https://github.com/mijnaansluiting/Inhoudelijke-validaties/commit/e365bcb213b4cc0e05f4c5efcda50974e9e489ec)
-[2] [f519af4 — Scopeless rules consistency (#88)](https://github.com/mijnaansluiting/Inhoudelijke-validaties/commit/f519af4517d2a4c181b90ede1096bf24d841ddd4)
-[3] [rule_scope_functions.xsl](../../validation_schemas/xsl_functions/rule_scope_functions.xsl)

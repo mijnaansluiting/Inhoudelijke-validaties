@@ -4,11 +4,14 @@ title: R.22 — Kabels zelfde Netvlak
 description: Checks that cables connected to each other through a joint belong to the same network layer (discipline).
 resource: validation_schemas/patterns/v12/R.22.sch
 tags: netlogica
-timestamp: 2026-07-08T00:00:00Z
-published: true
-editor: markdown
-date: 2026-07-08T00:00:00Z
-dateCreated: 2026-07-08T00:00:00Z
+generated:
+  by: human:sytse.walraven
+  at: 2026-08-26T00:00:00Z
+sources:
+  - resource: "../../doc/NLCSValidatieRegels.xml"
+    title: "NLCS Validatieregels catalog"
+  - resource: "../../validation_schemas/abstract_patterns/v12/netlogica/kabels_zelfde_netvlak.sch"
+    title: "kabels_zelfde_netvlak.sch"
 ---
 
 # Overview
@@ -26,8 +29,3 @@ Cables that are physically joined via a mof must belong to the same netvlak (net
 The mof/kabel touch relationship (both the direct touch and the "kabel via a shared mof" second hop) is served by a shared connectivity index rather than a per-rule, per-kabel rescan; see [connectivity-index-and-geometry-caching](../decisions/connectivity-index-and-geometry-caching).
 
 Severity for this rule varies by scope; see [/domain/scope-severity-model.md](../domain/scope-severity-model) for the full scope×severity matrix.
-
-# Citations
-
-[1] [NLCS Validatieregels catalog](../../doc/NLCSValidatieRegels.xml)
-[2] [kabels_zelfde_netvlak.sch](../../validation_schemas/abstract_patterns/v12/netlogica/kabels_zelfde_netvlak.sch)

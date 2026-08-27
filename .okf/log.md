@@ -1,5 +1,13 @@
 # Update Log
 
+## 2026-08-26
+* **Update**: Removed the non-OKF `published`, `editor`, `date`, and
+  `dateCreated` frontmatter fields (added in a prior commit for Wiki.js
+  compatibility) from all 56 concept files, so frontmatter is strictly
+  OKF v0.2 fields. Wiki.js can no longer consume these files directly as
+  page frontmatter — that compatibility was intentionally dropped.
+  `generated.by`/`generated.at` updated to reflect this edit.
+
 ## 2026-07-27
 * **Update**: Adopted the `array(xs:double)` coordinate representation
   investigated earlier the same day — see

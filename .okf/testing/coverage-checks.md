@@ -4,11 +4,14 @@ title: Rule and object coverage checks
 description: Lightweight cross-checks that every documented rule is implemented, and that a rule's asserts touch the object types it claims to.
 resource: scripts/check_rule_coverage.sh
 tags: testing
-timestamp: 2026-07-08T00:00:00Z
-published: true
-editor: markdown
-date: 2026-07-08T00:00:00Z
-dateCreated: 2026-07-08T00:00:00Z
+generated:
+  by: human:sytse.walraven
+  at: 2026-08-26T00:00:00Z
+sources:
+  - resource: "../../scripts/check_rule_coverage.sh"
+    title: "check_rule_coverage.sh"
+  - resource: "../../scripts/check_rule_object_coverage.sh"
+    title: "check_rule_object_coverage.sh"
 ---
 
 # Overview
@@ -35,8 +38,3 @@ drifting apart:
   (Rule/Expected/Found/Missing/Extra) to `$GITHUB_STEP_SUMMARY` and fails CI
   on any mismatch. Runs as the last step of the `RuleValidation` workflow,
   after fixtures have already been validated.
-
-# Citations
-
-[1] [check_rule_coverage.sh](../../scripts/check_rule_coverage.sh)
-[2] [check_rule_object_coverage.sh](../../scripts/check_rule_object_coverage.sh)

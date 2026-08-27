@@ -4,11 +4,16 @@ title: R.8 — Verplichte kenmerken Kabels
 description: Checks that every cable has values for a core set of mandatory attributes, with three additional mandatory attributes for LSkabel.
 resource: validation_schemas/patterns/v12/R.8_A.sch
 tags: verplichte-waarde
-timestamp: 2026-07-08T00:00:00Z
-published: true
-editor: markdown
-date: 2026-07-08T00:00:00Z
-dateCreated: 2026-07-08T00:00:00Z
+generated:
+  by: human:sytse.walraven
+  at: 2026-08-26T00:00:00Z
+sources:
+  - resource: "../../doc/NLCSValidatieRegels.xml"
+    title: "NLCS Validatieregels catalog"
+  - resource: "../../validation_schemas/abstract_patterns/v12/verplichte_waarde/verplichte_kenmerken_kabels.sch"
+    title: "verplichte_kenmerken_kabels.sch (R.8-A)"
+  - resource: "../../validation_schemas/abstract_patterns/v12/verplichte_waarde/verplichte_kenmerken_kabels-ls_extra.sch"
+    title: "verplichte_kenmerken_kabels-ls_extra.sch (R.8-B)"
 ---
 
 # Overview
@@ -24,8 +29,3 @@ Every cable object must carry a baseline set of descriptive attributes (executio
   - **R.8-B** (LSkabel only): `nlcs:Aardingsysteem`, `nlcs:Bovengronds`, and `nlcs:Functie` must all be present and non-empty, in addition to the R.8-A attributes.
 
 Severity for this rule varies by scope; see [scope × severity matrix](../domain/scope-severity-model) for the exact values.
-
-# Citations
-
-[1] [NLCS Validatieregels catalog](../../doc/NLCSValidatieRegels.xml)
-[2] [verplichte_kenmerken_kabels.sch (R.8-A)](../../validation_schemas/abstract_patterns/v12/verplichte_waarde/verplichte_kenmerken_kabels.sch), [verplichte_kenmerken_kabels-ls_extra.sch (R.8-B)](../../validation_schemas/abstract_patterns/v12/verplichte_waarde/verplichte_kenmerken_kabels-ls_extra.sch)

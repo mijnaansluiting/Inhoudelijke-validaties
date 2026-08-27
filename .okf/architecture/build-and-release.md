@@ -4,11 +4,14 @@ title: Build and release
 description: How the scope-checked schema, config, and docs are packaged into the versioned deliverable consumers actually use.
 resource: scripts/bundle.sh
 tags: architecture, release
-timestamp: 2026-07-08T00:00:00Z
-published: true
-editor: markdown
-date: 2026-07-08T00:00:00Z
-dateCreated: 2026-07-08T00:00:00Z
+generated:
+  by: human:sytse.walraven
+  at: 2026-08-26T00:00:00Z
+sources:
+  - resource: "../../scripts/bundle.sh"
+    title: "bundle.sh"
+  - resource: "../../.github/workflows/Deliverables.yml"
+    title: "Deliverables.yml"
 ---
 
 # Overview
@@ -44,8 +47,3 @@ Everything here is versioned under `v12` (matching the external
 `scripts/install_dependencies.sh`'s `NLCS_NETBEHEER_VERSION`). A future
 schema version would add parallel `v13` directories rather than replacing
 `v12` in place.
-
-# Citations
-
-[1] [bundle.sh](../../scripts/bundle.sh)
-[2] [Deliverables.yml](../../.github/workflows/Deliverables.yml)

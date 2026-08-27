@@ -4,11 +4,14 @@ title: System configuration (sys_config.xml)
 description: Version-scoped thresholds, allowed-value lists, and exceptions consumed by several validation rules.
 resource: configuration/sys_config.xml
 tags: configuration
-timestamp: 2026-07-08T00:00:00Z
-published: true
-editor: markdown
-date: 2026-07-08T00:00:00Z
-dateCreated: 2026-07-08T00:00:00Z
+generated:
+  by: human:sytse.walraven
+  at: 2026-08-26T00:00:00Z
+sources:
+  - resource: "../../configuration/sys_config.xml"
+    title: "sys_config.xml"
+  - resource: "../../validation_schemas/xsl_functions/config_functions.xsl"
+    title: "config_functions.xsl"
 ---
 
 # Overview
@@ -42,8 +45,3 @@ setting consumed by [localization-messages](./localization-messages).
 The `DecimalPrecision`/rounding behavior here is closely related to the
 geometric precision issues discussed in
 [distance-precision-rounding](../decisions/distance-precision-rounding).
-
-# Citations
-
-[1] [sys_config.xml](../../configuration/sys_config.xml)
-[2] [config_functions.xsl](../../validation_schemas/xsl_functions/config_functions.xsl)

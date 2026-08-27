@@ -4,11 +4,16 @@ title: R.4 — Lijn Geometrie (afstand en hoek van inmeetpunten)
 description: Checks that line and area-outline geometries respect the minimum/maximum distance between survey points and do not contain sharp kinks between segments.
 resource: validation_schemas/patterns/v12/R.4_A.sch
 tags: geometrie
-timestamp: 2026-07-08T00:00:00Z
-published: true
-editor: markdown
-date: 2026-07-08T00:00:00Z
-dateCreated: 2026-07-08T00:00:00Z
+generated:
+  by: human:sytse.walraven
+  at: 2026-08-26T00:00:00Z
+sources:
+  - resource: "../../doc/NLCSValidatieRegels.xml"
+    title: "NLCS Validatieregels catalog"
+  - resource: "../../validation_schemas/abstract_patterns/v12/geometrie/lijn_geometrie-afstand_van_inmeetpunten.sch"
+    title: "lijn_geometrie-afstand_van_inmeetpunten.sch (R.4-A)"
+  - resource: "../../validation_schemas/abstract_patterns/v12/geometrie/lijn_geometrie-hoek_van_segmenten.sch"
+    title: "lijn_geometrie-hoek_van_segmenten.sch (R.4-B)"
 ---
 
 # Overview
@@ -26,8 +31,3 @@ A line (gml:Curve), or the outline of an area (gml:Surface), must meet survey-me
 Severity for this rule varies by scope; see [scope × severity matrix](../domain/scope-severity-model) for the exact values.
 
 Line-buffer and distance calculations underlying this rule's segment-length and angle checks were the subject of recent precision/rounding fixes; see [distance & precision rounding](../decisions/distance-precision-rounding) for details.
-
-# Citations
-
-[1] [NLCS Validatieregels catalog](../../doc/NLCSValidatieRegels.xml)
-[2] [lijn_geometrie-afstand_van_inmeetpunten.sch (R.4-A)](../../validation_schemas/abstract_patterns/v12/geometrie/lijn_geometrie-afstand_van_inmeetpunten.sch), [lijn_geometrie-hoek_van_segmenten.sch (R.4-B)](../../validation_schemas/abstract_patterns/v12/geometrie/lijn_geometrie-hoek_van_segmenten.sch)

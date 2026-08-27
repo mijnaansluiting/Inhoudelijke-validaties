@@ -4,11 +4,14 @@ title: R.21 — Geldig eindpunt Kabel
 description: Checks that every cable has a valid connected object at both its start and end point.
 resource: validation_schemas/patterns/v12/R.21.sch
 tags: topologie
-timestamp: 2026-07-10T00:00:00Z
-published: true
-editor: markdown
-date: 2026-07-10T00:00:00Z
-dateCreated: 2026-07-08T00:00:00Z
+generated:
+  by: human:sytse.walraven
+  at: 2026-08-26T00:00:00Z
+sources:
+  - resource: "../../doc/NLCSValidatieRegels.xml"
+    title: "NLCS Validatieregels catalog"
+  - resource: "../../validation_schemas/abstract_patterns/v12/topologie/geldig_eindpunt_kabel.sch"
+    title: "geldig_eindpunt_kabel.sch"
 ---
 
 # Overview
@@ -40,8 +43,3 @@ see [geometry-parse-caching](../decisions/geometry-parse-caching) for why
 `ma:parse-point`/`ma:parse-area` are now memoized per geometry node.
 
 Severity for this rule varies by scope; see [/domain/scope-severity-model.md](../domain/scope-severity-model) for the full scope×severity matrix.
-
-# Citations
-
-[1] [NLCS Validatieregels catalog](../../doc/NLCSValidatieRegels.xml)
-[2] [geldig_eindpunt_kabel.sch](../../validation_schemas/abstract_patterns/v12/topologie/geldig_eindpunt_kabel.sch)

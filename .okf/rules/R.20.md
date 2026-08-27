@@ -4,11 +4,14 @@ title: R.20 — Topologie punt objecten Elec
 description: Checks that Elec point objects are geometrically connected to the correct cable type and do not float unconnected.
 resource: validation_schemas/patterns/v12/R.20.sch
 tags: topologie
-timestamp: 2026-07-08T00:00:00Z
-published: true
-editor: markdown
-date: 2026-07-08T00:00:00Z
-dateCreated: 2026-07-08T00:00:00Z
+generated:
+  by: human:sytse.walraven
+  at: 2026-08-26T00:00:00Z
+sources:
+  - resource: "../../doc/NLCSValidatieRegels.xml"
+    title: "NLCS Validatieregels catalog"
+  - resource: "../../validation_schemas/abstract_patterns/v12/topologie/topologie_punt_objecten_elec.sch"
+    title: "topologie_punt_objecten_elec.sch"
 ---
 
 # Overview
@@ -28,7 +31,3 @@ Severity for this rule varies by scope; see [scope-severity-model](../domain/sco
 The abstract pattern emits the `point-not-connected-to-any-line` message from the message catalog when a point object is not touching any line of the expected cable type; see [localization-messages](../config/localization-messages).
 
 The point-to-cable touch check itself is served by a shared connectivity index rather than a per-rule scan; see [connectivity-index-and-geometry-caching](../decisions/connectivity-index-and-geometry-caching).
-
-# Citations
-[1] [NLCS Validatieregels catalog](../../doc/NLCSValidatieRegels.xml)
-[2] [topologie_punt_objecten_elec.sch](../../validation_schemas/abstract_patterns/v12/topologie/topologie_punt_objecten_elec.sch)

@@ -4,11 +4,14 @@ title: R.10 — Verplichte kenmerken moffen
 description: Checks that every cable joint (mof) has its baseline required attributes populated, with extra attributes required depending on voltage level.
 resource: validation_schemas/patterns/v12/R.10.sch
 tags: verplichte-waarde
-timestamp: 2026-07-08T00:00:00Z
-published: true
-editor: markdown
-date: 2026-07-08T00:00:00Z
-dateCreated: 2026-07-08T00:00:00Z
+generated:
+  by: human:sytse.walraven
+  at: 2026-08-26T00:00:00Z
+sources:
+  - resource: "../../doc/NLCSValidatieRegels.xml"
+    title: "NLCS Validatieregels catalog"
+  - resource: "../../validation_schemas/abstract_patterns/v12/verplichte_waarde/verplichte_kenmerken_moffen.sch"
+    title: "verplichte_kenmerken_moffen.sch"
 ---
 
 # Overview
@@ -26,7 +29,3 @@ This rule verifies that every mof (cable joint) has a minimal set of attributes 
 Severity for this rule varies by scope; see [scope-severity-model](../domain/scope-severity-model) for the full scope×severity matrix.
 
 The abstract pattern emits the `attribute-not-present` message from the message catalog for each missing attribute; see [localization-messages](../config/localization-messages).
-
-# Citations
-[1] [NLCS Validatieregels catalog](../../doc/NLCSValidatieRegels.xml)
-[2] [verplichte_kenmerken_moffen.sch](../../validation_schemas/abstract_patterns/v12/verplichte_waarde/verplichte_kenmerken_moffen.sch)

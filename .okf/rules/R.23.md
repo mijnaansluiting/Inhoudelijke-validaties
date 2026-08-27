@@ -4,11 +4,14 @@ title: R.23 — Verbonden kabels juiste kenmerken
 description: Checks that cables connected to each other via a joint share the same value for a set of key attributes.
 resource: validation_schemas/patterns/v12/R.23.sch
 tags: netlogica
-timestamp: 2026-07-08T00:00:00Z
-published: true
-editor: markdown
-date: 2026-07-08T00:00:00Z
-dateCreated: 2026-07-08T00:00:00Z
+generated:
+  by: human:sytse.walraven
+  at: 2026-08-26T00:00:00Z
+sources:
+  - resource: "../../doc/NLCSValidatieRegels.xml"
+    title: "NLCS Validatieregels catalog"
+  - resource: "../../validation_schemas/abstract_patterns/v12/netlogica/verbonden_kabels_juiste_kenmerken.sch"
+    title: "verbonden_kabels_juiste_kenmerken.sch"
 ---
 
 # Overview
@@ -30,8 +33,3 @@ Cables spliced together through a joint represent one continuous circuit, so cer
 See [R.39](./R.39), which also validates a shared attribute — Verbindingnummer — across connected cables/joints. The mof/kabel touch relationship this rule composes (touch, then touch-via-mof) is served by a shared connectivity index rather than a per-kabel rescan; see [connectivity-index-and-geometry-caching](../decisions/connectivity-index-and-geometry-caching).
 
 Severity for this rule varies by scope; see [/domain/scope-severity-model.md](../domain/scope-severity-model) for the full scope×severity matrix.
-
-# Citations
-
-[1] [NLCS Validatieregels catalog](../../doc/NLCSValidatieRegels.xml)
-[2] [verbonden_kabels_juiste_kenmerken.sch](../../validation_schemas/abstract_patterns/v12/netlogica/verbonden_kabels_juiste_kenmerken.sch)

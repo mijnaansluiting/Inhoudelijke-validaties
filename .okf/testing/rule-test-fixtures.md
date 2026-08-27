@@ -4,11 +4,16 @@ title: Rule test fixtures
 description: Hand-authored passing/failing NLCS++ XML fixtures per rule, run through the compiled rule XSLT in CI.
 resource: test/rule_validation_data/v12/
 tags: testing
-timestamp: 2026-07-08T00:00:00Z
-published: true
-editor: markdown
-date: 2026-07-08T00:00:00Z
-dateCreated: 2026-07-08T00:00:00Z
+generated:
+  by: human:sytse.walraven
+  at: 2026-08-26T00:00:00Z
+sources:
+  - resource: "../../scripts/validate_rules.sh"
+    title: "validate_rules.sh"
+  - resource: "../../scripts/validate_rule_reports.sh"
+    title: "validate_rule_reports.sh"
+  - resource: "../../test/rule_validation_data/v12/"
+    title: "test/rule_validation_data/v12/"
 ---
 
 # Overview
@@ -46,9 +51,3 @@ themselves well-formed NLCS++.
 fixtures as SVGs. [coverage-checks](./coverage-checks) verifies
 every rule actually has fixtures and that fixtures cover the right object
 types.
-
-# Citations
-
-[1] [validate_rules.sh](../../scripts/validate_rules.sh)
-[2] [validate_rule_reports.sh](../../scripts/validate_rule_reports.sh)
-[3] [test/rule_validation_data/v12/](../../test/rule_validation_data/v12/)

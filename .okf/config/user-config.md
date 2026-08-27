@@ -4,11 +4,14 @@ title: User configuration (user_config.xml)
 description: The single language setting that selects which localized message text validation reports use.
 resource: configuration/user_config.xml
 tags: configuration, localization
-timestamp: 2026-07-08T00:00:00Z
-published: true
-editor: markdown
-date: 2026-07-08T00:00:00Z
-dateCreated: 2026-07-08T00:00:00Z
+generated:
+  by: human:sytse.walraven
+  at: 2026-08-26T00:00:00Z
+sources:
+  - resource: "../../configuration/user_config.xml"
+    title: "user_config.xml"
+  - resource: "../../validation_schemas/xsl_functions/localization_functions.xsl"
+    title: "localization_functions.xsl"
 ---
 
 # Overview
@@ -27,8 +30,3 @@ single field:
 resolving a message id from
 [localization-messages](./localization-messages) for an SVRL assert
 report.
-
-# Citations
-
-[1] [user_config.xml](../../configuration/user_config.xml)
-[2] [localization_functions.xsl](../../validation_schemas/xsl_functions/localization_functions.xsl)

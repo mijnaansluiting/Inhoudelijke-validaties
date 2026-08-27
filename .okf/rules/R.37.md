@@ -4,11 +4,14 @@ title: R.37 — Inmeetwijze toegestaande waarde
 description: Checks that Inmeetwijze on linear electrical assets is either GPS or Tachymeter, except for a separately-validated LSkabel AANSLUITNET/Meetlint combination.
 resource: validation_schemas/patterns/v12/R.37.sch
 tags: inhoud-waarde
-timestamp: 2026-07-08T00:00:00Z
-published: true
-editor: markdown
-date: 2026-07-08T00:00:00Z
-dateCreated: 2026-07-08T00:00:00Z
+generated:
+  by: human:sytse.walraven
+  at: 2026-08-26T00:00:00Z
+sources:
+  - resource: "../../doc/NLCSValidatieRegels.xml"
+    title: "NLCS Validatieregels catalog"
+  - resource: "../../validation_schemas/abstract_patterns/v12/inhoud_waarde/inmeetwijze_toegestaande_waarde.sch"
+    title: "inmeetwijze_toegestaande_waarde.sch"
 ---
 
 # Overview
@@ -25,8 +28,3 @@ This rule checks that the value of Inmeetwijze is either "GPS" or "Tachymeter" f
 The abstract pattern reads its allowed-values list via `ma:allowed-inmeetwijzen()`, which returns `configuration/sys_config.xml`'s `ToegestaandeInmeetwijzen` entries (GPS, Tachymeter); see [sys-config](../config/sys-config). On violation it emits the `inmeetwijze-not-allowed` message from the message catalog; see [localization-messages](../config/localization-messages).
 
 Severity for this rule varies by scope; see [scope × severity matrix](../domain/scope-severity-model) for the exact values.
-
-# Citations
-
-[1] [NLCS Validatieregels catalog](../../doc/NLCSValidatieRegels.xml)
-[2] [inmeetwijze_toegestaande_waarde.sch](../../validation_schemas/abstract_patterns/v12/inhoud_waarde/inmeetwijze_toegestaande_waarde.sch)

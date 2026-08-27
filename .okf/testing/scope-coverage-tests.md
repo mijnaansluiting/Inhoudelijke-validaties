@@ -4,11 +4,14 @@ title: Scope coverage tests
 description: A meta-test verifying the scope/severity engine itself assigns exactly the right rules to every scope, with no gaps or overlaps.
 resource: test/scope_validation_data/v12/scope_template.xml
 tags: testing
-timestamp: 2026-07-08T00:00:00Z
-published: true
-editor: markdown
-date: 2026-07-08T00:00:00Z
-dateCreated: 2026-07-08T00:00:00Z
+generated:
+  by: human:sytse.walraven
+  at: 2026-08-26T00:00:00Z
+sources:
+  - resource: "../../scripts/validate_scopes.sh"
+    title: "validate_scopes.sh"
+  - resource: "../../test/scope_validation_data/v12/scope_template.xml"
+    title: "scope_template.xml"
 ---
 
 # Overview
@@ -36,8 +39,3 @@ This runs as the `ScopeValidation` workflow — see
 [scope-bound-vs-scopeless-rules](../decisions/scope-bound-vs-scopeless-rules)
 exists as a decision record: gaps caught by this suite are what drove past
 fixes to which rules are unconditionally in-scope.
-
-# Citations
-
-[1] [validate_scopes.sh](../../scripts/validate_scopes.sh)
-[2] [scope_template.xml](../../test/scope_validation_data/v12/scope_template.xml)

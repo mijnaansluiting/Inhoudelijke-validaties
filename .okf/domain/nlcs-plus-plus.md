@@ -3,11 +3,14 @@ type: Domain Concept
 title: NLCS++ and content validation
 description: What NLCS++ is and why structural XSD validation isn't enough to guarantee usable grid-asset data.
 tags: domain, nlcs
-timestamp: 2026-07-08T00:00:00Z
-published: true
-editor: markdown
-date: 2026-07-08T00:00:00Z
-dateCreated: 2026-07-08T00:00:00Z
+generated:
+  by: human:sytse.walraven
+  at: 2026-08-26T00:00:00Z
+sources:
+  - resource: "../../README.md"
+    title: "README.md"
+  - resource: "../../doc/NLCSValidatieRegels.xml"
+    title: "NLCS Validatieregels catalog"
 ---
 
 # Overview
@@ -45,8 +48,3 @@ HTML and published to GitHub Pages). Each rule has its own OKF concept under
 [/rules](../rules/index). Rules don't all apply with the same severity in
 every situation — see [scope-severity-model](./scope-severity-model)
 for how severity depends on the kind of drawing being submitted.
-
-# Citations
-
-[1] [README.md](../../README.md)
-[2] [NLCS Validatieregels catalog](../../doc/NLCSValidatieRegels.xml)

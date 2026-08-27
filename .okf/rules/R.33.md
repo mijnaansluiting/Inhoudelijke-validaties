@@ -4,11 +4,14 @@ title: R.33 — Aanwezigheid bestand bijlage aanlegtechniek
 description: Checks that every Aaanlegtechniek with SoortAanlegTechniek "GESTUURDE TECHNIEK" has a linked AbestandBijlage attachment of SoortBestand "Gestuurde boring".
 resource: validation_schemas/patterns/v12/R.33.sch
 tags: document
-timestamp: 2026-07-08T00:00:00Z
-published: true
-editor: markdown
-date: 2026-07-08T00:00:00Z
-dateCreated: 2026-07-08T00:00:00Z
+generated:
+  by: human:sytse.walraven
+  at: 2026-08-26T00:00:00Z
+sources:
+  - resource: "../../doc/NLCSValidatieRegels.xml"
+    title: "NLCS Validatieregels catalog"
+  - resource: "../../validation_schemas/abstract_patterns/v12/document/aanwezigheid_bestand_bijlage_aanlegtechniek.sch"
+    title: "aanwezigheid_bestand_bijlage_aanlegtechniek.sch"
 ---
 
 # Overview
@@ -24,8 +27,3 @@ A directional-drilling installation technique must be documented with a drilling
   - `bestandbijlage-must-be-gestuurde-boring`: the related AbestandBijlage's SoortBestand must equal "Gestuurde boring" (message `soort-bestand-not-correct`).
 
 Severity for this rule varies by scope; see [scope × severity matrix](../domain/scope-severity-model) for the exact values.
-
-# Citations
-
-[1] [NLCS Validatieregels catalog](../../doc/NLCSValidatieRegels.xml)
-[2] [aanwezigheid_bestand_bijlage_aanlegtechniek.sch](../../validation_schemas/abstract_patterns/v12/document/aanwezigheid_bestand_bijlage_aanlegtechniek.sch)

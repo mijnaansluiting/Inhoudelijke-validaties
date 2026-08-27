@@ -4,11 +4,14 @@ title: R.5 — GisId en AssetId
 description: Checks that objects originating from asset registration (Status BESTAAND, REVISIE, or VERWIJDERD) carry a GisId and AssetId, while newly designed objects (Status NIEUW) do not.
 resource: validation_schemas/patterns/v12/R.5.sch
 tags: verplichte-waarde
-timestamp: 2026-07-08T00:00:00Z
-published: true
-editor: markdown
-date: 2026-07-08T00:00:00Z
-dateCreated: 2026-07-08T00:00:00Z
+generated:
+  by: human:sytse.walraven
+  at: 2026-08-26T00:00:00Z
+sources:
+  - resource: "../../doc/NLCSValidatieRegels.xml"
+    title: "NLCS Validatieregels catalog"
+  - resource: "../../validation_schemas/abstract_patterns/v12/verplichte_waarde/gisid_en_assetid.sch"
+    title: "gisid_en_assetid.sch"
 ---
 
 # Overview
@@ -28,8 +31,3 @@ Objects with Status BESTAAND, REVISIE, or VERWIJDERD originate from the asset re
 This rule has a configured exception: `configuration/sys_config.xml`'s `GisIdAssetsIdExceptions/NoGisIdRequired` lists `AmantelbuisInhoud` as an object type that never requires a GisId; see [sys_config reference](../config/sys-config).
 
 Severity for this rule varies by scope; see [scope × severity matrix](../domain/scope-severity-model) for the exact values.
-
-# Citations
-
-[1] [NLCS Validatieregels catalog](../../doc/NLCSValidatieRegels.xml)
-[2] [gisid_en_assetid.sch](../../validation_schemas/abstract_patterns/v12/verplichte_waarde/gisid_en_assetid.sch)

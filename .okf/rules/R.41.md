@@ -4,11 +4,14 @@ title: R.41 — DatumTijdMutatie gevuld
 description: Checks that DatumTijdMutatie is populated (and not present) exactly when an NLCS object's Status or Bewerking indicates a mutation, and that it is not a future date.
 resource: validation_schemas/patterns/v12/R.41.sch
 tags: verplichte-waarde
-timestamp: 2026-07-08T00:00:00Z
-published: true
-editor: markdown
-date: 2026-07-08T00:00:00Z
-dateCreated: 2026-07-08T00:00:00Z
+generated:
+  by: human:sytse.walraven
+  at: 2026-08-26T00:00:00Z
+sources:
+  - resource: "../../doc/NLCSValidatieRegels.xml"
+    title: "NLCS Validatieregels catalog"
+  - resource: "../../validation_schemas/abstract_patterns/v12/verplichte_waarde/datumtijdmutatie_gevuld.sch"
+    title: "datumtijdmutatie_gevuld.sch"
 ---
 
 # Overview
@@ -24,8 +27,3 @@ Objects that represent a change — anything not in the BESTAAND (existing/uncha
 The abstract pattern emits the `attribute-not-present`, `attribute-present`, and `date-in-the-future` messages from the message catalog; see [localization-messages](../config/localization-messages).
 
 Severity for this rule varies by scope; see [scope × severity matrix](../domain/scope-severity-model) for the exact values.
-
-# Citations
-
-[1] [NLCS Validatieregels catalog](../../doc/NLCSValidatieRegels.xml)
-[2] [datumtijdmutatie_gevuld.sch](../../validation_schemas/abstract_patterns/v12/verplichte_waarde/datumtijdmutatie_gevuld.sch)

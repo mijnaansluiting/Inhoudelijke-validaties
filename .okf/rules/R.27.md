@@ -4,11 +4,14 @@ title: R.27 — Mantelbuis past in mantelbuis
 description: Checks that a protection pipe (mantelbuis) nested inside one or more other protection pipes has a smaller diameter than each of them.
 resource: validation_schemas/patterns/v12/R.27.sch
 tags: inhoud-waarde
-timestamp: 2026-07-08T00:00:00Z
-published: true
-editor: markdown
-date: 2026-07-08T00:00:00Z
-dateCreated: 2026-07-08T00:00:00Z
+generated:
+  by: human:sytse.walraven
+  at: 2026-08-26T00:00:00Z
+sources:
+  - resource: "../../doc/NLCSValidatieRegels.xml"
+    title: "NLCS Validatieregels catalog"
+  - resource: "../../validation_schemas/abstract_patterns/v12/inhoud_waarde/mantelbuis_past_in_mantelbuis.sch"
+    title: "mantelbuis_past_in_mantelbuis.sch"
 ---
 
 # Overview
@@ -26,8 +29,3 @@ A mantelbuis can be laid inside one or more other, larger mantelbuizen, as recor
 See [R.30](./R.30), which also concerns mantelbuis/inhoud nesting relationships.
 
 Severity for this rule varies by scope; see [/domain/scope-severity-model.md](../domain/scope-severity-model) for the full scope×severity matrix.
-
-# Citations
-
-[1] [NLCS Validatieregels catalog](../../doc/NLCSValidatieRegels.xml)
-[2] [mantelbuis_past_in_mantelbuis.sch](../../validation_schemas/abstract_patterns/v12/inhoud_waarde/mantelbuis_past_in_mantelbuis.sch)

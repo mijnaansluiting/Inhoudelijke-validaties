@@ -4,11 +4,16 @@ title: Compilation and execution pipeline
 description: How a Schematron rule becomes runnable XSLT and produces an SVRL validation report.
 resource: scripts/transpile_phases.sh
 tags: architecture, build
-timestamp: 2026-07-08T00:00:00Z
-published: true
-editor: markdown
-date: 2026-07-08T00:00:00Z
-dateCreated: 2026-07-08T00:00:00Z
+generated:
+  by: human:sytse.walraven
+  at: 2026-08-26T00:00:00Z
+sources:
+  - resource: "../../scripts/transpile_phases.sh"
+    title: "transpile_phases.sh"
+  - resource: "../../wrappers/transpile_phase_wrapper.xsl"
+    title: "transpile_phase_wrapper.xsl"
+  - resource: "../../scripts/validate_rules.sh"
+    title: "validate_rules.sh"
 ---
 
 # Overview
@@ -62,9 +67,3 @@ plus **SchXSLT2** (a Schematron→XSLT transpiler):
 This whole pipeline exists so that a "phase" (= one rule) can be compiled and
 run in isolation, which is what makes per-rule pass/fail testing in CI
 tractable — see [rule-test-fixtures](../testing/rule-test-fixtures).
-
-# Citations
-
-[1] [transpile_phases.sh](../../scripts/transpile_phases.sh)
-[2] [transpile_phase_wrapper.xsl](../../wrappers/transpile_phase_wrapper.xsl)
-[3] [validate_rules.sh](../../scripts/validate_rules.sh)

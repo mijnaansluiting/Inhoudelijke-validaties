@@ -4,11 +4,14 @@ title: R.3 — Geometrie binnen Projectvlak
 description: Checks that every point, line, and area geometry of every NLCS object in the file interacts with the project area of the AprojectReferentie.
 resource: validation_schemas/patterns/v12/R.3.sch
 tags: geometrie
-timestamp: 2026-07-08T00:00:00Z
-published: true
-editor: markdown
-date: 2026-07-08T00:00:00Z
-dateCreated: 2026-07-08T00:00:00Z
+generated:
+  by: human:sytse.walraven
+  at: 2026-08-26T00:00:00Z
+sources:
+  - resource: "../../doc/NLCSValidatieRegels.xml"
+    title: "NLCS Validatieregels catalog"
+  - resource: "../../validation_schemas/abstract_patterns/v12/geometrie/geometrie_binnen_projectvlak.sch"
+    title: "geometrie_binnen_projectvlak.sch"
 ---
 
 # Overview
@@ -25,8 +28,3 @@ Every NLCS object's geometry must spatially interact with the project area (the 
   - Area objects (MSstation, AbeschermingVlak): the object's gml:Surface must interact with the project area (`ma:area-interacts-with-area`).
 
 Severity for this rule varies by scope; see [scope × severity matrix](../domain/scope-severity-model) for the exact values.
-
-# Citations
-
-[1] [NLCS Validatieregels catalog](../../doc/NLCSValidatieRegels.xml)
-[2] [geometrie_binnen_projectvlak.sch](../../validation_schemas/abstract_patterns/v12/geometrie/geometrie_binnen_projectvlak.sch)

@@ -4,11 +4,14 @@ title: R.32 — Aanwezigheid bestand bijlage kunstwerk
 description: Checks that every zinker-type Akunstwerk has a linked AbestandBijlage attachment of SoortBestand "Zinkertekening".
 resource: validation_schemas/patterns/v12/R.32.sch
 tags: document
-timestamp: 2026-07-08T00:00:00Z
-published: true
-editor: markdown
-date: 2026-07-08T00:00:00Z
-dateCreated: 2026-07-08T00:00:00Z
+generated:
+  by: human:sytse.walraven
+  at: 2026-08-26T00:00:00Z
+sources:
+  - resource: "../../doc/NLCSValidatieRegels.xml"
+    title: "NLCS Validatieregels catalog"
+  - resource: "../../validation_schemas/abstract_patterns/v12/document/aanwezigheid_bestand_bijlage_kunstwerk.sch"
+    title: "aanwezigheid_bestand_bijlage_kunstwerk.sch"
 ---
 
 # Overview
@@ -25,8 +28,3 @@ A subaqueous crossing structure (a "zinker") must be documented with a drawing. 
   - `soort_bestand_correct`: for zinker kunstwerken, the related AbestandBijlage's SoortBestand must equal "Zinkertekening" (message `soort-bestand-not-correct`).
 
 Severity for this rule varies by scope; see [scope × severity matrix](../domain/scope-severity-model) for the exact values.
-
-# Citations
-
-[1] [NLCS Validatieregels catalog](../../doc/NLCSValidatieRegels.xml)
-[2] [aanwezigheid_bestand_bijlage_kunstwerk.sch](../../validation_schemas/abstract_patterns/v12/document/aanwezigheid_bestand_bijlage_kunstwerk.sch)

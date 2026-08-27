@@ -3,11 +3,18 @@ type: Decision
 title: Memoized geometry parsing (ma:parse-point/ma:parse-line/ma:parse-area)
 description: Why parsing a geometry's raw GML coordinate string is now cached per node instead of redone on every call, and why R.21 was the dominant remaining cost the connectivity-index fix didn't touch.
 tags: decision, performance, geometry
-timestamp: 2026-07-10T00:00:00Z
-published: true
-editor: markdown
-date: 2026-07-10T00:00:00Z
-dateCreated: 2026-07-10T00:00:00Z
+generated:
+  by: human:sytse.walraven
+  at: 2026-08-26T00:00:00Z
+sources:
+  - resource: "../../validation_schemas/xsl_functions/helper_functions.xsl"
+    title: "helper_functions.xsl"
+  - resource: "../../validation_schemas/abstract_patterns/v12/topologie/geldig_eindpunt_kabel.sch"
+    title: "geldig_eindpunt_kabel.sch"
+  - resource: "./connectivity-index-and-geometry-caching"
+    title: "connectivity-index-and-geometry-caching"
+  - resource: "../../benchmark.sh"
+    title: "benchmark.xml / benchmark.sh / report.svrl.xml (stress-test fixture, harness, and resulting SVRL report \u2014 not part of the committed rule test suite)"
 ---
 
 # Context
@@ -105,10 +112,3 @@ comparison. With parsing now O(1) amortized per geometry, the residual
 points×lines comparison cost (the one thing a quad tree/grid would target)
 is much smaller than it was; whether it's still worth a spatial index should
 be re-assessed against the new 10s baseline rather than the old 27s one.
-
-# Citations
-
-[1] [helper_functions.xsl](../../validation_schemas/xsl_functions/helper_functions.xsl)
-[2] [geldig_eindpunt_kabel.sch](../../validation_schemas/abstract_patterns/v12/topologie/geldig_eindpunt_kabel.sch)
-[3] [connectivity-index-and-geometry-caching](./connectivity-index-and-geometry-caching)
-[4] [benchmark.xml / benchmark.sh / report.svrl.xml (stress-test fixture, harness, and resulting SVRL report — not part of the committed rule test suite)](../../benchmark.sh)

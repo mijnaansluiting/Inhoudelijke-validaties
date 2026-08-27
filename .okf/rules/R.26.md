@@ -4,11 +4,14 @@ title: R.26 — Aantal kabels en mof functie
 description: Checks that the number of cables connected to a joint matches what is expected for the joint's Functie.
 resource: validation_schemas/patterns/v12/R.26.sch
 tags: inhoud-waarde
-timestamp: 2026-07-08T00:00:00Z
-published: true
-editor: markdown
-date: 2026-07-08T00:00:00Z
-dateCreated: 2026-07-08T00:00:00Z
+generated:
+  by: human:sytse.walraven
+  at: 2026-08-26T00:00:00Z
+sources:
+  - resource: "../../doc/NLCSValidatieRegels.xml"
+    title: "NLCS Validatieregels catalog"
+  - resource: "../../validation_schemas/abstract_patterns/v12/inhoud_waarde/aantal_kabels_en_mof_functie.sch"
+    title: "aantal_kabels_en_mof_functie.sch"
 ---
 
 # Overview
@@ -37,8 +40,3 @@ Config dependency: the mapping from Functie strings to the Aftak/Eind/Verbinding
 The mof-to-kabel/Eaarddraad touch check is served by a shared connectivity index rather than a per-rule scan; see [connectivity-index-and-geometry-caching](../decisions/connectivity-index-and-geometry-caching).
 
 Severity for this rule varies by scope; see [/domain/scope-severity-model.md](../domain/scope-severity-model) for the full scope×severity matrix.
-
-# Citations
-
-[1] [NLCS Validatieregels catalog](../../doc/NLCSValidatieRegels.xml)
-[2] [aantal_kabels_en_mof_functie.sch](../../validation_schemas/abstract_patterns/v12/inhoud_waarde/aantal_kabels_en_mof_functie.sch)

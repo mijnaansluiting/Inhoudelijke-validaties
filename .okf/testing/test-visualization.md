@@ -4,11 +4,14 @@ title: Test data visualization
 description: Auto-generated SVG renderings of every rule fixture's geometry, committed to assets/ for the wiki.
 resource: transformations/visualize_test_data.xsl
 tags: testing, documentation
-timestamp: 2026-07-08T00:00:00Z
-published: true
-editor: markdown
-date: 2026-07-08T00:00:00Z
-dateCreated: 2026-07-08T00:00:00Z
+generated:
+  by: human:sytse.walraven
+  at: 2026-08-26T00:00:00Z
+sources:
+  - resource: "../../scripts/generate_and_compare_svgs.sh"
+    title: "generate_and_compare_svgs.sh"
+  - resource: "../../transformations/visualize_test_data.xsl"
+    title: "visualize_test_data.xsl"
 ---
 
 # Overview
@@ -34,8 +37,3 @@ The equivalent script for the rendered rule-catalog HTML
 (`doc/NLCSValidatieRegels.html`, generated from `doc/NLCSValidatieRegels.xml`
 via `doc/NLCSValidatieRegels.xsl`) is `scripts/generate_and_compare_htmls.sh`,
 which follows the same "regenerate and diff, fail if stale" pattern.
-
-# Citations
-
-[1] [generate_and_compare_svgs.sh](../../scripts/generate_and_compare_svgs.sh)
-[2] [visualize_test_data.xsl](../../transformations/visualize_test_data.xsl)

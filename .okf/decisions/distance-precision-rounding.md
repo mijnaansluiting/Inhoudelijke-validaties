@@ -3,11 +3,18 @@ type: Decision
 title: Rounding geometric comparisons to millimeters
 description: Why distance/touch checks round to a configured decimal precision instead of comparing raw floating-point doubles.
 tags: decision, geometry
-timestamp: 2026-07-08T00:00:00Z
-published: true
-editor: markdown
-date: 2026-07-08T00:00:00Z
-dateCreated: 2026-07-08T00:00:00Z
+generated:
+  by: human:sytse.walraven
+  at: 2026-08-26T00:00:00Z
+sources:
+  - resource: "https://github.com/mijnaansluiting/Inhoudelijke-validaties/commit/5a58dee5ae6f40613922d7ad15207575701a2d7a"
+    title: "5a58dee \u2014 R.36: Fix line buffer calculation with sequential coords at same position (#90)"
+  - resource: "https://github.com/mijnaansluiting/Inhoudelijke-validaties/commit/1e78ce1313103608cae025b24ac141a9d7403b31"
+    title: "1e78ce1 \u2014 Limit rounding to millimeters for final interaction checks (#92)"
+  - resource: "../../validation_schemas/xsl_functions/geometry_functions.xsl"
+    title: "geometry_functions.xsl"
+  - resource: "../../validation_schemas/xsl_functions/helper_functions.xsl"
+    title: "helper_functions.xsl"
 ---
 
 # Context
@@ -60,10 +67,3 @@ don't reintroduce raw `=` comparisons on distance/coordinate doubles, and
 don't change `DecimalPrecision` without checking which rules' pass/fail
 fixtures assume 1mm tolerance (notably [R.36](../rules/R.36)'s `_offset`
 and `exact_same_position` fixtures).
-
-# Citations
-
-[1] [5a58dee — R.36: Fix line buffer calculation with sequential coords at same position (#90)](https://github.com/mijnaansluiting/Inhoudelijke-validaties/commit/5a58dee5ae6f40613922d7ad15207575701a2d7a)
-[2] [1e78ce1 — Limit rounding to millimeters for final interaction checks (#92)](https://github.com/mijnaansluiting/Inhoudelijke-validaties/commit/1e78ce1313103608cae025b24ac141a9d7403b31)
-[3] [geometry_functions.xsl](../../validation_schemas/xsl_functions/geometry_functions.xsl)
-[4] [helper_functions.xsl](../../validation_schemas/xsl_functions/helper_functions.xsl)
