@@ -5,10 +5,7 @@
             value="."/>
 
         <let name="connected_mskabels"
-            value="//nlcs:MSkabel[ma:point-touches-line(
-                ma:parse-point($msmof/nlcs:Geometry),
-                ma:parse-line(nlcs:Geometry)
-            )]"/>
+            value="ma:touching-kabels($msmof)[self::nlcs:MSkabel]"/>
         
         <let name="unique_connected_phases"
             value="distinct-values($connected_mskabels/nlcs:FaseAanduiding)"/>
@@ -64,10 +61,7 @@
             value="."/>
 
         <let name="connected_lskabels"
-            value="//nlcs:LSkabel[ma:point-touches-line(
-                ma:parse-point($lsmof/nlcs:Geometry),
-                ma:parse-line(nlcs:Geometry)
-            )]"/>
+            value="ma:touching-kabels($lsmof)[self::nlcs:LSkabel]"/>
         
         <let name="unique_connected_phases"
             value="distinct-values($connected_lskabels/nlcs:FaseAanduiding)"/>
