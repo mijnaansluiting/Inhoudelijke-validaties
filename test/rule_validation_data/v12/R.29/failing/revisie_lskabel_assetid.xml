@@ -9,22 +9,16 @@
         <Projectnummer>1</Projectnummer>
         <Netbeheerder>Enexis</Netbeheerder>
         <NaamAannemer></NaamAannemer>
-        <Tekeningtype>BESTAANDE SITUATIE</Tekeningtype>
+        <Tekeningtype>DEELREVISIE</Tekeningtype>
         <Geometry></Geometry>
     </AprojectReferentie>
 
-    <MSkabel>
-        <ID>B</ID>
-        <Status>BESTAAND</Status>
-        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <GisId>83413</GisId>
-        <Geometry></Geometry>
-    </MSkabel>
     <LSkabel>
-        <ID>C</ID>
+        <ID>B</ID>
         <Status>REVISIE</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
         <Bewerking>VERPLAATSEN</Bewerking>
+        <AssetId>999</AssetId>
         <GisId>83413</GisId>
         <Geometry></Geometry>
     </LSkabel>

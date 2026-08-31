@@ -425,19 +425,36 @@
 			</validatieObjecten>
 		</validatieRegel>
 		<validatieRegel nummer="R.29" naam="Verplaatsing goed vastgelegd">
-			<beschrijving>Een verplaatsing moet zijn vastgelegd met 2 dezelfde objecten</beschrijving>
+			<beschrijving>Een verplaatsing moet correct zijn vastgelegd</beschrijving>
 			<soort>Consistentie</soort>
 			<definitie>
-				Een verplaatsing moet zodanig zijn vastgelegd dat het object 2 keer voorkomt in het Document
-				1. Het bestaande object dat wordt verplaatst: Status=BESTAAND
-				2. Een nieuw object waarin de verplaatsing is vastgelegd in de geometrie:
-					- Status=REVISIE
-					- Bewerking=VERPLAATSTEN
-					- GisID als bestaande
-					- AssetID moet leeg zijn
-
-				Controle: Als er een object voorkomt met de Status=REVISIE en de Bewerking=VERPLAATSEN dan moet er een tweede object zijn van het zelfde soort met dezelfde GisID en de status=BESTAAND
+				Een verplaatst object is een object met Status=REVISIE en Bewerking=VERPLAATSEN
+				Een verplaatst object mag geen AssetID hebben.
+						
+				In een ontwerptekening moet een verplaatsing zodanig zijn vastgelegd dat het originele object 2 keer voorkomt in het Document
+				1. Het bestaande object dat zal worden verplaatst:
+				- Status=BESTAAND 
+				- Bewerking is leeg
+				2. Een revisie-object waarin de verplaatsing is vastgelegd:
+				- Status=REVISIE
+				- Bewerking=VERPLAATSTEN
+				- GisID gelijk aan bestaande
+				- Soort object gelijk aan bestaande
+				
+				In een revisietekening moet een verplaatsing zodanig zijn vastgelegd dat het object 1 keer voorkomt in het Document
+				1. Een revisie-object waarin de verplaatsing is vastgelegd in de geometrie:
+				- Status=REVISIE
+				- Bewerking=VERPLAATSTEN
+				- GisID
+				
+				Controle: 
+				- Als er in een ontwerptekening een object voorkomt met de Status=REVISIE en de Bewerking=VERPLAATSEN dan moet er een tweede object zijn van het zelfde soort met hetzelfde GisID en de status=BESTAAND
+				- Als er in een revisietekening een object voorkomt met de Status=REVISIE en de Bewerking=VERPLAATSEN dan mag er geen tweede object zijn met hetzelfde GisID
 			</definitie>
+			<toelichting>
+				Onder ontwerptekening verstaan we alle tekeningtypen waarbij ONTWERP in de naam zit.
+				Onder revisietekening verstaan we alle tekeningtypen waarbij REVISIE in de naam zit.
+			</toelichting>
 			<validatieObjecten>
 				<validatieObject><naam>LSkabel</naam></validatieObject>
 				<validatieObject><naam>MSkabel</naam></validatieObject>
@@ -641,6 +658,7 @@
 				<scopeValidatieRegel><nummer>R.20</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.27</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.28</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.29</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.30</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.35</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.36</nummer><niveau>Fout</niveau></scopeValidatieRegel>
