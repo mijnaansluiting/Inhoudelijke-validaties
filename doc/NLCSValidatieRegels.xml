@@ -357,7 +357,7 @@
 				- L3: 1x
 				- N: maakt niet uit.
 			</definitie>
-			<toelichting>Indien de Uitvoering "KEUZE ONTBREEKT IN LIJST" is, moet de FaseAanduiding vergeleken worden met de eerste twee karakters van de OmschrijvingUitvoering.</toelichting>
+			<toelichting>Indien de Uitvoering "KEUZE ONTBREEKT IN LIJST" is hoeft deze controle niet uitgevoerd te worden.</toelichting>
 			<validatieObjecten>
 				<validatieObject><naam>MSkabel</naam></validatieObject>
 			</validatieObjecten>

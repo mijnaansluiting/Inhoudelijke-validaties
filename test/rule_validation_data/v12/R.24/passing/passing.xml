@@ -61,50 +61,8 @@
     <MSkabel>
         <ID>G</ID>
         <Uitvoering>KEUZE ONTBREEKT IN LIJST</Uitvoering>
-        <OmschrijvingUitvoering>3x</OmschrijvingUitvoering>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <FaseAanduiding>3 Fasen</FaseAanduiding>
-        <Geometry></Geometry>
-    </MSkabel>
-
-    <MSkabel>
-        <ID>H</ID>
-        <Uitvoering>KEUZE ONTBREEKT IN LIJST</Uitvoering>
-        <OmschrijvingUitvoering>1x</OmschrijvingUitvoering>
-        <Status>BESTAAND</Status>
-        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <FaseAanduiding>L1</FaseAanduiding>
-        <Geometry></Geometry>
-    </MSkabel>
-
-    <MSkabel>
-        <ID>I</ID>
-        <Uitvoering>KEUZE ONTBREEKT IN LIJST</Uitvoering>
-        <OmschrijvingUitvoering>1x</OmschrijvingUitvoering>
-        <Status>BESTAAND</Status>
-        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <FaseAanduiding>L2</FaseAanduiding>
-        <Geometry></Geometry>
-    </MSkabel>
-
-    <MSkabel>
-        <ID>J</ID>
-        <Uitvoering>KEUZE ONTBREEKT IN LIJST</Uitvoering>
-        <OmschrijvingUitvoering>1x</OmschrijvingUitvoering>
-        <Status>BESTAAND</Status>
-        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <FaseAanduiding>L3</FaseAanduiding>
-        <Geometry></Geometry>
-    </MSkabel>
-
-    <MSkabel>
-        <ID>K</ID>
-        <Uitvoering>KEUZE ONTBREEKT IN LIJST</Uitvoering>
-        <OmschrijvingUitvoering>Onbekend</OmschrijvingUitvoering>
-        <Status>BESTAAND</Status>
-        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <FaseAanduiding>N</FaseAanduiding>
         <Geometry></Geometry>
     </MSkabel>
 </NLCSnetbeheer>
