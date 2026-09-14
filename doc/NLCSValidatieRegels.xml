@@ -723,7 +723,7 @@
 				<scopeValidatieRegel><nummer>R.21</nummer><niveau>Informerend</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.22</nummer><niveau>Informerend</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.23</nummer><niveau>Informerend</niveau></scopeValidatieRegel>
-				<scopeValidatieRegel><nummer>R.24</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.24</nummer><niveau>Informerend</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.25</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.26</nummer><niveau>Informerend</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.27</nummer><niveau>Fout</niveau></scopeValidatieRegel>
@@ -835,7 +835,7 @@
 				<scopeValidatieRegel><nummer>R.21</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.22</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.23</nummer><niveau>Fout</niveau></scopeValidatieRegel>
-				<scopeValidatieRegel><nummer>R.24</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.24</nummer><niveau>Informerend</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.25</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.26</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.27</nummer><niveau>Fout</niveau></scopeValidatieRegel>
