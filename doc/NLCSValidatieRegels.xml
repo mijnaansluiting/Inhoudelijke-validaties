@@ -452,8 +452,8 @@
 				- Als er in een revisietekening een object voorkomt met de Status=REVISIE en de Bewerking=VERPLAATSEN dan mag er geen tweede object zijn met hetzelfde GisID
 			</definitie>
 			<toelichting>
-				Onder ontwerptekening verstaan we alle tekeningtypen waarbij ONTWERP in de naam zit.
-				Onder revisietekening verstaan we alle tekeningtypen waarbij REVISIE in de naam zit.
+				Onder ontwerptekening wordt verstaan alle tekeningtypen waarbij ONTWERP in de naam zit.
+				Onder revisietekening wordt verstaan alle tekeningtypen waarbij REVISIE in de naam zit.
 			</toelichting>
 			<validatieObjecten>
 				<validatieObject><naam>LSkabel</naam></validatieObject>
