@@ -725,18 +725,18 @@
 				<scopeValidatieRegel><nummer>R.1</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.2</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.3</nummer><niveau>Fout</niveau></scopeValidatieRegel>
-				<scopeValidatieRegel><nummer>R.4</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.4</nummer><niveau>Waarschuwing</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.5</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.6</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.7</nummer><niveau>Fout</niveau></scopeValidatieRegel>
-				<scopeValidatieRegel><nummer>R.8</nummer><niveau>Fout</niveau></scopeValidatieRegel>
-				<scopeValidatieRegel><nummer>R.9</nummer><niveau>Fout</niveau></scopeValidatieRegel>
-				<scopeValidatieRegel><nummer>R.10</nummer><niveau>Fout</niveau></scopeValidatieRegel>
-				<scopeValidatieRegel><nummer>R.11</nummer><niveau>Fout</niveau></scopeValidatieRegel>
-				<scopeValidatieRegel><nummer>R.12</nummer><niveau>Fout</niveau></scopeValidatieRegel>
-				<scopeValidatieRegel><nummer>R.13</nummer><niveau>Fout</niveau></scopeValidatieRegel>
-				<scopeValidatieRegel><nummer>R.14</nummer><niveau>Fout</niveau></scopeValidatieRegel>
-				<scopeValidatieRegel><nummer>R.15</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.8</nummer><niveau>Waarschuwing</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.9</nummer><niveau>Waarschuwing</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.10</nummer><niveau>Waarschuwing</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.11</nummer><niveau>Waarschuwing</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.12</nummer><niveau>Waarschuwing</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.13</nummer><niveau>Waarschuwing</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.14</nummer><niveau>Waarschuwing</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.15</nummer><niveau>Waarschuwing</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.20</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.21</nummer><niveau>Informerend</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.22</nummer><niveau>Informerend</niveau></scopeValidatieRegel>
@@ -767,7 +767,7 @@
 				<scopeValidatieRegel><nummer>R.1</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.2</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.3</nummer><niveau>Fout</niveau></scopeValidatieRegel>
-				<scopeValidatieRegel><nummer>R.4</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.4</nummer><niveau>Waarschuwing</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.5</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.6</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.7</nummer><niveau>Fout</niveau></scopeValidatieRegel>
@@ -837,18 +837,18 @@
 				<scopeValidatieRegel><nummer>R.1</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.2</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.3</nummer><niveau>Fout</niveau></scopeValidatieRegel>
-				<scopeValidatieRegel><nummer>R.4</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.4</nummer><niveau>Waarschuwing</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.5</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.6</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.7</nummer><niveau>Fout</niveau></scopeValidatieRegel>
-				<scopeValidatieRegel><nummer>R.8</nummer><niveau>Fout</niveau></scopeValidatieRegel>
-				<scopeValidatieRegel><nummer>R.9</nummer><niveau>Fout</niveau></scopeValidatieRegel>
-				<scopeValidatieRegel><nummer>R.10</nummer><niveau>Fout</niveau></scopeValidatieRegel>
-				<scopeValidatieRegel><nummer>R.11</nummer><niveau>Fout</niveau></scopeValidatieRegel>
-				<scopeValidatieRegel><nummer>R.12</nummer><niveau>Fout</niveau></scopeValidatieRegel>
-				<scopeValidatieRegel><nummer>R.13</nummer><niveau>Fout</niveau></scopeValidatieRegel>
-				<scopeValidatieRegel><nummer>R.14</nummer><niveau>Fout</niveau></scopeValidatieRegel>
-				<scopeValidatieRegel><nummer>R.15</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.8</nummer><niveau>Waarschuwing</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.9</nummer><niveau>Waarschuwing</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.10</nummer><niveau>Waarschuwing</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.11</nummer><niveau>Waarschuwing</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.12</nummer><niveau>Waarschuwing</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.13</nummer><niveau>Waarschuwing</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.14</nummer><niveau>Waarschuwing</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.15</nummer><niveau>Waarschuwing</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.20</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.21</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.22</nummer><niveau>Fout</niveau></scopeValidatieRegel>
@@ -879,7 +879,7 @@
 				<scopeValidatieRegel><nummer>R.1</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.2</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.3</nummer><niveau>Fout</niveau></scopeValidatieRegel>
-				<scopeValidatieRegel><nummer>R.4</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.4</nummer><niveau>Waarschuwing</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.5</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.6</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.7</nummer><niveau>Fout</niveau></scopeValidatieRegel>
