@@ -25,6 +25,20 @@ jobs:
       - name: Install dependencies
         run: scripts/install_dependencies.sh
 
+      - name: Upload installed dependencies
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: installed-dependencies
+          path: |
+            saxon-he.jar
+            lib/
+            transpile.xsl
+            xerces-cli.jar
+            NLCS_Netbeheer.xsd
+            NLCS_Netbeheer_Keuzelijst.xsd
+          if-no-files-found: warn
+
       - name: Add scope checks
         run: scripts/add_scope_checks.sh
 

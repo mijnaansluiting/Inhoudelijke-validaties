@@ -134,12 +134,12 @@
                 or
                 (
                     some $msstation_geometry in //nlcs:MSstation/nlcs:Geometry
-                    satisfies ma:point-touches-area($start_point, ma:parse-area($msstation_geometry))
+                    satisfies ma:point-touches-area($end_point, ma:parse-area($msstation_geometry))
                 )
                 or
                 (
                     some $lskast_geometry in //nlcs:LSkast/nlcs:Geometry
-                    satisfies ma:point-touches-area($start_point, ma:parse-area($lskast_geometry))
+                    satisfies ma:point-touches-area($end_point, ma:parse-area($lskast_geometry))
                 )
             "/>
         

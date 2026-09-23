@@ -1,22 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pattern xmlns ="http://purl.oclc.org/dsdl/schematron" id="kabels-zelfde-netvlak" abstract="true">
     <rule context="//nlcs:MSkabel">
-        <let name="line"
-            value="ma:parse-line(nlcs:Geometry)"/>
-        
         <let name="connected_msmoffen"
-            value="//nlcs:MSmof[ma:point-touches-line(ma:parse-point(nlcs:Geometry), $line)]"/>
-        
+            value="ma:touching-moffen(.)[self::nlcs:MSmof]"/>
+
         <let name="connected_lskabels"
-            value="//nlcs:LSkabel[
-                    some $connected_mof in $connected_msmoffen 
-                    satisfies ma:point-touches-line(ma:parse-point($connected_mof/nlcs:Geometry), ma:parse-line(nlcs:Geometry))]"/>
-        
+            value="ma:touching-kabels-via-moffen($connected_msmoffen, 'LSkabel')"/>
+
         <let name="connected_hskabels"
-            value="//nlcs:HSkabel[
-                    some $connected_mof in $connected_msmoffen 
-                    satisfies ma:point-touches-line(ma:parse-point($connected_mof/nlcs:Geometry), ma:parse-line(nlcs:Geometry))]"/>
-        
+            value="ma:touching-kabels-via-moffen($connected_msmoffen, 'HSkabel')"/>
+
         <let name="all_connections_are_valid"
             value="empty($connected_hskabels) and empty($connected_lskabels)"/>
 
@@ -33,28 +26,15 @@
     </rule>
     
     <rule context="//nlcs:LSkabel">
-        <let name="line"
-            value="ma:parse-line(nlcs:Geometry)"/>
-        
         <let name="connected_lsmoffen"
-            value="//nlcs:LSmof[ma:point-touches-line(ma:parse-point(nlcs:Geometry), $line)]"/>
-        
+            value="ma:touching-moffen(.)[self::nlcs:LSmof]"/>
+
         <let name="connected_mskabels"
-            value="//nlcs:MSkabel[
-                    some $connected_mof in $connected_lsmoffen 
-                    satisfies ma:point-touches-line(
-                            ma:parse-point($connected_mof/nlcs:Geometry),
-                            ma:parse-line(nlcs:Geometry)
-                        )]"/>
-        
+            value="ma:touching-kabels-via-moffen($connected_lsmoffen, 'MSkabel')"/>
+
         <let name="connected_hskabels"
-            value="//nlcs:HSkabel[
-                    some $connected_mof in $connected_lsmoffen 
-                    satisfies ma:point-touches-line(
-                            ma:parse-point($connected_mof/nlcs:Geometry),
-                            ma:parse-line(nlcs:Geometry)
-                        )]"/>
-        
+            value="ma:touching-kabels-via-moffen($connected_lsmoffen, 'HSkabel')"/>
+
         <let name="all_connections_are_valid"
             value="empty($connected_hskabels) and empty($connected_mskabels)"/>
 
