@@ -5,8 +5,8 @@ description: The three-layer design that separates rule metadata from rule logic
 resource: validation_schemas/base/v12.sch
 tags: architecture, schematron
 generated:
-  by: claude-code/claude-opus-5-5
-  at: 2026-10-13T00:00:00Z
+  by: human:sytse.walraven
+  at: 2026-08-26T00:00:00Z
 sources:
   - resource: "../../validation_schemas/base/v12.sch"
     title: "base/v12.sch"
@@ -27,7 +27,7 @@ sub-checks that only differ in parameters:
    namespaces (`ma`, `gml`, `xs`, `nlcs`, `nvr`, `math`), a global
    `<properties>` block (`scope`, `rule-number`, `severity`, `object-type`,
    `object-id`, `geometries` — attached to every assert for downstream
-   reporting), one Schematron `<phase>` per rule id (`R.1` … `R.42`, with
+   reporting), one Schematron `<phase>` per rule id (`R.1` … `R.41`, with
    `R.4` and `R.8` each activating two patterns), the 5
    [xsl-function-libraries](./xsl-function-libraries) via
    `xsl:include`, then `include`s of every concrete pattern and every

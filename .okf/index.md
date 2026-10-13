@@ -14,7 +14,7 @@ quickly answerable without re-deriving it from source each time.
 # Start here
 
 * [Domain](./domain/index) - What NLCS++ is, and the scope/severity model that governs rule enforcement.
-* [Rules](./rules/index) - All 38 validation rules (R.1–R.42), grouped by category.
+* [Rules](./rules/index) - All 37 validation rules (R.1–R.41), grouped by category.
 
 # Reference
 
