@@ -5,8 +5,8 @@ description: How the same rule can be an error in one drawing context and merely
 resource: doc/NLCSValidatieRegels.xml
 tags: domain, scope, severity
 generated:
-  by: human:sytse.walraven
-  at: 2026-08-26T00:00:00Z
+  by: claude-code/claude-opus-5-5
+  at: 2026-10-13T00:00:00Z
 sources:
   - resource: "../../doc/NLCSValidatieRegels.xml"
     title: "NLCS Validatieregels catalog \u2014 `<scopes>` section"
@@ -97,8 +97,9 @@ via functions like `ma:scope-name`, `ma:rule-severity-within-scope`, and
 | [R.39](../rules/R.39) | – | – | F | – | – | F | – | – |
 | [R.40](../rules/R.40) | – | – | F | F | F | F | F | F |
 | [R.41](../rules/R.41) | F | F | F | F | F | F | F | F |
+| [R.42](../rules/R.42) | F | F | F | F | F | F | F | F |
 
-Rules `R.1`, `R.2`, `R.3`, `R.5`, `R.7`, `R.35`, and `R.41` are the only rules
+Rules `R.1`, `R.2`, `R.3`, `R.5`, `R.7`, `R.35`, `R.41`, and `R.42` are the only rules
 that are `Fout` in literally every scope — regardless of drawing type,
 status, or operational state. See
 [scope-bound-vs-scopeless-rules](../decisions/scope-bound-vs-scopeless-rules)

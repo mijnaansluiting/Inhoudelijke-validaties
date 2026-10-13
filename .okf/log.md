@@ -1,5 +1,19 @@
 # Update Log
 
+## 2026-10-13
+* **Add**: [R.42](./rules/R.42) — Combinatie NLCS Status en Bedrijfstoestand
+  (soort Bestand, `Fout` in all 8 scopes). Rule count 37 → 38
+  (`R.1`–`R.42`) in [index](./index), [rules/index](./rules/index), and
+  [nlcs-plus-plus](./domain/nlcs-plus-plus); added an R.42 row to
+  [scope-severity-model](./domain/scope-severity-model), the
+  `invalid-status-for-bedrijfstoestand` message to
+  [localization-messages](./config/localization-messages), and bumped the
+  phase range in [schematron-layering](./architecture/schematron-layering).
+  Fixed the R.42 rule context's AprojectReferentie exclusion
+  (`self::nlcs/AprojectReferentie` → `self::nlcs:AprojectReferentie`), which
+  previously never matched. "41 rules" in decisions/ concepts is left as-is:
+  it's historical to when those benchmarks ran.
+
 ## 2026-08-26
 * **Update**: Removed the non-OKF `published`, `editor`, `date`, and
   `dateCreated` frontmatter fields (added in a prior commit for Wiki.js

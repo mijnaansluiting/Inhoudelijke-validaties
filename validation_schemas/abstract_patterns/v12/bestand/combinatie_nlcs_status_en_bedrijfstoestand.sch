@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pattern xmlns ="http://purl.oclc.org/dsdl/schematron" id="combinatie-nlcs-status-en-bedrijfstoestand" abstract="true">
-    <rule context="//nlcs:NLCSnetbeheer/*[not(self::nlcs/AprojectReferentie)]">
+    <rule context="//nlcs:NLCSnetbeheer/*[not(self::nlcs:AprojectReferentie)]">
         <let name="bedrijfstoestand"
             value="string(nlcs:Bedrijfstoestand)"/>
 

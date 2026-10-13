@@ -5,8 +5,8 @@ description: The nl/en message catalog that validation rules use to produce huma
 resource: localization/messages.xml
 tags: configuration, localization
 generated:
-  by: human:sytse.walraven
-  at: 2026-08-26T00:00:00Z
+  by: claude-code/claude-opus-5-5
+  at: 2026-10-13T00:00:00Z
 sources:
   - resource: "../../localization/messages.xml"
     title: "messages.xml"
@@ -39,6 +39,7 @@ others are specific to a single rule (e.g.
 |---|---|
 | `no-nlcs-objects-present` | [R.1](../rules/R.1) — file has no NLCS objects. |
 | `invalid-status-for-tekening-type` | [R.2](../rules/R.2) — Status not allowed for the Tekeningsoort. |
+| `invalid-status-for-bedrijfstoestand` | [R.42](../rules/R.42) — Status not allowed for the object's Bedrijfstoestand. |
 | `object-outside-project-area` | [R.3](../rules/R.3) — geometry outside the project area. |
 | `line-segment-measurement-incorrect` | [R.4](../rules/R.4) (R.4-A) — segment shorter than 10cm or longer than 50m. |
 | `line-angle-larger-than-45` | [R.4](../rules/R.4) (R.4-B) — angle between segments exceeds 45°. |

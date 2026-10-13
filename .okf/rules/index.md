@@ -1,6 +1,6 @@
 # Validation Rules
 
-The full catalog of 37 Schematron content-validation rules (`R.1`–`R.41`;
+The full catalog of 38 Schematron content-validation rules (`R.1`–`R.42`;
 `R.16`–`R.19` don't exist). Source of truth: `doc/NLCSValidatieRegels.xml`.
 Severity of each rule varies by [scope](../domain/scope-severity-model).
 
@@ -10,6 +10,7 @@ Severity of each rule varies by [scope](../domain/scope-severity-model).
 * [R.2](./R.2) - Checks that the NLCS Status values used by objects in the file are consistent with the Tekeningtype declared on the AprojectReferentie.
 * [R.35](./R.35) - Checks that a revision drawing file (Tekeningtype DEELREVISIE or EINDREVISIE) contains at least one Amaaiveldhoogte (ground level) object.
 * [R.40](./R.40) - Checks that AprojectReferentie has a Volgnummer value when Tekeningtype is DEELREVISIE or EINDREVISIE.
+* [R.42](./R.42) - Checks that an NLCS object's Status is allowed for its Bedrijfstoestand (e.g. a VERWIJDERD object must have Bedrijfstoestand GEEN, a NIEUW object cannot be VERLATEN).
 
 ## Geometrie
 
