@@ -13,8 +13,10 @@
                     ['BESTAAND', 'REVISIE']
                 else if ($bedrijfstoestand = 'RESERVE' or $bedrijfstoestand = 'IN BEDRIJF') then
                     ['BESTAAND', 'NIEUW', 'REVISIE']
+                else if ($bedrijfstoestand = 'GEEN') then
+                    ['VERWIJDERD']
                 else
-                    ['VERWIJDERD']"/>
+                    []"/>
 
         <let name="disallowed_statuses"
             value="$status[not(. = $allowed_statuses)]"/>
