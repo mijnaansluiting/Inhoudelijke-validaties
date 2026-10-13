@@ -311,4 +311,12 @@
       {1} related assets are located more than {2} meter from the protection pipe.
     </message-text>
   </message>
+  <message id="invalid-status-for-bedrijfstoestand">
+    <message-text xml:lang="en">
+      A NLCS++ object with Bedrijfstoestand {1} may only have Status {2}, but found {3}.
+    </message-text>
+    <message-text xml:lang="nl">
+      Een NLCS++ object met Bedrijfstoestand {1} mag enkel Status {2} hebben, maar kwam {3} tegen.
+    </message-text>
+  </message>
 </messages>

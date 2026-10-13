@@ -595,6 +595,19 @@
 				<validatieObject><naam>AlleObjecten</naam></validatieObject>
 			</validatieObjecten>
 		</validatieRegel>
+		<validatieRegel nummer="R.42" naam="Combinatie NLCS Status en Bedrijfstoestand">
+			<beschrijving>Afhankelijk van de Bedrijfstoestand mogen er NLCS Objecten voorkomen met bepaalde NLCS Statussen</beschrijving>
+			<soort>Bestand</soort>
+			<definitie>
+				Status BESTAAND: IN BEDRIJF, RESERVE, VERLATEN
+				Status NIEUW: IN BEDRIJF, RESERVE
+				Status REVISIE: IN BEDRIJF, RESERVE, VERLATEN
+				STATUS VERWIJDERD: GEEN
+			</definitie>
+			<validatieObjecten>
+				<validatieObject><naam>AlleObjecten</naam></validatieObject>
+			</validatieObjecten>
+		</validatieRegel>
 	</validatieRegels>
 	<scopes>
 		<scope naam="Bestaande Situatie">
@@ -635,6 +648,7 @@
 				<scopeValidatieRegel><nummer>R.35</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.36</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.41</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.42</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 			</scopeValidatieRegels>
 		</scope>
 		<scope naam="Definitef Ontwerp">
@@ -663,6 +677,7 @@
 				<scopeValidatieRegel><nummer>R.35</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.36</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.41</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.42</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 			</scopeValidatieRegels>
 		</scope>		
 		<scope naam="Deelrevisie nieuwe objecten">
@@ -710,6 +725,7 @@
 				<scopeValidatieRegel><nummer>R.39</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.40</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.41</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.42</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 			</scopeValidatieRegels>
 		</scope>
 		<scope naam="Deelrevisie aangepaste objecten">
@@ -752,6 +768,7 @@
 				<scopeValidatieRegel><nummer>R.36</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.40</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.41</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.42</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 			</scopeValidatieRegels>
 		</scope>
 		<scope naam="Deelrevisie verlaten objecten">
@@ -775,6 +792,7 @@
 				<scopeValidatieRegel><nummer>R.35</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.40</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.41</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.42</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 			</scopeValidatieRegels>
 		</scope>
 		<scope naam="Eindrevisie nieuwe objecten">
@@ -822,6 +840,7 @@
 				<scopeValidatieRegel><nummer>R.39</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.40</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.41</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.42</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 			</scopeValidatieRegels>
 		</scope>
 		<scope naam="Eindrevisie aangepaste objecten">
@@ -864,6 +883,7 @@
 				<scopeValidatieRegel><nummer>R.36</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.40</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.41</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.42</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 			</scopeValidatieRegels>
 		</scope>
 		<scope naam="Eindrevisie verlaten objecten">
@@ -887,6 +907,7 @@
 				<scopeValidatieRegel><nummer>R.35</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.40</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.41</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.42</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 			</scopeValidatieRegels>
 		</scope>
 	</scopes>
