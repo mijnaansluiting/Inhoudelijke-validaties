@@ -270,6 +270,6 @@
     <include href="../abstract_patterns/v12/verplichte_waarde/reden_niet_verwijdering_ingevuld.sch"/>
     <include href="../abstract_patterns/v12/document/aanwezigheid_bestand_bijlage_aardpen.sch"/>
     <include href="../abstract_patterns/v12/verplichte_waarde/datumtijdmutatie_gevuld.sch"/>
-    <include href="../abstract_patterns/v12/bestand/combiniate_nlcs_status_en_bedrijfstoestand.sch"/>
+    <include href="../abstract_patterns/v12/bestand/combinatie_nlcs_status_en_bedrijfstoestand.sch"/>
 
 </schema>
