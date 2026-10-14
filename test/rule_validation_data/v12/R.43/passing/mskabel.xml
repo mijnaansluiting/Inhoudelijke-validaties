@@ -12,6 +12,7 @@
         <Tekeningtype>BESTAANDE SITUATIE</Tekeningtype>
         <Geometry></Geometry>
     </AprojectReferentie>
+
     <Aaanlegtechniek>
         <ID>B</ID>
         <Status>BESTAAND</Status>
@@ -21,15 +22,15 @@
                 srsDimension="3"
                 srsName="EPSG:7415">
                 <gml:posList>
-                    0 0 0
+                    -1 0 0
                     20 0 0
-                    40 0 0
+                    41 5.25 0
                 </gml:posList>
             </gml:LineString>
         </Geometry>
     </Aaanlegtechniek>
 
-    <LSkabel>
+    <MSkabel>
         <ID>C</ID>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
@@ -38,14 +39,11 @@
                 srsDimension="3"
                 srsName="EPSG:7415">
                 <gml:posList>
-
-                    0    0.5 0
-                    20    0.5 0
-                    20.05 0.5 0
-                    40    0.5 0
-
+                    0 0.5 0
+                    20 0.5 0
+                    40 5.5 0
                 </gml:posList>
             </gml:LineString>
         </Geometry>
-    </LSkabel>
+    </MSkabel>
 </NLCSnetbeheer>
