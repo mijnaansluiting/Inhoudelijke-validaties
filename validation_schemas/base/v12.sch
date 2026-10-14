@@ -180,6 +180,10 @@
         <active pattern="R.42"/>
     </phase>
 
+    <phase id="R.43">
+        <active pattern="R.43"/>
+    </phase>
+
     <!-- import functions -->
     <xsl:include href="../xsl_functions/geometry_functions.xsl"/>
     <xsl:include href="../xsl_functions/config_functions.xsl"/>
@@ -229,6 +233,7 @@
     <include href="../patterns/v12/R.40.sch"/>
     <include href="../patterns/v12/R.41.sch"/>
     <include href="../patterns/v12/R.42.sch"/>
+    <include href="../patterns/v12/R.43.sch"/>
 
     <!-- import abstract patterns -->
     <include href="../abstract_patterns/v12/bestand/aanwezigheid_maaiveldhoogte.sch"/>
@@ -271,5 +276,6 @@
     <include href="../abstract_patterns/v12/document/aanwezigheid_bestand_bijlage_aardpen.sch"/>
     <include href="../abstract_patterns/v12/verplichte_waarde/datumtijdmutatie_gevuld.sch"/>
     <include href="../abstract_patterns/v12/bestand/combinatie_nlcs_status_en_bedrijfstoestand.sch"/>
+    <include href="../abstract_patterns/v12/geometrie/lijn_geometrie-afstand_van_inmeetpunten_aaanlegtechniek_en_nabije_objecten.sch"/>
 
 </schema>
