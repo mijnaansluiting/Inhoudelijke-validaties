@@ -66,6 +66,7 @@
 			</definitie>
 			<validatieObjecten>
 			     <!-- Deze regel geldt voor alle NLCS Objecten met een gml:Curve-->
+				<validatieObject><naam>Aaanlegtechniek</naam></validatieObject>
 				<validatieObject><naam>Amantelbuis</naam></validatieObject>
 				<validatieObject><naam>Eaarddraad</naam></validatieObject>
 				<validatieObject><naam>LSkabel</naam></validatieObject>
