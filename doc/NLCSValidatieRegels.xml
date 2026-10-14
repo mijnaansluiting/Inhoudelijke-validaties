@@ -62,7 +62,7 @@
 				Een gml:Surface moet voldoen aan de volgende definitie:
 					- minimale (10cm) en maximale (50m) afstand van (inmeet)punten
 
-				Note: Voor Aanlegtechnieken, kabels en mantelbuizen binnen 1 meter wordt alleen de hoek van lijnsegmenten gecheckt
+				Note: Voor Aanlegtechnieken, kabels en mantelbuizen binnen 1 meter wordt alleen de hoek van lijnsegmenten gecheckt. Zie R.43 voor meer details
 			</definitie>
 			<validatieObjecten>
 			     <!-- Deze regel geldt voor alle NLCS Objecten met een gml:Curve-->
