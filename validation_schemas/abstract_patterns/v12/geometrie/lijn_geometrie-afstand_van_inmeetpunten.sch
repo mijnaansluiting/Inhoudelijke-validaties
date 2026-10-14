@@ -3,7 +3,14 @@
      <rule context="//nlcs:MSkabel | //nlcs:LSkabel | //nlcs:Eaarddraad | //nlcs:Amantelbuis">
           <let name="coords" value="ma:parse-line(nlcs:Geometry)"/>
 
-          <let name="geometries" value="ma:line-segments-not-meeting-length-demands($coords)"/>
+          <let name="near_aanlegtechniek"
+               value="some $aanlegtechniek in //nlcs:Aaanlegtechniek
+                      satisfies ma:line-within-range-of-line(ma:parse-line($aanlegtechniek/nlcs:Geometry),
+                      $coords, 1)"/>
+
+          <let name="geometries" value="
+                    if ($near_aanlegtechniek) then () else
+                    ma:line-segments-not-meeting-length-demands($coords)"/>
 
           <assert id="line-geometry-line-segments-meet-length-demand"
                test="empty($geometries)"

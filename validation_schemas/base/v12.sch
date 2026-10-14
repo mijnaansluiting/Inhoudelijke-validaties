@@ -233,7 +233,7 @@
     <include href="../patterns/v12/R.40.sch"/>
     <include href="../patterns/v12/R.41.sch"/>
     <include href="../patterns/v12/R.42.sch"/>
-    <invlude href="../patterns/v12/R.43.sch"/>
+    <include href="../patterns/v12/R.43.sch"/>
 
     <!-- import abstract patterns -->
     <include href="../abstract_patterns/v12/bestand/aanwezigheid_maaiveldhoogte.sch"/>
