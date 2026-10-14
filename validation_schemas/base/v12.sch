@@ -276,6 +276,6 @@
     <include href="../abstract_patterns/v12/document/aanwezigheid_bestand_bijlage_aardpen.sch"/>
     <include href="../abstract_patterns/v12/verplichte_waarde/datumtijdmutatie_gevuld.sch"/>
     <include href="../abstract_patterns/v12/bestand/combinatie_nlcs_status_en_bedrijfstoestand.sch"/>
-    <include href="../abstract_patterns/v12/geometrie/lijn_geometrie-afstand_van_inmeetpunten_aaanlegtechniek.sch"/>
+    <include href="../abstract_patterns/v12/geometrie/lijn_geometrie-afstand_van_inmeetpunten_aaanlegtechniek_en_nabije_objecten.sch"/>
 
 </schema>
