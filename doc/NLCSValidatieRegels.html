@@ -187,7 +187,8 @@
          </tr>
          <tr class="validatieDocumentatieRow">
             <td class="validatieDocumentatieCell"><b>Definitie </b></td>
-            <td class="validatieDocumentatieCell"><br>				Een gml:Curve moet voldoen aan de volgende inmeeteisen:<br>					- minimale (10cm) en maximale (50m) afstand van (inmeet)punten<br>					- mag geen knikken bevatten: hoek tussen segmenten &gt; 45 graden.<br><br>				Een gml:Surface moet voldoen aan de volgende definitie:<br>					- minimale (10cm) en maximale (50m) afstand van (inmeet)punten<br>			</td>
+            <td class="validatieDocumentatieCell"><br>				Een gml:Curve moet voldoen aan de volgende inmeeteisen:<br>					- minimale (10cm) en maximale (50m) afstand van (inmeet)punten<br>					- mag geen knikken bevatten: hoek tussen segmenten &gt; 45 graden.<br><br>				Een gml:Surface moet voldoen aan de volgende definitie:<br>					- minimale (10cm) en maximale (50m) afstand van (inmeet)punten<br><br>				Note: Voor Aanlegtechnieken, kabels en mantelbuizen binnen 1 meter wordt alleen
+               de hoek van lijnsegmenten gecheckt<br>			</td>
          </tr>
          <tr class="validatieDocumentatieRow">
             <td class="validatieDocumentatieCell"><b>ValidatieObjecten</b></td>
@@ -1132,11 +1133,34 @@
          </tr>
          <tr class="validatieDocumentatieRow">
             <td class="validatieDocumentatieCell"><b>Definitie </b></td>
-            <td class="validatieDocumentatieCell"><br>				Een gml:Curve moet voldoen aan de volgende inmeeteisen:<br>				- minimale (10cm) en maximale (50m) afstand van (inmeet)punten<br>				- mag geen knikken bevatten: hoek tussen segmenten &gt; 45 graden.<br>			</td>
+            <td class="validatieDocumentatieCell"><br>				Een gml:Curve moet voldoen aan de volgende inmeeteisen:<br>				- minimale (10cm) en maximale (50m) afstand van (inmeet)punten<br><br>				Deze regel wordt alleen uitgevoerd of Aanlegtechnieken, kabels en mantelbuizen
+               binnen 1 meter van een Aanlegtechniek<br>			</td>
          </tr>
          <tr class="validatieDocumentatieRow">
             <td class="validatieDocumentatieCell"><b>ValidatieObjecten</b></td>
-            <td class="validatieDocumentatieCell">validatieObject: naam: Aaanlegtechniek</td>
+            <td class="validatieDocumentatieCell">
+               <table class="validatieDocumentatieTable">
+                  <tr class="validatieDocumentatieRow">
+                     <td class="validatieDocumentatieCell"><b>ValidatieObject </b></td>
+                     <td class="validatieDocumentatieCell">naam: Aaanlegtechniek</td>
+                  </tr>
+                  <tr class="validatieDocumentatieRow">
+                     <td class="validatieDocumentatieCell"><b>ValidatieObject </b></td>
+                     <td class="validatieDocumentatieCell">naam: Amantelbuis</td>
+                  </tr>
+                  <tr class="validatieDocumentatieRow">
+                     <td class="validatieDocumentatieCell"><b>ValidatieObject </b></td>
+                     <td class="validatieDocumentatieCell">naam: Eaarddraad</td>
+                  </tr>
+                  <tr class="validatieDocumentatieRow">
+                     <td class="validatieDocumentatieCell"><b>ValidatieObject </b></td>
+                     <td class="validatieDocumentatieCell">naam: LSkabel</td>
+                  </tr>
+                  <tr class="validatieDocumentatieRow">
+                     <td class="validatieDocumentatieCell"><b>ValidatieObject</b></td>
+                     <td class="validatieDocumentatieCell">naam: MSkabel</td>
+                  </tr>
+               </table><br></td>
          </tr>
       </table><br><h3>Scopes</h3><b id="Bestaande Situatie">Bestaande Situatie</b><br><br><table class="validatieDocumentatieTable">
          <tr class="validatieDocumentatieRow">
