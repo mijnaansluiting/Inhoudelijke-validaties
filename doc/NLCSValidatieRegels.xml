@@ -610,7 +610,7 @@
 				<validatieObject><naam>AlleObjecten</naam></validatieObject>
 			</validatieObjecten>
 		</validatieRegel>
-		<validatieRegel nummer="R.43" naam="Lijn Geometrie voor Aanlegtechnieken en verbonden objecten">
+		<validatieRegel nummer="R.43" naam="Lijn Geometrie voor Aanlegtechnieken en nabije objecten">
 			<beschrijving>Een lijn van een Aaanlegtechniek moet voldoen aan inmeeteisen</beschrijving>
 			<soort>Geometrie</soort>
 			<definitie>
