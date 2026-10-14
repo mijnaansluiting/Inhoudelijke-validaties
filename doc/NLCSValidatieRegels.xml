@@ -64,7 +64,6 @@
 			</definitie>
 			<validatieObjecten>
 			     <!-- Deze regel geldt voor alle NLCS Objecten met een gml:Curve-->
-				<validatieObject><naam>Aaanlegtechniek</naam></validatieObject>
 				<validatieObject><naam>Amantelbuis</naam></validatieObject>
 				<validatieObject><naam>Eaarddraad</naam></validatieObject>
 				<validatieObject><naam>LSkabel</naam></validatieObject>
@@ -608,6 +607,18 @@
 				<validatieObject><naam>AlleObjecten</naam></validatieObject>
 			</validatieObjecten>
 		</validatieRegel>
+		<validatieRegel nummer="R.43" naam="Lijn Geometrie">
+			<beschrijving>Een lijn van een Aaanlegtechniek moet voldoen aan inmeeteisen</beschrijving>
+			<soort>Geometrie</soort>
+			<definitie>
+				Een gml:Curve moet voldoen aan de volgende inmeeteisen:
+				- minimale (10cm) en maximale (50m) afstand van (inmeet)punten
+				- mag geen knikken bevatten: hoek tussen segmenten > 45 graden.
+			</definitie>
+			<validatieObjecten>
+				<validatieObject><naam>Aaanlegtechniek</naam></validatieObject>
+			</validatieObjecten>
+		</validatieRegel>
 	</validatieRegels>
 	<scopes>
 		<scope naam="Bestaande Situatie">
@@ -726,6 +737,7 @@
 				<scopeValidatieRegel><nummer>R.40</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.41</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.42</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.43</nummer><niveau>Waarschuwing</niveau></scopeValidatieRegel>
 			</scopeValidatieRegels>
 		</scope>
 		<scope naam="Deelrevisie aangepaste objecten">
@@ -769,6 +781,7 @@
 				<scopeValidatieRegel><nummer>R.40</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.41</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.42</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.43</nummer><niveau>Waarschuwing</niveau></scopeValidatieRegel>
 			</scopeValidatieRegels>
 		</scope>
 		<scope naam="Deelrevisie verlaten objecten">
@@ -793,6 +806,7 @@
 				<scopeValidatieRegel><nummer>R.40</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.41</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.42</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.43</nummer><niveau>Waarschuwing</niveau></scopeValidatieRegel>
 			</scopeValidatieRegels>
 		</scope>
 		<scope naam="Eindrevisie nieuwe objecten">
@@ -841,6 +855,7 @@
 				<scopeValidatieRegel><nummer>R.40</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.41</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.42</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.43</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 			</scopeValidatieRegels>
 		</scope>
 		<scope naam="Eindrevisie aangepaste objecten">
@@ -884,6 +899,7 @@
 				<scopeValidatieRegel><nummer>R.40</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.41</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.42</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.43</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 			</scopeValidatieRegels>
 		</scope>
 		<scope naam="Eindrevisie verlaten objecten">
@@ -908,6 +924,7 @@
 				<scopeValidatieRegel><nummer>R.40</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.41</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.42</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.43</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 			</scopeValidatieRegels>
 		</scope>
 	</scopes>
