@@ -8,7 +8,7 @@
             value="//nlcs:AprojectReferentie/nlcs:Tekeningtype"/>
 
         <let name="is_verplaatsing"
-            value="nlcs:Status = 'REVISIE' and nlcs:Bewerking = 'VERPLAATSEN'"/>
+            value="nlcs:Status = 'REVISIE' and  nlcs:Bewerking = 'VERPLAATSEN NAAR'"/>
 
         <assert id="verplaatsing-cannot-have-asset-id"
             properties="scope rule-number severity object-type object-id"
@@ -21,7 +21,8 @@
                 $cable ne . and
                 name($cable) = $name and
                 $cable/nlcs:Status = 'BESTAAND' and
-                $cable/nlcs:GisId = nlcs:GisId"/>
+                $cable/nlcs:GisId = nlcs:GisId and
+                $cable/nlcs:Bewerking = 'VERPLAATSEN VAN'"/>
 
         <let name="is_ontwerptekening"
             value="contains($tekeningtype, 'ONTWERP')"/>
