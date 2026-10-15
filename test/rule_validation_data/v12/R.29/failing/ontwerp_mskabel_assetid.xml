@@ -17,6 +17,7 @@
         <ID>B</ID>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
+        <Bewerking>VERPLAATSEN VAN</Bewerking>
         <GisId>83412</GisId>
         <Geometry></Geometry>
     </MSkabel>
@@ -24,7 +25,7 @@
         <ID>C</ID>
         <Status>REVISIE</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
-        <Bewerking>VERPLAATSEN</Bewerking>
+        <Bewerking>VERPLAATSEN NAAR</Bewerking>
         <GisId>83412</GisId>
         <AssetId>999</AssetId>
         <Geometry></Geometry>
