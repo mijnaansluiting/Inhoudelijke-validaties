@@ -15,7 +15,7 @@
 
         <let name="geometries"
             value="if(not($all_connections_are_valid)) then ($connected_hskabels/nlcs:Geometry, $connected_lskabels/nlcs:Geometry) else ()"/>
-        
+
         <let name="overlapping_moffen"
             value="$connected_msmoffen[ma:touching-kabels(.)[self::nlcs:HSkabel or self::nlcs:LSkabel]]"/>
 
@@ -30,7 +30,7 @@
                     [$object_type, string(count($connected_hskabels)), 'HSkabel', string(count($connected_lskabels)), 'LSkabel'])"/>
         </assert>
     </rule>
-    
+
     <rule context="//nlcs:LSkabel">
         <let name="connected_lsmoffen"
             value="ma:touching-moffen(.)[self::nlcs:LSmof]"/>
@@ -46,7 +46,13 @@
 
         <let name="geometries"
             value="if(not($all_connections_are_valid)) then ($connected_hskabels/nlcs:Geometry, $connected_mskabels/nlcs:Geometry) else ()"/>
-        
+
+        <let name="overlapping_moffen"
+            value="$connected_msmoffen[ma:touching-kabels(.)[self::nlcs:HSkabel or self::nlcs:MSkabel]]"/>
+
+        <let name="overlap_point"
+            value="for $mof in $overlapping_moffen return ma:create-gml-point(ma:parse-point($mof/nlcs:Geometry))"/>
+
         <assert id="mskabel-connected-to-hskabel-or-lskabel"
             test="$all_connections_are_valid"
             properties="scope rule-number severity object-type object-id geometries">
