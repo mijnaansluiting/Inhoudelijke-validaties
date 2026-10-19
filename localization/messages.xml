@@ -71,6 +71,14 @@
       Het kenmerk {1} is niet aanwezig.
     </message-text>
   </message>
+  <message id="attributes-not-present">
+    <message-text xml:lang="en">
+      The attributes {1} are not present.
+    </message-text>
+    <message-text xml:lang="nl">
+      De kenmerken {1} zijn niet aanwezig.
+    </message-text>
+  </message>
   <message id="attribute-present">
     <message-text xml:lang="en">
       The attribute {1} is present, but it is not allowed.

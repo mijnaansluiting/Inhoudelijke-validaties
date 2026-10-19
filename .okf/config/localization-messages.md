@@ -43,6 +43,7 @@ others are specific to a single rule (e.g.
 | `line-segment-measurement-incorrect` | [R.4](../rules/R.4) (R.4-A) — segment shorter than 10cm or longer than 50m. |
 | `line-angle-larger-than-45` | [R.4](../rules/R.4) (R.4-B) — angle between segments exceeds 45°. |
 | `attribute-not-present` / `attribute-present` | Generic mandatory-attribute presence/absence checks (R.9–R.15, R.40, R.41, etc). |
+| `attributes-not-present` | Plural of `attribute-not-present`, for one assert reporting several missing attributes; chosen by `ma:missing-attributes-message`. |
 | `property-required-for-statuses` / `property-not-allowed-for-statuses` | Generic status-conditional attribute checks (e.g. R.5). |
 | `object-not-present` | Generic required-related-object checks (R.31–R.33). |
 | `date-in-the-future` | [R.9](../rules/R.9), [R.41](../rules/R.41) — a date attribute is in the future. |

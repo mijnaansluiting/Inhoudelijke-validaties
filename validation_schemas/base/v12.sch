@@ -23,6 +23,7 @@
         <property id="object-type"><value-of select="$object_type"/></property>
         <property id="object-id"><value-of select="$object_id"/></property>
         <property id="geometries"><xsl:copy-of select="$geometries"/></property>
+        <property id="missing-attributes"><xsl:copy-of select="$missing_attributes"/></property>
     </properties>
 
     <!-- declaring the rules -->
