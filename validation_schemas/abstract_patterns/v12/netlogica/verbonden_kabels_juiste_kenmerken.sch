@@ -20,10 +20,10 @@
 
         <assert id="connected-mskabel-does-not-match-bedrijfstoestand"
             test="empty($unexpected_bedrijfstoestanden)"
-            properties="scope rule-number severity object-type object-id">
+            properties="scope rule-number severity object-type object-id overlap-point">
             <value-of select="ma:get-translation-and-replace-placeholders(
-                'connected-cable-does-not-match-property',
-                ['Bedrijfstoestand', $expected_bedrijfstoestand, string-join($unexpected_bedrijfstoestanden, ', ')])"/>
+                    'connected-cable-does-not-match-property',
+                    ['Bedrijfstoestand', $expected_bedrijfstoestand, string-join($unexpected_bedrijfstoestanden, ', ')])"/>
         </assert>
 
         <!-- Compare subnettypes against original-->
@@ -36,10 +36,10 @@
 
         <assert id="connected-mskabel-does-not-match-subnettype"
             test="empty($unexpected_subnettypes)"
-            properties="scope rule-number severity object-type object-id">
+            properties="scope rule-number severity object-type object-id overlap-point">
             <value-of select="ma:get-translation-and-replace-placeholders(
-                'connected-cable-does-not-match-property',
-                ['Subnettype', $expected_subnettype, string-join($unexpected_subnettypes, ', ')])"/>
+                    'connected-cable-does-not-match-property',
+                    ['Subnettype', $expected_subnettype, string-join($unexpected_subnettypes, ', ')])"/>
         </assert>
 
         <!-- Compare verbindingnummers against original-->
@@ -52,10 +52,10 @@
 
         <assert id="connected-mskabel-does-not-match-verbindingnummer"
             test="empty($unexpected_verbindingnummers)"
-            properties="scope rule-number severity object-type object-id">
+            properties="scope rule-number severity object-type object-id overlap-point">
             <value-of select="ma:get-translation-and-replace-placeholders(
-                'connected-cable-does-not-match-property',
-                ['Verbindingnummer', $expected_verbindingnummer, string-join($unexpected_verbindingnummers, ', ')])"/>
+                    'connected-cable-does-not-match-property',
+                    ['Verbindingnummer', $expected_verbindingnummer, string-join($unexpected_verbindingnummers, ', ')])"/>
         </assert>
 
         <!-- Compare spanningsniveaus against original-->
@@ -66,16 +66,27 @@
         <let name="unexpected_spanningsniveaus"
             value="distinct-values($connected_mskabels/nlcs:Spanningsniveau)[. != $expected_spanningsniveau]"/>
 
+        <let name="overlapping_moffen"
+            value="$connected_msmoffen[
+                    some $kabel in ma:touching-kabels(.)[self::nlcs:MSkabel][not(. is $mskabel)]
+                    satisfies ($kabel/nlcs:Bedrijfstoestand != $expected_bedrijfstoestand
+                            or $kabel/nlcs:Subnettype       != $expected_subnettype
+                            or $kabel/nlcs:Verbindingnummer != $expected_verbindingnummer
+                            or $kabel/nlcs:Spanningsniveau  != $expected_spanningsniveau)]"/>
+
+        <let name="overlap_point"
+            value="for $mof in $overlapping_moffen return ma:create-gml-point(ma:parse-point($mof/nlcs:Geometry))"/>
+
         <assert id="connected-mskabel-does-not-match-spanningsniveau"
             test="empty($unexpected_spanningsniveaus)"
-            properties="scope rule-number severity object-type object-id">
+            properties="scope rule-number severity object-type object-id overlap-point">
             <value-of select="ma:get-translation-and-replace-placeholders(
-                'connected-cable-does-not-match-property',
-                ['Spanningsniveau', $expected_spanningsniveau, string-join($unexpected_spanningsniveaus, ', ')])"/>
+                    'connected-cable-does-not-match-property',
+                    ['Spanningsniveau', $expected_spanningsniveau, string-join($unexpected_spanningsniveaus, ', ')])"/>
         </assert>
     </rule>
 
-        <rule context="//nlcs:LSkabel">
+    <rule context="//nlcs:LSkabel">
         <let name="lskabel"
             value="."/>
 
@@ -95,10 +106,10 @@
 
         <assert id="connected-lskabel-does-not-match-bedrijfstoestand"
             test="empty($unexpected_bedrijfstoestanden)"
-            properties="scope rule-number severity object-type object-id">
+            properties="scope rule-number severity object-type object-id overlap-point">
             <value-of select="ma:get-translation-and-replace-placeholders(
-                'connected-cable-does-not-match-property',
-                ['Bedrijfstoestand', $expected_bedrijfstoestand, string-join($unexpected_bedrijfstoestanden, ', ')])"/>
+                    'connected-cable-does-not-match-property',
+                    ['Bedrijfstoestand', $expected_bedrijfstoestand, string-join($unexpected_bedrijfstoestanden, ', ')])"/>
         </assert>
 
         <!-- Compare subnettypes against original-->
@@ -111,10 +122,10 @@
 
         <assert id="connected-lskabel-does-not-match-subnettype"
             test="empty($unexpected_subnettypes)"
-            properties="scope rule-number severity object-type object-id">
+            properties="scope rule-number severity object-type object-id overlap-point">
             <value-of select="ma:get-translation-and-replace-placeholders(
-                'connected-cable-does-not-match-property',
-                ['Subnettype', $expected_subnettype, string-join($unexpected_subnettypes, ', ')])"/>
+                    'connected-cable-does-not-match-property',
+                    ['Subnettype', $expected_subnettype, string-join($unexpected_subnettypes, ', ')])"/>
         </assert>
 
         <!-- Compare verbindingnummers against original-->
@@ -127,10 +138,10 @@
 
         <assert id="connected-lskabel-does-not-match-verbindingnummer"
             test="empty($unexpected_verbindingnummers)"
-            properties="scope rule-number severity object-type object-id">
+            properties="scope rule-number severity object-type object-id overlap-point">
             <value-of select="ma:get-translation-and-replace-placeholders(
-                'connected-cable-does-not-match-property',
-                ['Verbindingnummer', $expected_verbindingnummer, string-join($unexpected_verbindingnummers, ', ')])"/>
+                    'connected-cable-does-not-match-property',
+                    ['Verbindingnummer', $expected_verbindingnummer, string-join($unexpected_verbindingnummers, ', ')])"/>
         </assert>
 
         <!-- Compare spanningsniveaus against original-->
@@ -141,12 +152,23 @@
         <let name="unexpected_spanningsniveaus"
             value="distinct-values($connected_lskabels/nlcs:Spanningsniveau)[. != $expected_spanningsniveau]"/>
 
+        <let name="overlapping_moffen"
+            value="$connected_lsmoffen[
+                    some $kabel in ma:touching-kabels(.)[self::nlcs:LSkabel][not(. is $lskabel)]
+                    satisfies ($kabel/nlcs:Bedrijfstoestand != $expected_bedrijfstoestand
+                            or $kabel/nlcs:Subnettype       != $expected_subnettype
+                            or $kabel/nlcs:Verbindingnummer != $expected_verbindingnummer
+                            or $kabel/nlcs:Spanningsniveau  != $expected_spanningsniveau)]"/>
+
+        <let name="overlap_point"
+            value="for $mof in $overlapping_moffen return ma:create-gml-point(ma:parse-point($mof/nlcs:Geometry))"/>
+
         <assert id="connected-mskabel-does-not-match-spanningsniveau"
             test="empty($unexpected_spanningsniveaus)"
-            properties="scope rule-number severity object-type object-id">
+            properties="scope rule-number severity object-type object-id overlap-point">
             <value-of select="ma:get-translation-and-replace-placeholders(
-                'connected-cable-does-not-match-property',
-                ['Spanningsniveau', $expected_spanningsniveau, string-join($unexpected_spanningsniveaus, ', ')])"/>
+                    'connected-cable-does-not-match-property',
+                    ['Spanningsniveau', $expected_spanningsniveau, string-join($unexpected_spanningsniveaus, ', ')])"/>
         </assert>
     </rule>
 </pattern>
