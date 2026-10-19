@@ -6,7 +6,9 @@
   assert (e.g. `kabel-has-required-attributes`), with the names as
   `<attribute>` elements in a new `missing-attributes` property, built by
   `ma:missing-attributes` in `helper_functions.xsl`. Single-attribute checks
-  keep their assert ids. R.5 (GisId/AssetId) is unchanged. Messages come from
+  keep their assert ids, including [R.40](./rules/R.40)'s Volgnummer check
+  in `bestand/`. R.5 and R.29 (GisId/AssetId, `property-required-for-statuses`)
+  are unchanged. Messages come from
   `ma:missing-attributes-message` (new `attributes-not-present` for several);
   see [localization-messages](./config/localization-messages). Compatible
   with both SchXslt 1 and SchXslt2, so no `<group>`.
