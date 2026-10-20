@@ -810,11 +810,11 @@
          <tr class="validatieDocumentatieRow">
             <td class="validatieDocumentatieCell"><b>Definitie </b></td>
             <td class="validatieDocumentatieCell"><br>				Een verplaatst object is een object met Status=REVISIE en Bewerking=VERPLAATSEN<br>				Een verplaatst object mag geen AssetID hebben.<br>						<br>				In een ontwerptekening moet een verplaatsing zodanig zijn vastgelegd dat het originele
-               object 2 keer voorkomt in het Document<br>				1. Het bestaande object dat zal worden verplaatst:<br>				- Status=BESTAAND <br>				- Bewerking is leeg<br>				2. Een revisie-object waarin de verplaatsing is vastgelegd:<br>				- Status=REVISIE<br>				- Bewerking=VERPLAATSTEN<br>				- GisID gelijk aan bestaande<br>				- Soort object gelijk aan bestaande<br>				<br>				In een revisietekening moet een verplaatsing zodanig zijn vastgelegd dat het object
-               1 keer voorkomt in het Document<br>				1. Een revisie-object waarin de verplaatsing is vastgelegd in de geometrie:<br>				- Status=REVISIE<br>				- Bewerking=VERPLAATSTEN<br>				- GisID<br>				<br>				Controle: <br>				- Als er in een ontwerptekening een object voorkomt met de Status=REVISIE en de
-               Bewerking=VERPLAATSEN dan moet er een tweede object zijn van het zelfde soort met
-               hetzelfde GisID en de status=BESTAAND<br>				- Als er in een revisietekening een object voorkomt met de Status=REVISIE en de
-               Bewerking=VERPLAATSEN dan mag er geen tweede object zijn met hetzelfde GisID<br>			</td>
+               object 2 keer voorkomt in het Document<br>				1. Het bestaande object dat zal worden verplaatst:<br>				- Status=BESTAAND <br>				- Bewerking=VERPLAATSEN VAN<br>				2. Een revisie-object waarin de verplaatsing is vastgelegd:<br>				- Status=REVISIE<br>				- Bewerking=VERPLAATSTEN NAAR<br>				- GisID gelijk aan bestaande<br>				- Soort object gelijk aan bestaande<br>				<br>				In een revisietekening moet een verplaatsing zodanig zijn vastgelegd dat het object
+               1 keer voorkomt in het Document<br>				1. Een revisie-object waarin de verplaatsing is vastgelegd in de geometrie:<br>				- Status=REVISIE<br>				- Bewerking=VERPLAATSTEN NAAR<br>				- GisID<br>				<br>				Controle: <br>				- Als er in een ontwerptekening een object voorkomt met de Status=REVISIE en de
+               Bewerking=VERPLAATSEN NAAR dan moet er een tweede object zijn van het zelfde soort
+               met hetzelfde GisID en de status=BESTAAND en de bewerking=VERPLAATSEN VAN<br>				- Als er in een revisietekening een object voorkomt met de Status=REVISIE en de
+               Bewerking=VERPLAATSEN NAAR dan mag er geen tweede object zijn met hetzelfde GisID<br>			</td>
          </tr>
          <tr class="validatieDocumentatieRow">
             <td class="validatieDocumentatieCell"><b>Toelichting </b></td>
