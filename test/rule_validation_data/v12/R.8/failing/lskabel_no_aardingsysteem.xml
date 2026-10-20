@@ -22,7 +22,10 @@
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
         <Functie>LSOV</Functie>
-
+        <Spanningsniveau>230 V</Spanningsniveau>
+        <Verbindingnummer>1</Verbindingnummer>
+        <FaseAanduiding>3 Fasen</FaseAanduiding>
+        <Bovengronds>Ja</Bovengronds>
         <Geometry></Geometry>
     </LSkabel>
 
