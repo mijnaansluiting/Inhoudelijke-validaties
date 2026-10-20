@@ -17,7 +17,7 @@
         </assert>
 
         <assert id="inhoud_does_not_exist_when_reserve"
-            test="if ($bedrijfstoestand = 'RESERVE') then not($mantelbuisinhoud) else true()"
+            test="if($bedrijfstoestand = 'RESERVE') then not($mantelbuisinhoud) else true()"
             properties="scope rule-number severity object-type object-id">
             <value-of select="ma:get-translation('inhoud-found')"/>
         </assert>
