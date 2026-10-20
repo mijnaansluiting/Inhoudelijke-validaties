@@ -99,6 +99,17 @@
         <sequence select="$element and normalize-space($element)"/>
     </function>
 
+    <!-- Returns an <attribute> element with the name of every given attribute that is missing or empty on the object -->
+    <function name="ma:missing-attributes" as="element()*">
+        <param name="object" as="element()"/>
+        <param name="attribute_names" as="xs:string*"/>
+        <for-each select="$attribute_names">
+            <if test="not(ma:element-exists-and-not-empty($object/*[local-name() = current()]))">
+                <element name="attribute" namespace=""><value-of select="."/></element>
+            </if>
+        </for-each>
+    </function>
+
     <function name="ma:parse-coords" as="array(xs:double)*">
         <param name="string_array" as="xs:string*"/>
         <param name="dimension" as="xs:integer"/>

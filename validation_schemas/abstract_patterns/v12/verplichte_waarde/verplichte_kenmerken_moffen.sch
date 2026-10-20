@@ -1,47 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pattern xmlns ="http://purl.oclc.org/dsdl/schematron" id="verplichte-kenmerken-moffen" abstract="true">
     <rule context="//nlcs:MSmof | //nlcs:HSmof">
-        <assert id="functie_present"
-            test="ma:element-exists-and-not-empty(nlcs:Functie)"
-            properties="scope rule-number severity object-type object-id">
-            <value-of select="ma:get-translation-and-replace-placeholders('attribute-not-present', ['Functie'])"/>
-        </assert>
+        <let name="missing_attributes"
+            value="ma:missing-attributes(., (
+                'Functie',
+                'Verbindingnummer',
+                'NaamMonteur',
+                'CrossBondingAanwezig'))"/>
 
-        <assert id="verbindingnummer_present"
-            test="ma:element-exists-and-not-empty(nlcs:Verbindingnummer)"
-            properties="scope rule-number severity object-type object-id">
-            <value-of select="ma:get-translation-and-replace-placeholders('attribute-not-present', ['Verbindingnummer'])"/>
-        </assert>
-
-        <assert id="naam_monteur_present"
-            test="ma:element-exists-and-not-empty(nlcs:NaamMonteur)"
-            properties="scope rule-number severity object-type object-id">
-            <value-of select="ma:get-translation-and-replace-placeholders('attribute-not-present', ['NaamMonteur'])"/>
-        </assert>
-
-        <assert id="cross_bounding_present"
-            test="ma:element-exists-and-not-empty(nlcs:CrossBondingAanwezig)"
-            properties="scope rule-number severity object-type object-id">
-            <value-of select="ma:get-translation-and-replace-placeholders('attribute-not-present', ['CrossBondingAanwezig'])"/>
+        <assert id="mof-has-required-attributes"
+            test="empty($missing_attributes)"
+            properties="scope rule-number severity object-type object-id missing-attributes">
+            <value-of select="ma:missing-attributes-message($missing_attributes)"/>
         </assert>
     </rule>
+
     <rule context="//nlcs:LSmof">
-        <assert id="functie_present"
-            test="ma:element-exists-and-not-empty(nlcs:Functie)"
-            properties="scope rule-number severity object-type object-id">
-            <value-of select="ma:get-translation-and-replace-placeholders('attribute-not-present', ['Functie'])"/>
-        </assert>
+        <let name="missing_attributes"
+            value="ma:missing-attributes(., (
+                'Functie',
+                'Verbindingnummer',
+                'Bovengronds'))"/>
 
-        <assert id="verbindingnummer_present"
-            test="ma:element-exists-and-not-empty(nlcs:Verbindingnummer)"
-            properties="scope rule-number severity object-type object-id">
-            <value-of select="ma:get-translation-and-replace-placeholders('attribute-not-present', ['Verbindingnummer'])"/>
-        </assert>
-
-        <assert id="bovengronds_present"
-            test="ma:element-exists-and-not-empty(nlcs:Bovengronds)"
-            properties="scope rule-number severity object-type object-id">
-            <value-of select="ma:get-translation-and-replace-placeholders('attribute-not-present', ['Bovengronds'])"/>
+        <assert id="mof-has-required-attributes"
+            test="empty($missing_attributes)"
+            properties="scope rule-number severity object-type object-id missing-attributes">
+            <value-of select="ma:missing-attributes-message($missing_attributes)"/>
         </assert>
     </rule>
 </pattern>

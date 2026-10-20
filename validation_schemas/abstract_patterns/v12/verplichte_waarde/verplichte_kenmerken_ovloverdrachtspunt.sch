@@ -1,40 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pattern xmlns ="http://purl.oclc.org/dsdl/schematron" id="verplichte-kenmerken-ovloverdrachtspunt" abstract="true">
     <rule context="//nlcs:OVLoverdrachtspunt">
-        <assert id="aansluitset-present"
-            test="ma:element-exists-and-not-empty(nlcs:Aansluitset)"
-            properties="scope rule-number severity object-type object-id">
-            <value-of select="ma:get-translation-and-replace-placeholders('attribute-not-present', ['Aansluitset'])"/>
-        </assert>
+        <let name="missing_attributes"
+            value="ma:missing-attributes(., (
+                'Aansluitset',
+                'Functie',
+                'Spanningsniveau',
+                'Aansluitwijze',
+                'Schakeling',
+                'Mastnummer'))"/>
 
-        <assert id="functie-present"
-            test="ma:element-exists-and-not-empty(nlcs:Functie)"
-            properties="scope rule-number severity object-type object-id">
-            <value-of select="ma:get-translation-and-replace-placeholders('attribute-not-present', ['Functie'])"/>
-        </assert>
-
-        <assert id="spanningsniveau-present"
-            test="ma:element-exists-and-not-empty(nlcs:Spanningsniveau)"
-            properties="scope rule-number severity object-type object-id">
-            <value-of select="ma:get-translation-and-replace-placeholders('attribute-not-present', ['Spanningsniveau'])"/>
-        </assert>
-
-        <assert id="aansluitwijze-present"
-            test="ma:element-exists-and-not-empty(nlcs:Aansluitwijze)"
-            properties="scope rule-number severity object-type object-id">
-            <value-of select="ma:get-translation-and-replace-placeholders('attribute-not-present', ['Aansluitwijze'])"/>
-        </assert>
-
-        <assert id="schakeling-present"
-            test="ma:element-exists-and-not-empty(nlcs:Schakeling)"
-            properties="scope rule-number severity object-type object-id">
-            <value-of select="ma:get-translation-and-replace-placeholders('attribute-not-present', ['Schakeling'])"/>
-        </assert>
-
-        <assert id="mastnummer-present"
-            test="ma:element-exists-and-not-empty(nlcs:Mastnummer)"
-            properties="scope rule-number severity object-type object-id">
-            <value-of select="ma:get-translation-and-replace-placeholders('attribute-not-present', ['Mastnummer'])"/>
+        <assert id="ovloverdrachtspunt-has-required-attributes"
+            test="empty($missing_attributes)"
+            properties="scope rule-number severity object-type object-id missing-attributes">
+            <value-of select="ma:missing-attributes-message($missing_attributes)"/>
         </assert>
     </rule>
 </pattern>

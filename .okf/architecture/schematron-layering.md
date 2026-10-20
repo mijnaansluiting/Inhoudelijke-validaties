@@ -26,8 +26,8 @@ sub-checks that only differ in parameters:
 1. **`validation_schemas/base/v12.sch`** — the root schema. Declares
    namespaces (`ma`, `gml`, `xs`, `nlcs`, `nvr`, `math`), a global
    `<properties>` block (`scope`, `rule-number`, `severity`, `object-type`,
-   `object-id`, `geometries` — attached to every assert for downstream
-   reporting), one Schematron `<phase>` per rule id (`R.1` … `R.41`, with
+   `object-id`, `geometries`, `missing-attributes` — attached to asserts for
+   downstream reporting), one Schematron `<phase>` per rule id (`R.1` … `R.41`, with
    `R.4` and `R.8` each activating two patterns), the 5
    [xsl-function-libraries](./xsl-function-libraries) via
    `xsl:include`, then `include`s of every concrete pattern and every

@@ -7,16 +7,19 @@
         <let name="datum_tijd_mutatie_expected"
             value="nlcs:Status ne 'BESTAAND' or ma:element-exists-and-not-empty(nlcs:Bewerking)"/>
 
+        <let name="missing_attributes"
+            value="if ($datum_tijd_mutatie_expected) then ma:missing-attributes(., 'DatumTijdMutatie') else ()"/>
+
         <assert id="date-time-present"
-            test="if($datum_tijd_mutatie_expected) then $datum_tijd_mutatie_present else true()"
-            properties="scope rule-number severity object-type object-id">
-            <value-of select="ma:get-translation-and-replace-placeholders('attribute-not-present', ['DatumTijdMutatie'])"/>
+            test="empty($missing_attributes)"
+            properties="scope rule-number severity object-type object-id missing-attributes">
+            <value-of select="ma:missing-attributes-message($missing_attributes)"/>
         </assert>
 
         <assert id="date-time-not-present"
             properties="scope rule-number severity object-type object-id"
             test="if(not($datum_tijd_mutatie_expected)) then not($datum_tijd_mutatie_present) else true()">
-            <value-of select="ma:get-translation-and-replace-placeholders('attribute-present', ['DatumTijdMutatie'])"/>            
+            <value-of select="ma:get-translation-and-replace-placeholders('attribute-present', ['DatumTijdMutatie'])"/>
         </assert>
 
         <assert id="date-time-not-in-future"
