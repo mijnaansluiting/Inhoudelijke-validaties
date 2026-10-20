@@ -55,7 +55,7 @@
 
         <assert id="mskabel-connected-to-hskabel-or-lskabel"
             test="$all_connections_are_valid"
-            properties="scope rule-number severity object-type object-id geometries">
+            properties="scope rule-number severity object-type object-id geometries overlap-point">
             <value-of select="ma:get-translation-and-replace-placeholders(
                     'connected-cable-does-not-match-netvlak',
                     [$object_type, string(count($connected_hskabels)), 'HSkabel', string(count($connected_mskabels)), 'MSkabel'])"/>
