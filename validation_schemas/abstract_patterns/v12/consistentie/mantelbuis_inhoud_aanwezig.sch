@@ -13,6 +13,9 @@
         <let name="kabel"
             value="//(nlcs:LSkabel | nlcs:MSkabel | nlcs:HSkabel)[nlcs:ID = $mantelbuisinhoud/nlcs:InhoudID]"/>
 
+            <let name="kabel_is_verwijderd"
+            value="$kabel/nlcs:Status = 'VERWIJDERD'"/>
+
         <assert id="inhoud_exists_when_in_bedrijf"
             test="if ($bedrijfstoestand = 'IN BEDRIJF') then $mantelbuisinhoud else true()"
             properties="scope rule-number severity object-type object-id">
@@ -20,7 +23,7 @@
         </assert>
 
         <assert id="inhoud_does_not_exist_when_reserve"
-            test="if ($kabel/nlcs:Status != 'VERWIJDERD') and ($bedrijfstoestand = 'RESERVE') then not($mantelbuisinhoud) else true()"
+            test="if ($bedrijfstoestand = 'RESERVE') then not($mantelbuisinhoud) else true() or $kabel_is_verwijderd"
             properties="scope rule-number severity object-type object-id">
             <value-of select="ma:get-translation('inhoud-found')"/>
         </assert>
