@@ -24,6 +24,7 @@
         <property id="object-id"><value-of select="$object_id"/></property>
         <property id="geometries"><xsl:copy-of select="$geometries"/></property>
         <property id="overlap-point"><xsl:copy-of select="$overlap_point"/></property>
+        <property id="missing-attributes"><xsl:copy-of select="$missing_attributes"/></property>
     </properties>
 
     <!-- declaring the rules -->

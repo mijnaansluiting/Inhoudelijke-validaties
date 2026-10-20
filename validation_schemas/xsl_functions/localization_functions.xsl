@@ -20,6 +20,13 @@
     <value-of select="ma:replace-placeholders($translation, $placeholders)"/>
   </function>
 
+  <!-- Message listing the attributes returned by ma:missing-attributes -->
+  <function name="ma:missing-attributes-message">
+    <param name="missing_attributes" as="element()*"/>
+    <variable name="message_id" select="if (count($missing_attributes) eq 1) then 'attribute-not-present' else 'attributes-not-present'"/>
+    <value-of select="ma:get-translation-and-replace-placeholders($message_id, string-join($missing_attributes, ', '))"/>
+  </function>
+
   <function name="ma:replace-placeholders">
     <param name="message" as="xs:string"/>
     <param name="placeholders" as="xs:string*"/> <!-- sequence of strings -->
