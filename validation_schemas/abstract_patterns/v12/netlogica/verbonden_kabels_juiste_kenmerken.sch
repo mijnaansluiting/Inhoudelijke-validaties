@@ -75,7 +75,7 @@
                             or $kabel/nlcs:Spanningsniveau  != $expected_spanningsniveau)]"/>
 
         <let name="overlap_point"
-            value="for $mof in $overlapping_moffen return ma:create-gml-point(ma:parse-point($mof/nlcs:Geometry))"/>
+            value="$overlapping_moffen/nlcs:Geometry"/>
 
         <assert id="connected-mskabel-does-not-match-spanningsniveau"
             test="empty($unexpected_spanningsniveaus)"
@@ -161,7 +161,7 @@
                             or $kabel/nlcs:Spanningsniveau  != $expected_spanningsniveau)]"/>
 
         <let name="overlap_point"
-            value="for $mof in $overlapping_moffen return ma:create-gml-point(ma:parse-point($mof/nlcs:Geometry))"/>
+            value="$overlapping_moffen/nlcs:Geometry"/>
 
         <assert id="connected-mskabel-does-not-match-spanningsniveau"
             test="empty($unexpected_spanningsniveaus)"

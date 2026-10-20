@@ -20,7 +20,7 @@
             value="$connected_msmoffen[ma:touching-kabels(.)[self::nlcs:HSkabel or self::nlcs:LSkabel]]"/>
 
         <let name="overlap_point"
-            value="for $mof in $overlapping_moffen return ma:create-gml-point(ma:parse-point($mof/nlcs:Geometry))"/>
+            value="$overlapping_moffen/nlcs:Geometry"/>
 
         <assert id="mskabel-connected-to-hskabel-or-lskabel"
             test="$all_connections_are_valid"
@@ -51,7 +51,7 @@
             value="$connected_lsmoffen[ma:touching-kabels(.)[self::nlcs:HSkabel or self::nlcs:MSkabel]]"/>
 
         <let name="overlap_point"
-            value="for $mof in $overlapping_moffen return ma:create-gml-point(ma:parse-point($mof/nlcs:Geometry))"/>
+            value="$overlapping_moffen/nlcs:Geometry"/>
 
         <assert id="mskabel-connected-to-hskabel-or-lskabel"
             test="$all_connections_are_valid"
