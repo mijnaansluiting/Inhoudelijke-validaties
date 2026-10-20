@@ -3,16 +3,17 @@
 version=v2026.1.0
 nlcspp_version=v12
 
+schema_dir=validation_schemas/$version
 
-mkdir -p validation_schemas/abstract_patterns_scope_checks/$version
+mkdir -p $schema_dir/abstract_patterns_scope_checks
 
-for abstract_pattern_dir in validation_schemas/abstract_patterns/*; do
+for abstract_pattern_dir in $schema_dir/abstract_patterns/*; do
     pattern_type=$(basename "$abstract_pattern_dir")
     echo Adding scope checks to $pattern_type abstract patterns...
 
-    mkdir -p validation_schemas/abstract_patterns_scope_checks/$version/$pattern_type
-    java -jar saxon-he.jar -xsl:transformations/abstract_patterns_scope_checks.xsl -s:validation_schemas/abstract_patterns/$version/$pattern_type/ -o:validation_schemas/abstract_patterns_scope_checks/$version/$pattern_type
+    mkdir -p $schema_dir/abstract_patterns_scope_checks/$pattern_type
+    java -jar saxon-he.jar -xsl:transformations/abstract_patterns_scope_checks.xsl -s:$schema_dir/abstract_patterns/$pattern_type/ -o:$schema_dir/abstract_patterns_scope_checks/$pattern_type
 done
 
 echo Updating Schematron base to importing updated abstract patterns...
-java -jar saxon-he.jar -xsl:transformations/base_scope_checks.xsl -s:validation_schemas/$version/$nlcspp_version.sch -o:validation_schemas/base_scope_checks/$nlcspp_version.sch
+java -jar saxon-he.jar -xsl:transformations/base_scope_checks.xsl -s:$schema_dir/$nlcspp_version.sch -o:$schema_dir/${nlcspp_version}_scope_checks.sch

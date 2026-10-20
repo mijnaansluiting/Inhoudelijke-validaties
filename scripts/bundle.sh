@@ -1,6 +1,7 @@
 #!/bin/bash
 
-version=v12
+version=v2026.1.0
+nlcspp_version=v12
 out_dir=dist
 
 mkdir -p $out_dir/src/base
@@ -8,7 +9,7 @@ mkdir -p $out_dir/doc
 mkdir -p $out_dir/localization
 
 # Copy base schema
-cp validation_schemas/base_scope_checks/$version.xsl $out_dir/src/base/
+cp validation_schemas/$version/${nlcspp_version}_scope_checks.xsl $out_dir/src/base/$nlcspp_version.xsl
 
 # Copy XSL functions
 cp -a validation_schemas/xsl_functions/. $out_dir/src/xsl_functions

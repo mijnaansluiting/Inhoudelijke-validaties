@@ -1,6 +1,7 @@
 #!/bin/bash
 
 version=v2026.1.0
+nlcspp_version=v12
 
 java -jar saxon-he.jar -xsl:transformations/generate_scoped_objects.xsl -s:test/scope_validation_data/$version/scope_template.xml
 
@@ -30,7 +31,7 @@ for scope_dir in "$in_dir"/*; do
                 out_file=$file_out_dir/$bedrijfstoestand.svrl.xml
 
                 echo Validating $scope "->" $tekening_type "->" $status "->" $bedrijfstoestand
-                java -jar saxon-he.jar -xsl:validation_schemas/base_scope_checks/v12.xsl -s:"$bedrijfstoestand_file" -o:"$out_file"
+                java -jar saxon-he.jar -xsl:validation_schemas/$version/${nlcspp_version}_scope_checks.xsl -s:"$bedrijfstoestand_file" -o:"$out_file"
 
                 validation_report_analysis="$(java -jar saxon-he.jar -xsl:transformations/check_scope_coverage.xsl -s:"$out_file" scope_name="$scope")"
 
