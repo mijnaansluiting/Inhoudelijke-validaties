@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<NLCSnetbeheer xmlns:keuzelijst="NLCSnetbeheer"
+               xmlns:gml="http://www.opengis.net/gml/3.2"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="NS_NLCSnetbeheer https://schemas.mijnaansluiting.nl/V12.1/NLCS_NetbeheerEnexisV12.1Import_Keuzelijst.xsd"
+               xmlns="NS_NLCSnetbeheer">
+    <AprojectReferentie>
+        <ID>A</ID>
+        <Projectnummer>1</Projectnummer>
+        <Netbeheerder>Enexis</Netbeheerder>
+        <NaamAannemer></NaamAannemer>
+        <Tekeningtype>BESTAANDE SITUATIE</Tekeningtype>
+        <Geometry></Geometry>
+    </AprojectReferentie>
+
+    <Amantelbuis>
+        <ID>OUTER</ID>
+        <Diameter>110</Diameter>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
+        <Geometry></Geometry>
+    </Amantelbuis>
+    <Amantelbuis>
+        <ID>INNER</ID>
+        <Diameter>120</Diameter>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
+        <Geometry></Geometry>
+    </Amantelbuis>
+
+    <MSkabel>
+        <ID>TE-VERWIJDEREN</ID>
+        <Status>VERWIJDERD</Status>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
+        <GisId>1234</GisId>
+        <Geometry></Geometry>
+    </MSkabel>
+
+    <AmantelbuisInhoud>
+        <ID>B</ID>
+        <Status>BESTAAND</Status>
+        <MantelbuisID>OUTER</MantelbuisID>
+        <InhoudID>TE-VERWIJDEREN</InhoudID>
+    </AmantelbuisInhoud>
+</NLCSnetbeheer>
