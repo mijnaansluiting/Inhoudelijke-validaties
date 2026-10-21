@@ -1,6 +1,6 @@
 #!/bin/bash
 
-version="v2026.1.0"
+source "$(dirname "$0")/version.sh"
 
 test_data_dir=test/rule_validation_data/$version
 out_dir=assets

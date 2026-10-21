@@ -1,6 +1,6 @@
 #!/bin/bash
 
-version=v2026.1.0
+source "$(dirname "$0")/version.sh"
 
 java -jar saxon-he.jar -xsl:transformations/generate_scoped_objects.xsl -s:test/scope_validation_data/$version/scope_template.xml
 

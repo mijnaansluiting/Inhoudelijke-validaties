@@ -1,6 +1,6 @@
 #!/bin/bash
 
-version=v2026.1.0
+source "$(dirname "$0")/version.sh"
 
 schema_dir=validation_schemas/$version
 

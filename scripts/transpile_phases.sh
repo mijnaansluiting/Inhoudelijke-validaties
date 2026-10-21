@@ -1,6 +1,6 @@
 #!/bin/bash
 
-version="v2026.1.0"
+source "$(dirname "$0")/version.sh"
 
 for dir in test/rule_validation_data/$version/*; do
     phase=$(basename "$dir")

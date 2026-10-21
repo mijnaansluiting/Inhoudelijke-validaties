@@ -1,6 +1,6 @@
 #!/bin/bash
 
-version=v2026.1.0
+source "$(dirname "$0")/version.sh"
 out_dir=dist
 
 mkdir -p $out_dir/src/base
