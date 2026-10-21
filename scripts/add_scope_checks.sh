@@ -15,4 +15,4 @@ for abstract_pattern_dir in $schema_dir/abstract_patterns/*; do
 done
 
 echo Updating Schematron base to importing updated abstract patterns...
-java -jar saxon-he.jar -xsl:transformations/base_scope_checks.xsl -s:validation_schemas/$version/main.sch -o:validation_schemas/base_scope_checks/main.sch
+java -jar saxon-he.jar -xsl:transformations/base_scope_checks.xsl -s:$schema_dir/main.sch -o:$schema_dir/main_scope_checks.sch
