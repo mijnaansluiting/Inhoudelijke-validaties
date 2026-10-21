@@ -1,8 +1,25 @@
-available_versions=$(find validation_schemas -mindepth 1 -maxdepth 1 -type d -name 'v*' -printf '%f\n' | sort -V)
+list_versions() {
+    for dir in validation_schemas/v*/; do
+        [[ -d $dir ]] && basename "$dir"
+    done | sort -V
+}
 
-version=${1:-$(tail -n1 <<< "$available_versions")}
+# Prints the given version if it exists, otherwise prints an error and fails
+resolve_version() {
+    local version=$1
+    local available_versions
+    available_versions=$(list_versions)
 
-if ! grep -qxF "$version" <<< "$available_versions"; then
-    echo "::error title=Unknown version::'$version' not found. Available: $(echo $available_versions)"
-    exit 1
-fi
+    if [[ -z $version ]]; then
+        echo "Usage: $0 <version>. Available: $(echo $available_versions)" >&2
+        return 1
+    fi
+
+    if ! grep -qxF "$version" <<< "$available_versions"; then
+        echo "::error title=Unknown version::'$version' not found. Available: $(echo $available_versions)" >&2
+        return 1
+    fi
+
+    echo "$version"
+  }
+
