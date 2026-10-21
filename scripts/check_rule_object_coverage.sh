@@ -1,6 +1,7 @@
 #!/bin/bash
 
-version="v2026.1.0"
+source "$(dirname "$0")/version.sh"
+version=$(resolve_version "$1") || exit 1
 
 {
     echo "## Object coverage"

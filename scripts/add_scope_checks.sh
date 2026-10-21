@@ -1,6 +1,7 @@
 #!/bin/bash
 
 source "$(dirname "$0")/version.sh"
+version=$(resolve_version "$1") || exit 1
 
 schema_dir=validation_schemas/$version
 

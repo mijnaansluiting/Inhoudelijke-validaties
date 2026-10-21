@@ -1,6 +1,7 @@
 #!/bin/bash
 
 source "$(dirname "$0")/version.sh"
+version=$(resolve_version "$1") || exit 1
 out_dir=dist
 
 mkdir -p $out_dir/src/base

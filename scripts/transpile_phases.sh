@@ -1,6 +1,7 @@
 #!/bin/bash
 
 source "$(dirname "$0")/version.sh"
+version=$(resolve_version "$1") || exit 1
 
 for dir in test/rule_validation_data/$version/*; do
     phase=$(basename "$dir")

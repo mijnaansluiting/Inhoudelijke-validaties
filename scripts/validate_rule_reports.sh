@@ -1,6 +1,7 @@
 #!/bin/bash
 
 source "$(dirname "$0")/version.sh"
+version=$(resolve_version "$1") || exit 1
 
 rule_validation_reports_dir=rule_validation_reports/$version
 validation_test_results_dir=validation_test_results/$version
