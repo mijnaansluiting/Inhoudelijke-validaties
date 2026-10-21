@@ -1,7 +1,6 @@
 #!/bin/bash
 
 version=v2026.1.0
-nlcspp_version=v12
 out_dir=dist
 
 mkdir -p $out_dir/src/base

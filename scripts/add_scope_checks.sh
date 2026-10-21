@@ -1,7 +1,6 @@
 #!/bin/bash
 
 version=v2026.1.0
-nlcspp_version=v12
 
 schema_dir=validation_schemas/$version
 
@@ -16,4 +15,4 @@ for abstract_pattern_dir in $schema_dir/abstract_patterns/*; do
 done
 
 echo Updating Schematron base to importing updated abstract patterns...
-java -jar saxon-he.jar -xsl:transformations/base_scope_checks.xsl -s:$schema_dir/$nlcspp_version.sch -o:$schema_dir/${nlcspp_version}_scope_checks.sch
+java -jar saxon-he.jar -xsl:transformations/base_scope_checks.xsl -s:validation_schemas/$version/main.sch -o:validation_schemas/base_scope_checks/main.sch
