@@ -43,7 +43,7 @@ jobs:
         run: scripts/add_scope_checks.sh
 
       - name: Transpile Schematron to XSL
-        run: java -jar saxon-he.jar -xsl:transpile.xsl -s:validation_schemas/base_scope_checks/v12.sch -o:validation_schemas/base_scope_checks/v12.xsl
+        run: java -jar saxon-he.jar -xsl:transpile.xsl -s:validation_schemas/v2026.1.0/main_scope_checks.sch -o:validation_schemas/v2026.1.0/main_scope_checks.xsl
 
       - name: Bundle deliverables
         run: scripts/bundle.sh

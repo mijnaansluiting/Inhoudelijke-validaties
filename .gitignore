@@ -4,8 +4,9 @@
 # Generated data
 dist/
 validation_schemas/phases_transpiled/
-validation_schemas/abstract_patterns_scope_checks/
-validation_schemas/base_scope_checks/
+validation_schemas/*/abstract_patterns_scope_checks/
+validation_schemas/*/*_scope_checks.sch
+validation_schemas/*/*_scope_checks.xsl
 validation_test_results/
 rule_validation_reports/
 scoped_objects/
