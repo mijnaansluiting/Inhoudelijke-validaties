@@ -48,7 +48,7 @@
         </assert>
 
                 <assert id="revisie-verplaatsing-has-assetid"
-            test="if ($is_verplaatsing and $is_revisietekening) then ma:element-exists-and-not-empty(nlcs:AssetId) else true()"
+            test="if ($is_verplaatsing) then ma:element-exists-and-not-empty(nlcs:AssetId) else true()"
             properties="scope rule-number severity object-type object-id">
             <value-of select="ma:get-translation-and-replace-placeholders('property-required-for-statuses', ['AssetId', nlcs:Status])"/>
         </assert>
