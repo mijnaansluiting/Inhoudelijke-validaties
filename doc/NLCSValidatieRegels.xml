@@ -93,10 +93,8 @@
 			<beschrijving>Ieder NLCS Object met de status BESTAAND, REVISIE en VERWIJDERD moet een GisId en AssetId hebben, dit zijn namelijk objecten die als oorsprong de assetregistratie hebben. NLCS objecten met de status NIEUW mogen juist geen GisId en AssetId hebben omdat deze objecten ontstaan in het ontwerp of de revisie.</beschrijving>
 			<soort>Verplichte waarde</soort>
 			<definitie>
-				Als Status = BESTAAND, REVISIE* of VERWIJDERD, dan moet er een waarde zijn voor zowel kenmerk GisId als AssetId,
+				Als Status = BESTAAND, REVISIE of VERWIJDERD, dan moet er een waarde zijn voor zowel kenmerk GisId als AssetId,
 				Als Status = NIEUW dan moeten de kenmerken GisId en AssetId leeg zijn
-
-				*Indien Status = REVISIE en Bewerking = VERPLAATSEN hoeft deze controle niet uitgevoerd te worden. Zie R.29 voor meer details.
 			</definitie>
 			<toelichting>Een AmantelbuisInhoud heeft nooit een GisId.</toelichting>
 		    <validatieObjecten> <!-- Deze regel geldt voor alle NLCS Objecten -->
