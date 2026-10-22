@@ -431,7 +431,6 @@
 			<soort>Consistentie</soort>
 			<definitie>
 				Een verplaatst object is een object met Status=REVISIE en Bewerking=VERPLAATSEN
-				Een verplaatst object mag geen AssetID hebben.
 						
 				In een ontwerptekening moet een verplaatsing zodanig zijn vastgelegd dat het originele object 2 keer voorkomt in het Document
 				1. Het bestaande object dat zal worden verplaatst:
@@ -441,6 +440,7 @@
 				- Status=REVISIE
 				- Bewerking=VERPLAATSTEN
 				- GisID gelijk aan bestaande
+				- AssetID gelijk aan bestaande
 				- Soort object gelijk aan bestaande
 				
 				In een revisietekening moet een verplaatsing zodanig zijn vastgelegd dat het object 1 keer voorkomt in het Document
@@ -448,10 +448,11 @@
 				- Status=REVISIE
 				- Bewerking=VERPLAATSTEN
 				- GisID
+				- AssetID
 				
 				Controle: 
-				- Als er in een ontwerptekening een object voorkomt met de Status=REVISIE en de Bewerking=VERPLAATSEN dan moet er een tweede object zijn van het zelfde soort met hetzelfde GisID en de status=BESTAAND
-				- Als er in een revisietekening een object voorkomt met de Status=REVISIE en de Bewerking=VERPLAATSEN dan mag er geen tweede object zijn met hetzelfde GisID
+				- Als er in een ontwerptekening een object voorkomt met de Status=REVISIE en de Bewerking=VERPLAATSEN dan moet er een tweede object zijn van het zelfde soort met hetzelfde GisID, AssetID en de status=BESTAAND
+				- Als er in een revisietekening een object voorkomt met de Status=REVISIE en de Bewerking=VERPLAATSEN dan mag er geen tweede object zijn met hetzelfde GisID en AssetID
 			</definitie>
 			<toelichting>
 				Onder ontwerptekening wordt verstaan alle tekeningtypen waarbij ONTWERP in de naam zit.
