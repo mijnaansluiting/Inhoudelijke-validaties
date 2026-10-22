@@ -18,6 +18,7 @@
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
         <GisId>83412</GisId>
+        <AssetId>999</AssetId>
         <Geometry></Geometry>
     </MSkabel>
     <MSkabel>
@@ -26,6 +27,7 @@
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
         <Bewerking>VERPLAATSEN</Bewerking>
         <GisId>83412</GisId>
+        <AssetId>999</AssetId>
         <Geometry></Geometry>
     </MSkabel>
 
@@ -33,6 +35,7 @@
         <ID>D</ID>
         <Status>BESTAAND</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
+        <AssetId>999</AssetId>
         <GisId>83413</GisId>
         <Geometry></Geometry>
     </LSkabel>
@@ -41,6 +44,7 @@
         <Status>REVISIE</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
         <Bewerking>VERPLAATSEN</Bewerking>
+        <AssetId>999</AssetId>
         <GisId>83413</GisId>
         <Geometry></Geometry>
     </LSkabel>
