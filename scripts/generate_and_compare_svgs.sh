@@ -2,7 +2,6 @@
 
 source "$(dirname "$0")/version.sh"
 out_dir=assets
-
 rm -rf $out_dir/*
 
 for version in $(list_versions); do
@@ -32,8 +31,11 @@ find $out_dir/ -type d -empty -delete
 # Rename .xml to .svg
 find $out_dir/ -depth -name "*.xml" -exec sh -c 'mv "$1" "${1%.xml}.svg"' _ {} \;
 
-# Throw error in pipeline if any of the SVGs are not up-to-date
-if ! git diff --quiet assets/$version; then
-    echo "::error title=Uncommitted changes detected in assets for version $version::Test data SVGs are not in line with the test data. Please run the following command locally and commit the changes: ${0} $version"
+if [[ -n $(git status --porcelain assets/) ]]; then
+    changed_versions=$(git status --porcelain assets/ | awk '{print $2}' | cut
+    -d/ -f2 | sort -u)
+    echo "::error title=Uncommitted changes detected in assets::Test data SVGs
+    are not in line with the test data for: $(echo $changed_versions). Please run
+    the following command locally and commit the changes: ${0}"
     exit 1
-fi
+  fi
