@@ -84,7 +84,7 @@ jobs:
         run: scripts/check_rule_object_coverage.sh
 
   validate-scopes:
-    needs: validate-rules
+    needs: install-dependencies
     runs-on: ubuntu-latest
 
     steps:
