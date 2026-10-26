@@ -792,8 +792,7 @@
          <tr class="validatieDocumentatieRow">
             <td class="validatieDocumentatieCell"><b>Definitie </b></td>
             <td class="validatieDocumentatieCell"><br>				Indien de Bedrijfstoestand van een AMantelbuis de waarde "RESERVE" heeft mag het
-               geen AmantelbuisInhoud hebben.<br>				Als de BedrijfsToestand "IN BEDRIJF" is dan moet het een AmantelbuisInhoud hebben.<br><br>				Note: Als de AMantelbuisInhoud een InhoudID heeft die overeenkomt met een kabel
-               waar Status = 'VERWIJDERD', dan wordt deze regel niet uitgevoerd.<br>			</td>
+               geen AmantelbuisInhoud hebben.<br>				Als de BedrijfsToestand "IN BEDRIJF" is dan moet het een AmantelbuisInhoud hebben.<br>			</td>
          </tr>
          <tr class="validatieDocumentatieRow">
             <td class="validatieDocumentatieCell"><b>ValidatieObjecten</b></td>
@@ -851,7 +850,8 @@
             <td class="validatieDocumentatieCell"><b>Definitie </b></td>
             <td class="validatieDocumentatieCell"><br>				- InhoudID mag niet gelijk zijn aan MantelbuisID<br>				- Het NLCS object waarvan het ID overeenkomt met MantelbuisID moet een mantelbuis
                zijn<br>				- Het NLCS object waarvan het ID overeenkomt met InhoudID moet van type ObjectTypeInhoud
-               zijn<br>			</td>
+               zijn<br>				- De MantelbuisInhoud of het object waar deze naar refereert mogen allebei niet
+               de status VERWIJDERD hebben<br>			</td>
          </tr>
          <tr class="validatieDocumentatieRow">
             <td class="validatieDocumentatieCell"><b>ValidatieObjecten</b></td>
