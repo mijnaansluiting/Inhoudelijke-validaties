@@ -10,18 +10,12 @@
         <let name="is_verplaatsing"
             value="nlcs:Status = 'REVISIE' and nlcs:Bewerking = 'VERPLAATSEN'"/>
 
-        <assert id="verplaatsing-cannot-have-asset-id"
-            properties="scope rule-number severity object-type object-id"
-            test="if($is_verplaatsing) then not(nlcs:AssetId) else true()">
-            <value-of select="ma:get-translation-and-replace-placeholders('property-not-allowed-for-statuses', ['AssetId', 'REVISIE'])"/>
-        </assert>
-
         <let name="has_bestaand_original"
             value="some $cable in //nlcs:NLCSnetbeheer/* satisfies
                 $cable ne . and
                 name($cable) = $name and
                 $cable/nlcs:Status = 'BESTAAND' and
-                $cable/nlcs:GisId = nlcs:GisId"/>
+                $cable/nlcs:GisId = nlcs:GisId and $cable/nlcs:AssetId = nlcs:AssetId"/>
 
         <let name="is_ontwerptekening"
             value="contains($tekeningtype, 'ONTWERP')"/>
@@ -36,7 +30,8 @@
             value="some $cable in //nlcs:NLCSnetbeheer/* satisfies
                 $cable ne . and
                 name($cable) = $name and
-                $cable/nlcs:GisId = nlcs:GisId"/>
+                $cable/nlcs:GisId = nlcs:GisId and 
+                $cable/nlcs:AssetId = nlcs:AssetId"/>
 
         <let name="is_revisietekening"
             value="contains($tekeningtype, 'REVISIE')"/>
@@ -51,6 +46,12 @@
             test="if ($is_verplaatsing and $is_revisietekening) then ma:element-exists-and-not-empty(nlcs:GisId) else true()"
             properties="scope rule-number severity object-type object-id">
             <value-of select="ma:get-translation-and-replace-placeholders('property-required-for-statuses', ['GisId', nlcs:Status])"/>
+        </assert>
+
+                <assert id="revisie-verplaatsing-has-assetid"
+            test="if ($is_verplaatsing) then ma:element-exists-and-not-empty(nlcs:AssetId) else true()"
+            properties="scope rule-number severity object-type object-id">
+            <value-of select="ma:get-translation-and-replace-placeholders('property-required-for-statuses', ['AssetId', nlcs:Status])"/>
         </assert>
     </rule>
 </pattern>

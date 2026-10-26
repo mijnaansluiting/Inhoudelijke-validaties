@@ -18,6 +18,7 @@
         <Status>REVISIE</Status>
         <Bedrijfstoestand>GEEN</Bedrijfstoestand>
         <Bewerking>VERPLAATSEN</Bewerking>
+        <AssetId>999</AssetId>
         <Geometry></Geometry>
     </LSkabel>
 </NLCSnetbeheer>
