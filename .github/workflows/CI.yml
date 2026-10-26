@@ -1,0 +1,140 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [ "main", "develop" ]
+
+# Jobs run in a fixed order; each job only starts when the previous one succeeded.
+# Dependencies are downloaded once and shared with later jobs as an artifact.
+jobs:
+  covered-rules:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Check rule coverage
+        run: scripts/check_rule_coverage.sh
+
+  install-dependencies:
+    needs: covered-rules
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Install dependencies
+        run: scripts/install_dependencies.sh
+
+      - name: Upload installed dependencies
+        uses: actions/upload-artifact@v4
+        with:
+          name: installed-dependencies
+          path: |
+            saxon-he.jar
+            lib/
+            transpile.xsl
+            xerces-cli.jar
+            NLCS_Netbeheer.xsd
+            NLCS_Netbeheer_Keuzelijst.xsd
+          if-no-files-found: error
+          retention-days: 1
+
+  validate-rules:
+    needs: install-dependencies
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Set up JDK
+        uses: actions/setup-java@v5
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+
+      - name: Download installed dependencies
+        uses: actions/download-artifact@v5
+        with:
+          name: installed-dependencies
+
+      - name: Validate rule test data XSD compliance
+        run: java -jar xerces-cli.jar NLCS_Netbeheer_Keuzelijst.xsd test/rule_validation_data
+
+      - name: Transpile phases to XSL
+        run: scripts/transpile_phases.sh
+
+      - name: Validate rules
+        run: scripts/validate_rules.sh
+
+      - name: Upload validation reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: rule-validation-reports
+          path: rule_validation_reports
+
+      - name: Validate test reports
+        run: scripts/validate_rule_reports.sh
+
+      - name: Check rule object coverage
+        run: scripts/check_rule_object_coverage.sh
+
+  validate-scopes:
+    needs: validate-rules
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Set up JDK
+        uses: actions/setup-java@v5
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+
+      - name: Download installed dependencies
+        uses: actions/download-artifact@v5
+        with:
+          name: installed-dependencies
+
+      - name: Add scope checks
+        run: scripts/add_scope_checks.sh
+
+      - name: Transpile Schematron to XSL
+        run: java -jar saxon-he.jar -xsl:transpile.xsl -s:validation_schemas/v2026.1.0/main_scope_checks.sch -o:validation_schemas/v2026.1.0/main_scope_checks.xsl
+
+      - name: Validate scopes
+        run: scripts/validate_scopes.sh
+
+  validate-docs:
+    needs: validate-scopes
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Set up JDK
+        uses: actions/setup-java@v5
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+
+      - name: Download installed dependencies
+        uses: actions/download-artifact@v5
+        with:
+          name: installed-dependencies
+
+      - name: Run tests
+        run: java test/XMLValidation.java doc/NLCSValidatieRegels.xsd doc/NLCSValidatieRegels.xml
+
+      - name: Generate and compare HTMLs
+        run: scripts/generate_and_compare_htmls.sh
+
+      - name: Generate and compare SVGs
+        run: scripts/generate_and_compare_svgs.sh
