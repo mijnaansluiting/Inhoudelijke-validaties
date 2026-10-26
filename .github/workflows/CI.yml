@@ -112,7 +112,7 @@ jobs:
         run: scripts/validate_scopes.sh
 
   validate-docs:
-    needs: validate-scopes
+    needs: install-dependencies
     runs-on: ubuntu-latest
 
     steps:
