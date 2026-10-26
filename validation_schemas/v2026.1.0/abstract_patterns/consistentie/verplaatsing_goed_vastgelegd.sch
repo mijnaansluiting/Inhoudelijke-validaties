@@ -15,7 +15,7 @@
                 $cable ne . and
                 name($cable) = $name and
                 $cable/nlcs:Status = 'BESTAAND' and
-                $cable/nlcs:GisId = nlcs:GisId"/>
+                $cable/nlcs:GisId = nlcs:GisId and $cable/nlcs:AssetId = nlcs:AssetId"/>
 
         <let name="is_ontwerptekening"
             value="contains($tekeningtype, 'ONTWERP')"/>
@@ -30,7 +30,8 @@
             value="some $cable in //nlcs:NLCSnetbeheer/* satisfies
                 $cable ne . and
                 name($cable) = $name and
-                $cable/nlcs:GisId = nlcs:GisId"/>
+                $cable/nlcs:GisId = nlcs:GisId and 
+                $cable/nlcs:AssetId = nlcs:AssetId"/>
 
         <let name="is_revisietekening"
             value="contains($tekeningtype, 'REVISIE')"/>
