@@ -13,9 +13,6 @@
         <let name="kabel"
             value="//(nlcs:LSkabel | nlcs:MSkabel | nlcs:HSkabel)[nlcs:ID = $mantelbuisinhoud/nlcs:InhoudID]"/>
 
-            <let name="kabel_is_verwijderd"
-            value="$kabel/nlcs:Status = 'VERWIJDERD'"/>
-
         <assert id="inhoud_exists_when_in_bedrijf"
             test="if ($bedrijfstoestand = 'IN BEDRIJF') then $mantelbuisinhoud else true()"
             properties="scope rule-number severity object-type object-id">
