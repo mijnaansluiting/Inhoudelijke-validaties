@@ -9,10 +9,11 @@
       <xsl:output method="text"/>
       
       <xsl:param name="rule_number" as="xs:string"/>
+      <xsl:param name="version" as="xs:string"/>
       
       <xsl:variable name="config_doc" select="document('../doc/NLCSValidatieRegels.xml')"/>
 
-      <xsl:variable name="failing_test_files" select="collection(concat('../rule_validation_reports/v12/', $rule_number, '/failing/?select=*.xml'))"/>
+      <xsl:variable name="failing_test_files" select="collection(concat('../rule_validation_reports/', $version, '/', $rule_number, '/failing/?select=*.xml'))"/>
       <xsl:variable name="rule" select="$config_doc/nvr:NLCSValidatieregels/nvr:validatieRegels/nvr:validatieRegel[@nummer = $rule_number]"/>
       <xsl:variable name="expected_object_names" select="$rule/nvr:validatieObjecten/nvr:validatieObject/nvr:naam"/>
       <xsl:variable name="failed_asserts_matching_rule_number" select="$failing_test_files/svrl:schematron-output/svrl:failed-assert[svrl:property-reference[@property='rule-number']/svrl:text = substring-after($rule_number, 'R.')]"/>

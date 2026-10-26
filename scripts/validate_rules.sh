@@ -1,6 +1,6 @@
 #!/bin/bash
 
-version="v12"
+version="v2026.1.0"
 
 test_data_dir=test/rule_validation_data/$version
 out_dir=rule_validation_reports/$version

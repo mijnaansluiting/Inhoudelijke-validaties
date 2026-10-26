@@ -24,6 +24,6 @@ A partial or final revision drawing must be sequenced, so this rule requires the
 - validatieObjecten: AprojectReferentie
 - Condition: for any `AprojectReferentie` where `Tekeningtype = 'DEELREVISIE'` or `Tekeningtype = 'EINDREVISIE'`, `Volgnummer` must exist and be non-empty (`ma:element-exists-and-not-empty`).
 
-The abstract pattern emits the `attribute-not-present` message from the message catalog; see [localization-messages](../config/localization-messages).
+The abstract pattern emits the `attribute-not-present` message from the message catalog and reports Volgnummer as an `<attribute>` element in the `missing-attributes` property; see [localization-messages](../config/localization-messages).
 
 Severity for this rule varies by scope; see [scope × severity matrix](../domain/scope-severity-model) for the exact values.
