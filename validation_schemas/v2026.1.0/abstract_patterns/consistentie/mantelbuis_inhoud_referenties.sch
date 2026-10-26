@@ -34,7 +34,8 @@
         <assert id="inhoud-not-verwijderd"
             properties="scope rule-number severity object-type object-id"
             test="not($inhoud/nlcs:Status = 'VERWIJDERD') and not($mantelbuis/nlcs:Status = 'VERWIJDERD')">
-            <value-of select="ma:get-translation-and-replace-placeholders('object-inhoud-verwijderd', [$inhoud/nlcs:ID])"
+            <value-of select="ma:get-translation-and-replace-placeholders('object-inhoud-verwijderd', [$inhoud/nlcs:ID])"/>
+        </assert>
 
         <assert id="object-type-inhoud-matches-inhoud"
             properties="scope rule-number severity object-type object-id"
