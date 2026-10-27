@@ -9,7 +9,7 @@
 
         <let name="bedrijfstoestand"
             value="nlcs:Bedrijfstoestand"/>
-    
+
         <assert id="inhoud_exists_when_in_bedrijf"
             test="if ($bedrijfstoestand = 'IN BEDRIJF') then $mantelbuisinhoud else true()"
             properties="scope rule-number severity object-type object-id">
