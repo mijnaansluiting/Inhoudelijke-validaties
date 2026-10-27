@@ -34,4 +34,11 @@
         <MantelbuisID>B</MantelbuisID>
         <InhoudID>C</InhoudID>
     </AmantelbuisInhoud>
+
+    <MSkabel>  
+        <ID>E</ID>
+        <Status>VERWIJDERD</Status>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
+        <Geometry></Geometry>
+    </MSkabel>
 </NLCSnetbeheer>

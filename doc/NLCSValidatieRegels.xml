@@ -468,6 +468,7 @@
 				- InhoudID mag niet gelijk zijn aan MantelbuisID
 				- Het NLCS object waarvan het ID overeenkomt met MantelbuisID moet een mantelbuis zijn
 				- Het NLCS object waarvan het ID overeenkomt met InhoudID moet van type ObjectTypeInhoud zijn
+				- De MantelbuisInhoud of het object waar deze naar refereert mogen allebei niet de status VERWIJDERD hebben
 			</definitie>
 			<validatieObjecten>
 				<validatieObject><naam>AmantelbuisInhoud</naam></validatieObject>

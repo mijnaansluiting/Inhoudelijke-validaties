@@ -327,4 +327,12 @@
       Een NLCS++ object met Bedrijfstoestand {1} mag enkel Status {2} hebben, maar kwam {3} tegen.
     </message-text>
   </message>
+  <message id="object-inhoud-verwijderd">
+    <message-text xml:lang="en">
+      An object with status VERWIJDERD may not have a relation to a mantelbuis. ID of object with status VERWIJDERD: {1}
+    </message-text>
+    <message-text xml:lang="nl">
+      Een object met status VERWIJDERD mag geen relatie hebben met een mantelbuis. Verwijderd object ID: {1}
+    </message-text>
+  </message>
 </messages>
