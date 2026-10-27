@@ -1,6 +1,6 @@
 #!/bin/bash
 
-version=v2026.1.0
+version=$(scripts/versions.sh resolve "${1:-$(scripts/versions.sh latest)}") || exit 1
 out_dir=dist
 
 mkdir -p $out_dir/src/base
@@ -15,7 +15,7 @@ cp -a validation_schemas/xsl_functions/. $out_dir/src/xsl_functions
 
 # Copy config files
 cp -a configuration/. $out_dir/configuration/
-cp doc/NLCSValidatieRegels.xml $out_dir/doc/
+cp doc/$version/NLCSValidatieRegels.xml $out_dir/doc/
 
 # Copy localization messages
 cp -a localization/* $out_dir/localization/

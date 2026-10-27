@@ -1,0 +1,69 @@
+---
+type: Configuration
+title: Version registry (versions.xml)
+description: The single list of rule-set versions, the XSD version each targets, its base and whether it is released; read by scripts, CI and the XSL version-selection functions.
+resource: configuration/versions.xml
+tags: configuration, versioning
+status: draft
+generated:
+  by: claude-opus-5-5
+  at: 2026-10-27T00:00:00Z
+sources:
+  - resource: "../../configuration/versions.xml"
+    title: "versions.xml"
+  - resource: "../../scripts/versions.sh"
+    title: "versions.sh"
+  - resource: "../../validation_schemas/xsl_functions/version_functions.xsl"
+    title: "version_functions.xsl"
+---
+
+# Overview
+
+`configuration/versions.xml` is the only place that names rule-set
+versions. Scripts, CI and XSL look versions up here instead of hardcoding
+folder names, so a fix rename (`v2026.1.0` → `v2026.1.1`, see
+[multiversion-model](../decisions/multiversion-model)) only touches the
+version folders and this file.
+
+# Schema
+
+One `<version/>` element per line (the bash helper parses lines, not XML).
+There is no schema for the registry; `scripts/check_active_version.sh`
+checks that every registered version has a schema folder, `sys_config`
+block and catalog, and that every version folder is registered.
+
+| Attribute | Required | Meaning |
+|---|---|---|
+| `id` | yes | Folder name, `vYEAR.RELEASE.FIX`. Unique. |
+| `xsd` | yes | NLCS_Netbeheer XSD version targeted, e.g. `12.1`. |
+| `base` | no | Version whose patterns and test data this one inherits. Must be a listed id. Absent for the base version. |
+| `released` | yes | `false` = tested in CI, but never shipped and never auto-selected. |
+
+```xml
+<version id="v2026.1.0" xsd="12.1" released="true"/>
+```
+
+# Bash: scripts/versions.sh
+
+| Command | Output |
+|---|---|
+| `list [--released]` | All ids, oldest first (numeric sort, so `v2026.10.0` comes after `v2026.9.0`). |
+| `latest [xsd]` | Newest released version, optionally for one XSD version. |
+| `resolve <version>` | Full id for a full id or a `vYEAR.RELEASE` alias (newest fix); fails if unknown. |
+| `xsd <version>` / `base <version>` | That version's XSD version / base. |
+| `xsds` | Distinct XSD versions. |
+| `matrix` | JSON array of all ids, for a CI matrix. |
+
+`VERSIONS_REGISTRY` overrides the file path (used for testing). Every
+script in `scripts/` takes an optional version argument (full id or
+alias), defaulting to `versions.sh latest`.
+
+# XSL: version_functions.xsl
+
+`ma:select-version($document, $requested)` returns the version to validate
+with: the resolved `$requested` if non-empty, else the newest released
+version targeting the XSD in the file's `xsi:schemaLocation`. Empty means
+unsupported, and the caller must report that as an error. Helpers:
+`ma:resolve-version`, `ma:file-xsd-version`, `ma:version-for-xsd`. Not yet
+included by any `main.sch`; wiring happens with the per-version
+dispatch.

@@ -1,5 +1,5 @@
 <config>
-    <v12>
+    <version id="v2026.1.0">
         <DecimalPrecision>3</DecimalPrecision>
         <MofFuncties>
             <Aftak>
@@ -29,5 +29,5 @@
             <!-- <NoAssetIdRequired>SomeObjectName</NoAssetIdRequired> -->
         </GisIdAssetsIdExceptions>
         <MantelbuisInhoudMaxAfstand>1</MantelbuisInhoudMaxAfstand>
-    </v12>
+    </version>
 </config>

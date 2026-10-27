@@ -186,6 +186,9 @@
         <active pattern="R.43"/>
     </phase>
 
+    <!-- rule-set version of this schema; must equal the folder name (checked in CI) -->
+    <let name="active_version" value="'v2026.1.0'"/>
+
     <!-- import functions -->
     <xsl:include href="../xsl_functions/geometry_functions.xsl"/>
     <xsl:include href="../xsl_functions/config_functions.xsl"/>

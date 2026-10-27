@@ -18,6 +18,9 @@ jobs:
       - name: Check rule coverage
         run: scripts/check_rule_coverage.sh
 
+      - name: Check active version declarations
+        run: scripts/check_active_version.sh
+
   install-dependencies:
     needs: covered-rules
     runs-on: ubuntu-latest
@@ -106,7 +109,9 @@ jobs:
         run: scripts/add_scope_checks.sh
 
       - name: Transpile Schematron to XSL
-        run: java -jar saxon-he.jar -xsl:transpile.xsl -s:validation_schemas/v2026.1.0/main_scope_checks.sch -o:validation_schemas/v2026.1.0/main_scope_checks.xsl
+        run: |
+          version=$(scripts/versions.sh latest)
+          java -jar saxon-he.jar -xsl:transpile.xsl -s:validation_schemas/$version/main_scope_checks.sch -o:validation_schemas/$version/main_scope_checks.xsl
 
       - name: Validate scopes
         run: scripts/validate_scopes.sh
@@ -131,7 +136,7 @@ jobs:
           name: installed-dependencies
 
       - name: Run tests
-        run: java test/XMLValidation.java doc/NLCSValidatieRegels.xsd doc/NLCSValidatieRegels.xml
+        run: java test/XMLValidation.java doc/NLCSValidatieRegels.xsd doc/$(scripts/versions.sh latest)/NLCSValidatieRegels.xml
 
       - name: Generate and compare HTMLs
         run: scripts/generate_and_compare_htmls.sh

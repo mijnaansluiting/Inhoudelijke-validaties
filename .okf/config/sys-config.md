@@ -5,8 +5,8 @@ description: Version-scoped thresholds, allowed-value lists, and exceptions cons
 resource: configuration/sys_config.xml
 tags: configuration
 generated:
-  by: human:sytse.walraven
-  at: 2026-08-26T00:00:00Z
+  by: claude-opus-5-5
+  at: 2026-10-27T00:00:00Z
 sources:
   - resource: "../../configuration/sys_config.xml"
     title: "sys_config.xml"
@@ -16,15 +16,21 @@ sources:
 
 # Overview
 
-`configuration/sys_config.xml` holds tunable values for rule logic, scoped
-under a `<v12>` element matching the current NLCS++ version. Values are read
-at validation time by functions in
-`validation_schemas/xsl_functions/config_functions.xsl`, so a rule's actual
-behavior can be adjusted without touching Schematron pattern code.
+`configuration/sys_config.xml` holds tunable values for rule logic, with
+one full `<version id="vYEAR.RELEASE.FIX">` block per rule-set version (no
+defaults or inheritance between blocks; see
+[multiversion-model](../decisions/multiversion-model)). Values are read at
+validation time by functions in
+`validation_schemas/xsl_functions/config_functions.xsl`, which select the
+block whose `id` equals `$active_version` (declared by each version's
+`main.sch`) and raise an error if there is none. A rule's actual behavior
+can be adjusted without touching Schematron pattern code.
+`scripts/check_active_version.sh` fails CI when a registered version has no
+block.
 
 # Schema
 
-| Field | Value (v12) | Used by |
+| Field | Value (v2026.1.0) | Used by |
 |---|---|---|
 | `DecimalPrecision` | `3` | Numeric rounding precision used across geometric/numeric comparisons. |
 | `MofFuncties/Aftak` | `AFTAK SPLITSEND` | [R.26](../rules/R.26) — maps joint Functie values to the "Aftak" category. |

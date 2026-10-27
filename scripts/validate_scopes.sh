@@ -1,8 +1,8 @@
 #!/bin/bash
 
-version=v2026.1.0
+version=$(scripts/versions.sh resolve "${1:-$(scripts/versions.sh latest)}") || exit 1
 
-java -jar saxon-he.jar -xsl:transformations/generate_scoped_objects.xsl -s:test/scope_validation_data/$version/scope_template.xml
+java -jar saxon-he.jar -xsl:transformations/generate_scoped_objects.xsl -s:test/scope_validation_data/$version/scope_template.xml version=$version
 
 in_dir=scoped_objects
 out_dir=scoped_objects_reports
@@ -32,7 +32,7 @@ for scope_dir in "$in_dir"/*; do
                 echo Validating $scope "->" $tekening_type "->" $status "->" $bedrijfstoestand
                 java -jar saxon-he.jar -xsl:validation_schemas/$version/main_scope_checks.xsl -s:"$bedrijfstoestand_file" -o:"$out_file"
 
-                validation_report_analysis="$(java -jar saxon-he.jar -xsl:transformations/check_scope_coverage.xsl -s:"$out_file" scope_name="$scope")"
+                validation_report_analysis="$(java -jar saxon-he.jar -xsl:transformations/check_scope_coverage.xsl -s:"$out_file" scope_name="$scope" version="$version")"
 
                 while IFS='=' read -r key value; do
                     case "$key" in

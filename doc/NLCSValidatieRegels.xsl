@@ -105,7 +105,7 @@
 		<html>
 			<head>
 				<title>NLCS++ Inhoudelijke Validaties - Documentatie</title>
-				<link rel="stylesheet" href="NLCSValidatieRegels.css" />
+				<link rel="stylesheet" href="../NLCSValidatieRegels.css" />
 			</head>
 			<body>
 				<h1>NLCS++ Inhoudelijke validaties - Documentatie</h1>

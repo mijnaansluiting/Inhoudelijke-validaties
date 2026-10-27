@@ -1,6 +1,6 @@
 #!/bin/bash
 
-version="v2026.1.0"
+version=$(scripts/versions.sh resolve "${1:-$(scripts/versions.sh latest)}") || exit 1
 
 {
     echo "## Object coverage"
@@ -14,7 +14,7 @@ all_rules_covered_correctly=true
 for dir in rule_validation_reports/$version/*; do
     rule_number=$(basename "$dir")
     echo "Checking rule object coverage for $rule_number"
-    output=$(java -jar saxon-he.jar -xsl:transformations/check_object_coverage.xsl -s:doc/NLCSValidatieRegels.xml rule_number=$rule_number version=$version)
+    output=$(java -jar saxon-he.jar -xsl:transformations/check_object_coverage.xsl -s:doc/$version/NLCSValidatieRegels.xml rule_number=$rule_number version=$version)
 
     while IFS=',' read -r -a markdown_and_validity; do
         validity=${markdown_and_validity[1]}

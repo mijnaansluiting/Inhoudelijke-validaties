@@ -1,6 +1,6 @@
 #!/bin/bash
 
-version=v2026.1.0
+version=$(scripts/versions.sh resolve "${1:-$(scripts/versions.sh latest)}") || exit 1
 
 schema_dir=validation_schemas/$version
 

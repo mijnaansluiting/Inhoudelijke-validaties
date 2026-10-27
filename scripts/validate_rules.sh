@@ -1,6 +1,6 @@
 #!/bin/bash
 
-version="v2026.1.0"
+version=$(scripts/versions.sh resolve "${1:-$(scripts/versions.sh latest)}") || exit 1
 
 test_data_dir=test/rule_validation_data/$version
 out_dir=rule_validation_reports/$version

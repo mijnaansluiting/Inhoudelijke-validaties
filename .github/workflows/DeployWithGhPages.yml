@@ -24,14 +24,15 @@ jobs:
         uses: actions/checkout@v5
       - name: Create redirect index.html
         run: |
+          doc_html=doc/$(scripts/versions.sh latest)/NLCSValidatieRegels.html
           echo '<!DOCTYPE html>
           <html>
             <head>
-              <meta http-equiv="refresh" content="0; url=doc/NLCSValidatieRegels.html" />
+              <meta http-equiv="refresh" content="0; url='"$doc_html"'" />
               <title>Redirecting...</title>
             </head>
             <body>
-              <p>Redirecting to <a href="doc/NLCSValidatieRegels.html">documentation</a>...</p>
+              <p>Redirecting to <a href="'"$doc_html"'">documentation</a>...</p>
             </body>
           </html>' > index.html
       - name: Setup Pages

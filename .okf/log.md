@@ -1,5 +1,28 @@
 # Update Log
 
+## 2026-10-27
+* **Add**: [multiversion-model](./decisions/multiversion-model) (draft) —
+  team decisions on rule-set versioning: `vYEAR.RELEASE.FIX` folders (renamed on fix),
+  many-to-one mapping onto XSD versions, `v2026.1.0` as base with
+  pattern-file overrides, per-version catalog and `sys_config` block,
+  auto-detection from `xsi:schemaLocation` with an optional `version`
+  parameter, and CI over all versions.
+* **Update**: [build-and-release](./architecture/build-and-release) no
+  longer claims versions are `v12` folders; links to the new decision.
+* **Add**: [version-registry](./config/version-registry) (draft) —
+  `configuration/versions.xml`, the `scripts/versions.sh` helper
+  and `version_functions.xsl`. All scripts and both workflows now read
+  the version from the registry instead of hardcoding `v2026.1.0`; the
+  `version` parameter accepts full ids and `vYEAR.RELEASE` aliases.
+* **Update**: [sys-config](./config/sys-config),
+  [xsl-function-libraries](./architecture/xsl-function-libraries) and
+  [scope-severity-model](./domain/scope-severity-model) — `sys_config.xml`
+  now has one `<version id="…">` block per version, selected through
+  `$active_version` (declared in each version's `main.sch`); the rule
+  catalog moved to `doc/<version>/NLCSValidatieRegels.xml` (XSD, XSL and
+  CSS stay shared in `doc/`). The catalog paths in the other concepts
+  (rules, testing, CI) are still the old ones.
+
 ## 2026-10-19
 * **Update**: `verplichte_waarde` checks that used the `attribute-not-present`
   message now report every missing attribute of an object in one failed

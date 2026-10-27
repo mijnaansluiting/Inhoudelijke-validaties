@@ -42,8 +42,9 @@ just Saxon, no dependency on this build toolchain.
 
 # Version scoping
 
-Everything here is versioned under `v12` (matching the external
-`NLCS_Netbeheer` XSD version, currently `12.1` per
-`scripts/install_dependencies.sh`'s `NLCS_NETBEHEER_VERSION`). A future
-schema version would add parallel `v13` directories rather than replacing
-`v12` in place.
+The bundle currently ships a single rule-set version (`v2026.1.0`, targeting
+`NLCS_Netbeheer` XSD `12.1` per `scripts/install_dependencies.sh`'s
+`NLCS_NETBEHEER_VERSION`). Rule-set versions are decoupled from XSD versions
+and will be packaged side by side; see
+[multiversion-model](../decisions/multiversion-model). How multiple versions
+are packaged is still open.
