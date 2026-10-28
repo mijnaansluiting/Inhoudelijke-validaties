@@ -36,5 +36,9 @@ unzip -qop schxslt2-${SCHXSLT2_VERSION}.zip schxslt2-${SCHXSLT2_VERSION}/transpi
 rm schxslt2-${SCHXSLT2_VERSION}.zip
 
 curl -sSLo xerces-cli.jar https://github.com/krn-sytse/xerces-j/releases/latest/download/xerces-cli.jar
-download_xsd NLCS_Netbeheer.xsd https://schemas.mijnaansluiting.nl/V${NLCS_NETBEHEER_VERSION}/NLCS_Netbeheer.xsd || exit 1
-download_xsd NLCS_Netbeheer_Keuzelijst.xsd https://schemas.mijnaansluiting.nl/V${NLCS_NETBEHEER_VERSION}/NLCS_Netbeheer${KEUZELIJST_PROVIDER}V${NLCS_NETBEHEER_VERSION}Import_Keuzelijst.xsd || exit 1
+for xsd_version in $(scripts/versions.sh xsds); do
+    xsd_dir=xsd/$xsd_version
+    mkdir -p "$xsd_dir"
+    download_xsd "$xsd_dir/NLCS_Netbeheer.xsd" https://schemas.mijnaansluiting.nl/V${xsd_version}/NLCS_Netbeheer.xsd || exit 1
+    download_xsd "$xsd_dir/NLCS_Netbeheer_Keuzelijst.xsd" https://schemas.mijnaansluiting.nl/V${xsd_version}/NLCS_Netbeheer${KEUZELIJST_PROVIDER}V${xsd_version}Import_Keuzelijst.xsd || exit 1
+done

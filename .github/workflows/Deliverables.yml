@@ -35,8 +35,7 @@ jobs:
             lib/
             transpile.xsl
             xerces-cli.jar
-            NLCS_Netbeheer.xsd
-            NLCS_Netbeheer_Keuzelijst.xsd
+            xsd/
           if-no-files-found: warn
 
       - name: Add scope checks
