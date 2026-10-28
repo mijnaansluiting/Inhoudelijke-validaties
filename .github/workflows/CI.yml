@@ -65,8 +65,7 @@ jobs:
           name: installed-dependencies
 
       - name: Validate rule test data XSD compliance
-        run: java -jar xerces-cli.jar NLCS_Netbeheer_Keuzelijst.xsd test/rule_validation_data
-
+        run: scripts/validate_test_data_xsd.sh
       - name: Transpile phases to XSL
         run: scripts/transpile_phases.sh
 
