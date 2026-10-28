@@ -1,7 +1,7 @@
 ---
 type: Configuration
 title: Version registry (versions.xml)
-description: The single list of rule-set versions, the XSD version each targets, its base and whether it is released; read by scripts, CI and the XSL version-selection functions.
+description: The single list of rule-set versions, the XSD version each targets and whether it is released; read by scripts, CI and the XSL version-selection functions.
 resource: configuration/versions.xml
 tags: configuration, versioning
 status: draft
@@ -36,7 +36,6 @@ block and catalog, and that every version folder is registered.
 |---|---|---|
 | `id` | yes | Folder name, `vYEAR.RELEASE.FIX`. Unique. |
 | `xsd` | yes | NLCS_Netbeheer XSD version targeted, e.g. `12.1`. |
-| `base` | no | Version whose patterns and test data this one inherits. Must be a listed id. Absent for the base version. |
 | `released` | yes | `false` = tested in CI, but never shipped and never auto-selected. |
 
 ```xml
@@ -50,7 +49,8 @@ block and catalog, and that every version folder is registered.
 | `list [--released]` | All ids, oldest first (numeric sort, so `v2026.10.0` comes after `v2026.9.0`). |
 | `latest [xsd]` | Newest released version, optionally for one XSD version. |
 | `resolve <version>` | Full id for a full id or a `vYEAR.RELEASE` alias (newest fix); fails if unknown. |
-| `xsd <version>` / `base <version>` | That version's XSD version / base. |
+| `xsd <version>` | That version's XSD version. |
+| `sources <version>` | The version itself, then older released versions, newest first: the versions its `main.sch` may include from. |
 | `xsds` | Distinct XSD versions. |
 | `matrix` | JSON array of all ids, for a CI matrix. |
 

@@ -6,7 +6,7 @@ tags: decision, versioning, architecture
 status: draft
 generated:
   by: claude-opus-5-5
-  at: 2026-10-27T00:00:00Z
+  at: 2026-10-28T00:00:00Z
 sources:
   - resource: "https://github.com/mijnaansluiting/Inhoudelijke-validaties/pull/136"
     title: "#136 — setup for multiversion support (v12 -> v2026.1.0 folders)"
@@ -38,10 +38,10 @@ contract the implementation steps build on.
 * Version **folders** carry the full version, `vYEAR.RELEASE.FIX` (e.g.
   `v2026.1.0`). There is only ever one folder per `YEAR.RELEASE`: a fix is
   applied in place and the folder is **renamed** (`v2026.1.0` →
-  `v2026.1.1`). Because of that, nothing may hardcode another version's
-  folder path. Base references and paths are resolved through the version
-  registry, so a fix rename only touches the folder and its registry
-  entry.
+  `v2026.1.1`). Later versions' `main.sch` files name older version
+  folders in their includes (see below), so a fix rename also rewrites
+  every `../v2026.1.0/` include path in later versions; a rename script
+  does this in one pass.
 * Rule-set versions map **many-to-one** onto XSD versions: each rule-set
   version targets exactly one XSD version, several may share one
   (`v2026.1.0` → XSD `12.1`).
@@ -53,24 +53,53 @@ contract the implementation steps build on.
 Rule numbers are never reused. An edited rule keeps its number; a removed
 rule's number is retired; a new rule gets the next free number globally.
 
-## Sharing and overriding
+## Sharing and overriding: explicit includes
 
-* The **first version (`v2026.1.0`) is the base**; there is no separate
-  `shared/` directory. Later versions include files from the base and only
-  hold what differs.
-* The **unit of override is a concrete pattern file.** A version's
-  `main.sch` lists, per rule, whether it includes the base's
-  `patterns/R.x.sch` or its own. Editing a rule = copy its pattern file into
-  the version and change it. Removing a rule = not including it (no phase,
-  no pattern).
-* **Base files never get behavior changes.** A behavior change always goes
-  into the version folder as an override. Base files may receive fixes,
-  and later versions that include a base file **inherit** those fixes. If a
-  later version must not inherit a fix, it overrides the file first.
+Revised 2026-10-28. This replaces two earlier designs: "every later version
+inherits from `v2026.1.0` through a `base` attribute", and "a resolve script
+combines a version with older versions into a `resolved_<version>` folder".
+
+* **Every version's `main.sch` says exactly which file it uses for each
+  rule and abstract pattern.** A version folder only holds its own
+  `main.sch` and the files it adds or changes; everything else is included
+  by path from the older version folder that has it:
+
+  ```xml
+  <include href="../v2026.1.0/patterns/R.1.sch"/>                  <!-- inherited -->
+  <include href="patterns/R.7.sch"/>                                <!-- own -->
+  <include href="../v2026.1.0/abstract_patterns/geometrie/x.sch"/>  <!-- inherited -->
+  ```
+
+  This works without any build step because concrete patterns include
+  nothing themselves: `main.sch` includes both concrete and abstract
+  patterns directly, and concrete patterns refer to abstract ones by id
+  (`is-a`). SchXslt follows the paths while transpiling, and `main.sch`
+  stays one folder below `validation_schemas/`, so the
+  `../xsl_functions/` includes keep resolving.
+* **Allowed include targets:** the version itself, or an **older,
+  released** version. Never a newer or an unreleased version, so a
+  half-finished version never leaks into a real one.
+* **A rule is taken whole:** all pattern files of a rule (`R.4_A` + `R.4_B`)
+  come from one version, and the rule's test data comes from the same
+  version folder as its patterns. A version that has its own pattern for a
+  rule must also have that rule's test data.
+* **Editing a rule** = copy its pattern file(s) and its test data folder
+  into the version, change both, and point the includes at the version's
+  own files. **Adding a rule** = new pattern, test data, phase, include and
+  catalog entry. **Removing a rule** = delete its `<phase>` and its
+  `<include>` line(s) from the version's `main.sch` and its catalog entry;
+  no files are deleted.
+* **Files of older versions never get behavior changes.** A behavior change
+  always goes into the version folder as an override. Older files may
+  receive fixes, and later versions that include them **inherit** those
+  fixes. If a later version must not inherit a fix, it overrides the file
+  first.
 * **Abstract patterns are not overridden.** When a version needs different
   abstract-pattern behavior, a *new* abstract pattern (new id/file) is
   added and the version's overriding concrete pattern uses it; the old one
   stays untouched.
+* The registry has **no `base` attribute**: which version a rule comes from
+  is visible in each `main.sch`, not derived from version order.
 * **Shared XSL function libraries** (`validation_schemas/xsl_functions/`)
   stay a single shared copy and must remain backwards compatible: a change
   must not alter results of any supported version. New behavior means a
@@ -86,8 +115,8 @@ rule's number is retired; a new rule gets the next free number globally.
 | `sys_config.xml` | One full block per version (`<version id="v2026.1.0">…</version>`) holding every value; no defaults/inheritance. |
 | `localization/messages.xml` | Shared. Changed text for a rule = a new message id used by the overriding pattern; old ids remain for older versions. |
 | `user_config.xml` | Shared. |
-| Rule test data (`test/rule_validation_data`) | Base + overrides, same as patterns: a version inherits the base's fixtures and only holds fixtures for rules it added or changed. Removed rules' fixtures are not run. |
-| Scope test data (`test/scope_validation_data`) | Base + overrides. |
+| Rule test data (`test/rule_validation_data`) | Follows `main.sch`: a rule's fixtures are taken from the version folder its pattern is included from. A version folder only holds fixtures for rules it added or changed. Rules not in `main.sch` are not run. |
+| Scope test data (`test/scope_validation_data`) | One `scope_template.xml` per version, copied when the version is created. |
 | XSD | Downloaded per targeted XSD version. |
 
 ## Version selection at validation time
@@ -107,14 +136,30 @@ rule's number is retired; a new rule gets the next free number globally.
 
 ## CI
 
-CI runs **every supported version on every PR**, because base and shared
-edits can affect all of them.
+CI runs **every supported version on every PR**, as a matrix with one job
+per version, because a fix to an older version's file and shared edits can
+affect all versions that include it.
+
+Because includes are written by hand, CI also checks every version's
+`main.sch`:
+
+* every include points to an existing file;
+* every phase has its pattern include(s) and every pattern include has a
+  phase;
+* includes only point to the version itself or older released versions;
+* all pattern files of a rule come from one version, and a version with
+  its own pattern for a rule also has that rule's test data;
+* `active_version` equals the folder name (already checked by
+  `scripts/check_active_version.sh`).
 
 ## Testing the model
 
-A fictional `v2026.2.0` is created from `v2026.1.0` that adds one rule, removes
-one rule and edits one rule, to prove isolation and inheritance end to end.
-It is deleted once the infrastructure is proven and is never shipped.
+A fictional `v2026.2.0` (unreleased) is created from `v2026.1.0` that adds
+one rule, removes one rule and edits one rule, to prove isolation and
+inheritance end to end. It is deleted once the infrastructure is proven
+and is never shipped. The `released` attribute itself is expected to be
+dropped eventually; the "only older released versions" include rule then
+becomes "only older versions".
 
 # Open questions
 
@@ -122,4 +167,5 @@ It is deleted once the infrastructure is proven and is never shipped.
   both. To be decided later.
 
 The version registry format was settled as XML; see
-[version-registry](../config/version-registry).
+[version-registry](../config/version-registry). The remaining
+implementation steps are in [multiversion-plan](../architecture/multiversion-plan).

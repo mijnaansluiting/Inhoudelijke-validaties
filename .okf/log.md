@@ -1,5 +1,19 @@
 # Update Log
 
+## 2026-10-28
+* **Update**: [multiversion-model](./decisions/multiversion-model) —
+  sharing between versions is now done with **explicit includes**: every
+  version's `main.sch` includes each rule and abstract pattern by path,
+  from its own folder or from an older released version
+  (`../v2026.1.0/patterns/R.1.sch`). Replaces the `base`-attribute model
+  and the `resolved_<version>` resolve step. A rule's test data comes from
+  the folder its pattern is included from; fix renames rewrite include
+  paths; CI checks every `main.sch`.
+* **Add**: [multiversion-plan](./architecture/multiversion-plan) (draft) —
+  remaining implementation steps 5–9 under the explicit-include model.
+* **Update**: [version-registry](./config/version-registry) — no `base`
+  attribute; `versions.sh base` replaced by `sources`.
+
 ## 2026-10-27
 * **Add**: [multiversion-model](./decisions/multiversion-model) (draft) —
   team decisions on rule-set versioning: `vYEAR.RELEASE.FIX` folders (renamed on fix),
