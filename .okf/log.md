@@ -1,5 +1,11 @@
 # Update Log
 
+## 2026-10-29
+* **Update**: [version-registry](./config/version-registry) — the
+  `xsd` attribute in `configuration/versions.xml` is renamed to `nlcspp`
+  (the NLCS++ / NLCS_Netbeheer XSD version a rule-set version targets).
+  The `versions.sh xsd`/`xsds` commands keep their names.
+
 ## 2026-10-28
 * **Update**: [multiversion-model](./decisions/multiversion-model) —
   sharing between versions is now done with **explicit includes**: every

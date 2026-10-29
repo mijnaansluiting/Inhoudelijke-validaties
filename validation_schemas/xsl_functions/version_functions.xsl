@@ -49,7 +49,7 @@
   <!-- Newest released version targeting an XSD version, or empty -->
   <function name="ma:version-for-xsd" as="xs:string?">
     <param name="xsd_version" as="xs:string"/>
-    <sequence select="ma:newest-version($versions_file/versions/version[@xsd = $xsd_version and xs:boolean(@released)])"/>
+    <sequence select="ma:newest-version($versions_file/versions/version[@nlcspp = $xsd_version and xs:boolean(@released)])"/>
   </function>
 
   <!-- Version to validate a file with: the requested one if given, else detected from the file's XSD; empty if unsupported -->

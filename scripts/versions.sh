@@ -13,14 +13,14 @@
 
 registry="${VERSIONS_REGISTRY:-$(dirname "$0")/../configuration/versions.xml}"
 
-# Prints one "id xsd base released" line per <version/>, sorted oldest first
+# Prints one "id nlcspp base released" line per <version/>, sorted oldest first
 entries() {
     grep '<version ' "$registry" | while read -r line; do
         id=$(sed -n 's/.* id="\([^"]*\)".*/\1/p' <<< "$line")
-        xsd=$(sed -n 's/.* xsd="\([^"]*\)".*/\1/p' <<< "$line")
+        nlcspp=$(sed -n 's/.* nlcspp="\([^"]*\)".*/\1/p' <<< "$line")
         base=$(sed -n 's/.* base="\([^"]*\)".*/\1/p' <<< "$line")
         released=$(sed -n 's/.* released="\([^"]*\)".*/\1/p' <<< "$line")
-        echo "$id $xsd ${base:--} $released"
+        echo "$id $nlcspp ${base:--} $released"
     done | sort -V
 }
 

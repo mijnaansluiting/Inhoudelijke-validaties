@@ -35,11 +35,11 @@ block and catalog, and that every version folder is registered.
 | Attribute | Required | Meaning |
 |---|---|---|
 | `id` | yes | Folder name, `vYEAR.RELEASE.FIX`. Unique. |
-| `xsd` | yes | NLCS_Netbeheer XSD version targeted, e.g. `12.1`. |
+| `nlcspp` | yes | NLCS++ (NLCS_Netbeheer XSD) version targeted, e.g. `12.1`. |
 | `released` | yes | `false` = tested in CI, but never shipped and never auto-selected. |
 
 ```xml
-<version id="v2026.1.0" xsd="12.1" released="true"/>
+<version id="v2026.1.0" nlcspp="12.1" released="true"/>
 ```
 
 # Bash: scripts/versions.sh
