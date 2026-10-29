@@ -1,6 +1,8 @@
 .DS_Store
 .project
 
+*~
+
 # Generated data
 dist/
 validation_schemas/phases_transpiled_*/
