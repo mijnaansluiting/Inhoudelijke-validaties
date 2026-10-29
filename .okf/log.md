@@ -1,5 +1,6 @@
 # Update Log
 
+<<<<<<< Updated upstream
 ## 2026-10-29 (3)
 * **Update**: [multiversion-model](./decisions/multiversion-model),
   [version-registry](./config/version-registry),
@@ -8,6 +9,13 @@
   `xsi:schemaLocation`. Every test XML now declares `VersieNummer` (its
   version's `nlcspp`), checked by `validate_test_data_xsd.sh`. The
   fictional `v9999.1.0` now targets NLCS++ `12` instead of `12.1`.
+=======
+## 2026-10-29 (2)
+* **Update**: [version-registry](./config/version-registry) — scripts no
+  longer default to the newest released version: the version argument is
+  required (`versions.sh resolve` fails without one), and the workflows
+  pass it explicitly.
+>>>>>>> Stashed changes
 
 ## 2026-10-29
 * **Update**: [version-registry](./config/version-registry) — the

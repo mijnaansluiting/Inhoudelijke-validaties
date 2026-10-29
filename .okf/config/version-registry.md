@@ -55,8 +55,11 @@ block and catalog, and that every version folder is registered.
 | `matrix` | JSON array of all ids, for a CI matrix. |
 
 `VERSIONS_REGISTRY` overrides the file path (used for testing). Every
-script in `scripts/` takes an optional version argument (full id or
-alias), defaulting to `versions.sh latest`.
+per-version script in `scripts/` **requires** a version argument (full id
+or alias); there is no default. Without one, `versions.sh resolve` stops
+with "a version is required". The workflows pass the version explicitly.
+Scripts that work on all versions at once (`check_active_version.sh`,
+`validate_test_data_xsd.sh`, `install_dependencies.sh`) take no argument.
 
 # XSL: version_functions.xsl
 

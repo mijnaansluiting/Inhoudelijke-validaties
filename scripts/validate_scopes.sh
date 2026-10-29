@@ -1,6 +1,6 @@
 #!/bin/bash
 
-version=$(scripts/versions.sh resolve "${1:-$(scripts/versions.sh latest)}") || exit 1
+version=$(scripts/versions.sh resolve "$1") || exit 1
 
 java -jar saxon-he.jar -xsl:transformations/generate_scoped_objects.xsl -s:test/scope_validation_data/$version/scope_template.xml version=$version
 

@@ -49,6 +49,7 @@ case "$1" in
         echo "$latest"
         ;;
     resolve)
+        [[ -n "$2" ]] || fail "a version is required, e.g. v2026.1.0 (see: scripts/versions.sh list)"
         if [[ "$2" =~ ^v[0-9]{4}\.[0-9]+\.[0-9]+$ ]]; then
             resolved=$(entries | awk -v v="$2" '$1 == v { print $1 }')
         elif [[ "$2" =~ ^v[0-9]{4}\.[0-9]+$ ]]; then

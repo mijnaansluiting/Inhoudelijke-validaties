@@ -3,7 +3,6 @@
 SAXON_HE_MAJOR=12
 SAXON_HE_MINOR=8
 SCHXSLT2_VERSION=1.4.4
-NLCS_NETBEHEER_VERSION=$(scripts/versions.sh xsd "$(scripts/versions.sh latest)") || exit 1
 KEUZELIJST_PROVIDER=Enexis
 XSD_DOWNLOAD_ATTEMPTS=5
 

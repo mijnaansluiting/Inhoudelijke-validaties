@@ -1,6 +1,6 @@
 #!/bin/bash
 
-version=$(scripts/versions.sh resolve "${1:-$(scripts/versions.sh latest)}") || exit 1
+version=$(scripts/versions.sh resolve "$1") || exit 1
 out_dir=dist
 
 mkdir -p $out_dir/src/base

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-version=$(scripts/versions.sh resolve "${1:-$(scripts/versions.sh latest)}") || exit 1
+version=$(scripts/versions.sh resolve "$1") || exit 1
 RULES="doc/$version/NLCSValidatieRegels.xml"
 PHASES="validation_schemas/$version/main.sch"
 
