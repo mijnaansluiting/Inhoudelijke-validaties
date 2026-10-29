@@ -39,7 +39,7 @@
     </choose>
   </function>
 
-  <!-- NLCS_Netbeheer XSD version referenced by the file's Versieummer attribute -->
+  <!-- NLCS++ (NLCS_Netbeheer XSD) version declared by the VersieNummer attribute of the file's root element, or empty -->
   <function name="ma:file-xsd-version" as="xs:string?">
     <param name="document" as="node()"/>
     <sequence select="root($document)/*/@VersieNummer"/>

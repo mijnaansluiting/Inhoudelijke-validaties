@@ -121,18 +121,22 @@ combines a version with older versions into a `resolved_<version>` folder".
 
 ## Version selection at validation time
 
-* By default the version is **detected from the file**: the XSD version in
-  `xsi:schemaLocation` (e.g. `…/V12.1/…`) selects the **newest supported
-  rule-set version targeting that XSD**.
+* By default the version is **detected from the file**: the NLCS++ version
+  in the `VersieNummer` attribute of the root `<NLCSnetbeheer>` (e.g.
+  `VersieNummer="12.1"`) selects the **newest released rule-set version
+  whose `nlcspp` equals it**. `xsi:schemaLocation` is not used. (Revised
+  2026-10-29; detection used `xsi:schemaLocation` before.)
 * An optional **`version` parameter** selects any supported version
   explicitly; this is how older versions sharing an XSD stay reachable.
   It accepts both a full id (`v2026.1.0`) and a `vYEAR.RELEASE` alias
   (`v2026.1`) meaning the newest fix of that release. Callers that pin the
   alias keep working when a fix renames the folder; a pinned full id stops
   resolving once that fix is renamed away.
-* If the XSD version is missing or not targeted by any supported version,
-  validation **fails with an explicit error** ("unsupported NLCS version")
-  rather than falling back.
+* If `VersieNummer` is missing (it is optional in the XSD) or not targeted
+  by any released version, validation **fails with an explicit error**
+  ("unsupported NLCS version") rather than falling back.
+* Every test XML declares `VersieNummer` equal to its version's `nlcspp`;
+  `scripts/validate_test_data_xsd.sh` checks this per version.
 
 ## CI
 

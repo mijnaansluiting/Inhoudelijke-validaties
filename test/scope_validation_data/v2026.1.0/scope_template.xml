@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <NLCSnetbeheer xmlns:keuzelijst="NS_NLCSnetbeheerEnexisKL" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="NS_NLCSnetbeheer"
-               VersieNummer="12">
+               VersieNummer="12.1">
     <AprojectReferentie>
         <ID>0000</ID>
         <Tekeningtype>{{TEKENING TYPE}}</Tekeningtype>

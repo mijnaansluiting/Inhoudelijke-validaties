@@ -62,7 +62,8 @@ alias), defaulting to `versions.sh latest`.
 
 `ma:select-version($document, $requested)` returns the version to validate
 with: the resolved `$requested` if non-empty, else the newest released
-version targeting the XSD in the file's `xsi:schemaLocation`. Empty means
+version whose `nlcspp` equals the `VersieNummer` attribute of the file's
+root element (`ma:file-xsd-version`). Empty means
 unsupported, and the caller must report that as an error. Helpers:
 `ma:resolve-version`, `ma:file-xsd-version`, `ma:version-for-xsd`. Not yet
 included by any `main.sch`; wiring happens with the per-version

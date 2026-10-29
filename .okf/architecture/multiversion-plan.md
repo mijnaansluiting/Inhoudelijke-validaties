@@ -28,7 +28,7 @@ the fictional `v2026.2.0` (step 7) is the first test with a second version.
    selected through `$active_version` in each `main.sch`; catalog in
    `doc/<version>/`; `scripts/check_active_version.sh` in CI.
 4. **XSD per version** — `xsd/<xsd version>/`, test data checked against
-   its own version's XSD and `schemaLocation` by
+   its own version's XSD and `VersieNummer` (= the version's `nlcspp`) by
    `scripts/validate_test_data_xsd.sh`.
 
 # Step 5: run the pipeline per version
@@ -91,7 +91,7 @@ results must not change.
 
 * Validation-time version selection: wire `version_functions.xsl`
   (`ma:select-version`) into a dispatcher that picks the version from
-  `xsi:schemaLocation` or the optional `version` parameter, and fails on
+  the root's `VersieNummer` or the optional `version` parameter, and fails on
   an unsupported XSD version.
 * Release packaging (one zip, a zip per version, or both): still open.
 

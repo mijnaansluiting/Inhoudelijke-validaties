@@ -1,5 +1,14 @@
 # Update Log
 
+## 2026-10-29 (3)
+* **Update**: [multiversion-model](./decisions/multiversion-model),
+  [version-registry](./config/version-registry),
+  [multiversion-plan](./architecture/multiversion-plan) — the version is
+  detected from the root's `VersieNummer` attribute instead of
+  `xsi:schemaLocation`. Every test XML now declares `VersieNummer` (its
+  version's `nlcspp`), checked by `validate_test_data_xsd.sh`. The
+  fictional `v9999.1.0` now targets NLCS++ `12` instead of `12.1`.
+
 ## 2026-10-29
 * **Update**: [version-registry](./config/version-registry) — the
   `xsd` attribute in `configuration/versions.xml` is renamed to `nlcspp`
