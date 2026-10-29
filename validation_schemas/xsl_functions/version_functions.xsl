@@ -39,11 +39,10 @@
     </choose>
   </function>
 
-  <!-- NLCS_Netbeheer XSD version referenced by the file's xsi:schemaLocation (".../V12.1/..."), or empty -->
+  <!-- NLCS_Netbeheer XSD version referenced by the file's Versieummer attribute -->
   <function name="ma:file-xsd-version" as="xs:string?">
     <param name="document" as="node()"/>
-    <variable name="schema_location" select="string(root($document)/*/@xsi:schemaLocation)"/>
-    <sequence select="replace($schema_location, '^.*/V(\d+\.\d+)/.*$', '$1', 's')[matches($schema_location, '/V\d+\.\d+/')]"/>
+    <sequence select="root($document)/*/@VersieNummer"/>
   </function>
 
   <!-- Newest released version targeting an XSD version, or empty -->
