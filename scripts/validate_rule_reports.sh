@@ -2,6 +2,14 @@
 
 version=$(scripts/versions.sh resolve "${1:-$(scripts/versions.sh latest)}") || exit 1
 
+rules=$(scripts/versions.sh rules "$version") || exit 1
+
+declare -A rules_source
+
+while read -r rule source; do
+    rules_source[$rule]=$source
+done <<< "$rules"
+
 rule_validation_reports_dir=rule_validation_reports/$version
 validation_test_results_dir=validation_test_results/$version
 
@@ -32,15 +40,17 @@ while IFS= read -r -d '' file; do
     if [[ "$(cat "$file")" != "PASS" ]]; then
         all_rules_passing=false
 
-        rule_validation_data_path="${file/validation_test_results\//test/rule_validation_data/}"
-        rule_validation_data_path="${rule_validation_data_path/%.txt/.xml}"
-
         test_type=$(echo "$file" | cut -d'/' -f4)
+        rule=$(echo "$file" | cut -d'/' -f3)
+        source=$rules_source[$rule]
         if [[ "$test_type" == "passing" ]]; then
             message="Failed asserts found, expected none"
         else
             message="Expected failed asserts, found none"
         fi
+
+        rule_validation_data_path="${file/validation_test_results\/$version\//test/rule_validation_data/$source}"
+        rule_validation_data_path="${rule_validation_data_path/%.txt/.xml}"
 
         echo "| $message | $rule_validation_data_path | [View file](https://github.com/${GITHUB_REPOSITORY}/blob/${GITHUB_SHA}/$rule_validation_data_path) |" >> $GITHUB_STEP_SUMMARY
     fi
