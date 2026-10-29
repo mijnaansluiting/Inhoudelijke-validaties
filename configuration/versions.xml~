@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- Registry of rule-set versions. Keep one <version/> element per line:
-     scripts/versions.sh parses this file without an XML parser. -->
-<versions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-          xsi:noNamespaceSchemaLocation="versions.xsd">
-    <version id="v2026.1.0" xsd="12.1" released="true"/>
-</versions>
