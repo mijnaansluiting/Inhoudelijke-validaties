@@ -68,7 +68,14 @@ combines a version with older versions into a `resolved_<version>` folder".
   <include href="../v2026.1.0/patterns/R.1.sch"/>                  <!-- inherited -->
   <include href="patterns/R.7.sch"/>                                <!-- own -->
   <include href="../v2026.1.0/abstract_patterns/geometrie/x.sch"/>  <!-- inherited -->
+  <include href="../v2026.2.0/abstract_patterns/geometrie/y.sch"/>  <!-- own -->
   ```
+
+  **Abstract-pattern includes always name a version folder**, also for the
+  version's own files (`../v2026.2.0/abstract_patterns/…`, never
+  `abstract_patterns/…`), so every abstract pattern's origin is explicit.
+  Concrete-pattern includes of the version's own files may stay relative
+  (`patterns/R.7.sch`).
 
   This works without any build step because concrete patterns include
   nothing themselves: `main.sch` includes both concrete and abstract

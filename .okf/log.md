@@ -1,5 +1,11 @@
 # Update Log
 
+## 2026-10-29 (4)
+* **Update**: [multiversion-model](./decisions/multiversion-model) —
+  abstract-pattern includes in `main.sch` always name a version folder
+  (`../v2026.1.0/abstract_patterns/…`), also for a version's own files;
+  applied to `v2026.1.0` and `v9999.1.0`.
+
 <<<<<<< Updated upstream
 ## 2026-10-29 (3)
 * **Update**: [multiversion-model](./decisions/multiversion-model),

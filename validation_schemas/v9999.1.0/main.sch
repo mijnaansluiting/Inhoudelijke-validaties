@@ -259,8 +259,8 @@
     <include href="../v2026.1.0/abstract_patterns/verplichte_waarde/verplichte_kenmerken_lsoverdrachtspunt.sch"/>
     <include href="../v2026.1.0/abstract_patterns/verplichte_waarde/verplichte_kenmerken_ovloverdrachtspunt.sch"/>
     <include href="../v2026.1.0/abstract_patterns/verplichte_waarde/verplichte_kenmerken_stations_en_kasten.sch"/>
-    <include href="abstract_patterns/verplichte_waarde/verplichte_kenmerken_mantelbuis_eigenaar.sch"/>
-    <include href="abstract_patterns/verplichte_waarde/verplichte_kenmerken_kunstwerk.sch"/>
+    <include href="../v9999.1.0/abstract_patterns/verplichte_waarde/verplichte_kenmerken_mantelbuis_eigenaar.sch"/>
+    <include href="../v9999.1.0/abstract_patterns/verplichte_waarde/verplichte_kenmerken_kunstwerk.sch"/>
     <include href="../v2026.1.0/abstract_patterns/topologie/topologie_punt_objecten_elec.sch"/>
     <include href="../v2026.1.0/abstract_patterns/topologie/geldig_eindpunt_kabel.sch"/>
     <include href="../v2026.1.0/abstract_patterns/netlogica/kabels_zelfde_netvlak.sch"/>

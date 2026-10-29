@@ -71,9 +71,10 @@ the fictional `v2026.2.0` (step 7) is the first test with a second version.
 # Step 6: version scripts
 
 * `scripts/new_version.sh <new> <xsd>`: registry entry (`released="false"`);
-  copy the previous version's `main.sch`, turning its own relative includes
-  (`patterns/…`, `abstract_patterns/…`) into `../<previous>/…` and keeping
-  existing `../vX/` includes; set `active_version`; empty `patterns/`,
+  copy the previous version's `main.sch`, turning its own relative pattern
+  includes (`patterns/…`) into `../<previous>/patterns/…` and keeping
+  existing `../vX/` includes (abstract-pattern includes already always name
+  a version folder); set `active_version`; empty `patterns/`,
   `abstract_patterns/` and test data folders; copy the scope template,
   catalog and `sys_config` block.
 * `scripts/rename_version.sh <old> <new>` for fix renames: rename the
