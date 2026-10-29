@@ -30,4 +30,35 @@
         </GisIdAssetsIdExceptions>
         <MantelbuisInhoudMaxAfstand>1</MantelbuisInhoudMaxAfstand>
     </version>
+    <version id="v9999.1.0">
+        <DecimalPrecision>3</DecimalPrecision>
+        <MofFuncties>
+            <Aftak>
+                <Functie>AFTAK SPLITSEND</Functie>
+            </Aftak>
+            <Eind>
+                <Functie>EINDMOF</Functie>
+                <Functie>EINDDOP</Functie>
+                <Functie>LOODKOP</Functie>
+                <Functie>EIND GEAARD</Functie>
+            </Eind>
+            <Verbinding>
+                <Functie>VERBINDING</Functie>
+                <Functie>ZEGELWIJZIGING</Functie>
+                <Functie>MANTELREPARATIE</Functie>
+            </Verbinding>
+            <Faseovergang>
+                <Functie>3FASE 3x1FASE</Functie>
+            </Faseovergang>
+        </MofFuncties>
+        <ToegestaandeInmeetwijzen>
+            <Inmeetwijze>GPS</Inmeetwijze>
+            <Inmeetwijze>Tachymeter</Inmeetwijze>
+        </ToegestaandeInmeetwijzen>
+        <GisIdAssetsIdExceptions>
+            <NoGisIdRequired>AmantelbuisInhoud</NoGisIdRequired>
+            <!-- <NoAssetIdRequired>SomeObjectName</NoAssetIdRequired> -->
+        </GisIdAssetsIdExceptions>
+        <MantelbuisInhoudMaxAfstand>1</MantelbuisInhoudMaxAfstand>
+    </version>
 </config>
