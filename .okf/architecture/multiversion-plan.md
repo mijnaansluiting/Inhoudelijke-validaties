@@ -48,9 +48,10 @@ the fictional `v2026.2.0` (step 7) is the first test with a second version.
    data comes from `test/rule_validation_data/<that version>/R.x/`.
 4. **Scripts per version**, using the helper:
    * `transpile_phases.sh` loops over the phases in `main.sch` (not over
-     test data folders) and writes to `validation_schemas/phases_transpiled_<version>/`
-     — directly under `validation_schemas/`, because the transpiled XSL
-     keeps the relative `../xsl_functions/` includes;
+     test data folders) and writes to
+     `validation_schemas/<version>/transpiled_phases/<rule>.xsl`, the same
+     folder as the compiled `main_scope_checks.xsl` (`main.sch` includes
+     `../../xsl_functions/`, which only resolves from there);
    * `validate_rules.sh`, `validate_rule_reports.sh` (report links point to
      the fixture's real folder), `check_rule_object_coverage.sh` read
      fixtures through the helper;

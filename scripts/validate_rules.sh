@@ -12,6 +12,6 @@ while read -r rule source; do
         test_type=$(basename "$test_dir")
         echo "Validating $test_type test data for rule $rule"
         mkdir -p $out_dir/$rule/$test_type
-        java -jar saxon-he.jar -xsl:validation_schemas/phases_transpiled_$version/$rule.xsl -s:$test_data_dir/$test_type/ -o:$out_dir/$rule/$test_type/
+        java -jar saxon-he.jar -xsl:validation_schemas/$version/transpiled_phases/$rule.xsl -s:$test_data_dir/$test_type/ -o:$out_dir/$rule/$test_type/
     done
 done <<< "$rules"

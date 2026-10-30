@@ -35,14 +35,23 @@ plus **SchXSLT2** (a Schematron→XSLT transpiler):
    rule (a Schematron "phase"), runs SchXSLT2's `transpile.xsl` (wrapped by
    `wrappers/transpile_phase_wrapper.xsl`, which works around Saxon CLI not
    accepting namespaced `schxslt:phase` parameters) against
-   `validation_schemas/base/v12.sch`, producing one standalone `.xsl`
-   stylesheet per rule under `validation_schemas/phases_transpiled/`:
+   a version's `validation_schemas/<version>/main.sch`, producing one
+   standalone `.xsl` stylesheet per rule in
+   `validation_schemas/<version>/transpiled_phases/<rule>.xsl` (git-ignored):
 
    ```bash
    java -jar saxon-he.jar -xsl:wrappers/transpile_phase_wrapper.xsl \
-     -s:validation_schemas/base/v12.sch \
-     -o:validation_schemas/phases_transpiled/R.36.xsl phase=R.36
+     -s:validation_schemas/v2026.1.0/main.sch \
+     -o:validation_schemas/v2026.1.0/transpiled_phases/R.36.xsl phase=R.36
    ```
+
+   SchXslt copies `main.sch`'s `<xsl:include href="../../xsl_functions/…"/>`
+   lines unchanged into every compiled file, and Saxon resolves them from
+   the compiled file's own location. So **every** stylesheet compiled from a
+   `main.sch` lives exactly two folders below `validation_schemas/`, in
+   `transpiled_phases/`: the per-rule phases and the scope-checked
+   `main_scope_checks.xsl` alike. A compiled file anywhere else cannot find
+   the function libraries.
 
 3. **Execution** — running that generated XSLT via Saxon against an NLCS++
    XML instance produces an **SVRL** report (Schematron Validation Report

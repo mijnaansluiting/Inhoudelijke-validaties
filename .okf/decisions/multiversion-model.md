@@ -80,9 +80,11 @@ combines a version with older versions into a `resolved_<version>` folder".
   This works without any build step because concrete patterns include
   nothing themselves: `main.sch` includes both concrete and abstract
   patterns directly, and concrete patterns refer to abstract ones by id
-  (`is-a`). SchXslt follows the paths while transpiling, and `main.sch`
-  stays one folder below `validation_schemas/`, so the
-  `../xsl_functions/` includes keep resolving.
+  (`is-a`). SchXslt follows the paths while transpiling. The function
+  libraries are included as `../../xsl_functions/…`; SchXslt copies that
+  path into the compiled XSL unchanged, so all compiled output of a version
+  lives in `validation_schemas/<version>/transpiled_phases/`, where it
+  resolves.
 * **Allowed include targets:** the version itself, or an **older,
   released** version. Never a newer or an unreleased version, so a
   half-finished version never leaks into a real one.

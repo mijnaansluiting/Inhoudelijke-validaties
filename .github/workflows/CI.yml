@@ -109,7 +109,7 @@ jobs:
       - name: Transpile Schematron to XSL
         run: |
           version=$(scripts/versions.sh latest)
-          java -jar saxon-he.jar -xsl:transpile.xsl -s:validation_schemas/$version/main_scope_checks.sch -o:validation_schemas/$version/main_scope_checks.xsl
+          java -jar saxon-he.jar -xsl:transpile.xsl -s:validation_schemas/$version/main_scope_checks.sch -o:validation_schemas/$version/transpiled_phases/main_scope_checks.xsl
 
       - name: Validate scopes
         run: scripts/validate_scopes.sh "$(scripts/versions.sh latest)"

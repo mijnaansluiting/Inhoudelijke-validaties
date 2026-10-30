@@ -1,5 +1,17 @@
 # Update Log
 
+## 2026-10-30
+* **Update**: [compilation-pipeline](./architecture/compilation-pipeline),
+  [multiversion-plan](./architecture/multiversion-plan),
+  [multiversion-model](./decisions/multiversion-model),
+  [build-and-release](./architecture/build-and-release) — all compiled
+  output of a version (per-rule phases and `main_scope_checks.xsl`) goes
+  to `validation_schemas/<version>/transpiled_phases/` (git-ignored),
+  replacing `validation_schemas/phases_transpiled_<version>/`; `main.sch`
+  includes the function libraries as `../../xsl_functions/`. The bundle
+  puts `main.xsl` at `dist/src/base/<version>/main.xsl` and the catalog at
+  `dist/doc/<version>/`, where the function libraries look for it.
+
 ## 2026-10-29 (4)
 * **Update**: [multiversion-model](./decisions/multiversion-model) —
   abstract-pattern includes in `main.sch` always name a version folder

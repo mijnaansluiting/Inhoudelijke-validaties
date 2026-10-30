@@ -22,16 +22,19 @@ published as a GitHub Release asset by the `Deliverables` workflow (see
 [ci/workflows](../ci/workflows)) whenever a `v*` tag is pushed.
 
 `bundle.sh` assembles a `dist/` directory containing:
-- the **scope-checked** base schema, transpiled to XSLT
-  (`validation_schemas/base_scope_checks/v12.xsl` — see
-  [compilation-pipeline](./compilation-pipeline) for how the
-  scope-checked variant is produced) under `dist/src/base/`
+- the **scope-checked** schema of the bundled version, transpiled to XSLT
+  (`validation_schemas/<version>/transpiled_phases/main_scope_checks.xsl` —
+  see [compilation-pipeline](./compilation-pipeline) for how the
+  scope-checked variant is produced), as `dist/src/base/<version>/main.xsl`.
+  It sits two folders below `dist/src/` because it includes
+  `../../xsl_functions/`.
 - the [xsl-function-libraries](./xsl-function-libraries) under
   `dist/src/xsl_functions/`
-- `configuration/` (both `sys_config.xml` and `user_config.xml`) under
-  `dist/configuration/`
-- `doc/NLCSValidatieRegels.xml` (the rule catalog itself — needed at runtime
-  by `rule_scope_functions.xsl`) under `dist/doc/`
+- `configuration/` (`sys_config.xml`, `user_config.xml`, `versions.xml`)
+  under `dist/configuration/`
+- the version's rule catalog (`doc/<version>/NLCSValidatieRegels.xml`,
+  needed at runtime by `rule_scope_functions.xsl`) under
+  `dist/doc/<version>/`
 - `localization/messages.xml` under `dist/localization/`
 
 ...then zips `dist/` as `nlcspp_inhoudelijke_validaties.zip`. This is the

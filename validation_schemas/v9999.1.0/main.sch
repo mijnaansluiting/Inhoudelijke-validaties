@@ -191,12 +191,12 @@
     <let name="active_version" value="'v9999.1.0'"/>
 
     <!-- import functions -->
-    <xsl:include href="../xsl_functions/geometry_functions.xsl"/>
-    <xsl:include href="../xsl_functions/config_functions.xsl"/>
-    <xsl:include href="../xsl_functions/localization_functions.xsl"/>
-    <xsl:include href="../xsl_functions/rule_scope_functions.xsl"/>
-    <xsl:include href="../xsl_functions/helper_functions.xsl"/>
-    <xsl:include href="../xsl_functions/connectivity_functions.xsl"/>
+    <xsl:include href="../../xsl_functions/geometry_functions.xsl"/>
+    <xsl:include href="../../xsl_functions/config_functions.xsl"/>
+    <xsl:include href="../../xsl_functions/localization_functions.xsl"/>
+    <xsl:include href="../../xsl_functions/rule_scope_functions.xsl"/>
+    <xsl:include href="../../xsl_functions/helper_functions.xsl"/>
+    <xsl:include href="../../xsl_functions/connectivity_functions.xsl"/>
 
     <!-- import patterns -->
     <include href="../v2026.1.0/patterns/R.1.sch"/>

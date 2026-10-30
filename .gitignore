@@ -5,7 +5,7 @@
 
 # Generated data
 dist/
-validation_schemas/phases_transpiled_*/
+validation_schemas/*/transpiled_phases/
 validation_schemas/*/abstract_patterns_scope_checks/
 validation_schemas/*/*_scope_checks.sch
 validation_schemas/*/*_scope_checks.xsl
