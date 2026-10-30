@@ -1,17 +1,17 @@
 #!/bin/bash
 
-version=$(scripts/versions.sh resolve "$1") || exit 1
-rules=$(scripts/versions.sh rules "$version") || exit 1
+VERSION=$(scripts/versions.sh resolve "$1") || exit 1
+RULES=$(scripts/versions.sh rules "$VERSION") || exit 1
 
 
-out_dir=rule_validation_reports/$version
+OUT_DIR=rule_validation_reports/$VERSION
 
-while read -r rule source; do
-    test_data_dir=test/rule_validation_data/$source/$rule
-    for test_dir in $test_data_dir/*; do
-        test_type=$(basename "$test_dir")
-        echo "Validating $test_type test data for rule $rule"
-        mkdir -p $out_dir/$rule/$test_type
-        java -jar saxon-he.jar -xsl:validation_schemas/$version/transpiled_phases/$rule.xsl -s:$test_data_dir/$test_type/ -o:$out_dir/$rule/$test_type/
+while read -r RULE SOURCE; do
+    TEST_DATA_DIR=test/rule_validation_data/$SOURCE/$RULE
+    for TEST_DIR in $TEST_DATA_DIR/*; do
+        TEST_TYPE=$(basename "$TEST_DIR")
+        echo "Validating $TEST_TYPE test data for rule $RULE"
+        mkdir -p $OUT_DIR/$RULE/$TEST_TYPE
+        java -jar saxon-he.jar -xsl:validation_schemas/$VERSION/transpiled_phases/$RULE.xsl -s:$TEST_DATA_DIR/$TEST_TYPE/ -o:$OUT_DIR/$RULE/$TEST_TYPE/
     done
-done <<< "$rules"
+done <<< "$RULES"

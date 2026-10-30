@@ -1,28 +1,28 @@
 #!/bin/bash
 
-version=$(scripts/versions.sh resolve "$1") || exit 1
+VERSION=$(scripts/versions.sh resolve "$1") || exit 1
 
-rules=$(scripts/versions.sh rules "$version") || exit 1
+RULES=$(scripts/versions.sh rules "$VERSION") || exit 1
 
-declare -A rules_source
+declare -A RULES_SOURCE
 
-while read -r rule source; do
-    rules_source[$rule]=$source
-done <<< "$rules"
+while read -r RULE SOURCE; do
+    RULES_SOURCE[$RULE]=$SOURCE
+done <<< "$RULES"
 
-rule_validation_reports_dir=rule_validation_reports/$version
-validation_test_results_dir=validation_test_results/$version
+RULE_VALIDATION_REPORTS_DIR=rule_validation_reports/$VERSION
+VALIDATION_TEST_RESULTS_DIR=validation_test_results/$VERSION
 
 # For every rule validation reports, generates a file containing PASS or FAIL
 # based on the test type (passing/failing) and the amount of <assert-failed> elements
-for rule_dir in $rule_validation_reports_dir/*; do
-    rule=$(basename "$rule_dir")
-    for test_dir in $rule_dir/*; do
-        test_type=$(basename "$test_dir")
-        mkdir -p "$validation_test_results_dir/$rule/$test_type"
+for RULE_DIR in $RULE_VALIDATION_REPORTS_DIR/*; do
+    RULE=$(basename "$RULE_DIR")
+    for TEST_DIR in $RULE_DIR/*; do
+        TEST_TYPE=$(basename "$TEST_DIR")
+        mkdir -p "$VALIDATION_TEST_RESULTS_DIR/$RULE/$TEST_TYPE"
 
-        echo "Checking $test_type validation reports for rule $rule"
-        java -jar saxon-he.jar -xsl:transformations/check_validation_reports.xsl -s:$rule_validation_reports_dir/$rule/$test_type/ -o:$validation_test_results_dir/$rule/$test_type/
+        echo "Checking $TEST_TYPE validation reports for rule $RULE"
+        java -jar saxon-he.jar -xsl:transformations/check_validation_reports.xsl -s:$RULE_VALIDATION_REPORTS_DIR/$RULE/$TEST_TYPE/ -o:$VALIDATION_TEST_RESULTS_DIR/$RULE/$TEST_TYPE/
     done
 done
 
@@ -33,30 +33,30 @@ done
     echo "| ------- | ---- | ---- |"
 } >> $GITHUB_STEP_SUMMARY
 
-all_rules_passing=true
+ALL_RULES_PASSING=true
 
 # Report every non-PASS file
-while IFS= read -r -d '' file; do
-    if [[ "$(cat "$file")" != "PASS" ]]; then
-        all_rules_passing=false
+while IFS= read -r -d '' FILE; do
+    if [[ "$(cat "$FILE")" != "PASS" ]]; then
+        ALL_RULES_PASSING=false
 
-        test_type=$(echo "$file" | cut -d'/' -f4)
-        rule=$(echo "$file" | cut -d'/' -f3)
-        source=$rules_source[$rule]
-        if [[ "$test_type" == "passing" ]]; then
-            message="Failed asserts found, expected none"
+        TEST_TYPE=$(echo "$FILE" | cut -d'/' -f4)
+        RULE=$(echo "$FILE" | cut -d'/' -f3)
+        SOURCE=$RULES_SOURCE[$RULE]
+        if [[ "$TEST_TYPE" == "passing" ]]; then
+            MESSAGE="Failed asserts found, expected none"
         else
-            message="Expected failed asserts, found none"
+            MESSAGE="Expected failed asserts, found none"
         fi
 
-        rule_validation_data_path="${file/validation_test_results\/$version\//test/rule_validation_data/$source}"
-        rule_validation_data_path="${rule_validation_data_path/%.txt/.xml}"
+        RULE_VALIDATION_DATA_PATH="${FILE/validation_test_results\/$VERSION\//test/rule_validation_data/$SOURCE}"
+        RULE_VALIDATION_DATA_PATH="${RULE_VALIDATION_DATA_PATH/%.txt/.xml}"
 
-        echo "| $message | $rule_validation_data_path | [View file](https://github.com/${GITHUB_REPOSITORY}/blob/${GITHUB_SHA}/$rule_validation_data_path) |" >> $GITHUB_STEP_SUMMARY
+        echo "| $MESSAGE | $RULE_VALIDATION_DATA_PATH | [View file](https://github.com/${GITHUB_REPOSITORY}/blob/${GITHUB_SHA}/$RULE_VALIDATION_DATA_PATH) |" >> $GITHUB_STEP_SUMMARY
     fi
-done < <(find "$validation_test_results_dir" -type f -print0)
+done < <(find "$VALIDATION_TEST_RESULTS_DIR" -type f -print0)
 
-if [[ "$all_rules_passing" != true ]]; then
+if [[ "$ALL_RULES_PASSING" != true ]]; then
     {
         echo
         echo "**For more detailed information, see the artifact below for the complete rule validation reports**"

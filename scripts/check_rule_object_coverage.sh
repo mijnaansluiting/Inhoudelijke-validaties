@@ -1,6 +1,6 @@
 #!/bin/bash
 
-version=$(scripts/versions.sh resolve "$1") || exit 1
+VERSION=$(scripts/versions.sh resolve "$1") || exit 1
 
 {
     echo "## Object coverage"
@@ -9,25 +9,25 @@ version=$(scripts/versions.sh resolve "$1") || exit 1
     echo "| ---- | -------- | ----- | ------- | ----- |"
 } >> $GITHUB_STEP_SUMMARY
 
-all_rules_covered_correctly=true
+ALL_RULES_COVERED_CORRECTLY=true
 
-for dir in rule_validation_reports/$version/*; do
-    rule_number=$(basename "$dir")
-    echo "Checking rule object coverage for $rule_number"
-    output=$(java -jar saxon-he.jar -xsl:transformations/check_object_coverage.xsl -s:doc/$version/NLCSValidatieRegels.xml rule_number=$rule_number version=$version)
+for DIR in rule_validation_reports/$VERSION/*; do
+    RULE_NUMBER=$(basename "$DIR")
+    echo "Checking rule object coverage for $RULE_NUMBER"
+    OUTPUT=$(java -jar saxon-he.jar -xsl:transformations/check_object_coverage.xsl -s:doc/$VERSION/NLCSValidatieRegels.xml rule_number=$RULE_NUMBER version=$VERSION)
 
-    while IFS=',' read -r -a markdown_and_validity; do
-        validity=${markdown_and_validity[1]}
-        if [[ $validity == false ]]; then
-            markdown=${markdown_and_validity[0]}
-            echo $markdown >> $GITHUB_STEP_SUMMARY
-            all_rules_covered_correctly=false
+    while IFS=',' read -r -a MARKDOWN_AND_VALIDITY; do
+        VALIDITY=${MARKDOWN_AND_VALIDITY[1]}
+        if [[ $VALIDITY == false ]]; then
+            MARKDOWN=${MARKDOWN_AND_VALIDITY[0]}
+            echo $MARKDOWN >> $GITHUB_STEP_SUMMARY
+            ALL_RULES_COVERED_CORRECTLY=false
         fi
-    done <<< "$output"
+    done <<< "$OUTPUT"
 done
 
-if [[ $all_rules_covered_correctly == false ]]; then
-    summary_url="$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
-    echo "::error title=Objects incorrectly covered::Some objects have been incorrectly covered. See the summary for more details: $summary_url"
+if [[ $ALL_RULES_COVERED_CORRECTLY == false ]]; then
+    SUMMARY_URL="$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+    echo "::error title=Objects incorrectly covered::Some objects have been incorrectly covered. See the summary for more details: $SUMMARY_URL"
     exit 1
 fi

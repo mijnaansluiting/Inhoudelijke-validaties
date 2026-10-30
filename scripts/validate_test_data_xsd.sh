@@ -1,21 +1,21 @@
 #!/bin/bash
 
-all_test_data_valid=true
-for version in $(scripts/versions.sh list); do
-    xsd_version=$(scripts/versions.sh xsd "$version")
-    keuzelijst=xsd/$xsd_version/NLCS_Netbeheer_Keuzelijst.xsd
+ALL_TEST_DATA_VALID=true
+for VERSION in $(scripts/versions.sh list); do
+    XSD_VERSION=$(scripts/versions.sh xsd "$VERSION")
+    KEUZELIJST=xsd/$XSD_VERSION/NLCS_Netbeheer_Keuzelijst.xsd
 
     # Test data must declare the NLCS++ version its rule-set version targets, since VersieNummer is what selects the version
-    while IFS= read -r test_file; do
-        echo "::error file=$test_file::$test_file must declare VersieNummer=\"$xsd_version\" on its root element"
-        all_test_data_valid=false
-    done < <(grep -rLF --include=*.xml "VersieNummer=\"$xsd_version\"" "test/rule_validation_data/$version")
+    while IFS= read -r TEST_FILE; do
+        echo "::error file=$TEST_FILE::$TEST_FILE must declare VersieNummer=\"$XSD_VERSION\" on its root element"
+        ALL_TEST_DATA_VALID=false
+    done < <(grep -rLF --include=*.xml "VersieNummer=\"$XSD_VERSION\"" "test/rule_validation_data/$VERSION")
 
-    if ! java -jar xerces-cli.jar "$keuzelijst" "test/rule_validation_data/$version"; then
-        all_test_data_valid=false
+    if ! java -jar xerces-cli.jar "$KEUZELIJST" "test/rule_validation_data/$VERSION"; then
+        ALL_TEST_DATA_VALID=false
     fi
 done
 
-if [[ "$all_test_data_valid" != true ]]; then
+if [[ "$ALL_TEST_DATA_VALID" != true ]]; then
     exit 1
 fi

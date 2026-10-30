@@ -1,11 +1,11 @@
 #!/bin/bash
 
-version=$(scripts/versions.sh resolve "$1") || exit 1
+VERSION=$(scripts/versions.sh resolve "$1") || exit 1
 
-rules=$(scripts/versions.sh rules "$version") || exit 1
+RULES=$(scripts/versions.sh rules "$VERSION") || exit 1
 
 
-for phase in $(awk '{ print $1 }' <<< "$rules"); do
-    echo "Transpiling schema for phase $phase"
-    java -jar saxon-he.jar -xsl:wrappers/transpile_phase_wrapper.xsl -s:validation_schemas/$version/main.sch -o:validation_schemas/$version/transpiled_phases/$phase.xsl phase=$phase
+for PHASE in $(awk '{ print $1 }' <<< "$RULES"); do
+    echo "Transpiling schema for phase $PHASE"
+    java -jar saxon-he.jar -xsl:wrappers/transpile_phase_wrapper.xsl -s:validation_schemas/$VERSION/main.sch -o:validation_schemas/$VERSION/transpiled_phases/$PHASE.xsl phase=$PHASE
 done

@@ -1,34 +1,34 @@
 #!/bin/bash
 
-version=$(scripts/versions.sh resolve "$1") || exit 1
+VERSION=$(scripts/versions.sh resolve "$1") || exit 1
 
-test_data_dir=test/rule_validation_data/$version
-out_dir=assets
+TEST_DATA_DIR=test/rule_validation_data/$VERSION
+OUT_DIR=assets
 
-rm -rf $out_dir/*
+rm -rf $OUT_DIR/*
 
-for rule_dir in $test_data_dir/*; do
-    rule=$(basename "$rule_dir")
-    for test_dir in $rule_dir/*; do
-        test_type=$(basename "$test_dir")
-        echo "$version/$rule/$test_type"
-        mkdir -p $out_dir/$rule/$test_type
+for RULE_DIR in $TEST_DATA_DIR/*; do
+    RULE=$(basename "$RULE_DIR")
+    for TEST_DIR in $RULE_DIR/*; do
+        TEST_TYPE=$(basename "$TEST_DIR")
+        echo "$VERSION/$RULE/$TEST_TYPE"
+        mkdir -p $OUT_DIR/$RULE/$TEST_TYPE
         # Generate SVGs as .xml files
-        java -jar saxon-he.jar -xsl:transformations/visualize_test_data.xsl -s:$test_data_dir/$rule/$test_type/ -o:$out_dir/$rule/$test_type/
-        for test_file in "$out_dir/$rule/$test_type/"*; do
-            test_name=$(basename "$test_file")
+        java -jar saxon-he.jar -xsl:transformations/visualize_test_data.xsl -s:$TEST_DATA_DIR/$RULE/$TEST_TYPE/ -o:$OUT_DIR/$RULE/$TEST_TYPE/
+        for TEST_FILE in "$OUT_DIR/$RULE/$TEST_TYPE/"*; do
+            TEST_NAME=$(basename "$TEST_FILE")
             # viewBox is empty when there are no geometries, so remove file
-            if grep -q viewBox=\"\" "$test_file"; then
-               rm $test_file
+            if grep -q viewBox=\"\" "$TEST_FILE"; then
+               rm $TEST_FILE
             fi
         done
     done
 done
 
 # Remove emtpy dirs
-find $out_dir/ -type d -empty -delete
+find $OUT_DIR/ -type d -empty -delete
 # Rename .xml to .svg
-find $out_dir/ -depth -name "*.xml" -exec sh -c 'mv "$1" "${1%.xml}.svg"' _ {} \;
+find $OUT_DIR/ -depth -name "*.xml" -exec sh -c 'mv "$1" "${1%.xml}.svg"' _ {} \;
 
 # Throw error in pipeline if any of the SVGs are not up-to-date
 if ! git diff --quiet assets/; then
