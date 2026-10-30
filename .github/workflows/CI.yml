@@ -112,7 +112,9 @@ jobs:
           java -jar saxon-he.jar -xsl:transpile.xsl -s:rules/$version/main_scope_checks.sch -o:rules/$version/transpiled_phases/main_scope_checks.xsl
 
       - name: Validate scopes
-        run: scripts/validate_scopes.sh "$(scripts/versions.sh latest)"
+        run: |
+          verison=$scripts/version.sh latest)
+          scripts/validate_scopes.sh $version
 
   validate-docs:
     needs: install-dependencies
@@ -134,10 +136,16 @@ jobs:
           name: installed-dependencies
 
       - name: Run tests
-        run: java test/XMLValidation.java doc/NLCSValidatieRegels.xsd doc/$(scripts/versions.sh latest)/NLCSValidatieRegels.xml
+        run: |
+          version=$(scripts/version.sh latest)
+          java test/XMLValidation.java doc/NLCSValidatieRegels.xsd doc/$version/NLCSValidatieRegels.xml
 
       - name: Generate and compare HTMLs
-        run: scripts/generate_and_compare_htmls.sh "$(scripts/versions.sh latest)"
+        run: |
+          version=$(scripts/version.sh latest)
+          scripts/generate_and_compare_htmls.sh $version
 
       - name: Generate and compare SVGs
-        run: scripts/generate_and_compare_svgs.sh "$(scripts/versions.sh latest)"
+        run: |
+          version=$(scripts/version.sh latest)
+          scripts/generate_and_compare_svgs.sh $version
