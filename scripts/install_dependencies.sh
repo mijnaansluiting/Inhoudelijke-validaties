@@ -38,6 +38,6 @@ curl -sSLo xerces-cli.jar https://github.com/krn-sytse/xerces-j/releases/latest/
 for xsd_version in $(scripts/versions.sh xsds); do
     xsd_dir=xsd/$xsd_version
     mkdir -p "$xsd_dir"
-    download_xsd "$xsd_dir/NLCS_Netbeheer.xsd" https://schemas.mijnaansluiting.nl/V${xsd_version}/NLCS_Netbeheer.xsd || exit 1
-    download_xsd "$xsd_dir/NLCS_Netbeheer_Keuzelijst.xsd" https://schemas.mijnaansluiting.nl/V${xsd_version}/NLCS_Netbeheer${KEUZELIJST_PROVIDER}V${xsd_version}Import_Keuzelijst.xsd || exit 1
+    download_xsd $xsd_dir/NLCS_Netbeheer.xsd https://raw.githubusercontent.com/mijnaansluiting/NLCSpp/refs/heads/main/schemas/V${xsd_version}/NLCS_Netbeheer.xsd || exit 1
+    download_xsd $xsd_dir/NLCS_Netbeheer_Keuzelijst.xsd https://raw.githubusercontent.com/mijnaansluiting/NLCSpp/refs/heads/main/schemas/V${xsd_version}/NLCS_Netbeheer${KEUZELIJST_PROVIDER}V${xsd_version}Import_Keuzelijst.xsd || exit 1
 done
