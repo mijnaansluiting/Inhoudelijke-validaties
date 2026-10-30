@@ -8,8 +8,9 @@
   <xsl:output method="text" />
 
   <xsl:param name="scope_name" as="xs:string"/>
+  <xsl:param name="version" as="xs:string" required="yes"/>
 
-  <xsl:variable name="config_doc" select="document('../doc/NLCSValidatieRegels.xml')"/>
+  <xsl:variable name="config_doc" select="document(concat('../doc/', $version, '/NLCSValidatieRegels.xml'))"/>
   <xsl:variable name="scope" select="$config_doc/nvr:NLCSValidatieregels/nvr:scopes/nvr:scope[@naam=$scope_name]"/>
   <xsl:variable name="expected" select="sort($scope/nvr:scopeValidatieRegels/nvr:scopeValidatieRegel/nvr:nummer ! substring-after(., 'R.') ! xs:integer(.))"/>
 

@@ -1,24 +1,27 @@
 #!/bin/bash
 
-version=v2026.1.0
-out_dir=dist
+VERSION=$(scripts/versions.sh resolve "$1") || exit 1
+OUT_DIR=dist
 
-mkdir -p $out_dir/src/base
-mkdir -p $out_dir/doc
-mkdir -p $out_dir/localization
+# main.xsl includes ../../xsl_functions/, so it sits two folders below src/, like the
+# compiled schemas in validation_schemas/<version>/transpiled_phases/
+mkdir -p $OUT_DIR/src/base/$VERSION
+mkdir -p $OUT_DIR/doc/$VERSION
+mkdir -p $OUT_DIR/localization
 
 # Copy base schema
-cp validation_schemas/$version/main_scope_checks.xsl $out_dir/src/base/main.xsl
+cp rules/$VERSION/transpiled_phases/main_scope_checks.xsl $OUT_DIR/src/base/$VERSION/main.xsl
 
 # Copy XSL functions
-cp -a validation_schemas/xsl_functions/. $out_dir/src/xsl_functions
+cp -a rules/xsl_functions/. $OUT_DIR/src/xsl_functions
 
 # Copy config files
-cp -a configuration/. $out_dir/configuration/
-cp doc/NLCSValidatieRegels.xml $out_dir/doc/
+cp -a configuration/. $OUT_DIR/configuration/
+# rule_scope_functions.xsl reads doc/<version>/NLCSValidatieRegels.xml
+cp doc/$VERSION/NLCSValidatieRegels.xml $OUT_DIR/doc/$VERSION/
 
 # Copy localization messages
-cp -a localization/* $out_dir/localization/
+cp -a localization/* $OUT_DIR/localization/
 
 # Zip release
 zip -r nlcspp_inhoudelijke_validaties.zip dist

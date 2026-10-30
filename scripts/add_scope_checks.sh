@@ -1,18 +1,18 @@
 #!/bin/bash
 
-version=v2026.1.0
+VERSION=$(scripts/versions.sh resolve "$1") || exit 1
 
-schema_dir=validation_schemas/$version
+SCHEMA_DIR=rules/$VERSION
 
-mkdir -p $schema_dir/abstract_patterns_scope_checks
+mkdir -p $SCHEMA_DIR/abstract_patterns_scope_checks
 
-for abstract_pattern_dir in $schema_dir/abstract_patterns/*; do
-    pattern_type=$(basename "$abstract_pattern_dir")
-    echo Adding scope checks to $pattern_type abstract patterns...
+for ABSTRACT_PATTERN_DIR in $SCHEMA_DIR/abstract_patterns/*; do
+    PATTERN_TYPE=$(basename "$ABSTRACT_PATTERN_DIR")
+    echo Adding scope checks to $PATTERN_TYPE abstract patterns...
 
-    mkdir -p $schema_dir/abstract_patterns_scope_checks/$pattern_type
-    java -jar saxon-he.jar -xsl:transformations/abstract_patterns_scope_checks.xsl -s:$schema_dir/abstract_patterns/$pattern_type/ -o:$schema_dir/abstract_patterns_scope_checks/$pattern_type
+    mkdir -p $SCHEMA_DIR/abstract_patterns_scope_checks/$PATTERN_TYPE
+    java -jar saxon-he.jar -xsl:transformations/abstract_patterns_scope_checks.xsl -s:$SCHEMA_DIR/abstract_patterns/$PATTERN_TYPE/ -o:$SCHEMA_DIR/abstract_patterns_scope_checks/$PATTERN_TYPE
 done
 
 echo Updating Schematron base to importing updated abstract patterns...
-java -jar saxon-he.jar -xsl:transformations/base_scope_checks.xsl -s:$schema_dir/main.sch -o:$schema_dir/main_scope_checks.sch
+java -jar saxon-he.jar -xsl:transformations/base_scope_checks.xsl -s:$SCHEMA_DIR/main.sch -o:$SCHEMA_DIR/main_scope_checks.sch

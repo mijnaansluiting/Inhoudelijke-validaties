@@ -6,7 +6,7 @@
             xmlns:nvr="NLCSValidatieRegelsNameSpace"
             version="3.0">
   
-  <variable name="validatieregels_file" select="document('../../doc/NLCSValidatieRegels.xml')"/>
+  <variable name="validatieregels_file" select="document('../../doc/' || $active_version || '/NLCSValidatieRegels.xml')"/>
   <variable name="scopes" select="$validatieregels_file/nvr:NLCSValidatieregels/nvr:scopes/nvr:scope"/>
 
   <function name="ma:rule-string" as="xs:string">

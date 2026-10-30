@@ -11,7 +11,7 @@
       <xsl:param name="rule_number" as="xs:string"/>
       <xsl:param name="version" as="xs:string"/>
       
-      <xsl:variable name="config_doc" select="document('../doc/NLCSValidatieRegels.xml')"/>
+      <xsl:variable name="config_doc" select="document(concat('../doc/', $version, '/NLCSValidatieRegels.xml'))"/>
 
       <xsl:variable name="failing_test_files" select="collection(concat('../rule_validation_reports/', $version, '/', $rule_number, '/failing/?select=*.xml'))"/>
       <xsl:variable name="rule" select="$config_doc/nvr:NLCSValidatieregels/nvr:validatieRegels/nvr:validatieRegel[@nummer = $rule_number]"/>

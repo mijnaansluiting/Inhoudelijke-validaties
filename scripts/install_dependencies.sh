@@ -3,26 +3,25 @@
 SAXON_HE_MAJOR=12
 SAXON_HE_MINOR=8
 SCHXSLT2_VERSION=1.4.4
-NLCS_NETBEHEER_VERSION=12.1
 KEUZELIJST_PROVIDER=Enexis
 XSD_DOWNLOAD_ATTEMPTS=5
 
 download_xsd() {
-    local output=$1
-    local url=$2
+    local OUTPUT=$1
+    local URL=$2
 
-    for attempt in $(seq 1 $XSD_DOWNLOAD_ATTEMPTS); do
-        if curl -fsSLo "$output" "$url" && grep -q "<xs:schema" "$output"; then
+    for ATTEMPT in $(seq 1 $XSD_DOWNLOAD_ATTEMPTS); do
+        if curl -fsSLo "$OUTPUT" "$URL" && grep -q "<xs:schema" "$OUTPUT"; then
             return 0
         fi
-        echo "Download of $output failed (attempt $attempt/$XSD_DOWNLOAD_ATTEMPTS)" >&2
-        if [[ $attempt -lt $XSD_DOWNLOAD_ATTEMPTS ]]; then
+        echo "Download of $OUTPUT failed (attempt $ATTEMPT/$XSD_DOWNLOAD_ATTEMPTS)" >&2
+        if [[ $ATTEMPT -lt $XSD_DOWNLOAD_ATTEMPTS ]]; then
             sleep 5
         fi
     done
 
-    rm -f "$output"
-    echo "::error title=XSD download failed::Could not download $output from $url after $XSD_DOWNLOAD_ATTEMPTS attempts" >&2
+    rm -f "$OUTPUT"
+    echo "::error title=XSD download failed::Could not download $OUTPUT from $URL after $XSD_DOWNLOAD_ATTEMPTS attempts" >&2
     return 1
 }
 
@@ -36,5 +35,9 @@ unzip -qop schxslt2-${SCHXSLT2_VERSION}.zip schxslt2-${SCHXSLT2_VERSION}/transpi
 rm schxslt2-${SCHXSLT2_VERSION}.zip
 
 curl -sSLo xerces-cli.jar https://github.com/krn-sytse/xerces-j/releases/latest/download/xerces-cli.jar
-download_xsd NLCS_Netbeheer.xsd https://raw.githubusercontent.com/mijnaansluiting/NLCSpp/refs/heads/main/schemas/V${NLCS_NETBEHEER_VERSION}/NLCS_Netbeheer.xsd || exit 1
-download_xsd NLCS_Netbeheer_Keuzelijst.xsd https://raw.githubusercontent.com/mijnaansluiting/NLCSpp/refs/heads/main/schemas/V${NLCS_NETBEHEER_VERSION}/NLCS_Netbeheer${KEUZELIJST_PROVIDER}V${NLCS_NETBEHEER_VERSION}Import_Keuzelijst.xsd || exit 1
+for XSD_VERSION in $(scripts/versions.sh xsds); do
+    XSD_DIR=schemas/$XSD_VERSION
+    mkdir -p "$XSD_DIR"
+    download_xsd $XSD_DIR/NLCS_Netbeheer.xsd https://raw.githubusercontent.com/mijnaansluiting/NLCSpp/refs/heads/main/schemas/V${XSD_VERSION}/NLCS_Netbeheer.xsd || exit 1
+    download_xsd $XSD_DIR/NLCS_Netbeheer_Keuzelijst.xsd https://raw.githubusercontent.com/mijnaansluiting/NLCSpp/refs/heads/main/schemas/V${XSD_VERSION}/NLCS_Netbeheer${KEUZELIJST_PROVIDER}V${XSD_VERSION}Import_Keuzelijst.xsd || exit 1
+done

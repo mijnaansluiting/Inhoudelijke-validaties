@@ -16,7 +16,10 @@ jobs:
         uses: actions/checkout@v5
 
       - name: Check rule coverage
-        run: scripts/check_rule_coverage.sh
+        run: scripts/check_rule_coverage.sh "$(scripts/versions.sh latest)"
+
+      - name: Check active version declarations
+        run: scripts/check_active_version.sh
 
   install-dependencies:
     needs: covered-rules
@@ -38,8 +41,7 @@ jobs:
             lib/
             transpile.xsl
             xerces-cli.jar
-            NLCS_Netbeheer.xsd
-            NLCS_Netbeheer_Keuzelijst.xsd
+            schemas/
           if-no-files-found: error
           retention-days: 1
 
@@ -63,13 +65,12 @@ jobs:
           name: installed-dependencies
 
       - name: Validate rule test data XSD compliance
-        run: java -jar xerces-cli.jar NLCS_Netbeheer_Keuzelijst.xsd test/rule_validation_data
-
+        run: scripts/validate_test_data_xsd.sh
       - name: Transpile phases to XSL
-        run: scripts/transpile_phases.sh
+        run: scripts/transpile_phases.sh "$(scripts/versions.sh latest)"
 
       - name: Validate rules
-        run: scripts/validate_rules.sh
+        run: scripts/validate_rules.sh "$(scripts/versions.sh latest)"
 
       - name: Upload validation reports
         uses: actions/upload-artifact@v4
@@ -78,10 +79,10 @@ jobs:
           path: rule_validation_reports
 
       - name: Validate test reports
-        run: scripts/validate_rule_reports.sh
+        run: scripts/validate_rule_reports.sh "$(scripts/versions.sh latest)"
 
       - name: Check rule object coverage
-        run: scripts/check_rule_object_coverage.sh
+        run: scripts/check_rule_object_coverage.sh "$(scripts/versions.sh latest)"
 
   validate-scopes:
     needs: install-dependencies
@@ -103,13 +104,17 @@ jobs:
           name: installed-dependencies
 
       - name: Add scope checks
-        run: scripts/add_scope_checks.sh
+        run: scripts/add_scope_checks.sh "$(scripts/versions.sh latest)"
 
       - name: Transpile Schematron to XSL
-        run: java -jar saxon-he.jar -xsl:transpile.xsl -s:validation_schemas/v2026.1.0/main_scope_checks.sch -o:validation_schemas/v2026.1.0/main_scope_checks.xsl
+        run: |
+          version=$(scripts/versions.sh latest)
+          java -jar saxon-he.jar -xsl:transpile.xsl -s:rules/$version/main_scope_checks.sch -o:rules/$version/transpiled_phases/main_scope_checks.xsl
 
       - name: Validate scopes
-        run: scripts/validate_scopes.sh
+        run: |
+          verison=$scripts/versions.sh latest)
+          scripts/validate_scopes.sh $version
 
   validate-docs:
     needs: install-dependencies
@@ -131,10 +136,16 @@ jobs:
           name: installed-dependencies
 
       - name: Run tests
-        run: java test/XMLValidation.java doc/NLCSValidatieRegels.xsd doc/NLCSValidatieRegels.xml
+        run: |
+          version=$(scripts/versions.sh latest)
+          java test/XMLValidation.java doc/NLCSValidatieRegels.xsd doc/$version/NLCSValidatieRegels.xml
 
       - name: Generate and compare HTMLs
-        run: scripts/generate_and_compare_htmls.sh
+        run: |
+          version=$(scripts/versions.sh latest)
+          scripts/generate_and_compare_htmls.sh $version
 
       - name: Generate and compare SVGs
-        run: scripts/generate_and_compare_svgs.sh
+        run: |
+          version=$(scripts/versions.sh latest)
+          scripts/generate_and_compare_svgs.sh $version

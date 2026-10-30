@@ -2,12 +2,15 @@
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:nvr="NLCSValidatieRegelsNameSpace"
                 xmlns:nlcs="NS_NLCSnetbeheer"
-                exclude-result-prefixes="nvr">
+                xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                exclude-result-prefixes="nvr xs">
 
   <xsl:output method="xml" indent="true"/>
 
+  <xsl:param name="version" as="xs:string" required="yes"/>
+
   <!-- Load config XML -->
-  <xsl:variable name="config_doc" select="document('../doc/NLCSValidatieRegels.xml')"/>
+  <xsl:variable name="config_doc" select="document(concat('../doc/', $version, '/NLCSValidatieRegels.xml'))"/>
   <xsl:variable name="scopes" select="$config_doc/nvr:NLCSValidatieregels/nvr:scopes/nvr:scope"/>
 
   <!-- Main template -->
