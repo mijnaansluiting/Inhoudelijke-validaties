@@ -63,7 +63,7 @@ case "$1" in
         ;;
     rules)
         VERSION=$("$0" resolve "$2") || exit 1
-        SCHEMA_NAME=validation_schemas/$VERSION/main.sch
+        SCHEMA_NAME=rules/$VERSION/main.sch
         SCHEMA="$(dirname "$0")/../$SCHEMA_NAME"
         [[ -f "$SCHEMA" ]] || fail "$SCHEMA_NAME does not exist"
 

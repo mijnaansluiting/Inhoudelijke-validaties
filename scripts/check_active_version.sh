@@ -6,7 +6,7 @@
 ALL_VERSIONS_MATCH=true
 
 for VERSION in $(scripts/versions.sh list); do
-    SCHEMA=validation_schemas/$VERSION/main.sch
+    SCHEMA=rules/$VERSION/main.sch
     if [[ ! -f "$SCHEMA" ]]; then
         echo "::error file=configuration/versions.xml::Version $VERSION is registered, but $SCHEMA does not exist"
         ALL_VERSIONS_MATCH=false
@@ -24,7 +24,7 @@ for VERSION in $(scripts/versions.sh list); do
     fi
 done
 
-for SCHEMA_DIR in validation_schemas/v*/; do
+for SCHEMA_DIR in rules/v*/; do
     VERSION=$(basename "$SCHEMA_DIR")
     if ! scripts/versions.sh list | grep -qx "$VERSION"; then
         echo "::error file=configuration/versions.xml::$SCHEMA_DIR is not registered in configuration/versions.xml"

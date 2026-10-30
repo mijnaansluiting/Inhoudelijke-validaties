@@ -10,10 +10,10 @@ mkdir -p $OUT_DIR/doc/$VERSION
 mkdir -p $OUT_DIR/localization
 
 # Copy base schema
-cp validation_schemas/$VERSION/transpiled_phases/main_scope_checks.xsl $OUT_DIR/src/base/$VERSION/main.xsl
+cp rules/$VERSION/transpiled_phases/main_scope_checks.xsl $OUT_DIR/src/base/$VERSION/main.xsl
 
 # Copy XSL functions
-cp -a validation_schemas/xsl_functions/. $OUT_DIR/src/xsl_functions
+cp -a rules/xsl_functions/. $OUT_DIR/src/xsl_functions
 
 # Copy config files
 cp -a configuration/. $OUT_DIR/configuration/

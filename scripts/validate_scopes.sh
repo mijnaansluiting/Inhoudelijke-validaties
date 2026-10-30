@@ -30,7 +30,7 @@ for SCOPE_DIR in "$IN_DIR"/*; do
                 OUT_FILE=$FILE_OUT_DIR/$BEDRIJFSTOESTAND.svrl.xml
 
                 echo Validating $SCOPE "->" $TEKENING_TYPE "->" $STATUS "->" $BEDRIJFSTOESTAND
-                java -jar saxon-he.jar -xsl:validation_schemas/$VERSION/transpiled_phases/main_scope_checks.xsl -s:"$BEDRIJFSTOESTAND_FILE" -o:"$OUT_FILE"
+                java -jar saxon-he.jar -xsl:rules/$VERSION/transpiled_phases/main_scope_checks.xsl -s:"$BEDRIJFSTOESTAND_FILE" -o:"$OUT_FILE"
 
                 VALIDATION_REPORT_ANALYSIS="$(java -jar saxon-he.jar -xsl:transformations/check_scope_coverage.xsl -s:"$OUT_FILE" scope_name="$SCOPE" version="$VERSION")"
 

@@ -3,7 +3,7 @@
 ALL_TEST_DATA_VALID=true
 for VERSION in $(scripts/versions.sh list); do
     XSD_VERSION=$(scripts/versions.sh xsd "$VERSION")
-    KEUZELIJST=xsd/$XSD_VERSION/NLCS_Netbeheer_Keuzelijst.xsd
+    KEUZELIJST=schemas/$XSD_VERSION/NLCS_Netbeheer_Keuzelijst.xsd
 
     # Test data must declare the NLCS++ version its rule-set version targets, since VersieNummer is what selects the version
     while IFS= read -r TEST_FILE; do

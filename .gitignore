@@ -5,10 +5,10 @@
 
 # Generated data
 dist/
-validation_schemas/*/transpiled_phases/
-validation_schemas/*/abstract_patterns_scope_checks/
-validation_schemas/*/*_scope_checks.sch
-validation_schemas/*/*_scope_checks.xsl
+rules/*/transpiled_phases/
+rules/*/abstract_patterns_scope_checks/
+rules/*/*_scope_checks.sch
+rules/*/*_scope_checks.xsl
 validation_test_results/
 rule_validation_reports/
 scoped_objects/
@@ -23,4 +23,4 @@ transpile.xsl
 .classpath
 lib/
 /bin/
-xsd/
+schemas/
