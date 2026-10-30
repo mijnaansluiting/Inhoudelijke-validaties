@@ -113,7 +113,7 @@ jobs:
 
       - name: Validate scopes
         run: |
-          verison=$scripts/version.sh latest)
+          verison=$scripts/versions.sh latest)
           scripts/validate_scopes.sh $version
 
   validate-docs:
@@ -137,15 +137,15 @@ jobs:
 
       - name: Run tests
         run: |
-          version=$(scripts/version.sh latest)
+          version=$(scripts/versions.sh latest)
           java test/XMLValidation.java doc/NLCSValidatieRegels.xsd doc/$version/NLCSValidatieRegels.xml
 
       - name: Generate and compare HTMLs
         run: |
-          version=$(scripts/version.sh latest)
+          version=$(scripts/versions.sh latest)
           scripts/generate_and_compare_htmls.sh $version
 
       - name: Generate and compare SVGs
         run: |
-          version=$(scripts/version.sh latest)
+          version=$(scripts/versions.sh latest)
           scripts/generate_and_compare_svgs.sh $version
