@@ -1,7 +1,7 @@
 # Validation Rules
 
 The full catalog of 37 Schematron content-validation rules (`R.1`–`R.41`;
-`R.16`–`R.19` don't exist). Source of truth: `doc/NLCSValidatieRegels.xml`.
+`R.16`–`R.19` don't exist). Source of truth: `<version>/doc/NLCSValidatieRegels.xml` (currently `v2026.1.0/doc/NLCSValidatieRegels.xml`).
 Severity of each rule varies by [scope](../domain/scope-severity-model).
 
 ## Bestand (file-level)

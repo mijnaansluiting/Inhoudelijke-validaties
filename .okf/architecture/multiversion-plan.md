@@ -5,8 +5,8 @@ description: Ordered steps to make scripts, CI and the release support several r
 tags: versioning, plan, ci
 status: draft
 generated:
-  by: claude-opus-5-5
-  at: 2026-10-28T00:00:00Z
+  by: claude-code/opus-5-5
+  at: 2026-11-02T00:00:00Z
 sources:
   - resource: "../decisions/multiversion-model.md"
     title: "Multiversion model"
@@ -26,10 +26,23 @@ the fictional `v2026.2.0` (step 7) is the first test with a second version.
    scripts and workflows read the version from it.
 3. **Per-version config and catalog** — `sys_config.xml` block per version,
    selected through `$active_version` in each `main.sch`; catalog in
-   `doc/<version>/`; `scripts/check_active_version.sh` in CI.
-4. **XSD per version** — `xsd/<xsd version>/`, test data checked against
+   `<version>/doc/`; `scripts/check_active_version.sh` in CI.
+4. **XSD per version** — `schemas/<xsd version>/`, test data checked against
    its own version's XSD and `VersieNummer` (= the version's `nlcspp`) by
    `scripts/validate_test_data_xsd.sh`.
+
+**Repository layout: one folder per version at the root.** Everything
+version-specific lives under `<version>/` (e.g. `v2026.1.0/`):
+`rules/` (`main.sch`, `patterns/`, `abstract_patterns/` and the generated
+`transpiled_phases/`, `abstract_patterns_scope_checks/`,
+`main_scope_checks.{sch,xsl}`), `doc/NLCSValidatieRegels.{xml,html}`,
+`test/rule_validation_data/`, `test/scope_validation_data/`, `assets/`
+(committed test-data SVGs) and the generated `rule_validation_reports/`,
+`validation_test_results/`, `scoped_objects/` and `scoped_objects_reports/`.
+Shared tooling stays at the root: `xsl_functions/`, `configuration/`,
+`localization/`, `transformations/`, `wrappers/`, `scripts/`, `schemas/`,
+and `doc/NLCSValidatieRegels.{xsl,css,xsd}`. The release `dist/` mirrors
+this layout (see [build-and-release](./build-and-release)).
 
 # Step 5: run the pipeline per version
 
@@ -45,24 +58,25 @@ the fictional `v2026.2.0` (step 7) is the first test with a second version.
    that rule's test data.
 3. **Rule-source helper**: reads a version's `main.sch` and prints, per
    phase, the version folder its pattern is included from. A rule's test
-   data comes from `test/rule_validation_data/<that version>/R.x/`.
+   data comes from `<that version>/test/rule_validation_data/R.x/`
+   (`scripts/versions.sh rules`).
 4. **Scripts per version**, using the helper:
    * `transpile_phases.sh` loops over the phases in `main.sch` (not over
      test data folders) and writes to
-     `validation_schemas/<version>/transpiled_phases/<rule>.xsl`, the same
+     `<version>/rules/transpiled_phases/<rule>.xsl`, the same
      folder as the compiled `main_scope_checks.xsl` (`main.sch` includes
-     `../../xsl_functions/`, which only resolves from there);
+     `../../../xsl_functions/`, which only resolves from there);
    * `validate_rules.sh`, `validate_rule_reports.sh` (report links point to
      the fixture's real folder), `check_rule_object_coverage.sh` read
      fixtures through the helper;
    * `add_scope_checks.sh` runs for **every** version folder before any
-     scope schema is transpiled, because `../vX/abstract_patterns/…`
-     includes become `../vX/abstract_patterns_scope_checks/…`;
-   * `validate_scopes.sh` writes to `scoped_objects/<version>/` and
-     `scoped_objects_reports/<version>/`;
-   * `generate_and_compare_svgs.sh` writes `assets/<version>/` for each
-     version's own fixtures (one-time move of the current SVGs to
-     `assets/v2026.1.0/`).
+     scope schema is transpiled, because `../../vX/rules/abstract_patterns/…`
+     includes become `../../vX/rules/abstract_patterns_scope_checks/…`;
+   * `validate_scopes.sh` writes to `<version>/scoped_objects/` and
+     `<version>/scoped_objects_reports/`;
+   * `generate_and_compare_svgs.sh` writes `<version>/assets/` for each
+     version's own fixtures (the current SVGs already live in
+     `v2026.1.0/assets/`).
 5. **CI matrix**: a first job outputs `scripts/versions.sh matrix`; the
    rule, scope and docs jobs run per version (`fail-fast: false`) with the
    version in every artifact name. `install-dependencies` stays a single
@@ -73,15 +87,15 @@ the fictional `v2026.2.0` (step 7) is the first test with a second version.
 
 * `scripts/new_version.sh <new> <xsd>`: registry entry (`released="false"`);
   copy the previous version's `main.sch`, turning its own relative pattern
-  includes (`patterns/…`) into `../<previous>/patterns/…` and keeping
-  existing `../vX/` includes (abstract-pattern includes already always name
+  includes (`patterns/…`) into `../../<previous>/rules/patterns/…` and keeping
+  existing `../../vX/rules/` includes (abstract-pattern includes already always name
   a version folder); set `active_version`; empty `patterns/`,
   `abstract_patterns/` and test data folders; copy the scope template,
-  catalog and `sys_config` block.
+  catalog and `sys_config` block, all under the new `<new>/` root folder.
 * `scripts/rename_version.sh <old> <new>` for fix renames: rename the
-  folders under `validation_schemas/`, `test/` and `doc/`, the `sys_config`
-  id, the registry entry and `active_version`, and rewrite every
-  `../<old>/` include in later versions' `main.sch`.
+  `<old>/` root folder, the `sys_config` id, the registry entry and
+  `active_version`, and rewrite every `../../<old>/` include in later
+  versions' `main.sch`.
 
 # Step 7: fictional version
 
@@ -100,5 +114,5 @@ results must not change.
 # Step 9: clean up
 
 * Delete the fictional `v2026.2.0`.
-* Update the OKF pages that still describe `v12` paths (rules, testing, CI,
-  schematron-layering, compilation-pipeline).
+* ~~Update the OKF pages that still describe `v12` paths~~ — done
+  2026-11-02 together with the per-version root restructure.

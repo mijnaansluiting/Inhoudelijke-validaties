@@ -4,12 +4,12 @@ title: NLCS++ and content validation
 description: What NLCS++ is and why structural XSD validation isn't enough to guarantee usable grid-asset data.
 tags: domain, nlcs
 generated:
-  by: human:sytse.walraven
-  at: 2026-08-26T00:00:00Z
+  by: claude-code/opus-5-5
+  at: 2026-11-02T00:00:00Z
 sources:
   - resource: "../../README.md"
     title: "README.md"
-  - resource: "../../doc/NLCSValidatieRegels.xml"
+  - resource: "../../v2026.1.0/doc/NLCSValidatieRegels.xml"
     title: "NLCS Validatieregels catalog"
 ---
 
@@ -43,7 +43,8 @@ validations "on every device" that the netbeheerder itself runs.
 # The rule catalog
 
 The 37 rules (`R.1`–`R.41`, with gaps at `R.16`–`R.19`) are catalogued with
-their full Dutch definitions in `doc/NLCSValidatieRegels.xml` (rendered as
+their full Dutch definitions in a per-version catalog,
+`<version>/doc/NLCSValidatieRegels.xml` (rendered as
 HTML and published to GitHub Pages). Each rule has its own OKF concept under
 [/rules](../rules/index). Rules don't all apply with the same severity in
 every situation — see [scope-severity-model](./scope-severity-model)

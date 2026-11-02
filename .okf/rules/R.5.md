@@ -2,15 +2,15 @@
 type: Validation Rule
 title: R.5 — GisId en AssetId
 description: Checks that objects originating from asset registration (Status BESTAAND, REVISIE, or VERWIJDERD) carry a GisId and AssetId, while newly designed objects (Status NIEUW) do not.
-resource: validation_schemas/patterns/v12/R.5.sch
+resource: v2026.1.0/rules/patterns/R.5.sch
 tags: verplichte-waarde
 generated:
-  by: human:sytse.walraven
-  at: 2026-08-26T00:00:00Z
+  by: claude-code/opus-5-5
+  at: 2026-11-02T00:00:00Z
 sources:
-  - resource: "../../doc/NLCSValidatieRegels.xml"
+  - resource: "../../v2026.1.0/doc/NLCSValidatieRegels.xml"
     title: "NLCS Validatieregels catalog"
-  - resource: "../../validation_schemas/abstract_patterns/v12/verplichte_waarde/gisid_en_assetid.sch"
+  - resource: "../../v2026.1.0/rules/abstract_patterns/verplichte_waarde/gisid_en_assetid.sch"
     title: "gisid_en_assetid.sch"
 ---
 

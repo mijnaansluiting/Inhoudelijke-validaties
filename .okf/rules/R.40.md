@@ -2,15 +2,15 @@
 type: Validation Rule
 title: R.40 — Volgnummer verplicht
 description: Checks that AprojectReferentie has a Volgnummer value when Tekeningtype is DEELREVISIE or EINDREVISIE.
-resource: validation_schemas/patterns/v12/R.40.sch
+resource: v2026.1.0/rules/patterns/R.40.sch
 tags: bestand
 generated:
-  by: human:sytse.walraven
-  at: 2026-08-26T00:00:00Z
+  by: claude-code/opus-5-5
+  at: 2026-11-02T00:00:00Z
 sources:
-  - resource: "../../doc/NLCSValidatieRegels.xml"
+  - resource: "../../v2026.1.0/doc/NLCSValidatieRegels.xml"
     title: "NLCS Validatieregels catalog"
-  - resource: "../../validation_schemas/abstract_patterns/v12/bestand/volgnummer_verplicht.sch"
+  - resource: "../../v2026.1.0/rules/abstract_patterns/bestand/volgnummer_verplicht.sch"
     title: "volgnummer_verplicht.sch"
 ---
 

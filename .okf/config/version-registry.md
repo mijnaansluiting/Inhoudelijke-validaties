@@ -6,14 +6,14 @@ resource: configuration/versions.xml
 tags: configuration, versioning
 status: draft
 generated:
-  by: claude-opus-5-5
-  at: 2026-10-27T00:00:00Z
+  by: claude-code/opus-5-5
+  at: 2026-11-02T00:00:00Z
 sources:
   - resource: "../../configuration/versions.xml"
     title: "versions.xml"
   - resource: "../../scripts/versions.sh"
     title: "versions.sh"
-  - resource: "../../validation_schemas/xsl_functions/version_functions.xsl"
+  - resource: "../../xsl_functions/version_functions.xsl"
     title: "version_functions.xsl"
 ---
 
@@ -29,8 +29,10 @@ version folders and this file.
 
 One `<version/>` element per line (the bash helper parses lines, not XML).
 There is no schema for the registry; `scripts/check_active_version.sh`
-checks that every registered version has a schema folder, `sys_config`
-block and catalog, and that every version folder is registered.
+checks that every registered version has a `<version>/rules/main.sch`
+declaring a matching `active_version`, a `sys_config` block and a catalog
+`<version>/doc/NLCSValidatieRegels.xml`, and that every `v*/` root folder is
+registered.
 
 | Attribute | Required | Meaning |
 |---|---|---|
@@ -50,7 +52,8 @@ block and catalog, and that every version folder is registered.
 | `latest [xsd]` | Newest released version, optionally for one XSD version. |
 | `resolve <version>` | Full id for a full id or a `vYEAR.RELEASE` alias (newest fix); fails if unknown. |
 | `xsd <version>` | That version's XSD version. |
-| `sources <version>` | The version itself, then older released versions, newest first: the versions its `main.sch` may include from. |
+| `rules <version>` | One `R.x <version>` line per phase in `<version>/rules/main.sch`: the version folder the rule's pattern is included from, parsed from includes matching `(../../v*/rules/)?patterns/R.*` (a relative `patterns/R.x.sch` means the version itself). Scripts use it to find a rule's test data in `<that version>/test/rule_validation_data/`. |
+| `base <version>` | The registry's `base` field for that version (empty when absent). |
 | `xsds` | Distinct XSD versions. |
 | `matrix` | JSON array of all ids, for a CI matrix. |
 

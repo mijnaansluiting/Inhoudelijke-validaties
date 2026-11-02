@@ -4,12 +4,12 @@ title: Memoized geometry parsing (ma:parse-point/ma:parse-line/ma:parse-area)
 description: Why parsing a geometry's raw GML coordinate string is now cached per node instead of redone on every call, and why R.21 was the dominant remaining cost the connectivity-index fix didn't touch.
 tags: decision, performance, geometry
 generated:
-  by: human:sytse.walraven
-  at: 2026-08-26T00:00:00Z
+  by: claude-code/opus-5-5
+  at: 2026-11-02T00:00:00Z
 sources:
-  - resource: "../../validation_schemas/xsl_functions/helper_functions.xsl"
+  - resource: "../../xsl_functions/helper_functions.xsl"
     title: "helper_functions.xsl"
-  - resource: "../../validation_schemas/abstract_patterns/v12/topologie/geldig_eindpunt_kabel.sch"
+  - resource: "../../v2026.1.0/rules/abstract_patterns/topologie/geldig_eindpunt_kabel.sch"
     title: "geldig_eindpunt_kabel.sch"
   - resource: "./connectivity-index-and-geometry-caching"
     title: "connectivity-index-and-geometry-caching"

@@ -10,7 +10,7 @@
   <xsl:param name="version" as="xs:string" required="yes"/>
 
   <!-- Load config XML -->
-  <xsl:variable name="config_doc" select="document(concat('../doc/', $version, '/NLCSValidatieRegels.xml'))"/>
+  <xsl:variable name="config_doc" select="document(concat('../', $version, '/doc/NLCSValidatieRegels.xml'))"/>
   <xsl:variable name="scopes" select="$config_doc/nvr:NLCSValidatieregels/nvr:scopes/nvr:scope"/>
 
   <!-- Main template -->
@@ -33,7 +33,7 @@
               <xsl:with-param name="bedrijfstoestand" select="$bedrijfstoestand"/>
             </xsl:apply-templates>
           </xsl:variable>
-          <xsl:result-document href="scoped_objects/{$naam}/{$tekening_type}/{$status}/{$bedrijfstoestand}.xml">
+          <xsl:result-document href="{$version}/scoped_objects/{$naam}/{$tekening_type}/{$status}/{$bedrijfstoestand}.xml">
             <xsl:copy-of select="$scoped_template/node()"/>
           </xsl:result-document>
         </xsl:for-each>

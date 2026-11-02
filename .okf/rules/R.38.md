@@ -2,15 +2,15 @@
 type: Validation Rule
 title: R.38 — Inmeetwijze aansluitnet toegestaande waarde
 description: Checks that a LSkabel with Subnettype AANSLUITNET does not use Meetlint as its Inmeetwijze.
-resource: validation_schemas/patterns/v12/R.38.sch
+resource: v2026.1.0/rules/patterns/R.38.sch
 tags: inhoud-waarde
 generated:
-  by: human:sytse.walraven
-  at: 2026-08-26T00:00:00Z
+  by: claude-code/opus-5-5
+  at: 2026-11-02T00:00:00Z
 sources:
-  - resource: "../../doc/NLCSValidatieRegels.xml"
+  - resource: "../../v2026.1.0/doc/NLCSValidatieRegels.xml"
     title: "NLCS Validatieregels catalog"
-  - resource: "../../validation_schemas/abstract_patterns/v12/inhoud_waarde/inmeetwijze_aansluitnet_toegestaande_waarde.sch"
+  - resource: "../../v2026.1.0/rules/abstract_patterns/inhoud_waarde/inmeetwijze_aansluitnet_toegestaande_waarde.sch"
     title: "inmeetwijze_aansluitnet_toegestaande_waarde.sch"
 ---
 

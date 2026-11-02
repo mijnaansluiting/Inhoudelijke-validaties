@@ -2,7 +2,7 @@
 
 VERSION=$(scripts/versions.sh resolve "$1") || exit 1
 
-SCHEMA_DIR=rules/$VERSION
+SCHEMA_DIR=$VERSION/rules
 
 mkdir -p $SCHEMA_DIR/abstract_patterns_scope_checks
 

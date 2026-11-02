@@ -2,10 +2,10 @@
 
 VERSION=$(scripts/versions.sh resolve "$1") || exit 1
 
-java -jar saxon-he.jar -xsl:transformations/generate_scoped_objects.xsl -s:test/scope_validation_data/$VERSION/scope_template.xml version=$VERSION
+java -jar saxon-he.jar -xsl:transformations/generate_scoped_objects.xsl -s:$VERSION/test/scope_validation_data/scope_template.xml version=$VERSION
 
-IN_DIR=scoped_objects
-OUT_DIR=scoped_objects_reports
+IN_DIR=$VERSION/scoped_objects
+OUT_DIR=$VERSION/scoped_objects_reports
 
 {
     echo "## Onvolledige of onjuiste scopedekking"
@@ -30,7 +30,7 @@ for SCOPE_DIR in "$IN_DIR"/*; do
                 OUT_FILE=$FILE_OUT_DIR/$BEDRIJFSTOESTAND.svrl.xml
 
                 echo Validating $SCOPE "->" $TEKENING_TYPE "->" $STATUS "->" $BEDRIJFSTOESTAND
-                java -jar saxon-he.jar -xsl:rules/$VERSION/transpiled_phases/main_scope_checks.xsl -s:"$BEDRIJFSTOESTAND_FILE" -o:"$OUT_FILE"
+                java -jar saxon-he.jar -xsl:$VERSION/rules/transpiled_phases/main_scope_checks.xsl -s:"$BEDRIJFSTOESTAND_FILE" -o:"$OUT_FILE"
 
                 VALIDATION_REPORT_ANALYSIS="$(java -jar saxon-he.jar -xsl:transformations/check_scope_coverage.xsl -s:"$OUT_FILE" scope_name="$SCOPE" version="$VERSION")"
 

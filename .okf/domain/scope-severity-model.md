@@ -2,15 +2,15 @@
 type: Domain Concept
 title: Scope and severity model
 description: How the same rule can be an error in one drawing context and merely informational in another.
-resource: doc/v2026.1.0/NLCSValidatieRegels.xml
+resource: v2026.1.0/doc/NLCSValidatieRegels.xml
 tags: domain, scope, severity
 generated:
-  by: claude-opus-5-5
-  at: 2026-10-27T00:00:00Z
+  by: claude-code/opus-5-5
+  at: 2026-11-02T00:00:00Z
 sources:
-  - resource: "../../doc/v2026.1.0/NLCSValidatieRegels.xml"
+  - resource: "../../v2026.1.0/doc/NLCSValidatieRegels.xml"
     title: "NLCS Validatieregels catalog \u2014 `<scopes>` section"
-  - resource: "../../validation_schemas/xsl_functions/rule_scope_functions.xsl"
+  - resource: "../../xsl_functions/rule_scope_functions.xsl"
     title: "rule_scope_functions.xsl"
 ---
 
@@ -28,16 +28,16 @@ the same severity. Whether a failed rule is a hard error (`Fout`), merely
   `VERLATEN`
 
 The rule catalog's `<scopes>` section (one catalog per version, e.g.
-`doc/v2026.1.0/NLCSValidatieRegels.xml`) defines 8 named scopes,
+`v2026.1.0/doc/NLCSValidatieRegels.xml`) defines 8 named scopes,
 each mapping a Tekeningsoort+Status+Bedrijfstoestand combination to a list of
 rules and, per rule, a `niveau` (severity). This lets the same physical check
 (e.g. "does a cable have valid endpoints") be strictly enforced during a final
 handover but only advisory during an as-built ("Bestaande Situatie") capture.
 
-This logic is implemented in `validation_schemas/xsl_functions/rule_scope_functions.xsl`
+This logic is implemented in `xsl_functions/rule_scope_functions.xsl`
 via functions like `ma:scope-name`, `ma:rule-severity-within-scope`, and
 `ma:rule-within-scope-for-object`, and consumed by every concrete pattern in
-`validation_schemas/patterns/v12/` (see
+`<version>/rules/patterns/` (see
 [schematron-layering](../architecture/schematron-layering)) to populate the
 `scope` and `severity` properties attached to every Schematron assert.
 

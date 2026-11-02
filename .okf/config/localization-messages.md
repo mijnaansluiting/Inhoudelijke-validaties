@@ -5,12 +5,12 @@ description: The nl/en message catalog that validation rules use to produce huma
 resource: localization/messages.xml
 tags: configuration, localization
 generated:
-  by: human:sytse.walraven
-  at: 2026-08-26T00:00:00Z
+  by: claude-code/opus-5-5
+  at: 2026-11-02T00:00:00Z
 sources:
   - resource: "../../localization/messages.xml"
     title: "messages.xml"
-  - resource: "../../validation_schemas/xsl_functions/localization_functions.xsl"
+  - resource: "../../xsl_functions/localization_functions.xsl"
     title: "localization_functions.xsl"
 ---
 
@@ -19,7 +19,7 @@ sources:
 `localization/messages.xml` is a flat catalog of `<message id="...">` entries,
 each with an `nl` and `en` `<message-text>` variant. Message text may contain
 `{1}`, `{2}`, ... placeholders that
-`validation_schemas/xsl_functions/localization_functions.xsl` substitutes with
+`xsl_functions/localization_functions.xsl` substitutes with
 rule-specific values (attribute names, expected/found values, thresholds)
 before the text is attached to a Schematron `assert`. Which language variant
 is picked is controlled by [user-config](./user-config)'s `Language`

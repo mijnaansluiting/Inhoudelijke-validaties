@@ -4,10 +4,10 @@ title: Shared connectivity index and geometry caching for mof/kabel touch checks
 description: Why R.20, R.22, R.23, R.25, R.26, and R.39 now share one precomputed touch index instead of each doing its own brute-force geometry scan.
 tags: decision, performance, geometry
 generated:
-  by: human:sytse.walraven
-  at: 2026-08-26T00:00:00Z
+  by: claude-code/opus-5-5
+  at: 2026-11-02T00:00:00Z
 sources:
-  - resource: "../../validation_schemas/xsl_functions/connectivity_functions.xsl"
+  - resource: "../../xsl_functions/connectivity_functions.xsl"
     title: "connectivity_functions.xsl"
   - resource: "../../benchmark.sh"
     title: "benchmark.xml / benchmark.sh (stress-test fixture and harness, not part of the committed rule test suite)"
@@ -52,7 +52,7 @@ Reading every abstract pattern that calls `ma:point-touches-line`/
 
 # Decision
 
-Added `validation_schemas/xsl_functions/connectivity_functions.xsl`
+Added `xsl_functions/connectivity_functions.xsl`
 (see [xsl-function-libraries](../architecture/xsl-function-libraries)),
 computed lazily once per validation run and reused by all 6 rules:
 

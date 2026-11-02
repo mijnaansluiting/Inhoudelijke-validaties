@@ -7,7 +7,7 @@ okf_version: "0.2"
 This bundle documents the NLCS++ content-validation rule set: what each rule
 checks, how severity varies by scope, how rules are compiled/tested/released,
 and the "why" behind a few non-obvious past fixes. Ground truth for rule
-content is `doc/NLCSValidatieRegels.xml`; this bundle exists to make that
+content is the per-version `<version>/doc/NLCSValidatieRegels.xml`; this bundle exists to make that
 XML, plus the surrounding Schematron/XSLT implementation and CI tooling,
 quickly answerable without re-deriving it from source each time.
 

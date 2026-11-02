@@ -5,8 +5,8 @@ description: How the scope-checked schema, config, and docs are packaged into th
 resource: scripts/bundle.sh
 tags: architecture, release
 generated:
-  by: human:sytse.walraven
-  at: 2026-08-26T00:00:00Z
+  by: claude-code/opus-5-5
+  at: 2026-11-02T00:00:00Z
 sources:
   - resource: "../../scripts/bundle.sh"
     title: "bundle.sh"
@@ -21,20 +21,23 @@ repo directly — it's a packaged zip produced by `scripts/bundle.sh` and
 published as a GitHub Release asset by the `Deliverables` workflow (see
 [ci/workflows](../ci/workflows)) whenever a `v*` tag is pushed.
 
-`bundle.sh` assembles a `dist/` directory containing:
+`bundle.sh` assembles a `dist/` directory that **mirrors the repository
+layout**, so every relative path in the compiled schema
+(`../../../xsl_functions/`) and in the function libraries
+(`../configuration/`, `../localization/`, `../<version>/doc/`) resolves the
+same way in `dist/` as in the repository:
 - the **scope-checked** schema of the bundled version, transpiled to XSLT
-  (`validation_schemas/<version>/transpiled_phases/main_scope_checks.xsl` —
-  see [compilation-pipeline](./compilation-pipeline) for how the
-  scope-checked variant is produced), as `dist/src/base/<version>/main.xsl`.
-  It sits two folders below `dist/src/` because it includes
-  `../../xsl_functions/`.
+  (`<version>/rules/transpiled_phases/main_scope_checks.xsl` — see
+  [compilation-pipeline](./compilation-pipeline) for how the scope-checked
+  variant is produced), at the same path
+  `dist/<version>/rules/transpiled_phases/main_scope_checks.xsl`
 - the [xsl-function-libraries](./xsl-function-libraries) under
-  `dist/src/xsl_functions/`
+  `dist/xsl_functions/`
 - `configuration/` (`sys_config.xml`, `user_config.xml`, `versions.xml`)
   under `dist/configuration/`
-- the version's rule catalog (`doc/<version>/NLCSValidatieRegels.xml`,
+- the version's rule catalog (`<version>/doc/NLCSValidatieRegels.xml`,
   needed at runtime by `rule_scope_functions.xsl`) under
-  `dist/doc/<version>/`
+  `dist/<version>/doc/`
 - `localization/messages.xml` under `dist/localization/`
 
 ...then zips `dist/` as `nlcspp_inhoudelijke_validaties.zip`. This is the
