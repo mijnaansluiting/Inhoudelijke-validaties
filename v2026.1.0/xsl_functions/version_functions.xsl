@@ -5,7 +5,7 @@
             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
             version="3.0">
 
-  <variable name="versions_file" select="document('../configuration/versions.xml')"/>
+  <variable name="versions_file" select="document('../../configuration/versions.xml')"/>
 
   <!-- Sort key for a version id: v2026.10.0 -> (2026, 10, 0) -->
   <function name="ma:version-key" as="xs:integer*">

@@ -13,7 +13,7 @@ sources:
     title: "versions.xml"
   - resource: "../../scripts/versions.sh"
     title: "versions.sh"
-  - resource: "../../xsl_functions/version_functions.xsl"
+  - resource: "../../v2026.1.0/xsl_functions/version_functions.xsl"
     title: "version_functions.xsl"
 ---
 

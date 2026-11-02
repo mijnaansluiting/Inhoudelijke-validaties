@@ -10,7 +10,7 @@ generated:
 sources:
   - resource: "../../v2026.1.0/doc/NLCSValidatieRegels.xml"
     title: "NLCS Validatieregels catalog \u2014 `<scopes>` section"
-  - resource: "../../xsl_functions/rule_scope_functions.xsl"
+  - resource: "../../v2026.1.0/xsl_functions/rule_scope_functions.xsl"
     title: "rule_scope_functions.xsl"
 ---
 
@@ -34,7 +34,7 @@ rules and, per rule, a `niveau` (severity). This lets the same physical check
 (e.g. "does a cable have valid endpoints") be strictly enforced during a final
 handover but only advisory during an as-built ("Bestaande Situatie") capture.
 
-This logic is implemented in `xsl_functions/rule_scope_functions.xsl`
+This logic is implemented in `<version>/xsl_functions/rule_scope_functions.xsl`
 via functions like `ma:scope-name`, `ma:rule-severity-within-scope`, and
 `ma:rule-within-scope-for-object`, and consumed by every concrete pattern in
 `<version>/rules/patterns/` (see

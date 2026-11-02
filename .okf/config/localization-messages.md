@@ -10,7 +10,7 @@ generated:
 sources:
   - resource: "../../localization/messages.xml"
     title: "messages.xml"
-  - resource: "../../xsl_functions/localization_functions.xsl"
+  - resource: "../../v2026.1.0/xsl_functions/localization_functions.xsl"
     title: "localization_functions.xsl"
 ---
 
@@ -19,7 +19,7 @@ sources:
 `localization/messages.xml` is a flat catalog of `<message id="...">` entries,
 each with an `nl` and `en` `<message-text>` variant. Message text may contain
 `{1}`, `{2}`, ... placeholders that
-`xsl_functions/localization_functions.xsl` substitutes with
+`<version>/xsl_functions/localization_functions.xsl` substitutes with
 rule-specific values (attribute names, expected/found values, thresholds)
 before the text is attached to a Schematron `assert`. Which language variant
 is picked is controlled by [user-config](./user-config)'s `Language`

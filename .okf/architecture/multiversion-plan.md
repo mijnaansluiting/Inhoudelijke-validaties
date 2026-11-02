@@ -39,7 +39,8 @@ version-specific lives under `<version>/` (e.g. `v2026.1.0/`):
 `test/rule_validation_data/`, `test/scope_validation_data/`, `assets/`
 (committed test-data SVGs) and the generated `rule_validation_reports/`,
 `validation_test_results/`, `scoped_objects/` and `scoped_objects_reports/`.
-Shared tooling stays at the root: `xsl_functions/`, `configuration/`,
+Function libraries are versioned as `<version>/xsl_functions/` (inherited
+like patterns). Shared tooling stays at the root: `configuration/`,
 `localization/`, `transformations/`, `wrappers/`, `scripts/`, `schemas/`,
 and `doc/NLCSValidatieRegels.{xsl,css,xsd}`. The release `dist/` mirrors
 this layout (see [build-and-release](./build-and-release)).
@@ -65,7 +66,8 @@ this layout (see [build-and-release](./build-and-release)).
      test data folders) and writes to
      `<version>/rules/transpiled_phases/<rule>.xsl`, the same
      folder as the compiled `main_scope_checks.xsl` (`main.sch` includes
-     `../../../xsl_functions/`, which only resolves from there);
+     `../../xsl_functions/` or `../../../<older version>/xsl_functions/`,
+     which only resolve from there);
    * `validate_rules.sh`, `validate_rule_reports.sh` (report links point to
      the fixture's real folder), `check_rule_object_coverage.sh` read
      fixtures through the helper;

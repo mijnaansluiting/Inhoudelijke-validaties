@@ -4,8 +4,8 @@
             xmlns:xs="http://www.w3.org/2001/XMLSchema"
             version="3.0">
 
-  <variable name="sys_config_file" select= "document('../configuration/sys_config.xml')"/>
-  <variable name="user_config_file" select= "document('../configuration/user_config.xml')"/>
+  <variable name="sys_config_file" select= "document('../../configuration/sys_config.xml')"/>
+  <variable name="user_config_file" select= "document('../../configuration/user_config.xml')"/>
 
   <!-- sys_config block of the version being validated; $active_version is declared in each version's main.sch -->
   <variable name="active_config" as="element(version)">

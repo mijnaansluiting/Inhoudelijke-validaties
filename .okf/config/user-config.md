@@ -10,7 +10,7 @@ generated:
 sources:
   - resource: "../../configuration/user_config.xml"
     title: "user_config.xml"
-  - resource: "../../xsl_functions/localization_functions.xsl"
+  - resource: "../../v2026.1.0/xsl_functions/localization_functions.xsl"
     title: "localization_functions.xsl"
 ---
 
@@ -26,7 +26,7 @@ single field:
 ```
 
 `Language` (`nl` or `en`) selects which `xml:lang` variant
-`xsl_functions/localization_functions.xsl` picks when
+`<version>/xsl_functions/localization_functions.xsl` picks when
 resolving a message id from
 [localization-messages](./localization-messages) for an SVRL assert
 report.

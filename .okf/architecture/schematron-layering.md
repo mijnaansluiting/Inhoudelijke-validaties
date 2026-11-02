@@ -31,7 +31,8 @@ sub-checks that only differ in parameters:
    downstream reporting), one Schematron `<phase>` per rule id (`R.1` … `R.41`, with
    `R.4` and `R.8` each activating two patterns), the 6
    [xsl-function-libraries](./xsl-function-libraries) via
-   `xsl:include href="../../../xsl_functions/…"`, then `include`s of every
+   `xsl:include href="../../xsl_functions/…"` (own) or
+   `"../../../<older version>/xsl_functions/…"` (inherited), then `include`s of every
    concrete pattern and every abstract pattern file — the version's own
    (`patterns/R.<n>.sch`) or inherited from an older version folder
    (`../../v2026.1.0/rules/patterns/…`, `../../<version>/rules/abstract_patterns/…`;

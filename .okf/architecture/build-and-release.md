@@ -23,16 +23,18 @@ published as a GitHub Release asset by the `Deliverables` workflow (see
 
 `bundle.sh` assembles a `dist/` directory that **mirrors the repository
 layout**, so every relative path in the compiled schema
-(`../../../xsl_functions/`) and in the function libraries
-(`../configuration/`, `../localization/`, `../<version>/doc/`) resolves the
+(`../../xsl_functions/`, `../../../<older version>/xsl_functions/`) and in
+the function libraries (`../../configuration/`, `../../localization/`,
+`../../<version>/doc/`) resolves the
 same way in `dist/` as in the repository:
 - the **scope-checked** schema of the bundled version, transpiled to XSLT
   (`<version>/rules/transpiled_phases/main_scope_checks.xsl` — see
   [compilation-pipeline](./compilation-pipeline) for how the scope-checked
   variant is produced), at the same path
   `dist/<version>/rules/transpiled_phases/main_scope_checks.xsl`
-- the [xsl-function-libraries](./xsl-function-libraries) under
-  `dist/xsl_functions/`
+- the [xsl-function-libraries](./xsl-function-libraries) of every version
+  the bundled `main.sch` includes them from (its own and/or inherited ones,
+  read from its `xsl:include` lines) under `dist/<that version>/xsl_functions/`
 - `configuration/` (`sys_config.xml`, `user_config.xml`, `versions.xml`)
   under `dist/configuration/`
 - the version's rule catalog (`<version>/doc/NLCSValidatieRegels.xml`,

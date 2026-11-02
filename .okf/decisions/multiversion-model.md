@@ -71,7 +71,9 @@ at the repository root** that holds everything belonging to it:
   scoped_objects/, scoped_objects_reports/   (generated, git-ignored)
 ```
 
-Shared, version-independent tooling stays at the root: `xsl_functions/`,
+Each version folder also holds `xsl_functions/` (the
+[XSL function libraries](../architecture/xsl-function-libraries)), unless it
+inherits them. Shared, version-independent tooling stays at the root:
 `configuration/`, `localization/`, `transformations/`, `wrappers/`,
 `scripts/`, `schemas/<xsd version>/`, `doc/NLCSValidatieRegels.{xsl,css,xsd}`
 and `test/XMLValidation.java`. Adding, renaming or deleting a version is
@@ -112,7 +114,8 @@ combines a version with older versions into a `resolved_<version>` folder".
   nothing themselves: `main.sch` includes both concrete and abstract
   patterns directly, and concrete patterns refer to abstract ones by id
   (`is-a`). SchXslt follows the paths while transpiling. The function
-  libraries are included as `../../../xsl_functions/…`; SchXslt copies that
+  libraries are included as `../../xsl_functions/…` (own) or
+  `../../../<older version>/xsl_functions/…` (inherited); SchXslt copies that
   path into the compiled XSL unchanged, so all compiled output of a version
   lives in `<version>/rules/transpiled_phases/`, where it resolves.
   `scripts/versions.sh rules` finds a rule's source version by parsing
@@ -141,10 +144,12 @@ combines a version with older versions into a `resolved_<version>` folder".
   stays untouched.
 * The registry has **no `base` attribute**: which version a rule comes from
   is visible in each `main.sch`, not derived from version order.
-* **Shared XSL function libraries** (`xsl_functions/` at the root)
-  stay a single shared copy and must remain backwards compatible: a change
-  must not alter results of any supported version. New behavior means a
-  new function, not a changed one.
+* **XSL function libraries are versioned** (revised 2026-11-02; they were
+  a single shared copy at the root that had to stay backwards compatible).
+  They live in `<version>/xsl_functions/` and are inherited like patterns:
+  a version includes an older version's library until it needs different
+  behavior, then gets its own copy of that library. Currently only
+  `v2026.1.0/xsl_functions/` exists; `v9999.1.0` inherits all of it.
 * **Bugs found in a rule present in several versions** are handled case by
   case; the decision is recorded in the PR.
 

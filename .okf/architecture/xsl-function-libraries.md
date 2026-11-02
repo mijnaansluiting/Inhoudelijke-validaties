@@ -1,29 +1,35 @@
 ---
 type: Architecture Component
-title: Shared XSL function libraries
-description: The five custom ma:-namespace XSLT function libraries every rule's logic is built from.
-resource: xsl_functions/
+title: XSL function libraries
+description: The versioned custom ma:-namespace XSLT function libraries every rule's logic is built from.
+resource: v2026.1.0/xsl_functions/
 tags: architecture, xslt
 generated:
   by: claude-code/opus-5-5
   at: 2026-11-02T00:00:00Z
 sources:
-  - resource: "../../xsl_functions/"
-    title: "xsl_functions/"
+  - resource: "../../v2026.1.0/xsl_functions/"
+    title: "v2026.1.0/xsl_functions/"
 ---
 
 # Overview
 
-`xsl_functions/` (at the repository root, shared by all rule-set versions)
-holds XSLT 3.0 function libraries in a custom `ma:` (mijnaansluiting)
-namespace, included into every version's
-[`<version>/rules/main.sch`](./schematron-layering) as
-`../../../xsl_functions/…` (resolved from the compiled output in
-`<version>/rules/transpiled_phases/`) and used by every abstract pattern.
+`<version>/xsl_functions/` holds XSLT 3.0 function libraries in a custom
+`ma:` (mijnaansluiting) namespace, used by every abstract pattern. They are
+version-managed like patterns (see
+[multiversion-model](../decisions/multiversion-model)): currently only
+`v2026.1.0/xsl_functions/` exists, and `v9999.1.0` inherits it unchanged.
+A version's [`<version>/rules/main.sch`](./schematron-layering) includes its
+own libraries as `../../xsl_functions/…` or an older version's as
+`../../../<older version>/xsl_functions/…` (both resolved from the compiled
+output in `<version>/rules/transpiled_phases/`).
 The libraries load their data relative to their own folder:
-`document('../configuration/…')`, `document('../localization/messages.xml')`
-and `document('../' || $active_version || '/doc/NLCSValidatieRegels.xml')`;
+`document('../../configuration/…')`, `document('../../localization/messages.xml')`
+and `document('../../' || $active_version || '/doc/NLCSValidatieRegels.xml')`,
+so an inherited library still reads the catalog of the version being run;
 the release `dist/` mirrors this layout so the same paths resolve there.
+`version_functions.xsl` (version selection from `configuration/versions.xml`)
+lives in the same folder but is not included by any `main.sch`.
 
 | File | Purpose |
 |---|---|

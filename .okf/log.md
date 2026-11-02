@@ -1,6 +1,23 @@
 # Update Log
 
 ## 2026-11-02
+* **Update**: XSL function libraries are now **version-managed**:
+  root `xsl_functions/` → `v2026.1.0/xsl_functions/` (including
+  `version_functions.xsl`); `v9999.1.0` inherits them via
+  `../../../v2026.1.0/xsl_functions/…` includes in its `main.sch`, while
+  `v2026.1.0` includes its own as `../../xsl_functions/…`. The libraries load
+  `../../configuration/`, `../../localization/` and
+  `../../<active_version>/doc/`. `bundle.sh` copies the function libraries of
+  every version a bundled `main.sch` includes them from. The decision that the
+  libraries stay one backwards-compatible shared copy is replaced
+  ([multiversion-model](./decisions/multiversion-model)); also updated
+  [xsl-function-libraries](./architecture/xsl-function-libraries) (retitled),
+  [architecture index](./architecture/index),
+  [schematron-layering](./architecture/schematron-layering),
+  [compilation-pipeline](./architecture/compilation-pipeline),
+  [build-and-release](./architecture/build-and-release),
+  [multiversion-plan](./architecture/multiversion-plan) and the concepts
+  citing a function library (sources now point to `v2026.1.0/xsl_functions/`).
 * **Update**: repository restructured to **one root folder per version**
   (`v2026.1.0/`, `v9999.1.0/`). `rules/<v>/` → `<v>/rules/` (`main.sch`,
   `patterns/`, `abstract_patterns/`, generated `transpiled_phases/`,

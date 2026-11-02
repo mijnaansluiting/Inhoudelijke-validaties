@@ -10,7 +10,7 @@ generated:
 sources:
   - resource: "../../configuration/sys_config.xml"
     title: "sys_config.xml"
-  - resource: "../../xsl_functions/config_functions.xsl"
+  - resource: "../../v2026.1.0/xsl_functions/config_functions.xsl"
     title: "config_functions.xsl"
 ---
 
@@ -21,7 +21,7 @@ one full `<version id="vYEAR.RELEASE.FIX">` block per rule-set version (no
 defaults or inheritance between blocks; see
 [multiversion-model](../decisions/multiversion-model)). Values are read at
 validation time by functions in
-`xsl_functions/config_functions.xsl`, which select the
+`<version>/xsl_functions/config_functions.xsl`, which select the
 block whose `id` equals `$active_version` (declared by each version's
 `main.sch`) and raise an error if there is none. A rule's actual behavior
 can be adjusted without touching Schematron pattern code.

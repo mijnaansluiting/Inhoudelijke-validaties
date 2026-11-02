@@ -7,7 +7,7 @@ generated:
   by: claude-code/opus-5-5
   at: 2026-11-02T00:00:00Z
 sources:
-  - resource: "../../xsl_functions/connectivity_functions.xsl"
+  - resource: "../../v2026.1.0/xsl_functions/connectivity_functions.xsl"
     title: "connectivity_functions.xsl"
   - resource: "../../benchmark.sh"
     title: "benchmark.xml / benchmark.sh (stress-test fixture and harness, not part of the committed rule test suite)"
@@ -52,7 +52,7 @@ Reading every abstract pattern that calls `ma:point-touches-line`/
 
 # Decision
 
-Added `xsl_functions/connectivity_functions.xsl`
+Added `<version>/xsl_functions/connectivity_functions.xsl`
 (see [xsl-function-libraries](../architecture/xsl-function-libraries)),
 computed lazily once per validation run and reused by all 6 rules:
 

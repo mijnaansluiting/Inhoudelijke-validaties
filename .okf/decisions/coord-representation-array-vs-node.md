@@ -9,9 +9,9 @@ generated:
 sources:
   - resource: "../../COORD_PARSING_BENCHMARK.md"
     title: "COORD_PARSING_BENCHMARK.md"
-  - resource: "../../xsl_functions/helper_functions.xsl"
+  - resource: "../../v2026.1.0/xsl_functions/helper_functions.xsl"
     title: "helper_functions.xsl"
-  - resource: "../../xsl_functions/geometry_functions.xsl"
+  - resource: "../../v2026.1.0/xsl_functions/geometry_functions.xsl"
     title: "geometry_functions.xsl"
   - resource: "./geometry-parse-caching"
     title: "geometry-parse-caching"

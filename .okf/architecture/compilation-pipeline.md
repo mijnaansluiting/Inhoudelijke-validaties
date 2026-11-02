@@ -45,13 +45,14 @@ plus **SchXSLT2** (a Schematron→XSLT transpiler):
      -o:v2026.1.0/rules/transpiled_phases/R.36.xsl phase=R.36
    ```
 
-   SchXslt copies `main.sch`'s `<xsl:include href="../../../xsl_functions/…"/>`
+   SchXslt copies `main.sch`'s `<xsl:include href="../../xsl_functions/…"/>`
+   (or `../../../<older version>/xsl_functions/…` when inherited)
    lines unchanged into every compiled file, and Saxon resolves them from
    the compiled file's own location. So **every** stylesheet compiled from a
    `main.sch` lives exactly three folders below the repository root, in
    `<version>/rules/transpiled_phases/`: the per-rule phases and the
    scope-checked `main_scope_checks.xsl` alike. A compiled file anywhere else
-   cannot find the function libraries in the root `xsl_functions/`.
+   cannot find the function libraries in `<version>/xsl_functions/`.
 
 3. **Execution** — running that generated XSLT via Saxon against an NLCS++
    XML instance produces an **SVRL** report (Schematron Validation Report
