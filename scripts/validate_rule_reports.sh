@@ -42,14 +42,14 @@ while IFS= read -r -d '' FILE; do
 
         TEST_TYPE=$(echo "$FILE" | cut -d'/' -f4)
         RULE=$(echo "$FILE" | cut -d'/' -f3)
-        SOURCE=$RULES_SOURCE[$RULE]
+        SOURCE=${RULES_SOURCE[$RULE]}
         if [[ "$TEST_TYPE" == "passing" ]]; then
             MESSAGE="Failed asserts found, expected none"
         else
             MESSAGE="Expected failed asserts, found none"
         fi
 
-        RULE_VALIDATION_DATA_PATH="${FILE/validation_test_results\/$VERSION\//test/rule_validation_data/$SOURCE}"
+        RULE_VALIDATION_DATA_PATH="${FILE/validation_test_results\/$VERSION\//test/rule_validation_data/$SOURCE/}"
         RULE_VALIDATION_DATA_PATH="${RULE_VALIDATION_DATA_PATH/%.txt/.xml}"
 
         echo "| $MESSAGE | $RULE_VALIDATION_DATA_PATH | [View file](https://github.com/${GITHUB_REPOSITORY}/blob/${GITHUB_SHA}/$RULE_VALIDATION_DATA_PATH) |" >> $GITHUB_STEP_SUMMARY
