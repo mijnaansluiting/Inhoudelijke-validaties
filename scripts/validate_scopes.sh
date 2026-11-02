@@ -1,11 +1,11 @@
 #!/bin/bash
 
-version=v2026.1.0
+VERSION=$(scripts/versions.sh resolve "$1") || exit 1
 
-java -jar saxon-he.jar -xsl:transformations/generate_scoped_objects.xsl -s:test/scope_validation_data/$version/scope_template.xml
+java -jar saxon-he.jar -xsl:transformations/generate_scoped_objects.xsl -s:test/scope_validation_data/$VERSION/scope_template.xml version=$VERSION
 
-in_dir=scoped_objects
-out_dir=scoped_objects_reports
+IN_DIR=scoped_objects
+OUT_DIR=scoped_objects_reports
 
 {
     echo "## Onvolledige of onjuiste scopedekking"
@@ -14,45 +14,45 @@ out_dir=scoped_objects_reports
     echo "| ----- | ------------- | ------ | ---------------- | -------- | -------- | ------- | ------------- |"
 } >> $GITHUB_STEP_SUMMARY
 
-scopes_fully_covered=true
+SCOPES_FULLY_COVERED=true
 
-for scope_dir in "$in_dir"/*; do
-    scope=$(basename "$scope_dir")
-    for tekening_type_dir in "$scope_dir"/*; do
-        tekening_type=$(basename "$tekening_type_dir")
-        for status_dir in "$tekening_type_dir"/*; do
-            status=$(basename "$status_dir")
-            for bedrijfstoestand_file in "$status_dir"/*; do
-                bedrijfstoestand=$(basename "$bedrijfstoestand_file" .xml)
+for SCOPE_DIR in "$IN_DIR"/*; do
+    SCOPE=$(basename "$SCOPE_DIR")
+    for TEKENING_TYPE_DIR in "$SCOPE_DIR"/*; do
+        TEKENING_TYPE=$(basename "$TEKENING_TYPE_DIR")
+        for STATUS_DIR in "$TEKENING_TYPE_DIR"/*; do
+            STATUS=$(basename "$STATUS_DIR")
+            for BEDRIJFSTOESTAND_FILE in "$STATUS_DIR"/*; do
+                BEDRIJFSTOESTAND=$(basename "$BEDRIJFSTOESTAND_FILE" .xml)
 
-                file_out_dir=$out_dir/$scope/$tekening_type/$status
-                mkdir -p "$file_out_dir"
-                out_file=$file_out_dir/$bedrijfstoestand.svrl.xml
+                FILE_OUT_DIR=$OUT_DIR/$SCOPE/$TEKENING_TYPE/$STATUS
+                mkdir -p "$FILE_OUT_DIR"
+                OUT_FILE=$FILE_OUT_DIR/$BEDRIJFSTOESTAND.svrl.xml
 
-                echo Validating $scope "->" $tekening_type "->" $status "->" $bedrijfstoestand
-                java -jar saxon-he.jar -xsl:validation_schemas/$version/main_scope_checks.xsl -s:"$bedrijfstoestand_file" -o:"$out_file"
+                echo Validating $SCOPE "->" $TEKENING_TYPE "->" $STATUS "->" $BEDRIJFSTOESTAND
+                java -jar saxon-he.jar -xsl:rules/$VERSION/transpiled_phases/main_scope_checks.xsl -s:"$BEDRIJFSTOESTAND_FILE" -o:"$OUT_FILE"
 
-                validation_report_analysis="$(java -jar saxon-he.jar -xsl:transformations/check_scope_coverage.xsl -s:"$out_file" scope_name="$scope")"
+                VALIDATION_REPORT_ANALYSIS="$(java -jar saxon-he.jar -xsl:transformations/check_scope_coverage.xsl -s:"$OUT_FILE" scope_name="$SCOPE" version="$VERSION")"
 
-                while IFS='=' read -r key value; do
-                    case "$key" in
-                        expected)   expected=($value) ;;
-                        found)      found=($value) ;;
-                        missing)    missing=($value) ;;
-                        unexpected) unexpected=($value) ;;
+                while IFS='=' read -r KEY VALUE; do
+                    case "$KEY" in
+                        expected)   EXPECTED=($VALUE) ;;
+                        found)      FOUND=($VALUE) ;;
+                        missing)    MISSING=($VALUE) ;;
+                        unexpected) UNEXPECTED=($VALUE) ;;
                     esac
-                done <<< "$validation_report_analysis"
+                done <<< "$VALIDATION_REPORT_ANALYSIS"
 
 
-                if [[ ${#missing[@]} -ne 0 || ${#unexpected[@]} -ne 0 ]]; then
-                    echo "| $scope | $tekening_type | $status | $bedrijfstoestand | ${expected[*]} | ${found[*]} | ${missing[*]} | ${unexpected[*]} |" >> $GITHUB_STEP_SUMMARY
-                    scopes_fully_covered=false
+                if [[ ${#MISSING[@]} -ne 0 || ${#UNEXPECTED[@]} -ne 0 ]]; then
+                    echo "| $SCOPE | $TEKENING_TYPE | $STATUS | $BEDRIJFSTOESTAND | ${EXPECTED[*]} | ${FOUND[*]} | ${MISSING[*]} | ${UNEXPECTED[*]} |" >> $GITHUB_STEP_SUMMARY
+                    SCOPES_FULLY_COVERED=false
                 fi
             done
         done
     done
 done
 
-if [ "$scopes_fully_covered" != true ]; then
+if [ "$SCOPES_FULLY_COVERED" != true ]; then
     exit 1
 fi

@@ -35,18 +35,19 @@ jobs:
             lib/
             transpile.xsl
             xerces-cli.jar
-            NLCS_Netbeheer.xsd
-            NLCS_Netbeheer_Keuzelijst.xsd
+            xsd/
           if-no-files-found: warn
 
       - name: Add scope checks
-        run: scripts/add_scope_checks.sh
+        run: scripts/add_scope_checks.sh "$(scripts/versions.sh latest)"
 
       - name: Transpile Schematron to XSL
-        run: java -jar saxon-he.jar -xsl:transpile.xsl -s:validation_schemas/v2026.1.0/main_scope_checks.sch -o:validation_schemas/v2026.1.0/main_scope_checks.xsl
+        run: |
+          version=$(scripts/versions.sh latest)
+          java -jar saxon-he.jar -xsl:transpile.xsl -s:rules/$version/main_scope_checks.sch -o:rules/$version/transpiled_phases/main_scope_checks.xsl
 
       - name: Bundle deliverables
-        run: scripts/bundle.sh
+        run: scripts/bundle.sh "$(scripts/versions.sh latest)"
 
       - name: Upload deliverables
         uses: actions/upload-artifact@v4
