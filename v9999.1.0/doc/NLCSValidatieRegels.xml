@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<?xml-stylesheet type='text/xsl' href="../NLCSValidatieRegels.xsl"?>
+<?xml-stylesheet type='text/xsl' href="../../doc/NLCSValidatieRegels.xsl"?>
 <NLCSValidatieregels xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-		     xsi:schemaLocation="NLCSValidatieRegelsNameSpace ../NLCSValidatieRegels.xsd"
+		     xsi:schemaLocation="NLCSValidatieRegelsNameSpace ../../doc/NLCSValidatieRegels.xsd"
 		     xmlns="NLCSValidatieRegelsNameSpace">
 	<validatieRegels>
 		<validatieRegel nummer="R.1" naam="Bestand bevat NLCS Objecten">
