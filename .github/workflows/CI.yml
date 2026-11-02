@@ -113,7 +113,7 @@ jobs:
 
       - name: Validate scopes
         run: |
-          verison=$scripts/versions.sh latest)
+          version=$(scripts/versions.sh latest)
           scripts/validate_scopes.sh $version
 
   validate-docs:
