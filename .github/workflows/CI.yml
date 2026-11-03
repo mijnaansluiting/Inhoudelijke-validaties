@@ -5,8 +5,8 @@ on:
   push:
     branches: [ "main", "develop" ]
 
-# Jobs run in a fixed order; each job only starts when the previous one succeeded.
-# Dependencies are downloaded once and shared with later jobs as an artifact.
+# The versions and dependencies are resolved once, after which the full pipeline runs per version
+# as a matrix job. Dependencies are downloaded once and shared with the matrix legs as an artifact.
 jobs:
   versions:
     runs-on: ubuntu-latest
@@ -24,27 +24,8 @@ jobs:
         id: list
         run: echo "matrix=$(scripts/versions.sh matrix)" >> "$GITHUB_OUTPUT"
 
-  covered-rules:
-    needs: versions
-    runs-on: ubuntu-latest
-
-    strategy:
-      fail-fast: false
-      matrix:
-        version: ${{ fromJSON(needs.versions.outputs.matrix) }}
-
-    env:
-      VERSION: ${{ matrix.version }}
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v5
-
-      - name: Check rule coverage
-        run: scripts/check_rule_coverage.sh "$VERSION"
-
   install-dependencies:
-    needs: covered-rules
+    needs: versions
     runs-on: ubuntu-latest
 
     steps:
@@ -67,7 +48,7 @@ jobs:
           if-no-files-found: error
           retention-days: 1
 
-  validate-rules:
+  validate:
     needs: [versions, install-dependencies]
     runs-on: ubuntu-latest
 
@@ -83,6 +64,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v5
 
+      - name: Check rule coverage
+        run: scripts/check_rule_coverage.sh "$VERSION"
+
       - name: Set up JDK
         uses: actions/setup-java@v5
         with:
@@ -94,8 +78,10 @@ jobs:
         with:
           name: installed-dependencies
 
+      # Rules
       - name: Validate rule test data XSD compliance
         run: scripts/validate_test_data_xsd.sh "$VERSION"
+
       - name: Transpile phases to XSL
         run: scripts/transpile_phases.sh "$VERSION"
 
@@ -114,35 +100,8 @@ jobs:
       - name: Check rule object coverage
         run: scripts/check_rule_object_coverage.sh "$VERSION"
 
-  validate-scopes:
-    needs: [versions, install-dependencies]
-    runs-on: ubuntu-latest
-
-    strategy:
-      fail-fast: false
-      matrix:
-        version: ${{ fromJSON(needs.versions.outputs.matrix) }}
-
-    env:
-      VERSION: ${{ matrix.version }}
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v5
-
-      - name: Set up JDK
-        uses: actions/setup-java@v5
-        with:
-          java-version: '21'
-          distribution: 'temurin'
-
-      - name: Download installed dependencies
-        uses: actions/download-artifact@v5
-        with:
-          name: installed-dependencies
-
-      # Every version, not just this one: main_scope_checks.sch includes the scope-checked
-      # abstract patterns of the versions it inherits from
+      # Scopes. Scope checks are added to every version, not just this one: main_scope_checks.sch
+      # includes the scope-checked abstract patterns of the versions it inherits from
       - name: Add scope checks
         run: |
           for SCOPE_VERSION in $(scripts/versions.sh list); do
@@ -155,34 +114,8 @@ jobs:
       - name: Validate scopes
         run: scripts/validate_scopes.sh "$VERSION"
 
-  validate-docs:
-    needs: [versions, install-dependencies]
-    runs-on: ubuntu-latest
-
-    strategy:
-      fail-fast: false
-      matrix:
-        version: ${{ fromJSON(needs.versions.outputs.matrix) }}
-
-    env:
-      VERSION: ${{ matrix.version }}
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v5
-
-      - name: Set up JDK
-        uses: actions/setup-java@v5
-        with:
-          java-version: '21'
-          distribution: 'temurin'
-
-      - name: Download installed dependencies
-        uses: actions/download-artifact@v5
-        with:
-          name: installed-dependencies
-
-      - name: Run tests
+      # Docs
+      - name: Validate documentation XML
         run: java test/XMLValidation.java doc/NLCSValidatieRegels.xsd $VERSION/doc/NLCSValidatieRegels.xml
 
       - name: Generate and compare HTMLs
