@@ -25,13 +25,14 @@ for RULE_DIR in $TEST_DATA_DIR/*; do
     done
 done
 
-# Remove emtpy dirs
-find $OUT_DIR/ -type d -empty -delete
 # Rename .xml to .svg
 find $OUT_DIR/ -depth -name "*.xml" -exec sh -c 'mv "$1" "${1%.xml}.svg"' _ {} \;
+# Remove empty dirs, last: when a version has no SVGs at all, this also removes $OUT_DIR itself
+find $OUT_DIR/ -type d -empty -delete
 
-# Throw error in pipeline if any of the SVGs are not up-to-date
-if ! git diff --quiet $OUT_DIR/; then
-    echo "::error title=Uncommitted changes detected in assets::Test data SVGs are not in line with the test data. Please run the following command locally and commit the changes: ${0}"
+# Throw error in pipeline if any of the SVGs are not up-to-date. git status also reports new
+# (untracked) SVGs, and with -- a version without any SVGs, whose folder was removed above, is fine
+if [[ -n "$(git status --porcelain --untracked-files=all -- "$OUT_DIR/" 2>/dev/null)" ]]; then
+    echo "::error title=Uncommitted changes detected in $OUT_DIR::Test data SVGs are not in line with the test data. Please run the following command locally and commit the changes: ${0} $VERSION"
     exit 1
 fi
