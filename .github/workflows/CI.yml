@@ -156,8 +156,16 @@ jobs:
         run: scripts/validate_scopes.sh "$VERSION"
 
   validate-docs:
-    needs: install-dependencies
+    needs: [versions, install-dependencies]
     runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        version: ${{ fromJSON(needs.versions.outputs.matrix) }}
+
+    env:
+      VERSION: ${{ matrix.version }}
 
     steps:
       - name: Checkout repository
@@ -175,16 +183,10 @@ jobs:
           name: installed-dependencies
 
       - name: Run tests
-        run: |
-          version=$(scripts/versions.sh latest)
-          java test/XMLValidation.java doc/NLCSValidatieRegels.xsd $version/doc/NLCSValidatieRegels.xml
+        run: java test/XMLValidation.java doc/NLCSValidatieRegels.xsd $VERSION/doc/NLCSValidatieRegels.xml
 
       - name: Generate and compare HTMLs
-        run: |
-          version=$(scripts/versions.sh latest)
-          scripts/generate_and_compare_htmls.sh $version
+        run: scripts/generate_and_compare_htmls.sh "$VERSION"
 
       - name: Generate and compare SVGs
-        run: |
-          version=$(scripts/versions.sh latest)
-          scripts/generate_and_compare_svgs.sh $version
+        run: scripts/generate_and_compare_svgs.sh "$VERSION"
