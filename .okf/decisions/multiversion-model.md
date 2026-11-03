@@ -6,7 +6,7 @@ tags: decision, versioning, architecture
 status: draft
 generated:
   by: claude-code/opus-5-5
-  at: 2026-11-02T00:00:00Z
+  at: 2026-11-03T00:00:00Z
 sources:
   - resource: "https://github.com/mijnaansluiting/Inhoudelijke-validaties/pull/136"
     title: "#136 — setup for multiversion support (v12 -> v2026.1.0 folders)"
@@ -184,6 +184,10 @@ combines a version with older versions into a `resolved_<version>` folder".
   ("unsupported NLCS version") rather than falling back.
 * Every test XML declares `VersieNummer` equal to its version's `nlcspp`;
   `scripts/validate_test_data_xsd.sh` checks this per version.
+* The selection is implemented by the
+  [version-dispatcher](../architecture/version-dispatcher) `validate.xsl`
+  (2026-11-03), which runs the selected version's compiled schema with
+  `fn:transform()` and stops with error `ma:unsupported-version`.
 
 ## CI
 
@@ -212,10 +216,10 @@ and is never shipped. The `released` attribute itself is expected to be
 dropped eventually; the "only older released versions" include rule then
 becomes "only older versions".
 
-# Open questions
+# Release packaging
 
-* **Release packaging** — one zip with all versions, a zip per version, or
-  both. To be decided later.
+Decided 2026-11-03: **one zip** with every released version and the
+dispatcher; see [build-and-release](../architecture/build-and-release).
 
 The version registry format was settled as XML; see
 [version-registry](../config/version-registry). The remaining

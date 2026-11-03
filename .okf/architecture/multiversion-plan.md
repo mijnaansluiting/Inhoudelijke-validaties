@@ -6,7 +6,7 @@ tags: versioning, plan, ci
 status: draft
 generated:
   by: claude-code/opus-5-5
-  at: 2026-11-02T00:00:00Z
+  at: 2026-11-03T00:00:00Z
 sources:
   - resource: "../decisions/multiversion-model.md"
     title: "Multiversion model"
@@ -107,11 +107,12 @@ results must not change.
 
 # Step 8: selection and release
 
-* Validation-time version selection: wire `version_functions.xsl`
-  (`ma:select-version`) into a dispatcher that picks the version from
-  the root's `VersieNummer` or the optional `version` parameter, and fails on
-  an unsupported XSD version.
-* Release packaging (one zip, a zip per version, or both): still open.
+* ~~Validation-time version selection~~ — done 2026-11-03:
+  [version-dispatcher](./version-dispatcher) `validate.xsl` picks the version
+  from `VersieNummer` or the `version` parameter and stops with
+  `ma:unsupported-version` otherwise.
+* ~~Release packaging~~ — decided 2026-11-03: one zip with every released
+  version plus the dispatcher (see [build-and-release](./build-and-release)).
 
 # Step 9: clean up
 

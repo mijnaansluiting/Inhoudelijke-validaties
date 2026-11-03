@@ -28,8 +28,9 @@ The libraries load their data relative to their own folder:
 and `document('../../' || $active_version || '/doc/NLCSValidatieRegels.xml')`,
 so an inherited library still reads the catalog of the version being run;
 the release `dist/` mirrors this layout so the same paths resolve there.
-`version_functions.xsl` (version selection from `configuration/versions.xml`)
-lives in the same folder but is not included by any `main.sch`.
+Version selection (`version_functions.xsl`) is not one of these libraries:
+it is version-independent and lives at the repository root next to the
+[version-dispatcher](./version-dispatcher).
 
 | File | Purpose |
 |---|---|

@@ -1,5 +1,21 @@
 # Update Log
 
+## 2026-11-03
+* **Add**: [version-dispatcher](./architecture/version-dispatcher) — new root
+  `validate.xsl` selects the rule-set version (`version` parameter or
+  `VersieNummer`) and runs its compiled schema with `fn:transform()`; stops
+  with `ma:unsupported-version` when none applies. `version_functions.xsl`
+  moved from `v2026.1.0/xsl_functions/` to the repository root.
+* **Update**: release packaging decided — one zip with every released version
+  plus the dispatcher. `bundle.sh` takes no argument; `Deliverables.yml`
+  adds scope checks to every version and compiles every released one. Updated
+  [build-and-release](./architecture/build-and-release),
+  [multiversion-model](./decisions/multiversion-model) (open question closed),
+  [multiversion-plan](./architecture/multiversion-plan),
+  [version-registry](./config/version-registry),
+  [xsl-function-libraries](./architecture/xsl-function-libraries),
+  [ci/workflows](./ci/workflows) and the [architecture index](./architecture/index).
+
 ## 2026-11-02
 * **Update**: XSL function libraries are now **version-managed**:
   root `xsl_functions/` → `v2026.1.0/xsl_functions/` (including
