@@ -8,18 +8,40 @@ on:
 # Jobs run in a fixed order; each job only starts when the previous one succeeded.
 # Dependencies are downloaded once and shared with later jobs as an artifact.
 jobs:
-  covered-rules:
+  versions:
     runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.list.outputs.matrix }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Check active versions declarations
+        run: scripts/check_active_version.sh
+
+      - name: List versions
+        id: list
+        run: echo "matrix=$(scripts/versions.sh matrix)" >> "$GITHUB_OUTPUT"
+
+  covered-rules:
+    needs: versions
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        version: ${{ fromJSON(needs.versions.outputs.matrix) }}
+
+    env:
+      VERSION: ${{ matrix.version }}
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v5
 
       - name: Check rule coverage
-        run: scripts/check_rule_coverage.sh "$(scripts/versions.sh latest)"
-
-      - name: Check active version declarations
-        run: scripts/check_active_version.sh
+        run: scripts/check_rule_coverage.sh "$VERSION"
 
   install-dependencies:
     needs: covered-rules
@@ -46,8 +68,16 @@ jobs:
           retention-days: 1
 
   validate-rules:
-    needs: install-dependencies
+    needs: [versions, install-dependencies]
     runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        version: ${{ fromJSON(needs.versions.outputs.matrix) }}
+
+    env:
+      VERSION: ${{ matrix.version }}
 
     steps:
       - name: Checkout repository
@@ -65,28 +95,36 @@ jobs:
           name: installed-dependencies
 
       - name: Validate rule test data XSD compliance
-        run: scripts/validate_test_data_xsd.sh
+        run: scripts/validate_test_data_xsd.sh "$VERSION"
       - name: Transpile phases to XSL
-        run: scripts/transpile_phases.sh "$(scripts/versions.sh latest)"
+        run: scripts/transpile_phases.sh "$VERSION"
 
       - name: Validate rules
-        run: scripts/validate_rules.sh "$(scripts/versions.sh latest)"
+        run: scripts/validate_rules.sh "$VERSION"
 
       - name: Upload validation reports
         uses: actions/upload-artifact@v4
         with:
-          name: rule-validation-reports
-          path: v[0-9]*/rule_validation_reports
+          name: rule-validation-reports-${{ matrix.version }}
+          path: ${{ matrix.version }}/rule_validation_reports
 
       - name: Validate test reports
-        run: scripts/validate_rule_reports.sh "$(scripts/versions.sh latest)"
+        run: scripts/validate_rule_reports.sh "$VERSION"
 
       - name: Check rule object coverage
-        run: scripts/check_rule_object_coverage.sh "$(scripts/versions.sh latest)"
+        run: scripts/check_rule_object_coverage.sh "$VERSION"
 
   validate-scopes:
-    needs: install-dependencies
+    needs: [versions, install-dependencies]
     runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        version: ${{ fromJSON(needs.versions.outputs.matrix) }}
+
+    env:
+      VERSION: ${{ matrix.version }}
 
     steps:
       - name: Checkout repository
@@ -103,18 +141,19 @@ jobs:
         with:
           name: installed-dependencies
 
+      # Every version, not just this one: main_scope_checks.sch includes the scope-checked
+      # abstract patterns of the versions it inherits from
       - name: Add scope checks
-        run: scripts/add_scope_checks.sh "$(scripts/versions.sh latest)"
+        run: |
+          for SCOPE_VERSION in $(scripts/versions.sh list); do
+            scripts/add_scope_checks.sh "$SCOPE_VERSION"
+          done
 
       - name: Transpile Schematron to XSL
-        run: |
-          version=$(scripts/versions.sh latest)
-          java -jar saxon-he.jar -xsl:transpile.xsl -s:$version/rules/main_scope_checks.sch -o:$version/rules/transpiled_phases/main_scope_checks.xsl
+        run: java -jar saxon-he.jar -xsl:transpile.xsl -s:$VERSION/rules/main_scope_checks.sch -o:$VERSION/rules/transpiled_phases/main_scope_checks.xsl
 
       - name: Validate scopes
-        run: |
-          version=$(scripts/versions.sh latest)
-          scripts/validate_scopes.sh $version
+        run: scripts/validate_scopes.sh "$VERSION"
 
   validate-docs:
     needs: install-dependencies
