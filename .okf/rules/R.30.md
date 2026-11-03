@@ -2,15 +2,15 @@
 type: Validation Rule
 title: R.30 — Mantelbuis Inhoud referenties
 description: Checks that an AmantelbuisInhoud correctly references a surrounding Amantelbuis and a distinct content object of the declared ObjectTypeInhoud.
-resource: validation_schemas/patterns/v12/R.30.sch
+resource: v2026.1.0/rules/patterns/R.30.sch
 tags: consistentie
 generated:
-  by: human:sytse.walraven
-  at: 2026-08-26T00:00:00Z
+  by: claude-code/opus-5-5
+  at: 2026-11-02T00:00:00Z
 sources:
-  - resource: "../../doc/NLCSValidatieRegels.xml"
+  - resource: "../../v2026.1.0/doc/NLCSValidatieRegels.xml"
     title: "NLCS Validatieregels catalog"
-  - resource: "../../validation_schemas/abstract_patterns/v12/consistentie/mantelbuis_inhoud_referenties.sch"
+  - resource: "../../v2026.1.0/rules/abstract_patterns/consistentie/mantelbuis_inhoud_referenties.sch"
     title: "mantelbuis_inhoud_referenties.sch"
 ---
 

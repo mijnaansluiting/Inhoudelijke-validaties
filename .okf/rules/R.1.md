@@ -2,15 +2,15 @@
 type: Validation Rule
 title: R.1 — Bestand bevat NLCS Objecten
 description: Checks that an NLCS++ file contains exactly one AprojectReferentie plus at least one actual NLCS object, so no "empty" project can be submitted.
-resource: validation_schemas/patterns/v12/R.1.sch
+resource: v2026.1.0/rules/patterns/R.1.sch
 tags: bestand
 generated:
-  by: human:sytse.walraven
-  at: 2026-08-26T00:00:00Z
+  by: claude-code/opus-5-5
+  at: 2026-11-02T00:00:00Z
 sources:
-  - resource: "../../doc/NLCSValidatieRegels.xml"
+  - resource: "../../v2026.1.0/doc/NLCSValidatieRegels.xml"
     title: "NLCS Validatieregels catalog"
-  - resource: "../../validation_schemas/abstract_patterns/v12/bestand/bestand_bevat_nlcs_objecten.sch"
+  - resource: "../../v2026.1.0/rules/abstract_patterns/bestand/bestand_bevat_nlcs_objecten.sch"
     title: "bestand_bevat_nlcs_objecten.sch"
 ---
 

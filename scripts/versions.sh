@@ -63,12 +63,12 @@ case "$1" in
         ;;
     rules)
         VERSION=$("$0" resolve "$2") || exit 1
-        SCHEMA_NAME=rules/$VERSION/main.sch
+        SCHEMA_NAME=$VERSION/rules/main.sch
         SCHEMA="$(dirname "$0")/../$SCHEMA_NAME"
         [[ -f "$SCHEMA" ]] || fail "$SCHEMA_NAME does not exist"
 
-        # Pattern include paths, e.g. patterns/R.7.sch or ../v2026.1.0/patterns/R.4_A.sch
-        PATTERN_INCLUDES=$(sed -n 's#.*<include href="\(\(\.\./v[^/]*/\)\{0,1\}patterns/R\.[0-9][^"]*\)".*#\1#p' "$SCHEMA")
+        # Pattern include paths, e.g. patterns/R.7.sch or ../../v2026.1.0/rules/patterns/R.4_A.sch
+        PATTERN_INCLUDES=$(sed -n 's#.*<include href="\(\(\.\./\.\./v[^/]*/rules/\)\{0,1\}patterns/R\.[0-9][^"]*\)".*#\1#p' "$SCHEMA")
 
         ALL_RULES_FOUND=true
         for RULE in $(grep -o '<phase id="R\.[0-9]\+"' "$SCHEMA" | grep -o 'R\.[0-9]\+'); do
@@ -77,7 +77,7 @@ case "$1" in
             if [[ -z "$INCLUDE" ]]; then
                 echo "versions.sh: $RULE is a phase in $SCHEMA_NAME, but has no pattern include" >&2
                 ALL_RULES_FOUND=false
-            elif [[ "$INCLUDE" =~ ^\.\./(v[^/]+)/ ]]; then
+            elif [[ "$INCLUDE" =~ ^\.\./\.\./(v[^/]+)/rules/ ]]; then
                 echo "$RULE ${BASH_REMATCH[1]}"
             else
                 echo "$RULE $VERSION"

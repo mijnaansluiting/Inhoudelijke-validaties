@@ -4,14 +4,14 @@ title: Adopted array(xs:double) coordinate representation (~34% faster than Coor
 description: Benchmark finding that representing parsed coordinates as Coord XML element nodes was measurably slower than a flat array(xs:double) representation, independent of the caching/connectivity-index wins; subsequently adopted.
 tags: decision, performance, geometry
 generated:
-  by: human:sytse.walraven
-  at: 2026-08-26T00:00:00Z
+  by: claude-code/opus-5-5
+  at: 2026-11-02T00:00:00Z
 sources:
   - resource: "../../COORD_PARSING_BENCHMARK.md"
     title: "COORD_PARSING_BENCHMARK.md"
-  - resource: "../../validation_schemas/xsl_functions/helper_functions.xsl"
+  - resource: "../../v2026.1.0/xsl_functions/helper_functions.xsl"
     title: "helper_functions.xsl"
-  - resource: "../../validation_schemas/xsl_functions/geometry_functions.xsl"
+  - resource: "../../v2026.1.0/xsl_functions/geometry_functions.xsl"
     title: "geometry_functions.xsl"
   - resource: "./geometry-parse-caching"
     title: "geometry-parse-caching"

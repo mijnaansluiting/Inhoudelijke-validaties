@@ -5,12 +5,12 @@ description: The single language setting that selects which localized message te
 resource: configuration/user_config.xml
 tags: configuration, localization
 generated:
-  by: human:sytse.walraven
-  at: 2026-08-26T00:00:00Z
+  by: claude-code/opus-5-5
+  at: 2026-11-02T00:00:00Z
 sources:
   - resource: "../../configuration/user_config.xml"
     title: "user_config.xml"
-  - resource: "../../validation_schemas/xsl_functions/localization_functions.xsl"
+  - resource: "../../v2026.1.0/xsl_functions/localization_functions.xsl"
     title: "localization_functions.xsl"
 ---
 
@@ -26,7 +26,7 @@ single field:
 ```
 
 `Language` (`nl` or `en`) selects which `xml:lang` variant
-`validation_schemas/xsl_functions/localization_functions.xsl` picks when
+`<version>/xsl_functions/localization_functions.xsl` picks when
 resolving a message id from
 [localization-messages](./localization-messages) for an SVRL assert
 report.

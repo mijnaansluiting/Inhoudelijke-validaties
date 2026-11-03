@@ -2,15 +2,15 @@
 type: Validation Rule
 title: R.31 — Aanwezigheid bestand bijlage aardpen
 description: Checks that every Eaardpen (earth pin) has a linked AbestandBijlage attachment of SoortBestand "Aardingsrapport".
-resource: validation_schemas/patterns/v12/R.31.sch
+resource: v2026.1.0/rules/patterns/R.31.sch
 tags: document
 generated:
-  by: human:sytse.walraven
-  at: 2026-08-26T00:00:00Z
+  by: claude-code/opus-5-5
+  at: 2026-11-02T00:00:00Z
 sources:
-  - resource: "../../doc/NLCSValidatieRegels.xml"
+  - resource: "../../v2026.1.0/doc/NLCSValidatieRegels.xml"
     title: "NLCS Validatieregels catalog"
-  - resource: "../../validation_schemas/abstract_patterns/v12/document/aanwezigheid_bestand_bijlage_aardpen.sch"
+  - resource: "../../v2026.1.0/rules/abstract_patterns/document/aanwezigheid_bestand_bijlage_aardpen.sch"
     title: "aanwezigheid_bestand_bijlage_aardpen.sch"
 ---
 

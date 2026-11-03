@@ -9,9 +9,9 @@ for VERSION in $(scripts/versions.sh list); do
     while IFS= read -r TEST_FILE; do
         echo "::error file=$TEST_FILE::$TEST_FILE must declare VersieNummer=\"$XSD_VERSION\" on its root element"
         ALL_TEST_DATA_VALID=false
-    done < <(grep -rLF --include=*.xml "VersieNummer=\"$XSD_VERSION\"" "test/rule_validation_data/$VERSION")
+    done < <(grep -rLF --include=*.xml "VersieNummer=\"$XSD_VERSION\"" "$VERSION/test/rule_validation_data")
 
-    if ! java -jar xerces-cli.jar "$KEUZELIJST" "test/rule_validation_data/$VERSION"; then
+    if ! java -jar xerces-cli.jar "$KEUZELIJST" "$VERSION/test/rule_validation_data"; then
         ALL_TEST_DATA_VALID=false
     fi
 done

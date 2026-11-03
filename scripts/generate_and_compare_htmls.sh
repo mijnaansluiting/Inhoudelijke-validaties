@@ -2,7 +2,7 @@
 
 VERSION=$(scripts/versions.sh resolve "$1") || exit 1
 
-DOC_DIR=doc/$VERSION
+DOC_DIR=$VERSION/doc
 
 java -jar saxon-he.jar -xsl:doc/NLCSValidatieRegels.xsl -s:$DOC_DIR/NLCSValidatieRegels.xml -o:$DOC_DIR/NLCSValidatieRegels.html
 if ! git diff --quiet $DOC_DIR/NLCSValidatieRegels.html; then

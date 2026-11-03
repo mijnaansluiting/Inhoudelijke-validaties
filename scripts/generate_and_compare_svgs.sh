@@ -2,8 +2,8 @@
 
 VERSION=$(scripts/versions.sh resolve "$1") || exit 1
 
-TEST_DATA_DIR=test/rule_validation_data/$VERSION
-OUT_DIR=assets
+TEST_DATA_DIR=$VERSION/test/rule_validation_data
+OUT_DIR=$VERSION/assets
 
 rm -rf $OUT_DIR/*
 
@@ -31,7 +31,7 @@ find $OUT_DIR/ -type d -empty -delete
 find $OUT_DIR/ -depth -name "*.xml" -exec sh -c 'mv "$1" "${1%.xml}.svg"' _ {} \;
 
 # Throw error in pipeline if any of the SVGs are not up-to-date
-if ! git diff --quiet assets/; then
+if ! git diff --quiet $OUT_DIR/; then
     echo "::error title=Uncommitted changes detected in assets::Test data SVGs are not in line with the test data. Please run the following command locally and commit the changes: ${0}"
     exit 1
 fi

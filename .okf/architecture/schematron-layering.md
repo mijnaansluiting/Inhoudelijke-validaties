@@ -2,18 +2,18 @@
 type: Architecture Component
 title: Schematron rule layering
 description: The three-layer design that separates rule metadata from rule logic — base schema, concrete pattern, abstract pattern.
-resource: validation_schemas/base/v12.sch
+resource: v2026.1.0/rules/main.sch
 tags: architecture, schematron
 generated:
-  by: human:sytse.walraven
-  at: 2026-08-26T00:00:00Z
+  by: claude-code/opus-5-5
+  at: 2026-11-02T00:00:00Z
 sources:
-  - resource: "../../validation_schemas/base/v12.sch"
-    title: "base/v12.sch"
-  - resource: "../../validation_schemas/patterns/v12/R.36.sch"
-    title: "patterns/v12/R.36.sch"
-  - resource: "../../validation_schemas/abstract_patterns/v12/geometrie/afstand_mantelbuis_tot_inhoud.sch"
-    title: "abstract_patterns/v12/geometrie/afstand_mantelbuis_tot_inhoud.sch"
+  - resource: "../../v2026.1.0/rules/main.sch"
+    title: "v2026.1.0/rules/main.sch"
+  - resource: "../../v2026.1.0/rules/patterns/R.36.sch"
+    title: "v2026.1.0/rules/patterns/R.36.sch"
+  - resource: "../../v2026.1.0/rules/abstract_patterns/geometrie/afstand_mantelbuis_tot_inhoud.sch"
+    title: "v2026.1.0/rules/abstract_patterns/geometrie/afstand_mantelbuis_tot_inhoud.sch"
 ---
 
 # Overview
@@ -23,17 +23,22 @@ across three layers so that rule metadata (id, scope, severity) stays separate
 from the actual check logic, and so a single implementation can be reused by
 sub-checks that only differ in parameters:
 
-1. **`validation_schemas/base/v12.sch`** — the root schema. Declares
+1. **`<version>/rules/main.sch`** (e.g. `v2026.1.0/rules/main.sch`) — the
+   root schema of a rule-set version. Declares
    namespaces (`ma`, `gml`, `xs`, `nlcs`, `nvr`, `math`), a global
    `<properties>` block (`scope`, `rule-number`, `severity`, `object-type`,
    `object-id`, `geometries`, `missing-attributes` — attached to asserts for
    downstream reporting), one Schematron `<phase>` per rule id (`R.1` … `R.41`, with
-   `R.4` and `R.8` each activating two patterns), the 5
+   `R.4` and `R.8` each activating two patterns), the 6
    [xsl-function-libraries](./xsl-function-libraries) via
-   `xsl:include`, then `include`s of every concrete pattern and every
-   abstract pattern file.
+   `xsl:include href="../../xsl_functions/…"` (own) or
+   `"../../../<older version>/xsl_functions/…"` (inherited), then `include`s of every
+   concrete pattern and every abstract pattern file — the version's own
+   (`patterns/R.<n>.sch`) or inherited from an older version folder
+   (`../../v2026.1.0/rules/patterns/…`, `../../<version>/rules/abstract_patterns/…`;
+   see [multiversion-model](../decisions/multiversion-model)).
 
-2. **`validation_schemas/patterns/v12/R.<n>.sch`** (concrete patterns) — one
+2. **`<version>/rules/patterns/R.<n>.sch`** (concrete patterns) — one
    per rule id (`R.4_A.sch`/`R.4_B.sch` and `R.8_A.sch`/`R.8_B.sch` for the
    two split rules). Each is a thin, non-abstract pattern that only sets
    `<param>`s — `rule_number`, `scope` (via `ma:scope-name(.)`), `severity`
@@ -52,7 +57,7 @@ sub-checks that only differ in parameters:
    </pattern>
    ```
 
-3. **`validation_schemas/abstract_patterns/v12/<category>/<name>.sch`**
+3. **`<version>/rules/abstract_patterns/<category>/<name>.sch`**
    (abstract patterns) — `abstract="true"` patterns containing the real
    `<rule context="...">`/`<assert>` XPath 3.0 logic. Grouped into 8 category
    directories that mirror each rule's `soort`: `bestand`, `consistentie`,

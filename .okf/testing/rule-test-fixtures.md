@@ -2,26 +2,30 @@
 type: Test Subsystem
 title: Rule test fixtures
 description: Hand-authored passing/failing NLCS++ XML fixtures per rule, run through the compiled rule XSLT in CI.
-resource: test/rule_validation_data/v12/
+resource: v2026.1.0/test/rule_validation_data/
 tags: testing
 generated:
-  by: human:sytse.walraven
-  at: 2026-08-26T00:00:00Z
+  by: claude-code/opus-5-5
+  at: 2026-11-02T00:00:00Z
 sources:
   - resource: "../../scripts/validate_rules.sh"
     title: "validate_rules.sh"
   - resource: "../../scripts/validate_rule_reports.sh"
     title: "validate_rule_reports.sh"
-  - resource: "../../test/rule_validation_data/v12/"
-    title: "test/rule_validation_data/v12/"
+  - resource: "../../v2026.1.0/test/rule_validation_data/"
+    title: "v2026.1.0/test/rule_validation_data/"
 ---
 
 # Overview
 
 There is no unit-test framework (no JUnit/pytest) — rule testing is entirely
-data-driven. `test/rule_validation_data/v12/R.<n>/` holds hand-authored
-NLCS++ XML fixtures for each rule, split into `passing/` (should produce zero
-`assert-failed` elements) and `failing/` (should trigger the rule's assert).
+data-driven. `<version>/test/rule_validation_data/R.<n>/` (e.g.
+`v2026.1.0/test/rule_validation_data/R.36/`) holds hand-authored NLCS++ XML
+fixtures for each rule a version adds or changes; a rule's fixtures are taken
+from the version folder its pattern is included from (`scripts/versions.sh
+rules`, see [multiversion-model](../decisions/multiversion-model)).
+Fixtures are split into `passing/` (should produce zero `assert-failed`
+elements) and `failing/` (should trigger the rule's assert).
 Fixture filenames describe the geometric/data scenario they exercise — e.g.
 [R.36](../rules/R.36)'s fixtures include `single_line.xml`, `multi_line.xml`,
 `u_turn.xml`, `complex.xml`, and `_offset`/`exact_same_position`/
@@ -33,16 +37,20 @@ edge cases (see [distance-precision-rounding](../decisions/distance-precision-ro
 `scripts/validate_rules.sh` runs every rule's transpiled XSLT (see
 [compilation-pipeline](../architecture/compilation-pipeline)) against both
 its `passing/` and `failing/` fixture sets, writing SVRL reports to
-`rule_validation_reports/v12/<rule>/<passing|failing>/`. `scripts/validate_rule_reports.sh`
+`<version>/rule_validation_reports/<rule>/<passing|failing>/` (git-ignored).
+`scripts/validate_rule_reports.sh`
 then reduces each report to a PASS/FAIL verdict via
-`transformations/check_validation_reports.xsl` (PASS = zero asserts for
+`transformations/check_validation_reports.xsl` into
+`<version>/validation_test_results/` (PASS = zero asserts for
 `passing/`, at least one for `failing/`) and fails CI — posting a
 `$GITHUB_STEP_SUMMARY` table of every mismatch — if any fixture doesn't match
-its expected outcome. This is wired into the `RuleValidation` workflow, see
+its expected outcome. This is wired into the `validate-rules` job of the
+`CI` workflow, see
 [ci/workflows](../ci/workflows).
 
-Before any of this runs, `RuleValidation` also XSD-validates every fixture
-against the external Keuzelijst schema via `xerces-cli.jar`, to keep fixtures
+Before any of this runs, `validate-rules` also XSD-validates every fixture
+against its version's Keuzelijst schema (`schemas/<xsd version>/`) via
+`xerces-cli.jar` (`scripts/validate_test_data_xsd.sh`), to keep fixtures
 themselves well-formed NLCS++.
 
 # Related

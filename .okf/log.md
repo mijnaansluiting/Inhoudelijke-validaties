@@ -1,5 +1,66 @@
 # Update Log
 
+## 2026-11-02
+* **Update**: XSL function libraries are now **version-managed**:
+  root `xsl_functions/` → `v2026.1.0/xsl_functions/` (including
+  `version_functions.xsl`); `v9999.1.0` inherits them via
+  `../../../v2026.1.0/xsl_functions/…` includes in its `main.sch`, while
+  `v2026.1.0` includes its own as `../../xsl_functions/…`. The libraries load
+  `../../configuration/`, `../../localization/` and
+  `../../<active_version>/doc/`. `bundle.sh` copies the function libraries of
+  every version a bundled `main.sch` includes them from. The decision that the
+  libraries stay one backwards-compatible shared copy is replaced
+  ([multiversion-model](./decisions/multiversion-model)); also updated
+  [xsl-function-libraries](./architecture/xsl-function-libraries) (retitled),
+  [architecture index](./architecture/index),
+  [schematron-layering](./architecture/schematron-layering),
+  [compilation-pipeline](./architecture/compilation-pipeline),
+  [build-and-release](./architecture/build-and-release),
+  [multiversion-plan](./architecture/multiversion-plan) and the concepts
+  citing a function library (sources now point to `v2026.1.0/xsl_functions/`).
+* **Update**: repository restructured to **one root folder per version**
+  (`v2026.1.0/`, `v9999.1.0/`). `rules/<v>/` → `<v>/rules/` (`main.sch`,
+  `patterns/`, `abstract_patterns/`, generated `transpiled_phases/`,
+  `abstract_patterns_scope_checks/`, `main_scope_checks.{sch,xsl}`);
+  `doc/<v>/NLCSValidatieRegels.{xml,html}` → `<v>/doc/`;
+  `test/rule_validation_data/<v>/`, `test/scope_validation_data/<v>/` →
+  `<v>/test/…`; `assets/` → `<v>/assets/`; generated
+  `rule_validation_reports`, `validation_test_results`, `scoped_objects`,
+  `scoped_objects_reports` → under `<v>/`; `rules/xsl_functions/` →
+  root `xsl_functions/`. Shared tooling (`doc/NLCSValidatieRegels.{xsl,css,xsd}`,
+  `configuration/`, `localization/`, `transformations/`, `wrappers/`,
+  `scripts/`, `schemas/`, `test/XMLValidation.java`) stays at the root.
+  `main.sch` includes `../../../xsl_functions/` and inherits with
+  `../../<v>/rules/{patterns,abstract_patterns}/…`; `dist/` now mirrors the
+  repo layout (`dist/xsl_functions/`, `dist/<v>/rules/transpiled_phases/main_scope_checks.xsl`,
+  `dist/<v>/doc/`). All remaining `validation_schemas/…`/`v12` paths in
+  the bundle were mapped to the new layout as well.
+  Changed: [multiversion-model](./decisions/multiversion-model) (new
+  "Repository layout" section), [multiversion-plan](./architecture/multiversion-plan),
+  [compilation-pipeline](./architecture/compilation-pipeline),
+  [build-and-release](./architecture/build-and-release),
+  [schematron-layering](./architecture/schematron-layering),
+  [xsl-function-libraries](./architecture/xsl-function-libraries),
+  [workflows](./ci/workflows) (rewritten for the single `CI.yml` with jobs
+  plus `Deliverables.yml` and `DeployWithGhPages.yml`),
+  [version-registry](./config/version-registry) (`versions.sh rules`
+  replaces the no longer existing `sources`),
+  [sys-config](./config/sys-config),
+  [user-config](./config/user-config),
+  [localization-messages](./config/localization-messages),
+  [scope-severity-model](./domain/scope-severity-model),
+  [nlcs-plus-plus](./domain/nlcs-plus-plus), all
+  [testing](./testing/index) concepts, the five decisions citing
+  `xsl_functions` ([connectivity-index-and-geometry-caching](./decisions/connectivity-index-and-geometry-caching),
+  [coord-representation-array-vs-node](./decisions/coord-representation-array-vs-node),
+  [distance-precision-rounding](./decisions/distance-precision-rounding),
+  [geometry-parse-caching](./decisions/geometry-parse-caching),
+  [scope-bound-vs-scopeless-rules](./decisions/scope-bound-vs-scopeless-rules)),
+  and every [rule](./rules/index) concept (`resource` and `sources` now
+  point into `v2026.1.0/rules/` and `v2026.1.0/doc/`). Also removed
+  leftover merge-conflict markers around the 2026-10-29 (3)/(2) entries,
+  keeping both entries unchanged.
+
 ## 2026-10-30
 * **Update**: [compilation-pipeline](./architecture/compilation-pipeline),
   [multiversion-plan](./architecture/multiversion-plan),
@@ -18,7 +79,6 @@
   (`../v2026.1.0/abstract_patterns/…`), also for a version's own files;
   applied to `v2026.1.0` and `v9999.1.0`.
 
-<<<<<<< Updated upstream
 ## 2026-10-29 (3)
 * **Update**: [multiversion-model](./decisions/multiversion-model),
   [version-registry](./config/version-registry),
@@ -27,13 +87,12 @@
   `xsi:schemaLocation`. Every test XML now declares `VersieNummer` (its
   version's `nlcspp`), checked by `validate_test_data_xsd.sh`. The
   fictional `v9999.1.0` now targets NLCS++ `12` instead of `12.1`.
-=======
+
 ## 2026-10-29 (2)
 * **Update**: [version-registry](./config/version-registry) — scripts no
   longer default to the newest released version: the version argument is
   required (`versions.sh resolve` fails without one), and the workflows
   pass it explicitly.
->>>>>>> Stashed changes
 
 ## 2026-10-29
 * **Update**: [version-registry](./config/version-registry) — the

@@ -5,12 +5,12 @@ description: Version-scoped thresholds, allowed-value lists, and exceptions cons
 resource: configuration/sys_config.xml
 tags: configuration
 generated:
-  by: claude-opus-5-5
-  at: 2026-10-27T00:00:00Z
+  by: claude-code/opus-5-5
+  at: 2026-11-02T00:00:00Z
 sources:
   - resource: "../../configuration/sys_config.xml"
     title: "sys_config.xml"
-  - resource: "../../validation_schemas/xsl_functions/config_functions.xsl"
+  - resource: "../../v2026.1.0/xsl_functions/config_functions.xsl"
     title: "config_functions.xsl"
 ---
 
@@ -21,7 +21,7 @@ one full `<version id="vYEAR.RELEASE.FIX">` block per rule-set version (no
 defaults or inheritance between blocks; see
 [multiversion-model](../decisions/multiversion-model)). Values are read at
 validation time by functions in
-`validation_schemas/xsl_functions/config_functions.xsl`, which select the
+`<version>/xsl_functions/config_functions.xsl`, which select the
 block whose `id` equals `$active_version` (declared by each version's
 `main.sch`) and raise an error if there is none. A rule's actual behavior
 can be adjusted without touching Schematron pattern code.

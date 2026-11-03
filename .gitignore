@@ -5,14 +5,14 @@
 
 # Generated data
 dist/
-rules/*/transpiled_phases/
-rules/*/abstract_patterns_scope_checks/
-rules/*/*_scope_checks.sch
-rules/*/*_scope_checks.xsl
-validation_test_results/
-rule_validation_reports/
-scoped_objects/
-scoped_objects_reports/
+/v[0-9]*/rules/transpiled_phases/
+/v[0-9]*/rules/abstract_patterns_scope_checks/
+/v[0-9]*/rules/*_scope_checks.sch
+/v[0-9]*/rules/*_scope_checks.xsl
+/v[0-9]*/validation_test_results/
+/v[0-9]*/rule_validation_reports/
+/v[0-9]*/scoped_objects/
+/v[0-9]*/scoped_objects_reports/
 
 # Dependencies from other repos
 saxon-he.jar

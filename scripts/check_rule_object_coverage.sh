@@ -11,10 +11,10 @@ VERSION=$(scripts/versions.sh resolve "$1") || exit 1
 
 ALL_RULES_COVERED_CORRECTLY=true
 
-for DIR in rule_validation_reports/$VERSION/*; do
+for DIR in $VERSION/rule_validation_reports/*; do
     RULE_NUMBER=$(basename "$DIR")
     echo "Checking rule object coverage for $RULE_NUMBER"
-    OUTPUT=$(java -jar saxon-he.jar -xsl:transformations/check_object_coverage.xsl -s:doc/$VERSION/NLCSValidatieRegels.xml rule_number=$RULE_NUMBER version=$VERSION)
+    OUTPUT=$(java -jar saxon-he.jar -xsl:transformations/check_object_coverage.xsl -s:$VERSION/doc/NLCSValidatieRegels.xml rule_number=$RULE_NUMBER version=$VERSION)
 
     while IFS=',' read -r -a MARKDOWN_AND_VALIDITY; do
         VALIDITY=${MARKDOWN_AND_VALIDITY[1]}

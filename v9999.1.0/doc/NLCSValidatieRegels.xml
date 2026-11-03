@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<?xml-stylesheet type='text/xsl' href="../NLCSValidatieRegels.xsl"?>
+<?xml-stylesheet type='text/xsl' href="../../doc/NLCSValidatieRegels.xsl"?>
 <NLCSValidatieregels xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-		     xsi:schemaLocation="NLCSValidatieRegelsNameSpace ../NLCSValidatieRegels.xsd"
+		     xsi:schemaLocation="NLCSValidatieRegelsNameSpace ../../doc/NLCSValidatieRegels.xsd"
 		     xmlns="NLCSValidatieRegelsNameSpace">
 	<validatieRegels>
 		<validatieRegel nummer="R.1" naam="Bestand bevat NLCS Objecten">
@@ -228,17 +228,6 @@
 				<validatieObject><naam>OVLoverdrachtspunt</naam></validatieObject>
 			</validatieObjecten>
 		</validatieRegel>
-		<validatieRegel nummer="R.13" naam="Verplichte kenmerken MSoverdrachtspunt">
-			<beschrijving>Ieder MSoverdrachtspunt heeft kenmerken die gevuld moeten zijn.</beschrijving>
-			<soort>Verplichte waarde</soort>
-			<definitie>
-				Ieder MSoverdrachtspunt moet een waarde voor de volgende kenmerken hebben:
-				- Identificatie (EAN Code) <!-- is dit bekend bij de Aannemer? -->
-			</definitie>
-			<validatieObjecten>
-				<validatieObject><naam>MSoverdrachtspunt</naam></validatieObject>
-			</validatieObjecten>
-		</validatieRegel>
 		<validatieRegel nummer="R.14" naam="Verplichte kenmerken Stations en Kasten">
 			<beschrijving>Ieder MSstation, HSstation en LSkast heeft kenmerken die gevuld moeten zijn.</beschrijving>
 			<soort>Verplichte waarde</soort>
@@ -261,6 +250,7 @@
 				- Materiaal
 				- Diameter
 				- Thema
+				- Eigenaar
 			</definitie>
 			<validatieObjecten>
 				<validatieObject><naam>Amantelbuis</naam></validatieObject>
@@ -627,6 +617,19 @@
 				<validatieObject><naam>MSkabel</naam></validatieObject>
 			</validatieObjecten>
 		</validatieRegel>
+		<validatieRegel nummer="R.44" naam="Verplichte kenmerken Kunstwerk">
+			<beschrijving>Ieder Kunstwerk heeft kenmerken die gevuld moeten zijn.</beschrijving>
+			<soort>Verplichte waarde</soort>
+			<definitie>
+				Ieder Kunstwerk moet een waarde voor de volgende kenmerken hebben:
+				- Kunstwerknummer
+				- Thema
+			</definitie>
+			<toelichting>Fictieve regel in testversie v9999.1.0</toelichting>
+			<validatieObjecten>
+				<validatieObject><naam>Akunstwerk</naam></validatieObject>
+			</validatieObjecten>
+		</validatieRegel>
 	</validatieRegels>
 	<scopes>
 		<scope naam="Bestaande Situatie">
@@ -651,7 +654,6 @@
 				<scopeValidatieRegel><nummer>R.10</nummer><niveau>Informerend</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.11</nummer><niveau>Informerend</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.12</nummer><niveau>Informerend</niveau></scopeValidatieRegel>
-				<scopeValidatieRegel><nummer>R.13</nummer><niveau>Informerend</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.14</nummer><niveau>Informerend</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.15</nummer><niveau>Informerend</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.20</nummer><niveau>Informerend</niveau></scopeValidatieRegel>
@@ -668,6 +670,7 @@
 				<scopeValidatieRegel><nummer>R.36</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.41</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.42</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.44</nummer><niveau>Informerend</niveau></scopeValidatieRegel>
 			</scopeValidatieRegels>
 		</scope>
 		<scope naam="Definitef Ontwerp">
@@ -720,7 +723,6 @@
 				<scopeValidatieRegel><nummer>R.10</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.11</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.12</nummer><niveau>Fout</niveau></scopeValidatieRegel>
-				<scopeValidatieRegel><nummer>R.13</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.14</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.15</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.20</nummer><niveau>Fout</niveau></scopeValidatieRegel>
@@ -746,6 +748,7 @@
 				<scopeValidatieRegel><nummer>R.41</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.42</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.43</nummer><niveau>Waarschuwing</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.44</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 			</scopeValidatieRegels>
 		</scope>
 		<scope naam="Deelrevisie aangepaste objecten">
@@ -770,7 +773,6 @@
 				<scopeValidatieRegel><nummer>R.10</nummer><niveau>Waarschuwing</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.11</nummer><niveau>Waarschuwing</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.12</nummer><niveau>Waarschuwing</niveau></scopeValidatieRegel>
-				<scopeValidatieRegel><nummer>R.13</nummer><niveau>Waarschuwing</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.14</nummer><niveau>Waarschuwing</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.15</nummer><niveau>Waarschuwing</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.20</nummer><niveau>Fout</niveau></scopeValidatieRegel>
@@ -790,6 +792,7 @@
 				<scopeValidatieRegel><nummer>R.41</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.42</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.43</nummer><niveau>Waarschuwing</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.44</nummer><niveau>Waarschuwing</niveau></scopeValidatieRegel>
 			</scopeValidatieRegels>
 		</scope>
 		<scope naam="Deelrevisie verlaten objecten">
@@ -838,7 +841,6 @@
 				<scopeValidatieRegel><nummer>R.10</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.11</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.12</nummer><niveau>Fout</niveau></scopeValidatieRegel>
-				<scopeValidatieRegel><nummer>R.13</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.14</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.15</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.20</nummer><niveau>Fout</niveau></scopeValidatieRegel>
@@ -864,6 +866,7 @@
 				<scopeValidatieRegel><nummer>R.41</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.42</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.43</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.44</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 			</scopeValidatieRegels>
 		</scope>
 		<scope naam="Eindrevisie aangepaste objecten">
@@ -888,7 +891,6 @@
 				<scopeValidatieRegel><nummer>R.10</nummer><niveau>Waarschuwing</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.11</nummer><niveau>Waarschuwing</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.12</nummer><niveau>Waarschuwing</niveau></scopeValidatieRegel>
-				<scopeValidatieRegel><nummer>R.13</nummer><niveau>Waarschuwing</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.14</nummer><niveau>Waarschuwing</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.15</nummer><niveau>Waarschuwing</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.20</nummer><niveau>Fout</niveau></scopeValidatieRegel>
@@ -908,6 +910,7 @@
 				<scopeValidatieRegel><nummer>R.41</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.42</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.43</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.44</nummer><niveau>Waarschuwing</niveau></scopeValidatieRegel>
 			</scopeValidatieRegels>
 		</scope>
 		<scope naam="Eindrevisie verlaten objecten">

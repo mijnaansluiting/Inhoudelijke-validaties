@@ -10,8 +10,8 @@ while read -r RULE SOURCE; do
     RULES_SOURCE[$RULE]=$SOURCE
 done <<< "$RULES"
 
-RULE_VALIDATION_REPORTS_DIR=rule_validation_reports/$VERSION
-VALIDATION_TEST_RESULTS_DIR=validation_test_results/$VERSION
+RULE_VALIDATION_REPORTS_DIR=$VERSION/rule_validation_reports
+VALIDATION_TEST_RESULTS_DIR=$VERSION/validation_test_results
 
 # For every rule validation reports, generates a file containing PASS or FAIL
 # based on the test type (passing/failing) and the amount of <assert-failed> elements
@@ -49,7 +49,7 @@ while IFS= read -r -d '' FILE; do
             MESSAGE="Expected failed asserts, found none"
         fi
 
-        RULE_VALIDATION_DATA_PATH="${FILE/validation_test_results\/$VERSION\//test/rule_validation_data/$SOURCE/}"
+        RULE_VALIDATION_DATA_PATH="${FILE/#$VERSION\/validation_test_results\//$SOURCE/test/rule_validation_data/}"
         RULE_VALIDATION_DATA_PATH="${RULE_VALIDATION_DATA_PATH/%.txt/.xml}"
 
         echo "| $MESSAGE | $RULE_VALIDATION_DATA_PATH | [View file](https://github.com/${GITHUB_REPOSITORY}/blob/${GITHUB_SHA}/$RULE_VALIDATION_DATA_PATH) |" >> $GITHUB_STEP_SUMMARY

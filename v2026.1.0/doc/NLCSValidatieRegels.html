@@ -4,7 +4,7 @@
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
       <title>NLCS++ Inhoudelijke Validaties - Documentatie</title>
-      <link rel="stylesheet" href="../NLCSValidatieRegels.css">
+      <link rel="stylesheet" href="../../doc/NLCSValidatieRegels.css">
    </head>
    <body>
       <h1>NLCS++ Inhoudelijke validaties - Documentatie</h1>
@@ -22,6 +22,7 @@
       <li><a href="#R.10">R.10 - Verplichte kenmerken moffen</a></li>
       <li><a href="#R.11">R.11 - Verplichte kenmerken LSoverdrachtspunt</a></li>
       <li><a href="#R.12">R.12 - Verplichte kenmerken OVLoverdrachtspunt</a></li>
+      <li><a href="#R.13">R.13 - Verplichte kenmerken MSoverdrachtspunt</a></li>
       <li><a href="#R.14">R.14 - Verplichte kenmerken Stations en Kasten</a></li>
       <li><a href="#R.15">R.15 - Verplichte kenmerken Mantelbuis</a></li>
       <li><a href="#R.20">R.20 - Topologie punt objecten Elec</a></li>
@@ -48,7 +49,6 @@
       <li><a href="#R.41">R.41 - DatumTijdMutatie gevuld</a></li>
       <li><a href="#R.42">R.42 - Combinatie NLCS Status en Bedrijfstoestand</a></li>
       <li><a href="#R.43">R.43 - Lijn Geometrie voor Aanlegtechnieken en nabije objecten</a></li>
-      <li><a href="#R.44">R.44 - Verplichte kenmerken Kunstwerk</a></li>
       <h3>Scopes</h3>
       <li><a href="#Bestaande Situatie">Bestaande Situatie</a></li>
       <li><a href="#Definitef Ontwerp">Definitef Ontwerp</a></li>
@@ -469,6 +469,23 @@
             <td class="validatieDocumentatieCell"><b>ValidatieObjecten</b></td>
             <td class="validatieDocumentatieCell">validatieObject: naam: OVLoverdrachtspunt</td>
          </tr>
+      </table><br><b id="R.13">R.13 - Verplichte kenmerken MSoverdrachtspunt</b><br><br><table class="validatieDocumentatieTable">
+         <tr class="validatieDocumentatieRow">
+            <td class="validatieDocumentatieCell"><b>Beschrijving </b></td>
+            <td class="validatieDocumentatieCell">Ieder MSoverdrachtspunt heeft kenmerken die gevuld moeten zijn.</td>
+         </tr>
+         <tr class="validatieDocumentatieRow">
+            <td class="validatieDocumentatieCell"><b>Soort </b></td>
+            <td class="validatieDocumentatieCell">Verplichte waarde</td>
+         </tr>
+         <tr class="validatieDocumentatieRow">
+            <td class="validatieDocumentatieCell"><b>Definitie </b></td>
+            <td class="validatieDocumentatieCell"><br>				Ieder MSoverdrachtspunt moet een waarde voor de volgende kenmerken hebben:<br>				- Identificatie (EAN Code) </td>
+         </tr>
+         <tr class="validatieDocumentatieRow">
+            <td class="validatieDocumentatieCell"><b>ValidatieObjecten</b></td>
+            <td class="validatieDocumentatieCell">validatieObject: naam: MSoverdrachtspunt</td>
+         </tr>
       </table><br><b id="R.14">R.14 - Verplichte kenmerken Stations en Kasten</b><br><br><table class="validatieDocumentatieTable">
          <tr class="validatieDocumentatieRow">
             <td class="validatieDocumentatieCell"><b>Beschrijving </b></td>
@@ -512,7 +529,7 @@
          </tr>
          <tr class="validatieDocumentatieRow">
             <td class="validatieDocumentatieCell"><b>Definitie </b></td>
-            <td class="validatieDocumentatieCell"><br>				Iedere Mantelbuis moet een waarde voor de volgende kenmerken hebben:<br>				- Materiaal<br>				- Diameter<br>				- Thema<br>				- Eigenaar<br>			</td>
+            <td class="validatieDocumentatieCell"><br>				Iedere Mantelbuis moet een waarde voor de volgende kenmerken hebben:<br>				- Materiaal<br>				- Diameter<br>				- Thema<br>			</td>
          </tr>
          <tr class="validatieDocumentatieRow">
             <td class="validatieDocumentatieCell"><b>ValidatieObjecten</b></td>
@@ -1149,27 +1166,6 @@
                   </tr>
                </table><br></td>
          </tr>
-      </table><br><b id="R.44">R.44 - Verplichte kenmerken Kunstwerk</b><br><br><table class="validatieDocumentatieTable">
-         <tr class="validatieDocumentatieRow">
-            <td class="validatieDocumentatieCell"><b>Beschrijving </b></td>
-            <td class="validatieDocumentatieCell">Ieder Kunstwerk heeft kenmerken die gevuld moeten zijn.</td>
-         </tr>
-         <tr class="validatieDocumentatieRow">
-            <td class="validatieDocumentatieCell"><b>Soort </b></td>
-            <td class="validatieDocumentatieCell">Verplichte waarde</td>
-         </tr>
-         <tr class="validatieDocumentatieRow">
-            <td class="validatieDocumentatieCell"><b>Definitie </b></td>
-            <td class="validatieDocumentatieCell"><br>				Ieder Kunstwerk moet een waarde voor de volgende kenmerken hebben:<br>				- Kunstwerknummer<br>				- Thema<br>			</td>
-         </tr>
-         <tr class="validatieDocumentatieRow">
-            <td class="validatieDocumentatieCell"><b>Toelichting </b></td>
-            <td class="validatieDocumentatieCell">Fictieve regel in testversie v9999.1.0</td>
-         </tr>
-         <tr class="validatieDocumentatieRow">
-            <td class="validatieDocumentatieCell"><b>ValidatieObjecten</b></td>
-            <td class="validatieDocumentatieCell">validatieObject: naam: Akunstwerk</td>
-         </tr>
       </table><br><h3>Scopes</h3><b id="Bestaande Situatie">Bestaande Situatie</b><br><br><table class="validatieDocumentatieTable">
          <tr class="validatieDocumentatieRow">
             <td class="validatieDocumentatieCell"><b>TekeningSoort </b></td>
@@ -1348,6 +1344,20 @@
                            <tr class="validatieDocumentatieRow">
                               <td class="validatieDocumentatieCell"><b>Nummer </b></td>
                               <td class="validatieDocumentatieCell">R.12</td>
+                           </tr>
+                           <tr class="validatieDocumentatieRow">
+                              <td class="validatieDocumentatieCell"><b>Niveau</b></td>
+                              <td class="validatieDocumentatieCell">Informerend</td>
+                           </tr>
+                        </table><br></td>
+                  </tr>
+                  <tr class="validatieDocumentatieRow">
+                     <td class="validatieDocumentatieCell"><b>ScopeValidatieRegel </b></td>
+                     <td class="validatieDocumentatieCell">
+                        <table class="validatieDocumentatieTable">
+                           <tr class="validatieDocumentatieRow">
+                              <td class="validatieDocumentatieCell"><b>Nummer </b></td>
+                              <td class="validatieDocumentatieCell">R.13</td>
                            </tr>
                            <tr class="validatieDocumentatieRow">
                               <td class="validatieDocumentatieCell"><b>Niveau</b></td>
@@ -1566,7 +1576,7 @@
                         </table><br></td>
                   </tr>
                   <tr class="validatieDocumentatieRow">
-                     <td class="validatieDocumentatieCell"><b>ScopeValidatieRegel </b></td>
+                     <td class="validatieDocumentatieCell"><b>ScopeValidatieRegel</b></td>
                      <td class="validatieDocumentatieCell">
                         <table class="validatieDocumentatieTable">
                            <tr class="validatieDocumentatieRow">
@@ -1576,20 +1586,6 @@
                            <tr class="validatieDocumentatieRow">
                               <td class="validatieDocumentatieCell"><b>Niveau</b></td>
                               <td class="validatieDocumentatieCell">Fout</td>
-                           </tr>
-                        </table><br></td>
-                  </tr>
-                  <tr class="validatieDocumentatieRow">
-                     <td class="validatieDocumentatieCell"><b>ScopeValidatieRegel</b></td>
-                     <td class="validatieDocumentatieCell">
-                        <table class="validatieDocumentatieTable">
-                           <tr class="validatieDocumentatieRow">
-                              <td class="validatieDocumentatieCell"><b>Nummer </b></td>
-                              <td class="validatieDocumentatieCell">R.44</td>
-                           </tr>
-                           <tr class="validatieDocumentatieRow">
-                              <td class="validatieDocumentatieCell"><b>Niveau</b></td>
-                              <td class="validatieDocumentatieCell">Informerend</td>
                            </tr>
                         </table><br></td>
                   </tr>
@@ -2029,6 +2025,20 @@
                         <table class="validatieDocumentatieTable">
                            <tr class="validatieDocumentatieRow">
                               <td class="validatieDocumentatieCell"><b>Nummer </b></td>
+                              <td class="validatieDocumentatieCell">R.13</td>
+                           </tr>
+                           <tr class="validatieDocumentatieRow">
+                              <td class="validatieDocumentatieCell"><b>Niveau</b></td>
+                              <td class="validatieDocumentatieCell">Fout</td>
+                           </tr>
+                        </table><br></td>
+                  </tr>
+                  <tr class="validatieDocumentatieRow">
+                     <td class="validatieDocumentatieCell"><b>ScopeValidatieRegel </b></td>
+                     <td class="validatieDocumentatieCell">
+                        <table class="validatieDocumentatieTable">
+                           <tr class="validatieDocumentatieRow">
+                              <td class="validatieDocumentatieCell"><b>Nummer </b></td>
                               <td class="validatieDocumentatieCell">R.14</td>
                            </tr>
                            <tr class="validatieDocumentatieRow">
@@ -2360,7 +2370,7 @@
                         </table><br></td>
                   </tr>
                   <tr class="validatieDocumentatieRow">
-                     <td class="validatieDocumentatieCell"><b>ScopeValidatieRegel </b></td>
+                     <td class="validatieDocumentatieCell"><b>ScopeValidatieRegel</b></td>
                      <td class="validatieDocumentatieCell">
                         <table class="validatieDocumentatieTable">
                            <tr class="validatieDocumentatieRow">
@@ -2370,20 +2380,6 @@
                            <tr class="validatieDocumentatieRow">
                               <td class="validatieDocumentatieCell"><b>Niveau</b></td>
                               <td class="validatieDocumentatieCell">Waarschuwing</td>
-                           </tr>
-                        </table><br></td>
-                  </tr>
-                  <tr class="validatieDocumentatieRow">
-                     <td class="validatieDocumentatieCell"><b>ScopeValidatieRegel</b></td>
-                     <td class="validatieDocumentatieCell">
-                        <table class="validatieDocumentatieTable">
-                           <tr class="validatieDocumentatieRow">
-                              <td class="validatieDocumentatieCell"><b>Nummer </b></td>
-                              <td class="validatieDocumentatieCell">R.44</td>
-                           </tr>
-                           <tr class="validatieDocumentatieRow">
-                              <td class="validatieDocumentatieCell"><b>Niveau</b></td>
-                              <td class="validatieDocumentatieCell">Fout</td>
                            </tr>
                         </table><br></td>
                   </tr>
@@ -2577,6 +2573,20 @@
                            <tr class="validatieDocumentatieRow">
                               <td class="validatieDocumentatieCell"><b>Nummer </b></td>
                               <td class="validatieDocumentatieCell">R.12</td>
+                           </tr>
+                           <tr class="validatieDocumentatieRow">
+                              <td class="validatieDocumentatieCell"><b>Niveau</b></td>
+                              <td class="validatieDocumentatieCell">Waarschuwing</td>
+                           </tr>
+                        </table><br></td>
+                  </tr>
+                  <tr class="validatieDocumentatieRow">
+                     <td class="validatieDocumentatieCell"><b>ScopeValidatieRegel </b></td>
+                     <td class="validatieDocumentatieCell">
+                        <table class="validatieDocumentatieTable">
+                           <tr class="validatieDocumentatieRow">
+                              <td class="validatieDocumentatieCell"><b>Nummer </b></td>
+                              <td class="validatieDocumentatieCell">R.13</td>
                            </tr>
                            <tr class="validatieDocumentatieRow">
                               <td class="validatieDocumentatieCell"><b>Niveau</b></td>
@@ -2837,26 +2847,12 @@
                         </table><br></td>
                   </tr>
                   <tr class="validatieDocumentatieRow">
-                     <td class="validatieDocumentatieCell"><b>ScopeValidatieRegel </b></td>
-                     <td class="validatieDocumentatieCell">
-                        <table class="validatieDocumentatieTable">
-                           <tr class="validatieDocumentatieRow">
-                              <td class="validatieDocumentatieCell"><b>Nummer </b></td>
-                              <td class="validatieDocumentatieCell">R.43</td>
-                           </tr>
-                           <tr class="validatieDocumentatieRow">
-                              <td class="validatieDocumentatieCell"><b>Niveau</b></td>
-                              <td class="validatieDocumentatieCell">Waarschuwing</td>
-                           </tr>
-                        </table><br></td>
-                  </tr>
-                  <tr class="validatieDocumentatieRow">
                      <td class="validatieDocumentatieCell"><b>ScopeValidatieRegel</b></td>
                      <td class="validatieDocumentatieCell">
                         <table class="validatieDocumentatieTable">
                            <tr class="validatieDocumentatieRow">
                               <td class="validatieDocumentatieCell"><b>Nummer </b></td>
-                              <td class="validatieDocumentatieCell">R.44</td>
+                              <td class="validatieDocumentatieCell">R.43</td>
                            </tr>
                            <tr class="validatieDocumentatieRow">
                               <td class="validatieDocumentatieCell"><b>Niveau</b></td>
@@ -3268,6 +3264,20 @@
                         <table class="validatieDocumentatieTable">
                            <tr class="validatieDocumentatieRow">
                               <td class="validatieDocumentatieCell"><b>Nummer </b></td>
+                              <td class="validatieDocumentatieCell">R.13</td>
+                           </tr>
+                           <tr class="validatieDocumentatieRow">
+                              <td class="validatieDocumentatieCell"><b>Niveau</b></td>
+                              <td class="validatieDocumentatieCell">Fout</td>
+                           </tr>
+                        </table><br></td>
+                  </tr>
+                  <tr class="validatieDocumentatieRow">
+                     <td class="validatieDocumentatieCell"><b>ScopeValidatieRegel </b></td>
+                     <td class="validatieDocumentatieCell">
+                        <table class="validatieDocumentatieTable">
+                           <tr class="validatieDocumentatieRow">
+                              <td class="validatieDocumentatieCell"><b>Nummer </b></td>
                               <td class="validatieDocumentatieCell">R.14</td>
                            </tr>
                            <tr class="validatieDocumentatieRow">
@@ -3599,26 +3609,12 @@
                         </table><br></td>
                   </tr>
                   <tr class="validatieDocumentatieRow">
-                     <td class="validatieDocumentatieCell"><b>ScopeValidatieRegel </b></td>
-                     <td class="validatieDocumentatieCell">
-                        <table class="validatieDocumentatieTable">
-                           <tr class="validatieDocumentatieRow">
-                              <td class="validatieDocumentatieCell"><b>Nummer </b></td>
-                              <td class="validatieDocumentatieCell">R.43</td>
-                           </tr>
-                           <tr class="validatieDocumentatieRow">
-                              <td class="validatieDocumentatieCell"><b>Niveau</b></td>
-                              <td class="validatieDocumentatieCell">Fout</td>
-                           </tr>
-                        </table><br></td>
-                  </tr>
-                  <tr class="validatieDocumentatieRow">
                      <td class="validatieDocumentatieCell"><b>ScopeValidatieRegel</b></td>
                      <td class="validatieDocumentatieCell">
                         <table class="validatieDocumentatieTable">
                            <tr class="validatieDocumentatieRow">
                               <td class="validatieDocumentatieCell"><b>Nummer </b></td>
-                              <td class="validatieDocumentatieCell">R.44</td>
+                              <td class="validatieDocumentatieCell">R.43</td>
                            </tr>
                            <tr class="validatieDocumentatieRow">
                               <td class="validatieDocumentatieCell"><b>Niveau</b></td>
@@ -3816,6 +3812,20 @@
                            <tr class="validatieDocumentatieRow">
                               <td class="validatieDocumentatieCell"><b>Nummer </b></td>
                               <td class="validatieDocumentatieCell">R.12</td>
+                           </tr>
+                           <tr class="validatieDocumentatieRow">
+                              <td class="validatieDocumentatieCell"><b>Niveau</b></td>
+                              <td class="validatieDocumentatieCell">Waarschuwing</td>
+                           </tr>
+                        </table><br></td>
+                  </tr>
+                  <tr class="validatieDocumentatieRow">
+                     <td class="validatieDocumentatieCell"><b>ScopeValidatieRegel </b></td>
+                     <td class="validatieDocumentatieCell">
+                        <table class="validatieDocumentatieTable">
+                           <tr class="validatieDocumentatieRow">
+                              <td class="validatieDocumentatieCell"><b>Nummer </b></td>
+                              <td class="validatieDocumentatieCell">R.13</td>
                            </tr>
                            <tr class="validatieDocumentatieRow">
                               <td class="validatieDocumentatieCell"><b>Niveau</b></td>
@@ -4076,7 +4086,7 @@
                         </table><br></td>
                   </tr>
                   <tr class="validatieDocumentatieRow">
-                     <td class="validatieDocumentatieCell"><b>ScopeValidatieRegel </b></td>
+                     <td class="validatieDocumentatieCell"><b>ScopeValidatieRegel</b></td>
                      <td class="validatieDocumentatieCell">
                         <table class="validatieDocumentatieTable">
                            <tr class="validatieDocumentatieRow">
@@ -4086,20 +4096,6 @@
                            <tr class="validatieDocumentatieRow">
                               <td class="validatieDocumentatieCell"><b>Niveau</b></td>
                               <td class="validatieDocumentatieCell">Fout</td>
-                           </tr>
-                        </table><br></td>
-                  </tr>
-                  <tr class="validatieDocumentatieRow">
-                     <td class="validatieDocumentatieCell"><b>ScopeValidatieRegel</b></td>
-                     <td class="validatieDocumentatieCell">
-                        <table class="validatieDocumentatieTable">
-                           <tr class="validatieDocumentatieRow">
-                              <td class="validatieDocumentatieCell"><b>Nummer </b></td>
-                              <td class="validatieDocumentatieCell">R.44</td>
-                           </tr>
-                           <tr class="validatieDocumentatieRow">
-                              <td class="validatieDocumentatieCell"><b>Niveau</b></td>
-                              <td class="validatieDocumentatieCell">Waarschuwing</td>
                            </tr>
                         </table><br></td>
                   </tr>
