@@ -1,7 +1,14 @@
 #!/bin/bash
 
+# Validates the test data of the given version, or of every registered version when none is given
+if [[ -n "$1" ]]; then
+    VERSIONS=$(scripts/versions.sh resolve "$1") || exit 1
+else
+    VERSIONS=$(scripts/versions.sh list)
+fi
+
 ALL_TEST_DATA_VALID=true
-for VERSION in $(scripts/versions.sh list); do
+for VERSION in $VERSIONS; do
     XSD_VERSION=$(scripts/versions.sh xsd "$VERSION")
     KEUZELIJST=schemas/$XSD_VERSION/NLCS_Netbeheer_Keuzelijst.xsd
 

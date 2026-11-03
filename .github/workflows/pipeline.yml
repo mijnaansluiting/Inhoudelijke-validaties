@@ -1,0 +1,125 @@
+name: Version pipeline
+
+# The full pipeline for a single version, called by CI.yml once per version. Expects the
+# installed-dependencies artifact of the calling run.
+on:
+  workflow_call:
+    inputs:
+      version:
+        required: true
+        type: string
+
+env:
+  VERSION: ${{ inputs.version }}
+
+jobs:
+  covered-rules:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Check rule coverage
+        run: scripts/check_rule_coverage.sh "$VERSION"
+
+  validate-rules:
+    needs: covered-rules
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Set up JDK
+        uses: actions/setup-java@v5
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+
+      - name: Download installed dependencies
+        uses: actions/download-artifact@v5
+        with:
+          name: installed-dependencies
+
+      - name: Validate rule test data XSD compliance
+        run: scripts/validate_test_data_xsd.sh "$VERSION"
+
+      - name: Transpile phases to XSL
+        run: scripts/transpile_phases.sh "$VERSION"
+
+      - name: Validate rules
+        run: scripts/validate_rules.sh "$VERSION"
+
+      - name: Upload validation reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: rule-validation-reports-${{ inputs.version }}
+          path: ${{ inputs.version }}/rule_validation_reports
+
+      - name: Validate test reports
+        run: scripts/validate_rule_reports.sh "$VERSION"
+
+      - name: Check rule object coverage
+        run: scripts/check_rule_object_coverage.sh "$VERSION"
+
+  validate-scopes:
+    needs: covered-rules
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Set up JDK
+        uses: actions/setup-java@v5
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+
+      - name: Download installed dependencies
+        uses: actions/download-artifact@v5
+        with:
+          name: installed-dependencies
+
+      # Every version, not just this one: main_scope_checks.sch includes the scope-checked
+      # abstract patterns of the versions it inherits from
+      - name: Add scope checks
+        run: |
+          for SCOPE_VERSION in $(scripts/versions.sh list); do
+            scripts/add_scope_checks.sh "$SCOPE_VERSION"
+          done
+
+      - name: Transpile Schematron to XSL
+        run: java -jar saxon-he.jar -xsl:transpile.xsl -s:$VERSION/rules/main_scope_checks.sch -o:$VERSION/rules/transpiled_phases/main_scope_checks.xsl
+
+      - name: Validate scopes
+        run: scripts/validate_scopes.sh "$VERSION"
+
+  validate-docs:
+    needs: covered-rules
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Set up JDK
+        uses: actions/setup-java@v5
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+
+      - name: Download installed dependencies
+        uses: actions/download-artifact@v5
+        with:
+          name: installed-dependencies
+
+      - name: Validate documentation XML
+        run: java test/XMLValidation.java doc/NLCSValidatieRegels.xsd $VERSION/doc/NLCSValidatieRegels.xml
+
+      - name: Generate and compare HTMLs
+        run: scripts/generate_and_compare_htmls.sh "$VERSION"
+
+      - name: Generate and compare SVGs
+        run: scripts/generate_and_compare_svgs.sh "$VERSION"

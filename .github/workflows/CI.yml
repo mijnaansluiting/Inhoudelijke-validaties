@@ -5,24 +5,27 @@ on:
   push:
     branches: [ "main", "develop" ]
 
-# Jobs run in a fixed order; each job only starts when the previous one succeeded.
-# Dependencies are downloaded once and shared with later jobs as an artifact.
+# The versions and dependencies are resolved once, after which the full pipeline (pipeline.yml) runs
+# per version as a matrix job. Dependencies are downloaded once and shared with every version as an artifact.
 jobs:
-  covered-rules:
+  versions:
     runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.list.outputs.matrix }}
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v5
 
-      - name: Check rule coverage
-        run: scripts/check_rule_coverage.sh "$(scripts/versions.sh latest)"
-
-      - name: Check active version declarations
+      - name: Check active versions declarations
         run: scripts/check_active_version.sh
 
+      - name: List versions
+        id: list
+        run: echo "matrix=$(scripts/versions.sh matrix)" >> "$GITHUB_OUTPUT"
+
   install-dependencies:
-    needs: covered-rules
+    needs: versions
     runs-on: ubuntu-latest
 
     steps:
@@ -45,107 +48,14 @@ jobs:
           if-no-files-found: error
           retention-days: 1
 
-  validate-rules:
-    needs: install-dependencies
-    runs-on: ubuntu-latest
+  pipeline:
+    needs: [versions, install-dependencies]
 
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v5
+    strategy:
+      fail-fast: false
+      matrix:
+        version: ${{ fromJSON(needs.versions.outputs.matrix) }}
 
-      - name: Set up JDK
-        uses: actions/setup-java@v5
-        with:
-          java-version: '21'
-          distribution: 'temurin'
-
-      - name: Download installed dependencies
-        uses: actions/download-artifact@v5
-        with:
-          name: installed-dependencies
-
-      - name: Validate rule test data XSD compliance
-        run: scripts/validate_test_data_xsd.sh
-      - name: Transpile phases to XSL
-        run: scripts/transpile_phases.sh "$(scripts/versions.sh latest)"
-
-      - name: Validate rules
-        run: scripts/validate_rules.sh "$(scripts/versions.sh latest)"
-
-      - name: Upload validation reports
-        uses: actions/upload-artifact@v4
-        with:
-          name: rule-validation-reports
-          path: v[0-9]*/rule_validation_reports
-
-      - name: Validate test reports
-        run: scripts/validate_rule_reports.sh "$(scripts/versions.sh latest)"
-
-      - name: Check rule object coverage
-        run: scripts/check_rule_object_coverage.sh "$(scripts/versions.sh latest)"
-
-  validate-scopes:
-    needs: install-dependencies
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v5
-
-      - name: Set up JDK
-        uses: actions/setup-java@v5
-        with:
-          java-version: '21'
-          distribution: 'temurin'
-
-      - name: Download installed dependencies
-        uses: actions/download-artifact@v5
-        with:
-          name: installed-dependencies
-
-      - name: Add scope checks
-        run: scripts/add_scope_checks.sh "$(scripts/versions.sh latest)"
-
-      - name: Transpile Schematron to XSL
-        run: |
-          version=$(scripts/versions.sh latest)
-          java -jar saxon-he.jar -xsl:transpile.xsl -s:$version/rules/main_scope_checks.sch -o:$version/rules/transpiled_phases/main_scope_checks.xsl
-
-      - name: Validate scopes
-        run: |
-          version=$(scripts/versions.sh latest)
-          scripts/validate_scopes.sh $version
-
-  validate-docs:
-    needs: install-dependencies
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v5
-
-      - name: Set up JDK
-        uses: actions/setup-java@v5
-        with:
-          java-version: '21'
-          distribution: 'temurin'
-
-      - name: Download installed dependencies
-        uses: actions/download-artifact@v5
-        with:
-          name: installed-dependencies
-
-      - name: Run tests
-        run: |
-          version=$(scripts/versions.sh latest)
-          java test/XMLValidation.java doc/NLCSValidatieRegels.xsd $version/doc/NLCSValidatieRegels.xml
-
-      - name: Generate and compare HTMLs
-        run: |
-          version=$(scripts/versions.sh latest)
-          scripts/generate_and_compare_htmls.sh $version
-
-      - name: Generate and compare SVGs
-        run: |
-          version=$(scripts/versions.sh latest)
-          scripts/generate_and_compare_svgs.sh $version
+    uses: ./.github/workflows/pipeline.yml
+    with:
+      version: ${{ matrix.version }}
