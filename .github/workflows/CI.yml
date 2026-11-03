@@ -5,8 +5,8 @@ on:
   push:
     branches: [ "main", "develop" ]
 
-# The versions and dependencies are resolved once, after which the full pipeline runs per version
-# as a matrix job. Dependencies are downloaded once and shared with the matrix legs as an artifact.
+# The versions and dependencies are resolved once, after which the full pipeline (pipeline.yml) runs
+# per version as a matrix job. Dependencies are downloaded once and shared with every version as an artifact.
 jobs:
   versions:
     runs-on: ubuntu-latest
@@ -48,78 +48,14 @@ jobs:
           if-no-files-found: error
           retention-days: 1
 
-  validate:
+  pipeline:
     needs: [versions, install-dependencies]
-    runs-on: ubuntu-latest
 
     strategy:
       fail-fast: false
       matrix:
         version: ${{ fromJSON(needs.versions.outputs.matrix) }}
 
-    env:
-      VERSION: ${{ matrix.version }}
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v5
-
-      - name: Check rule coverage
-        run: scripts/check_rule_coverage.sh "$VERSION"
-
-      - name: Set up JDK
-        uses: actions/setup-java@v5
-        with:
-          java-version: '21'
-          distribution: 'temurin'
-
-      - name: Download installed dependencies
-        uses: actions/download-artifact@v5
-        with:
-          name: installed-dependencies
-
-      # Rules
-      - name: Validate rule test data XSD compliance
-        run: scripts/validate_test_data_xsd.sh "$VERSION"
-
-      - name: Transpile phases to XSL
-        run: scripts/transpile_phases.sh "$VERSION"
-
-      - name: Validate rules
-        run: scripts/validate_rules.sh "$VERSION"
-
-      - name: Upload validation reports
-        uses: actions/upload-artifact@v4
-        with:
-          name: rule-validation-reports-${{ matrix.version }}
-          path: ${{ matrix.version }}/rule_validation_reports
-
-      - name: Validate test reports
-        run: scripts/validate_rule_reports.sh "$VERSION"
-
-      - name: Check rule object coverage
-        run: scripts/check_rule_object_coverage.sh "$VERSION"
-
-      # Scopes. Scope checks are added to every version, not just this one: main_scope_checks.sch
-      # includes the scope-checked abstract patterns of the versions it inherits from
-      - name: Add scope checks
-        run: |
-          for SCOPE_VERSION in $(scripts/versions.sh list); do
-            scripts/add_scope_checks.sh "$SCOPE_VERSION"
-          done
-
-      - name: Transpile Schematron to XSL
-        run: java -jar saxon-he.jar -xsl:transpile.xsl -s:$VERSION/rules/main_scope_checks.sch -o:$VERSION/rules/transpiled_phases/main_scope_checks.xsl
-
-      - name: Validate scopes
-        run: scripts/validate_scopes.sh "$VERSION"
-
-      # Docs
-      - name: Validate documentation XML
-        run: java test/XMLValidation.java doc/NLCSValidatieRegels.xsd $VERSION/doc/NLCSValidatieRegels.xml
-
-      - name: Generate and compare HTMLs
-        run: scripts/generate_and_compare_htmls.sh "$VERSION"
-
-      - name: Generate and compare SVGs
-        run: scripts/generate_and_compare_svgs.sh "$VERSION"
+    uses: ./.github/workflows/pipeline.yml
+    with:
+      version: ${{ matrix.version }}
