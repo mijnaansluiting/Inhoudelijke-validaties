@@ -6,7 +6,7 @@ tags: decision, versioning, architecture
 status: draft
 generated:
   by: claude-code/opus-5-5
-  at: 2026-11-02T00:00:00Z
+  at: 2026-11-04T00:00:00Z
 sources:
   - resource: "https://github.com/mijnaansluiting/Inhoudelijke-validaties/pull/136"
     title: "#136 — setup for multiversion support (v12 -> v2026.1.0 folders)"
@@ -212,10 +212,10 @@ and is never shipped. The `released` attribute itself is expected to be
 dropped eventually; the "only older released versions" include rule then
 becomes "only older versions".
 
-# Open questions
+# Release packaging
 
-* **Release packaging** — one zip with all versions, a zip per version, or
-  both. To be decided later.
+Decided 2026-11-04: **one zip** with every released version; see
+[build-and-release](../architecture/build-and-release).
 
 The version registry format was settled as XML; see
 [version-registry](../config/version-registry). The remaining
