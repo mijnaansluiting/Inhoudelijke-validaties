@@ -1,5 +1,19 @@
 # Update Log
 
+## 2026-11-04
+* **Fix**: the `Deliverables` release workflow. It uploaded the stale `xsd/`
+  path instead of `schemas/`, and added scope checks to the latest version
+  only, which breaks once that version inherits from an older one. It now adds
+  scope checks to every version, compiles every released version and runs
+  `bundle.sh` without an argument.
+* **Update**: release packaging decided — one zip with every released
+  version. `bundle.sh` bundles all of them, starts from an empty `dist/`, fails
+  on a missing compiled schema and ships a `versions.xml` without unreleased
+  versions. Updated [build-and-release](./architecture/build-and-release),
+  [multiversion-model](./decisions/multiversion-model) (open question closed),
+  [multiversion-plan](./architecture/multiversion-plan) and
+  [ci/workflows](./ci/workflows).
+
 ## 2026-11-03
 * **Add**: [version-dispatcher](./architecture/version-dispatcher) — new root
   `validate.xsl` selects the rule-set version (`version` parameter or
