@@ -35,19 +35,25 @@ jobs:
             lib/
             transpile.xsl
             xerces-cli.jar
-            xsd/
+            schemas/
           if-no-files-found: warn
 
+      # Every version, not just the released ones: main_scope_checks.sch includes the scope-checked
+      # abstract patterns of the versions it inherits from
       - name: Add scope checks
-        run: scripts/add_scope_checks.sh "$(scripts/versions.sh latest)"
+        run: |
+          for SCOPE_VERSION in $(scripts/versions.sh list); do
+            scripts/add_scope_checks.sh "$SCOPE_VERSION"
+          done
 
       - name: Transpile Schematron to XSL
         run: |
-          version=$(scripts/versions.sh latest)
-          java -jar saxon-he.jar -xsl:transpile.xsl -s:$version/rules/main_scope_checks.sch -o:$version/rules/transpiled_phases/main_scope_checks.xsl
+          for VERSION in $(scripts/versions.sh list --released); do
+            java -jar saxon-he.jar -xsl:transpile.xsl -s:$VERSION/rules/main_scope_checks.sch -o:$VERSION/rules/transpiled_phases/main_scope_checks.xsl
+          done
 
       - name: Bundle deliverables
-        run: scripts/bundle.sh "$(scripts/versions.sh latest)"
+        run: scripts/bundle.sh
 
       - name: Upload deliverables
         uses: actions/upload-artifact@v4
