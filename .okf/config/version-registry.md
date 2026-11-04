@@ -7,13 +7,13 @@ tags: configuration, versioning
 status: draft
 generated:
   by: claude-code/opus-5-5
-  at: 2026-11-02T00:00:00Z
+  at: 2026-11-03T00:00:00Z
 sources:
   - resource: "../../configuration/versions.xml"
     title: "versions.xml"
   - resource: "../../scripts/versions.sh"
     title: "versions.sh"
-  - resource: "../../v2026.1.0/xsl_functions/version_functions.xsl"
+  - resource: "../../version_functions.xsl"
     title: "version_functions.xsl"
 ---
 
@@ -71,6 +71,7 @@ with: the resolved `$requested` if non-empty, else the newest released
 version whose `nlcspp` equals the `VersieNummer` attribute of the file's
 root element (`ma:file-xsd-version`). Empty means
 unsupported, and the caller must report that as an error. Helpers:
-`ma:resolve-version`, `ma:file-xsd-version`, `ma:version-for-xsd`. Not yet
-included by any `main.sch`; wiring happens with the per-version
-dispatch.
+`ma:resolve-version`, `ma:file-xsd-version`, `ma:version-for-xsd`. The file
+lives at the repository root next to its only caller, the
+[version-dispatcher](../architecture/version-dispatcher) `validate.xsl`; no
+`main.sch` includes it.

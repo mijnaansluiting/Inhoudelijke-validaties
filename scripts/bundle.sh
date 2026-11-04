@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Bundles every released version into a single zip.
+# Bundles every released version, plus the validate.xsl dispatcher that selects one, into a single zip.
 # Expects <version>/rules/transpiled_phases/main_scope_checks.xsl to be compiled for every released version.
 OUT_DIR=dist
 ZIP=nlcspp_inhoudelijke_validaties.zip
@@ -12,7 +12,8 @@ rm -rf "$OUT_DIR" "$ZIP"
 
 # dist mirrors the repository layout, so the relative paths in the compiled schema
 # (../../xsl_functions/ or ../../../<version>/xsl_functions/), in xsl_functions
-# (../../configuration/, ../../<version>/doc/) resolve the same way as in the repository
+# (../../configuration/, ../../<version>/doc/) and in validate.xsl (<version>/rules/...)
+# resolve the same way as in the repository
 mkdir -p $OUT_DIR/configuration $OUT_DIR/localization
 
 for VERSION in $VERSIONS; do
@@ -37,7 +38,11 @@ for VERSION in $VERSIONS; do
     cp $VERSION/doc/NLCSValidatieRegels.xml $OUT_DIR/$VERSION/doc/
 done
 
-# Copy config files. The registry only lists the bundled (released) versions
+# Copy the dispatcher
+cp validate.xsl version_functions.xsl $OUT_DIR/
+
+# Copy config files. The registry only lists the bundled (released) versions, so the
+# dispatcher can't select a version that isn't in the zip
 cp -a configuration/. $OUT_DIR/configuration/
 grep -v 'released="false"' "${VERSIONS_REGISTRY:-configuration/versions.xml}" > $OUT_DIR/configuration/versions.xml
 

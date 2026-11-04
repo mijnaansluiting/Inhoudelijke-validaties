@@ -184,6 +184,10 @@ combines a version with older versions into a `resolved_<version>` folder".
   ("unsupported NLCS version") rather than falling back.
 * Every test XML declares `VersieNummer` equal to its version's `nlcspp`;
   `scripts/validate_test_data_xsd.sh` checks this per version.
+* The selection is implemented by the
+  [version-dispatcher](../architecture/version-dispatcher) `validate.xsl`
+  (2026-11-03), which runs the selected version's compiled schema with
+  `fn:transform()` and stops with error `ma:unsupported-version`.
 
 ## CI
 

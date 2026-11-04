@@ -107,10 +107,10 @@ results must not change.
 
 # Step 8: selection and release
 
-* Validation-time version selection: wire `version_functions.xsl`
-  (`ma:select-version`) into a dispatcher that picks the version from
-  the root's `VersieNummer` or the optional `version` parameter, and fails on
-  an unsupported XSD version.
+* ~~Validation-time version selection~~ — done 2026-11-03:
+  [version-dispatcher](./version-dispatcher) `validate.xsl` picks the version
+  from `VersieNummer` or the `version` parameter and stops with
+  `ma:unsupported-version` otherwise.
 * ~~Release packaging~~ — decided 2026-11-04: one zip with every released
   version (see [build-and-release](./build-and-release)).
 
