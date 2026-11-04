@@ -216,10 +216,10 @@ and is never shipped. The `released` attribute itself is expected to be
 dropped eventually; the "only older released versions" include rule then
 becomes "only older versions".
 
-# Release packaging
+# Open questions
 
-Decided 2026-11-03: **one zip** with every released version and the
-dispatcher; see [build-and-release](../architecture/build-and-release).
+* **Release packaging** — one zip with all versions, a zip per version, or
+  both. To be decided later.
 
 The version registry format was settled as XML; see
 [version-registry](../config/version-registry). The remaining

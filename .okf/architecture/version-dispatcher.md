@@ -3,7 +3,7 @@ type: Architecture Component
 title: Version dispatcher (validate.xsl)
 description: The single entry point that selects a rule-set version for an NLCS++ file and runs that version's compiled schema with fn:transform().
 resource: validate.xsl
-tags: architecture, versioning, release
+tags: architecture, versioning
 status: draft
 generated:
   by: claude-code/opus-5-5
@@ -17,8 +17,7 @@ sources:
 
 # Overview
 
-`validate.xsl` (repository root, and the root of the release `dist/`) is how a
-consumer validates a file without knowing which rule-set version applies:
+`validate.xsl` (repository root) is how a consumer validates a file without knowing which rule-set version applies:
 
 ```
 java -jar saxon-he.jar -xsl:validate.xsl -s:file.xml [version=v2026.1.0 | version=v2026.1]

@@ -6,7 +6,7 @@ resource: scripts/bundle.sh
 tags: architecture, release
 generated:
   by: claude-code/opus-5-5
-  at: 2026-11-03T00:00:00Z
+  at: 2026-11-02T00:00:00Z
 sources:
   - resource: "../../scripts/bundle.sh"
     title: "bundle.sh"
@@ -50,14 +50,9 @@ just Saxon, no dependency on this build toolchain.
 
 # Version scoping
 
-Decided 2026-11-03: **one zip with every released version.** `bundle.sh`
-takes no argument; it loops over `versions.sh list --released` and copies the
-files above for each, plus the [version-dispatcher](./version-dispatcher)
-(`validate.xsl`, `version_functions.xsl`) to the root of `dist/`. Consumers
-run `validate.xsl`, which selects the version per file. The bundled
-`configuration/versions.xml` omits unreleased versions, so the dispatcher
-can't select a version that isn't in the zip. `bundle.sh` starts from an
-empty `dist/` and fails if a released version's `main_scope_checks.xsl` hasn't
-been compiled. The `Deliverables` workflow adds scope checks to every version
-(inherited scope-checked abstract patterns) and compiles every released
-version before bundling.
+The bundle currently ships a single rule-set version (`v2026.1.0`, targeting
+`NLCS_Netbeheer` XSD `12.1` per `scripts/install_dependencies.sh`'s
+`NLCS_NETBEHEER_VERSION`). Rule-set versions are decoupled from XSD versions
+and will be packaged side by side; see
+[multiversion-model](../decisions/multiversion-model). How multiple versions
+are packaged is still open.

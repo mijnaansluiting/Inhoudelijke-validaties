@@ -74,5 +74,4 @@ unsupported, and the caller must report that as an error. Helpers:
 `ma:resolve-version`, `ma:file-xsd-version`, `ma:version-for-xsd`. The file
 lives at the repository root next to its only caller, the
 [version-dispatcher](../architecture/version-dispatcher) `validate.xsl`; no
-`main.sch` includes it. In the release `dist/`, `configuration/versions.xml`
-lists only the bundled (released) versions.
+`main.sch` includes it.

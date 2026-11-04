@@ -111,8 +111,7 @@ results must not change.
   [version-dispatcher](./version-dispatcher) `validate.xsl` picks the version
   from `VersieNummer` or the `version` parameter and stops with
   `ma:unsupported-version` otherwise.
-* ~~Release packaging~~ — decided 2026-11-03: one zip with every released
-  version plus the dispatcher (see [build-and-release](./build-and-release)).
+* Release packaging (one zip, a zip per version, or both): still open.
 
 # Step 9: clean up
 
