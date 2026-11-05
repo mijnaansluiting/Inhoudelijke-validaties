@@ -41,8 +41,8 @@ plus **SchXSLT2** (a Schematron→XSLT transpiler):
 
    ```bash
    java -jar saxon-he.jar -xsl:wrappers/transpile_phase_wrapper.xsl \
-     -s:v2026.1.0/rules/main.sch \
-     -o:v2026.1.0/rules/transpiled_phases/R.36.xsl phase=R.36
+     -s:v12.1/rules/main.sch \
+     -o:v12.1/rules/transpiled_phases/R.36.xsl phase=R.36
    ```
 
    SchXslt copies `main.sch`'s `<xsl:include href="../../xsl_functions/…"/>`

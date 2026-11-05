@@ -2,15 +2,15 @@
 type: Validation Rule
 title: R.36 — Afstand mantelbuis tot inhoud
 description: Checks that every content asset related to an Amantelbuis (duct) lies within a configurable maximum distance of that duct's line geometry.
-resource: v2026.1.0/rules/patterns/R.36.sch
+resource: v12/rules/patterns/R.36.sch
 tags: geometrie
 generated:
   by: claude-code/opus-5-5
   at: 2026-11-02T00:00:00Z
 sources:
-  - resource: "../../v2026.1.0/doc/NLCSValidatieRegels.xml"
+  - resource: "../../v12.1/doc/NLCSValidatieRegels.xml"
     title: "NLCS Validatieregels catalog"
-  - resource: "../../v2026.1.0/rules/abstract_patterns/geometrie/afstand_mantelbuis_tot_inhoud.sch"
+  - resource: "../../v12/rules/abstract_patterns/geometrie/afstand_mantelbuis_tot_inhoud.sch"
     title: "afstand_mantelbuis_tot_inhoud.sch"
 ---
 

@@ -1,12 +1,12 @@
 #!/bin/bash
 
-# Bundles every released version into a single zip.
-# Expects <version>/rules/transpiled_phases/main_scope_checks.xsl to be compiled for every released version.
+# Bundles every version into a single zip.
+# Expects <version>/rules/transpiled_phases/main_scope_checks.xsl to be compiled for every version.
 OUT_DIR=dist
 ZIP=nlcspp_inhoudelijke_validaties.zip
 
-VERSIONS=$(scripts/versions.sh list --released)
-[[ -n "$VERSIONS" ]] || { echo "bundle.sh: no released versions" >&2; exit 1; }
+VERSIONS=$(scripts/versions.sh list)
+[[ -n "$VERSIONS" ]] || { echo "bundle.sh: no versions registered" >&2; exit 1; }
 
 rm -rf "$OUT_DIR" "$ZIP"
 
@@ -37,9 +37,8 @@ for VERSION in $VERSIONS; do
     cp $VERSION/doc/NLCSValidatieRegels.xml $OUT_DIR/$VERSION/doc/
 done
 
-# Copy config files. The registry only lists the bundled (released) versions
+# Copy config files
 cp -a configuration/. $OUT_DIR/configuration/
-grep -v 'released="false"' "${VERSIONS_REGISTRY:-configuration/versions.xml}" > $OUT_DIR/configuration/versions.xml
 
 # Copy localization messages
 cp -a localization/* $OUT_DIR/localization/

@@ -7,9 +7,9 @@ generated:
   by: claude-code/opus-5-5
   at: 2026-11-02T00:00:00Z
 sources:
-  - resource: "../../v2026.1.0/xsl_functions/helper_functions.xsl"
+  - resource: "../../v12/xsl_functions/helper_functions.xsl"
     title: "helper_functions.xsl"
-  - resource: "../../v2026.1.0/rules/abstract_patterns/topologie/geldig_eindpunt_kabel.sch"
+  - resource: "../../v12/rules/abstract_patterns/topologie/geldig_eindpunt_kabel.sch"
     title: "geldig_eindpunt_kabel.sch"
   - resource: "./connectivity-index-and-geometry-caching"
     title: "connectivity-index-and-geometry-caching"

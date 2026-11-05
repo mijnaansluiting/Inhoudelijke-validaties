@@ -2,15 +2,15 @@
 type: Domain Concept
 title: Scope and severity model
 description: How the same rule can be an error in one drawing context and merely informational in another.
-resource: v2026.1.0/doc/NLCSValidatieRegels.xml
+resource: v12.1/doc/NLCSValidatieRegels.xml
 tags: domain, scope, severity
 generated:
   by: claude-code/opus-5-5
   at: 2026-11-02T00:00:00Z
 sources:
-  - resource: "../../v2026.1.0/doc/NLCSValidatieRegels.xml"
+  - resource: "../../v12.1/doc/NLCSValidatieRegels.xml"
     title: "NLCS Validatieregels catalog \u2014 `<scopes>` section"
-  - resource: "../../v2026.1.0/xsl_functions/rule_scope_functions.xsl"
+  - resource: "../../v12/xsl_functions/rule_scope_functions.xsl"
     title: "rule_scope_functions.xsl"
 ---
 
@@ -28,7 +28,7 @@ the same severity. Whether a failed rule is a hard error (`Fout`), merely
   `VERLATEN`
 
 The rule catalog's `<scopes>` section (one catalog per version, e.g.
-`v2026.1.0/doc/NLCSValidatieRegels.xml`) defines 8 named scopes,
+`v12.1/doc/NLCSValidatieRegels.xml`) defines 8 named scopes,
 each mapping a Tekeningsoort+Status+Bedrijfstoestand combination to a list of
 rules and, per rule, a `niveau` (severity). This lets the same physical check
 (e.g. "does a cable have valid endpoints") be strictly enforced during a final

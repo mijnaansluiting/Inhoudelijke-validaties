@@ -2,14 +2,14 @@
 type: Architecture Component
 title: XSL function libraries
 description: The versioned custom ma:-namespace XSLT function libraries every rule's logic is built from.
-resource: v2026.1.0/xsl_functions/
+resource: v12/xsl_functions/
 tags: architecture, xslt
 generated:
   by: claude-code/opus-5-5
   at: 2026-11-02T00:00:00Z
 sources:
-  - resource: "../../v2026.1.0/xsl_functions/"
-    title: "v2026.1.0/xsl_functions/"
+  - resource: "../../v12/xsl_functions/"
+    title: "v12/xsl_functions/"
 ---
 
 # Overview
@@ -18,7 +18,7 @@ sources:
 `ma:` (mijnaansluiting) namespace, used by every abstract pattern. They are
 version-managed like patterns (see
 [multiversion-model](../decisions/multiversion-model)): currently only
-`v2026.1.0/xsl_functions/` exists, and `v9999.1.0` inherits it unchanged.
+`v12/xsl_functions/` exists, and `v12.1` inherits it unchanged.
 A version's [`<version>/rules/main.sch`](./schematron-layering) includes its
 own libraries as `../../xsl_functions/…` or an older version's as
 `../../../<older version>/xsl_functions/…` (both resolved from the compiled

@@ -11,9 +11,9 @@ sources:
     title: "5a58dee \u2014 R.36: Fix line buffer calculation with sequential coords at same position (#90)"
   - resource: "https://github.com/mijnaansluiting/Inhoudelijke-validaties/commit/1e78ce1313103608cae025b24ac141a9d7403b31"
     title: "1e78ce1 \u2014 Limit rounding to millimeters for final interaction checks (#92)"
-  - resource: "../../v2026.1.0/xsl_functions/geometry_functions.xsl"
+  - resource: "../../v12/xsl_functions/geometry_functions.xsl"
     title: "geometry_functions.xsl"
-  - resource: "../../v2026.1.0/xsl_functions/helper_functions.xsl"
+  - resource: "../../v12/xsl_functions/helper_functions.xsl"
     title: "helper_functions.xsl"
 ---
 

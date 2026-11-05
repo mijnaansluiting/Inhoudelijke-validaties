@@ -625,7 +625,7 @@
 				- Kunstwerknummer
 				- Thema
 			</definitie>
-			<toelichting>Fictieve regel in testversie v9999.1.0</toelichting>
+			<toelichting>Fictieve regel in testversie v12</toelichting>
 			<validatieObjecten>
 				<validatieObject><naam>Akunstwerk</naam></validatieObject>
 			</validatieObjecten>

@@ -2,15 +2,15 @@
 type: Validation Rule
 title: R.2 — Combinatie NLCS Status en Tekeningsoort
 description: Checks that the NLCS Status values used by objects in the file are consistent with the Tekeningtype declared on the AprojectReferentie.
-resource: v2026.1.0/rules/patterns/R.2.sch
+resource: v12/rules/patterns/R.2.sch
 tags: bestand
 generated:
   by: claude-code/opus-5-5
   at: 2026-11-02T00:00:00Z
 sources:
-  - resource: "../../v2026.1.0/doc/NLCSValidatieRegels.xml"
+  - resource: "../../v12.1/doc/NLCSValidatieRegels.xml"
     title: "NLCS Validatieregels catalog"
-  - resource: "../../v2026.1.0/rules/abstract_patterns/bestand/combinatie_nlcs_status_en_tekeningsoort.sch"
+  - resource: "../../v12/rules/abstract_patterns/bestand/combinatie_nlcs_status_en_tekeningsoort.sch"
     title: "combinatie_nlcs_status_en_tekeningsoort.sch"
 ---
 

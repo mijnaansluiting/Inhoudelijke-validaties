@@ -2,15 +2,15 @@
 type: Validation Rule
 title: R.26 — Aantal kabels en mof functie
 description: Checks that the number of cables connected to a joint matches what is expected for the joint's Functie.
-resource: v2026.1.0/rules/patterns/R.26.sch
+resource: v12/rules/patterns/R.26.sch
 tags: inhoud-waarde
 generated:
   by: claude-code/opus-5-5
   at: 2026-11-02T00:00:00Z
 sources:
-  - resource: "../../v2026.1.0/doc/NLCSValidatieRegels.xml"
+  - resource: "../../v12.1/doc/NLCSValidatieRegels.xml"
     title: "NLCS Validatieregels catalog"
-  - resource: "../../v2026.1.0/rules/abstract_patterns/inhoud_waarde/aantal_kabels_en_mof_functie.sch"
+  - resource: "../../v12/rules/abstract_patterns/inhoud_waarde/aantal_kabels_en_mof_functie.sch"
     title: "aantal_kabels_en_mof_functie.sch"
 ---
 

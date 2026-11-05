@@ -2,17 +2,17 @@
 type: Validation Rule
 title: R.8 — Verplichte kenmerken Kabels
 description: Checks that every cable has values for a core set of mandatory attributes, with three additional mandatory attributes for LSkabel.
-resource: v2026.1.0/rules/patterns/R.8_A.sch
+resource: v12/rules/patterns/R.8_A.sch
 tags: verplichte-waarde
 generated:
   by: claude-code/opus-5-5
   at: 2026-11-02T00:00:00Z
 sources:
-  - resource: "../../v2026.1.0/doc/NLCSValidatieRegels.xml"
+  - resource: "../../v12.1/doc/NLCSValidatieRegels.xml"
     title: "NLCS Validatieregels catalog"
-  - resource: "../../v2026.1.0/rules/abstract_patterns/verplichte_waarde/verplichte_kenmerken_kabels.sch"
+  - resource: "../../v12/rules/abstract_patterns/verplichte_waarde/verplichte_kenmerken_kabels.sch"
     title: "verplichte_kenmerken_kabels.sch (R.8-A)"
-  - resource: "../../v2026.1.0/rules/abstract_patterns/verplichte_waarde/verplichte_kenmerken_kabels-ls_extra.sch"
+  - resource: "../../v12/rules/abstract_patterns/verplichte_waarde/verplichte_kenmerken_kabels-ls_extra.sch"
     title: "verplichte_kenmerken_kabels-ls_extra.sch (R.8-B)"
 ---
 

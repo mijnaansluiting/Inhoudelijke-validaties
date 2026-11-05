@@ -2,15 +2,15 @@
 type: Validation Rule
 title: R.14 — Verplichte kenmerken Stations en Kasten
 description: Checks that every station or low-voltage cabinet has its Nummer and Functie attributes populated.
-resource: v2026.1.0/rules/patterns/R.14.sch
+resource: v12/rules/patterns/R.14.sch
 tags: verplichte-waarde
 generated:
   by: claude-code/opus-5-5
   at: 2026-11-02T00:00:00Z
 sources:
-  - resource: "../../v2026.1.0/doc/NLCSValidatieRegels.xml"
+  - resource: "../../v12.1/doc/NLCSValidatieRegels.xml"
     title: "NLCS Validatieregels catalog"
-  - resource: "../../v2026.1.0/rules/abstract_patterns/verplichte_waarde/verplichte_kenmerken_stations_en_kasten.sch"
+  - resource: "../../v12/rules/abstract_patterns/verplichte_waarde/verplichte_kenmerken_stations_en_kasten.sch"
     title: "verplichte_kenmerken_stations_en_kasten.sch"
 ---
 

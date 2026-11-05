@@ -11,7 +11,7 @@ sources:
     title: "e365bcb \u2014 R.1 and R.2 always explicitly within scope"
   - resource: "https://github.com/mijnaansluiting/Inhoudelijke-validaties/commit/f519af4517d2a4c181b90ede1096bf24d841ddd4"
     title: "f519af4 \u2014 Scopeless rules consistency (#88)"
-  - resource: "../../v2026.1.0/xsl_functions/rule_scope_functions.xsl"
+  - resource: "../../v12/xsl_functions/rule_scope_functions.xsl"
     title: "rule_scope_functions.xsl"
 ---
 

@@ -12,7 +12,7 @@ for VERSION in $VERSIONS; do
     XSD_VERSION=$(scripts/versions.sh xsd "$VERSION")
     KEUZELIJST=schemas/$XSD_VERSION/NLCS_Netbeheer_Keuzelijst.xsd
 
-    # Test data must declare the NLCS++ version its rule-set version targets, since VersieNummer is what selects the version
+    # Test data must declare its folder's NLCS++ version, since VersieNummer is what selects the version
     while IFS= read -r TEST_FILE; do
         echo "::error file=$TEST_FILE::$TEST_FILE must declare VersieNummer=\"$XSD_VERSION\" on its root element"
         ALL_TEST_DATA_VALID=false

@@ -2,18 +2,18 @@
 type: Architecture Component
 title: Schematron rule layering
 description: The three-layer design that separates rule metadata from rule logic — base schema, concrete pattern, abstract pattern.
-resource: v2026.1.0/rules/main.sch
+resource: v12.1/rules/main.sch
 tags: architecture, schematron
 generated:
   by: claude-code/opus-5-5
   at: 2026-11-02T00:00:00Z
 sources:
-  - resource: "../../v2026.1.0/rules/main.sch"
-    title: "v2026.1.0/rules/main.sch"
-  - resource: "../../v2026.1.0/rules/patterns/R.36.sch"
-    title: "v2026.1.0/rules/patterns/R.36.sch"
-  - resource: "../../v2026.1.0/rules/abstract_patterns/geometrie/afstand_mantelbuis_tot_inhoud.sch"
-    title: "v2026.1.0/rules/abstract_patterns/geometrie/afstand_mantelbuis_tot_inhoud.sch"
+  - resource: "../../v12.1/rules/main.sch"
+    title: "v12.1/rules/main.sch"
+  - resource: "../../v12/rules/patterns/R.36.sch"
+    title: "v12/rules/patterns/R.36.sch"
+  - resource: "../../v12/rules/abstract_patterns/geometrie/afstand_mantelbuis_tot_inhoud.sch"
+    title: "v12/rules/abstract_patterns/geometrie/afstand_mantelbuis_tot_inhoud.sch"
 ---
 
 # Overview
@@ -23,8 +23,8 @@ across three layers so that rule metadata (id, scope, severity) stays separate
 from the actual check logic, and so a single implementation can be reused by
 sub-checks that only differ in parameters:
 
-1. **`<version>/rules/main.sch`** (e.g. `v2026.1.0/rules/main.sch`) — the
-   root schema of a rule-set version. Declares
+1. **`<version>/rules/main.sch`** (e.g. `v12.1/rules/main.sch`) — the
+   root schema of an NLCS++ version. Declares
    namespaces (`ma`, `gml`, `xs`, `nlcs`, `nvr`, `math`), a global
    `<properties>` block (`scope`, `rule-number`, `severity`, `object-type`,
    `object-id`, `geometries`, `missing-attributes` — attached to asserts for
@@ -35,7 +35,7 @@ sub-checks that only differ in parameters:
    `"../../../<older version>/xsl_functions/…"` (inherited), then `include`s of every
    concrete pattern and every abstract pattern file — the version's own
    (`patterns/R.<n>.sch`) or inherited from an older version folder
-   (`../../v2026.1.0/rules/patterns/…`, `../../<version>/rules/abstract_patterns/…`;
+   (`../../v12/rules/patterns/…`, `../../<version>/rules/abstract_patterns/…`;
    see [multiversion-model](../decisions/multiversion-model)).
 
 2. **`<version>/rules/patterns/R.<n>.sch`** (concrete patterns) — one

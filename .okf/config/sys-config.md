@@ -10,14 +10,14 @@ generated:
 sources:
   - resource: "../../configuration/sys_config.xml"
     title: "sys_config.xml"
-  - resource: "../../v2026.1.0/xsl_functions/config_functions.xsl"
+  - resource: "../../v12/xsl_functions/config_functions.xsl"
     title: "config_functions.xsl"
 ---
 
 # Overview
 
 `configuration/sys_config.xml` holds tunable values for rule logic, with
-one full `<version id="vYEAR.RELEASE.FIX">` block per rule-set version (no
+one full `<version id="v12.1">` block per NLCS++ version (no
 defaults or inheritance between blocks; see
 [multiversion-model](../decisions/multiversion-model)). Values are read at
 validation time by functions in
@@ -30,7 +30,7 @@ block.
 
 # Schema
 
-| Field | Value (v2026.1.0) | Used by |
+| Field | Value (v12.1) | Used by |
 |---|---|---|
 | `DecimalPrecision` | `3` | Numeric rounding precision used across geometric/numeric comparisons. |
 | `MofFuncties/Aftak` | `AFTAK SPLITSEND` | [R.26](../rules/R.26) — maps joint Functie values to the "Aftak" category. |

@@ -1,12 +1,12 @@
 ---
 type: Plan
 title: Multiversion implementation plan
-description: Ordered steps to make scripts, CI and the release support several rule-set versions, with what is done and what remains.
+description: Ordered steps to make scripts, CI and the release support several NLCS++ versions, with what is done and what remains.
 tags: versioning, plan, ci
 status: draft
 generated:
   by: claude-code/opus-5-5
-  at: 2026-11-04T00:00:00Z
+  at: 2026-11-05T00:00:00Z
 sources:
   - resource: "../decisions/multiversion-model.md"
     title: "Multiversion model"
@@ -15,8 +15,10 @@ sources:
 # Overview
 
 Implementation order for the [multiversion-model](../decisions/multiversion-model),
-first to last. Each step must leave the results for `v2026.1.0` unchanged;
-the fictional `v2026.2.0` (step 7) is the first test with a second version.
+first to last. Each step must leave the results for `v12.1` (the released
+rule set, formerly `v2026.1.0`) unchanged. Since 2026-11-05 a version is an
+NLCS++ version (`v12`, `v12.1`); `v12` holds the fictional test changes of
+the former `v9999.1.0`.
 
 # Done
 
@@ -28,11 +30,16 @@ the fictional `v2026.2.0` (step 7) is the first test with a second version.
    selected through `$active_version` in each `main.sch`; catalog in
    `<version>/doc/`; `scripts/check_active_version.sh` in CI.
 4. **XSD per version** — `schemas/<xsd version>/`, test data checked against
-   its own version's XSD and `VersieNummer` (= the version's `nlcspp`) by
+   its own version's XSD and `VersieNummer` (= the version id without `v`) by
    `scripts/validate_test_data_xsd.sh`.
+5. **Folders per NLCS++ version** (2026-11-05) — `v2026.1.0` → `v12.1`,
+   `v9999.1.0` → `v12`, inheritance flipped so `v12.1` includes from `v12`;
+   registry reduced to `id`, `released` flag dropped; rule validation
+   reports byte-identical to before. See
+   [multiversion-model](../decisions/multiversion-model).
 
 **Repository layout: one folder per version at the root.** Everything
-version-specific lives under `<version>/` (e.g. `v2026.1.0/`):
+version-specific lives under `<version>/` (e.g. `v12.1/`):
 `rules/` (`main.sch`, `patterns/`, `abstract_patterns/` and the generated
 `transpiled_phases/`, `abstract_patterns_scope_checks/`,
 `main_scope_checks.{sch,xsl}`), `doc/NLCSValidatieRegels.{xml,html}`,
@@ -54,7 +61,7 @@ this layout (see [build-and-release](./build-and-release)).
    when Saxon fails or a report is empty.
 2. **`main.sch` include checks** (new script, CI `covered-rules` job): every
    include exists; phases and pattern includes match; includes only point to
-   the version itself or older released versions; a rule's pattern files
+   the version itself or older versions; a rule's pattern files
    come from one version; a version with its own pattern for a rule has
    that rule's test data.
 3. **Rule-source helper**: reads a version's `main.sch` and prints, per
@@ -78,32 +85,35 @@ this layout (see [build-and-release](./build-and-release)).
      `<version>/scoped_objects_reports/`;
    * `generate_and_compare_svgs.sh` writes `<version>/assets/` for each
      version's own fixtures (the current SVGs already live in
-     `v2026.1.0/assets/`).
+     `v12/assets/`).
 5. **CI matrix**: a first job outputs `scripts/versions.sh matrix`; the
    rule, scope and docs jobs run per version (`fail-fast: false`) with the
    version in every artifact name. `install-dependencies` stays a single
    job.
-6. **Verify**: every result for `v2026.1.0` is identical to before.
+6. **Verify**: every result for `v12.1` is identical to before.
+7. **Make the `v12` test data pass the XSD check.** Since the flip, the
+   fixtures of every inherited rule live in `v12` and are checked against
+   XSD 12 with `VersieNummer="12"`; they are 12.1 data (`VersieNummer="12.1"`,
+   `ID` elements, `Aardingsrapport`), so `validate_test_data_xsd.sh v12`
+   fails. Changing them also changes what `v12.1` tests.
 
 # Step 6: version scripts
 
-* `scripts/new_version.sh <new> <xsd>`: registry entry (`released="false"`);
+* `scripts/new_version.sh <new>` (e.g. `v13`): registry entry;
   copy the previous version's `main.sch`, turning its own relative pattern
   includes (`patterns/…`) into `../../<previous>/rules/patterns/…` and keeping
   existing `../../vX/rules/` includes (abstract-pattern includes already always name
   a version folder); set `active_version`; empty `patterns/`,
   `abstract_patterns/` and test data folders; copy the scope template,
   catalog and `sys_config` block, all under the new `<new>/` root folder.
-* `scripts/rename_version.sh <old> <new>` for fix renames: rename the
-  `<old>/` root folder, the `sys_config` id, the registry entry and
-  `active_version`, and rewrite every `../../<old>/` include in later
-  versions' `main.sch`.
+* ~~`scripts/rename_version.sh`~~ — no longer needed: fixes are made in
+  place and folders are never renamed (2026-11-05).
 
 # Step 7: fictional version
 
-Create `v2026.2.0` (unreleased) with `new_version.sh`: add one rule, remove
-one rule, edit one rule. CI must pass for both versions, and `v2026.1.0`'s
-results must not change.
+Done differently: `v12` (formerly `v9999.1.0`) adds `R.44`, removes `R.13`
+and edits `R.15` compared to `v12.1`. CI must pass for both versions (blocked
+by step 5.7), and `v12.1`'s results must not change.
 
 # Step 8: selection and release
 
@@ -111,11 +121,13 @@ results must not change.
   (`ma:select-version`) into a dispatcher that picks the version from
   the root's `VersieNummer` or the optional `version` parameter, and fails on
   an unsupported XSD version.
-* ~~Release packaging~~ — decided 2026-11-04: one zip with every released
-  version (see [build-and-release](./build-and-release)).
+* ~~Release packaging~~ — decided 2026-11-04: one zip with every version
+  (see [build-and-release](./build-and-release)).
 
 # Step 9: clean up
 
-* Delete the fictional `v2026.2.0`.
+* Decide what happens to the fictional rule changes in `v12` (`R.44`,
+  the `R.15` override, `R.13` removed). Without a `released` flag `v12`
+  is shipped and selected for `VersieNummer="12"` files.
 * ~~Update the OKF pages that still describe `v12` paths~~ — done
   2026-11-02 together with the per-version root restructure.
