@@ -2,15 +2,15 @@
 type: Validation Rule
 title: R.20 — Topologie punt objecten Elec
 description: Checks that Elec point objects are geometrically connected to the correct cable type and do not float unconnected.
-resource: v2026.1.0/rules/patterns/R.20.sch
+resource: v12/rules/patterns/R.20.sch
 tags: topologie
 generated:
   by: claude-code/opus-5-5
   at: 2026-11-02T00:00:00Z
 sources:
-  - resource: "../../v2026.1.0/doc/NLCSValidatieRegels.xml"
+  - resource: "../../v12.1/doc/NLCSValidatieRegels.xml"
     title: "NLCS Validatieregels catalog"
-  - resource: "../../v2026.1.0/rules/abstract_patterns/topologie/topologie_punt_objecten_elec.sch"
+  - resource: "../../v12/rules/abstract_patterns/topologie/topologie_punt_objecten_elec.sch"
     title: "topologie_punt_objecten_elec.sch"
 ---
 

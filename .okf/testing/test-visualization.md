@@ -21,7 +21,7 @@ sources:
 lines, polygons — layered polygon→line→point→text, each object given a random
 color) as an SVG. `scripts/generate_and_compare_svgs.sh` regenerates these
 into `<version>/assets/R.<n>/<passing|failing>/*.svg` (currently
-`v2026.1.0/assets/`), removing files with no geometry
+`v12/assets/`), removing files with no geometry
 (empty `viewBox`) and empty directories.
 
 These SVGs are **committed to the repo**, not build artifacts — they exist as

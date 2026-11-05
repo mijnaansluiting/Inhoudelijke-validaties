@@ -6,7 +6,7 @@ resource: scripts/bundle.sh
 tags: architecture, release
 generated:
   by: claude-code/opus-5-5
-  at: 2026-11-04T00:00:00Z
+  at: 2026-11-05T00:00:00Z
 sources:
   - resource: "../../scripts/bundle.sh"
     title: "bundle.sh"
@@ -50,13 +50,16 @@ just Saxon, no dependency on this build toolchain.
 
 # Version scoping
 
-Decided 2026-11-04: **one zip with every released version.** `bundle.sh`
-takes no argument; it loops over `versions.sh list --released` and copies the
-files above for each. Consumers run the compiled schema of the version they
-need, `dist/<version>/rules/transpiled_phases/main_scope_checks.xsl`. The
-bundled `configuration/versions.xml` omits unreleased versions. `bundle.sh`
-starts from an empty `dist/` and fails if a released version's
+Decided 2026-11-04: **one zip with every version**; revised 2026-11-05, when
+the `released` flag was dropped, so every registered NLCS++ version is shipped.
+`bundle.sh` takes no argument; it loops over `versions.sh list` and copies the
+files above for each. Consumers run the compiled schema of the NLCS++ version
+they need, `dist/<version>/rules/transpiled_phases/main_scope_checks.xsl`
+(e.g. `dist/v12.1/…`). `configuration/versions.xml` is bundled unchanged.
+`bundle.sh` starts from an empty `dist/` and fails if a version's
 `main_scope_checks.xsl` hasn't been compiled. The `Deliverables` workflow adds
 scope checks to every version (a version's scope-checked schema includes the
 scope-checked abstract patterns of the versions it inherits from) and compiles
-every released version before bundling.
+every version before bundling. The software release number only exists as
+the `v*` git tag that triggers the workflow and names the GitHub Release; the
+zip is always `nlcspp_inhoudelijke_validaties.zip`.

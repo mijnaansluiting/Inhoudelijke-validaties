@@ -2,7 +2,7 @@
 type: Test Subsystem
 title: Rule test fixtures
 description: Hand-authored passing/failing NLCS++ XML fixtures per rule, run through the compiled rule XSLT in CI.
-resource: v2026.1.0/test/rule_validation_data/
+resource: v12/test/rule_validation_data/
 tags: testing
 generated:
   by: claude-code/opus-5-5
@@ -12,15 +12,15 @@ sources:
     title: "validate_rules.sh"
   - resource: "../../scripts/validate_rule_reports.sh"
     title: "validate_rule_reports.sh"
-  - resource: "../../v2026.1.0/test/rule_validation_data/"
-    title: "v2026.1.0/test/rule_validation_data/"
+  - resource: "../../v12/test/rule_validation_data/"
+    title: "v12/test/rule_validation_data/"
 ---
 
 # Overview
 
 There is no unit-test framework (no JUnit/pytest) — rule testing is entirely
 data-driven. `<version>/test/rule_validation_data/R.<n>/` (e.g.
-`v2026.1.0/test/rule_validation_data/R.36/`) holds hand-authored NLCS++ XML
+`v12/test/rule_validation_data/R.36/`) holds hand-authored NLCS++ XML
 fixtures for each rule a version adds or changes; a rule's fixtures are taken
 from the version folder its pattern is included from (`scripts/versions.sh
 rules`, see [multiversion-model](../decisions/multiversion-model)).

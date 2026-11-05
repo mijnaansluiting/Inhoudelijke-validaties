@@ -2,15 +2,15 @@
 type: Validation Rule
 title: R.34 — Reden niet-verwijdering ingevuld
 description: Checks that an abandoned cable (Status REVISIE, Bedrijfstoestand VERLATEN) has a value for RedenNietVerwijdering explaining why it was not removed.
-resource: v2026.1.0/rules/patterns/R.34.sch
+resource: v12/rules/patterns/R.34.sch
 tags: verplichte-waarde
 generated:
   by: claude-code/opus-5-5
   at: 2026-11-02T00:00:00Z
 sources:
-  - resource: "../../v2026.1.0/doc/NLCSValidatieRegels.xml"
+  - resource: "../../v12.1/doc/NLCSValidatieRegels.xml"
     title: "NLCS Validatieregels catalog"
-  - resource: "../../v2026.1.0/rules/abstract_patterns/verplichte_waarde/reden_niet_verwijdering_ingevuld.sch"
+  - resource: "../../v12/rules/abstract_patterns/verplichte_waarde/reden_niet_verwijdering_ingevuld.sch"
     title: "reden_niet_verwijdering_ingevuld.sch"
 ---
 

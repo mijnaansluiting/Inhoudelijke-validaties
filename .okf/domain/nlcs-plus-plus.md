@@ -9,7 +9,7 @@ generated:
 sources:
   - resource: "../../README.md"
     title: "README.md"
-  - resource: "../../v2026.1.0/doc/NLCSValidatieRegels.xml"
+  - resource: "../../v12.1/doc/NLCSValidatieRegels.xml"
     title: "NLCS Validatieregels catalog"
 ---
 

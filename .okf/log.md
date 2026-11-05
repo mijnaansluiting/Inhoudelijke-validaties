@@ -1,5 +1,29 @@
 # Update Log
 
+## 2026-11-05
+* **Update**: versions are now **NLCS++ versions** instead of software
+  releases: one rule folder per NLCS++ version. `v2026.1.0/` → `v12.1/`,
+  the fictional `v9999.1.0/` → `v12/`, and the inheritance is flipped:
+  shared patterns, abstract patterns, fixtures, SVGs and `xsl_functions/` now
+  live in `v12/`, and `v12.1` keeps only its own `R.13`, original `R.15` and
+  the two abstract patterns only they use. Rule changes within an NLCS++
+  version are made in place; the software release number only exists as
+  the git tag. `configuration/versions.xml` now holds only `id`
+  (`nlcspp` and `released` dropped), `versions.sh` lost the alias resolution,
+  `latest [xsd]`, `list --released` and `base`, and every version is bundled.
+  Rule validation reports are byte-identical before and after. Known
+  consequence: `validate_test_data_xsd.sh v12` fails, because the inherited
+  12.1 fixtures are now checked against XSD 12. Updated
+  [multiversion-model](./decisions/multiversion-model),
+  [multiversion-plan](./architecture/multiversion-plan),
+  [version-registry](./config/version-registry),
+  [build-and-release](./architecture/build-and-release),
+  [ci/workflows](./ci/workflows), [sys-config](./config/sys-config),
+  [schematron-layering](./architecture/schematron-layering),
+  [xsl-function-libraries](./architecture/xsl-function-libraries), the
+  directory indexes, and every concept whose `resource`/`sources` pointed
+  into `v2026.1.0/`.
+
 ## 2026-11-04
 * **Fix**: the `Deliverables` release workflow. It uploaded the stale `xsd/`
   path instead of `schemas/`, and added scope checks to the latest version

@@ -2,17 +2,17 @@
 type: Validation Rule
 title: R.4 — Lijn Geometrie (afstand en hoek van inmeetpunten)
 description: Checks that line and area-outline geometries respect the minimum/maximum distance between survey points and do not contain sharp kinks between segments.
-resource: v2026.1.0/rules/patterns/R.4_A.sch
+resource: v12/rules/patterns/R.4_A.sch
 tags: geometrie
 generated:
   by: claude-code/opus-5-5
   at: 2026-11-02T00:00:00Z
 sources:
-  - resource: "../../v2026.1.0/doc/NLCSValidatieRegels.xml"
+  - resource: "../../v12.1/doc/NLCSValidatieRegels.xml"
     title: "NLCS Validatieregels catalog"
-  - resource: "../../v2026.1.0/rules/abstract_patterns/geometrie/lijn_geometrie-afstand_van_inmeetpunten.sch"
+  - resource: "../../v12/rules/abstract_patterns/geometrie/lijn_geometrie-afstand_van_inmeetpunten.sch"
     title: "lijn_geometrie-afstand_van_inmeetpunten.sch (R.4-A)"
-  - resource: "../../v2026.1.0/rules/abstract_patterns/geometrie/lijn_geometrie-hoek_van_segmenten.sch"
+  - resource: "../../v12/rules/abstract_patterns/geometrie/lijn_geometrie-hoek_van_segmenten.sch"
     title: "lijn_geometrie-hoek_van_segmenten.sch (R.4-B)"
 ---
 

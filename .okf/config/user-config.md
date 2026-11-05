@@ -10,7 +10,7 @@ generated:
 sources:
   - resource: "../../configuration/user_config.xml"
     title: "user_config.xml"
-  - resource: "../../v2026.1.0/xsl_functions/localization_functions.xsl"
+  - resource: "../../v12/xsl_functions/localization_functions.xsl"
     title: "localization_functions.xsl"
 ---
 

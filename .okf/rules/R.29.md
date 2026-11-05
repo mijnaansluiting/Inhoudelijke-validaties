@@ -2,15 +2,15 @@
 type: Validation Rule
 title: R.29 — Verplaatsing goed vastgelegd
 description: Checks that a cable relocation (Bewerking VERPLAATSEN) is recorded as a pair of objects — the original BESTAAND object and a new REVISIE object sharing the same GisId — rather than as a single mutated object.
-resource: v2026.1.0/rules/patterns/R.29.sch
+resource: v12/rules/patterns/R.29.sch
 tags: consistentie
 generated:
   by: claude-code/opus-5-5
   at: 2026-11-02T00:00:00Z
 sources:
-  - resource: "../../v2026.1.0/doc/NLCSValidatieRegels.xml"
+  - resource: "../../v12.1/doc/NLCSValidatieRegels.xml"
     title: "NLCS Validatieregels catalog"
-  - resource: "../../v2026.1.0/rules/abstract_patterns/consistentie/verplaatsing_goed_vastgelegd.sch"
+  - resource: "../../v12/rules/abstract_patterns/consistentie/verplaatsing_goed_vastgelegd.sch"
     title: "verplaatsing_goed_vastgelegd.sch"
 ---
 

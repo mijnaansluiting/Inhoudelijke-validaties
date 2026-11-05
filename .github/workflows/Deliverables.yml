@@ -38,7 +38,7 @@ jobs:
             schemas/
           if-no-files-found: warn
 
-      # Every version, not just the released ones: main_scope_checks.sch includes the scope-checked
+      # Before any version is transpiled: main_scope_checks.sch includes the scope-checked
       # abstract patterns of the versions it inherits from
       - name: Add scope checks
         run: |
@@ -48,7 +48,7 @@ jobs:
 
       - name: Transpile Schematron to XSL
         run: |
-          for VERSION in $(scripts/versions.sh list --released); do
+          for VERSION in $(scripts/versions.sh list); do
             java -jar saxon-he.jar -xsl:transpile.xsl -s:$VERSION/rules/main_scope_checks.sch -o:$VERSION/rules/transpiled_phases/main_scope_checks.xsl
           done
 

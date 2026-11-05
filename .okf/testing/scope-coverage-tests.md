@@ -2,7 +2,7 @@
 type: Test Subsystem
 title: Scope coverage tests
 description: A meta-test verifying the scope/severity engine itself assigns exactly the right rules to every scope, with no gaps or overlaps.
-resource: v2026.1.0/test/scope_validation_data/scope_template.xml
+resource: v12.1/test/scope_validation_data/scope_template.xml
 tags: testing
 generated:
   by: claude-code/opus-5-5
@@ -10,7 +10,7 @@ generated:
 sources:
   - resource: "../../scripts/validate_scopes.sh"
     title: "validate_scopes.sh"
-  - resource: "../../v2026.1.0/test/scope_validation_data/scope_template.xml"
+  - resource: "../../v12.1/test/scope_validation_data/scope_template.xml"
     title: "scope_template.xml"
 ---
 
