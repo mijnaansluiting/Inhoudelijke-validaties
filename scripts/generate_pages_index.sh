@@ -26,7 +26,6 @@ LATEST=$(scripts/versions.sh latest) || exit 1
             exit 1
         fi
         LABEL=$VERSION
-        [[ $VERSION == "$LATEST" ]] && LABEL="$VERSION (nieuwste)"
         echo "      <li><a href=\"$DOC_HTML\">$LABEL</a></li>"
     done
     echo '    </ul>'
