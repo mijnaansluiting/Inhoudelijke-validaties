@@ -1,5 +1,14 @@
 # Update Log
 
+## 2026-11-09
+* **Update**: `scripts/check_rule_coverage.sh` now also fails when a rule's
+  concrete pattern is not included from the version folder named by its
+  `laatstGewijzigd` (exact match; abstract patterns are not checked). Set
+  R.13 and R.15 in the `v12.1` catalog to `v12.1`, since `v12.1` has its own
+  patterns for them. Updated [coverage-checks](./testing/coverage-checks),
+  [rule-catalog](./architecture/rule-catalog) and the
+  [rules index](./rules/index).
+
 ## 2026-11-05
 * **Update**: added the required `laatstGewijzigd` element to every
   `validatieRegel` in the rule catalog: the NLCS++ XSD version in which the
