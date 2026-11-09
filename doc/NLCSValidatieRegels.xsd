@@ -100,6 +100,14 @@
 			<xs:enumeration value="KB"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="XsdVersieType">
+		<xs:annotation>
+			<xs:documentation>Versie van het NLCS++ XSD, bijvoorbeeld v12 of v12.1</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:pattern value="v[0-9]+(\.[0-9]+)*"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:complexType name="ValidatieObjectType">
 		<xs:sequence>
 			<xs:element name="naam"        type="NLCSObjectType"  minOccurs="1" maxOccurs="1"/>
@@ -179,6 +187,11 @@
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="validatieObjecten" type="ValidatieObjectVerzamelingType" minOccurs="1" maxOccurs="1" />
+			<xs:element name="laatstGewijzigd"   type="XsdVersieType" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>De versie van het NLCS++ XSD waarin deze validatieregel voor het laatst gewijzigd is</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 		</xs:sequence>
 		<xs:attribute name="nummer" type="xs:ID" use="required"/>
 		<xs:attribute name="naam" type="xs:string" use="required"/>
