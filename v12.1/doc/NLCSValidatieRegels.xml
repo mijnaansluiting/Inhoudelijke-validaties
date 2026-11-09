@@ -250,7 +250,7 @@
 			<validatieObjecten>
 				<validatieObject><naam>MSoverdrachtspunt</naam></validatieObject>
 			</validatieObjecten>
-			<laatstGewijzigd>v12</laatstGewijzigd>
+			<laatstGewijzigd>v12.1</laatstGewijzigd>
 		</validatieRegel>
 		<validatieRegel nummer="R.14" naam="Verplichte kenmerken Stations en Kasten">
 			<beschrijving>Ieder MSstation, HSstation en LSkast heeft kenmerken die gevuld moeten zijn.</beschrijving>
@@ -279,7 +279,7 @@
 			<validatieObjecten>
 				<validatieObject><naam>Amantelbuis</naam></validatieObject>
 			</validatieObjecten>
-			<laatstGewijzigd>v12</laatstGewijzigd>
+			<laatstGewijzigd>v12.1</laatstGewijzigd>
 		</validatieRegel>
 		<validatieRegel nummer="R.20" naam="Topologie punt objecten Elec">
 			<beschrijving>De punt objecten van Elec moeten aan de juiste kabel zijn verbonden en mogen niet zweven.</beschrijving>

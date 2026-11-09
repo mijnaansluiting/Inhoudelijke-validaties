@@ -6,7 +6,7 @@ resource: doc/NLCSValidatieRegels.xsd
 tags: documentation, schema, rules
 generated:
   by: claude-code/opus-5-5
-  at: 2026-11-05T00:00:00Z
+  at: 2026-11-09T00:00:00Z
 sources:
   - id: xsd
     resource: "../../doc/NLCSValidatieRegels.xsd"
@@ -49,9 +49,12 @@ Each `validatieRegel` (`ValidatieRegelType`)[^xsd]:
 
 `XsdVersieType` is an `xs:string` restricted to the pattern
 `v[0-9]+(\.[0-9]+)*` (e.g. `v12`, `v12.1`), so a new NLCS++ version needs
-no XSD change. As of 2026-11-05 every rule in both `v12/` and `v12.1/` has
-`laatstGewijzigd` set to `v12`; it is a placeholder until the real per-rule
-history is filled in.
+no XSD change. The value must equal the version folder the rule's concrete
+pattern (`patterns/R.x.sch`, `R.x_A.sch`, …) is included from in that
+version's `rules/main.sch`; `scripts/check_rule_coverage.sh` enforces this
+([coverage-checks](../testing/coverage-checks)). As of 2026-11-09 every rule
+is `v12`, except R.13 and R.15 in the `v12.1/` catalog, which are `v12.1`
+because `v12.1` has its own patterns for them.
 
 Each `scope` has a `naam` attribute, a `tekeningSoort`, `statussen`,
 `bedrijfsToestanden` and `scopeValidatieRegels` (pairs of `nummer` + `niveau`).

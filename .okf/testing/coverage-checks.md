@@ -6,7 +6,7 @@ resource: scripts/check_rule_coverage.sh
 tags: testing
 generated:
   by: claude-code/opus-5-5
-  at: 2026-11-02T00:00:00Z
+  at: 2026-11-09T00:00:00Z
 sources:
   - resource: "../../scripts/check_rule_coverage.sh"
     title: "check_rule_coverage.sh"
@@ -25,7 +25,14 @@ drifting apart:
   `<version>/doc/NLCSValidatieRegels.xml` (`nummer="R.n"`) and phase ids out of
   `<version>/rules/main.sch` (`id="R.n"`), diffs the two sets, and
   emits GitHub Actions annotations for any rule documented but not
-  implemented, or implemented but not documented. Runs in the
+  implemented, or implemented but not documented. It also checks that each
+  rule's concrete pattern is included from the version folder named by the
+  rule's `<laatstGewijzigd>` (exact match): it takes the folder per phase
+  from `scripts/versions.sh rules <version>` and the value per rule from the
+  catalog, and emits an error annotation on the `main.sch` include line for
+  every mismatch, or on the catalog when a rule has no `laatstGewijzigd`.
+  Abstract-pattern includes are not checked, since they are shared between
+  rules. See [rule-catalog](../architecture/rule-catalog). Runs in the
   first `covered-rules` job of the `CI` workflow (no build step needed) — see
   [ci/workflows](../ci/workflows).
 
