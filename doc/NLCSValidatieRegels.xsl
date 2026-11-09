@@ -111,12 +111,13 @@
 			The actual body of the documentation
 		-->
 		<html>
+			<xsl:variable name="version" select="replace(base-uri(/), '.*/(v[^/]+)/doc/[^/]+$', '$1')"/>
 			<head>
-				<title>NLCS++ Inhoudelijke Validaties - Documentatie</title>
+				<title>NLCS++ <xsl:value-of select="$version"/> Inhoudelijke Validaties - Documentatie</title>
 				<link rel="stylesheet" href="../../doc/NLCSValidatieRegels.css" />
 			</head>
 			<body>
-				<h1>NLCS++ Inhoudelijke validaties - Documentatie</h1>
+				<h1>NLCS++ <xsl:value-of select="$version"/> Inhoudelijke validaties - Documentatie</h1>
 
 				<h2>Index</h2>
 

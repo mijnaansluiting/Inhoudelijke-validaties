@@ -22,19 +22,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v5
-      - name: Create redirect index.html
-        run: |
-          doc_html=$(scripts/versions.sh latest)/doc/NLCSValidatieRegels.html
-          echo '<!DOCTYPE html>
-          <html>
-            <head>
-              <meta http-equiv="refresh" content="0; url='"$doc_html"'" />
-              <title>Redirecting...</title>
-            </head>
-            <body>
-              <p>Redirecting to <a href="'"$doc_html"'">documentation</a>...</p>
-            </body>
-          </html>' > index.html
+      - name: Create index.html listing every version
+        run: scripts/generate_pages_index.sh index.html
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
