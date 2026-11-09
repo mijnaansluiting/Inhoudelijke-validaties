@@ -1,6 +1,14 @@
 # Update Log
 
 ## 2026-11-05
+* **Update**: added the required `laatstGewijzigd` element to every
+  `validatieRegel` in the rule catalog: the NLCS++ XSD version in which the
+  rule was last changed. `doc/NLCSValidatieRegels.xsd` gained
+  `XsdVersieType` (pattern `v[0-9]+(\.[0-9]+)*`); all rules in `v12/` and
+  `v12.1/` are set to `v12` for now. The HTML shows it as a
+  "Laatst gewijzigd" row. New concept
+  [rule-catalog](./architecture/rule-catalog); updated the
+  [architecture](./architecture/index) and [rules](./rules/index) indexes.
 * **Update**: versions are now **NLCS++ versions** instead of software
   releases: one rule folder per NLCS++ version. `v2026.1.0/` → `v12.1/`,
   the fictional `v9999.1.0/` → `v12/`, and the inheritance is flipped:

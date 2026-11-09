@@ -9,9 +9,17 @@
 			Convert a string to a 'human-string'
 		 -->
 		<xsl:param name="a-string"/>
-		<xsl:value-of select="concat(translate(substring(local-name(),1,1), $lowercase, $uppercase),
-  						      		 substring(local-name(), 2),
-          							 substring(' ', 1 div not(position()=last())))"/>
+		<xsl:choose>
+			<xsl:when test="local-name() = 'laatstGewijzigd'">
+				<xsl:value-of select="concat('Laatst gewijzigd',
+											 substring(' ', 1 div not(position()=last())))"/>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:value-of select="concat(translate(substring(local-name(),1,1), $lowercase, $uppercase),
+  						      				 substring(local-name(), 2),
+          									 substring(' ', 1 div not(position()=last())))"/>
+			</xsl:otherwise>
+		</xsl:choose>
 	</xsl:template>
 
 	<xsl:template name="convert-newlines">
