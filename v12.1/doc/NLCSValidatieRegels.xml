@@ -14,7 +14,7 @@
 			<validatieObjecten>
 				<validatieObject><naam>Document</naam></validatieObject>
 			</validatieObjecten>
-			<laatstGewijzigd>v12</laatstGewijzigd>
+			<laatstGewijzigd>v12.1</laatstGewijzigd>
 		</validatieRegel>
 		<validatieRegel nummer="R.2" naam="Combinatie NLCS Status en Tekeningsoort">
 			<beschrijving>Afhankelijk van het Tekeningsoort mogen er NLCS Objecten voorkomen met bepaalde NLCS Statussen</beschrijving>
@@ -28,7 +28,7 @@
 			<validatieObjecten>
 				<validatieObject><naam>Document</naam></validatieObject>
 			</validatieObjecten>
-			<laatstGewijzigd>v12</laatstGewijzigd>
+			<laatstGewijzigd>v12.1</laatstGewijzigd>
 		</validatieRegel>
 		<validatieRegel nummer="R.3" naam="Geometrie binnen Projectvlak">
 			<beschrijving>Iedere geometrie (punt, lijn en vlak) van ieder NLCS Object in het bestand moet interactie hebben met het Projectgebied van AProjectReferentie</beschrijving>
@@ -52,7 +52,7 @@
 				<validatieObject><naam>MSstation</naam></validatieObject>
 				<validatieObject><naam>OVLoverdrachtspunt</naam></validatieObject>
 		    </validatieObjecten>
-			<laatstGewijzigd>v12</laatstGewijzigd>
+			<laatstGewijzigd>v12.1</laatstGewijzigd>
 		</validatieRegel>
 		<validatieRegel nummer="R.4" naam="Lijn Geometrie">
 			<beschrijving>Een lijn en de omtrek van vlak moeten voldoen aan inmeeteisen</beschrijving>
@@ -91,7 +91,7 @@
 				<validatieObject><naam>AbeschermingVlak</naam></validatieObject>
 				 -->
 			</validatieObjecten>
-			<laatstGewijzigd>v12</laatstGewijzigd>
+			<laatstGewijzigd>v12.1</laatstGewijzigd>
 		</validatieRegel>
 		<validatieRegel nummer="R.5" naam="GisId en AssetId">
 			<beschrijving>Ieder NLCS Object met de status BESTAAND, REVISIE en VERWIJDERD moet een GisId en AssetId hebben, dit zijn namelijk objecten die als oorsprong de assetregistratie hebben. NLCS objecten met de status NIEUW mogen juist geen GisId en AssetId hebben omdat deze objecten ontstaan in het ontwerp of de revisie.</beschrijving>
@@ -104,7 +104,7 @@
 		    <validatieObjecten> <!-- Deze regel geldt voor alle NLCS Objecten -->
 		    	<validatieObject><naam>AlleObjecten</naam></validatieObject>
 		    </validatieObjecten>
-			<laatstGewijzigd>v12</laatstGewijzigd>
+			<laatstGewijzigd>v12.1</laatstGewijzigd>
 		</validatieRegel>
 		<validatieRegel nummer="R.6" naam="Inmeetwijze en Nauwkeurigheid Lineaire Assets Elec">
 			<beschrijving>Ieder lineair NLCS Object voor Elec moet waardes hebben voor de kenmerken Inmeetwijze en Nauwkeurigheid.</beschrijving>
@@ -121,7 +121,7 @@
 				<validatieObject><naam>HSkabel</naam></validatieObject>
 				 -->
 			</validatieObjecten>
-			<laatstGewijzigd>v12</laatstGewijzigd>
+			<laatstGewijzigd>v12.1</laatstGewijzigd>
 		</validatieRegel>
 		<validatieRegel nummer="R.7" naam="Subnettype gevuld voor LS en MS Kabel">
 			<beschrijving>MSkabel, LSkabel en LSmof moeten een waarde hebben voor Subnettype.</beschrijving>
@@ -134,7 +134,7 @@
 				<validatieObject><naam>LSkabel</naam></validatieObject>
 				<validatieObject><naam>LSmof</naam></validatieObject>
 			</validatieObjecten>
-			<laatstGewijzigd>v12</laatstGewijzigd>
+			<laatstGewijzigd>v12.1</laatstGewijzigd>
 		</validatieRegel>
 		<validatieRegel nummer="R.8" naam="Verplichte kenmerken Kabels">
 			<beschrijving>Iedere kabel heeft kenmerken die gevuld moeten zijn.</beschrijving>
@@ -158,7 +158,7 @@
 				<validatieObject><naam>LSkabel</naam></validatieObject>
 				<validatieObject><naam>MSkabel</naam></validatieObject>
 			</validatieObjecten>
-			<laatstGewijzigd>v12</laatstGewijzigd>
+			<laatstGewijzigd>v12.1</laatstGewijzigd>
 		</validatieRegel>
 		<validatieRegel nummer="R.9" naam="Aanlegdatum gevuld">
 			<beschrijving>De aanlegdatum moet gevuld zijn en mag niet in de toekomst liggen.</beschrijving>
@@ -184,7 +184,7 @@
 				<validatieObject><naam>HSmof</naam></validatieObject>
 				 -->
 			</validatieObjecten>
-			<laatstGewijzigd>v12</laatstGewijzigd>
+			<laatstGewijzigd>v12.1</laatstGewijzigd>
 		</validatieRegel>
 		<validatieRegel nummer="R.10" naam="Verplichte kenmerken moffen">
 			<beschrijving>Iedere mof heeft kenmerken die gevuld moeten zijn.</beschrijving>
@@ -206,7 +206,7 @@
 				<validatieObject><naam>LSmof</naam></validatieObject>
 				<validatieObject><naam>MSmof</naam></validatieObject>
 			</validatieObjecten>
-			<laatstGewijzigd>v12</laatstGewijzigd>
+			<laatstGewijzigd>v12.1</laatstGewijzigd>
 		</validatieRegel>
 		<validatieRegel nummer="R.11" naam="Verplichte kenmerken LSoverdrachtspunt">
 			<beschrijving>Ieder LSoverdrachtspunt heeft kenmerken die gevuld moeten zijn.</beschrijving>
@@ -221,7 +221,7 @@
 			<validatieObjecten>
 				<validatieObject><naam>LSoverdrachtspunt</naam></validatieObject>
 				</validatieObjecten>
-			<laatstGewijzigd>v12</laatstGewijzigd>
+			<laatstGewijzigd>v12.1</laatstGewijzigd>
 		</validatieRegel>
 		<validatieRegel nummer="R.12" naam="Verplichte kenmerken OVLoverdrachtspunt">
 			<beschrijving>Ieder OVLoverdrachtspunt heeft kenmerken die gevuld moeten zijn.</beschrijving>
@@ -238,7 +238,7 @@
 			<validatieObjecten>
 				<validatieObject><naam>OVLoverdrachtspunt</naam></validatieObject>
 			</validatieObjecten>
-			<laatstGewijzigd>v12</laatstGewijzigd>
+			<laatstGewijzigd>v12.1</laatstGewijzigd>
 		</validatieRegel>
 		<validatieRegel nummer="R.13" naam="Verplichte kenmerken MSoverdrachtspunt">
 			<beschrijving>Ieder MSoverdrachtspunt heeft kenmerken die gevuld moeten zijn.</beschrijving>
@@ -265,7 +265,7 @@
 				<validatieObject><naam>LSkast</naam></validatieObject>
 				<validatieObject><naam>MSstation</naam></validatieObject>
 			</validatieObjecten>
-			<laatstGewijzigd>v12</laatstGewijzigd>
+			<laatstGewijzigd>v12.1</laatstGewijzigd>
 		</validatieRegel>
 		<validatieRegel nummer="R.15" naam="Verplichte kenmerken Mantelbuis">
 			<beschrijving>Iedere Mantelbuis heeft kenmerken die gevuld moeten zijn.</beschrijving>
@@ -303,7 +303,7 @@
 				<validatieObject><naam>HSmof</naam></validatieObject>
 				-->
 			</validatieObjecten>
-			<laatstGewijzigd>v12</laatstGewijzigd>
+			<laatstGewijzigd>v12.1</laatstGewijzigd>
 		</validatieRegel>
 		<validatieRegel nummer="R.21" naam="Geldig eindpunt Kabel">
 			<beschrijving>Iedere kabel moet geldige eindpunten hebben aan beide kanten.</beschrijving>
@@ -326,7 +326,7 @@
 				<validatieObject><naam>HSkabel</naam></validatieObject>
 				 -->
 			</validatieObjecten>
-			<laatstGewijzigd>v12</laatstGewijzigd>
+			<laatstGewijzigd>v12.1</laatstGewijzigd>
 		</validatieRegel>
 		<validatieRegel nummer="R.22" naam="Kabels zelfde Netvlak">
 			<beschrijving>Kabels die d.m.v. moffen met elkaar zijn verbonden moeten van het zelfde netvlak zijn</beschrijving>
@@ -344,7 +344,7 @@
 				<validatieObject><naam>HSkabel</naam></validatieObject>
 				-->
 			</validatieObjecten>
-			<laatstGewijzigd>v12</laatstGewijzigd>
+			<laatstGewijzigd>v12.1</laatstGewijzigd>
 		</validatieRegel>
 		<validatieRegel nummer="R.23" naam="Verbonden kabels juiste kenmerken">
 			<beschrijving>Kabels die d.m.v. moffen met elkaar zijn verbonden moeten bepaalde kenmerken hetzelfde hebben</beschrijving>
@@ -363,7 +363,7 @@
 				<validatieObject><naam>HSkabel</naam></validatieObject>
 				-->
 			</validatieObjecten>
-			<laatstGewijzigd>v12</laatstGewijzigd>
+			<laatstGewijzigd>v12.1</laatstGewijzigd>
 		</validatieRegel>
 		<validatieRegel nummer="R.24" naam="Fase MS Kabel">
 			<beschrijving>De Fase van de kabel moet overeenkomen met de Uitvoering van de kabel.</beschrijving>
@@ -380,7 +380,7 @@
 			<validatieObjecten>
 				<validatieObject><naam>MSkabel</naam></validatieObject>
 			</validatieObjecten>
-			<laatstGewijzigd>v12</laatstGewijzigd>
+			<laatstGewijzigd>v12.1</laatstGewijzigd>
 		</validatieRegel>
 		<validatieRegel nummer="R.25" naam="Verbonden kabels juiste Fase">
 			<beschrijving>De kabels die door een mof verbonden zijn moeten de juiste Fase hebben.</beschrijving>
@@ -400,7 +400,7 @@
 				<validatieObject><naam>HSmof</naam></validatieObject>
 				-->
 			</validatieObjecten>
-			<laatstGewijzigd>v12</laatstGewijzigd>
+			<laatstGewijzigd>v12.1</laatstGewijzigd>
 		</validatieRegel>
 		<validatieRegel nummer="R.26" naam="Aantal kabels en mof functie">
 			<beschrijving>Het aantal kabels moet passen bij de Functie van de Mof.</beschrijving>
@@ -422,7 +422,7 @@
 				<validatieObject><naam>HSmof</naam></validatieObject>
 				-->
 			</validatieObjecten>
-			<laatstGewijzigd>v12</laatstGewijzigd>
+			<laatstGewijzigd>v12.1</laatstGewijzigd>
 		</validatieRegel>
 		<validatieRegel nummer="R.27" naam="Mantelbuis past in mantelbuis">
 			<beschrijving>Een mantelbuis die in een andere mantelbuis ligt moet een kleinere diameter hebben dan de mantelbuis waarin het ligt.</beschrijving>
@@ -434,7 +434,7 @@
 			<validatieObjecten>
 				<validatieObject><naam>Amantelbuis</naam></validatieObject>
 			</validatieObjecten>
-			<laatstGewijzigd>v12</laatstGewijzigd>
+			<laatstGewijzigd>v12.1</laatstGewijzigd>
 		</validatieRegel>
 		<validatieRegel nummer="R.28" naam="Mantelbuis Inhoud aanwezig">
 			<beschrijving>Een Mantelbuis die niet Reserve is moet een Mantelbuis inhoud hebben.</beschrijving>
@@ -446,7 +446,7 @@
 			<validatieObjecten>
 				<validatieObject><naam>Amantelbuis</naam></validatieObject>
 			</validatieObjecten>
-			<laatstGewijzigd>v12</laatstGewijzigd>
+			<laatstGewijzigd>v12.1</laatstGewijzigd>
 		</validatieRegel>
 		<validatieRegel nummer="R.29" naam="Verplaatsing goed vastgelegd">
 			<beschrijving>Een verplaatsing moet correct zijn vastgelegd</beschrijving>
@@ -484,7 +484,7 @@
 				<validatieObject><naam>LSkabel</naam></validatieObject>
 				<validatieObject><naam>MSkabel</naam></validatieObject>
 			</validatieObjecten>
-			<laatstGewijzigd>v12</laatstGewijzigd>
+			<laatstGewijzigd>v12.1</laatstGewijzigd>
 		</validatieRegel>
 		<validatieRegel nummer="R.30" naam="Mantelbuis Inhoud referenties">
 			<beschrijving>Een mantelbuis inhoud moet correct refereren naar de omliggende mantelbuis en haar inhoud</beschrijving>
@@ -498,7 +498,7 @@
 			<validatieObjecten>
 				<validatieObject><naam>AmantelbuisInhoud</naam></validatieObject>
 			</validatieObjecten>
-			<laatstGewijzigd>v12</laatstGewijzigd>
+			<laatstGewijzigd>v12.1</laatstGewijzigd>
 		</validatieRegel>
 		<validatieRegel nummer="R.31" naam="Aanwezigheid bestand bijlage aardpen">
 			<beschrijving>Aan een aardpen moet een bestand bijlage met een aardingsrapport gekoppeld zijn.</beschrijving>
@@ -510,7 +510,7 @@
 			<validatieObjecten>
 				<validatieObject><naam>Eaardpen</naam></validatieObject>
 			</validatieObjecten>
-			<laatstGewijzigd>v12</laatstGewijzigd>
+			<laatstGewijzigd>v12.1</laatstGewijzigd>
 		</validatieRegel>
 		<validatieRegel nummer="R.32" naam="Aanwezigheid bestand bijlage kunstwerk">
 			<beschrijving>Aan een zinker kunstwerk moet een bestand bijlage met een zinkertekening gekoppeld zijn.</beschrijving>
@@ -522,7 +522,7 @@
 			<validatieObjecten>
 				<validatieObject><naam>Akunstwerk</naam></validatieObject>
 			</validatieObjecten>
-			<laatstGewijzigd>v12</laatstGewijzigd>
+			<laatstGewijzigd>v12.1</laatstGewijzigd>
 		</validatieRegel>
 		<validatieRegel nummer="R.33" naam="Aanwezigheid bestand bijlage aanlegtechniek">
 			<beschrijving>Aan een gestuurde aanlegtechniek moet een bestand bijlage met een gestuurde boring gekoppeld zijn.</beschrijving>
@@ -534,7 +534,7 @@
 			<validatieObjecten>
 				<validatieObject><naam>Aaanlegtechniek</naam></validatieObject>
 			</validatieObjecten>
-			<laatstGewijzigd>v12</laatstGewijzigd>
+			<laatstGewijzigd>v12.1</laatstGewijzigd>
 		</validatieRegel>
 		<validatieRegel nummer="R.34" naam="Reden niet-verwijdering ingevuld">
 			<beschrijving>Wanneer een kabel verlaten wordt moet een reden voor niet-verwijdering worden meegegeven.</beschrijving>
@@ -546,7 +546,7 @@
 				<validatieObject><naam>LSkabel</naam></validatieObject>
 				<validatieObject><naam>MSkabel</naam></validatieObject>
 			</validatieObjecten>
-			<laatstGewijzigd>v12</laatstGewijzigd>
+			<laatstGewijzigd>v12.1</laatstGewijzigd>
 		</validatieRegel>
 		<validatieRegel nummer="R.35" naam="Aanwezigheid maaiveldhoogte">
 			<beschrijving>Een revisie tekening moet minimaal 1 maaiveldhoogte object bevatten.</beschrijving>
@@ -557,7 +557,7 @@
 			<validatieObjecten>
 				<validatieObject><naam>Document</naam></validatieObject>
 			</validatieObjecten>
-			<laatstGewijzigd>v12</laatstGewijzigd>
+			<laatstGewijzigd>v12.1</laatstGewijzigd>
 		</validatieRegel>
 		<validatieRegel nummer="R.36" naam="Afstand mantelbuis tot inhoud">
 			<beschrijving>De inhoud van een mantelbuis mag maximaal 1 meter van de mantelbuis afliggen.</beschrijving>
@@ -570,7 +570,7 @@
 			<validatieObjecten>
 				<validatieObject><naam>Amantelbuis</naam></validatieObject>
 			</validatieObjecten>
-			<laatstGewijzigd>v12</laatstGewijzigd>
+			<laatstGewijzigd>v12.1</laatstGewijzigd>
 		</validatieRegel>
 		<validatieRegel nummer="R.37" naam="Inmeetwijze toegestaande waarde">
 			<beschrijving>Inmeetwijze moet tachymeter of GPS zijn</beschrijving>
@@ -587,7 +587,7 @@
 				<validatieObject><naam>Amantelbuis</naam></validatieObject>
 				<validatieObject><naam>Eaarddraad</naam></validatieObject>
 			</validatieObjecten>
-			<laatstGewijzigd>v12</laatstGewijzigd>
+			<laatstGewijzigd>v12.1</laatstGewijzigd>
 		</validatieRegel>
 		<validatieRegel nummer="R.38" naam="Inmeetwijze aansluitnet toegestaande waarde">
 			<beschrijving>Inmeetwijze voor LS kabel aansluitnet mag niet meetlint zijn.</beschrijving>
@@ -598,7 +598,7 @@
 			<validatieObjecten>
 				<validatieObject><naam>LSkabel</naam></validatieObject>
 			</validatieObjecten>
-			<laatstGewijzigd>v12</laatstGewijzigd>
+			<laatstGewijzigd>v12.1</laatstGewijzigd>
 		</validatieRegel>
 		<validatieRegel nummer="R.39" naam="Mof verbonden kabels gelijk verbindingnummer">
 			<beschrijving>Kabels verbonden met een mof moeten hetzelfde verbindingnummer hebben als de mof.</beschrijving>
@@ -610,7 +610,7 @@
 				<validatieObject><naam>LSmof</naam></validatieObject>
 				<validatieObject><naam>MSmof</naam></validatieObject>
 			</validatieObjecten>
-			<laatstGewijzigd>v12</laatstGewijzigd>
+			<laatstGewijzigd>v12.1</laatstGewijzigd>
 		</validatieRegel>
 		<validatieRegel nummer="R.40" naam="Volgnummer verplicht">
 			<beschrijving>Een volgnummer is verplicht voor deel- en eindrevisies.</beschrijving>
@@ -621,7 +621,7 @@
 			<validatieObjecten>
 				<validatieObject><naam>AprojectReferentie</naam></validatieObject>
 			</validatieObjecten>
-			<laatstGewijzigd>v12</laatstGewijzigd>
+			<laatstGewijzigd>v12.1</laatstGewijzigd>
 		</validatieRegel>
 		<validatieRegel nummer="R.41" naam="DatumTijdMutatie gevuld">
 			<beschrijving>Een DatumTijdMutatie is verplicht voor revisieobjecten.</beschrijving>
@@ -632,7 +632,7 @@
 			<validatieObjecten>
 				<validatieObject><naam>AlleObjecten</naam></validatieObject>
 			</validatieObjecten>
-			<laatstGewijzigd>v12</laatstGewijzigd>
+			<laatstGewijzigd>v12.1</laatstGewijzigd>
 		</validatieRegel>
 		<validatieRegel nummer="R.42" naam="Combinatie NLCS Status en Bedrijfstoestand">
 			<beschrijving>Afhankelijk van de Bedrijfstoestand mogen er NLCS Objecten voorkomen met bepaalde NLCS Statussen</beschrijving>
@@ -646,7 +646,7 @@
 			<validatieObjecten>
 				<validatieObject><naam>AlleObjecten</naam></validatieObject>
 			</validatieObjecten>
-			<laatstGewijzigd>v12</laatstGewijzigd>
+			<laatstGewijzigd>v12.1</laatstGewijzigd>
 		</validatieRegel>
 		<validatieRegel nummer="R.43" naam="Lijn Geometrie voor Aanlegtechnieken en nabije objecten">
 			<beschrijving>Een lijn van een Aaanlegtechniek moet voldoen aan inmeeteisen</beschrijving>
@@ -664,7 +664,7 @@
 				<validatieObject><naam>LSkabel</naam></validatieObject>
 				<validatieObject><naam>MSkabel</naam></validatieObject>
 			</validatieObjecten>
-			<laatstGewijzigd>v12</laatstGewijzigd>
+			<laatstGewijzigd>v12.1</laatstGewijzigd>
 		</validatieRegel>
 	</validatieRegels>
 	<scopes>

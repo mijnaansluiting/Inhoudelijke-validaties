@@ -5,11 +5,11 @@ description: Why parsing a geometry's raw GML coordinate string is now cached pe
 tags: decision, performance, geometry
 generated:
   by: claude-code/opus-5-5
-  at: 2026-11-02T00:00:00Z
+  at: 2026-11-10T00:00:00Z
 sources:
-  - resource: "../../v12/xsl_functions/helper_functions.xsl"
+  - resource: "../../v12.1/xsl_functions/helper_functions.xsl"
     title: "helper_functions.xsl"
-  - resource: "../../v12/rules/abstract_patterns/topologie/geldig_eindpunt_kabel.sch"
+  - resource: "../../v12.1/rules/abstract_patterns/topologie/geldig_eindpunt_kabel.sch"
     title: "geldig_eindpunt_kabel.sch"
   - resource: "./connectivity-index-and-geometry-caching"
     title: "connectivity-index-and-geometry-caching"

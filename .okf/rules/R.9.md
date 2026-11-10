@@ -2,15 +2,15 @@
 type: Validation Rule
 title: R.9 — Aanlegdatum gevuld
 description: Checks that the DatumAanleg (installation date) is populated and does not lie in the future for a broad set of electrical network assets.
-resource: v12/rules/patterns/R.9.sch
+resource: v12.1/rules/patterns/R.9.sch
 tags: verplichte-waarde
 generated:
   by: claude-code/opus-5-5
-  at: 2026-11-02T00:00:00Z
+  at: 2026-11-10T00:00:00Z
 sources:
   - resource: "../../v12.1/doc/NLCSValidatieRegels.xml"
     title: "NLCS Validatieregels catalog"
-  - resource: "../../v12/rules/abstract_patterns/verplichte_waarde/aanlegdatum_gevuld.sch"
+  - resource: "../../v12.1/rules/abstract_patterns/verplichte_waarde/aanlegdatum_gevuld.sch"
     title: "aanlegdatum_gevuld.sch"
 ---
 

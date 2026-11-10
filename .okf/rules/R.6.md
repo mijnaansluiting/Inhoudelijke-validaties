@@ -2,15 +2,15 @@
 type: Validation Rule
 title: R.6 — Inmeetwijze en Nauwkeurigheid Lineaire Assets Elec
 description: Checks that every linear Elec NLCS object has a value for both Inmeetwijze and Nauwkeurigheid.
-resource: v12/rules/patterns/R.6.sch
+resource: v12.1/rules/patterns/R.6.sch
 tags: verplichte-waarde
 generated:
   by: claude-code/opus-5-5
-  at: 2026-11-02T00:00:00Z
+  at: 2026-11-10T00:00:00Z
 sources:
   - resource: "../../v12.1/doc/NLCSValidatieRegels.xml"
     title: "NLCS Validatieregels catalog"
-  - resource: "../../v12/rules/abstract_patterns/verplichte_waarde/inmeetwijze_en_nauwkeurigheid_assets_elec.sch"
+  - resource: "../../v12.1/rules/abstract_patterns/verplichte_waarde/inmeetwijze_en_nauwkeurigheid_assets_elec.sch"
     title: "inmeetwijze_en_nauwkeurigheid_assets_elec.sch"
 ---
 

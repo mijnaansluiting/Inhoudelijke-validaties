@@ -6,11 +6,11 @@ resource: configuration/sys_config.xml
 tags: configuration
 generated:
   by: claude-code/opus-5-5
-  at: 2026-11-02T00:00:00Z
+  at: 2026-11-10T00:00:00Z
 sources:
   - resource: "../../configuration/sys_config.xml"
     title: "sys_config.xml"
-  - resource: "../../v12/xsl_functions/config_functions.xsl"
+  - resource: "../../v12.1/xsl_functions/config_functions.xsl"
     title: "config_functions.xsl"
 ---
 

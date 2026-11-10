@@ -6,11 +6,11 @@ resource: v12.1/doc/NLCSValidatieRegels.xml
 tags: domain, scope, severity
 generated:
   by: claude-code/opus-5-5
-  at: 2026-11-02T00:00:00Z
+  at: 2026-11-10T00:00:00Z
 sources:
   - resource: "../../v12.1/doc/NLCSValidatieRegels.xml"
     title: "NLCS Validatieregels catalog \u2014 `<scopes>` section"
-  - resource: "../../v12/xsl_functions/rule_scope_functions.xsl"
+  - resource: "../../v12.1/xsl_functions/rule_scope_functions.xsl"
     title: "rule_scope_functions.xsl"
 ---
 

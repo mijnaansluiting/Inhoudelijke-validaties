@@ -7,13 +7,13 @@ tags: configuration, versioning
 status: draft
 generated:
   by: claude-code/opus-5-5
-  at: 2026-11-05T00:00:00Z
+  at: 2026-11-10T00:00:00Z
 sources:
   - resource: "../../configuration/versions.xml"
     title: "versions.xml"
   - resource: "../../scripts/versions.sh"
     title: "versions.sh"
-  - resource: "../../v12/xsl_functions/version_functions.xsl"
+  - resource: "../../v12.1/xsl_functions/version_functions.xsl"
     title: "version_functions.xsl"
 ---
 
@@ -22,7 +22,7 @@ sources:
 `configuration/versions.xml` lists the versions the repository holds rules
 for. A version is an **NLCS++ version** (see
 [multiversion-model](../decisions/multiversion-model)): its id is the NLCS++
-version prefixed with `v` and equals its root folder name (`v12/`, `v12.1/`).
+version prefixed with `v` and equals its root folder name (e.g. `v12.1/`).
 Scripts, CI and XSL read the list from here instead of hardcoding folder
 names.
 
@@ -45,7 +45,6 @@ The XSD version is derived from the id (`v12.1` → `12.1`, so
 selectable.
 
 ```xml
-<version id="v12"/>
 <version id="v12.1"/>
 ```
 

@@ -133,11 +133,11 @@
     <phase id="R.30">
         <active pattern="R.30"/>
   </phase>
-    
+
     <phase id="R.33">
         <active pattern="R.33"/>
     </phase>
-    
+
     <phase id="R.34">
         <active pattern="R.34"/>
     </phase>
@@ -145,7 +145,7 @@
     <phase id="R.31">
         <active pattern="R.31"/>
     </phase>
-    
+
     <phase id="R.32">
         <active pattern="R.32"/>
     </phase>
@@ -165,15 +165,15 @@
     <phase id="R.38">
         <active pattern="R.38"/>
     </phase>
-  
+
     <phase id="R.39">
        <active pattern="R.39"/>
     </phase>
-    
+
     <phase id="R.40">
         <active pattern="R.40"/>
     </phase>
-    
+
     <phase id="R.41">
         <active pattern="R.41"/>
     </phase>
@@ -190,97 +190,97 @@
     <let name="active_version" value="'v12.1'"/>
 
     <!-- import functions -->
-    <xsl:include href="../../../v12/xsl_functions/geometry_functions.xsl"/>
-    <xsl:include href="../../../v12/xsl_functions/config_functions.xsl"/>
-    <xsl:include href="../../../v12/xsl_functions/localization_functions.xsl"/>
-    <xsl:include href="../../../v12/xsl_functions/rule_scope_functions.xsl"/>
-    <xsl:include href="../../../v12/xsl_functions/helper_functions.xsl"/>
-    <xsl:include href="../../../v12/xsl_functions/connectivity_functions.xsl"/>
+    <xsl:include href="../../xsl_functions/geometry_functions.xsl"/>
+    <xsl:include href="../../xsl_functions/config_functions.xsl"/>
+    <xsl:include href="../../xsl_functions/localization_functions.xsl"/>
+    <xsl:include href="../../xsl_functions/rule_scope_functions.xsl"/>
+    <xsl:include href="../../xsl_functions/helper_functions.xsl"/>
+    <xsl:include href="../../xsl_functions/connectivity_functions.xsl"/>
 
     <!-- import patterns -->
-    <include href="../../v12/rules/patterns/R.1.sch"/>
-    <include href="../../v12/rules/patterns/R.2.sch"/>
-    <include href="../../v12/rules/patterns/R.3.sch"/>
-    <include href="../../v12/rules/patterns/R.4_A.sch"/>
-    <include href="../../v12/rules/patterns/R.4_B.sch"/>
-    <include href="../../v12/rules/patterns/R.5.sch"/>
-    <include href="../../v12/rules/patterns/R.6.sch"/>
-    <include href="../../v12/rules/patterns/R.7.sch"/>
-    <include href="../../v12/rules/patterns/R.8_A.sch"/>
-    <include href="../../v12/rules/patterns/R.8_B.sch"/>
-    <include href="../../v12/rules/patterns/R.9.sch"/>
-    <include href="../../v12/rules/patterns/R.10.sch"/>
-    <include href="../../v12/rules/patterns/R.11.sch"/>
-    <include href="../../v12/rules/patterns/R.12.sch"/>
+    <include href="patterns/R.1.sch"/>
+    <include href="patterns/R.2.sch"/>
+    <include href="patterns/R.3.sch"/>
+    <include href="patterns/R.4_A.sch"/>
+    <include href="patterns/R.4_B.sch"/>
+    <include href="patterns/R.5.sch"/>
+    <include href="patterns/R.6.sch"/>
+    <include href="patterns/R.7.sch"/>
+    <include href="patterns/R.8_A.sch"/>
+    <include href="patterns/R.8_B.sch"/>
+    <include href="patterns/R.9.sch"/>
+    <include href="patterns/R.10.sch"/>
+    <include href="patterns/R.11.sch"/>
+    <include href="patterns/R.12.sch"/>
     <include href="patterns/R.13.sch"/>
-    <include href="../../v12/rules/patterns/R.14.sch"/>
+    <include href="patterns/R.14.sch"/>
     <include href="patterns/R.15.sch"/>
-    <include href="../../v12/rules/patterns/R.20.sch"/>
-    <include href="../../v12/rules/patterns/R.21.sch"/>
-    <include href="../../v12/rules/patterns/R.22.sch"/>
-    <include href="../../v12/rules/patterns/R.23.sch"/>
-    <include href="../../v12/rules/patterns/R.24.sch"/>
-    <include href="../../v12/rules/patterns/R.25.sch"/>
-    <include href="../../v12/rules/patterns/R.26.sch"/>
-    <include href="../../v12/rules/patterns/R.27.sch"/>
-    <include href="../../v12/rules/patterns/R.28.sch"/>
-    <include href="../../v12/rules/patterns/R.29.sch"/>
-    <include href="../../v12/rules/patterns/R.30.sch"/>
-    <include href="../../v12/rules/patterns/R.31.sch"/>
-    <include href="../../v12/rules/patterns/R.32.sch"/>
-    <include href="../../v12/rules/patterns/R.33.sch"/>
-    <include href="../../v12/rules/patterns/R.34.sch"/>
-    <include href="../../v12/rules/patterns/R.35.sch"/>
-    <include href="../../v12/rules/patterns/R.36.sch"/>
-    <include href="../../v12/rules/patterns/R.37.sch"/>
-    <include href="../../v12/rules/patterns/R.38.sch"/>
-    <include href="../../v12/rules/patterns/R.39.sch"/>
-    <include href="../../v12/rules/patterns/R.40.sch"/>
-    <include href="../../v12/rules/patterns/R.41.sch"/>
-    <include href="../../v12/rules/patterns/R.42.sch"/>
-    <include href="../../v12/rules/patterns/R.43.sch"/>
+    <include href="patterns/R.20.sch"/>
+    <include href="patterns/R.21.sch"/>
+    <include href="patterns/R.22.sch"/>
+    <include href="patterns/R.23.sch"/>
+    <include href="patterns/R.24.sch"/>
+    <include href="patterns/R.25.sch"/>
+    <include href="patterns/R.26.sch"/>
+    <include href="patterns/R.27.sch"/>
+    <include href="patterns/R.28.sch"/>
+    <include href="patterns/R.29.sch"/>
+    <include href="patterns/R.30.sch"/>
+    <include href="patterns/R.31.sch"/>
+    <include href="patterns/R.32.sch"/>
+    <include href="patterns/R.33.sch"/>
+    <include href="patterns/R.34.sch"/>
+    <include href="patterns/R.35.sch"/>
+    <include href="patterns/R.36.sch"/>
+    <include href="patterns/R.37.sch"/>
+    <include href="patterns/R.38.sch"/>
+    <include href="patterns/R.39.sch"/>
+    <include href="patterns/R.40.sch"/>
+    <include href="patterns/R.41.sch"/>
+    <include href="patterns/R.42.sch"/>
+    <include href="patterns/R.43.sch"/>
 
     <!-- import abstract patterns -->
-    <include href="../../v12/rules/abstract_patterns/bestand/aanwezigheid_maaiveldhoogte.sch"/>
-    <include href="../../v12/rules/abstract_patterns/bestand/bestand_bevat_nlcs_objecten.sch"/>
-    <include href="../../v12/rules/abstract_patterns/bestand/combinatie_nlcs_status_en_tekeningsoort.sch"/>
-    <include href="../../v12/rules/abstract_patterns/geometrie/geometrie_binnen_projectvlak.sch"/>
-    <include href="../../v12/rules/abstract_patterns/geometrie/lijn_geometrie-afstand_van_inmeetpunten.sch"/>
-    <include href="../../v12/rules/abstract_patterns/geometrie/lijn_geometrie-hoek_van_segmenten.sch"/>
-    <include href="../../v12/rules/abstract_patterns/geometrie/afstand_mantelbuis_tot_inhoud.sch"/>
-    <include href="../../v12/rules/abstract_patterns/verplichte_waarde/gisid_en_assetid.sch"/>
-    <include href="../../v12/rules/abstract_patterns/verplichte_waarde/inmeetwijze_en_nauwkeurigheid_assets_elec.sch"/>
-    <include href="../../v12/rules/abstract_patterns/verplichte_waarde/subnettype_ingevuld_voor_ls_en_ms_kabel.sch"/>
-    <include href="../../v12/rules/abstract_patterns/verplichte_waarde/verplichte_kenmerken_kabels.sch"/>
-    <include href="../../v12/rules/abstract_patterns/verplichte_waarde/verplichte_kenmerken_kabels-ls_extra.sch"/>
-    <include href="../../v12/rules/abstract_patterns/verplichte_waarde/aanlegdatum_gevuld.sch"/>
-    <include href="../../v12/rules/abstract_patterns/verplichte_waarde/verplichte_kenmerken_moffen.sch"/>
-    <include href="../../v12/rules/abstract_patterns/verplichte_waarde/verplichte_kenmerken_lsoverdrachtspunt.sch"/>
-    <include href="../../v12/rules/abstract_patterns/verplichte_waarde/verplichte_kenmerken_ovloverdrachtspunt.sch"/>
+    <include href="../../v12.1/rules/abstract_patterns/bestand/aanwezigheid_maaiveldhoogte.sch"/>
+    <include href="../../v12.1/rules/abstract_patterns/bestand/bestand_bevat_nlcs_objecten.sch"/>
+    <include href="../../v12.1/rules/abstract_patterns/bestand/combinatie_nlcs_status_en_tekeningsoort.sch"/>
+    <include href="../../v12.1/rules/abstract_patterns/geometrie/geometrie_binnen_projectvlak.sch"/>
+    <include href="../../v12.1/rules/abstract_patterns/geometrie/lijn_geometrie-afstand_van_inmeetpunten.sch"/>
+    <include href="../../v12.1/rules/abstract_patterns/geometrie/lijn_geometrie-hoek_van_segmenten.sch"/>
+    <include href="../../v12.1/rules/abstract_patterns/geometrie/afstand_mantelbuis_tot_inhoud.sch"/>
+    <include href="../../v12.1/rules/abstract_patterns/verplichte_waarde/gisid_en_assetid.sch"/>
+    <include href="../../v12.1/rules/abstract_patterns/verplichte_waarde/inmeetwijze_en_nauwkeurigheid_assets_elec.sch"/>
+    <include href="../../v12.1/rules/abstract_patterns/verplichte_waarde/subnettype_ingevuld_voor_ls_en_ms_kabel.sch"/>
+    <include href="../../v12.1/rules/abstract_patterns/verplichte_waarde/verplichte_kenmerken_kabels.sch"/>
+    <include href="../../v12.1/rules/abstract_patterns/verplichte_waarde/verplichte_kenmerken_kabels-ls_extra.sch"/>
+    <include href="../../v12.1/rules/abstract_patterns/verplichte_waarde/aanlegdatum_gevuld.sch"/>
+    <include href="../../v12.1/rules/abstract_patterns/verplichte_waarde/verplichte_kenmerken_moffen.sch"/>
+    <include href="../../v12.1/rules/abstract_patterns/verplichte_waarde/verplichte_kenmerken_lsoverdrachtspunt.sch"/>
+    <include href="../../v12.1/rules/abstract_patterns/verplichte_waarde/verplichte_kenmerken_ovloverdrachtspunt.sch"/>
     <include href="../../v12.1/rules/abstract_patterns/verplichte_waarde/verplichte_kenmerken_msoverdrachtspunt.sch"/>
-    <include href="../../v12/rules/abstract_patterns/verplichte_waarde/verplichte_kenmerken_stations_en_kasten.sch"/>
+    <include href="../../v12.1/rules/abstract_patterns/verplichte_waarde/verplichte_kenmerken_stations_en_kasten.sch"/>
     <include href="../../v12.1/rules/abstract_patterns/verplichte_waarde/verplichte_kenmerken_mantelbuis.sch"/>
-    <include href="../../v12/rules/abstract_patterns/topologie/topologie_punt_objecten_elec.sch"/>
-    <include href="../../v12/rules/abstract_patterns/topologie/geldig_eindpunt_kabel.sch"/>
-    <include href="../../v12/rules/abstract_patterns/netlogica/kabels_zelfde_netvlak.sch"/>
-    <include href="../../v12/rules/abstract_patterns/netlogica/verbonden_kabels_juiste_kenmerken.sch"/>
-    <include href="../../v12/rules/abstract_patterns/inhoud_waarde/fase_ms_kabel.sch"/>
-    <include href="../../v12/rules/abstract_patterns/inhoud_waarde/inmeetwijze_toegestaande_waarde.sch"/>
-    <include href="../../v12/rules/abstract_patterns/inhoud_waarde/inmeetwijze_aansluitnet_toegestaande_waarde.sch"/>
-    <include href="../../v12/rules/abstract_patterns/inhoud_waarde/verbonden_kabels_juiste_fase.sch"/>
-    <include href="../../v12/rules/abstract_patterns/inhoud_waarde/aantal_kabels_en_mof_functie.sch"/>
-    <include href="../../v12/rules/abstract_patterns/inhoud_waarde/mantelbuis_past_in_mantelbuis.sch"/>
-    <include href="../../v12/rules/abstract_patterns/consistentie/mantelbuis_inhoud_aanwezig.sch"/>
-    <include href="../../v12/rules/abstract_patterns/consistentie/verplaatsing_goed_vastgelegd.sch"/>
-    <include href="../../v12/rules/abstract_patterns/consistentie/mantelbuis_inhoud_referenties.sch"/>
-    <include href="../../v12/rules/abstract_patterns/inhoud_waarde/mof_verbonden_kabels_gelijk_verbindingnummer.sch"/>
-    <include href="../../v12/rules/abstract_patterns/document/aanwezigheid_bestand_bijlage_kunstwerk.sch"/>
-    <include href="../../v12/rules/abstract_patterns/document/aanwezigheid_bestand_bijlage_aanlegtechniek.sch"/>
-    <include href="../../v12/rules/abstract_patterns/bestand/volgnummer_verplicht.sch"/>
-    <include href="../../v12/rules/abstract_patterns/verplichte_waarde/reden_niet_verwijdering_ingevuld.sch"/>
-    <include href="../../v12/rules/abstract_patterns/document/aanwezigheid_bestand_bijlage_aardpen.sch"/>
-    <include href="../../v12/rules/abstract_patterns/verplichte_waarde/datumtijdmutatie_gevuld.sch"/>
-    <include href="../../v12/rules/abstract_patterns/bestand/combinatie_nlcs_status_en_bedrijfstoestand.sch"/>
-    <include href="../../v12/rules/abstract_patterns/geometrie/lijn_geometrie-afstand_van_inmeetpunten_aaanlegtechniek_en_nabije_objecten.sch"/>
+    <include href="../../v12.1/rules/abstract_patterns/topologie/topologie_punt_objecten_elec.sch"/>
+    <include href="../../v12.1/rules/abstract_patterns/topologie/geldig_eindpunt_kabel.sch"/>
+    <include href="../../v12.1/rules/abstract_patterns/netlogica/kabels_zelfde_netvlak.sch"/>
+    <include href="../../v12.1/rules/abstract_patterns/netlogica/verbonden_kabels_juiste_kenmerken.sch"/>
+    <include href="../../v12.1/rules/abstract_patterns/inhoud_waarde/fase_ms_kabel.sch"/>
+    <include href="../../v12.1/rules/abstract_patterns/inhoud_waarde/inmeetwijze_toegestaande_waarde.sch"/>
+    <include href="../../v12.1/rules/abstract_patterns/inhoud_waarde/inmeetwijze_aansluitnet_toegestaande_waarde.sch"/>
+    <include href="../../v12.1/rules/abstract_patterns/inhoud_waarde/verbonden_kabels_juiste_fase.sch"/>
+    <include href="../../v12.1/rules/abstract_patterns/inhoud_waarde/aantal_kabels_en_mof_functie.sch"/>
+    <include href="../../v12.1/rules/abstract_patterns/inhoud_waarde/mantelbuis_past_in_mantelbuis.sch"/>
+    <include href="../../v12.1/rules/abstract_patterns/consistentie/mantelbuis_inhoud_aanwezig.sch"/>
+    <include href="../../v12.1/rules/abstract_patterns/consistentie/verplaatsing_goed_vastgelegd.sch"/>
+    <include href="../../v12.1/rules/abstract_patterns/consistentie/mantelbuis_inhoud_referenties.sch"/>
+    <include href="../../v12.1/rules/abstract_patterns/inhoud_waarde/mof_verbonden_kabels_gelijk_verbindingnummer.sch"/>
+    <include href="../../v12.1/rules/abstract_patterns/document/aanwezigheid_bestand_bijlage_kunstwerk.sch"/>
+    <include href="../../v12.1/rules/abstract_patterns/document/aanwezigheid_bestand_bijlage_aanlegtechniek.sch"/>
+    <include href="../../v12.1/rules/abstract_patterns/bestand/volgnummer_verplicht.sch"/>
+    <include href="../../v12.1/rules/abstract_patterns/verplichte_waarde/reden_niet_verwijdering_ingevuld.sch"/>
+    <include href="../../v12.1/rules/abstract_patterns/document/aanwezigheid_bestand_bijlage_aardpen.sch"/>
+    <include href="../../v12.1/rules/abstract_patterns/verplichte_waarde/datumtijdmutatie_gevuld.sch"/>
+    <include href="../../v12.1/rules/abstract_patterns/bestand/combinatie_nlcs_status_en_bedrijfstoestand.sch"/>
+    <include href="../../v12.1/rules/abstract_patterns/geometrie/lijn_geometrie-afstand_van_inmeetpunten_aaanlegtechniek_en_nabije_objecten.sch"/>
 
 </schema>

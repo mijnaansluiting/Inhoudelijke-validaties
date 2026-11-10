@@ -6,7 +6,7 @@ tags: versioning, plan, ci
 status: draft
 generated:
   by: claude-code/opus-5-5
-  at: 2026-11-05T00:00:00Z
+  at: 2026-11-10T00:00:00Z
 sources:
   - resource: "../decisions/multiversion-model.md"
     title: "Multiversion model"
@@ -17,8 +17,9 @@ sources:
 Implementation order for the [multiversion-model](../decisions/multiversion-model),
 first to last. Each step must leave the results for `v12.1` (the released
 rule set, formerly `v2026.1.0`) unchanged. Since 2026-11-05 a version is an
-NLCS++ version (`v12`, `v12.1`); `v12` holds the fictional test changes of
-the former `v9999.1.0`.
+NLCS++ version. `v12` held the fictional test changes of the former
+`v9999.1.0` until it was removed on 2026-11-10; `v12.1` is now the only
+version.
 
 # Done
 
@@ -37,6 +38,11 @@ the former `v9999.1.0`.
    registry reduced to `id`, `released` flag dropped; rule validation
    reports byte-identical to before. See
    [multiversion-model](../decisions/multiversion-model).
+6. **`v12` removed** (2026-11-10) — everything `v12.1` inherited from it
+   (patterns, abstract patterns, fixtures, SVGs, `xsl_functions/`) moved
+   into `v12.1/`; `v12`'s registry entry and `sys_config` block removed;
+   every rule's `laatstGewijzigd` is `v12.1`. This also settled step 5.7
+   and the step 9 decision below.
 
 **Repository layout: one folder per version at the root.** Everything
 version-specific lives under `<version>/` (e.g. `v12.1/`):
@@ -84,18 +90,17 @@ this layout (see [build-and-release](./build-and-release)).
    * `validate_scopes.sh` writes to `<version>/scoped_objects/` and
      `<version>/scoped_objects_reports/`;
    * `generate_and_compare_svgs.sh` writes `<version>/assets/` for each
-     version's own fixtures (the current SVGs already live in
-     `v12/assets/`).
+     version's own fixtures (the current SVGs live in
+     `v12.1/assets/`).
 5. **CI matrix**: a first job outputs `scripts/versions.sh matrix`; the
    rule, scope and docs jobs run per version (`fail-fast: false`) with the
    version in every artifact name. `install-dependencies` stays a single
    job.
 6. **Verify**: every result for `v12.1` is identical to before.
-7. **Make the `v12` test data pass the XSD check.** Since the flip, the
-   fixtures of every inherited rule live in `v12` and are checked against
-   XSD 12 with `VersieNummer="12"`; they are 12.1 data (`VersieNummer="12.1"`,
-   `ID` elements, `Aardingsrapport`), so `validate_test_data_xsd.sh v12`
-   fails. Changing them also changes what `v12.1` tests.
+7. ~~**Make the `v12` test data pass the XSD check.**~~ Resolved by removing
+   `v12` (2026-11-10): the inherited fixtures, which were 12.1 data checked
+   against XSD 12, now live in `v12.1`, and `validate_test_data_xsd.sh v12.1`
+   passes.
 
 # Step 6: version scripts
 
@@ -111,9 +116,10 @@ this layout (see [build-and-release](./build-and-release)).
 
 # Step 7: fictional version
 
-Done differently: `v12` (formerly `v9999.1.0`) adds `R.44`, removes `R.13`
-and edits `R.15` compared to `v12.1`. CI must pass for both versions (blocked
-by step 5.7), and `v12.1`'s results must not change.
+Done differently: `v12` (formerly `v9999.1.0`) added `R.44`, removed `R.13`
+and edited `R.15` compared to `v12.1`. It was removed on 2026-11-10 without
+ever passing CI (step 5.7), so inheritance between versions is untested
+until the next real NLCS++ version is added.
 
 # Step 8: selection and release
 
@@ -126,8 +132,8 @@ by step 5.7), and `v12.1`'s results must not change.
 
 # Step 9: clean up
 
-* Decide what happens to the fictional rule changes in `v12` (`R.44`,
-  the `R.15` override, `R.13` removed). Without a `released` flag `v12`
-  is shipped and selected for `VersieNummer="12"` files.
+* ~~Decide what happens to the fictional rule changes in `v12`~~ —
+  decided 2026-11-10: `v12` was removed; its `R.44` and `R.15` override
+  were dropped.
 * ~~Update the OKF pages that still describe `v12` paths~~ — done
   2026-11-02 together with the per-version root restructure.
