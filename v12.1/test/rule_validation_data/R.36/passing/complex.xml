@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<NLCSnetbeheer
+    xmlns:keuzelijst="NS_NLCSnetbeheer"
+    xmlns:gml="http://www.opengis.net/gml/3.2"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="NS_NLCSnetbeheer https://schemas.mijnaansluiting.nl/V12.1/NLCS_NetbeheerEnexisV12.1Import_Keuzelijst.xsd"
+    VersieNummer="12.1"
+    xmlns="NS_NLCSnetbeheer">
+    <AprojectReferentie>
+        <ID>A</ID>
+        <Projectnummer>1</Projectnummer>
+        <Netbeheerder>Enexis</Netbeheerder>
+        <NaamAannemer></NaamAannemer>
+        <Tekeningtype>BESTAANDE SITUATIE</Tekeningtype>
+        <Geometry></Geometry>
+    </AprojectReferentie>
+    
+    <LSkabel>
+        <ID>B</ID>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
+        <Geometry>
+            <gml:LineString
+                srsDimension="3"
+                srsName="EPSG:7415">
+                <gml:posList>
+                    258856.718 482873.123 0
+                    258856.459 482872.918 0
+                    258856.324 482872.862 0
+                    258856.217 482872.854 0
+                    258856.089 482872.873 0
+                    258855.972 482872.913 0
+                    258855.43  482873.29  0
+                    258854.666 482874.154 0
+                    258854.397 482874.823 0
+                    258854.255 482875.524 0
+                    258854.268 482876.035 0
+                    258854.336 482876.534 0
+                    258854.484 482876.98  0
+                    258854.73  482877.394 0
+                    258855.734 482878.562 0
+                    258856.259 482878.879 0
+                    258856.827 482879.026 0
+                    258857.357 482879.001 0
+                    258857.845 482878.859 0
+                    258858.807 482878.295 0
+                    258860.124 482877.454 0
+                    258860.335 482877.353 0
+                    258860.563 482877.305 0
+                    258860.833 482877.334 0
+                    258861.072 482877.45  0
+                    258861.363 482877.715 0
+                    258865.753 482881.704 0
+                    258866.037 482881.621 0
+                    258866.63  482881.495 0
+                    258867.152 482880.915 0
+                    258872.171 482874.836 0
+                    258872.171 482874.836 0
+                    258878.016 482867.757 0
+                    258883.422 482861.615 0
+                    258884.184 482860.89  0
+                    258885.394 482860.154 0
+                    258899.748 482851.81  0
+                    258907.974 482847.103 0
+                    258909.904 482846.161 0
+                    258911.292 482845.879 0
+                    258912.535 482845.839 0
+                    258913.506 482846.182 0
+                    258914.378 482846.767 0
+                    258915.198 482847.471 0
+                    258915.958 482848.385 0
+                    258917.442 482850.559 0
+                    258932.543 482875.971 0
+                    258932.543 482875.971 0
+                    258932.674 482876.191 0
+                    258942.542 482892.937 0
+                    258943.422 482894.642 0
+                    258943.864 482895.946 0
+                    258944.167 482897.188 0
+                    258944.368 482898.311 0
+                    258944.248 482899.307 0
+                    258943.839 482900.207 0
+                    258943.01  482901.398 0
+                    258935.964 482909.987 0
+                    258928.283 482919.223 0
+                    258927.692 482919.934 0
+                </gml:posList>
+            </gml:LineString>
+        </Geometry>
+    </LSkabel>
+
+    <Amantelbuis>
+        <ID>C</ID>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>GEEN</Bedrijfstoestand>
+        <Geometry>
+            <gml:LineString
+                srsDimension="3"
+                srsName="EPSG:7415">
+                <gml:posList>
+                    258861.363 482877.715 0
+                    258863.476 482879.635 0
+                    258863.476 482879.635 0
+                    258863.493 482879.65  0
+                    258863.493 482879.65  0
+                    258863.558 482879.71  0
+                    258863.558 482879.71  0
+                    258865.753 482881.704 0
+                </gml:posList>
+            </gml:LineString>
+        </Geometry>
+    </Amantelbuis>
+   
+    <AmantelbuisInhoud>
+        <ID>swrefVrecordVdatasetZelecVcollectionZe_lv_protection_pipe_assetVkeysZ4506178763835270268</ID>
+        <Status>BESTAAND</Status>
+        <MantelbuisID>C</MantelbuisID>
+        <InhoudID>B</InhoudID>
+    </AmantelbuisInhoud>
+    
+</NLCSnetbeheer>
