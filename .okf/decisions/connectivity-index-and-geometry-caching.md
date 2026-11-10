@@ -5,9 +5,9 @@ description: Why R.20, R.22, R.23, R.25, R.26, and R.39 now share one precompute
 tags: decision, performance, geometry
 generated:
   by: claude-code/opus-5-5
-  at: 2026-11-02T00:00:00Z
+  at: 2026-11-10T00:00:00Z
 sources:
-  - resource: "../../v12/xsl_functions/connectivity_functions.xsl"
+  - resource: "../../v12.1/xsl_functions/connectivity_functions.xsl"
     title: "connectivity_functions.xsl"
   - resource: "../../benchmark.sh"
     title: "benchmark.xml / benchmark.sh (stress-test fixture and harness, not part of the committed rule test suite)"

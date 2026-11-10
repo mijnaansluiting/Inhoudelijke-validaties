@@ -2,15 +2,15 @@
 type: Validation Rule
 title: R.7 — Subnettype gevuld voor LS en MS Kabel
 description: Checks that MSkabel, LSkabel, and LSmof objects have a value for Subnettype.
-resource: v12/rules/patterns/R.7.sch
+resource: v12.1/rules/patterns/R.7.sch
 tags: verplichte-waarde
 generated:
   by: claude-code/opus-5-5
-  at: 2026-11-02T00:00:00Z
+  at: 2026-11-10T00:00:00Z
 sources:
   - resource: "../../v12.1/doc/NLCSValidatieRegels.xml"
     title: "NLCS Validatieregels catalog"
-  - resource: "../../v12/rules/abstract_patterns/verplichte_waarde/subnettype_ingevuld_voor_ls_en_ms_kabel.sch"
+  - resource: "../../v12.1/rules/abstract_patterns/verplichte_waarde/subnettype_ingevuld_voor_ls_en_ms_kabel.sch"
     title: "subnettype_ingevuld_voor_ls_en_ms_kabel.sch"
 ---
 

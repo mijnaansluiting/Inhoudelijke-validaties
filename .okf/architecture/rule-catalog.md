@@ -6,7 +6,7 @@ resource: doc/NLCSValidatieRegels.xsd
 tags: documentation, schema, rules
 generated:
   by: claude-code/opus-5-5
-  at: 2026-11-09T00:00:00Z
+  at: 2026-11-10T00:00:00Z
 sources:
   - id: xsd
     resource: "../../doc/NLCSValidatieRegels.xsd"
@@ -14,9 +14,9 @@ sources:
   - id: xsl
     resource: "../../doc/NLCSValidatieRegels.xsl"
     title: "NLCSValidatieRegels.xsl"
-  - id: catalog-v12
-    resource: "../../v12/doc/NLCSValidatieRegels.xml"
-    title: "v12 rule catalog"
+  - id: catalog-v12.1
+    resource: "../../v12.1/doc/NLCSValidatieRegels.xml"
+    title: "v12.1 rule catalog"
 ---
 
 # Overview
@@ -52,9 +52,8 @@ Each `validatieRegel` (`ValidatieRegelType`)[^xsd]:
 no XSD change. The value must equal the version folder the rule's concrete
 pattern (`patterns/R.x.sch`, `R.x_A.sch`, …) is included from in that
 version's `rules/main.sch`; `scripts/check_rule_coverage.sh` enforces this
-([coverage-checks](../testing/coverage-checks)). As of 2026-11-09 every rule
-is `v12`, except R.13 and R.15 in the `v12.1/` catalog, which are `v12.1`
-because `v12.1` has its own patterns for them.
+([coverage-checks](../testing/coverage-checks)). Since `v12` was removed (2026-11-10), `v12.1` is the only version and has
+its own pattern for every rule, so every rule is `v12.1`.
 
 Each `scope` has a `naam` attribute, a `tekeningSoort`, `statussen`,
 `bedrijfsToestanden` and `scopeValidatieRegels` (pairs of `nummer` + `niveau`).
@@ -69,7 +68,7 @@ committed; CI regenerates it and fails if it differs. See
 
 # Consumers
 
-* `v12/xsl_functions/rule_scope_functions.xsl` reads `soort` and the scopes at
+* `v12.1/xsl_functions/rule_scope_functions.xsl` reads `soort` and the scopes at
   validation time ([xsl-function-libraries](./xsl-function-libraries)).
 * `transformations/check_object_coverage.xsl`,
   `check_scope_coverage.xsl` and `generate_scoped_objects.xsl`

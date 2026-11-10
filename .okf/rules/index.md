@@ -4,7 +4,7 @@ The full catalog of 37 Schematron content-validation rules (`R.1`–`R.41`;
 `R.16`–`R.19` don't exist). Source of truth: `<version>/doc/NLCSValidatieRegels.xml` (currently `v12.1/doc/NLCSValidatieRegels.xml`).
 Severity of each rule varies by [scope](../domain/scope-severity-model).
 Each rule records the NLCS++ XSD version in which it was last changed in
-`laatstGewijzigd` (`v12`, except R.13 and R.15 in `v12.1`, which are `v12.1`); see
+`laatstGewijzigd` (currently `v12.1` for every rule); see
 [rule-catalog](../architecture/rule-catalog).
 
 ## Bestand (file-level)

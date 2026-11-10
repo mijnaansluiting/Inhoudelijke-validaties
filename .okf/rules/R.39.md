@@ -2,15 +2,15 @@
 type: Validation Rule
 title: R.39 — Mof verbonden kabels gelijk verbindingnummer
 description: Checks that MS/LSkabel objects physically connected to a MS/LSmof share that mof's Verbindingnummer value.
-resource: v12/rules/patterns/R.39.sch
+resource: v12.1/rules/patterns/R.39.sch
 tags: inhoud-waarde
 generated:
   by: claude-code/opus-5-5
-  at: 2026-11-02T00:00:00Z
+  at: 2026-11-10T00:00:00Z
 sources:
   - resource: "../../v12.1/doc/NLCSValidatieRegels.xml"
     title: "NLCS Validatieregels catalog"
-  - resource: "../../v12/rules/abstract_patterns/inhoud_waarde/mof_verbonden_kabels_gelijk_verbindingnummer.sch"
+  - resource: "../../v12.1/rules/abstract_patterns/inhoud_waarde/mof_verbonden_kabels_gelijk_verbindingnummer.sch"
     title: "mof_verbonden_kabels_gelijk_verbindingnummer.sch"
 ---
 

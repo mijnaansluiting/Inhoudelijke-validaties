@@ -1,5 +1,21 @@
 # Update Log
 
+## 2026-11-10
+* **Update**: removed the fictional test version `v12`. Everything `v12.1`
+  included from it (patterns, abstract patterns, the fixtures and SVGs of 37
+  rules, `xsl_functions/`) moved into `v12.1/`, its includes are local, and
+  every rule's `laatstGewijzigd` is `v12.1`. `v12`'s `R.44` and `R.15`
+  override were dropped; its registry entry and `sys_config` block were
+  removed. Repointed every `v12/` resource and source path to `v12.1/`
+  (all rule pages, the decisions and config pages, the testing pages) and
+  updated [multiversion-model](./decisions/multiversion-model),
+  [multiversion-plan](./architecture/multiversion-plan) (steps 5.7, 7 and 9),
+  [rule-catalog](./architecture/rule-catalog),
+  [version-registry](./config/version-registry),
+  [xsl-function-libraries](./architecture/xsl-function-libraries),
+  [schematron-layering](./architecture/schematron-layering) and the
+  [rules index](./rules/index).
+
 ## 2026-11-09
 * **Update**: the GitHub Pages deployment's `index.html` no longer redirects
   to the latest version's rule catalog; it lists every registered version's

@@ -5,13 +5,13 @@ description: Benchmark finding that representing parsed coordinates as Coord XML
 tags: decision, performance, geometry
 generated:
   by: claude-code/opus-5-5
-  at: 2026-11-02T00:00:00Z
+  at: 2026-11-10T00:00:00Z
 sources:
   - resource: "../../COORD_PARSING_BENCHMARK.md"
     title: "COORD_PARSING_BENCHMARK.md"
-  - resource: "../../v12/xsl_functions/helper_functions.xsl"
+  - resource: "../../v12.1/xsl_functions/helper_functions.xsl"
     title: "helper_functions.xsl"
-  - resource: "../../v12/xsl_functions/geometry_functions.xsl"
+  - resource: "../../v12.1/xsl_functions/geometry_functions.xsl"
     title: "geometry_functions.xsl"
   - resource: "./geometry-parse-caching"
     title: "geometry-parse-caching"

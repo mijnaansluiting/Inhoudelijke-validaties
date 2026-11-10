@@ -2,15 +2,15 @@
 type: Validation Rule
 title: R.33 — Aanwezigheid bestand bijlage aanlegtechniek
 description: Checks that every Aaanlegtechniek with SoortAanlegTechniek "GESTUURDE TECHNIEK" has a linked AbestandBijlage attachment of SoortBestand "Gestuurde boring".
-resource: v12/rules/patterns/R.33.sch
+resource: v12.1/rules/patterns/R.33.sch
 tags: document
 generated:
   by: claude-code/opus-5-5
-  at: 2026-11-02T00:00:00Z
+  at: 2026-11-10T00:00:00Z
 sources:
   - resource: "../../v12.1/doc/NLCSValidatieRegels.xml"
     title: "NLCS Validatieregels catalog"
-  - resource: "../../v12/rules/abstract_patterns/document/aanwezigheid_bestand_bijlage_aanlegtechniek.sch"
+  - resource: "../../v12.1/rules/abstract_patterns/document/aanwezigheid_bestand_bijlage_aanlegtechniek.sch"
     title: "aanwezigheid_bestand_bijlage_aanlegtechniek.sch"
 ---
 

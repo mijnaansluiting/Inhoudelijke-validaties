@@ -6,7 +6,7 @@ tags: decision, versioning, architecture
 status: draft
 generated:
   by: claude-code/opus-5-5
-  at: 2026-11-05T00:00:00Z
+  at: 2026-11-10T00:00:00Z
 sources:
   - resource: "https://github.com/mijnaansluiting/Inhoudelijke-validaties/pull/136"
     title: "#136 — setup for multiversion support (v12 -> v2026.1.0 folders)"
@@ -32,6 +32,10 @@ the fictional test version `v9999.1.0` became `v12`, and the inheritance
 direction was flipped so that the newer `v12.1` includes from the older
 `v12` (see "Restructure of 2026-11-05" below).
 
+Revised 2026-11-10: the test version `v12` was removed and everything
+`v12.1` inherited from it was moved into `v12.1`, which is now the only
+version (see "Removal of `v12` (2026-11-10)" below).
+
 # Decision
 
 ## What a version is
@@ -39,7 +43,7 @@ direction was flipped so that the newer `v12.1` includes from the older
 * A **version** is an **NLCS++ version** (the NLCS_Netbeheer XSD version):
   there is one set of rules per NLCS++ version. The mapping onto XSD
   versions is **one-to-one**.
-* Version **folders** are named `v` + the NLCS++ version: `v12/`, `v12.1/`.
+* Version **folders** are named `v` + the NLCS++ version, e.g. `v12.1/`.
   The same id is used in the registry, in `sys_config.xml` and as
   `active_version` in `main.sch`.
 * **Rule changes within an NLCS++ version are made in place**, in that
@@ -58,7 +62,7 @@ subfolder of each topic folder (`rules/<version>/`, `doc/<version>/`,
 at the repository root** that holds everything belonging to it:
 
 ```
-<version>/                       e.g. v12/, v12.1/
+<version>/                       e.g. v12.1/
   rules/main.sch                 phases + includes
   rules/patterns/                concrete patterns this version adds/changes
   rules/abstract_patterns/       abstract patterns this version adds
@@ -97,13 +101,14 @@ folder".
 * **Every version's `main.sch` says exactly which file it uses for each
   rule and abstract pattern.** A version folder only holds its own
   `main.sch` and the files it adds or changes; everything else is included
-  by path from the older version folder that has it:
+  by path from the older version folder that has it. For example, in the
+  `main.sch` of a future `v13`:
 
   ```xml
-  <include href="../../v12/rules/patterns/R.1.sch"/>                    <!-- inherited -->
+  <include href="../../v12.1/rules/patterns/R.1.sch"/>                   <!-- inherited -->
   <include href="patterns/R.13.sch"/>                                    <!-- own -->
-  <include href="../../v12/rules/abstract_patterns/geometrie/x.sch"/>   <!-- inherited -->
-  <include href="../../v12.1/rules/abstract_patterns/geometrie/y.sch"/> <!-- own -->
+  <include href="../../v12.1/rules/abstract_patterns/geometrie/x.sch"/>  <!-- inherited -->
+  <include href="../../v13/rules/abstract_patterns/geometrie/y.sch"/>    <!-- own -->
   ```
 
   **Abstract-pattern includes always name a version folder**, also for the
@@ -149,7 +154,7 @@ folder".
   They live in `<version>/xsl_functions/` and are inherited like patterns:
   a version includes an older version's library until it needs different
   behavior, then gets its own copy of that library. Currently only
-  `v12/xsl_functions/` exists; `v12.1` inherits all of it.
+  `v12.1/xsl_functions/` exists.
 * **Bugs found in a rule present in several versions** are handled case by
   case; the decision is recorded in the PR.
 
@@ -168,7 +173,22 @@ Consequence: the fixtures of the inherited rules now live in `v12` and are
 XSD-checked against XSD 12 with `VersieNummer="12"`. They are 12.1 data, so
 `validate_test_data_xsd.sh v12` fails until the test data or the version
 detection for XSD 12 is fixed (see
-[multiversion-plan](../architecture/multiversion-plan)).
+[multiversion-plan](../architecture/multiversion-plan)). The removal of
+`v12` below resolved this.
+
+## Removal of `v12` (2026-11-10)
+
+`v12` only held the fictional test changes, so it was removed instead of
+being shipped and selected for `VersieNummer="12"` files. Everything
+`v12.1` included from it was moved into `v12.1/`: every pattern and
+abstract pattern its `main.sch` includes, the fixtures and SVGs of the 37
+inherited rules, and `xsl_functions/`. The includes are now local
+(`patterns/…`, `../../v12.1/rules/abstract_patterns/…`,
+`../../xsl_functions/…`), and every rule's `laatstGewijzigd` is `v12.1`.
+`v12`'s own `R.15`, `R.44` and their abstract patterns
+(`verplichte_kenmerken_mantelbuis_eigenaar`, `verplichte_kenmerken_kunstwerk`)
+were not kept. The `v12` registry entry and `sys_config.xml` block were
+removed.
 
 ## Version-specific data
 
@@ -218,9 +238,12 @@ Because includes are written by hand, CI also checks every version's
 
 ## Testing the model
 
-`v12` (formerly the fictional `v9999.1.0`) adds one rule (`R.44`), removes
-one rule (`R.13`) and edits one rule (`R.15`) compared to `v12.1`, to prove
-isolation and inheritance end to end. Its rule changes are fictional.
+Until 2026-11-10, `v12` (formerly the fictional `v9999.1.0`) added one
+rule (`R.44`), removed one rule (`R.13`) and edited one rule (`R.15`)
+compared to `v12.1`, to test isolation and inheritance end to end. Its rule
+changes were fictional, and it was removed (see above). With `v12.1` as the
+only version, CI no longer exercises inheritance between versions; the next
+real NLCS++ version will be the first to do so again.
 
 # Release packaging
 

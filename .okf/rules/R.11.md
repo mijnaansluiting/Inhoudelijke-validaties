@@ -2,15 +2,15 @@
 type: Validation Rule
 title: R.11 — Verplichte kenmerken LSoverdrachtspunt
 description: Checks that every low-voltage transfer point (LSoverdrachtspunt) has its required attributes populated.
-resource: v12/rules/patterns/R.11.sch
+resource: v12.1/rules/patterns/R.11.sch
 tags: verplichte-waarde
 generated:
   by: claude-code/opus-5-5
-  at: 2026-11-02T00:00:00Z
+  at: 2026-11-10T00:00:00Z
 sources:
   - resource: "../../v12.1/doc/NLCSValidatieRegels.xml"
     title: "NLCS Validatieregels catalog"
-  - resource: "../../v12/rules/abstract_patterns/verplichte_waarde/verplichte_kenmerken_lsoverdrachtspunt.sch"
+  - resource: "../../v12.1/rules/abstract_patterns/verplichte_waarde/verplichte_kenmerken_lsoverdrachtspunt.sch"
     title: "verplichte_kenmerken_lsoverdrachtspunt.sch"
 ---
 

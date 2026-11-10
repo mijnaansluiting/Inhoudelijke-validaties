@@ -2,15 +2,15 @@
 type: Validation Rule
 title: R.10 — Verplichte kenmerken moffen
 description: Checks that every cable joint (mof) has its baseline required attributes populated, with extra attributes required depending on voltage level.
-resource: v12/rules/patterns/R.10.sch
+resource: v12.1/rules/patterns/R.10.sch
 tags: verplichte-waarde
 generated:
   by: claude-code/opus-5-5
-  at: 2026-11-02T00:00:00Z
+  at: 2026-11-10T00:00:00Z
 sources:
   - resource: "../../v12.1/doc/NLCSValidatieRegels.xml"
     title: "NLCS Validatieregels catalog"
-  - resource: "../../v12/rules/abstract_patterns/verplichte_waarde/verplichte_kenmerken_moffen.sch"
+  - resource: "../../v12.1/rules/abstract_patterns/verplichte_waarde/verplichte_kenmerken_moffen.sch"
     title: "verplichte_kenmerken_moffen.sch"
 ---
 

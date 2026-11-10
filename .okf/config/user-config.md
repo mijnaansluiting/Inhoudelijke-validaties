@@ -6,11 +6,11 @@ resource: configuration/user_config.xml
 tags: configuration, localization
 generated:
   by: claude-code/opus-5-5
-  at: 2026-11-02T00:00:00Z
+  at: 2026-11-10T00:00:00Z
 sources:
   - resource: "../../configuration/user_config.xml"
     title: "user_config.xml"
-  - resource: "../../v12/xsl_functions/localization_functions.xsl"
+  - resource: "../../v12.1/xsl_functions/localization_functions.xsl"
     title: "localization_functions.xsl"
 ---
 

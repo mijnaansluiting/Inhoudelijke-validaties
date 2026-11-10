@@ -2,15 +2,15 @@
 type: Validation Rule
 title: R.41 — DatumTijdMutatie gevuld
 description: Checks that DatumTijdMutatie is populated (and not present) exactly when an NLCS object's Status or Bewerking indicates a mutation, and that it is not a future date.
-resource: v12/rules/patterns/R.41.sch
+resource: v12.1/rules/patterns/R.41.sch
 tags: verplichte-waarde
 generated:
   by: claude-code/opus-5-5
-  at: 2026-11-02T00:00:00Z
+  at: 2026-11-10T00:00:00Z
 sources:
   - resource: "../../v12.1/doc/NLCSValidatieRegels.xml"
     title: "NLCS Validatieregels catalog"
-  - resource: "../../v12/rules/abstract_patterns/verplichte_waarde/datumtijdmutatie_gevuld.sch"
+  - resource: "../../v12.1/rules/abstract_patterns/verplichte_waarde/datumtijdmutatie_gevuld.sch"
     title: "datumtijdmutatie_gevuld.sch"
 ---
 

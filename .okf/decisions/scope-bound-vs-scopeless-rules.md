@@ -5,13 +5,13 @@ description: Why file-level rules like R.1/R.2/R.35/R.40 always report severity 
 tags: decision, scope
 generated:
   by: claude-code/opus-5-5
-  at: 2026-11-02T00:00:00Z
+  at: 2026-11-10T00:00:00Z
 sources:
   - resource: "https://github.com/mijnaansluiting/Inhoudelijke-validaties/commit/e365bcb213b4cc0e05f4c5efcda50974e9e489ec"
     title: "e365bcb \u2014 R.1 and R.2 always explicitly within scope"
   - resource: "https://github.com/mijnaansluiting/Inhoudelijke-validaties/commit/f519af4517d2a4c181b90ede1096bf24d841ddd4"
     title: "f519af4 \u2014 Scopeless rules consistency (#88)"
-  - resource: "../../v12/xsl_functions/rule_scope_functions.xsl"
+  - resource: "../../v12.1/xsl_functions/rule_scope_functions.xsl"
     title: "rule_scope_functions.xsl"
 ---
 

@@ -6,14 +6,14 @@ resource: v12.1/rules/main.sch
 tags: architecture, schematron
 generated:
   by: claude-code/opus-5-5
-  at: 2026-11-02T00:00:00Z
+  at: 2026-11-10T00:00:00Z
 sources:
   - resource: "../../v12.1/rules/main.sch"
     title: "v12.1/rules/main.sch"
-  - resource: "../../v12/rules/patterns/R.36.sch"
-    title: "v12/rules/patterns/R.36.sch"
-  - resource: "../../v12/rules/abstract_patterns/geometrie/afstand_mantelbuis_tot_inhoud.sch"
-    title: "v12/rules/abstract_patterns/geometrie/afstand_mantelbuis_tot_inhoud.sch"
+  - resource: "../../v12.1/rules/patterns/R.36.sch"
+    title: "v12.1/rules/patterns/R.36.sch"
+  - resource: "../../v12.1/rules/abstract_patterns/geometrie/afstand_mantelbuis_tot_inhoud.sch"
+    title: "v12.1/rules/abstract_patterns/geometrie/afstand_mantelbuis_tot_inhoud.sch"
 ---
 
 # Overview
@@ -35,7 +35,7 @@ sub-checks that only differ in parameters:
    `"../../../<older version>/xsl_functions/…"` (inherited), then `include`s of every
    concrete pattern and every abstract pattern file — the version's own
    (`patterns/R.<n>.sch`) or inherited from an older version folder
-   (`../../v12/rules/patterns/…`, `../../<version>/rules/abstract_patterns/…`;
+   (`../../<older version>/rules/patterns/…`, `../../<version>/rules/abstract_patterns/…`;
    see [multiversion-model](../decisions/multiversion-model)).
 
 2. **`<version>/rules/patterns/R.<n>.sch`** (concrete patterns) — one
