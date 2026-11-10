@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pattern xmlns ="http://purl.oclc.org/dsdl/schematron" id="aanwezigheid-bestand-bijlage-aardpen" abstract="true">
+    <rule context="//nlcs:Eaardpen">
+        <let name="id"
+             value="nlcs:ID"/>
+        
+        <let name="bestand_bijlage"
+             value="//nlcs:AbestandBijlage[nlcs:AssetObjectID = $id]"/>
+        
+        <let name="bestand_bijlage_type"
+             value="$bestand_bijlage/nlcs:SoortBestand"/>
+          
+          <let name="bestand_bijlage_present"
+             value="ma:element-exists-and-not-empty($bestand_bijlage)"/>
+          
+          <assert id="check-bestand-bijlage-present"
+                  test="$bestand_bijlage_present"
+                  properties="scope rule-number severity object-type object-id">
+               <value-of select="ma:get-translation-and-replace-placeholders('object-not-present', ['Abestandbijlage'])"/>
+          </assert>
+          
+          <assert id="check-correct-bestandsoort"
+               test="not($bestand_bijlage_present) or $bestand_bijlage_type = 'Aardingsrapport'"
+               properties="scope rule-number severity object-type object-id">
+               <value-of select="ma:get-translation-and-replace-placeholders('soort-bestand-not-correct', ['Aardingsrapport', $bestand_bijlage_type])"/>
+          </assert>
+    </rule>
+</pattern>
