@@ -144,10 +144,8 @@
                     some $kabel in ma:touching-kabels(.)[self::nlcs:LSkabel][. != $lskabel]
                     satisfies ($kabel/nlcs:Bedrijfstoestand != $expected_bedrijfstoestand
                             or $kabel/nlcs:Verbindingnummer != $expected_verbindingnummer
-                            or (not(nlcs:Functie = $functies_where_subnettype_may_differ)
-                                and $kabel/nlcs:Subnettype != $expected_subnettype)
-                            or (not(nlcs:Functie = $functies_where_spanningsniveau_may_differ)
-                                and $kabel/nlcs:Spanningsniveau != $expected_spanningsniveau))]"/>
+                            or (not(nlcs:Functie = $functies_where_subnettype_may_differ) and $kabel/nlcs:Subnettype != $expected_subnettype)
+                            or (not(nlcs:Functie = $functies_where_spanningsniveau_may_differ) and $kabel/nlcs:Spanningsniveau != $expected_spanningsniveau))]"/>
 
         <let name="overlap_point"
             value="($overlapping_moffen | $aftak_eindmoffen_with_wrong_subnettype)/nlcs:Geometry"/>
