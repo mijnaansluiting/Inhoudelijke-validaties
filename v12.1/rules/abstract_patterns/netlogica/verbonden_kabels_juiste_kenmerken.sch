@@ -8,7 +8,7 @@
             value="ma:touching-moffen($mskabel)[self::nlcs:MSmof]"/>
 
         <let name="connected_mskabels"
-            value="ma:touching-kabels-via-moffen($connected_msmoffen, 'MSkabel')[. ne $mskabel]"/>
+            value="ma:touching-kabels-via-moffen($connected_msmoffen, 'MSkabel')[. != $mskabel]"/>
 
         <!-- Compare bedrijfstoestanden against original-->
 
@@ -100,17 +100,17 @@
             value="ma:touching-moffen($lskabel)[self::nlcs:LSmof]"/>
 
         <let name="connected_lskabels"
-            value="ma:touching-kabels-via-moffen($connected_lsmoffen, 'LSkabel')[not(. is $lskabel)]"/>
+            value="ma:touching-kabels-via-moffen($connected_lsmoffen, 'LSkabel')[. != $lskabel]"/>
 
         <let name="connected_lskabels_with_equal_subnettype"
             value="ma:touching-kabels-via-moffen(
                     $connected_lsmoffen[not(nlcs:Functie = $functies_where_subnettype_may_differ)],
-                    'LSkabel')[not(. is $lskabel)]"/>
+                    'LSkabel')[. != $lskabel]"/>
 
         <let name="connected_lskabels_with_equal_spanningsniveau"
             value="ma:touching-kabels-via-moffen(
                     $connected_lsmoffen[not(nlcs:Functie = $functies_where_spanningsniveau_may_differ)],
-                    'LSkabel')[not(. is $lskabel)]"/>
+                    'LSkabel')[. != $lskabel]"/>
 
         <let name="expected_bedrijfstoestand"
             value="nlcs:Bedrijfstoestand"/>
@@ -141,7 +141,7 @@
 
         <let name="overlapping_moffen"
             value="$connected_lsmoffen[
-                    some $kabel in ma:touching-kabels(.)[self::nlcs:LSkabel][not(. is $lskabel)]
+                    some $kabel in ma:touching-kabels(.)[self::nlcs:LSkabel][. != $lskabel]
                     satisfies ($kabel/nlcs:Bedrijfstoestand != $expected_bedrijfstoestand
                             or $kabel/nlcs:Verbindingnummer != $expected_verbindingnummer
                             or (not(nlcs:Functie = $functies_where_subnettype_may_differ)
