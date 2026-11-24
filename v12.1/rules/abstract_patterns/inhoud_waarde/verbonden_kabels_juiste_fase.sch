@@ -10,6 +10,9 @@
         <let name="unique_connected_phases"
             value="distinct-values($connected_mskabels/nlcs:FaseAanduiding)"/>
 
+        <let name="moffuncties_where_check"
+            value="('AFTAK NIET SPLITSEND', 'AFTAK SPLITSEND', VERBINDING)"
+
         <let name="allowed_phases"
             value="('3 Fasen', 'L1', 'L2', 'L3')"/>
 
@@ -30,7 +33,7 @@
 
         <assert id="msmof-2-3-4-connected-only-allowed-phases"
             properties="scope rule-number severity object-type object-id"
-            test="if($connections = 2 or $connections = 3 or $connections = 4) then empty($unique_unallowed_connected_phases) else true()">
+            test="if($msmof/nlcs:Functie = $moffuncties_where_check) and ($connections = 2 or $connections = 3 or $connections = 4) then empty($unique_unallowed_connected_phases) else true()">
             <value-of select="ma:get-translation-and-replace-placeholders(
                 'connected-fases-not-allowed',
                 [string($connections), string-join($unique_unallowed_connected_phases, ', ')]
@@ -39,7 +42,7 @@
 
         <assert id="msmof-2-3-connected-cables-have-same-fase"
             properties="scope rule-number severity object-type object-id"
-            test="if($connections = 2 or $connections = 3) then $all_connected_cables_match_fases else true()">
+            test="if($msmof/nlcs:Functie = $moffuncties_where_check) and ($connections = 2 or $connections = 3) then $all_connected_cables_match_fases else true()">
             <value-of select="ma:get-translation-and-replace-placeholders(
                 'connected-fases-do-not-match',
                 [string($connections), string-join($unique_connected_phases, ', ')]
@@ -48,7 +51,7 @@
 
         <assert id="msmof-4-connected-cables-have-combined-and-split-fasen"
             properties="scope rule-number severity object-type object-id"
-            test="if($connections = 4) then $all_connected_cables_have_combined_and_split_fases else true()">
+            test="if($msmof/nlcs:Functie = $moffuncties_where_check) and ($connections = 4) then $all_connected_cables_have_combined_and_split_fases else true()">
             <value-of select="ma:get-translation-and-replace-placeholders(
                 'connected-fases-do-not-split',
                 [string-join($allowed_phases, ', '), string-join($connected_mskabels/nlcs:FaseAanduiding, ', ')]
@@ -65,6 +68,9 @@
         
         <let name="unique_connected_phases"
             value="distinct-values($connected_lskabels/nlcs:FaseAanduiding)"/>
+
+        <let name="moffuncties_where_check"
+            value="('AFTAK NIET SPLITSEND', 'AFTAK SPLITSEND', VERBINDING)"
 
         <let name="allowed_phases"
             value="('3 Fasen', 'L1', 'L2', 'L3')"/>
@@ -86,7 +92,7 @@
 
         <assert id="lsmof-2-3-4-connected-only-allowed-phases"
             properties="scope rule-number severity object-type object-id"
-            test="if($connections = 2 or $connections = 3 or $connections = 4) then empty($unique_unallowed_connected_phases) else true()">
+            test="if($msmof/nlcs:Functie = $moffuncties_where_check) and ($connections = 2 or $connections = 3 or $connections = 4) then empty($unique_unallowed_connected_phases) else true()">
             <value-of select="ma:get-translation-and-replace-placeholders(
                 'connected-fases-not-allowed',
                 [string($connections), string-join($unique_unallowed_connected_phases, ', ')]
@@ -95,7 +101,7 @@
 
         <assert id="lsmof-2-3-connected-cables-have-same-fase"
             properties="scope rule-number severity object-type object-id"
-            test="if($connections = 2 or $connections = 3) then $all_connected_cables_match_fases else true()">
+            test="if($msmof/nlcs:Functie = $moffuncties_where_check) and ($connections = 2 or $connections = 3) then $all_connected_cables_match_fases else true()">
             <value-of select="ma:get-translation-and-replace-placeholders(
                 'connected-fases-do-not-match',
                 [string($connections), string-join($unique_connected_phases, ', ')]
@@ -104,7 +110,7 @@
 
         <assert id="lsmof-4-connected-cables-have-combined-and-split-fasen"
             properties="scope rule-number severity object-type object-id"
-            test="if($connections = 4) then $all_connected_cables_have_combined_and_split_fases else true()">
+            test="if($msmof/nlcs:Functie = $moffuncties_where_check) and ($connections = 4) then $all_connected_cables_have_combined_and_split_fases else true()">
             <value-of select="ma:get-translation-and-replace-placeholders(
                 'connected-fases-do-not-split',
                 [string-join($allowed_phases, ', '), string-join($connected_lskabels/nlcs:FaseAanduiding, ', ')]
