@@ -355,7 +355,13 @@
 					- Subnettype
 					- Verbindingnummer
 					- Spanningsniveau
+
+				Uitzonderingen op basis van de Functie van de LSmof:
+					- AANSLUIT AFTAK: Subnettype en Spanningsniveau mogen verschillen
+					- COMBI LS OV: Spanningsniveau mag verschillen
+				Een LSkabel die verbonden is met een LSmof met Functie AFTAK EINDMOF moet Subnettype DISTRIBUTIE hebben.
 			</definitie>
+			<toelichting>De vergelijking wordt per mof gedaan. Een kabel met aan de ene kant een AANSLUIT AFTAK en aan de andere kant een VERBINDING wordt dus volledig vergeleken met de kabel achter de VERBINDING.</toelichting>
 			<validatieObjecten> <!-- Deze regel geldt voor alle Kabel Objecten -->
 				<validatieObject><naam>LSkabel</naam></validatieObject>
 				<validatieObject><naam>MSkabel</naam></validatieObject>
@@ -392,6 +398,8 @@
 				3 kabels: de Fase van de 3 kabels moet hetzelfde zijn (L1, L2, L3 of 3 Fase)
 				4 kabels: 1 kabel moet 3 Fase zijn de andere kabels moet L1, L2 en L3 zijn. Het is immers een overgang van 3 Fase naar 3x 1 Fase.
 				> 4 kabels: geen controle.
+
+				Bij een LSmof met Functie AANSLUIT AFTAK of COMBI LS OV mag de Fase van de verbonden kabels verschillen. Alleen de toegestane Fasen (L1, L2, L3 of 3 Fasen) worden dan gecontroleerd.
 			</definitie>
 			<validatieObjecten>
 				<validatieObject><naam>LSmof</naam></validatieObject>

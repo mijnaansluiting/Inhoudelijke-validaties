@@ -141,6 +141,16 @@
       Gevonden: {3}
     </message-text>
   </message>
+  <message id="cable-at-mof-functie-has-wrong-subnettype">
+    <message-text xml:lang="en">
+      A cable connected to a joint with Functie {1} must have Subnettype {2}.
+      Found: {3}
+    </message-text>
+    <message-text xml:lang="nl">
+      Een kabel die verbonden is met een mof met Functie {1} moet Subnettype {2} hebben.
+      Gevonden: {3}
+    </message-text>
+  </message>
   <message id="fase-not-the-same-as-uitvoering">
     <message-text xml:lang="en">
       The Fase of the object is not the same as the Uitvoering.

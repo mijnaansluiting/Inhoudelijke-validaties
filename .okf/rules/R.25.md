@@ -6,8 +6,11 @@ resource: v12.1/rules/patterns/R.25.sch
 tags: inhoud-waarde
 generated:
   by: claude-code/opus-5-5
-  at: 2026-11-10T00:00:00Z
+  at: 2026-11-24T00:00:00Z
 sources:
+  - id: issue-121
+    resource: "https://github.com/mijnaansluiting/Inhoudelijke-validaties/issues/121"
+    title: "NB Validatie: onterechte melding op subnettype"
   - resource: "../../v12.1/doc/NLCSValidatieRegels.xml"
     title: "NLCS Validatieregels catalog"
   - resource: "../../v12.1/rules/abstract_patterns/inhoud_waarde/verbonden_kabels_juiste_fase.sch"
@@ -34,7 +37,10 @@ The set of Fase values on the cables meeting at a joint must be electrically con
 
 - Only Fase values within the allowed set ("3 Fasen", "L1", "L2", "L3") are permitted at joints with 2, 3 or 4 connections; any other Fase value present triggers a separate assertion.
 - For 4 connections, the rule additionally requires that the four distinct allowed phase values are all represented (i.e., the combined value plus all three split values).
+- At an LSmof with Functie AANSLUIT AFTAK or COMBI LS OV the Fase of the connected cables may differ (e.g. an L1 aansluitkabel branching off a 3 Fasen distributiekabel), so the equal-phase and 4-cable split checks are skipped; the allowed-values check still applies, so N still fails.[^issue-121] MSmof is unaffected.
 
 See [R.26](./R.26), which also keys its check off the number of cables connected to a joint. The mof-to-kabel touch check is served by a shared connectivity index rather than a per-rule scan; see [connectivity-index-and-geometry-caching](../decisions/connectivity-index-and-geometry-caching).
 
 Severity for this rule varies by scope; see [/domain/scope-severity-model.md](../domain/scope-severity-model) for the full scope×severity matrix.
+
+[^issue-121]: Table "Uitgangspunt: kenmerken van de kabels per Functie LSmof" in issue #121.
