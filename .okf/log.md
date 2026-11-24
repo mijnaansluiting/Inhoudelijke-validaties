@@ -1,5 +1,14 @@
 # Update Log
 
+## 2026-11-24
+* **Update**: R.23 and R.25 take the Functie of the LSmof into account
+  (issue #121). R.23: AANSLUIT AFTAK lets Subnettype and Spanningsniveau
+  differ, COMBI LS OV lets Spanningsniveau differ, and an LSkabel at an
+  AFTAK EINDMOF must be DISTRIBUTIE (new message
+  `cable-at-mof-functie-has-wrong-subnettype`). R.25: AANSLUIT AFTAK and
+  COMBI LS OV skip the equal-phase and split checks. Updated
+  [R.23](./rules/R.23) and [R.25](./rules/R.25).
+
 ## 2026-11-10
 * **Update**: removed the fictional test version `v12`. Everything `v12.1`
   included from it (patterns, abstract patterns, the fixtures and SVGs of 37

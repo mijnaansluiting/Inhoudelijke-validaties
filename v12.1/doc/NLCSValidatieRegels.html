@@ -727,7 +727,14 @@
          <tr class="validatieDocumentatieRow">
             <td class="validatieDocumentatieCell"><b>Definitie </b></td>
             <td class="validatieDocumentatieCell"><br>				Kabels die d.m.v. moffen met elkaar zijn verbonden moeten bepaalde kenmerken hetzelfde
-               hebben:<br>					- Bedrijfstoestand<br>					- Subnettype<br>					- Verbindingnummer<br>					- Spanningsniveau<br>			</td>
+               hebben:<br>					- Bedrijfstoestand<br>					- Subnettype<br>					- Verbindingnummer<br>					- Spanningsniveau<br><br>				Uitzonderingen op basis van de Functie van de LSmof:<br>					- AANSLUIT AFTAK: Subnettype en Spanningsniveau mogen verschillen<br>					- COMBI LS OV: Spanningsniveau mag verschillen<br>				Een LSkabel die verbonden is met een LSmof met Functie AFTAK EINDMOF moet Subnettype
+               DISTRIBUTIE hebben.<br>			</td>
+         </tr>
+         <tr class="validatieDocumentatieRow">
+            <td class="validatieDocumentatieCell"><b>Toelichting </b></td>
+            <td class="validatieDocumentatieCell">De vergelijking wordt per mof gedaan. Een kabel met aan de ene kant een AANSLUIT AFTAK
+               en aan de andere kant een VERBINDING wordt dus volledig vergeleken met de kabel achter
+               de VERBINDING.</td>
          </tr>
          <tr class="validatieDocumentatieRow">
             <td class="validatieDocumentatieCell"><b>ValidatieObjecten </b></td>
@@ -786,7 +793,9 @@
             <td class="validatieDocumentatieCell"><b>Definitie </b></td>
             <td class="validatieDocumentatieCell"><br>				Als een mof meer dan 1 kabel verbind dan moet de fase van de verbonden kabels
                juist zijn:<br>				1 kabel: geen controle<br>				2 kabels: de Fase van beide kabels moet hetzelfde zijn (L1, L2, L3 of 3 Fase)<br>				3 kabels: de Fase van de 3 kabels moet hetzelfde zijn (L1, L2, L3 of 3 Fase)<br>				4 kabels: 1 kabel moet 3 Fase zijn de andere kabels moet L1, L2 en L3 zijn. Het
-               is immers een overgang van 3 Fase naar 3x 1 Fase.<br>				&gt; 4 kabels: geen controle.<br>			</td>
+               is immers een overgang van 3 Fase naar 3x 1 Fase.<br>				&gt; 4 kabels: geen controle.<br><br>				Bij een LSmof met Functie AANSLUIT AFTAK of COMBI LS OV mag de Fase van de verbonden
+               kabels verschillen. Alleen de toegestane Fasen (L1, L2, L3 of 3 Fasen) worden dan
+               gecontroleerd.<br>			</td>
          </tr>
          <tr class="validatieDocumentatieRow">
             <td class="validatieDocumentatieCell"><b>ValidatieObjecten </b></td>

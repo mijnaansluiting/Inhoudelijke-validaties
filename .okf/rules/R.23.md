@@ -6,8 +6,11 @@ resource: v12.1/rules/patterns/R.23.sch
 tags: netlogica
 generated:
   by: claude-code/opus-5-5
-  at: 2026-11-10T00:00:00Z
+  at: 2026-11-24T00:00:00Z
 sources:
+  - id: issue-121
+    resource: "https://github.com/mijnaansluiting/Inhoudelijke-validaties/issues/121"
+    title: "NB Validatie: onterechte melding op subnettype"
   - resource: "../../v12.1/doc/NLCSValidatieRegels.xml"
     title: "NLCS Validatieregels catalog"
   - resource: "../../v12.1/rules/abstract_patterns/netlogica/verbonden_kabels_juiste_kenmerken.sch"
@@ -29,7 +32,20 @@ Cables spliced together through a joint represent one continuous circuit, so cer
   - Verbindingnummer
   - Spanningsniveau
 - Each attribute is checked with a separate assertion, so a mismatch on one attribute does not suppress the check of the others.
+- For LSkabel, the Functie of each connecting LSmof relaxes some comparisons:[^issue-121]
+
+  | Functie LSmof  | Subnettype    | Spanningsniveau |
+  |----------------|---------------|-----------------|
+  | AANSLUIT AFTAK | May differ    | May differ      |
+  | COMBI LS OV    | Must be equal | May differ      |
+  | Other / none   | Must be equal | Must be equal   |
+
+  Bedrijfstoestand and Verbindingnummer must always be equal. The relaxation is applied per mof: a cable with an AANSLUIT AFTAK on one end and a VERBINDING on the other is still fully compared to the cable behind the VERBINDING.
+- An LSkabel connected to an LSmof with Functie AFTAK EINDMOF must have Subnettype DISTRIBUTIE (the mof itself is AANSLUITNET).
+- MSkabel is unaffected: no MSmof Functie relaxes a comparison.
 
 See [R.39](./R.39), which also validates a shared attribute — Verbindingnummer — across connected cables/joints. The mof/kabel touch relationship this rule composes (touch, then touch-via-mof) is served by a shared connectivity index rather than a per-kabel rescan; see [connectivity-index-and-geometry-caching](../decisions/connectivity-index-and-geometry-caching).
 
 Severity for this rule varies by scope; see [/domain/scope-severity-model.md](../domain/scope-severity-model) for the full scope×severity matrix.
+
+[^issue-121]: Table "Uitgangspunt: kenmerken van de kabels per Functie LSmof" in issue #121.
