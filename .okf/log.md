@@ -1,5 +1,11 @@
 # Update Log
 
+## 2026-11-27
+* **Update**: R.23 again excludes the cable under check from its connected
+  cables by node identity (`not(. is $kabel)`); the code-review commits on
+  2026-11-24 had made this a value comparison (`!=`), and the MSkabel branch
+  already compared with `ne`. Noted in [R.23](./rules/R.23).
+
 ## 2026-11-24
 * **Update**: R.23 and R.25 take the Functie of the LSmof into account
   (issue #121). R.23: AANSLUIT AFTAK lets Subnettype and Spanningsniveau
