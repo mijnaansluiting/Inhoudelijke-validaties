@@ -6,7 +6,7 @@ resource: v12.1/rules/patterns/R.23.sch
 tags: netlogica
 generated:
   by: claude-code/opus-5-5
-  at: 2026-11-24T00:00:00Z
+  at: 2026-11-27T00:00:00Z
 sources:
   - id: issue-121
     resource: "https://github.com/mijnaansluiting/Inhoudelijke-validaties/issues/121"
@@ -25,7 +25,10 @@ Cables spliced together through a joint represent one continuous circuit, so cer
 
 - Rule category (`soort`): Netlogica
 - Applies to (`validatieObjecten`): LSkabel, MSkabel
-- For each MSkabel/LSkabel, the joints (MSmof/LSmof) touching its line are found, and then all other cables of the same type touching one of those joints are collected as "connected cables".
+- For each MSkabel/LSkabel, the joints (MSmof/LSmof) touching its line are found, and then all other cables of the same type touching one of those joints are collected as "connected cables". The cable under check is left out of
+  that set by node identity (`not(. is $lskabel)`), not by comparing values:
+  `!=` or `ne` compare the cables' text content, so another cable with exactly
+  the same content would also be dropped and never compared.
 - The rule compares the following attributes of the cable against each connected cable, and reports the distinct mismatching values found:
   - Bedrijfstoestand
   - Subnettype
