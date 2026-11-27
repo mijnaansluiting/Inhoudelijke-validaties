@@ -17,7 +17,7 @@ sources:
 # Overview
 
 `transformations/visualize_test_data.xsl` renders each
-[rule test fixture](./rule-test-fixtures)'s geometry (points,
+[rule test fixture](./rule-test-fixtures.md)'s geometry (points,
 lines, polygons — layered polygon→line→point→text, each object given a random
 color) as an SVG. `scripts/generate_and_compare_svgs.sh` regenerates these
 into `<version>/assets/R.<n>/<passing|failing>/*.svg` (currently
@@ -31,7 +31,7 @@ they're checked in, `generate_and_compare_svgs.sh` fails CI
 (`git diff --quiet <version>/assets/`) if regenerating them produces a diff, forcing
 contributors to regenerate and commit SVGs whenever fixture geometry changes.
 This runs in the `validate-docs` job of the `CI` workflow — see
-[ci/workflows](../ci/workflows) — alongside the HTML doc regeneration.
+[ci/workflows](../ci/workflows.md) — alongside the HTML doc regeneration.
 
 The equivalent script for the rendered rule-catalog HTML
 (`<version>/doc/NLCSValidatieRegels.html`, generated from

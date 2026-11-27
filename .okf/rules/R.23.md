@@ -47,8 +47,8 @@ Cables spliced together through a joint represent one continuous circuit, so cer
 - An LSkabel connected to an LSmof with Functie AFTAK EINDMOF must have Subnettype DISTRIBUTIE (the mof itself is AANSLUITNET).
 - MSkabel is unaffected: no MSmof Functie relaxes a comparison.
 
-See [R.39](./R.39), which also validates a shared attribute — Verbindingnummer — across connected cables/joints. The mof/kabel touch relationship this rule composes (touch, then touch-via-mof) is served by a shared connectivity index rather than a per-kabel rescan; see [connectivity-index-and-geometry-caching](../decisions/connectivity-index-and-geometry-caching).
+See [R.39](./R.39.md), which also validates a shared attribute — Verbindingnummer — across connected cables/joints. The mof/kabel touch relationship this rule composes (touch, then touch-via-mof) is served by a shared connectivity index rather than a per-kabel rescan; see [connectivity-index-and-geometry-caching](../decisions/connectivity-index-and-geometry-caching.md).
 
-Severity for this rule varies by scope; see [/domain/scope-severity-model.md](../domain/scope-severity-model) for the full scope×severity matrix.
+Severity for this rule varies by scope; see [/domain/scope-severity-model.md](../domain/scope-severity-model.md) for the full scope×severity matrix.
 
 [^issue-121]: Table "Uitgangspunt: kenmerken van de kabels per Functie LSmof" in issue #121.

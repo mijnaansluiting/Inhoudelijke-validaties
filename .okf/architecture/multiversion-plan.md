@@ -14,7 +14,7 @@ sources:
 
 # Overview
 
-Implementation order for the [multiversion-model](../decisions/multiversion-model),
+Implementation order for the [multiversion-model](../decisions/multiversion-model.md),
 first to last. Each step must leave the results for `v12.1` (the released
 rule set, formerly `v2026.1.0`) unchanged. Since 2026-11-05 a version is an
 NLCS++ version. `v12` held the fictional test changes of the former
@@ -23,9 +23,9 @@ version.
 
 # Done
 
-1. **Version model decided** — [multiversion-model](../decisions/multiversion-model).
+1. **Version model decided** — [multiversion-model](../decisions/multiversion-model.md).
 2. **Version registry** — `configuration/versions.xml` and
-   `scripts/versions.sh` (see [version-registry](../config/version-registry));
+   `scripts/versions.sh` (see [version-registry](../config/version-registry.md));
    scripts and workflows read the version from it.
 3. **Per-version config and catalog** — `sys_config.xml` block per version,
    selected through `$active_version` in each `main.sch`; catalog in
@@ -37,7 +37,7 @@ version.
    `v9999.1.0` → `v12`, inheritance flipped so `v12.1` includes from `v12`;
    registry reduced to `id`, `released` flag dropped; rule validation
    reports byte-identical to before. See
-   [multiversion-model](../decisions/multiversion-model).
+   [multiversion-model](../decisions/multiversion-model.md).
 6. **`v12` removed** (2026-11-10) — everything `v12.1` inherited from it
    (patterns, abstract patterns, fixtures, SVGs, `xsl_functions/`) moved
    into `v12.1/`; `v12`'s registry entry and `sys_config` block removed;
@@ -56,7 +56,7 @@ Function libraries are versioned as `<version>/xsl_functions/` (inherited
 like patterns). Shared tooling stays at the root: `configuration/`,
 `localization/`, `transformations/`, `wrappers/`, `scripts/`, `schemas/`,
 and `doc/NLCSValidatieRegels.{xsl,css,xsd}`. The release `dist/` mirrors
-this layout (see [build-and-release](./build-and-release)).
+this layout (see [build-and-release](./build-and-release.md)).
 
 # Step 5: run the pipeline per version
 
@@ -128,7 +128,7 @@ until the next real NLCS++ version is added.
   the root's `VersieNummer` or the optional `version` parameter, and fails on
   an unsupported XSD version.
 * ~~Release packaging~~ — decided 2026-11-04: one zip with every version
-  (see [build-and-release](./build-and-release)).
+  (see [build-and-release](./build-and-release.md)).
 
 # Step 9: clean up
 

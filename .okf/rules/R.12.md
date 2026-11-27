@@ -22,6 +22,6 @@ This rule verifies that every OVLoverdrachtspunt (overhead-line transfer point) 
 - Applies to (`validatieObjecten`): OVLoverdrachtspunt.
 - Condition: every `OVLoverdrachtspunt` must have a value for `Aansluitset`, `Functie`, `Spanningsniveau`, `Aansluitwijze`, `Schakeling`, and `Mastnummer` (asserts `aansluitset-present`, `functie-present`, `spanningsniveau-present`, `aansluitwijze-present`, `schakeling-present`, `mastnummer-present`).
 
-Severity for this rule varies by scope; see [scope-severity-model](../domain/scope-severity-model) for the full scope×severity matrix.
+Severity for this rule varies by scope; see [scope-severity-model](../domain/scope-severity-model.md) for the full scope×severity matrix.
 
-The abstract pattern reports all missing attributes of an object in one failed assert, with the `attributes-not-present` message from the message catalog (`attribute-not-present` when only one is missing) and the names as `<attribute>` elements in the `missing-attributes` property; see [localization-messages](../config/localization-messages).
+The abstract pattern reports all missing attributes of an object in one failed assert, with the `attributes-not-present` message from the message catalog (`attribute-not-present` when only one is missing) and the names as `<attribute>` elements in the `missing-attributes` property; see [localization-messages](../config/localization-messages.md).

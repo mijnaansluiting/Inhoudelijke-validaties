@@ -19,7 +19,7 @@ sources:
 `configuration/sys_config.xml` holds tunable values for rule logic, with
 one full `<version id="v12.1">` block per NLCS++ version (no
 defaults or inheritance between blocks; see
-[multiversion-model](../decisions/multiversion-model)). Values are read at
+[multiversion-model](../decisions/multiversion-model.md)). Values are read at
 validation time by functions in
 `<version>/xsl_functions/config_functions.xsl`, which select the
 block whose `id` equals `$active_version` (declared by each version's
@@ -33,21 +33,21 @@ block.
 | Field | Value (v12.1) | Used by |
 |---|---|---|
 | `DecimalPrecision` | `3` | Numeric rounding precision used across geometric/numeric comparisons. |
-| `MofFuncties/Aftak` | `AFTAK SPLITSEND` | [R.26](../rules/R.26) — maps joint Functie values to the "Aftak" category. |
-| `MofFuncties/Eind` | `EINDMOF`, `EINDDOP`, `LOODKOP`, `EIND GEAARD` | [R.26](../rules/R.26) — "Eind" category. |
-| `MofFuncties/Verbinding` | `VERBINDING`, `ZEGELWIJZIGING`, `MANTELREPARATIE` | [R.26](../rules/R.26) — "Verbinding" category. |
-| `MofFuncties/Faseovergang` | `3FASE 3x1FASE` | [R.26](../rules/R.26) — "Faseovergang" category. |
-| `ToegestaandeInmeetwijzen/Inmeetwijze` | `GPS`, `Tachymeter` | [R.37](../rules/R.37) — allowed survey-method values. |
-| `GisIdAssetsIdExceptions/NoGisIdRequired` | `AmantelbuisInhoud` | [R.5](../rules/R.5) — object types exempt from the GisId requirement. |
-| `MantelbuisInhoudMaxAfstand` | `1` (meter) | [R.36](../rules/R.36) — max allowed distance between a protection pipe and its content. |
+| `MofFuncties/Aftak` | `AFTAK SPLITSEND` | [R.26](../rules/R.26.md) — maps joint Functie values to the "Aftak" category. |
+| `MofFuncties/Eind` | `EINDMOF`, `EINDDOP`, `LOODKOP`, `EIND GEAARD` | [R.26](../rules/R.26.md) — "Eind" category. |
+| `MofFuncties/Verbinding` | `VERBINDING`, `ZEGELWIJZIGING`, `MANTELREPARATIE` | [R.26](../rules/R.26.md) — "Verbinding" category. |
+| `MofFuncties/Faseovergang` | `3FASE 3x1FASE` | [R.26](../rules/R.26.md) — "Faseovergang" category. |
+| `ToegestaandeInmeetwijzen/Inmeetwijze` | `GPS`, `Tachymeter` | [R.37](../rules/R.37.md) — allowed survey-method values. |
+| `GisIdAssetsIdExceptions/NoGisIdRequired` | `AmantelbuisInhoud` | [R.5](../rules/R.5.md) — object types exempt from the GisId requirement. |
+| `MantelbuisInhoudMaxAfstand` | `1` (meter) | [R.36](../rules/R.36.md) — max allowed distance between a protection pipe and its content. |
 
 `GisIdAssetsIdExceptions` also has a commented-out `NoAssetIdRequired` slot,
 reserved for future AssetId exceptions but currently unused.
 
 # Related
 
-[user-config.md](./user-config) holds the separate `Language`
-setting consumed by [localization-messages](./localization-messages).
+[user-config.md](./user-config.md) holds the separate `Language`
+setting consumed by [localization-messages](./localization-messages.md).
 The `DecimalPrecision`/rounding behavior here is closely related to the
 geometric precision issues discussed in
-[distance-precision-rounding](../decisions/distance-precision-rounding).
+[distance-precision-rounding](../decisions/distance-precision-rounding.md).

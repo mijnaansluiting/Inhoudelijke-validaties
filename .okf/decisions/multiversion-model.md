@@ -49,7 +49,7 @@ version (see "Removal of `v12` (2026-11-10)" below).
 * **Rule changes within an NLCS++ version are made in place**, in that
   version's folder (or, for an inherited file, by overriding it first; see
   below). The software release number exists only as the `v*` git tag and
-  the GitHub Release (see [build-and-release](../architecture/build-and-release));
+  the GitHub Release (see [build-and-release](../architecture/build-and-release.md));
   no folder, registry entry or parameter carries it.
 * **All versions are supported** — in the repo, in CI, shipped in the
   release and selectable at validation time. There is no `released` flag.
@@ -78,13 +78,13 @@ at the repository root** that holds everything belonging to it:
 ```
 
 Each version folder also holds `xsl_functions/` (the
-[XSL function libraries](../architecture/xsl-function-libraries)), unless it
+[XSL function libraries](../architecture/xsl-function-libraries.md)), unless it
 inherits them. Shared, version-independent tooling stays at the root:
 `configuration/`, `localization/`, `transformations/`, `wrappers/`,
 `scripts/`, `schemas/<xsd version>/`, `doc/NLCSValidatieRegels.{xsl,css,xsd}`
 and `test/XMLValidation.java`. Adding or deleting a version is one folder
 operation, and the release `dist/` mirrors this layout so the relative paths
-are identical (see [build-and-release](../architecture/build-and-release)).
+are identical (see [build-and-release](../architecture/build-and-release.md)).
 
 ## Rule numbering
 
@@ -173,7 +173,7 @@ Consequence: the fixtures of the inherited rules now live in `v12` and are
 XSD-checked against XSD 12 with `VersieNummer="12"`. They are 12.1 data, so
 `validate_test_data_xsd.sh v12` fails until the test data or the version
 detection for XSD 12 is fixed (see
-[multiversion-plan](../architecture/multiversion-plan)). The removal of
+[multiversion-plan](../architecture/multiversion-plan.md)). The removal of
 `v12` below resolved this.
 
 ## Removal of `v12` (2026-11-10)
@@ -248,8 +248,8 @@ real NLCS++ version will be the first to do so again.
 # Release packaging
 
 Decided 2026-11-04: **one zip** with every version; see
-[build-and-release](../architecture/build-and-release).
+[build-and-release](../architecture/build-and-release.md).
 
 The version registry format was settled as XML; see
-[version-registry](../config/version-registry). The remaining
-implementation steps are in [multiversion-plan](../architecture/multiversion-plan).
+[version-registry](../config/version-registry.md). The remaining
+implementation steps are in [multiversion-plan](../architecture/multiversion-plan.md).
