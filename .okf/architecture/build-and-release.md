@@ -19,7 +19,7 @@ sources:
 The artifact netbeheerders/contractors actually consume isn't this source
 repo directly — it's a packaged zip produced by `scripts/bundle.sh` and
 published as a GitHub Release asset by the `Deliverables` workflow (see
-[ci/workflows](../ci/workflows)) whenever a `v*` tag is pushed.
+[ci/workflows](../ci/workflows.md)) whenever a `v*` tag is pushed.
 
 `bundle.sh` assembles a `dist/` directory that **mirrors the repository
 layout**, so every relative path in the compiled schema
@@ -29,10 +29,10 @@ the function libraries (`../../configuration/`, `../../localization/`,
 same way in `dist/` as in the repository:
 - the **scope-checked** schema of the bundled version, transpiled to XSLT
   (`<version>/rules/transpiled_phases/main_scope_checks.xsl` — see
-  [compilation-pipeline](./compilation-pipeline) for how the scope-checked
+  [compilation-pipeline](./compilation-pipeline.md) for how the scope-checked
   variant is produced), at the same path
   `dist/<version>/rules/transpiled_phases/main_scope_checks.xsl`
-- the [xsl-function-libraries](./xsl-function-libraries) of every version
+- the [xsl-function-libraries](./xsl-function-libraries.md) of every version
   the bundled `main.sch` includes them from (its own and/or inherited ones,
   read from its `xsl:include` lines) under `dist/<that version>/xsl_functions/`
 - `configuration/` (`sys_config.xml`, `user_config.xml`, `versions.xml`)
@@ -44,7 +44,7 @@ same way in `dist/` as in the repository:
 
 ...then zips `dist/` as `nlcspp_inhoudelijke_validaties.zip`. This is the
 "run the same validations on every device" deliverable the
-[project's stated goal](../domain/nlcs-plus-plus) refers to: a
+[project's stated goal](../domain/nlcs-plus-plus.md) refers to: a
 self-contained bundle a consumer can run against their own NLCS++ files with
 just Saxon, no dependency on this build toolchain.
 

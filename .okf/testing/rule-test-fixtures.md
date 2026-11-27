@@ -23,19 +23,19 @@ data-driven. `<version>/test/rule_validation_data/R.<n>/` (e.g.
 `v12.1/test/rule_validation_data/R.36/`) holds hand-authored NLCS++ XML
 fixtures for each rule a version adds or changes; a rule's fixtures are taken
 from the version folder its pattern is included from (`scripts/versions.sh
-rules`, see [multiversion-model](../decisions/multiversion-model)).
+rules`, see [multiversion-model](../decisions/multiversion-model.md)).
 Fixtures are split into `passing/` (should produce zero `assert-failed`
 elements) and `failing/` (should trigger the rule's assert).
 Fixture filenames describe the geometric/data scenario they exercise — e.g.
-[R.36](../rules/R.36)'s fixtures include `single_line.xml`, `multi_line.xml`,
+[R.36](../rules/R.36.md)'s fixtures include `single_line.xml`, `multi_line.xml`,
 `u_turn.xml`, `complex.xml`, and `_offset`/`exact_same_position`/
 `ends_at_same_position` variants that specifically probe distance-calculation
-edge cases (see [distance-precision-rounding](../decisions/distance-precision-rounding)).
+edge cases (see [distance-precision-rounding](../decisions/distance-precision-rounding.md)).
 
 # How fixtures get validated
 
 `scripts/validate_rules.sh` runs every rule's transpiled XSLT (see
-[compilation-pipeline](../architecture/compilation-pipeline)) against both
+[compilation-pipeline](../architecture/compilation-pipeline.md)) against both
 its `passing/` and `failing/` fixture sets, writing SVRL reports to
 `<version>/rule_validation_reports/<rule>/<passing|failing>/` (git-ignored).
 `scripts/validate_rule_reports.sh`
@@ -46,7 +46,7 @@ then reduces each report to a PASS/FAIL verdict via
 `$GITHUB_STEP_SUMMARY` table of every mismatch — if any fixture doesn't match
 its expected outcome. This is wired into the `validate-rules` job of the
 `CI` workflow, see
-[ci/workflows](../ci/workflows).
+[ci/workflows](../ci/workflows.md).
 
 Before any of this runs, `validate-rules` also XSD-validates every fixture
 against its version's Keuzelijst schema (`schemas/<xsd version>/`) via
@@ -55,7 +55,7 @@ themselves well-formed NLCS++.
 
 # Related
 
-[test-visualization](./test-visualization) renders these same
-fixtures as SVGs. [coverage-checks](./coverage-checks) verifies
+[test-visualization](./test-visualization.md) renders these same
+fixtures as SVGs. [coverage-checks](./coverage-checks.md) verifies
 every rule actually has fixtures and that fixtures cover the right object
 types.

@@ -21,7 +21,7 @@ sources:
 
 `configuration/versions.xml` lists the versions the repository holds rules
 for. A version is an **NLCS++ version** (see
-[multiversion-model](../decisions/multiversion-model)): its id is the NLCS++
+[multiversion-model](../decisions/multiversion-model.md)): its id is the NLCS++
 version prefixed with `v` and equals its root folder name (e.g. `v12.1/`).
 Scripts, CI and XSL read the list from here instead of hardcoding folder
 names.

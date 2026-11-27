@@ -17,7 +17,7 @@ sources:
 # Overview
 
 This test suite doesn't validate end-user NLCS++ data — it validates that
-the [scope/severity model](../domain/scope-severity-model) itself has full,
+the [scope/severity model](../domain/scope-severity-model.md) itself has full,
 non-overlapping coverage. `<version>/test/scope_validation_data/scope_template.xml`
 is expanded by `transformations/generate_scoped_objects.xsl` (reading the
 scopes from `<version>/doc/NLCSValidatieRegels.xml`) into
@@ -27,7 +27,7 @@ every cell of the scope matrix gets its own tiny test object.
 `scripts/validate_scopes.sh` then, for each generated object:
 1. Runs it through the **scope-checked** schema
    (`<version>/rules/transpiled_phases/main_scope_checks.xsl` — see
-   [compilation-pipeline](../architecture/compilation-pipeline)), whose
+   [compilation-pipeline](../architecture/compilation-pipeline.md)), whose
    abstract patterns assert an object's actual scope membership; reports go
    to `<version>/scoped_objects_reports/`.
 2. Compares the resulting SVRL (via `transformations/check_scope_coverage.xsl`)
@@ -37,7 +37,7 @@ every cell of the scope matrix gets its own tiny test object.
    scopedekking") if any scope has missing or unexpected rules.
 
 This runs as the `validate-scopes` job of the `CI` workflow — see
-[ci/workflows](../ci/workflows). It's the reason
-[scope-bound-vs-scopeless-rules](../decisions/scope-bound-vs-scopeless-rules)
+[ci/workflows](../ci/workflows.md). It's the reason
+[scope-bound-vs-scopeless-rules](../decisions/scope-bound-vs-scopeless-rules.md)
 exists as a decision record: gaps caught by this suite are what drove past
 fixes to which rules are unconditionally in-scope.

@@ -19,7 +19,7 @@ sources:
 # Overview
 
 There is no persistent validation service — this repo is a toolchain that
-compiles [Schematron rules](./schematron-layering) into
+compiles [Schematron rules](./schematron-layering.md) into
 standalone XSLT, which is then run directly against an NLCS++ XML instance.
 The pipeline, driven by bash scripts and **Saxon-HE** (Java, XSLT/XPath 3.0)
 plus **SchXSLT2** (a Schematron→XSLT transpiler):
@@ -58,9 +58,9 @@ plus **SchXSLT2** (a Schematron→XSLT transpiler):
    XML instance produces an **SVRL** report (Schematron Validation Report
    Language) listing `<successful-report>`/`<assert-failed>` elements
    annotated with the `scope`/`severity`/`object-type` properties from
-   [schematron-layering](./schematron-layering).
+   [schematron-layering](./schematron-layering.md).
    `scripts/validate_rules.sh` does this for every rule against its
-   [test fixtures](../testing/rule-test-fixtures), and
+   [test fixtures](../testing/rule-test-fixtures.md), and
    `transformations/check_validation_reports.xsl` reduces a report to a
    PASS/FAIL verdict by counting `<assert-failed>` elements.
 
@@ -70,12 +70,12 @@ plus **SchXSLT2** (a Schematron→XSLT transpiler):
    (`<version>/rules/abstract_patterns_scope_checks/`,
    `<version>/rules/main_scope_checks.sch`, all git-ignored) whose abstract patterns
    additionally assert that each object falls within its expected scope —
-   this variant is what [scope-coverage-tests](../testing/scope-coverage-tests)
-   and the release bundle ([build-and-release](./build-and-release))
+   this variant is what [scope-coverage-tests](../testing/scope-coverage-tests.md)
+   and the release bundle ([build-and-release](./build-and-release.md))
    use, not the plain rule logic. CI transpiles it with
    `-s:<version>/rules/main_scope_checks.sch
    -o:<version>/rules/transpiled_phases/main_scope_checks.xsl`.
 
 This whole pipeline exists so that a "phase" (= one rule) can be compiled and
 run in isolation, which is what makes per-rule pass/fail testing in CI
-tractable — see [rule-test-fixtures](../testing/rule-test-fixtures).
+tractable — see [rule-test-fixtures](../testing/rule-test-fixtures.md).

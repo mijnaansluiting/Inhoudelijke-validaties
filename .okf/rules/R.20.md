@@ -24,10 +24,10 @@ This rule verifies that point objects (Geometry of type `gml:Point`) in the elec
   - `MSmof` and `MSoverdrachtspunt` must be connected to an `MSkabel` — the pattern parses the point's `Geometry` and asserts (`point-connected-to-kabel`) that it touches at least one `MSkabel/Geometry` line.
   - `Eaardmof`, `LSmof`, `LSoverdrachtspunt`, and `OVLoverdrachtspunt` must be connected to an `LSkabel` — the same assertion is checked against `LSkabel/Geometry` lines.
 
-This point-to-cable topology check is complemented by [R.21](./R.21), which validates the cable-side topology (valid end points of a kabel).
+This point-to-cable topology check is complemented by [R.21](./R.21.md), which validates the cable-side topology (valid end points of a kabel).
 
-Severity for this rule varies by scope; see [scope-severity-model](../domain/scope-severity-model) for the full scope×severity matrix.
+Severity for this rule varies by scope; see [scope-severity-model](../domain/scope-severity-model.md) for the full scope×severity matrix.
 
-The abstract pattern emits the `point-not-connected-to-any-line` message from the message catalog when a point object is not touching any line of the expected cable type; see [localization-messages](../config/localization-messages).
+The abstract pattern emits the `point-not-connected-to-any-line` message from the message catalog when a point object is not touching any line of the expected cable type; see [localization-messages](../config/localization-messages.md).
 
-The point-to-cable touch check itself is served by a shared connectivity index rather than a per-rule scan; see [connectivity-index-and-geometry-caching](../decisions/connectivity-index-and-geometry-caching).
+The point-to-cable touch check itself is served by a shared connectivity index rather than a per-rule scan; see [connectivity-index-and-geometry-caching](../decisions/connectivity-index-and-geometry-caching.md).

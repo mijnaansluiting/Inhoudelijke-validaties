@@ -24,8 +24,8 @@ sources:
 Every NLCS++ version folder has its own rule catalog,
 `<version>/doc/NLCSValidatieRegels.xml` (namespace
 `NLCSValidatieRegelsNameSpace`). It is the source of truth for the rule
-metadata described in [rules](../rules/index) and for the scopes in the
-[scope × severity model](../domain/scope-severity-model). All versions share
+metadata described in [rules](../rules/index.md) and for the scopes in the
+[scope × severity model](../domain/scope-severity-model.md). All versions share
 one schema, `doc/NLCSValidatieRegels.xsd`, and one stylesheet,
 `doc/NLCSValidatieRegels.xsl`, which renders the catalog to
 `<version>/doc/NLCSValidatieRegels.html`.
@@ -52,7 +52,7 @@ Each `validatieRegel` (`ValidatieRegelType`)[^xsd]:
 no XSD change. The value must equal the version folder the rule's concrete
 pattern (`patterns/R.x.sch`, `R.x_A.sch`, …) is included from in that
 version's `rules/main.sch`; `scripts/check_rule_coverage.sh` enforces this
-([coverage-checks](../testing/coverage-checks)). Since `v12` was removed (2026-11-10), `v12.1` is the only version and has
+([coverage-checks](../testing/coverage-checks.md)). Since `v12` was removed (2026-11-10), `v12.1` is the only version and has
 its own pattern for every rule, so every rule is `v12.1`.
 
 Each `scope` has a `naam` attribute, a `tekeningSoort`, `statussen`,
@@ -64,17 +64,17 @@ The XSL renders each rule as a table with one row per child element[^xsl].
 Row labels are the element name with its first letter capitalised, except
 `laatstGewijzigd`, which is shown as "Laatst gewijzigd". The HTML is
 committed; CI regenerates it and fails if it differs. See
-[ci/workflows](../ci/workflows) (`validate-docs` job).
+[ci/workflows](../ci/workflows.md) (`validate-docs` job).
 
 # Consumers
 
 * `v12.1/xsl_functions/rule_scope_functions.xsl` reads `soort` and the scopes at
-  validation time ([xsl-function-libraries](./xsl-function-libraries)).
+  validation time ([xsl-function-libraries](./xsl-function-libraries.md)).
 * `transformations/check_object_coverage.xsl`,
   `check_scope_coverage.xsl` and `generate_scoped_objects.xsl`
-  ([coverage-checks](../testing/coverage-checks)).
+  ([coverage-checks](../testing/coverage-checks.md)).
 * `scripts/check_rule_coverage.sh`, `check_active_version.sh` and
-  `bundle.sh` ([build-and-release](./build-and-release)).
+  `bundle.sh` ([build-and-release](./build-and-release.md)).
 
 [^xsd]: `doc/NLCSValidatieRegels.xsd`, `ValidatieRegelType`.
 [^xsl]: `doc/NLCSValidatieRegels.xsl`, templates `tablefy` and `human-string`.

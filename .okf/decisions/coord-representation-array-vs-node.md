@@ -5,29 +5,27 @@ description: Benchmark finding that representing parsed coordinates as Coord XML
 tags: decision, performance, geometry
 generated:
   by: claude-code/opus-5-5
-  at: 2026-11-10T00:00:00Z
+  at: 2026-11-27T00:00:00Z
 sources:
-  - resource: "../../COORD_PARSING_BENCHMARK.md"
-    title: "COORD_PARSING_BENCHMARK.md"
   - resource: "../../v12.1/xsl_functions/helper_functions.xsl"
     title: "helper_functions.xsl"
   - resource: "../../v12.1/xsl_functions/geometry_functions.xsl"
     title: "geometry_functions.xsl"
-  - resource: "./geometry-parse-caching"
+  - resource: "/decisions/geometry-parse-caching.md"
     title: "geometry-parse-caching"
-  - resource: "./connectivity-index-and-geometry-caching"
+  - resource: "/decisions/connectivity-index-and-geometry-caching.md"
     title: "connectivity-index-and-geometry-caching"
 ---
 
 # Context
 
-[geometry-parse-caching](./geometry-parse-caching) and
-[connectivity-index-and-geometry-caching](./connectivity-index-and-geometry-caching)
+[geometry-parse-caching](./geometry-parse-caching.md) and
+[connectivity-index-and-geometry-caching](./connectivity-index-and-geometry-caching.md)
 both improved performance without questioning the coordinate
 *representation* itself: parsed geometry had been a sequence of `Coord` XML
 element nodes (`<Coord><X>.../X><Y>.../Y></Coord>`) ever since the shared
 `ma:parse-point`/`ma:parse-line`/`ma:parse-area` abstraction in
-[helper_functions.xsl](../architecture/xsl-function-libraries) was
+[helper_functions.xsl](../architecture/xsl-function-libraries.md) was
 introduced between release `v12.0.0` and `v12.1.0` — confirmed via
 `git show v12.1.0:validation_schemas/xsl_functions/helper_functions.xsl`,
 the `Coord`-node shape already existed at v12.1.0, only the memoization
@@ -60,22 +58,22 @@ set constant. Changes were confined to `helper_functions.xsl`,
 since they only call the `ma:*` functions and index parsed lines
 positionally, never dereferencing `/X` etc. directly.
 
-Full methodology, substitution table, and raw data:
-[COORD_PARSING_BENCHMARK.md](../../COORD_PARSING_BENCHMARK.md).
+The benchmark harness, the stress-test document and the raw measurements
+were local working files and are not in the repository.
 
 # Verification
 
 - All 41 rules' `passing`/`failing` fixtures
-  ([rule-test-fixtures](../testing/rule-test-fixtures)) produced
+  ([rule-test-fixtures](../testing/rule-test-fixtures.md)) produced
   byte-identical SVRL output between the current `Coord`-node code and the
   array-based variant (after excluding a leaked `xmlns:array` namespace
   declaration via `exclude-result-prefixes`).
-- `benchmark.xml` compiled under both variants produced exactly the same
-  7388 `svrl:failed-assert`/`svrl:successful-report` count.
+- The local stress-test document validated under both variants produced
+  exactly the same 7388 `svrl:failed-assert`/`svrl:successful-report` count.
 
 # Finding
 
-`benchmark.sh` against `benchmark.xml`, 10 runs per variant, controlled
+Full schema against the local stress-test document, 10 runs per variant, controlled
 comparison (same 41 rules, same memoized-cache + connectivity-index
 architecture, only the representation differs):
 
@@ -87,13 +85,13 @@ architecture, only the representation differs):
 **11.00s → 7.30s: a 3.70s / 33.6% reduction.** `Coord`-element-node
 construction and traversal (`generate-id()` cache keys, node copying when
 `Coord` sequences are subsequenced/reversed/passed around, element
-construction in `ma:coord`) is a real, measurable cost at `benchmark.xml`
+construction in `ma:coord`) is a real, measurable cost at stress-test
 scale — smaller than the prior caching/connectivity-index wins (132s → 27s →
 10s) but not noise: roughly the same order of magnitude as the
 memoized-parsing win alone (~2.7x) layered on top of an already
 cached/indexed baseline (~1.5x further).
 
-`dist_v12.0.0` (30 rules, no cache, no connectivity index, flat doubles) was
+A `v12.0.0` release build (30 rules, no cache, no connectivity index, flat doubles) was
 also benchmarked for historical context (5.10s mean) but is **not** a
 controlled data point — it differs from current in four ways at once, not
 just representation.
@@ -105,9 +103,8 @@ just representation.
 initial benchmark, weighing the ~34% win against touching every consumer in
 `geometry_functions.xsl`/`helper_functions.xsl`/`connectivity_functions.xsl`.
 It was subsequently re-applied to the same 3 files (byte-identical to the
-investigation's already-verified code, copied from the `dist_old_parsing/`
-snapshot) and re-verified before landing: fixture PASS/FAIL and the
-`benchmark.xml` 7388-assert count both stayed identical, and a freshly rebuilt
+investigation's already-verified code) and re-verified before landing:
+fixture PASS/FAIL and the stress-test 7388-assert count both stayed identical, and a freshly rebuilt
 `dist/` benchmarked at ~7.6s mean (5 runs), consistent with the original
 `array(xs:double)` measurement. The committed codebase now uses
 `array(xs:double)`, not `Coord` element nodes.

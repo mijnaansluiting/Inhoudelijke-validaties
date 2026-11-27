@@ -18,7 +18,7 @@ sources:
 
 Two small, fast (no external dependencies) consistency checks guard against
 a version's rule catalog (`<version>/doc/NLCSValidatieRegels.xml`) and the Schematron
-implementation ([schematron-layering](../architecture/schematron-layering))
+implementation ([schematron-layering](../architecture/schematron-layering.md))
 drifting apart:
 
 - **`scripts/check_rule_coverage.sh`** — greps rule numbers out of
@@ -32,12 +32,12 @@ drifting apart:
   catalog, and emits an error annotation on the `main.sch` include line for
   every mismatch, or on the catalog when a rule has no `laatstGewijzigd`.
   Abstract-pattern includes are not checked, since they are shared between
-  rules. See [rule-catalog](../architecture/rule-catalog). Runs in the
+  rules. See [rule-catalog](../architecture/rule-catalog.md). Runs in the
   first `covered-rules` job of the `CI` workflow (no build step needed) — see
-  [ci/workflows](../ci/workflows).
+  [ci/workflows](../ci/workflows.md).
 
 - **`scripts/check_rule_object_coverage.sh`** — for each rule's
-  [test fixture](./rule-test-fixtures) SVRL reports, runs
+  [test fixture](./rule-test-fixtures.md) SVRL reports, runs
   `transformations/check_object_coverage.xsl` against
   `<version>/doc/NLCSValidatieRegels.xml` (it reads the failing reports from
   `../<version>/rule_validation_reports/`) to confirm the NLCS object types a rule's
